@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ModuloDeCompra_BD
 {
-    public partial class Form1 : Form
+    public partial class Frm_IncioSesion : Form
     {
-        public Form1()
+        public Frm_IncioSesion()
         {
             InitializeComponent();
         }
