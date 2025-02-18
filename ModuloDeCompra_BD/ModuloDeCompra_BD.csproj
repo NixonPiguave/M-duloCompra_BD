@@ -52,6 +52,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\CsComandosSql.cs" />
+    <Compile Include="Clases\CsConeccionServer.cs" />
+    <Compile Include="Clases\CsUsuario.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
