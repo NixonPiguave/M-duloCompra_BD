@@ -105,6 +105,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formulario\FrmDepartamentos.resx">
+      <DependentUpon>FrmDepartamentos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formulario\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
