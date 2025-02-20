@@ -69,5 +69,15 @@ namespace ModuloDeCompra_BD.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imagen_desenfocada {
+            get {
+                object obj = ResourceManager.GetObject("imagen_desenfocada", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
