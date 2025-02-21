@@ -1,6 +1,6 @@
 ﻿namespace ModuloDeCompra_BD.Formulario
 {
-    partial class FrmInventario
+    partial class FrmMovInventario
     {
         /// <summary>
         /// Required designer variable.

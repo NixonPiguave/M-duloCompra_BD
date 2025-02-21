@@ -1,6 +1,6 @@
 ﻿namespace ModuloDeCompra_BD.Formulario
 {
-    partial class FrmRoles
+    partial class FrmUsuarios
     {
         /// <summary>
         /// Required designer variable.
@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRoles));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmUsuarios));
             this.guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.imgEditar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.imgEliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.imgEditar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.imgEliminar = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,6 +61,22 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(1164, 489);
             this.dataGridView1.TabIndex = 23;
+            // 
+            // imgEditar
+            // 
+            this.imgEditar.HeaderText = "Editar";
+            this.imgEditar.Image = ((System.Drawing.Image)(resources.GetObject("imgEditar.Image")));
+            this.imgEditar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.imgEditar.Name = "imgEditar";
+            this.imgEditar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // imgEliminar
+            // 
+            this.imgEliminar.HeaderText = "Eliminar";
+            this.imgEliminar.Image = ((System.Drawing.Image)(resources.GetObject("imgEliminar.Image")));
+            this.imgEliminar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.imgEliminar.Name = "imgEliminar";
+            this.imgEliminar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // guna2Button1
             // 
@@ -94,34 +110,18 @@
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             this.dataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
-            // imgEditar
-            // 
-            this.imgEditar.HeaderText = "Editar";
-            this.imgEditar.Image = ((System.Drawing.Image)(resources.GetObject("imgEditar.Image")));
-            this.imgEditar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.imgEditar.Name = "imgEditar";
-            this.imgEditar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // imgEliminar
-            // 
-            this.imgEliminar.HeaderText = "Eliminar";
-            this.imgEliminar.Image = ((System.Drawing.Image)(resources.GetObject("imgEliminar.Image")));
-            this.imgEliminar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.imgEliminar.Name = "imgEliminar";
-            this.imgEliminar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // FrmRoles
+            // FrmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(159)))), ((int)(((byte)(242)))));
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1232, 729);
             this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.guna2HtmlLabel7);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "FrmRoles";
+            this.Name = "FrmUsuarios";
             this.Text = "FrmRoles";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

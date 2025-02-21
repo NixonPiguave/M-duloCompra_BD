@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="Clases\CsComandosSql.cs" />
     <Compile Include="Clases\CsConeccionServer.cs" />
+    <Compile Include="Clases\CsRoles_Depart.cs" />
     <Compile Include="Clases\CsUsuario.cs" />
     <Compile Include="Formulario\FrmAñadirUsuario.cs">
       <SubType>Form</SubType>
@@ -73,11 +74,11 @@
     <Compile Include="Formulario\FrmDepartamentos.Designer.cs">
       <DependentUpon>FrmDepartamentos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formulario\FrmInventario.cs">
+    <Compile Include="Formulario\FrmMovInventario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formulario\FrmInventario.Designer.cs">
-      <DependentUpon>FrmInventario.cs</DependentUpon>
+    <Compile Include="Formulario\FrmMovInventario.Designer.cs">
+      <DependentUpon>FrmMovInventario.cs</DependentUpon>
     </Compile>
     <Compile Include="Formulario\FrmLogin.cs">
       <SubType>Form</SubType>
@@ -103,11 +104,11 @@
     <Compile Include="Formulario\FrmProveedores.Designer.cs">
       <DependentUpon>FrmProveedores.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formulario\FrmRoles.cs">
+    <Compile Include="Formulario\FrmUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formulario\FrmRoles.Designer.cs">
-      <DependentUpon>FrmRoles.cs</DependentUpon>
+    <Compile Include="Formulario\FrmUsuarios.Designer.cs">
+      <DependentUpon>FrmUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -120,8 +121,8 @@
     <EmbeddedResource Include="Formulario\FrmProveedores.resx">
       <DependentUpon>FrmProveedores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formulario\FrmRoles.resx">
-      <DependentUpon>FrmRoles.cs</DependentUpon>
+    <EmbeddedResource Include="Formulario\FrmUsuarios.resx">
+      <DependentUpon>FrmUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

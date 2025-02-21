@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace ModuloDeCompra_BD.Formulario
 {
-    public partial class FrmRoles: Form
+    public partial class FrmMovInventario: Form
     {
-        public FrmRoles()
+        public FrmMovInventario()
         {
             InitializeComponent();
-        }
-
-        private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }
