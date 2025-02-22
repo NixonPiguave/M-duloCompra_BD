@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="Clases\CsComandosSql.cs" />
     <Compile Include="Clases\CsConeccionServer.cs" />
+    <Compile Include="Clases\CsEncriptarMDS.cs" />
     <Compile Include="Clases\CsUsuario.cs" />
     <Compile Include="Formulario\FrmCategorias.cs">
       <SubType>Form</SubType>
