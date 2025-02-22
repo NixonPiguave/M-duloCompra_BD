@@ -16,5 +16,11 @@ namespace ModuloDeCompra_BD.Formulario
         {
             InitializeComponent();
         }
+
+        private void yasergay_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Ahora Yaser es GAY");
+
+        }
     }
 }

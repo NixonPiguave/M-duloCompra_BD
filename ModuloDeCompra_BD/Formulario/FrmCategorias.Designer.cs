@@ -28,12 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.yasergay = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // yasergay
+            // 
+            this.yasergay.Location = new System.Drawing.Point(263, 149);
+            this.yasergay.Name = "yasergay";
+            this.yasergay.Size = new System.Drawing.Size(270, 150);
+            this.yasergay.TabIndex = 0;
+            this.yasergay.Text = "Convertir a yaser en gay";
+            this.yasergay.UseVisualStyleBackColor = true;
+            this.yasergay.Click += new System.EventHandler(this.yasergay_Click);
+            // 
+            // FrmCategorias
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.yasergay);
+            this.Name = "FrmCategorias";
             this.Text = "FrmCategorias";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button yasergay;
     }
 }
