@@ -73,9 +73,39 @@ namespace ModuloDeCompra_BD.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap compraslogo {
+            get {
+                object obj = ResourceManager.GetObject("compraslogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap imagen_desenfocada {
             get {
                 object obj = ResourceManager.GetObject("imagen_desenfocada", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lock_padlock_locked_protected_security_icon_131240 {
+            get {
+                object obj = ResourceManager.GetObject("lock_padlock_locked_protected_security_icon_131240", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user_account_person_avatar_icon_131248 {
+            get {
+                object obj = ResourceManager.GetObject("user_account_person_avatar_icon_131248", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

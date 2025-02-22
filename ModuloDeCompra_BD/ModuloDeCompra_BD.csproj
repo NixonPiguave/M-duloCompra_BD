@@ -147,5 +147,14 @@
   <ItemGroup>
     <None Include="Resources\imagen_desenfocada1.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\compraslogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_account_person_avatar_icon_131248.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock_padlock_locked_protected_security_icon_131240.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
