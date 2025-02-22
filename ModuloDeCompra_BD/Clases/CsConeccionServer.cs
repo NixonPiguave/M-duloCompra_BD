@@ -12,11 +12,11 @@ namespace ModuloDeCompra_BD.Clases
     public class CsConeccionServer
     {
         static SqlConnection con = new SqlConnection();
-        static string servidor = "  ";
-        static string bd = " ";
-        static string usuario = "  ";
-        static string password = "  ";
-        static string puerto = "  ";
+        static string servidor = "26.137.134.250,1433";
+        static string bd = "BDModuloCompr";
+        static string usuario = "sa";
+        static string password = "1234";
+        static string puerto = "1433";
 
         //cadena de conexion para conectarse por vpn
         static string cadenaConexion = "Data Source=" + servidor + "," + puerto + ";" +
