@@ -59,7 +59,7 @@
             this.btnGuardar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
             this.btnGuardar.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(635, 381);
+            this.btnGuardar.Location = new System.Drawing.Point(963, 610);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(133, 53);
             this.btnGuardar.TabIndex = 6;
@@ -71,7 +71,7 @@
             this.guna2Panel1.Controls.Add(this.guna2HtmlLabel1);
             this.guna2Panel1.Location = new System.Drawing.Point(1, 7);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(799, 88);
+            this.guna2Panel1.Size = new System.Drawing.Size(1095, 88);
             this.guna2Panel1.TabIndex = 4;
             // 
             // guna2HtmlLabel1
@@ -95,7 +95,7 @@
             this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(25, 381);
+            this.guna2Button1.Location = new System.Drawing.Point(21, 596);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(133, 53);
             this.guna2Button1.TabIndex = 7;
@@ -284,13 +284,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1108, 675);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.guna2Panel2);
             this.Name = "FrmProductos";
             this.Text = "FrmProductos";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmProductos_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             this.guna2Panel2.ResumeLayout(false);

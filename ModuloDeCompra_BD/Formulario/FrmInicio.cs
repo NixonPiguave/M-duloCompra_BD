@@ -16,12 +16,23 @@ namespace ModuloDeCompra_BD.Formulario
         {
             InitializeComponent();
         }
-
+        private Form activeForm = null;
+        public void openChildForm(Form childForm)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            plFormHijos.Controls.Add(childForm);
+            plFormHijos.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
-            Frm_IncioSesion iniciarSesion = new Frm_IncioSesion();
-            iniciarSesion.ShowDialog();
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -37,43 +48,43 @@ namespace ModuloDeCompra_BD.Formulario
         private void btnCategoria_Click(object sender, EventArgs e)
         {
             FrmCategorias frmCategoria = new FrmCategorias();
-            frmCategoria.ShowDialog();
+            openChildForm(frmCategoria);
         }
 
         private void btnDepartamento_Click(object sender, EventArgs e)
         {
             FrmDepartamentos frmDepartamentos = new FrmDepartamentos();
-            frmDepartamentos.ShowDialog();
+            openChildForm(frmDepartamentos);
         }
 
         private void btnInventario_Click(object sender, EventArgs e)
         {
-            FrmInventario frmInventario = new FrmInventario();  
-            frmInventario.ShowDialog();
+            FrmInventario frmInventario = new FrmInventario();
+            openChildForm(frmInventario);
         }
 
         private void btnProducto_Click(object sender, EventArgs e)
         {
             FrmProductos frmProductos = new FrmProductos();
-            frmProductos.ShowDialog();
+            openChildForm(frmProductos);
         }
 
         private void btnProveedor_Click(object sender, EventArgs e)
         {
             FrmProveedores frmProveedores = new FrmProveedores();
-            frmProveedores.ShowDialog();
+            openChildForm(frmProveedores);
         }
 
         private void btnRol_Click(object sender, EventArgs e)
         {
             FrmRoles FrmRol = new FrmRoles();
-            FrmRol.ShowDialog();
+            openChildForm(FrmRol);
         }
 
         private void btnServicio_Click(object sender, EventArgs e)
         {
             FrmServicios frmServicio = new FrmServicios();
-            frmServicio.ShowDialog();
+            openChildForm(frmServicio);
         }
     }
 }

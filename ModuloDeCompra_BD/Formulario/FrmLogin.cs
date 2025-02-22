@@ -1,4 +1,5 @@
 ﻿using ModuloDeCompra_BD.Clases;
+using ModuloDeCompra_BD.Formulario;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -44,7 +45,10 @@ namespace ModuloDeCompra_BD
         private void btnLogin_Click(object sender, EventArgs e)
         {
             conex = CsConeccionServer.ObtenerConexion();
-
+            FrmInicio inicio = new FrmInicio();
+            this.Hide();
+            inicio.ShowDialog();
+            this.Show();
         }
     }
 }
