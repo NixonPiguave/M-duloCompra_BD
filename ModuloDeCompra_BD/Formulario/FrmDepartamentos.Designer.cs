@@ -37,8 +37,8 @@
             this.txtnombredepartamento = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btnBuscar = new Guna.UI2.WinForms.Guna2Button();
-            this.cmbID = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.cmbnombre = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cmbIDdepartamento = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cmbnombredepartamento = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDepartamento)).BeginInit();
             this.SuspendLayout();
@@ -135,6 +135,7 @@
             this.txtnombredepartamento.SelectedText = "";
             this.txtnombredepartamento.Size = new System.Drawing.Size(200, 36);
             this.txtnombredepartamento.TabIndex = 3;
+            this.txtnombredepartamento.TextChanged += new System.EventHandler(this.txtnombredepartamento_TextChanged);
             // 
             // guna2HtmlLabel2
             // 
@@ -161,35 +162,35 @@
             this.btnBuscar.TabIndex = 4;
             this.btnBuscar.Text = "Buscar";
             // 
-            // cmbID
+            // cmbIDdepartamento
             // 
-            this.cmbID.BackColor = System.Drawing.Color.Transparent;
-            this.cmbID.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbID.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbID.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cmbID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cmbID.ItemHeight = 30;
-            this.cmbID.Location = new System.Drawing.Point(3, 283);
-            this.cmbID.Name = "cmbID";
-            this.cmbID.Size = new System.Drawing.Size(174, 36);
-            this.cmbID.TabIndex = 6;
+            this.cmbIDdepartamento.BackColor = System.Drawing.Color.Transparent;
+            this.cmbIDdepartamento.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbIDdepartamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbIDdepartamento.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbIDdepartamento.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbIDdepartamento.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmbIDdepartamento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmbIDdepartamento.ItemHeight = 30;
+            this.cmbIDdepartamento.Location = new System.Drawing.Point(3, 283);
+            this.cmbIDdepartamento.Name = "cmbIDdepartamento";
+            this.cmbIDdepartamento.Size = new System.Drawing.Size(174, 36);
+            this.cmbIDdepartamento.TabIndex = 6;
             // 
-            // cmbnombre
+            // cmbnombredepartamento
             // 
-            this.cmbnombre.BackColor = System.Drawing.Color.Transparent;
-            this.cmbnombre.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbnombre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbnombre.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbnombre.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbnombre.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cmbnombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cmbnombre.ItemHeight = 30;
-            this.cmbnombre.Location = new System.Drawing.Point(183, 283);
-            this.cmbnombre.Name = "cmbnombre";
-            this.cmbnombre.Size = new System.Drawing.Size(174, 36);
-            this.cmbnombre.TabIndex = 7;
+            this.cmbnombredepartamento.BackColor = System.Drawing.Color.Transparent;
+            this.cmbnombredepartamento.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbnombredepartamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbnombredepartamento.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbnombredepartamento.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbnombredepartamento.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmbnombredepartamento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmbnombredepartamento.ItemHeight = 30;
+            this.cmbnombredepartamento.Location = new System.Drawing.Point(183, 283);
+            this.cmbnombredepartamento.Name = "cmbnombredepartamento";
+            this.cmbnombredepartamento.Size = new System.Drawing.Size(174, 36);
+            this.cmbnombredepartamento.TabIndex = 7;
             // 
             // guna2HtmlLabel3
             // 
@@ -207,8 +208,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.guna2HtmlLabel3);
-            this.Controls.Add(this.cmbnombre);
-            this.Controls.Add(this.cmbID);
+            this.Controls.Add(this.cmbnombredepartamento);
+            this.Controls.Add(this.cmbIDdepartamento);
             this.Controls.Add(this.guna2HtmlLabel2);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtnombredepartamento);
@@ -232,8 +233,8 @@
         private Guna.UI2.WinForms.Guna2TextBox txtnombredepartamento;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2Button btnBuscar;
-        private Guna.UI2.WinForms.Guna2ComboBox cmbID;
-        private Guna.UI2.WinForms.Guna2ComboBox cmbnombre;
+        private Guna.UI2.WinForms.Guna2ComboBox cmbIDdepartamento;
+        private Guna.UI2.WinForms.Guna2ComboBox cmbnombredepartamento;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
     }
 }

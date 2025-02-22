@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace ModuloDeCompra_BD.Formulario
 {
-    public partial class FrmDepartamentos: Form
+    public partial class FrmServicios: Form
     {
-        public FrmDepartamentos()
+        public FrmServicios()
         {
             InitializeComponent();
         }
 
-        private void txtnombredepartamento_TextChanged(object sender, EventArgs e)
+        private void FrmServicios_Load(object sender, EventArgs e)
         {
 
         }
