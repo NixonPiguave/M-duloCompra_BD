@@ -16,5 +16,25 @@ namespace ModuloDeCompra_BD
         {
             InitializeComponent();
         }
+        int PosY = 0;
+        int PosX = 0;
+        private void pnlMover_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left)
+            {
+                PosX = e.X;
+                PosY = e.Y;
+            }
+            else
+            {
+                Left = Left + (e.X - PosX);
+                Top = Top + (e.Y - PosY);
+            }
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
