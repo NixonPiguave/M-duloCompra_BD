@@ -1,7 +1,9 @@
-﻿using System;
+﻿using ModuloDeCompra_BD.Clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,9 +14,11 @@ namespace ModuloDeCompra_BD
 {
     public partial class Frm_IncioSesion : Form
     {
+        private static SqlConnection conex;
         public Frm_IncioSesion()
         {
             InitializeComponent();
+            
         }
         int PosY = 0;
         int PosX = 0;
@@ -35,6 +39,12 @@ namespace ModuloDeCompra_BD
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            conex = CsConeccionServer.ObtenerConexion();
+
         }
     }
 }

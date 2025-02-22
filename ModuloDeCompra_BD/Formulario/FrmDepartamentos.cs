@@ -21,5 +21,10 @@ namespace ModuloDeCompra_BD.Formulario
         {
 
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

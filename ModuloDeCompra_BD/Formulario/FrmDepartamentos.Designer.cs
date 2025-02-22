@@ -40,6 +40,7 @@
             this.cmbIDdepartamento = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cmbnombredepartamento = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.btnSalir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDepartamento)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,7 +72,8 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvDepartamento.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvDepartamento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDepartamento.ColumnHeadersHeight = 4;
+            this.dgvDepartamento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -97,7 +99,7 @@
             this.dgvDepartamento.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvDepartamento.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvDepartamento.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dgvDepartamento.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDepartamento.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvDepartamento.ThemeStyle.HeaderStyle.Height = 4;
             this.dgvDepartamento.ThemeStyle.ReadOnly = false;
             this.dgvDepartamento.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
@@ -202,11 +204,22 @@
             this.guna2HtmlLabel3.TabIndex = 8;
             this.guna2HtmlLabel3.Text = "ID  Departamento";
             // 
+            // btnSalir
+            // 
+            this.btnSalir.Location = new System.Drawing.Point(12, 415);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.TabIndex = 9;
+            this.btnSalir.Text = "salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
             // FrmDepartamentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.guna2HtmlLabel3);
             this.Controls.Add(this.cmbnombredepartamento);
             this.Controls.Add(this.cmbIDdepartamento);
@@ -236,5 +249,6 @@
         private Guna.UI2.WinForms.Guna2ComboBox cmbIDdepartamento;
         private Guna.UI2.WinForms.Guna2ComboBox cmbnombredepartamento;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
+        private System.Windows.Forms.Button btnSalir;
     }
 }

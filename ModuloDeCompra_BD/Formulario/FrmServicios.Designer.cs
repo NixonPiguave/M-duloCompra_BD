@@ -44,6 +44,7 @@
             this.btnBuscarservicio = new Guna.UI2.WinForms.Guna2Button();
             this.btneliminar = new Guna.UI2.WinForms.Guna2Button();
             this.btneditar = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDepartamento)).BeginInit();
             this.SuspendLayout();
             // 
@@ -264,11 +265,28 @@
             this.btneditar.TabIndex = 15;
             this.btneditar.Text = "editar";
             // 
+            // guna2Button1
+            // 
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.FillColor = System.Drawing.Color.SlateBlue;
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.Location = new System.Drawing.Point(12, 12);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(81, 30);
+            this.guna2Button1.TabIndex = 16;
+            this.guna2Button1.Text = "Salir";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            // 
             // FrmServicios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.btneditar);
             this.Controls.Add(this.btneliminar);
             this.Controls.Add(this.guna2HtmlLabel3);
@@ -307,5 +325,6 @@
         private Guna.UI2.WinForms.Guna2Button btnBuscarservicio;
         private Guna.UI2.WinForms.Guna2Button btneliminar;
         private Guna.UI2.WinForms.Guna2Button btneditar;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }
