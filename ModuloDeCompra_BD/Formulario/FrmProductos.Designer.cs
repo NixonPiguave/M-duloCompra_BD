@@ -28,25 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.gnLbProducto = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btnRegistrarProducto = new Guna.UI2.WinForms.Guna2Button();
             this.btnDetalleProducto = new Guna.UI2.WinForms.Guna2Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txtFiltrarProductos = new Guna.UI2.WinForms.Guna2TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
+            this.guna2Panel1.SuspendLayout();
+            this.guna2Panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // gnLbProducto
-            // 
-            this.gnLbProducto.BackColor = System.Drawing.Color.Transparent;
-            this.gnLbProducto.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gnLbProducto.ForeColor = System.Drawing.Color.Indigo;
-            this.gnLbProducto.Location = new System.Drawing.Point(325, 41);
-            this.gnLbProducto.Name = "gnLbProducto";
-            this.gnLbProducto.Size = new System.Drawing.Size(164, 52);
-            this.gnLbProducto.TabIndex = 0;
-            this.gnLbProducto.Text = "Producto";
             // 
             // btnRegistrarProducto
             // 
@@ -58,7 +51,7 @@
             this.btnRegistrarProducto.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
             this.btnRegistrarProducto.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnRegistrarProducto.ForeColor = System.Drawing.Color.White;
-            this.btnRegistrarProducto.Location = new System.Drawing.Point(41, 117);
+            this.btnRegistrarProducto.Location = new System.Drawing.Point(14, 86);
             this.btnRegistrarProducto.Name = "btnRegistrarProducto";
             this.btnRegistrarProducto.Size = new System.Drawing.Size(128, 45);
             this.btnRegistrarProducto.TabIndex = 1;
@@ -74,25 +67,26 @@
             this.btnDetalleProducto.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
             this.btnDetalleProducto.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnDetalleProducto.ForeColor = System.Drawing.Color.White;
-            this.btnDetalleProducto.Location = new System.Drawing.Point(41, 180);
+            this.btnDetalleProducto.Location = new System.Drawing.Point(14, 152);
             this.btnDetalleProducto.Name = "btnDetalleProducto";
-            this.btnDetalleProducto.Size = new System.Drawing.Size(128, 45);
+            this.btnDetalleProducto.Size = new System.Drawing.Size(128, 49);
             this.btnDetalleProducto.TabIndex = 4;
             this.btnDetalleProducto.Text = "Detalle producto";
             // 
-            // dataGridView1
+            // dgvProductos
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(221, 117);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(553, 292);
-            this.dataGridView1.TabIndex = 5;
+            this.dgvProductos.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProductos.Location = new System.Drawing.Point(235, 144);
+            this.dgvProductos.Name = "dgvProductos";
+            this.dgvProductos.Size = new System.Drawing.Size(553, 292);
+            this.dgvProductos.TabIndex = 5;
             // 
             // guna2HtmlLabel1
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(564, 90);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(564, 119);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(96, 19);
             this.guna2HtmlLabel1.TabIndex = 6;
@@ -109,12 +103,43 @@
             this.txtFiltrarProductos.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtFiltrarProductos.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtFiltrarProductos.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtFiltrarProductos.Location = new System.Drawing.Point(666, 90);
+            this.txtFiltrarProductos.Location = new System.Drawing.Point(666, 119);
             this.txtFiltrarProductos.Name = "txtFiltrarProductos";
             this.txtFiltrarProductos.PlaceholderText = "";
             this.txtFiltrarProductos.SelectedText = "";
             this.txtFiltrarProductos.Size = new System.Drawing.Size(108, 21);
             this.txtFiltrarProductos.TabIndex = 7;
+            // 
+            // guna2Panel1
+            // 
+            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
+            this.guna2Panel1.Controls.Add(this.guna2HtmlLabel2);
+            this.guna2Panel1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.guna2Panel1.Location = new System.Drawing.Point(-2, -1);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Size = new System.Drawing.Size(801, 72);
+            this.guna2Panel1.TabIndex = 8;
+            // 
+            // guna2HtmlLabel2
+            // 
+            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.White;
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(322, 12);
+            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(155, 49);
+            this.guna2HtmlLabel2.TabIndex = 9;
+            this.guna2HtmlLabel2.Text = "Producto";
+            // 
+            // guna2Panel2
+            // 
+            this.guna2Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(92)))), ((int)(((byte)(197)))));
+            this.guna2Panel2.Controls.Add(this.btnRegistrarProducto);
+            this.guna2Panel2.Controls.Add(this.btnDetalleProducto);
+            this.guna2Panel2.Location = new System.Drawing.Point(-2, 70);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.Size = new System.Drawing.Size(168, 380);
+            this.guna2Panel2.TabIndex = 10;
             // 
             // FrmProductos
             // 
@@ -122,28 +147,31 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.guna2Panel2);
+            this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.txtFiltrarProductos);
             this.Controls.Add(this.guna2HtmlLabel1);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.btnDetalleProducto);
-            this.Controls.Add(this.btnRegistrarProducto);
-            this.Controls.Add(this.gnLbProducto);
+            this.Controls.Add(this.dgvProductos);
             this.Name = "FrmProductos";
             this.Text = "FrmProductos";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
+            this.guna2Panel1.ResumeLayout(false);
+            this.guna2Panel1.PerformLayout();
+            this.guna2Panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2HtmlLabel gnLbProducto;
         private Guna.UI2.WinForms.Guna2Button btnRegistrarProducto;
         private Guna.UI2.WinForms.Guna2Button btnDetalleProducto;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvProductos;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2TextBox txtFiltrarProductos;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
     }
 }
