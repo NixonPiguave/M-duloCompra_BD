@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ModuloDeCompra_BD.Clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,9 +23,9 @@ namespace ModuloDeCompra_BD.Formulario
             this.Close();
         }
 
-        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        private void FrmProveedores_Load(object sender, EventArgs e)
         {
-
+            dvgProveedores.DataSource = CsComandosSql.RetornaDatos($"select * from Proveedores");
         }
     }
 }
