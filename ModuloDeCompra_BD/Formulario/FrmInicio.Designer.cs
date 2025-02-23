@@ -77,7 +77,7 @@
             this.pnlSuperior.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSuperior.Location = new System.Drawing.Point(0, 0);
             this.pnlSuperior.Name = "pnlSuperior";
-            this.pnlSuperior.Size = new System.Drawing.Size(1343, 61);
+            this.pnlSuperior.Size = new System.Drawing.Size(1411, 61);
             this.pnlSuperior.TabIndex = 1;
             // 
             // guna2HtmlLabel1
@@ -97,7 +97,7 @@
             this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
-            this.btnMinimizar.Location = new System.Drawing.Point(1191, 12);
+            this.btnMinimizar.Location = new System.Drawing.Point(1259, 12);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(67, 37);
             this.btnMinimizar.TabIndex = 1;
@@ -110,7 +110,7 @@
             this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(1264, 12);
+            this.btnCerrar.Location = new System.Drawing.Point(1332, 12);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(67, 37);
             this.btnCerrar.TabIndex = 0;
@@ -145,7 +145,7 @@
             this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlMenu.Location = new System.Drawing.Point(0, 61);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(263, 823);
+            this.pnlMenu.Size = new System.Drawing.Size(263, 710);
             this.pnlMenu.TabIndex = 2;
             // 
             // btnCerrarSesion
@@ -155,7 +155,7 @@
             this.btnCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrarSesion.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F);
-            this.btnCerrarSesion.Location = new System.Drawing.Point(3, 760);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(3, 647);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
             this.btnCerrarSesion.Size = new System.Drawing.Size(255, 51);
             this.btnCerrarSesion.TabIndex = 3;
@@ -169,7 +169,7 @@
             this.ptbServicio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ptbServicio.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ptbServicio.Image = ((System.Drawing.Image)(resources.GetObject("ptbServicio.Image")));
-            this.ptbServicio.Location = new System.Drawing.Point(208, 634);
+            this.ptbServicio.Location = new System.Drawing.Point(205, 532);
             this.ptbServicio.Name = "ptbServicio";
             this.ptbServicio.Size = new System.Drawing.Size(50, 46);
             this.ptbServicio.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -182,7 +182,7 @@
             this.btnServicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnServicio.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnServicio.ForeColor = System.Drawing.Color.SlateBlue;
-            this.btnServicio.Location = new System.Drawing.Point(19, 632);
+            this.btnServicio.Location = new System.Drawing.Point(16, 530);
             this.btnServicio.Name = "btnServicio";
             this.btnServicio.Size = new System.Drawing.Size(241, 51);
             this.btnServicio.TabIndex = 19;
@@ -194,7 +194,7 @@
             // pnlServicio
             // 
             this.pnlServicio.BackColor = System.Drawing.Color.White;
-            this.pnlServicio.Location = new System.Drawing.Point(3, 632);
+            this.pnlServicio.Location = new System.Drawing.Point(0, 530);
             this.pnlServicio.Name = "pnlServicio";
             this.pnlServicio.Size = new System.Drawing.Size(10, 51);
             this.pnlServicio.TabIndex = 18;
@@ -205,7 +205,7 @@
             this.ptbRol.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ptbRol.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ptbRol.Image = ((System.Drawing.Image)(resources.GetObject("ptbRol.Image")));
-            this.ptbRol.Location = new System.Drawing.Point(208, 542);
+            this.ptbRol.Location = new System.Drawing.Point(205, 440);
             this.ptbRol.Name = "ptbRol";
             this.ptbRol.Size = new System.Drawing.Size(50, 46);
             this.ptbRol.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -218,11 +218,11 @@
             this.btnRol.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRol.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRol.ForeColor = System.Drawing.Color.SlateBlue;
-            this.btnRol.Location = new System.Drawing.Point(19, 540);
+            this.btnRol.Location = new System.Drawing.Point(16, 438);
             this.btnRol.Name = "btnRol";
             this.btnRol.Size = new System.Drawing.Size(241, 51);
             this.btnRol.TabIndex = 16;
-            this.btnRol.Text = "Rol";
+            this.btnRol.Text = "Usuario";
             this.btnRol.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRol.UseVisualStyleBackColor = true;
             this.btnRol.Click += new System.EventHandler(this.btnRol_Click);
@@ -230,7 +230,7 @@
             // pnlRol
             // 
             this.pnlRol.BackColor = System.Drawing.Color.White;
-            this.pnlRol.Location = new System.Drawing.Point(3, 540);
+            this.pnlRol.Location = new System.Drawing.Point(0, 438);
             this.pnlRol.Name = "pnlRol";
             this.pnlRol.Size = new System.Drawing.Size(10, 51);
             this.pnlRol.TabIndex = 15;
@@ -241,7 +241,7 @@
             this.ptbProveedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ptbProveedor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ptbProveedor.Image = ((System.Drawing.Image)(resources.GetObject("ptbProveedor.Image")));
-            this.ptbProveedor.Location = new System.Drawing.Point(208, 450);
+            this.ptbProveedor.Location = new System.Drawing.Point(205, 348);
             this.ptbProveedor.Name = "ptbProveedor";
             this.ptbProveedor.Size = new System.Drawing.Size(50, 46);
             this.ptbProveedor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -254,7 +254,7 @@
             this.btnProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProveedor.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProveedor.ForeColor = System.Drawing.Color.SlateBlue;
-            this.btnProveedor.Location = new System.Drawing.Point(19, 448);
+            this.btnProveedor.Location = new System.Drawing.Point(16, 346);
             this.btnProveedor.Name = "btnProveedor";
             this.btnProveedor.Size = new System.Drawing.Size(241, 51);
             this.btnProveedor.TabIndex = 13;
@@ -266,7 +266,7 @@
             // pnlProveedor
             // 
             this.pnlProveedor.BackColor = System.Drawing.Color.White;
-            this.pnlProveedor.Location = new System.Drawing.Point(3, 448);
+            this.pnlProveedor.Location = new System.Drawing.Point(0, 346);
             this.pnlProveedor.Name = "pnlProveedor";
             this.pnlProveedor.Size = new System.Drawing.Size(10, 51);
             this.pnlProveedor.TabIndex = 12;
@@ -277,7 +277,7 @@
             this.ptbProducto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ptbProducto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ptbProducto.Image = ((System.Drawing.Image)(resources.GetObject("ptbProducto.Image")));
-            this.ptbProducto.Location = new System.Drawing.Point(208, 358);
+            this.ptbProducto.Location = new System.Drawing.Point(205, 265);
             this.ptbProducto.Name = "ptbProducto";
             this.ptbProducto.Size = new System.Drawing.Size(50, 46);
             this.ptbProducto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -290,7 +290,7 @@
             this.btnProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProducto.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProducto.ForeColor = System.Drawing.Color.SlateBlue;
-            this.btnProducto.Location = new System.Drawing.Point(19, 356);
+            this.btnProducto.Location = new System.Drawing.Point(16, 263);
             this.btnProducto.Name = "btnProducto";
             this.btnProducto.Size = new System.Drawing.Size(241, 51);
             this.btnProducto.TabIndex = 10;
@@ -302,7 +302,7 @@
             // pnlProducto
             // 
             this.pnlProducto.BackColor = System.Drawing.Color.White;
-            this.pnlProducto.Location = new System.Drawing.Point(3, 356);
+            this.pnlProducto.Location = new System.Drawing.Point(0, 263);
             this.pnlProducto.Name = "pnlProducto";
             this.pnlProducto.Size = new System.Drawing.Size(10, 51);
             this.pnlProducto.TabIndex = 9;
@@ -313,7 +313,7 @@
             this.ptbInventario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ptbInventario.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ptbInventario.Image = ((System.Drawing.Image)(resources.GetObject("ptbInventario.Image")));
-            this.ptbInventario.Location = new System.Drawing.Point(208, 267);
+            this.ptbInventario.Location = new System.Drawing.Point(205, 174);
             this.ptbInventario.Name = "ptbInventario";
             this.ptbInventario.Size = new System.Drawing.Size(50, 46);
             this.ptbInventario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -326,7 +326,7 @@
             this.btnInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInventario.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInventario.ForeColor = System.Drawing.Color.SlateBlue;
-            this.btnInventario.Location = new System.Drawing.Point(19, 264);
+            this.btnInventario.Location = new System.Drawing.Point(16, 171);
             this.btnInventario.Name = "btnInventario";
             this.btnInventario.Size = new System.Drawing.Size(241, 51);
             this.btnInventario.TabIndex = 7;
@@ -338,7 +338,7 @@
             // pnlInventario
             // 
             this.pnlInventario.BackColor = System.Drawing.Color.White;
-            this.pnlInventario.Location = new System.Drawing.Point(3, 264);
+            this.pnlInventario.Location = new System.Drawing.Point(0, 171);
             this.pnlInventario.Name = "pnlInventario";
             this.pnlInventario.Size = new System.Drawing.Size(10, 51);
             this.pnlInventario.TabIndex = 6;
@@ -349,7 +349,7 @@
             this.ptbDepartamento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ptbDepartamento.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ptbDepartamento.Image = ((System.Drawing.Image)(resources.GetObject("ptbDepartamento.Image")));
-            this.ptbDepartamento.Location = new System.Drawing.Point(208, 175);
+            this.ptbDepartamento.Location = new System.Drawing.Point(205, 82);
             this.ptbDepartamento.Name = "ptbDepartamento";
             this.ptbDepartamento.Size = new System.Drawing.Size(50, 46);
             this.ptbDepartamento.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -362,7 +362,7 @@
             this.btnDepartamento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDepartamento.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDepartamento.ForeColor = System.Drawing.Color.SlateBlue;
-            this.btnDepartamento.Location = new System.Drawing.Point(19, 172);
+            this.btnDepartamento.Location = new System.Drawing.Point(16, 79);
             this.btnDepartamento.Name = "btnDepartamento";
             this.btnDepartamento.Size = new System.Drawing.Size(241, 51);
             this.btnDepartamento.TabIndex = 4;
@@ -374,7 +374,7 @@
             // pnlDepartamento
             // 
             this.pnlDepartamento.BackColor = System.Drawing.Color.White;
-            this.pnlDepartamento.Location = new System.Drawing.Point(3, 172);
+            this.pnlDepartamento.Location = new System.Drawing.Point(0, 79);
             this.pnlDepartamento.Name = "pnlDepartamento";
             this.pnlDepartamento.Size = new System.Drawing.Size(10, 51);
             this.pnlDepartamento.TabIndex = 3;
@@ -385,7 +385,7 @@
             this.ptbCategoria.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ptbCategoria.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ptbCategoria.Image = ((System.Drawing.Image)(resources.GetObject("ptbCategoria.Image")));
-            this.ptbCategoria.Location = new System.Drawing.Point(208, 83);
+            this.ptbCategoria.Location = new System.Drawing.Point(207, 6);
             this.ptbCategoria.Name = "ptbCategoria";
             this.ptbCategoria.Size = new System.Drawing.Size(50, 46);
             this.ptbCategoria.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -398,7 +398,7 @@
             this.btnCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCategoria.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCategoria.ForeColor = System.Drawing.Color.SlateBlue;
-            this.btnCategoria.Location = new System.Drawing.Point(19, 80);
+            this.btnCategoria.Location = new System.Drawing.Point(16, 6);
             this.btnCategoria.Name = "btnCategoria";
             this.btnCategoria.Size = new System.Drawing.Size(241, 51);
             this.btnCategoria.TabIndex = 1;
@@ -410,7 +410,7 @@
             // pnlCategoria
             // 
             this.pnlCategoria.BackColor = System.Drawing.Color.White;
-            this.pnlCategoria.Location = new System.Drawing.Point(3, 80);
+            this.pnlCategoria.Location = new System.Drawing.Point(3, 6);
             this.pnlCategoria.Name = "pnlCategoria";
             this.pnlCategoria.Size = new System.Drawing.Size(10, 51);
             this.pnlCategoria.TabIndex = 0;
@@ -420,21 +420,21 @@
             this.plFormHijos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.plFormHijos.Location = new System.Drawing.Point(263, 61);
             this.plFormHijos.Name = "plFormHijos";
-            this.plFormHijos.Size = new System.Drawing.Size(1080, 823);
+            this.plFormHijos.Size = new System.Drawing.Size(1148, 710);
             this.plFormHijos.TabIndex = 3;
             // 
             // FrmInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1343, 884);
+            this.ClientSize = new System.Drawing.Size(1411, 771);
             this.Controls.Add(this.plFormHijos);
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.pnlSuperior);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmInicio";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmInicio";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.pnlSuperior.ResumeLayout(false);
             this.pnlSuperior.PerformLayout();
             this.pnlMenu.ResumeLayout(false);

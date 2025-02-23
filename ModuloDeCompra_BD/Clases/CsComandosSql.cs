@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics.Contracts;
 
 namespace ModuloDeCompra_BD.Clases
 {
@@ -82,6 +83,21 @@ namespace ModuloDeCompra_BD.Clases
             SqlDataReader leer = comando.ExecuteReader();
             bool result = leer.Read();
             return result;
+        }
+        public static string verificarlogin(string cedula, string Contraseña)
+        {
+            string rol = string.Empty;
+            Conectar();
+
+            string query = $"select R.Rol from Usuario U inner join Roles R on U.Rol=R.ID_Rol where Cedula= '{cedula}' and Contraseña='{Contraseña}'";
+            ConfigurarComando(query);
+            SqlDataReader reader = comando.ExecuteReader();
+            if (reader.Read())
+            {
+                rol = reader["Rol"].ToString();
+            }
+            Desconectar();
+            return rol;
         }
 
         //este metodo es para generar secuenciales para facturas por ejemplo

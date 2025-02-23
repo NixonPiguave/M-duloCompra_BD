@@ -77,8 +77,8 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void btnRol_Click(object sender, EventArgs e)
         {
-            FrmRoles FrmRol = new FrmRoles();
-            openChildForm(FrmRol);
+            FrmUsuarios user = new FrmUsuarios();
+            openChildForm(user);
         }
 
         private void btnServicio_Click(object sender, EventArgs e)

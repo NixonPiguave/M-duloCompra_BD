@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ModuloDeCompra_BD.Formulario
 {
-    public partial class FrmRoles: Form
+    public partial class FrmModificarUser: Form
     {
-        public FrmRoles()
+        public FrmModificarUser()
         {
             InitializeComponent();
         }

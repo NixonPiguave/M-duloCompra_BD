@@ -77,6 +77,12 @@
     <Compile Include="Formulario\FrmInventario.Designer.cs">
       <DependentUpon>FrmInventario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formulario\FrmListadoDepa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\FrmListadoDepa.Designer.cs">
+      <DependentUpon>FrmListadoDepa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formulario\FrmListadoCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +107,12 @@
     <Compile Include="Formulario\FrmInicio.Designer.cs">
       <DependentUpon>FrmInicio.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formulario\FrmModificarUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\FrmModificarUser.Designer.cs">
+      <DependentUpon>FrmModificarUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formulario\FrmProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,11 +125,11 @@
     <Compile Include="Formulario\FrmProveedores.Designer.cs">
       <DependentUpon>FrmProveedores.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formulario\FrmRoles.cs">
+    <Compile Include="Formulario\FrmUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formulario\FrmRoles.Designer.cs">
-      <DependentUpon>FrmRoles.cs</DependentUpon>
+    <Compile Include="Formulario\FrmUsuarios.Designer.cs">
+      <DependentUpon>FrmUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Formulario\FrmServicios.cs">
       <SubType>Form</SubType>
@@ -136,6 +148,12 @@
     <EmbeddedResource Include="Formulario\FrmInicio.resx">
       <DependentUpon>FrmInicio.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\FrmInventario.resx">
+      <DependentUpon>FrmInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\FrmListadoDepa.resx">
+      <DependentUpon>FrmListadoDepa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formulario\FrmListadoCategoria.resx">
       <DependentUpon>FrmListadoCategoria.cs</DependentUpon>
     </EmbeddedResource>
@@ -145,30 +163,36 @@
     <EmbeddedResource Include="Formulario\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\FrmModificarUser.resx">
+      <DependentUpon>FrmModificarUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formulario\FrmProductos.resx">
       <DependentUpon>FrmProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\FrmProveedores.resx">
       <DependentUpon>FrmProveedores.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\FrmUsuarios.resx">
+      <DependentUpon>FrmUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formulario\FrmServicios.resx">
       <DependentUpon>FrmServicios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -192,6 +216,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\lock_padlock_locked_protected_security_icon_131240.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ojo_cerrado.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ojo_abierto.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -25,7 +25,7 @@ namespace ModuloDeCompra_BD.Clases
 
         public bool AñadirProducto()
         {
-            string query = $"INSERT INTO Producto(Nom_Producto, Precio_Unit, ID_IVA, ID_Estado, ID_CAT, ID_Prov) VALUES ({Nom_Producto1}', {Precio_Unit1}, {Iva1}, {Estado1}, {Categoria1}, {Proveedor1});";
+            string query = $"INSERT INTO Producto(Nom_Producto, Precio_Unit, ID_IVA, ID_Estado, ID_CAT, ID_Prov) VALUES ('{Nom_Producto1}', {Precio_Unit1}, {Iva1}, {Estado1}, {Categoria1}, {Proveedor1});";
            
             return CsComandosSql.InserDeletUpdate(query);
         }

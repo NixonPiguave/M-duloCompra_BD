@@ -40,7 +40,6 @@
             this.cmbIDdepartamento = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cmbnombredepartamento = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.btnSalir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDepartamento)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,7 +52,7 @@
             this.btnagregar.FillColor = System.Drawing.Color.SlateBlue;
             this.btnagregar.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnagregar.ForeColor = System.Drawing.Color.White;
-            this.btnagregar.Location = new System.Drawing.Point(109, 152);
+            this.btnagregar.Location = new System.Drawing.Point(190, 139);
             this.btnagregar.Name = "btnagregar";
             this.btnagregar.Size = new System.Drawing.Size(151, 30);
             this.btnagregar.TabIndex = 0;
@@ -83,10 +82,10 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvDepartamento.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDepartamento.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvDepartamento.Location = new System.Drawing.Point(372, 24);
+            this.dgvDepartamento.Location = new System.Drawing.Point(606, 51);
             this.dgvDepartamento.Name = "dgvDepartamento";
             this.dgvDepartamento.RowHeadersVisible = false;
-            this.dgvDepartamento.Size = new System.Drawing.Size(416, 386);
+            this.dgvDepartamento.Size = new System.Drawing.Size(515, 536);
             this.dgvDepartamento.TabIndex = 1;
             this.dgvDepartamento.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvDepartamento.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -114,7 +113,7 @@
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(118, 89);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(199, 76);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(129, 15);
             this.guna2HtmlLabel1.TabIndex = 2;
@@ -131,7 +130,7 @@
             this.txtnombredepartamento.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtnombredepartamento.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtnombredepartamento.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtnombredepartamento.Location = new System.Drawing.Point(85, 110);
+            this.txtnombredepartamento.Location = new System.Drawing.Point(166, 97);
             this.txtnombredepartamento.Name = "txtnombredepartamento";
             this.txtnombredepartamento.PlaceholderText = "";
             this.txtnombredepartamento.SelectedText = "";
@@ -143,7 +142,7 @@
             // 
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(207, 262);
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(288, 249);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             this.guna2HtmlLabel2.Size = new System.Drawing.Size(129, 15);
             this.guna2HtmlLabel2.TabIndex = 5;
@@ -158,7 +157,7 @@
             this.btnBuscar.FillColor = System.Drawing.Color.SlateBlue;
             this.btnBuscar.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnBuscar.ForeColor = System.Drawing.Color.White;
-            this.btnBuscar.Location = new System.Drawing.Point(109, 325);
+            this.btnBuscar.Location = new System.Drawing.Point(190, 312);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(151, 30);
             this.btnBuscar.TabIndex = 4;
@@ -174,7 +173,7 @@
             this.cmbIDdepartamento.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmbIDdepartamento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cmbIDdepartamento.ItemHeight = 30;
-            this.cmbIDdepartamento.Location = new System.Drawing.Point(3, 283);
+            this.cmbIDdepartamento.Location = new System.Drawing.Point(84, 270);
             this.cmbIDdepartamento.Name = "cmbIDdepartamento";
             this.cmbIDdepartamento.Size = new System.Drawing.Size(174, 36);
             this.cmbIDdepartamento.TabIndex = 6;
@@ -189,7 +188,7 @@
             this.cmbnombredepartamento.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmbnombredepartamento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cmbnombredepartamento.ItemHeight = 30;
-            this.cmbnombredepartamento.Location = new System.Drawing.Point(183, 283);
+            this.cmbnombredepartamento.Location = new System.Drawing.Point(264, 270);
             this.cmbnombredepartamento.Name = "cmbnombredepartamento";
             this.cmbnombredepartamento.Size = new System.Drawing.Size(174, 36);
             this.cmbnombredepartamento.TabIndex = 7;
@@ -198,28 +197,17 @@
             // 
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(27, 262);
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(108, 249);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
             this.guna2HtmlLabel3.Size = new System.Drawing.Size(99, 15);
             this.guna2HtmlLabel3.TabIndex = 8;
             this.guna2HtmlLabel3.Text = "ID  Departamento";
             // 
-            // btnSalir
-            // 
-            this.btnSalir.Location = new System.Drawing.Point(12, 415);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 23);
-            this.btnSalir.TabIndex = 9;
-            this.btnSalir.Text = "salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
             // FrmDepartamentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnSalir);
+            this.ClientSize = new System.Drawing.Size(1148, 655);
             this.Controls.Add(this.guna2HtmlLabel3);
             this.Controls.Add(this.cmbnombredepartamento);
             this.Controls.Add(this.cmbIDdepartamento);
@@ -249,6 +237,5 @@
         private Guna.UI2.WinForms.Guna2ComboBox cmbIDdepartamento;
         private Guna.UI2.WinForms.Guna2ComboBox cmbnombredepartamento;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
-        private System.Windows.Forms.Button btnSalir;
     }
 }

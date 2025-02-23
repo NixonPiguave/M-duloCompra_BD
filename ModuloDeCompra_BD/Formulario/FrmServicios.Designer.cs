@@ -31,6 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmServicios));
             this.dgvDepartamento = new Guna.UI2.WinForms.Guna2DataGridView();
             this.txtnombreservicio = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -44,7 +45,7 @@
             this.btnBuscarservicio = new Guna.UI2.WinForms.Guna2Button();
             this.btneliminar = new Guna.UI2.WinForms.Guna2Button();
             this.btneditar = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDepartamento)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,7 +53,6 @@
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.dgvDepartamento.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvDepartamento.BackgroundColor = System.Drawing.Color.DarkGray;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -72,17 +72,17 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvDepartamento.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDepartamento.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvDepartamento.Location = new System.Drawing.Point(372, 27);
+            this.dgvDepartamento.Location = new System.Drawing.Point(32, 283);
             this.dgvDepartamento.Name = "dgvDepartamento";
             this.dgvDepartamento.RowHeadersVisible = false;
-            this.dgvDepartamento.Size = new System.Drawing.Size(416, 386);
+            this.dgvDepartamento.Size = new System.Drawing.Size(1086, 344);
             this.dgvDepartamento.TabIndex = 2;
             this.dgvDepartamento.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvDepartamento.ThemeStyle.AlternatingRowsStyle.Font = null;
             this.dgvDepartamento.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
             this.dgvDepartamento.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
             this.dgvDepartamento.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dgvDepartamento.ThemeStyle.BackColor = System.Drawing.Color.DarkGray;
+            this.dgvDepartamento.ThemeStyle.BackColor = System.Drawing.Color.White;
             this.dgvDepartamento.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvDepartamento.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.dgvDepartamento.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -110,7 +110,7 @@
             this.txtnombreservicio.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtnombreservicio.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtnombreservicio.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtnombreservicio.Location = new System.Drawing.Point(72, 58);
+            this.txtnombreservicio.Location = new System.Drawing.Point(43, 114);
             this.txtnombreservicio.Name = "txtnombreservicio";
             this.txtnombreservicio.PlaceholderText = "";
             this.txtnombreservicio.SelectedText = "";
@@ -121,7 +121,7 @@
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(115, 37);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(86, 93);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(96, 15);
             this.guna2HtmlLabel1.TabIndex = 5;
@@ -136,7 +136,7 @@
             this.btnagregar.FillColor = System.Drawing.Color.SlateBlue;
             this.btnagregar.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnagregar.ForeColor = System.Drawing.Color.White;
-            this.btnagregar.Location = new System.Drawing.Point(12, 184);
+            this.btnagregar.Location = new System.Drawing.Point(223, 182);
             this.btnagregar.Name = "btnagregar";
             this.btnagregar.Size = new System.Drawing.Size(151, 30);
             this.btnagregar.TabIndex = 4;
@@ -153,7 +153,7 @@
             this.txtServicio.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtServicio.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtServicio.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtServicio.Location = new System.Drawing.Point(72, 121);
+            this.txtServicio.Location = new System.Drawing.Point(284, 114);
             this.txtServicio.Name = "txtServicio";
             this.txtServicio.PlaceholderText = "";
             this.txtServicio.SelectedText = "";
@@ -164,7 +164,7 @@
             // 
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(124, 100);
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(336, 93);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             this.guna2HtmlLabel2.Size = new System.Drawing.Size(87, 15);
             this.guna2HtmlLabel2.TabIndex = 7;
@@ -174,7 +174,7 @@
             // 
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(36, 326);
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(673, 168);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
             this.guna2HtmlLabel3.Size = new System.Drawing.Size(66, 15);
             this.guna2HtmlLabel3.TabIndex = 13;
@@ -190,7 +190,7 @@
             this.cmbnombreservicio.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmbnombreservicio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cmbnombreservicio.ItemHeight = 30;
-            this.cmbnombreservicio.Location = new System.Drawing.Point(192, 347);
+            this.cmbnombreservicio.Location = new System.Drawing.Point(829, 189);
             this.cmbnombreservicio.Name = "cmbnombreservicio";
             this.cmbnombreservicio.Size = new System.Drawing.Size(174, 36);
             this.cmbnombreservicio.TabIndex = 12;
@@ -205,7 +205,7 @@
             this.cmbIDservicio.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmbIDservicio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cmbIDservicio.ItemHeight = 30;
-            this.cmbIDservicio.Location = new System.Drawing.Point(12, 347);
+            this.cmbIDservicio.Location = new System.Drawing.Point(649, 189);
             this.cmbIDservicio.Name = "cmbIDservicio";
             this.cmbIDservicio.Size = new System.Drawing.Size(174, 36);
             this.cmbIDservicio.TabIndex = 11;
@@ -214,7 +214,7 @@
             // 
             this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel4.Location = new System.Drawing.Point(216, 326);
+            this.guna2HtmlLabel4.Location = new System.Drawing.Point(853, 168);
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
             this.guna2HtmlLabel4.Size = new System.Drawing.Size(96, 15);
             this.guna2HtmlLabel4.TabIndex = 10;
@@ -229,7 +229,7 @@
             this.btnBuscarservicio.FillColor = System.Drawing.Color.SlateBlue;
             this.btnBuscarservicio.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnBuscarservicio.ForeColor = System.Drawing.Color.White;
-            this.btnBuscarservicio.Location = new System.Drawing.Point(118, 389);
+            this.btnBuscarservicio.Location = new System.Drawing.Point(755, 231);
             this.btnBuscarservicio.Name = "btnBuscarservicio";
             this.btnBuscarservicio.Size = new System.Drawing.Size(151, 30);
             this.btnBuscarservicio.TabIndex = 9;
@@ -244,7 +244,7 @@
             this.btneliminar.FillColor = System.Drawing.Color.Crimson;
             this.btneliminar.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btneliminar.ForeColor = System.Drawing.Color.White;
-            this.btneliminar.Location = new System.Drawing.Point(98, 220);
+            this.btneliminar.Location = new System.Drawing.Point(394, 182);
             this.btneliminar.Name = "btneliminar";
             this.btneliminar.Size = new System.Drawing.Size(151, 30);
             this.btneliminar.TabIndex = 14;
@@ -259,34 +259,28 @@
             this.btneditar.FillColor = System.Drawing.Color.LimeGreen;
             this.btneditar.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btneditar.ForeColor = System.Drawing.Color.White;
-            this.btneditar.Location = new System.Drawing.Point(194, 184);
+            this.btneditar.Location = new System.Drawing.Point(43, 182);
             this.btneditar.Name = "btneditar";
             this.btneditar.Size = new System.Drawing.Size(151, 30);
             this.btneditar.TabIndex = 15;
             this.btneditar.Text = "editar";
             // 
-            // guna2Button1
+            // label1
             // 
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.SlateBlue;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(12, 12);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(81, 30);
-            this.guna2Button1.TabIndex = 16;
-            this.guna2Button1.Text = "Salir";
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(536, 54);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(554, 95);
+            this.label1.TabIndex = 16;
+            this.label1.Text = resources.GetString("label1.Text");
             // 
             // FrmServicios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.guna2Button1);
+            this.ClientSize = new System.Drawing.Size(1148, 655);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btneditar);
             this.Controls.Add(this.btneliminar);
             this.Controls.Add(this.guna2HtmlLabel3);
@@ -325,6 +319,6 @@
         private Guna.UI2.WinForms.Guna2Button btnBuscarservicio;
         private Guna.UI2.WinForms.Guna2Button btneliminar;
         private Guna.UI2.WinForms.Guna2Button btneditar;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private System.Windows.Forms.Label label1;
     }
 }

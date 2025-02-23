@@ -15,6 +15,7 @@ namespace ModuloDeCompra_BD.Formulario
     public partial class FrmProductos : Form
     {
         int Id;
+        int Id2;
 
         public FrmProductos()
         {
@@ -23,6 +24,8 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void FrmProductos_Load(object sender, EventArgs e)
         {
+            dgvProducto.DataSource = CsComandosSql.RetornaDatos("select ID_Producto, Nom_Producto, Precio_Unit from Producto");
+            cbTipoP.SelectedIndex = 0;
            DataTable tb= CsComandosSql.RetornaDatos("select * from IVA");
             for (int i = 0; i < tb.Rows.Count; i++)
             {
@@ -49,39 +52,50 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            double precioU;
-            try
+            if (cbTipoP.SelectedItem.ToString()=="Producto")
             {
-                precioU = Convert.ToDouble(txtPrecioUnitario.Text);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("taa " + ex);
-            }
-            try
-            {
-                //mal mal mal mal 
-                CsProducto producto = new CsProducto();
-                producto.Nom_Producto1 = txtNombreProducto.Text;
-                producto.Precio_Unit1 = Convert.ToDecimal(txtPrecioUnitario.Text);
-                producto.Iva1 = Convert.ToInt32(cmbIVA.SelectedIndex);
-                producto.Estado1 = Convert.ToInt32(cmbEstado.SelectedIndex);
-                producto.Categoria1 = Convert.ToInt32(txtListadoCategory.Text);
-                producto.Proveedor1 = Convert.ToInt32(txtListadoProvee.Text);
-
-                if(producto.AñadirProducto())
+                double precioU;
+                try
                 {
-                    MessageBox.Show("Producto agregado correctamente");
+                    precioU = Convert.ToDouble(txtPrecioUnitario.Text);
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Error al mostrar los datos");
+                    MessageBox.Show("taa " + ex);
                 }
+                try
+                {
+                    //mal mal mal mal 
+                    CsProducto producto = new CsProducto();
+                    producto.Nom_Producto1 = txtNombreProducto.Text;
+                    producto.Precio_Unit1 = Convert.ToDecimal(txtPrecioUnitario.Text);
+                    double iva = Convert.ToDouble(cmbIVA.SelectedItem);
+                    DataTable tb = CsComandosSql.RetornaDatos($"select * from IVA where Valor_IVA={iva}");
+                    producto.Iva1 = Convert.ToInt32(tb.Rows[0]["ID_IVA"].ToString());
+                    DataTable T = CsComandosSql.RetornaDatos($"select ID_Estado from EstadoIVA where Estado='{cmbEstado.SelectedItem.ToString()}'");
+                    producto.Estado1= Convert.ToInt32(T.Rows[0]["ID_Estado"].ToString());
+                    producto.Categoria1 = Id;
+                    producto.Proveedor1 = Id2;
+                    MessageBox.Show($"{Id}" + $" {Id2}");
 
+                    if (producto.AñadirProducto())
+                    {
+                        MessageBox.Show("Producto agregado correctamente");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al agregar producto, verifique que los datos sean correctos");
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error" + ex);
+                }
             }
-            catch(Exception ex)
+            else
             {
-                MessageBox.Show("Error" + ex);
+
             }
         }
 
@@ -98,7 +112,7 @@ namespace ModuloDeCompra_BD.Formulario
             FrmListadoProveedor listadoProveedor = new FrmListadoProveedor();
             listadoProveedor.ShowDialog();
             txtListadoProvee.Text = listadoProveedor.Nombre1;
-            Id = listadoProveedor.IdProvee1;
+            Id2 = listadoProveedor.IdProvee1;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -109,6 +123,16 @@ namespace ModuloDeCompra_BD.Formulario
             txtListadoProvee.Text = " ";
             cmbIVA.SelectedIndex = -1;
             cmbEstado.SelectedIndex = -1;
+        }
+
+        private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbTipoP.SelectedItem.ToString() == "Servicio")
+            {
+                btnListadoCategoria.Enabled = false;
+            }
+            else
+                btnListadoCategoria.Enabled = true;
         }
     }
 }
