@@ -18,11 +18,6 @@ namespace ModuloDeCompra_BD.Formulario
             InitializeComponent();
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void FrmProveedores_Load(object sender, EventArgs e)
         {
             dvgProveedores.DataSource = CsComandosSql.RetornaDatos($"select * from Proveedores");
