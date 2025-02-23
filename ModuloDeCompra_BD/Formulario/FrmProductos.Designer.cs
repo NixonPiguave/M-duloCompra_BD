@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnGuardar = new Guna.UI2.WinForms.Guna2Button();
+            this.btnCancelar = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnGuardar = new Guna.UI2.WinForms.Guna2Button();
             this.btnListadoProveedor = new Guna.UI2.WinForms.Guna2Button();
             this.cmbIVA = new Guna.UI2.WinForms.Guna2ComboBox();
             this.txtPrecioUnitario = new Guna.UI2.WinForms.Guna2TextBox();
@@ -45,25 +45,28 @@
             this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.txtListadoCategory = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtListadoProvee = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnGuardar
+            // btnCancelar
             // 
-            this.btnGuardar.BorderRadius = 20;
-            this.btnGuardar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnGuardar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnGuardar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnGuardar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnGuardar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
-            this.btnGuardar.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(963, 610);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(133, 53);
-            this.btnGuardar.TabIndex = 6;
-            this.btnGuardar.Text = "Cancelar";
+            this.btnCancelar.BorderRadius = 20;
+            this.btnCancelar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCancelar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCancelar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCancelar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCancelar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
+            this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.Location = new System.Drawing.Point(963, 610);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(133, 53);
+            this.btnCancelar.TabIndex = 6;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // guna2Panel1
             // 
@@ -85,22 +88,22 @@
             this.guna2HtmlLabel1.TabIndex = 0;
             this.guna2HtmlLabel1.Text = "AGREGAR NUEVO PRODUCTO";
             // 
-            // guna2Button1
+            // btnGuardar
             // 
-            this.guna2Button1.BorderRadius = 20;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(21, 596);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(133, 53);
-            this.guna2Button1.TabIndex = 7;
-            this.guna2Button1.Text = "Guardar";
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            this.btnGuardar.BorderRadius = 20;
+            this.btnGuardar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnGuardar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnGuardar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnGuardar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnGuardar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
+            this.btnGuardar.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnGuardar.ForeColor = System.Drawing.Color.White;
+            this.btnGuardar.Location = new System.Drawing.Point(21, 596);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(133, 53);
+            this.btnGuardar.TabIndex = 7;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnListadoProveedor
             // 
@@ -117,6 +120,7 @@
             this.btnListadoProveedor.Size = new System.Drawing.Size(88, 36);
             this.btnListadoProveedor.TabIndex = 15;
             this.btnListadoProveedor.Text = "Listado";
+            this.btnListadoProveedor.Click += new System.EventHandler(this.btnListadoProveedor_Click);
             // 
             // cmbIVA
             // 
@@ -164,6 +168,8 @@
             // guna2Panel2
             // 
             this.guna2Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(170)))), ((int)(((byte)(239)))));
+            this.guna2Panel2.Controls.Add(this.txtListadoProvee);
+            this.guna2Panel2.Controls.Add(this.txtListadoCategory);
             this.guna2Panel2.Controls.Add(this.btnListadoProveedor);
             this.guna2Panel2.Controls.Add(this.btnListadoCategoria);
             this.guna2Panel2.Controls.Add(this.cmbEstado);
@@ -196,6 +202,7 @@
             this.btnListadoCategoria.Size = new System.Drawing.Size(88, 36);
             this.btnListadoCategoria.TabIndex = 14;
             this.btnListadoCategoria.Text = "Listado";
+            this.btnListadoCategoria.Click += new System.EventHandler(this.btnListadoCategoria_Click);
             // 
             // cmbEstado
             // 
@@ -280,15 +287,53 @@
             this.guna2HtmlLabel2.TabIndex = 0;
             this.guna2HtmlLabel2.Text = "Nombre Producto:";
             // 
+            // txtListadoCategory
+            // 
+            this.txtListadoCategory.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtListadoCategory.DefaultText = "";
+            this.txtListadoCategory.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtListadoCategory.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtListadoCategory.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtListadoCategory.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtListadoCategory.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtListadoCategory.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtListadoCategory.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtListadoCategory.Location = new System.Drawing.Point(279, 224);
+            this.txtListadoCategory.Name = "txtListadoCategory";
+            this.txtListadoCategory.PlaceholderText = "";
+            this.txtListadoCategory.ReadOnly = true;
+            this.txtListadoCategory.SelectedText = "";
+            this.txtListadoCategory.Size = new System.Drawing.Size(97, 26);
+            this.txtListadoCategory.TabIndex = 16;
+            // 
+            // txtListadoProvee
+            // 
+            this.txtListadoProvee.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtListadoProvee.DefaultText = "";
+            this.txtListadoProvee.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtListadoProvee.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtListadoProvee.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtListadoProvee.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtListadoProvee.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtListadoProvee.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtListadoProvee.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtListadoProvee.Location = new System.Drawing.Point(280, 271);
+            this.txtListadoProvee.Name = "txtListadoProvee";
+            this.txtListadoProvee.PlaceholderText = "";
+            this.txtListadoProvee.ReadOnly = true;
+            this.txtListadoProvee.SelectedText = "";
+            this.txtListadoProvee.Size = new System.Drawing.Size(97, 26);
+            this.txtListadoProvee.TabIndex = 17;
+            // 
             // FrmProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1108, 675);
-            this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.guna2Panel1);
-            this.Controls.Add(this.guna2Button1);
+            this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.guna2Panel2);
             this.Name = "FrmProductos";
             this.Text = "FrmProductos";
@@ -304,10 +349,10 @@
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2Button btnGuardar;
+        private Guna.UI2.WinForms.Guna2Button btnCancelar;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button btnGuardar;
         private Guna.UI2.WinForms.Guna2Button btnListadoProveedor;
         private Guna.UI2.WinForms.Guna2ComboBox cmbIVA;
         private Guna.UI2.WinForms.Guna2TextBox txtPrecioUnitario;
@@ -321,5 +366,7 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
+        private Guna.UI2.WinForms.Guna2TextBox txtListadoProvee;
+        private Guna.UI2.WinForms.Guna2TextBox txtListadoCategory;
     }
 }

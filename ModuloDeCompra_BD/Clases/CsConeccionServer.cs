@@ -36,7 +36,7 @@ namespace ModuloDeCompra_BD.Clases
 
                 con.ConnectionString = cadenaConexion;
                 con.Open();
-                MessageBox.Show("Se ha iniciado sesion");
+                
             }
             catch (SqlException e)
             {

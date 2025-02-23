@@ -52,9 +52,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\CsCategoria.cs" />
     <Compile Include="Clases\CsComandosSql.cs" />
     <Compile Include="Clases\CsConeccionServer.cs" />
     <Compile Include="Clases\CsEncriptarMDS.cs" />
+    <Compile Include="Clases\CsProducto.cs" />
+    <Compile Include="Clases\CsProveedores.cs" />
     <Compile Include="Clases\CsUsuario.cs" />
     <Compile Include="Formulario\FrmCategorias.cs">
       <SubType>Form</SubType>
@@ -73,6 +76,18 @@
     </Compile>
     <Compile Include="Formulario\FrmInventario.Designer.cs">
       <DependentUpon>FrmInventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\FrmListadoCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\FrmListadoCategoria.Designer.cs">
+      <DependentUpon>FrmListadoCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\FrmListadoProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\FrmListadoProveedor.Designer.cs">
+      <DependentUpon>FrmListadoProveedor.cs</DependentUpon>
     </Compile>
     <Compile Include="Formulario\FrmLogin.cs">
       <SubType>Form</SubType>
@@ -120,6 +135,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\FrmInicio.resx">
       <DependentUpon>FrmInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\FrmListadoCategoria.resx">
+      <DependentUpon>FrmListadoCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\FrmListadoProveedor.resx">
+      <DependentUpon>FrmListadoProveedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
