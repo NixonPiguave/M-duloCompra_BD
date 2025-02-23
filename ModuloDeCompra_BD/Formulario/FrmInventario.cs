@@ -16,5 +16,10 @@ namespace ModuloDeCompra_BD.Formulario
         {
             InitializeComponent();
         }
+
+        private void txtNombreProducto_KeyUp(object sender, KeyEventArgs e)
+        {
+
+        }
     }
 }
