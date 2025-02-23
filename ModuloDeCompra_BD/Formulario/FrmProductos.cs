@@ -27,5 +27,18 @@ namespace ModuloDeCompra_BD.Formulario
                 cmbIVA.Items.Add(tb.Rows[i]["Valor_IVA"].ToString());
             }
         }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            double precioU;
+            try
+            {
+                precioU = Convert.ToDouble(txtPrecioUnitario.Text);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("taa " + ex);
+            }
+        }
     }
 }

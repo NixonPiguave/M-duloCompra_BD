@@ -100,6 +100,7 @@
             this.guna2Button1.Size = new System.Drawing.Size(133, 53);
             this.guna2Button1.TabIndex = 7;
             this.guna2Button1.Text = "Guardar";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // btnListadoProveedor
             // 
@@ -147,7 +148,7 @@
             this.txtPrecioUnitario.Name = "txtPrecioUnitario";
             this.txtPrecioUnitario.PlaceholderText = "";
             this.txtPrecioUnitario.SelectedText = "";
-            this.txtPrecioUnitario.Size = new System.Drawing.Size(210, 20);
+            this.txtPrecioUnitario.Size = new System.Drawing.Size(210, 29);
             this.txtPrecioUnitario.TabIndex = 7;
             // 
             // guna2HtmlLabel4
