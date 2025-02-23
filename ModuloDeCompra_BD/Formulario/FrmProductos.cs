@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +25,7 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void FrmProductos_Load(object sender, EventArgs e)
         {
+            dgvService.DataSource = CsComandosSql.RetornaDatos("select ID_Servicio, Nom_Servicio, Precio_Unit from Servicios");
             dgvProducto.DataSource = CsComandosSql.RetornaDatos("select ID_Producto, Nom_Producto, Precio_Unit from Producto");
             cbTipoP.SelectedIndex = 0;
            DataTable tb= CsComandosSql.RetornaDatos("select * from IVA");
@@ -54,21 +56,20 @@ namespace ModuloDeCompra_BD.Formulario
         {
             if (cbTipoP.SelectedItem.ToString()=="Producto")
             {
-                double precioU;
+                decimal precioU=0;
                 try
                 {
-                    precioU = Convert.ToDouble(txtPrecioUnitario.Text);
+                    precioU = decimal.Parse(txtPrecioUnitario.Text, NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture);
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("taa " + ex);
+                    MessageBox.Show("Precio no válido" + ex);
                 }
                 try
                 {
-                    //mal mal mal mal 
                     CsProducto producto = new CsProducto();
                     producto.Nom_Producto1 = txtNombreProducto.Text;
-                    producto.Precio_Unit1 = Convert.ToDecimal(txtPrecioUnitario.Text);
+                    producto.Precio_Unit1 = precioU;
                     double iva = Convert.ToDouble(cmbIVA.SelectedItem);
                     DataTable tb = CsComandosSql.RetornaDatos($"select * from IVA where Valor_IVA={iva}");
                     producto.Iva1 = Convert.ToInt32(tb.Rows[0]["ID_IVA"].ToString());
@@ -76,10 +77,10 @@ namespace ModuloDeCompra_BD.Formulario
                     producto.Estado1= Convert.ToInt32(T.Rows[0]["ID_Estado"].ToString());
                     producto.Categoria1 = Id;
                     producto.Proveedor1 = Id2;
-                    MessageBox.Show($"{Id}" + $" {Id2}");
 
                     if (producto.AñadirProducto())
                     {
+                        dgvProducto.DataSource = CsComandosSql.RetornaDatos("select ID_Producto, Nom_Producto, Precio_Unit from Producto");
                         MessageBox.Show("Producto agregado correctamente");
                     }
                     else
@@ -95,7 +96,43 @@ namespace ModuloDeCompra_BD.Formulario
             }
             else
             {
+                 decimal precioU=0;
+                try
+                {
+                    precioU = decimal.Parse(txtPrecioUnitario.Text, NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Precio no válido" + ex);
+                }
+                try
+                {
+                    //mal mal mal mal 
+                    CsProducto producto = new CsProducto();
+                    producto.Nom_Producto1 = txtNombreProducto.Text;
+                    producto.Precio_Unit1 = precioU;
+                    double iva = Convert.ToDouble(cmbIVA.SelectedItem);
+                    DataTable tb = CsComandosSql.RetornaDatos($"select * from IVA where Valor_IVA={iva}");
+                    producto.Iva1 = Convert.ToInt32(tb.Rows[0]["ID_IVA"].ToString());
+                    DataTable T = CsComandosSql.RetornaDatos($"select ID_Estado from EstadoIVA where Estado='{cmbEstado.SelectedItem.ToString()}'");
+                    producto.Estado1 = Convert.ToInt32(T.Rows[0]["ID_Estado"].ToString());
+                    producto.Proveedor1 = Id2;
 
+                    if (producto.AñadirServicio())
+                    {
+                        dgvService.DataSource = CsComandosSql.RetornaDatos("select ID_Servicio, Nom_Servicio, Precio_Unit from Servicios");
+                        MessageBox.Show("Servicio agregado correctamente");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al agregar Servicio, verifique que los datos sean correctos");
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error" + ex);
+                }
             }
         }
 

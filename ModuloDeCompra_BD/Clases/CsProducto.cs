@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ModuloDeCompra_BD.Clases
 {
@@ -25,8 +27,16 @@ namespace ModuloDeCompra_BD.Clases
 
         public bool AñadirProducto()
         {
-            string query = $"INSERT INTO Producto(Nom_Producto, Precio_Unit, ID_IVA, ID_Estado, ID_CAT, ID_Prov) VALUES ('{Nom_Producto1}', {Precio_Unit1}, {Iva1}, {Estado1}, {Categoria1}, {Proveedor1});";
-           
+            string precioUFormatoSQL = Precio_Unit.ToString(CultureInfo.InvariantCulture);
+            string query = $"INSERT INTO Producto(Nom_Producto, Precio_Unit, ID_IVA, ID_Estado, ID_CAT, ID_Prov) VALUES ('{Nom_Producto}', {precioUFormatoSQL}, {Iva}, {Estado}, {Categoria}, {Proveedor});";
+      
+            return CsComandosSql.InserDeletUpdate(query);
+        }
+        public bool AñadirServicio()
+        {
+            string precioUFormatoSQL = Precio_Unit.ToString(CultureInfo.InvariantCulture);
+            string query = $"insert into Servicios (Nom_Servicio, Precio_Unit, ID_IVA, ID_Estado, ID_Prov) values ('{Nom_Producto}',{precioUFormatoSQL},{Iva},{Estado},{Proveedor})";
+
             return CsComandosSql.InserDeletUpdate(query);
         }
         public bool ModificarProducto()
