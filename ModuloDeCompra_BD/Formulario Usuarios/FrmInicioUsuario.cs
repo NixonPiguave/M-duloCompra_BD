@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace ModuloDeCompra_BD.Formulario
 {
-    public partial class FrmInicio: Form
+    public partial class FrmInicioUsuario: Form
     {
         int PosX, PosY;
-        public FrmInicio()
+        public FrmInicioUsuario()
         {
             InitializeComponent();
         }

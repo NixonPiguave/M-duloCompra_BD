@@ -41,7 +41,6 @@ namespace ModuloDeCompra_BD
         {
             this.Close();
         }
-
         private void btnLogin_Click(object sender, EventArgs e)
         {
             try
@@ -66,7 +65,7 @@ namespace ModuloDeCompra_BD
                     if (rol == "Usuario")
                     {
                         MessageBox.Show("Inicio de sesión Exitoso");
-                        FrmInicio inic = new FrmInicio();
+                        FrmInicioUsuario inic = new FrmInicioUsuario();
                         txtCedula.Text = string.Empty;
                         txtContraseña.Text = string.Empty;
                         this.Hide();

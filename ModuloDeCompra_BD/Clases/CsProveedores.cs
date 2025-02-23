@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ModuloDeCompra_BD.Clases
 {
@@ -11,17 +13,17 @@ namespace ModuloDeCompra_BD.Clases
     {
         int IdProvee;
         string NombreProvee;
-        decimal Descuento;
+        double Descuento;
         string correo;
         int TipoDoc;
-        int NumDoc;
+        string NumDoc;
 
         public int IdProvee1 { get => IdProvee; set => IdProvee = value; }
         public string NombreProvee1 { get => NombreProvee; set => NombreProvee = value; }
-        public decimal Descuento1 { get => Descuento; set => Descuento = value; }
+        public double Descuento1 { get => Descuento; set => Descuento = value; }
         public string Correo { get => correo; set => correo = value; }
         public int TipoDoc1 { get => TipoDoc; set => TipoDoc = value; }
-        public int NumDoc1 { get => NumDoc; set => NumDoc = value; }
+        public string NumDoc1 { get => NumDoc; set => NumDoc = value; }
 
         public bool AñadirProveedor()
         {
@@ -30,7 +32,9 @@ namespace ModuloDeCompra_BD.Clases
         }
         public bool ModificarProveedor()
         {
-            string query = $"update Proveedores set Nombre_Proveedor = '{NombreProvee}', Descuento_Predeterminado= {Descuento} , Correo= '{correo}',Tipo_Documento= {TipoDoc}, Num_Documento= {NumDoc};";
+            string precioUFormatoSQL = Descuento1.ToString(CultureInfo.InvariantCulture);
+            MessageBox.Show($"{IdProvee1.ToString()}, {NombreProvee1.ToString()}, {Descuento1.ToString()}, {Correo.ToString()}, {TipoDoc1.ToString()}, {NumDoc1.ToString()}");
+            string query = $"update Proveedores set Nombre_Proveedor = '{NombreProvee1}', Descuento_Predeterminado= {precioUFormatoSQL} , Correo= '{Correo}', Tipo_Documento= {TipoDoc1}, Num_Documento= '{NumDoc1}' where ID_Prov= {IdProvee1}";
             return CsComandosSql.InserDeletUpdate(query);
         }
         public bool EliminarProveedor()

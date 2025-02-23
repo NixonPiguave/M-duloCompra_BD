@@ -44,30 +44,33 @@ namespace ModuloDeCompra_BD.Formulario
         {
             try
             {
-                CsEncriptarMDS encrypt = new CsEncriptarMDS();
-                string contraEncrypt = encrypt.Encriptar(txtContra.Text, txtcedula.Text);
-                CsUsuario user = new CsUsuario();
-                user.Nombre = txtNombre.Text;
-                user.Apellido = txtApellido.Text;
-                user.Cedula = txtcedula.Text;
-                user.Contraseña = contraEncrypt;
-                DataTable dt = CsComandosSql.RetornaDatos($"select * from Roles where Rol='{cbRol.SelectedItem.ToString()}'");
-                user.Rol = Convert.ToInt32(dt.Rows[0]["ID_Rol"].ToString());
-                user.Departamento = Id;
-                MessageBox.Show($"{Id}  {user.Rol}");
-                if (cbxEncargado.Checked == true)
-                    user.Encargado = "Encargado";
-               if(user.AñadirUser())
+                if (!(CsComandosSql.verificar($"Select * from Usuario where Cedula = {txtcedula.Text}")))
                 {
-                    MessageBox.Show("Usuario Agregado");
-                    txtNombre.Text = string.Empty;
-                    txtListDepa.Text = string.Empty;
-                    txtContra.Text = string.Empty;
-                    txtcedula.Text = string.Empty;
-                    txtApellido.Text = string.Empty;
-                }
-               else
-                    MessageBox.Show("Error, Verifique que los datos sean correctos");
+                    CsEncriptarMDS encrypt = new CsEncriptarMDS();
+                    string contraEncrypt = encrypt.Encriptar(txtContra.Text, txtcedula.Text);
+                    CsUsuario user = new CsUsuario();
+                    user.Nombre = txtNombre.Text;
+                    user.Apellido = txtApellido.Text;
+                    user.Cedula = txtcedula.Text;
+                    user.Contraseña = contraEncrypt;
+                    DataTable dt = CsComandosSql.RetornaDatos($"select * from Roles where Rol='{cbRol.SelectedItem.ToString()}'");
+                    user.Rol = Convert.ToInt32(dt.Rows[0]["ID_Rol"].ToString());
+                    user.Departamento = Id;
+                    MessageBox.Show($"{Id}  {user.Rol}");
+                    if (cbxEncargado.Checked == true)
+                        user.Encargado = "Encargado";
+                    if (user.AñadirUser())
+                    {
+                        MessageBox.Show("Usuario Agregado");
+                        txtNombre.Text = string.Empty;
+                        txtListDepa.Text = string.Empty;
+                        txtContra.Text = string.Empty;
+                        txtcedula.Text = string.Empty;
+                        txtApellido.Text = string.Empty;
+                    }
+                    else
+                        MessageBox.Show("Error, Verifique que los datos sean correctos");
+                }               
             }
             catch
             {

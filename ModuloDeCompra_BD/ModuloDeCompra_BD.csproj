@@ -59,6 +59,12 @@
     <Compile Include="Clases\CsProducto.cs" />
     <Compile Include="Clases\CsProveedores.cs" />
     <Compile Include="Clases\CsUsuario.cs" />
+    <Compile Include="Formulario Usuarios\FrmInicioUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario Usuarios\FrmInicioUsuario.Designer.cs">
+      <DependentUpon>FrmInicioUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formulario\FrmCategorias.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +145,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formulario Usuarios\FrmInicioUsuario.resx">
+      <DependentUpon>FrmInicioUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formulario\FrmCategorias.resx">
       <DependentUpon>FrmCategorias.cs</DependentUpon>
     </EmbeddedResource>
@@ -223,5 +232,6 @@
   <ItemGroup>
     <None Include="Resources\ojo_abierto.jpg" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
