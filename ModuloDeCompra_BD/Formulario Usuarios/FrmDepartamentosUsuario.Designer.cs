@@ -1,6 +1,6 @@
 ﻿namespace ModuloDeCompra_BD.Formulario
 {
-    partial class FrmDepartamentos
+    partial class FrmDepartamentosUsuarios
     {
         /// <summary>
         /// Required designer variable.
@@ -29,11 +29,10 @@
         private void InitializeComponent()
         {
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnModificar = new Guna.UI2.WinForms.Guna2Button();
-            this.bntagregar = new Guna.UI2.WinForms.Guna2Button();
             this.txtNombreDepartamento = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.dgvDepartamento = new System.Windows.Forms.DataGridView();
+            this.btnBuscar = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDepartamento)).BeginInit();
             this.SuspendLayout();
@@ -41,8 +40,7 @@
             // guna2Panel2
             // 
             this.guna2Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(170)))), ((int)(((byte)(239)))));
-            this.guna2Panel2.Controls.Add(this.btnModificar);
-            this.guna2Panel2.Controls.Add(this.bntagregar);
+            this.guna2Panel2.Controls.Add(this.btnBuscar);
             this.guna2Panel2.Controls.Add(this.txtNombreDepartamento);
             this.guna2Panel2.Controls.Add(this.guna2HtmlLabel7);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Left;
@@ -50,40 +48,6 @@
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(466, 655);
             this.guna2Panel2.TabIndex = 29;
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.BorderRadius = 20;
-            this.btnModificar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnModificar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnModificar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnModificar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnModificar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
-            this.btnModificar.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnModificar.ForeColor = System.Drawing.Color.White;
-            this.btnModificar.Location = new System.Drawing.Point(238, 360);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(133, 53);
-            this.btnModificar.TabIndex = 8;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
-            // 
-            // bntagregar
-            // 
-            this.bntagregar.BorderRadius = 20;
-            this.bntagregar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.bntagregar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.bntagregar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.bntagregar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.bntagregar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.bntagregar.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bntagregar.ForeColor = System.Drawing.Color.White;
-            this.bntagregar.Location = new System.Drawing.Point(60, 360);
-            this.bntagregar.Name = "bntagregar";
-            this.bntagregar.Size = new System.Drawing.Size(133, 53);
-            this.bntagregar.TabIndex = 7;
-            this.bntagregar.Text = "Agregar";
-            this.bntagregar.Click += new System.EventHandler(this.bntagregar_Click);
             // 
             // txtNombreDepartamento
             // 
@@ -130,7 +94,24 @@
             this.dgvDepartamento.TabIndex = 30;
             this.dgvDepartamento.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDepartamento_CellDoubleClick);
             // 
-            // FrmDepartamentos
+            // btnBuscar
+            // 
+            this.btnBuscar.BorderRadius = 20;
+            this.btnBuscar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnBuscar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnBuscar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnBuscar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnBuscar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
+            this.btnBuscar.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnBuscar.ForeColor = System.Drawing.Color.White;
+            this.btnBuscar.Location = new System.Drawing.Point(153, 357);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(133, 53);
+            this.btnBuscar.TabIndex = 8;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // FrmDepartamentosUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -138,9 +119,9 @@
             this.Controls.Add(this.dgvDepartamento);
             this.Controls.Add(this.guna2Panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FrmDepartamentos";
-            this.Text = "FrmDepartamentos";
-            this.Load += new System.EventHandler(this.FrmDepartamentos_Load);
+            this.Name = "FrmDepartamentosUsuarios";
+            this.Text = "FrmDepartamentosUsuarios";
+            this.Load += new System.EventHandler(this.FrmDepartamentosUsuarios_Load);
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDepartamento)).EndInit();
@@ -150,10 +131,9 @@
 
         #endregion
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
-        private Guna.UI2.WinForms.Guna2Button btnModificar;
-        private Guna.UI2.WinForms.Guna2Button bntagregar;
         private Guna.UI2.WinForms.Guna2TextBox txtNombreDepartamento;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel7;
         private System.Windows.Forms.DataGridView dgvDepartamento;
+        private Guna.UI2.WinForms.Guna2Button btnBuscar;
     }
 }

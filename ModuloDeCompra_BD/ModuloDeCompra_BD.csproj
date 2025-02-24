@@ -59,11 +59,35 @@
     <Compile Include="Clases\CsProducto.cs" />
     <Compile Include="Clases\CsProveedores.cs" />
     <Compile Include="Clases\CsUsuario.cs" />
+    <Compile Include="Formulario Usuarios\FrmCategorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario Usuarios\FrmCategorias.Designer.cs">
+      <DependentUpon>FrmCategorias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario Usuarios\FrmDepartamentosUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario Usuarios\FrmDepartamentosUsuario.Designer.cs">
+      <DependentUpon>FrmDepartamentosUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formulario Usuarios\FrmInicioUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formulario Usuarios\FrmInicioUsuario.Designer.cs">
       <DependentUpon>FrmInicioUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario Usuarios\FrmInventarioUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario Usuarios\FrmInventarioUsuario.Designer.cs">
+      <DependentUpon>FrmInventarioUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario Usuarios\FrmProductosUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario Usuarios\FrmProductosUsuarios.Designer.cs">
+      <DependentUpon>FrmProductosUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Formulario\FrmCategorias.cs">
       <SubType>Form</SubType>
@@ -145,8 +169,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formulario Usuarios\FrmCategorias.resx">
+      <DependentUpon>FrmCategorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario Usuarios\FrmDepartamentosUsuario.resx">
+      <DependentUpon>FrmDepartamentosUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formulario Usuarios\FrmInicioUsuario.resx">
       <DependentUpon>FrmInicioUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario Usuarios\FrmInventarioUsuario.resx">
+      <DependentUpon>FrmInventarioUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario Usuarios\FrmProductosUsuarios.resx">
+      <DependentUpon>FrmProductosUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\FrmCategorias.resx">
       <DependentUpon>FrmCategorias.cs</DependentUpon>

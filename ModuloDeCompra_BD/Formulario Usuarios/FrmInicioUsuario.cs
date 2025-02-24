@@ -48,44 +48,26 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void btnCategoria_Click(object sender, EventArgs e)
         {
-            FrmCategorias frmCategoria = new FrmCategorias();
+            FrmCategoriasUsuario frmCategoria = new FrmCategoriasUsuario();
             openChildForm(frmCategoria);
         }
 
         private void btnDepartamento_Click(object sender, EventArgs e)
         {
-            FrmDepartamentos frmDepartamentos = new FrmDepartamentos();
+            FrmDepartamentosUsuarios frmDepartamentos = new FrmDepartamentosUsuarios();
             openChildForm(frmDepartamentos);
         }
 
         private void btnInventario_Click(object sender, EventArgs e)
         {
-            FrmInventario frmInventario = new FrmInventario();
+            FrmInventarioUsuario frmInventario = new FrmInventarioUsuario();
             openChildForm(frmInventario);
         }
 
         private void btnProducto_Click(object sender, EventArgs e)
         {
-            FrmProductos frmProductos = new FrmProductos();
+            FrmProductosUsuarios frmProductos = new FrmProductosUsuarios();
             openChildForm(frmProductos);
-        }
-
-        private void btnProveedor_Click(object sender, EventArgs e)
-        {
-            FrmProveedores frmProveedores = new FrmProveedores();
-            openChildForm(frmProveedores);
-        }
-
-        private void btnRol_Click(object sender, EventArgs e)
-        {
-            FrmUsuarios user = new FrmUsuarios();
-            openChildForm(user);
-        }
-
-        private void btnServicio_Click(object sender, EventArgs e)
-        {
-            FrmServicios frmServicio = new FrmServicios();
-            openChildForm(frmServicio);
         }
 
         private void pnlSuperior_MouseMove(object sender, MouseEventArgs e)

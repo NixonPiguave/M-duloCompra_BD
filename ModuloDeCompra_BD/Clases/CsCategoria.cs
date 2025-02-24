@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Linq;
 using System.Text;
@@ -9,17 +10,19 @@ namespace ModuloDeCompra_BD.Clases
 {
     class CsCategoria
     {
-        string Categoria;
+        string categoria;
         int IDCat;
 
+        public int IdCat { get => IDCat; set => IDCat = value; }
+        public string Categoria { get => categoria; set => categoria = value; }
         public bool AñadirCategoria()
         {
-            string query = "";
+            string query = $"insert into Categoria (Categoria) values ('{categoria}')";
             return CsComandosSql.InserDeletUpdate(query);
         }
         public bool ModificarCategoria()
         {
-            string query = "";
+            string query = $"Update Categoria set Categoria = '{Categoria}' where ID_CAT = {IdCat}";
             return CsComandosSql.InserDeletUpdate(query);
         }
         public bool EliminarCategoria()

@@ -120,7 +120,7 @@
             // 
             // pnlMenu
             // 
-            this.pnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.pnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.pnlMenu.Controls.Add(this.btnCerrarSesion);
             this.pnlMenu.Controls.Add(this.ptbServicio);
             this.pnlMenu.Controls.Add(this.btnServicio);
@@ -182,7 +182,7 @@
             this.btnServicio.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnServicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnServicio.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnServicio.ForeColor = System.Drawing.Color.SlateBlue;
+            this.btnServicio.ForeColor = System.Drawing.Color.White;
             this.btnServicio.Location = new System.Drawing.Point(22, 349);
             this.btnServicio.Name = "btnServicio";
             this.btnServicio.Size = new System.Drawing.Size(241, 51);
@@ -218,7 +218,7 @@
             this.btnRol.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRol.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRol.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRol.ForeColor = System.Drawing.Color.SlateBlue;
+            this.btnRol.ForeColor = System.Drawing.Color.White;
             this.btnRol.Location = new System.Drawing.Point(22, 533);
             this.btnRol.Name = "btnRol";
             this.btnRol.Size = new System.Drawing.Size(241, 51);
@@ -254,7 +254,7 @@
             this.btnProveedor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProveedor.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProveedor.ForeColor = System.Drawing.Color.SlateBlue;
+            this.btnProveedor.ForeColor = System.Drawing.Color.White;
             this.btnProveedor.Location = new System.Drawing.Point(22, 441);
             this.btnProveedor.Name = "btnProveedor";
             this.btnProveedor.Size = new System.Drawing.Size(241, 51);
@@ -290,7 +290,7 @@
             this.btnProducto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProducto.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProducto.ForeColor = System.Drawing.Color.SlateBlue;
+            this.btnProducto.ForeColor = System.Drawing.Color.White;
             this.btnProducto.Location = new System.Drawing.Point(16, 263);
             this.btnProducto.Name = "btnProducto";
             this.btnProducto.Size = new System.Drawing.Size(241, 51);
@@ -326,7 +326,7 @@
             this.btnInventario.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInventario.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInventario.ForeColor = System.Drawing.Color.SlateBlue;
+            this.btnInventario.ForeColor = System.Drawing.Color.White;
             this.btnInventario.Location = new System.Drawing.Point(16, 171);
             this.btnInventario.Name = "btnInventario";
             this.btnInventario.Size = new System.Drawing.Size(241, 51);
@@ -362,7 +362,7 @@
             this.btnDepartamento.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDepartamento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDepartamento.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDepartamento.ForeColor = System.Drawing.Color.SlateBlue;
+            this.btnDepartamento.ForeColor = System.Drawing.Color.White;
             this.btnDepartamento.Location = new System.Drawing.Point(16, 79);
             this.btnDepartamento.Name = "btnDepartamento";
             this.btnDepartamento.Size = new System.Drawing.Size(241, 51);
@@ -398,7 +398,7 @@
             this.btnCategoria.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCategoria.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCategoria.ForeColor = System.Drawing.Color.SlateBlue;
+            this.btnCategoria.ForeColor = System.Drawing.Color.White;
             this.btnCategoria.Location = new System.Drawing.Point(16, 6);
             this.btnCategoria.Name = "btnCategoria";
             this.btnCategoria.Size = new System.Drawing.Size(241, 51);
