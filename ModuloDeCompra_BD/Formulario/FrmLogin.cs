@@ -1,4 +1,5 @@
-﻿using ModuloDeCompra_BD.Clases;
+﻿using Menú;
+using ModuloDeCompra_BD.Clases;
 using ModuloDeCompra_BD.Formulario;
 using System;
 using System.Collections.Generic;
@@ -44,7 +45,7 @@ namespace ModuloDeCompra_BD
         private void btnLogin_Click(object sender, EventArgs e)
         {
             try
-            {
+            {   
                 CsUsuario user = new CsUsuario();
                 user.Cedula = txtCedula.Text;
                 CsEncriptarMDS encryp = new CsEncriptarMDS();
@@ -55,7 +56,7 @@ namespace ModuloDeCompra_BD
                     if (rol == "Administrador")
                     {
                         MessageBox.Show("Inicio de sesión Exitoso");
-                        FrmInicio ini = new FrmInicio();
+                        FrmInicio2 ini = new FrmInicio2();
                         txtCedula.Text = string.Empty;
                         txtContraseña.Text = string.Empty;
                         this.Hide();
