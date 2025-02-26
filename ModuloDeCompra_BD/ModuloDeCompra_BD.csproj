@@ -89,6 +89,12 @@
     <Compile Include="Formulario Usuarios\FrmProductosUsuarios.Designer.cs">
       <DependentUpon>FrmProductosUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formulario\FrmGeneralizado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\FrmGeneralizado.Designer.cs">
+      <DependentUpon>FrmGeneralizado.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formulario\FrmInicio2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -189,6 +195,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario Usuarios\FrmProductosUsuarios.resx">
       <DependentUpon>FrmProductosUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\FrmGeneralizado.resx">
+      <DependentUpon>FrmGeneralizado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\FrmInicio2.resx">
       <DependentUpon>FrmInicio2.cs</DependentUpon>
