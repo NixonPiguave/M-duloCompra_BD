@@ -43,5 +43,15 @@ namespace ModuloDeCompra_BD.Formulario
             MessageBox.Show("Proveedor seleccionado");
             
         }
+
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txtBuscarProveedores_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

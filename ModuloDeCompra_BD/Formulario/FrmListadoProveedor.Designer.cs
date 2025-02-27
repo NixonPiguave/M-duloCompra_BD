@@ -45,6 +45,7 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(335, 63);
             this.guna2Panel1.TabIndex = 0;
+            this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
             // 
             // guna2HtmlLabel1
             // 
@@ -86,6 +87,7 @@
             this.txtBuscarProveedores.SelectedText = "";
             this.txtBuscarProveedores.Size = new System.Drawing.Size(136, 26);
             this.txtBuscarProveedores.TabIndex = 3;
+            this.txtBuscarProveedores.TextChanged += new System.EventHandler(this.txtBuscarProveedores_TextChanged);
             this.txtBuscarProveedores.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBuscarProveedores_KeyUp);
             // 
             // btnSeleccionarProvee

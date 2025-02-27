@@ -137,6 +137,12 @@
     <Compile Include="Formulario\FrmListadoCategoria.Designer.cs">
       <DependentUpon>FrmListadoCategoria.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formulario\FrmListadoProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\FrmListadoProductos.Designer.cs">
+      <DependentUpon>FrmListadoProductos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formulario\FrmListadoProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -228,6 +234,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\FrmListadoCategoria.resx">
       <DependentUpon>FrmListadoCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\FrmListadoProductos.resx">
+      <DependentUpon>FrmListadoProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\FrmListadoProveedor.resx">
       <DependentUpon>FrmListadoProveedor.cs</DependentUpon>
