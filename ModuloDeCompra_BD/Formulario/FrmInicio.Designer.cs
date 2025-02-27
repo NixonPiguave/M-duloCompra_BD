@@ -73,7 +73,7 @@
             this.pnlSuperior.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSuperior.Location = new System.Drawing.Point(0, 0);
             this.pnlSuperior.Name = "pnlSuperior";
-            this.pnlSuperior.Size = new System.Drawing.Size(1411, 61);
+            this.pnlSuperior.Size = new System.Drawing.Size(1386, 61);
             this.pnlSuperior.TabIndex = 1;
             this.pnlSuperior.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlSuperior_MouseMove);
             // 
@@ -94,7 +94,7 @@
             this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
-            this.btnMinimizar.Location = new System.Drawing.Point(1259, 12);
+            this.btnMinimizar.Location = new System.Drawing.Point(1234, 12);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(67, 37);
             this.btnMinimizar.TabIndex = 1;
@@ -107,7 +107,7 @@
             this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(1332, 12);
+            this.btnCerrar.Location = new System.Drawing.Point(1307, 12);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(67, 37);
             this.btnCerrar.TabIndex = 0;
@@ -378,14 +378,14 @@
             this.plFormHijos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.plFormHijos.Location = new System.Drawing.Point(263, 61);
             this.plFormHijos.Name = "plFormHijos";
-            this.plFormHijos.Size = new System.Drawing.Size(1148, 710);
+            this.plFormHijos.Size = new System.Drawing.Size(1123, 710);
             this.plFormHijos.TabIndex = 3;
             // 
             // FrmInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1411, 771);
+            this.ClientSize = new System.Drawing.Size(1386, 771);
             this.Controls.Add(this.plFormHijos);
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.pnlSuperior);

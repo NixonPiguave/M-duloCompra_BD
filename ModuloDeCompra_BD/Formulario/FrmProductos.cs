@@ -17,6 +17,8 @@ namespace ModuloDeCompra_BD.Formulario
     {
         int Id;
         int Id2;
+        int Id3;
+        int Id4;
 
         public FrmProductos()
         {
@@ -33,6 +35,8 @@ namespace ModuloDeCompra_BD.Formulario
             {
                 cmbIVA.Items.Add(tb.Rows[i]["Valor_IVA"].ToString());
             }
+            //AQUI VA LA PARTE DE LLENAR ESTADO PRODUCTO.
+
             DataTable tn = CsComandosSql.RetornaDatos("Select * from EstadoIVA");
             for (int i = 0; i < tn.Rows.Count; i++)
             {
@@ -170,6 +174,71 @@ namespace ModuloDeCompra_BD.Formulario
             }
             else
                 btnListadoCategoria.Enabled = true;
+        }
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            CsProducto pro = new CsProducto();
+            int fila=dgvProducto.CurrentCell.RowIndex;
+            if(fila!=-1)
+            {
+                int prod=Convert.ToInt32(dgvProducto[0,fila].Value);
+                pro.EliminarProducto(prod);
+            }
+            else
+            {
+                MessageBox.Show("Escoja la fila del producto a eliminar");
+            }
+        }
+        private void btnEliminarServicio_Click(object sender, EventArgs e)
+        {
+            CsProducto prod = new CsProducto();
+            int fila = dgvService.CurrentCell.RowIndex;
+            if(fila!=-1)
+            {
+                int serv = Convert.ToInt32(dgvService[0, fila].Value);
+                prod.EliminarServicio(serv);
+            }
+            else
+            {
+                MessageBox.Show("Escoja la fila del servicio a eliminar");
+            }
+
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+
+            CsProducto pro1 = new CsProducto();
+            int fila = dgvProducto.CurrentCell.RowIndex;
+            string nombre = txtNombreProducto.Text;
+            string precioUnit = txtPrecioUnitario.Text;
+            pro1.ModificarProducto(Id3,nombre, precioUnit);
+        }
+        private void dgvProducto_DoubleClick(object sender, EventArgs e)
+        {
+
+            int fila = dgvProducto.CurrentCell.RowIndex;
+            Id3 = Convert.ToInt32(dgvProducto[0, fila].Value);
+            txtNombreProducto.Text= dgvProducto[1, fila].Value.ToString();
+            txtPrecioUnitario.Text= dgvProducto[2, fila].Value.ToString();
+
+        }
+
+        private void btnEditarServicio_DoubleClick(object sender, EventArgs e)
+        {
+            int fila = dgvService.CurrentCell.RowIndex;
+            Id4 = Convert.ToInt32(dgvProducto[0, fila].Value);
+            txtNombreProducto.Text = dgvService[1, fila].Value.ToString();
+            txtPrecioUnitario.Text = dgvService[2, fila].Value.ToString();
+
+        }
+        private void btnEditarServicio_Click(object sender, EventArgs e)
+        {
+            CsProducto serv = new CsProducto();
+            int fila = dgvService.CurrentCell.RowIndex;
+            string nombre = txtNombreProducto.Text;
+            string precioUnit = txtPrecioUnitario.Text;
+            serv.ModificarProducto(Id4, nombre, precioUnit);
         }
     }
 }

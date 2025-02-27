@@ -45,7 +45,7 @@
             this.guna2Button15 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button14 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button13 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button12 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnProductos = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button11 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button10 = new Guna.UI2.WinForms.Guna2Button();
             this.pn1.SuspendLayout();
@@ -67,7 +67,7 @@
             this.pn1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pn1.Location = new System.Drawing.Point(0, 0);
             this.pn1.Name = "pn1";
-            this.pn1.Size = new System.Drawing.Size(1527, 69);
+            this.pn1.Size = new System.Drawing.Size(1370, 69);
             this.pn1.TabIndex = 0;
             // 
             // btnReportes
@@ -185,7 +185,7 @@
             this.pn2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pn2.Location = new System.Drawing.Point(0, 69);
             this.pn2.Name = "pn2";
-            this.pn2.Size = new System.Drawing.Size(1527, 756);
+            this.pn2.Size = new System.Drawing.Size(1370, 680);
             this.pn2.TabIndex = 1;
             // 
             // pnIventario
@@ -235,7 +235,7 @@
             this.pnMantenimientos.Controls.Add(this.guna2Button15);
             this.pnMantenimientos.Controls.Add(this.guna2Button14);
             this.pnMantenimientos.Controls.Add(this.guna2Button13);
-            this.pnMantenimientos.Controls.Add(this.guna2Button12);
+            this.pnMantenimientos.Controls.Add(this.btnProductos);
             this.pnMantenimientos.Controls.Add(this.guna2Button11);
             this.pnMantenimientos.Controls.Add(this.guna2Button10);
             this.pnMantenimientos.Location = new System.Drawing.Point(1070, 0);
@@ -303,20 +303,21 @@
             this.guna2Button13.TabIndex = 7;
             this.guna2Button13.Text = "Categorias";
             // 
-            // guna2Button12
+            // btnProductos
             // 
-            this.guna2Button12.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button12.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button12.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button12.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button12.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(155)))), ((int)(((byte)(235)))));
-            this.guna2Button12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button12.ForeColor = System.Drawing.Color.White;
-            this.guna2Button12.Location = new System.Drawing.Point(15, 108);
-            this.guna2Button12.Name = "guna2Button12";
-            this.guna2Button12.Size = new System.Drawing.Size(180, 45);
-            this.guna2Button12.TabIndex = 8;
-            this.guna2Button12.Text = "Productos";
+            this.btnProductos.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnProductos.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnProductos.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnProductos.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnProductos.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(155)))), ((int)(((byte)(235)))));
+            this.btnProductos.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProductos.ForeColor = System.Drawing.Color.White;
+            this.btnProductos.Location = new System.Drawing.Point(15, 108);
+            this.btnProductos.Name = "btnProductos";
+            this.btnProductos.Size = new System.Drawing.Size(180, 45);
+            this.btnProductos.TabIndex = 8;
+            this.btnProductos.Text = "Productos";
+            this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
             // 
             // guna2Button11
             // 
@@ -349,14 +350,14 @@
             this.guna2Button10.Text = "Usuarios";
             this.guna2Button10.Click += new System.EventHandler(this.guna2Button10_Click);
             // 
-            // Form1
+            // FrmInicio2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1527, 825);
+            this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.pn2);
             this.Controls.Add(this.pn1);
-            this.Name = "Form1";
+            this.Name = "FrmInicio2";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.pn1.ResumeLayout(false);
@@ -383,7 +384,7 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button8;
         private System.Windows.Forms.Panel pnMantenimientos;
         private Guna.UI2.WinForms.Guna2Button guna2Button13;
-        private Guna.UI2.WinForms.Guna2Button guna2Button12;
+        private Guna.UI2.WinForms.Guna2Button btnProductos;
         private Guna.UI2.WinForms.Guna2Button guna2Button11;
         private Guna.UI2.WinForms.Guna2Button guna2Button10;
         private Guna.UI2.WinForms.Guna2Button guna2Button16;

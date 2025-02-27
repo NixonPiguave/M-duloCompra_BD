@@ -65,5 +65,11 @@ namespace Menú
             FrmUsuarios user = new FrmUsuarios();
             openChildForm(user);
         }
+
+        private void btnProductos_Click(object sender, EventArgs e)
+        {
+            FrmProductos productos = new FrmProductos();
+            openChildForm(productos);
+        }
     }
 }

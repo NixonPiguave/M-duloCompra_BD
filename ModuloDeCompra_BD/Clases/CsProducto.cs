@@ -39,14 +39,24 @@ namespace ModuloDeCompra_BD.Clases
 
             return CsComandosSql.InserDeletUpdate(query);
         }
-        public bool ModificarProducto()
+        public bool ModificarProducto(int id, string nombreprodu, string precioUnit)
         {
-            string query = "";
+            string query = $"";
             return CsComandosSql.InserDeletUpdate(query);
         }
-        public bool EliminarProducto()
+        public bool ModificarServicio()
         {
-            string query = "";
+            string query = $"";
+            return CsComandosSql.InserDeletUpdate(query);
+        }
+        public bool EliminarProducto(int ID)
+        {
+            string query = $"exec EliminarProducto {ID}";
+            return CsComandosSql.InserDeletUpdate(query);
+        }
+        public bool EliminarServicio(int Id)
+        {
+            string query = $"Delete Servicios where ID_Servicio= {Id}";
             return CsComandosSql.InserDeletUpdate(query);
         }
         public DataTable ListaProducto()
