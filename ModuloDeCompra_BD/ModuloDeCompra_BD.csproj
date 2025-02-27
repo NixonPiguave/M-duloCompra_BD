@@ -286,6 +286,8 @@
   <ItemGroup>
     <None Include="Resources\ojo_abierto.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\brows_browsing_find_search_seo_web_zoom_icon_123196.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -63,6 +63,16 @@ namespace ModuloDeCompra_BD.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap brows_browsing_find_search_seo_web_zoom_icon_123196 {
+            get {
+                object obj = ResourceManager.GetObject("brows_browsing_find_search_seo_web_zoom_icon_123196", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Captura_de_pantalla_2025_02_17_153926 {
             get {
                 object obj = ResourceManager.GetObject("Captura de pantalla 2025-02-17 153926", resourceCulture);
