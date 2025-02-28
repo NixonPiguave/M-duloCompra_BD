@@ -117,35 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="ojo_cerrado1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ojo_cerrado.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="lock_padlock_locked_protected_security_icon_131240" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\lock_padlock_locked_protected_security_icon_131240.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="user_account_person_avatar_icon_131248" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\user_account_person_avatar_icon_131248.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Captura de pantalla 2025-02-17 153926" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Captura de pantalla 2025-02-17 153926.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Añadir un subtítulo (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Añadir un subtítulo (1).gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="brows_browsing_find_search_seo_web_zoom_icon_123196" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\brows_browsing_find_search_seo_web_zoom_icon_123196.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="compraslogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\compraslogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ojo_abierto1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ojo_abierto.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="imagen_desenfocada" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\imagen_desenfocada1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Añadir un subtítulo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Añadir un subtítulo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
 </root>

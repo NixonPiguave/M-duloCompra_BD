@@ -59,6 +59,12 @@
     <Compile Include="Clases\CsProducto.cs" />
     <Compile Include="Clases\CsProveedores.cs" />
     <Compile Include="Clases\CsUsuario.cs" />
+    <Compile Include="Formulario\FrmRequisiciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\FrmRequisiciones.Designer.cs">
+      <DependentUpon>FrmRequisiciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formulario Usuarios\FrmCategorias.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,12 +106,6 @@
     </Compile>
     <Compile Include="Formulario\FrmGeneralizado.Designer.cs">
       <DependentUpon>FrmGeneralizado.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formulario\FrmInicio2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formulario\FrmInicio2.Designer.cs">
-      <DependentUpon>FrmInicio2.cs</DependentUpon>
     </Compile>
     <Compile Include="Formulario\FrmCategorias.cs">
       <SubType>Form</SubType>
@@ -155,11 +155,11 @@
     <Compile Include="Formulario\FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formulario\FrmInicio.cs">
+    <Compile Include="Formulario\FrmMenu3.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formulario\FrmInicio.Designer.cs">
-      <DependentUpon>FrmInicio.cs</DependentUpon>
+    <Compile Include="Formulario\FrmMenu3.Designer.cs">
+      <DependentUpon>FrmMenu3.cs</DependentUpon>
     </Compile>
     <Compile Include="Formulario\FrmModificarUser.cs">
       <SubType>Form</SubType>
@@ -193,6 +193,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formulario\FrmRequisiciones.resx">
+      <DependentUpon>FrmRequisiciones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formulario Usuarios\FrmCategorias.resx">
       <DependentUpon>FrmCategorias.cs</DependentUpon>
     </EmbeddedResource>
@@ -214,17 +217,11 @@
     <EmbeddedResource Include="Formulario\FrmGeneralizado.resx">
       <DependentUpon>FrmGeneralizado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formulario\FrmInicio2.resx">
-      <DependentUpon>FrmInicio2.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Formulario\FrmCategorias.resx">
       <DependentUpon>FrmCategorias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\FrmDepartamentos.resx">
       <DependentUpon>FrmDepartamentos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formulario\FrmInicio.resx">
-      <DependentUpon>FrmInicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\FrmInventario.resx">
       <DependentUpon>FrmInventario.cs</DependentUpon>
@@ -243,6 +240,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\FrmMenu3.resx">
+      <DependentUpon>FrmMenu3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\FrmModificarUser.resx">
       <DependentUpon>FrmModificarUser.cs</DependentUpon>
@@ -306,6 +306,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\brows_browsing_find_search_seo_web_zoom_icon_123196.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Añadir un subtítulo %281%29.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Añadir un subtítulo.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

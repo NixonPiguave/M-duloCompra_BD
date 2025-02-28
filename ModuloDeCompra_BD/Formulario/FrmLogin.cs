@@ -56,7 +56,7 @@ namespace ModuloDeCompra_BD
                     if (rol == "Administrador")
                     {
                         MessageBox.Show("Inicio de sesión Exitoso");
-                        FrmInicio2 ini = new FrmInicio2();
+                        FrmMenu3 ini = new FrmMenu3();
                         txtCedula.Text = string.Empty;
                         txtContraseña.Text = string.Empty;
                         this.Hide();

@@ -1,5 +1,5 @@
-﻿using Guna.UI2.WinForms;
-using ModuloDeCompra_BD.Formulario;
+﻿using Menú.Formularios;
+using ModuloDeCompra_BD.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,16 +12,16 @@ using System.Windows.Forms;
 
 namespace Menú
 {
-    public partial class FrmInicio2: Form
+    public partial class FrmMenu3: Form
     {
         
-        public FrmInicio2()
+        public FrmMenu3()
         {
             InitializeComponent();
         }
         private Form activeForm = null;
         public void openChildForm(Form childForm)
-        {      
+        {
             if (activeForm != null)
                 activeForm.Close();
             activeForm = childForm;
@@ -34,7 +34,7 @@ namespace Menú
             childForm.Show();
             pnIventario.BringToFront();
             pnMantenimientos.BringToFront();
-      
+
         }
         private void guna2Button4_Click(object sender, EventArgs e)
         {
@@ -60,16 +60,16 @@ namespace Menú
             pnMantenimientos.Visible = false;
         }
 
-        private void guna2Button10_Click(object sender, EventArgs e)
+        private void btnOrdenesCompra_Click(object sender, EventArgs e)
         {
-            FrmUsuarios user = new FrmUsuarios();
-            openChildForm(user);
+
         }
 
-        private void btnProductos_Click(object sender, EventArgs e)
+        private void btnRequisiciones_Click(object sender, EventArgs e)
         {
-            FrmProductos productos = new FrmProductos();
-            openChildForm(productos);
+            FrmRequisiciones req = new FrmRequisiciones();
+            openChildForm(req);
+
         }
     }
 }
