@@ -76,7 +76,52 @@ namespace Menú
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
             FrmUsuarios user = new FrmUsuarios();
+            pnMantenimientos.Visible = false;
             openChildForm(user);
+        }
+
+        private void guna2Button13_Click(object sender, EventArgs e)
+        {
+            FrmCategorias frmCate = new FrmCategorias();
+            pnMantenimientos.Visible=false;
+            openChildForm(frmCate);
+        }
+
+        private void guna2Button11_Click(object sender, EventArgs e)
+        {
+            pnMantenimientos.Visible = false;
+        }
+
+        private void guna2Button12_Click(object sender, EventArgs e)
+        {
+            pnMantenimientos.Visible = false;
+            FrmProductos frmProductos = new FrmProductos();
+            openChildForm(frmProductos);
+        }
+
+        private void guna2Button14_Click(object sender, EventArgs e)
+        {
+            pnMantenimientos.Visible = false;
+        }
+
+        private void guna2Button15_Click(object sender, EventArgs e)
+        {
+            pnMantenimientos.Visible = false;
+        }
+
+        private void guna2Button16_Click(object sender, EventArgs e)
+        {
+            pnMantenimientos.Visible = false;
+        }
+
+        private void guna2Button8_Click(object sender, EventArgs e)
+        {
+            pnIventario.Visible = false;
+        }
+
+        private void guna2Button9_Click(object sender, EventArgs e)
+        {
+            pnIventario.Visible = false;
         }
     }
 }

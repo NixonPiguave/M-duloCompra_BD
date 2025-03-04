@@ -27,6 +27,8 @@ namespace ModuloDeCompra_BD.Formulario
                 {
                     csCategoria.Categoria = txtCategoria.Text;
                     csCategoria.AñadirCategoria();
+                    dgvCategoria.DataSource = CsComandosSql.RetornaDatos("Select * from Categoria");
+                    txtCategoria.Text = string.Empty;
                     MessageBox.Show("Se ha agregado la categoria");
                 }
                 else
@@ -42,25 +44,36 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            CsCategoria csCategoria = new CsCategoria();
-            if (!string.IsNullOrEmpty(txtCategoria.Text))
+            Point boton = new Point();
+            Point btnAgregarLocalizacion = new Point();
+            boton.Y = 317;
+            boton.X = 175;
+            btnAgregarLocalizacion.Y = boton.Y;
+            btnAgregarLocalizacion.X = 12;
+            btnModificar.Location = boton;
+            btnAgregar.Location = btnAgregarLocalizacion;
+ 
+            if (txtModificarCategoria.Visible == false)
             {
-                if (!CsComandosSql.verificar($"select * from Categoria where Categoria = '{txtCategoria.Text}'"))
-                {
-                    DataTable dt = CsComandosSql.RetornaDatos($"Select ID_CAT from Categoria where Categoria = {txtCategoria.Text}");
-                    csCategoria.IdCat = Convert.ToInt32(dt.Rows[0][0]);
-                    csCategoria.Categoria = txtCategoria.Text;
-                    csCategoria.ModificarCategoria();
-                    MessageBox.Show("Se ha modificado la categoria");
-                }
-                else
-                {
-                    MessageBox.Show("La categoria ya existe");
-                }
+                lblModificarCategoria.Visible = true;
+                txtModificarCategoria.Visible = true;
+                btnAceptar.Visible = true;
+                btnAgregar.Visible = false;
             }
             else
             {
-                MessageBox.Show("Rellene la categoria");
+                Point regresarPosicionBtnModificar = new Point();
+                Point regresarPosicionBtnAgregar = new Point();
+                regresarPosicionBtnModificar.X = 175;
+                regresarPosicionBtnModificar.Y = 217;
+                regresarPosicionBtnAgregar.X = 12;
+                regresarPosicionBtnAgregar.Y = 217;
+                btnAgregar.Location = regresarPosicionBtnAgregar;
+                btnModificar.Location = regresarPosicionBtnModificar;
+                lblModificarCategoria.Visible = false;
+                txtModificarCategoria.Visible = false;
+                btnAceptar.Visible = false;
+                btnAgregar.Visible = true;
             }
         }
 
@@ -73,6 +86,60 @@ namespace ModuloDeCompra_BD.Formulario
         {
             int celda = dgvCategoria.CurrentCell.RowIndex;
             txtCategoria.Text = dgvCategoria[1, celda].Value.ToString();
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            CsCategoria csCategoria = new CsCategoria();
+            if (!string.IsNullOrEmpty(txtCategoria.Text))
+            {
+                if (CsComandosSql.verificar($"select * from Categoria where Categoria = '{txtCategoria.Text}'"))
+                {
+                    csCategoria.Categoria = txtModificarCategoria.Text;
+                    int posicion = dgvCategoria.CurrentCell.RowIndex;
+                    int ID = Convert.ToInt32(dgvCategoria[0, posicion].Value);
+                    csCategoria.IdCat = ID;
+                    csCategoria.ModificarCategoria();
+                    dgvCategoria.DataSource = CsComandosSql.RetornaDatos("Select * from Categoria");
+                    txtCategoria.Text = string.Empty;
+                    txtModificarCategoria.Text = string.Empty;
+                    MessageBox.Show("Se ha modificado la categoria");
+                }
+                else
+                {
+                    MessageBox.Show("La categoria ya existe");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Escoja la categoria");
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtCategoria.Text))
+            {
+                if (CsComandosSql.verificar($"select * from Categoria where Categoria = '{txtCategoria.Text}'"))
+                {
+                    int posicion = dgvCategoria.CurrentCell.RowIndex;
+                    int ID = Convert.ToInt32(dgvCategoria[0, posicion].Value);
+                    CsCategoria csCategoria = new CsCategoria();
+                    csCategoria.IdCat = ID;
+                    csCategoria.EliminarCategoria();
+                    txtCategoria.Text = string.Empty;
+                    dgvCategoria.DataSource = CsComandosSql.RetornaDatos("select * from Categoria");
+                    MessageBox.Show("Se ha eliminado la categoria");
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo eliminar la categoria");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Escoja la categoria");
+            }
         }
     }
 }

@@ -222,6 +222,7 @@
             this.guna2Button9.Size = new System.Drawing.Size(133, 45);
             this.guna2Button9.TabIndex = 7;
             this.guna2Button9.Text = "Bodega";
+            this.guna2Button9.Click += new System.EventHandler(this.guna2Button9_Click);
             // 
             // guna2Button8
             // 
@@ -238,6 +239,7 @@
             this.guna2Button8.Size = new System.Drawing.Size(131, 45);
             this.guna2Button8.TabIndex = 6;
             this.guna2Button8.Text = "Movimientos";
+            this.guna2Button8.Click += new System.EventHandler(this.guna2Button8_Click);
             // 
             // pnMantenimientos
             // 
@@ -269,6 +271,7 @@
             this.guna2Button16.Size = new System.Drawing.Size(135, 45);
             this.guna2Button16.TabIndex = 11;
             this.guna2Button16.Text = "IVA";
+            this.guna2Button16.Click += new System.EventHandler(this.guna2Button16_Click);
             // 
             // guna2Button15
             // 
@@ -285,6 +288,7 @@
             this.guna2Button15.Size = new System.Drawing.Size(135, 45);
             this.guna2Button15.TabIndex = 10;
             this.guna2Button15.Text = "Departamentos";
+            this.guna2Button15.Click += new System.EventHandler(this.guna2Button15_Click);
             // 
             // guna2Button14
             // 
@@ -301,6 +305,7 @@
             this.guna2Button14.Size = new System.Drawing.Size(160, 45);
             this.guna2Button14.TabIndex = 9;
             this.guna2Button14.Text = "Roles";
+            this.guna2Button14.Click += new System.EventHandler(this.guna2Button14_Click);
             // 
             // guna2Button13
             // 
@@ -317,6 +322,7 @@
             this.guna2Button13.Size = new System.Drawing.Size(160, 45);
             this.guna2Button13.TabIndex = 7;
             this.guna2Button13.Text = "Categorias";
+            this.guna2Button13.Click += new System.EventHandler(this.guna2Button13_Click);
             // 
             // guna2Button12
             // 
@@ -333,6 +339,7 @@
             this.guna2Button12.Size = new System.Drawing.Size(160, 45);
             this.guna2Button12.TabIndex = 8;
             this.guna2Button12.Text = "Productos";
+            this.guna2Button12.Click += new System.EventHandler(this.guna2Button12_Click);
             // 
             // guna2Button11
             // 
@@ -349,6 +356,7 @@
             this.guna2Button11.Size = new System.Drawing.Size(160, 45);
             this.guna2Button11.TabIndex = 7;
             this.guna2Button11.Text = "Proveedores";
+            this.guna2Button11.Click += new System.EventHandler(this.guna2Button11_Click);
             // 
             // btnUsuarios
             // 
@@ -375,6 +383,7 @@
             this.Controls.Add(this.pn2);
             this.Controls.Add(this.pn1);
             this.Name = "FrmMenu3";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.pn1.ResumeLayout(false);

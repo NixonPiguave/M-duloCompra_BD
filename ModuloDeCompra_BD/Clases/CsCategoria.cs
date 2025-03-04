@@ -27,7 +27,7 @@ namespace ModuloDeCompra_BD.Clases
         }
         public bool EliminarCategoria()
         {
-            string query = "";
+            string query = $"Delete Categoria from Categoria where ID_CAT = {IdCat}";
             return CsComandosSql.InserDeletUpdate(query);
         }
         public DataTable ListaCategoria(string m)
