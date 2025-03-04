@@ -165,7 +165,7 @@
             this.txtCedula.Location = new System.Drawing.Point(107, 187);
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.PlaceholderForeColor = System.Drawing.Color.Gray;
-            this.txtCedula.PlaceholderText = "Cedula";
+            this.txtCedula.PlaceholderText = "Usuario";
             this.txtCedula.SelectedText = "";
             this.txtCedula.Size = new System.Drawing.Size(227, 36);
             this.txtCedula.TabIndex = 1;

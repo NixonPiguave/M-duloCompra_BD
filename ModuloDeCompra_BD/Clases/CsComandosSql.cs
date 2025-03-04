@@ -99,6 +99,22 @@ namespace ModuloDeCompra_BD.Clases
             Desconectar();
             return rol;
         }
+        public static int ObtenerIdUsuario(string user, string Contraseña)
+        {
+            
+            int id=-1;
+            Conectar();
+
+            string query = $"select U.ID_Usuario from Usuario U inner join Roles R on U.ID_Rol=R.ID_Rol where   U.Usuario= '{user}' and U.Contraseña ='{Contraseña}'";
+            ConfigurarComando(query);
+            SqlDataReader reader = comando.ExecuteReader();
+            if (reader.Read())
+            {
+                id = Convert.ToInt32(reader["ID_Usuario"].ToString());
+            }
+            Desconectar();
+            return id;
+        }
 
         //este metodo es para generar secuenciales para facturas por ejemplo
         public static string GenerarSecuencial(string secuencia)

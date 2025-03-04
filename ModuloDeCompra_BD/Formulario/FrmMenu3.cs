@@ -16,13 +16,16 @@ namespace Menú
 {
     public partial class FrmMenu3: Form
     {
-        
+        int IDusuario;
         public FrmMenu3()
         {
             InitializeComponent();
         }
 
         private Form activeForm = null;
+
+        public int IDusuario1 { get => IDusuario; set => IDusuario = value; }
+
         public void openChildForm(Form childForm)
         {
             if (activeForm != null)

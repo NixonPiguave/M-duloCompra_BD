@@ -51,12 +51,16 @@ namespace ModuloDeCompra_BD
                 CsEncriptarMDS encryp = new CsEncriptarMDS();
                 user.Contraseña = encryp.Encriptar(txtContraseña.Text, txtCedula.Text);
                 string rol = CsComandosSql.verificarlogin(user.Cedula, user.Contraseña);
+                int IDusuario = CsComandosSql.ObtenerIdUsuario(user.Cedula, user.Contraseña);
+
                 if (!string.IsNullOrEmpty(rol))
                 {
                     if (rol == "Administrador")
                     {
+
                         MessageBox.Show("Inicio de sesión Exitoso");
                         FrmMenu3 ini = new FrmMenu3();
+                        ini.IDusuario1 = IDusuario;
                         txtCedula.Text = string.Empty;
                         txtContraseña.Text = string.Empty;
                         this.Hide();
@@ -66,11 +70,12 @@ namespace ModuloDeCompra_BD
                     if (rol == "Usuario")
                     {
                         MessageBox.Show("Inicio de sesión Exitoso");
-                        FrmInicioUsuario inic = new FrmInicioUsuario();
+                        FrmInicioUsuario ini = new FrmInicioUsuario();
+                        //ini.IDusuario1 = IDusuario;
                         txtCedula.Text = string.Empty;
                         txtContraseña.Text = string.Empty;
                         this.Hide();
-                        inic.ShowDialog();
+                        ini.ShowDialog();
                         this.Show();
                     }
                 }
