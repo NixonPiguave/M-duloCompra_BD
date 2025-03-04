@@ -1,4 +1,5 @@
 ﻿using Menú.Formularios;
+using ModuloDeCompra_BD.Clases;
 using ModuloDeCompra_BD.Formulario;
 using ModuloDeCompra_BD.Properties;
 using System;
@@ -20,6 +21,7 @@ namespace Menú
         {
             InitializeComponent();
         }
+
         private Form activeForm = null;
         public void openChildForm(Form childForm)
         {
@@ -59,6 +61,7 @@ namespace Menú
         {
             pnIventario.Visible = false;
             pnMantenimientos.Visible = false;
+            dgvOrdenesRequisicion.DataSource = CsComandosSql.RetornaDatos("select * from Requisicion");
         }
 
         private void btnOrdenesCompra_Click(object sender, EventArgs e)

@@ -35,6 +35,8 @@
             this.txtPrecioUnitario = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.cmbEstadoProducto = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.cbTipoP = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -55,8 +57,6 @@
             this.btnEditar = new Guna.UI2.WinForms.Guna2Button();
             this.btnEliminarServicio = new Guna.UI2.WinForms.Guna2Button();
             this.btnEditarServicio = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.cmbEstadoProducto = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvService)).BeginInit();
@@ -152,6 +152,7 @@
             // 
             this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel4.ForeColor = System.Drawing.SystemColors.Control;
             this.guna2HtmlLabel4.Location = new System.Drawing.Point(122, 246);
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
             this.guna2HtmlLabel4.Size = new System.Drawing.Size(34, 22);
@@ -160,7 +161,7 @@
             // 
             // guna2Panel2
             // 
-            this.guna2Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(170)))), ((int)(((byte)(239)))));
+            this.guna2Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
             this.guna2Panel2.Controls.Add(this.cmbEstadoProducto);
             this.guna2Panel2.Controls.Add(this.guna2HtmlLabel2);
             this.guna2Panel2.Controls.Add(this.label1);
@@ -187,10 +188,38 @@
             this.guna2Panel2.Size = new System.Drawing.Size(434, 708);
             this.guna2Panel2.TabIndex = 5;
             // 
+            // cmbEstadoProducto
+            // 
+            this.cmbEstadoProducto.BackColor = System.Drawing.Color.Transparent;
+            this.cmbEstadoProducto.BorderRadius = 10;
+            this.cmbEstadoProducto.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbEstadoProducto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEstadoProducto.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbEstadoProducto.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbEstadoProducto.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmbEstadoProducto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmbEstadoProducto.ItemHeight = 30;
+            this.cmbEstadoProducto.Location = new System.Drawing.Point(177, 368);
+            this.cmbEstadoProducto.Name = "cmbEstadoProducto";
+            this.cmbEstadoProducto.Size = new System.Drawing.Size(209, 36);
+            this.cmbEstadoProducto.TabIndex = 22;
+            // 
+            // guna2HtmlLabel2
+            // 
+            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel2.ForeColor = System.Drawing.SystemColors.Control;
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(34, 368);
+            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(122, 22);
+            this.guna2HtmlLabel2.TabIndex = 21;
+            this.guna2HtmlLabel2.Text = "Estado Producto";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
             this.label1.Location = new System.Drawing.Point(20, 128);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(136, 20);
@@ -201,6 +230,7 @@
             // 
             this.guna2HtmlLabel9.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel9.ForeColor = System.Drawing.SystemColors.Control;
             this.guna2HtmlLabel9.Location = new System.Drawing.Point(111, 86);
             this.guna2HtmlLabel9.Name = "guna2HtmlLabel9";
             this.guna2HtmlLabel9.Size = new System.Drawing.Size(37, 22);
@@ -321,6 +351,7 @@
             // 
             this.guna2HtmlLabel7.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel7.ForeColor = System.Drawing.SystemColors.Control;
             this.guna2HtmlLabel7.Location = new System.Drawing.Point(55, 481);
             this.guna2HtmlLabel7.Name = "guna2HtmlLabel7";
             this.guna2HtmlLabel7.Size = new System.Drawing.Size(79, 22);
@@ -331,6 +362,7 @@
             // 
             this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel6.ForeColor = System.Drawing.SystemColors.Control;
             this.guna2HtmlLabel6.Location = new System.Drawing.Point(61, 444);
             this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
             this.guna2HtmlLabel6.Size = new System.Drawing.Size(76, 22);
@@ -341,6 +373,7 @@
             // 
             this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel5.ForeColor = System.Drawing.SystemColors.Control;
             this.guna2HtmlLabel5.Location = new System.Drawing.Point(71, 311);
             this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
             this.guna2HtmlLabel5.Size = new System.Drawing.Size(85, 22);
@@ -351,6 +384,7 @@
             // 
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel3.ForeColor = System.Drawing.SystemColors.Control;
             this.guna2HtmlLabel3.Location = new System.Drawing.Point(46, 185);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
             this.guna2HtmlLabel3.Size = new System.Drawing.Size(110, 22);
@@ -475,32 +509,6 @@
             this.btnEditarServicio.Text = "Editar";
             this.btnEditarServicio.Click += new System.EventHandler(this.btnEditarServicio_Click);
             this.btnEditarServicio.DoubleClick += new System.EventHandler(this.btnEditarServicio_DoubleClick);
-            // 
-            // guna2HtmlLabel2
-            // 
-            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(34, 368);
-            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(122, 22);
-            this.guna2HtmlLabel2.TabIndex = 21;
-            this.guna2HtmlLabel2.Text = "Estado Producto";
-            // 
-            // cmbEstadoProducto
-            // 
-            this.cmbEstadoProducto.BackColor = System.Drawing.Color.Transparent;
-            this.cmbEstadoProducto.BorderRadius = 10;
-            this.cmbEstadoProducto.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbEstadoProducto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbEstadoProducto.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbEstadoProducto.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbEstadoProducto.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cmbEstadoProducto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cmbEstadoProducto.ItemHeight = 30;
-            this.cmbEstadoProducto.Location = new System.Drawing.Point(177, 368);
-            this.cmbEstadoProducto.Name = "cmbEstadoProducto";
-            this.cmbEstadoProducto.Size = new System.Drawing.Size(209, 36);
-            this.cmbEstadoProducto.TabIndex = 22;
             // 
             // FrmProductos
             // 
