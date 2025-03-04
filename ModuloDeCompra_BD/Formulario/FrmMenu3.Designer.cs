@@ -47,7 +47,7 @@
             this.guna2Button13 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button12 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button11 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button10 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnUsuarios = new Guna.UI2.WinForms.Guna2Button();
             this.pn1.SuspendLayout();
             this.pn2.SuspendLayout();
             this.pnIventario.SuspendLayout();
@@ -248,7 +248,7 @@
             this.pnMantenimientos.Controls.Add(this.guna2Button13);
             this.pnMantenimientos.Controls.Add(this.guna2Button12);
             this.pnMantenimientos.Controls.Add(this.guna2Button11);
-            this.pnMantenimientos.Controls.Add(this.guna2Button10);
+            this.pnMantenimientos.Controls.Add(this.btnUsuarios);
             this.pnMantenimientos.Location = new System.Drawing.Point(965, 0);
             this.pnMantenimientos.Name = "pnMantenimientos";
             this.pnMantenimientos.Size = new System.Drawing.Size(188, 371);
@@ -350,21 +350,22 @@
             this.guna2Button11.TabIndex = 7;
             this.guna2Button11.Text = "Proveedores";
             // 
-            // guna2Button10
+            // btnUsuarios
             // 
-            this.guna2Button10.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button10.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button10.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button10.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button10.FillColor = System.Drawing.Color.Black;
-            this.guna2Button10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button10.ForeColor = System.Drawing.Color.White;
-            this.guna2Button10.HoverState.ForeColor = System.Drawing.Color.Yellow;
-            this.guna2Button10.Location = new System.Drawing.Point(6, 6);
-            this.guna2Button10.Name = "guna2Button10";
-            this.guna2Button10.Size = new System.Drawing.Size(167, 45);
-            this.guna2Button10.TabIndex = 6;
-            this.guna2Button10.Text = "Usuarios";
+            this.btnUsuarios.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnUsuarios.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnUsuarios.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnUsuarios.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnUsuarios.FillColor = System.Drawing.Color.Black;
+            this.btnUsuarios.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUsuarios.ForeColor = System.Drawing.Color.White;
+            this.btnUsuarios.HoverState.ForeColor = System.Drawing.Color.Yellow;
+            this.btnUsuarios.Location = new System.Drawing.Point(6, 6);
+            this.btnUsuarios.Name = "btnUsuarios";
+            this.btnUsuarios.Size = new System.Drawing.Size(167, 45);
+            this.btnUsuarios.TabIndex = 6;
+            this.btnUsuarios.Text = "Usuarios";
+            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
             // 
             // FrmMenu3
             // 
@@ -402,7 +403,7 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button13;
         private Guna.UI2.WinForms.Guna2Button guna2Button12;
         private Guna.UI2.WinForms.Guna2Button guna2Button11;
-        private Guna.UI2.WinForms.Guna2Button guna2Button10;
+        private Guna.UI2.WinForms.Guna2Button btnUsuarios;
         private Guna.UI2.WinForms.Guna2Button guna2Button16;
         private Guna.UI2.WinForms.Guna2Button guna2Button15;
         private Guna.UI2.WinForms.Guna2Button guna2Button14;

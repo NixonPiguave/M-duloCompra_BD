@@ -1,4 +1,5 @@
 ﻿using Menú.Formularios;
+using ModuloDeCompra_BD.Formulario;
 using ModuloDeCompra_BD.Properties;
 using System;
 using System.Collections.Generic;
@@ -70,6 +71,12 @@ namespace Menú
             FrmRequisiciones req = new FrmRequisiciones();
             openChildForm(req);
 
+        }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            FrmUsuarios user = new FrmUsuarios();
+            openChildForm(user);
         }
     }
 }

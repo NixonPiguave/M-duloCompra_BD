@@ -84,12 +84,12 @@ namespace ModuloDeCompra_BD.Clases
             bool result = leer.Read();
             return result;
         }
-        public static string verificarlogin(string cedula, string Contraseña)
+        public static string verificarlogin(string user, string Contraseña)
         {
             string rol = string.Empty;
             Conectar();
 
-            string query = $"select R.Rol from Usuario U inner join Roles R on U.Rol=R.ID_Rol where Cedula= '{cedula}' and Contraseña='{Contraseña}'";
+            string query = $"select R.Rol from Usuario U inner join Roles R on U.ID_Rol=R.ID_Rol where   U.Usuario= '{user}' and U.Contraseña ='{Contraseña}'";
             ConfigurarComando(query);
             SqlDataReader reader = comando.ExecuteReader();
             if (reader.Read())

@@ -45,7 +45,7 @@ namespace ModuloDeCompra_BD
         private void btnLogin_Click(object sender, EventArgs e)
         {
             try
-            {   
+            {
                 CsUsuario user = new CsUsuario();
                 user.Cedula = txtCedula.Text;
                 CsEncriptarMDS encryp = new CsEncriptarMDS();
@@ -79,10 +79,10 @@ namespace ModuloDeCompra_BD
                     MessageBox.Show("Inicio de sesión Fallido, error en los datos");
                 }
             }
-            catch(Exception ex)
-                {
-                 MessageBox.Show("Error "+ ex);
-                }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex);
+            }
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)

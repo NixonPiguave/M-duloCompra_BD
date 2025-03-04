@@ -38,17 +38,19 @@
             this.txtListDepa = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtNombre = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtContra = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.cbxEncargado = new System.Windows.Forms.CheckBox();
+            this.btnListadoDepa = new Guna.UI2.WinForms.Guna2Button();
             this.cbRol = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.dgvUser = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
             this.txtBuscarCed = new Guna.UI2.WinForms.Guna2TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
+            this.txtModificar = new Guna.UI2.WinForms.Guna2Button();
+            this.txtEliminar = new Guna.UI2.WinForms.Guna2Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtUsuario = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnLimpiar = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -63,18 +65,18 @@
             this.btnAñadir.FillColor = System.Drawing.Color.Purple;
             this.btnAñadir.Font = new System.Drawing.Font("Cooper Black", 12F);
             this.btnAñadir.ForeColor = System.Drawing.Color.White;
-            this.btnAñadir.Location = new System.Drawing.Point(512, 151);
+            this.btnAñadir.Location = new System.Drawing.Point(386, 151);
             this.btnAñadir.Name = "btnAñadir";
             this.btnAñadir.Size = new System.Drawing.Size(159, 36);
             this.btnAñadir.TabIndex = 0;
-            this.btnAñadir.Text = "AÑADIR";
+            this.btnAñadir.Text = "Añadir";
             this.btnAñadir.Click += new System.EventHandler(this.btnAñadir_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(143, 53);
+            this.label1.Location = new System.Drawing.Point(123, 53);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 19);
             this.label1.TabIndex = 2;
@@ -84,7 +86,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(323, 53);
+            this.label2.Location = new System.Drawing.Point(327, 53);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 19);
             this.label2.TabIndex = 4;
@@ -102,7 +104,7 @@
             this.txtApellido.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtApellido.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtApellido.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtApellido.Location = new System.Drawing.Point(288, 75);
+            this.txtApellido.Location = new System.Drawing.Point(292, 75);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.PlaceholderText = "";
             this.txtApellido.SelectedText = "";
@@ -113,7 +115,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(521, 53);
+            this.label3.Location = new System.Drawing.Point(550, 53);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 19);
             this.label3.TabIndex = 6;
@@ -131,7 +133,7 @@
             this.txtcedula.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtcedula.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtcedula.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtcedula.Location = new System.Drawing.Point(480, 75);
+            this.txtcedula.Location = new System.Drawing.Point(509, 75);
             this.txtcedula.MaxLength = 10;
             this.txtcedula.Name = "txtcedula";
             this.txtcedula.PlaceholderText = "";
@@ -143,11 +145,12 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(702, 53);
+            this.label4.Location = new System.Drawing.Point(960, 53);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(103, 19);
             this.label4.TabIndex = 8;
             this.label4.Text = "Contraseña";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // txtListDepa
             // 
@@ -182,7 +185,7 @@
             this.txtNombre.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtNombre.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNombre.Location = new System.Drawing.Point(105, 75);
+            this.txtNombre.Location = new System.Drawing.Point(85, 75);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.PlaceholderText = "";
             this.txtNombre.SelectedText = "";
@@ -201,40 +204,29 @@
             this.txtContra.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtContra.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtContra.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtContra.Location = new System.Drawing.Point(679, 75);
+            this.txtContra.Location = new System.Drawing.Point(937, 75);
             this.txtContra.Name = "txtContra";
             this.txtContra.PlaceholderText = "";
             this.txtContra.SelectedText = "";
             this.txtContra.Size = new System.Drawing.Size(166, 36);
             this.txtContra.TabIndex = 10;
             // 
-            // guna2Button2
+            // btnListadoDepa
             // 
-            this.guna2Button2.BorderRadius = 10;
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.FillColor = System.Drawing.Color.Purple;
-            this.guna2Button2.Font = new System.Drawing.Font("Cooper Black", 12F);
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Location = new System.Drawing.Point(105, 128);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(226, 27);
-            this.guna2Button2.TabIndex = 11;
-            this.guna2Button2.Text = "Listado Departamentos";
-            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
-            // 
-            // cbxEncargado
-            // 
-            this.cbxEncargado.AutoSize = true;
-            this.cbxEncargado.Font = new System.Drawing.Font("Cooper Black", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxEncargado.Location = new System.Drawing.Point(360, 161);
-            this.cbxEncargado.Name = "cbxEncargado";
-            this.cbxEncargado.Size = new System.Drawing.Size(117, 19);
-            this.cbxEncargado.TabIndex = 12;
-            this.cbxEncargado.Text = "ENCARGADO";
-            this.cbxEncargado.UseVisualStyleBackColor = true;
+            this.btnListadoDepa.BorderRadius = 10;
+            this.btnListadoDepa.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnListadoDepa.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnListadoDepa.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnListadoDepa.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnListadoDepa.FillColor = System.Drawing.Color.Purple;
+            this.btnListadoDepa.Font = new System.Drawing.Font("Cooper Black", 12F);
+            this.btnListadoDepa.ForeColor = System.Drawing.Color.White;
+            this.btnListadoDepa.Location = new System.Drawing.Point(105, 128);
+            this.btnListadoDepa.Name = "btnListadoDepa";
+            this.btnListadoDepa.Size = new System.Drawing.Size(226, 27);
+            this.btnListadoDepa.TabIndex = 11;
+            this.btnListadoDepa.Text = "Listado Departamentos";
+            this.btnListadoDepa.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // cbRol
             // 
@@ -247,7 +239,7 @@
             this.cbRol.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbRol.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbRol.ItemHeight = 30;
-            this.cbRol.Location = new System.Drawing.Point(860, 75);
+            this.cbRol.Location = new System.Drawing.Point(1142, 75);
             this.cbRol.Name = "cbRol";
             this.cbRol.Size = new System.Drawing.Size(162, 36);
             this.cbRol.TabIndex = 13;
@@ -256,7 +248,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(907, 52);
+            this.label5.Location = new System.Drawing.Point(1189, 52);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(37, 19);
             this.label5.TabIndex = 14;
@@ -273,14 +265,16 @@
             this.dgvUser.Location = new System.Drawing.Point(44, 135);
             this.dgvUser.Name = "dgvUser";
             this.dgvUser.RowTemplate.Height = 18;
-            this.dgvUser.Size = new System.Drawing.Size(1057, 257);
+            this.dgvUser.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvUser.Size = new System.Drawing.Size(1303, 257);
             this.dgvUser.TabIndex = 15;
+            this.dgvUser.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUser_CellContentDoubleClick);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Cooper Black", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(422, 39);
+            this.label6.Location = new System.Drawing.Point(519, 39);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(327, 34);
             this.label6.TabIndex = 16;
@@ -316,62 +310,113 @@
             this.label7.TabIndex = 18;
             this.label7.Text = "Cedula:";
             // 
-            // guna2Button1
+            // txtModificar
             // 
-            this.guna2Button1.BorderRadius = 10;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.DarkSlateBlue;
-            this.guna2Button1.Font = new System.Drawing.Font("Cooper Black", 12F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(316, 101);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(159, 28);
-            this.guna2Button1.TabIndex = 19;
-            this.guna2Button1.Text = "Modificar";
+            this.txtModificar.BorderRadius = 10;
+            this.txtModificar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtModificar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.txtModificar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.txtModificar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.txtModificar.FillColor = System.Drawing.Color.Navy;
+            this.txtModificar.Font = new System.Drawing.Font("Cooper Black", 12F);
+            this.txtModificar.ForeColor = System.Drawing.Color.White;
+            this.txtModificar.Location = new System.Drawing.Point(576, 151);
+            this.txtModificar.Name = "txtModificar";
+            this.txtModificar.Size = new System.Drawing.Size(165, 36);
+            this.txtModificar.TabIndex = 19;
+            this.txtModificar.Text = "Modificar";
+            this.txtModificar.Click += new System.EventHandler(this.txtModificar_Click);
             // 
-            // guna2Button3
+            // txtEliminar
             // 
-            this.guna2Button3.BorderRadius = 10;
-            this.guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button3.FillColor = System.Drawing.Color.Crimson;
-            this.guna2Button3.Font = new System.Drawing.Font("Cooper Black", 12F);
-            this.guna2Button3.ForeColor = System.Drawing.Color.White;
-            this.guna2Button3.Location = new System.Drawing.Point(501, 101);
-            this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.Size = new System.Drawing.Size(159, 28);
-            this.guna2Button3.TabIndex = 20;
-            this.guna2Button3.Text = "Eliminar";
+            this.txtEliminar.BorderRadius = 10;
+            this.txtEliminar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtEliminar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.txtEliminar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.txtEliminar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.txtEliminar.FillColor = System.Drawing.Color.Crimson;
+            this.txtEliminar.Font = new System.Drawing.Font("Cooper Black", 12F);
+            this.txtEliminar.ForeColor = System.Drawing.Color.White;
+            this.txtEliminar.Location = new System.Drawing.Point(332, 95);
+            this.txtEliminar.Name = "txtEliminar";
+            this.txtEliminar.Size = new System.Drawing.Size(159, 34);
+            this.txtEliminar.TabIndex = 20;
+            this.txtEliminar.Text = "Eliminar";
+            this.txtEliminar.Click += new System.EventHandler(this.txtEliminar_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Silver;
             this.panel1.Controls.Add(this.dgvUser);
-            this.panel1.Controls.Add(this.guna2Button3);
+            this.panel1.Controls.Add(this.txtEliminar);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.guna2Button1);
             this.panel1.Controls.Add(this.txtBuscarCed);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Location = new System.Drawing.Point(-1, 228);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1150, 428);
+            this.panel1.Size = new System.Drawing.Size(1401, 428);
             this.panel1.TabIndex = 21;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(758, 53);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(75, 19);
+            this.label8.TabIndex = 23;
+            this.label8.Text = "Usuario";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
+            // 
+            // txtUsuario
+            // 
+            this.txtUsuario.BorderRadius = 10;
+            this.txtUsuario.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtUsuario.DefaultText = "";
+            this.txtUsuario.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtUsuario.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtUsuario.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtUsuario.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtUsuario.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtUsuario.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtUsuario.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtUsuario.Location = new System.Drawing.Point(723, 75);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.PlaceholderText = "";
+            this.txtUsuario.SelectedText = "";
+            this.txtUsuario.Size = new System.Drawing.Size(170, 36);
+            this.txtUsuario.TabIndex = 22;
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.BorderRadius = 10;
+            this.btnLimpiar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnLimpiar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnLimpiar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnLimpiar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnLimpiar.FillColor = System.Drawing.Color.Green;
+            this.btnLimpiar.Font = new System.Drawing.Font("Cooper Black", 12F);
+            this.btnLimpiar.ForeColor = System.Drawing.Color.White;
+            this.btnLimpiar.Location = new System.Drawing.Point(778, 151);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(159, 36);
+            this.btnLimpiar.TabIndex = 24;
+            this.btnLimpiar.Text = "limpiar";
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // FrmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1148, 655);
+            this.ClientSize = new System.Drawing.Size(1400, 655);
+            this.Controls.Add(this.btnLimpiar);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.txtModificar);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cbRol);
-            this.Controls.Add(this.cbxEncargado);
-            this.Controls.Add(this.guna2Button2);
+            this.Controls.Add(this.btnListadoDepa);
             this.Controls.Add(this.txtContra);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtListDepa);
@@ -406,16 +451,18 @@
         private Guna.UI2.WinForms.Guna2TextBox txtListDepa;
         private Guna.UI2.WinForms.Guna2TextBox txtNombre;
         private Guna.UI2.WinForms.Guna2TextBox txtContra;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
-        private System.Windows.Forms.CheckBox cbxEncargado;
+        private Guna.UI2.WinForms.Guna2Button btnListadoDepa;
         private Guna.UI2.WinForms.Guna2ComboBox cbRol;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dgvUser;
         private System.Windows.Forms.Label label6;
         private Guna.UI2.WinForms.Guna2TextBox txtBuscarCed;
         private System.Windows.Forms.Label label7;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button3;
+        private Guna.UI2.WinForms.Guna2Button txtModificar;
+        private Guna.UI2.WinForms.Guna2Button txtEliminar;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label8;
+        private Guna.UI2.WinForms.Guna2TextBox txtUsuario;
+        private Guna.UI2.WinForms.Guna2Button btnLimpiar;
     }
 }

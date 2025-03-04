@@ -13,7 +13,7 @@ namespace ModuloDeCompra_BD.Clases
     {
         static SqlConnection con = new SqlConnection();
         static string servidor = "26.137.134.250,1433";
-        static string bd = "BDModuloCompr";
+        static string bd = "ModuloCompras";
         static string usuario = "sa";
         static string password = "1234";
         static string puerto = "1433";
