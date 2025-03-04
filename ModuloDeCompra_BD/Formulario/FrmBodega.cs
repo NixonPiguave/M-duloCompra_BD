@@ -26,5 +26,10 @@ namespace ModuloDeCompra_BD.Formulario
         {
 
         }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

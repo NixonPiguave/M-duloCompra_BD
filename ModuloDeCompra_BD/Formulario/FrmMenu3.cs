@@ -108,16 +108,22 @@ namespace Menú
         private void guna2Button14_Click(object sender, EventArgs e)
         {
             pnMantenimientos.Visible = false;
+            FrmRol frRol = new FrmRol();
+            openChildForm(frRol);
         }
 
         private void guna2Button15_Click(object sender, EventArgs e)
         {
             pnMantenimientos.Visible = false;
+            FrmDepartamento frmDepartamento = new FrmDepartamento();
+            openChildForm(frmDepartamento);
         }
 
         private void guna2Button16_Click(object sender, EventArgs e)
         {
             pnMantenimientos.Visible = false;
+            FrmIVA frmIVA = new FrmIVA();
+            openChildForm(frmIVA);
         }
 
         private void guna2Button8_Click(object sender, EventArgs e)
@@ -128,6 +134,8 @@ namespace Menú
         private void guna2Button9_Click(object sender, EventArgs e)
         {
             pnIventario.Visible = false;
+            FrmBodega frmBodega = new FrmBodega();
+            openChildForm(frmBodega);
         }
     }
 }

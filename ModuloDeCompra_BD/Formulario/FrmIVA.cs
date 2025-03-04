@@ -11,34 +11,34 @@ using System.Windows.Forms;
 
 namespace ModuloDeCompra_BD.Formulario
 {
-    public partial class FrmCategorias: Form
+    public partial class FrmIVA: Form
     {
-        public FrmCategorias()
+        public FrmIVA()
         {
             InitializeComponent();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            CsCategoria csCategoria = new CsCategoria();
-            if (!string.IsNullOrEmpty(txtCategoria.Text))
+            CsIVA csIva = new CsIVA();
+            if (!string.IsNullOrEmpty(txtIVA.Text))
             {
-                if (!CsComandosSql.verificar($"select * from Categoria where Categoria = '{txtCategoria.Text}'"))
+                if (!CsComandosSql.verificar($"select * from IVA where Valor_IVA= '{txtIVA.Text}'"))
                 {
-                    csCategoria.Categoria = txtCategoria.Text;
-                    csCategoria.AñadirCategoria();
+                    csIva.Iva = txtIVA.Text;
+                    csIva.AñadirCategoria();
                     dgvCategoria.DataSource = CsComandosSql.RetornaDatos("Select * from Categoria");
-                    txtCategoria.Text = string.Empty;
-                    MessageBox.Show("Se ha agregado la categoria");
+                    txtIVA.Text = string.Empty;
+                    MessageBox.Show("Se ha agregado el IVA");
                 }
                 else
                 {
-                    MessageBox.Show("La categoria ya existe");
+                    MessageBox.Show("El IVA ya existe");
                 }
             }
             else
             {
-                MessageBox.Show("Rellene la categoria");
+                MessageBox.Show("Rellene el IVA");
             }
         }
 
@@ -53,10 +53,10 @@ namespace ModuloDeCompra_BD.Formulario
             btnModificar.Location = boton;
             btnAgregar.Location = btnAgregarLocalizacion;
  
-            if (txtModificarCategoria.Visible == false)
+            if (txtModificarIVA.Visible == false)
             {
                 lblModificarCategoria.Visible = true;
-                txtModificarCategoria.Visible = true;
+                txtModificarIVA.Visible = true;
                 btnAceptar.Visible = true;
                 btnAgregar.Visible = false;
             }
@@ -71,43 +71,43 @@ namespace ModuloDeCompra_BD.Formulario
                 btnAgregar.Location = regresarPosicionBtnAgregar;
                 btnModificar.Location = regresarPosicionBtnModificar;
                 lblModificarCategoria.Visible = false;
-                txtModificarCategoria.Visible = false;
+                txtModificarIVA.Visible = false;
                 btnAceptar.Visible = false;
                 btnAgregar.Visible = true;
             }
         }
 
-        private void FrmCategorias_Load(object sender, EventArgs e)
+        private void FrmIVA_Load(object sender, EventArgs e)
         {
-            dgvCategoria.DataSource = CsComandosSql.RetornaDatos("Select * from Categoria");
+            dgvCategoria.DataSource = CsComandosSql.RetornaDatos("Select * from IVA");
         }
 
         private void dgvCategoria_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             int celda = dgvCategoria.CurrentCell.RowIndex;
-            txtCategoria.Text = dgvCategoria[1, celda].Value.ToString();
+            txtIVA.Text = dgvCategoria[1, celda].Value.ToString();
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            CsCategoria csCategoria = new CsCategoria();
-            if (!string.IsNullOrEmpty(txtCategoria.Text) || string.IsNullOrEmpty(txtModificarCategoria.Text))
+            CsIVA csIVA = new CsIVA();
+            if (!string.IsNullOrEmpty(txtIVA.Text) || string.IsNullOrEmpty(txtModificarIVA.Text))
             {
-                if (CsComandosSql.verificar($"select * from Categoria where Categoria = '{txtCategoria.Text}'"))
+                if (CsComandosSql.verificar($"select * from IVA where Valor_IVA= '{txtIVA.Text}'"))
                 {
-                    csCategoria.Categoria = txtModificarCategoria.Text;
+                    csIVA.Iva = txtModificarIVA.Text;
                     int posicion = dgvCategoria.CurrentCell.RowIndex;
                     int ID = Convert.ToInt32(dgvCategoria[0, posicion].Value);
-                    csCategoria.IdCat = ID;
-                    csCategoria.ModificarCategoria();
-                    dgvCategoria.DataSource = CsComandosSql.RetornaDatos("Select * from Categoria");
-                    txtCategoria.Text = string.Empty;
-                    txtModificarCategoria.Text = string.Empty;
-                    MessageBox.Show("Se ha modificado la categoria");
+                    csIVA.IDiva = ID;
+                    csIVA.ModificarCategoria();
+                    dgvCategoria.DataSource = CsComandosSql.RetornaDatos("Select * from IVA");
+                    txtIVA.Text = string.Empty;
+                    txtModificarIVA.Text = string.Empty;
+                    MessageBox.Show("Se ha modificado el IVA");
                 }
                 else
                 {
-                    MessageBox.Show("La categoria ya existe");
+                    MessageBox.Show("El IVA0 ya existe");
                 }
             }
             else
@@ -118,16 +118,16 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtCategoria.Text))
+            if (!string.IsNullOrEmpty(txtIVA.Text))
             {
-                if (CsComandosSql.verificar($"select * from Categoria where Categoria = '{txtCategoria.Text}'"))
+                if (CsComandosSql.verificar($"select * from Categoria where Categoria = '{txtIVA.Text}'"))
                 {
                     int posicion = dgvCategoria.CurrentCell.RowIndex;
                     int ID = Convert.ToInt32(dgvCategoria[0, posicion].Value);
                     CsCategoria csCategoria = new CsCategoria();
                     csCategoria.IdCat = ID;
                     csCategoria.EliminarCategoria();
-                    txtCategoria.Text = string.Empty;
+                    txtIVA.Text = string.Empty;
                     dgvCategoria.DataSource = CsComandosSql.RetornaDatos("select * from Categoria");
                     MessageBox.Show("Se ha eliminado la categoria");
                 }

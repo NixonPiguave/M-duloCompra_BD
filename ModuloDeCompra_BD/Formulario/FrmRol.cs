@@ -11,20 +11,20 @@ using System.Windows.Forms;
 
 namespace ModuloDeCompra_BD.Formulario
 {
-    public partial class FrmDepartamento: Form
+    public partial class FrmRol: Form
     {
-        public FrmDepartamento()
+        public FrmRol()
         {
             InitializeComponent();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            CsDepartamentos csDepa = new CsDepartamentos();
+            CsRoles csRol = new CsRoles();
             try
             {
                 
-                if (string.IsNullOrWhiteSpace(txtNombreDepartamento.Text))
+                if (string.IsNullOrWhiteSpace(txtRol.Text))
                 {
                     MessageBox.Show("Todos los campos son obligatorios.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
@@ -32,12 +32,12 @@ namespace ModuloDeCompra_BD.Formulario
                 }
                 try
                 {
-                    if (!CsComandosSql.verificar($"Select * from Departamento where Nombre_Departament '{txtNombreDepartamento.Text}'"))
+                    if (!CsComandosSql.verificar($"Select * from Roles where Rol = '{txtRol.Text}'"))
                     {
-                        csDepa.Depa = txtNombreDepartamento.Text;
-                        csDepa.AñadirDepartamento();
-                        dgvDepartamento.DataSource = CsComandosSql.RetornaDatos($"select * from Departamento");
-                        MessageBox.Show("Se ha agregado el departamento");
+                        csRol.Rol = txtRol.Text;
+                        csRol.AñadirRol();
+                        dgvRol.DataSource = CsComandosSql.RetornaDatos($"select * from Roles");
+                        MessageBox.Show("Se ha agregado el Roles");
                     }
                     else
                     {
@@ -67,10 +67,10 @@ namespace ModuloDeCompra_BD.Formulario
             btnModificar.Location = boton;
             btnAgregar.Location = btnAgregarLocalizacion;
  
-            if (txtModificarDepartamento.Visible == false)
+            if (txtModificarRol.Visible == false)
             {
-                lblModificarDepartamento.Visible = true;
-                txtModificarDepartamento.Visible = true;
+                lblModificarRol.Visible = true;
+                txtModificarRol.Visible = true;
                 btnAceptar.Visible = true;
                 btnAgregar.Visible = false;
             }
@@ -84,31 +84,31 @@ namespace ModuloDeCompra_BD.Formulario
                 regresarPosicionBtnAgregar.Y = 217;
                 btnAgregar.Location = regresarPosicionBtnAgregar;
                 btnModificar.Location = regresarPosicionBtnModificar;
-                lblModificarDepartamento.Visible = false;
-                txtModificarDepartamento.Visible = false;
+                lblModificarRol.Visible = false;
+                txtModificarRol.Visible = false;
                 btnAceptar.Visible = false;
                 btnAgregar.Visible = true;
             }
         }
 
-        private void FrmDepartamento_Load(object sender, EventArgs e)
+        private void FrmRol_Load(object sender, EventArgs e)
         {
-            dgvDepartamento.DataSource = CsComandosSql.RetornaDatos("Select * from Departamento");
+            dgvRol.DataSource = CsComandosSql.RetornaDatos("Select * from Roles");
         }
 
         private void dgvCategoria_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            int celda = dgvDepartamento.CurrentCell.RowIndex;
-            txtNombreDepartamento.Text = dgvDepartamento[1, celda].Value.ToString();
+            int celda = dgvRol.CurrentCell.RowIndex;
+            txtRol.Text = dgvRol[1, celda].Value.ToString();
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            CsDepartamentos csDepa = new CsDepartamentos();
+            CsRoles csRoles = new CsRoles();
             try
             {
 
-                if (string.IsNullOrWhiteSpace(txtNombreDepartamento.Text) || string.IsNullOrEmpty(txtModificarDepartamento.Text))
+                if (string.IsNullOrWhiteSpace(txtRol.Text) || string.IsNullOrEmpty(txtModificarRol.Text))
                 {
                     MessageBox.Show("Todos los campos son obligatorios.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
@@ -116,15 +116,15 @@ namespace ModuloDeCompra_BD.Formulario
                 }
                 try
                 {
-                    if (!CsComandosSql.verificar($"Select * from Departamento where Nombre_Departamento = '{txtModificarDepartamento.Text}'"))
+                    if (!CsComandosSql.verificar($"Select * from Roles where Rol= '{txtModificarRol.Text}'"))
                     {
-                        int posicion = dgvDepartamento.CurrentCell.RowIndex;
-                        int ID = Convert.ToInt32(dgvDepartamento[0, posicion].Value);
-                        csDepa.DepaID = ID;
-                        csDepa.Depa = txtModificarDepartamento.Text;
-                        csDepa.ModificarDepartamento();
-                        dgvDepartamento.DataSource = CsComandosSql.RetornaDatos($"select * from Departamento");
-                        MessageBox.Show("Se ha modificado el departamento.");
+                        int posicion = dgvRol.CurrentCell.RowIndex;
+                        int ID = Convert.ToInt32(dgvRol[0, posicion].Value);
+                        csRoles.RolID= ID;
+                        csRoles.Rol = txtModificarRol.Text;
+                        csRoles.ModificarRol();
+                        dgvRol.DataSource = CsComandosSql.RetornaDatos($"select * from Roles");
+                        MessageBox.Show("Se ha modificado el rol.");
                     }
                     else
                     {
@@ -145,11 +145,11 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            CsDepartamentos csDepa = new CsDepartamentos();
+            CsRoles csrol = new CsRoles();
             try
             {
 
-                if (string.IsNullOrWhiteSpace(txtNombreDepartamento.Text))
+                if (string.IsNullOrWhiteSpace(txtRol.Text))
                 {
                     MessageBox.Show("Todos los campos son obligatorios.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
@@ -157,12 +157,12 @@ namespace ModuloDeCompra_BD.Formulario
                 }
                 try
                 {
-                    int posicion = dgvDepartamento.CurrentCell.RowIndex;
-                    int ID = Convert.ToInt32(dgvDepartamento[0, posicion].Value);
-                    csDepa.DepaID = ID;
-                    csDepa.EliminarDepartamento();
-                    dgvDepartamento.DataSource = CsComandosSql.RetornaDatos($"select * from Departamento");
-                    MessageBox.Show("Se ha eliminado el departamento");
+                    int posicion = dgvRol.CurrentCell.RowIndex;
+                    int ID = Convert.ToInt32(dgvRol[0, posicion].Value);
+                    csrol.RolID = ID;
+                    csrol.EliminarRol();
+                    dgvRol.DataSource = CsComandosSql.RetornaDatos($"select * from Roles");
+                    MessageBox.Show("Se ha eliminado el rol");
                 }
                 catch (Exception ex)
                 {

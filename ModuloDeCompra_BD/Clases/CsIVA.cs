@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Linq;
 using System.Text;
@@ -8,31 +7,31 @@ using System.Threading.Tasks;
 
 namespace ModuloDeCompra_BD.Clases
 {
-    class CsCategoria
+    internal class CsIVA
     {
-        string categoria;
-        int IDCat;
+        string iva;
+        int IDIVA;
 
-        public int IdCat { get => IDCat; set => IDCat = value; }
-        public string Categoria { get => categoria; set => categoria = value; }
+        public int IDiva { get => IDIVA; set => IDIVA = value; }
+        public string Iva { get => iva; set => iva = value; }
         public bool AñadirCategoria()
         {
-            string query = $"insert into Categoria (Categoria) values ('{Categoria}')";
+            string query = $"insert into IVA (Valor_IVAA) values ('{Iva}')";
             return CsComandosSql.InserDeletUpdate(query);
         }
         public bool ModificarCategoria()
         {
-            string query = $"Update Categoria set Categoria = '{Categoria}' where ID_CAT = {IdCat}";
+            string query = $"Update IVA set Valor_IVA = '{Iva}' where ID_IVA = {IDiva}";
             return CsComandosSql.InserDeletUpdate(query);
         }
         public bool EliminarCategoria()
         {
-            string query = $"Delete Categoria from Categoria where ID_CAT = {IdCat}";
+            string query = $"Delete from IVA where ID_IVA = {IDiva}";
             return CsComandosSql.InserDeletUpdate(query);
         }
         public DataTable ListaCategoria(string m)
         {
-            string query =$"Select * from Categoria where Categoria like '%{m}%'";
+            string query = $"Select * from IVA where Valor_IVA like '%{m}%'";
             return CsComandosSql.RetornaDatos(query);
         }
     }

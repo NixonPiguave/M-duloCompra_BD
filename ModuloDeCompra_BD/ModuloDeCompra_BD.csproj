@@ -55,10 +55,31 @@
     <Compile Include="Clases\CsCategoria.cs" />
     <Compile Include="Clases\CsComandosSql.cs" />
     <Compile Include="Clases\CsConeccionServer.cs" />
+    <Compile Include="Clases\CsDepartamentos.cs" />
     <Compile Include="Clases\CsEncriptarMDS.cs" />
     <Compile Include="Clases\CsProducto.cs" />
     <Compile Include="Clases\CsProveedores.cs" />
     <Compile Include="Clases\CsUsuario.cs" />
+    <Compile Include="Clases\CsRoles.cs" />
+    <Compile Include="Clases\CsIVA.cs" />
+    <Compile Include="Formulario\FrmIVA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\FrmIVA.Designer.cs">
+      <DependentUpon>FrmIVA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\FrmRol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\FrmRol.Designer.cs">
+      <DependentUpon>FrmRol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\FrmDepartamentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\FrmDepartamentos.Designer.cs">
+      <DependentUpon>FrmDepartamentos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formulario\FrmRequisiciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,12 +133,6 @@
     </Compile>
     <Compile Include="Formulario\FrmCategorias.Designer.cs">
       <DependentUpon>FrmCategorias.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formulario\FrmDepartamentos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formulario\FrmDepartamentos.Designer.cs">
-      <DependentUpon>FrmDepartamentos.cs</DependentUpon>
     </Compile>
     <Compile Include="Formulario\FrmInventario.cs">
       <SubType>Form</SubType>
@@ -193,6 +208,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formulario\FrmIVA.resx">
+      <DependentUpon>FrmIVA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\FrmRol.resx">
+      <DependentUpon>FrmRol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\FrmDepartamentos.resx">
+      <DependentUpon>FrmDepartamentos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formulario\FrmRequisiciones.resx">
       <DependentUpon>FrmRequisiciones.cs</DependentUpon>
     </EmbeddedResource>
@@ -219,9 +243,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\FrmCategorias.resx">
       <DependentUpon>FrmCategorias.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formulario\FrmDepartamentos.resx">
-      <DependentUpon>FrmDepartamentos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\FrmInventario.resx">
       <DependentUpon>FrmInventario.cs</DependentUpon>
