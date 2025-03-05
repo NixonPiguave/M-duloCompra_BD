@@ -21,15 +21,25 @@ namespace ModuloDeCompra_BD.Formulario
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             CsIVA csIva = new CsIVA();
-            if (!string.IsNullOrEmpty(txtIVA.Text))
+            if (!string.IsNullOrEmpty(txtIDIVA.Text))
             {
-                if (!CsComandosSql.verificar($"select * from IVA where Valor_IVA= '{txtIVA.Text}'"))
+                if (!CsComandosSql.verificar($"select * from IVA where Valor_IVA= '{txtIDIVA.Text}'"))
                 {
-                    csIva.Iva = txtIVA.Text;
-                    csIva.AñadirCategoria();
-                    dgvCategoria.DataSource = CsComandosSql.RetornaDatos("Select * from Categoria");
-                    txtIVA.Text = string.Empty;
-                    MessageBox.Show("Se ha agregado el IVA");
+                    csIva.IDIVA = txtIDIVA.Text;
+                    csIva.ValorIva = Convert.ToDouble(txtAgregarValorIVA.Text);
+                    csIva.Estado = txtEstadoIVA.Text;
+                    if (csIva.AñadirIVA())
+                    {
+                        txtIDIVA.Text = string.Empty;
+                        txtAgregarValorIVA.Text = string.Empty;
+                        txtEstadoIVA.Text = string.Empty;
+                        dgvCategoria.DataSource = CsComandosSql.RetornaDatos("Select * from IVA");
+                        MessageBox.Show("Se ha agregado el IVA");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al agregar el IVA.");
+                    }
                 }
                 else
                 {
@@ -44,35 +54,54 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            Point boton = new Point();
-            Point btnAgregarLocalizacion = new Point();
-            boton.Y = 317;
-            boton.X = 175;
-            btnAgregarLocalizacion.Y = boton.Y;
-            btnAgregarLocalizacion.X = 12;
-            btnModificar.Location = boton;
-            btnAgregar.Location = btnAgregarLocalizacion;
- 
-            if (txtModificarIVA.Visible == false)
+            if (lblModificarIDIVA.Visible == false)
             {
-                lblModificarCategoria.Visible = true;
-                txtModificarIVA.Visible = true;
+                Point CordAbajoModificar = new Point();
+                Point CordAbajoEliminar = new Point();
+                CordAbajoModificar.X = 183;
+                CordAbajoModificar.Y = 519;
+                CordAbajoEliminar.X = 97;
+                CordAbajoEliminar.Y = 591;
+                btnModificar.Location = CordAbajoModificar;
+                btnEliminar.Location = CordAbajoEliminar;
+
+                lblModificarIDIVA.Visible = true;
+                txtModificarIDIVA.Visible = true;
+                lblModificarValorIVA.Visible = true;
+                txtModificarValorIVA.Visible = true;
+                lblModificarEstadoIVA.Visible = true;
+                txtModificarEstadoIVA.Visible = true;
                 btnAceptar.Visible = true;
+
+                lblValorIVA.Visible = false;
+                txtAgregarValorIVA.Visible = false;
+                lblEstadoIva.Visible = false;
+                txtEstadoIVA.Visible = false;
                 btnAgregar.Visible = false;
             }
             else
             {
-                Point regresarPosicionBtnModificar = new Point();
-                Point regresarPosicionBtnAgregar = new Point();
-                regresarPosicionBtnModificar.X = 175;
-                regresarPosicionBtnModificar.Y = 217;
-                regresarPosicionBtnAgregar.X = 12;
-                regresarPosicionBtnAgregar.Y = 217;
-                btnAgregar.Location = regresarPosicionBtnAgregar;
-                btnModificar.Location = regresarPosicionBtnModificar;
-                lblModificarCategoria.Visible = false;
-                txtModificarIVA.Visible = false;
+                Point CordArribaModificar = new Point();
+                Point CordArribaEliminar = new Point();
+                CordArribaModificar.X = 183;
+                CordArribaModificar.Y = 408;
+                CordArribaEliminar.X = 97;
+                CordArribaEliminar.Y = 482;
+                btnModificar.Location = CordArribaModificar;
+                btnEliminar.Location = CordArribaEliminar;
+
+                lblModificarIDIVA.Visible = false;
+                txtModificarIDIVA.Visible = false;
+                lblModificarValorIVA.Visible = false;
+                txtModificarValorIVA.Visible = false;
+                lblModificarEstadoIVA.Visible = false;
+                txtModificarEstadoIVA.Visible = false;
                 btnAceptar.Visible = false;
+
+                lblValorIVA.Visible = true;
+                txtAgregarValorIVA.Visible = true;
+                lblEstadoIva.Visible = true;
+                txtEstadoIVA.Visible = true;
                 btnAgregar.Visible = true;
             }
         }
@@ -85,60 +114,58 @@ namespace ModuloDeCompra_BD.Formulario
         private void dgvCategoria_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             int celda = dgvCategoria.CurrentCell.RowIndex;
-            txtIVA.Text = dgvCategoria[1, celda].Value.ToString();
+            txtIDIVA.Text = dgvCategoria[0, celda].Value.ToString();
+            txtAgregarValorIVA.Text = dgvCategoria[1, celda].Value.ToString();
+            txtEstadoIVA.Text = dgvCategoria[2, celda].Value.ToString();
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            CsIVA csIVA = new CsIVA();
-            if (!string.IsNullOrEmpty(txtIVA.Text) || string.IsNullOrEmpty(txtModificarIVA.Text))
+            CsIVA csIva = new CsIVA();
+            if (!string.IsNullOrEmpty(txtIDIVA.Text) || string.IsNullOrEmpty(txtAgregarValorIVA.Text))
             {
-                if (CsComandosSql.verificar($"select * from IVA where Valor_IVA= '{txtIVA.Text}'"))
+                if (CsComandosSql.verificar($"select * from IVA where Valor_IVA= '{txtIDIVA.Text}'"))
                 {
-                    csIVA.Iva = txtModificarIVA.Text;
-                    int posicion = dgvCategoria.CurrentCell.RowIndex;
-                    int ID = Convert.ToInt32(dgvCategoria[0, posicion].Value);
-                    csIVA.IDiva = ID;
-                    csIVA.ModificarCategoria();
-                    dgvCategoria.DataSource = CsComandosSql.RetornaDatos("Select * from IVA");
-                    txtIVA.Text = string.Empty;
-                    txtModificarIVA.Text = string.Empty;
+                    csIva.IDIVA = txtIDIVA.Text;
+                    csIva.ValorIva = Convert.ToDouble(txtAgregarValorIVA.Text);
+                    csIva.Estado = txtEstadoIVA.Text;
+                    csIva.ModificarIVA();
                     MessageBox.Show("Se ha modificado el IVA");
                 }
                 else
                 {
-                    MessageBox.Show("El IVA0 ya existe");
+                    MessageBox.Show("El IVA ya existe");
                 }
             }
             else
             {
-                MessageBox.Show("Escoja la categoria");
+                MessageBox.Show("Rellena los campos");
             }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtIVA.Text))
+            if (!string.IsNullOrEmpty(txtIDIVA.Text))
             {
-                if (CsComandosSql.verificar($"select * from Categoria where Categoria = '{txtIVA.Text}'"))
+                if (CsComandosSql.verificar($"select * from IVA where Valor_IVA= '{txtIDIVA.Text}'"))
                 {
                     int posicion = dgvCategoria.CurrentCell.RowIndex;
-                    int ID = Convert.ToInt32(dgvCategoria[0, posicion].Value);
-                    CsCategoria csCategoria = new CsCategoria();
-                    csCategoria.IdCat = ID;
-                    csCategoria.EliminarCategoria();
-                    txtIVA.Text = string.Empty;
-                    dgvCategoria.DataSource = CsComandosSql.RetornaDatos("select * from Categoria");
-                    MessageBox.Show("Se ha eliminado la categoria");
+                    string ID = dgvCategoria[0, posicion].Value.ToString();
+                    CsIVA csIVA = new CsIVA();
+                    csIVA.IDIVA= ID;
+                    csIVA.EliminarIVA();
+                    txtIDIVA.Text = string.Empty;
+                    dgvCategoria.DataSource = CsComandosSql.RetornaDatos("select * from IVA");
+                    MessageBox.Show("Se ha eliminado el IVA");
                 }
                 else
                 {
-                    MessageBox.Show("No se pudo eliminar la categoria");
+                    MessageBox.Show("No se pudo eliminar el IVA");
                 }
             }
             else
             {
-                MessageBox.Show("Escoja la categoria");
+                MessageBox.Show("Escoja el IVA");
             }
         }
     }
