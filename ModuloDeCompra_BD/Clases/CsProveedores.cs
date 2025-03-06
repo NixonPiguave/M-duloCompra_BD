@@ -41,7 +41,6 @@ namespace ModuloDeCompra_BD.Clases
         {
             string precioUFormatoSQL = Descuento1.ToString(CultureInfo.InvariantCulture);
             string query = $"INSERT INTO Proveedores(Nombre_Proveedor, Nombre_Contacto, Correo, Pais, Ciudad, NroTelefono, TipoDocumento, NroDocumento, Descuento_Predeterminado, Direccion, EstadoProveedor) VALUES ('{NombreProvee}', '{NombreContacto}', '{Correo}', '{Pais}', '{Ciudad}', '{Telefono}', '{TipoDoc}', '{NumDoc}', {precioUFormatoSQL}, '{Direccion}', '{Estado}') ";
-            MessageBox.Show("asd");
             return CsComandosSql.InserDeletUpdate(query);
         }
         public bool ModificarProveedor()
