@@ -96,6 +96,8 @@ namespace Menú
         private void guna2Button11_Click(object sender, EventArgs e)
         {
             pnMantenimientos.Visible = false;
+            FrmProveedores frmProveedores = new FrmProveedores();
+            openChildForm(frmProveedores);
         }
 
         private void guna2Button12_Click(object sender, EventArgs e)

@@ -21,14 +21,8 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void FrmProveedores_Load(object sender, EventArgs e)
         {
-            string sentencia = "select P.ID_Prov, P.Nombre_Proveedor, P.NombreContacto, P.Correo, P.Descuento_Predeterminado, P.Pais, P.Ciudad, P.Direccion, P.Telefono, T.Tipo, P.Num_Documento from Proveedoress as P inner join TipoDocumento as T on P.Tipo_Documento=T.TipoID";
+            string sentencia = "Select * from Proveedores";
             dgvProveedores.DataSource = CsComandosSql.RetornaDatos(sentencia);
-
-            DataTable tb = CsComandosSql.RetornaDatos("select * from TipoDocumento");
-            for (int i = 0; i < tb.Rows.Count; i++)
-            {
-                cmbDocumento.Items.Add(tb.Rows[i]["Tipo"].ToString());
-            }
         }
 
         private void dgvProveedores_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -36,42 +30,68 @@ namespace ModuloDeCompra_BD.Formulario
             int posCelda = dgvProveedores.CurrentCell.RowIndex;
             id = Convert.ToInt32(dgvProveedores[0, posCelda].Value.ToString());
             txtNombreProveedor.Text = dgvProveedores[1, posCelda].Value.ToString();
-            txtDescPredeterminadoProveedor.Text = dgvProveedores[2, posCelda].Value.ToString();
+            txtNombreContacto.Text = dgvProveedores[2, posCelda].Value.ToString();
             txtCorreoProveedor.Text = dgvProveedores[3, posCelda].Value.ToString();
-            cmbDocumento.Text = dgvProveedores[4, posCelda].Value.ToString();
-            txtNroDocProveedor.Text = dgvProveedores[5, posCelda].Value.ToString();
+            txtPais.Text = dgvProveedores[4, posCelda].Value.ToString();
+            txtCiudad.Text = dgvProveedores[5, posCelda].Value.ToString();
+            txtTelefono.Text = dgvProveedores[6, posCelda].Value.ToString();
+            cmbDocumento.Text = dgvProveedores[7, posCelda].Value.ToString();
+            txtNroDocProveedor.Text = dgvProveedores[8, posCelda].Value.ToString();
+            txtDescPredeterminadoProveedor.Text = dgvProveedores[9, posCelda].Value.ToString();
+            txtDireccion.Text = dgvProveedores[10, posCelda].Value.ToString();
+            if (dgvProveedores[11, posCelda].Value.ToString() == "1")
+            {
+                cmbEstado.SelectedIndex = 0;
+            }
+            else
+            {
+                cmbEstado.SelectedIndex = 1;
+            }
         }
 
         private void btnAggProveedor_Click(object sender, EventArgs e)
         {
             try
             {
-                if (!(CsComandosSql.verificar($"Select * from Proveedoress where Num_Documento = {txtNroDocProveedor.Text}")))
+                if (!(CsComandosSql.verificar($"Select * from Proveedores where NroDocumento = {txtNroDocProveedor.Text}")))
                 {
                     CsProveedores CsProveedor = new CsProveedores();
-                    CsProveedor.IdProvee1 = id;
                     CsProveedor.NombreProvee1 = txtNombreProveedor.Text;
                     CsProveedor.NombreContacto1 = txtNombreContacto.Text;
                     CsProveedor.Descuento1 = Convert.ToDouble(txtDescPredeterminadoProveedor.Text);
+                    CsProveedor.Correo1 = txtCorreoProveedor.Text;
                     CsProveedor.Pais1 = txtPais.Text;
                     CsProveedor.Ciudad1 = txtCiudad.Text;
                     CsProveedor.Direccion1 = txtDireccion.Text;
                     CsProveedor.Telefono1 = txtTelefono.Text;
-                    DataTable dt = CsComandosSql.RetornaDatos($"Select TipoID from TipoDocumento where Tipo = '{cmbDocumento.SelectedItem.ToString()}'");
-                    CsProveedor.TipoDoc1 = Convert.ToInt32(dt.Rows[0]["TipoID"].ToString());
+                    CsProveedor.TipoDoc1 = cmbDocumento.SelectedItem.ToString();
                     CsProveedor.NumDoc1 = txtNroDocProveedor.Text;
-                    CsProveedor.AñadirProveedor();
-                    MessageBox.Show("Se ha agregado el proveedor");
-                    string sentencia = "select P.ID_Prov, P.Nombre_Proveedor, P.NombreContacto, P.Correo, P.Descuento_Predeterminado, P.Pais, P.Ciudad, P.Direccion, P.Telefono, T.Tipo, P.Num_Documento from Proveedoress as P inner join TipoDocumento as T on P.Tipo_Documento=T.TipoID"; dgvProveedores.DataSource = CsComandosSql.RetornaDatos(sentencia);
+                    CsProveedor.Estado1 = (cmbEstado.SelectedIndex == 0) ? '1' : '0';
+                    if (CsProveedor.AñadirProveedor())
+                    {
+                        MessageBox.Show("Se ha agregado el proveedor");
+                        txtNombreProveedor.Text = string.Empty;
+                        txtNombreContacto.Text = string.Empty;
+                        txtDescPredeterminadoProveedor.Text = string.Empty;
+                        txtCorreoProveedor.Text = string.Empty;
+                        txtPais.Text = string.Empty;
+                        txtCiudad.Text = string.Empty;
+                        txtDireccion.Text = string.Empty;
+                        txtTelefono.Text = string.Empty;
+                        cmbDocumento.SelectedIndex = -1;
+                        cmbEstado.SelectedIndex = -1;
+                        txtNroDocProveedor.Text = string.Empty;
+                    }
+                    string sentencia = "select * from Proveedores"; dgvProveedores.DataSource = CsComandosSql.RetornaDatos(sentencia);
                 }
                 else
                 {
                     MessageBox.Show("Ya existe número de documento");
                 }
             }
-            catch
+            catch(Exception ex)
             {
-                MessageBox.Show("Error al insertar proveedor");
+                MessageBox.Show("Error al insertar proveedor"+ ex);
             }
         }
 
@@ -79,35 +99,41 @@ namespace ModuloDeCompra_BD.Formulario
         {
             try
             {
-
-                if (!(CsComandosSql.verificar($"Select * from Proveedoress where Num_Documento = {txtNroDocProveedor.Text}")))
+                CsProveedores CsProveedor = new CsProveedores();
+                CsProveedor.IdProvee1 = id;
+                CsProveedor.NombreProvee1 = txtNombreProveedor.Text;
+                CsProveedor.NombreContacto1 = txtNombreContacto.Text;
+                CsProveedor.Descuento1 = Convert.ToDouble(txtDescPredeterminadoProveedor.Text);
+                CsProveedor.Correo1 = txtCorreoProveedor.Text;
+                CsProveedor.Pais1 = txtPais.Text;
+                CsProveedor.Ciudad1 = txtCiudad.Text;
+                CsProveedor.Direccion1 = txtDireccion.Text;
+                CsProveedor.Telefono1 = txtTelefono.Text;
+                CsProveedor.TipoDoc1 = cmbDocumento.SelectedItem.ToString();
+                CsProveedor.NumDoc1 = txtNroDocProveedor.Text;
+                CsProveedor.Estado1 = (cmbEstado.SelectedIndex == 0) ? '1' : '0';
+                if (CsProveedor.ModificarProveedor())
                 {
-                    CsProveedores CsProveedor = new CsProveedores();
-                    CsProveedor.IdProvee1 = id;
-                    CsProveedor.NombreProvee1 = txtNombreProveedor.Text;
-                    CsProveedor.NombreContacto1 = txtNombreContacto.Text;
-                    CsProveedor.Descuento1 = Convert.ToDouble(txtDescPredeterminadoProveedor.Text);
-                    CsProveedor.Pais1 = txtPais.Text;
-                    CsProveedor.Ciudad1 = txtCiudad.Text;
-                    CsProveedor.Direccion1 = txtDireccion.Text;
-                    CsProveedor.Telefono1 = txtTelefono.Text;
-                    DataTable dt = CsComandosSql.RetornaDatos($"Select TipoID from TipoDocumento where Tipo = '{cmbDocumento.SelectedItem.ToString()}'");
-                    CsProveedor.TipoDoc1 = Convert.ToInt32(dt.Rows[0]["TipoID"].ToString());
-                    CsProveedor.NumDoc1 = txtNroDocProveedor.Text;
-                    CsProveedor.ModificarProveedor();
                     MessageBox.Show("Se ha cambiado el proveedor");
-                    string sentencia = "select P.ID_Prov, P.Nombre_Proveedor, P.NombreContacto, P.Correo, P.Descuento_Predeterminado, P.Pais, P.Ciudad, P.Direccion, P.Telefono, T.Tipo, P.Num_Documento from Proveedoress as P inner join TipoDocumento as T on P.Tipo_Documento=T.TipoID"; dgvProveedores.DataSource = CsComandosSql.RetornaDatos(sentencia);
+                    txtNombreProveedor.Text = string.Empty;
+                    txtNombreContacto.Text = string.Empty;
+                    txtDescPredeterminadoProveedor.Text = string.Empty;
+                    txtCorreoProveedor.Text = string.Empty;
+                    txtPais.Text = string.Empty;
+                    txtCiudad.Text = string.Empty;
+                    txtDireccion.Text = string.Empty;
+                    txtTelefono.Text = string.Empty;
+                    cmbDocumento.SelectedIndex = -1;
+                    cmbEstado.SelectedIndex = -1;
+                    txtNroDocProveedor.Text = string.Empty;
                 }
-                else
-                {
-                    MessageBox.Show("Ya existe número de documento");
-                }
+                string sentencia = "select * from Proveedores";
+                dgvProveedores.DataSource = CsComandosSql.RetornaDatos(sentencia);
             }
             catch
             {
-                MessageBox.Show("No se ha cambiado el proveedor");
+                MessageBox.Show("Error al intentar modificar el proveedor");
             }
-
         }
 
         private void txtBuscar_KeyUp(object sender, KeyEventArgs e)
