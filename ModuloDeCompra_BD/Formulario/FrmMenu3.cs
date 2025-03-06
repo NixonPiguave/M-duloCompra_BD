@@ -75,6 +75,7 @@ namespace Menú
         private void btnRequisiciones_Click(object sender, EventArgs e)
         {
             FrmRequisiciones req = new FrmRequisiciones();
+            req.IDUsuario1 = IDusuario;
             openChildForm(req);
 
         }

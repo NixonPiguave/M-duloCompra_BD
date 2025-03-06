@@ -36,23 +36,21 @@ namespace ModuloDeCompra_BD.Formulario
             try
             {
                 string x = txtID_Bodega.Text;
-               
-
-                    
+                              
                     try
                     {
 
-                        bool success = CsComandosSql.InserDeletUpdate($"INSERT INTO Bodega(Ubicacion, StockActual, StockMin, StockMax) VALUES('{x}', 0, 0, 0)");
+                        bool success = CsComandosSql.InserDeletUpdate($"INSERT INTO Bodega(Ubicacion, StockActual, StockMin, StockMax) VALUES('{txtDireccion.Text}', {txtStockMin.Text},0, {txtStockMax.Text})");
 
                         if (success)
                         {
-                            MessageBox.Show("Medicina agregada exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Bodega creada exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             dgvBodega.DataSource = CsComandosSql.RetornaDatos("select * from Bodega");
                         }
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Error, verifique que se esté ingresando correctamente el proveedor ID y TipoID. Detalles del error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Error, verifique que se esté ingresando correctamente los datos, Detalles del error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 
                
@@ -67,7 +65,7 @@ namespace ModuloDeCompra_BD.Formulario
         private void txtID_Bodega_KeyUp(object sender, KeyEventArgs e)
         {
 
-            dgvBodega.DataSource = CsComandosSql.RetornaDatos($" select * from Bodega where ID_BODEGA = '{txtStockMax.Text}'");
+            dgvBodega.DataSource = CsComandosSql.RetornaDatos($"select * from Bodega where  ID_BODEGA like '%{txtID_Bodega.Text}%'");
 
         }
 

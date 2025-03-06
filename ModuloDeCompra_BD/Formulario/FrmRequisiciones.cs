@@ -11,14 +11,18 @@ using System.Windows.Forms;
 
 namespace Menú.Formularios
 {
+   
     public partial class FrmRequisiciones: Form
     {
          DataTable tabla = new DataTable();
+        int IDUsuario;
+
+        public int IDUsuario1 { get => IDUsuario; set => IDUsuario = value; }
+
         public FrmRequisiciones()
         {
             InitializeComponent();
         }
-
         private void FrmRequisiciones_Load(object sender, EventArgs e)
         {
             tabla.Columns.Add("ID_Producto", typeof(string));
@@ -136,5 +140,104 @@ namespace Menú.Formularios
             txtID.Text = string.Empty;
             nudCantidad.Value = 1;
         }
+
+        private void btnCrearRequi_Click(object sender, EventArgs e)
+        {
+            int idGenerado;
+
+            string xmlRequisicion = $@"
+            <Requisiciones>
+              <Requisicion>
+                <FechaRequisicion>{DateTime.Now}</FechaRequisicion>
+                <EstadoRequisicion>Pendiente</EstadoRequisicion>
+                <Observacion></Observacion>
+                <IDUsuario>{IDUsuario1}</IDUsuario>
+                <MotivoRequisicion>{txtMotivo.Text}</MotivoRequisicion>
+              </Requisicion>
+            </Requisiciones>";
+            try
+            {
+                string query = $@"
+            DECLARE @TempID INT;
+            EXEC SpRequisicion @XMLrequisicion = '{xmlRequisicion}', @IDIngresada=@TempID OUTPUT;
+            SELECT @TempID AS IDGenerado;";
+
+                DataTable dt = CsComandosSql.RetornaDatos(query);
+
+                if (dt.Rows.Count > 0)
+                {
+                    idGenerado = Convert.ToInt32(dt.Rows[0]["IDGenerado"]);
+                    foreach (DataGridViewRow fila in dgvProductosAgregados.Rows)
+                    {
+                        if (fila.IsNewRow)
+                            continue;
+
+                        string idProducto = fila.Cells["ID_Producto"].Value?.ToString();
+                        string idServicio = fila.Cells["ID_Servicio"].Value?.ToString();
+                        string producto = fila.Cells["Producto/Servicio"].Value?.ToString();
+                        string cantidad = fila.Cells["Cantidad"].Value?.ToString();
+
+                        if (string.IsNullOrEmpty(idProducto) && string.IsNullOrEmpty(idServicio))
+                        {
+                            MessageBox.Show("Debe seleccionar un producto o un servicio.");
+                            continue;
+                        }
+
+                        if (!string.IsNullOrEmpty(idProducto) && !string.IsNullOrEmpty(idServicio))
+                        {
+                            MessageBox.Show("Solo debe seleccionar un producto o un servicio, no ambos.");
+                            continue;
+                        }
+
+              
+                        int cantidadValida;
+                        if (!int.TryParse(cantidad, out cantidadValida))
+                        {
+                            MessageBox.Show("La cantidad debe ser un número válido.");
+                            continue;
+                        }
+
+                
+                        string xmlDetalleRequi = $@"
+                        <DRequiciciones>
+                            <DRequisicion>
+                                <Producto>{producto}</Producto>
+                                <Cantidad>{cantidadValida}</Cantidad>
+                                <Estado>Pendiente</Estado>
+                                <ID_Servicio>{(string.IsNullOrEmpty(idServicio) ? "NULL" : idServicio)}</ID_Servicio>
+                                <ID_Producto>{(string.IsNullOrEmpty(idProducto) ? "NULL" : idProducto)}</ID_Producto>
+                                <ID_Requisicion>{idGenerado}</ID_Requisicion>
+                            </DRequisicion>
+                        </DRequiciciones>";
+
+                        string queryD = $"exec SpDetalleRequi @XMLdetalleRequi = '{xmlDetalleRequi}'";
+
+                        try
+                        {
+                            if (CsComandosSql.InserDeletUpdate(queryD))
+                            {
+                                MessageBox.Show("Requisicion creada");
+                                dgvRequisiciones.DataSource = CsComandosSql.RetornaDatos("select * from Requisicion");
+                            }
+                            else
+                                MessageBox.Show("Error al insertar detalle");
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error: " + ex.Message);
+                        }
+                    }
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al insertar requisición: " + ex.Message);
+            }
+
+
+        }
     }
 }
+

@@ -90,7 +90,7 @@
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.guna2Panel1.BackColor = System.Drawing.Color.DarkGray;
             this.guna2Panel1.Controls.Add(this.btnAgregarP);
             this.guna2Panel1.Controls.Add(this.lbIDserv);
             this.guna2Panel1.Controls.Add(this.txtIDServi);
@@ -297,6 +297,7 @@
             // 
             this.dgvListadoServicio.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvListadoServicio.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvListadoServicio.BackgroundColor = System.Drawing.Color.White;
             this.dgvListadoServicio.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvListadoServicio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListadoServicio.Location = new System.Drawing.Point(38, 440);
@@ -388,6 +389,7 @@
             // 
             this.dgvListadoProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvListadoProductos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvListadoProductos.BackgroundColor = System.Drawing.Color.White;
             this.dgvListadoProductos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvListadoProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListadoProductos.Location = new System.Drawing.Point(38, 117);
@@ -464,6 +466,7 @@
             this.btnCrearRequi.Size = new System.Drawing.Size(172, 33);
             this.btnCrearRequi.TabIndex = 7;
             this.btnCrearRequi.Text = "Crear Requisición";
+            this.btnCrearRequi.Click += new System.EventHandler(this.btnCrearRequi_Click);
             // 
             // label1
             // 
@@ -479,6 +482,7 @@
             // 
             this.dgvProductosAgregados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProductosAgregados.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvProductosAgregados.BackgroundColor = System.Drawing.Color.White;
             this.dgvProductosAgregados.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvProductosAgregados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProductosAgregados.Location = new System.Drawing.Point(27, 75);
@@ -533,6 +537,7 @@
             // 
             this.dgvRequisiciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvRequisiciones.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvRequisiciones.BackgroundColor = System.Drawing.Color.White;
             this.dgvRequisiciones.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvRequisiciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRequisiciones.Location = new System.Drawing.Point(27, 67);
