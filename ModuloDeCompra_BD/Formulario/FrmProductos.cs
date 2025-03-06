@@ -70,10 +70,12 @@ namespace ModuloDeCompra_BD.Formulario
                     CsProducto producto = new CsProducto();
                     producto.Nom_Producto1 = txtNombreProducto.Text;
                     producto.Precio_Unit1 = precioU;
-
-                    string iva = Convert.ToString(cmbIVA.SelectedItem);
-                    DataTable tb = CsComandosSql.RetornaDatos($"select * from IVA where Valor_IVA={iva}");
-                    producto.Iva1 = Convert.ToChar(tb.Rows[0]["ID_IVA"].ToString());
+                    string iva = cmbIVA.SelectedItem.ToString();
+                    string precioUFormatoSQL = iva.ToString(CultureInfo.InvariantCulture);
+                    precioUFormatoSQL=precioUFormatoSQL.Replace(',', '.');
+                    DataTable tb = CsComandosSql.RetornaDatos($"select * from IVA where Valor_IVA={precioUFormatoSQL}");
+                    var v = Convert.ToChar(tb.Rows[0]["ID_IVA"]);
+                    producto.Iva1 = v;
 
                     producto.Categoria1 = Id;
                     producto.Proveedor1 = Id2;
@@ -113,7 +115,9 @@ namespace ModuloDeCompra_BD.Formulario
                     producto.Nom_Producto1 = txtNombreProducto.Text;
                     producto.Precio_Unit1 = precioU;
                     string iva = Convert.ToString(cmbIVA.SelectedItem);
-                    DataTable tb = CsComandosSql.RetornaDatos($"select * from IVA where Valor_IVA={iva}");
+                    string precioUFormatoSQL = iva.ToString(CultureInfo.InvariantCulture);
+                    precioUFormatoSQL = precioUFormatoSQL.Replace(',', '.');
+                    DataTable tb = CsComandosSql.RetornaDatos($"select * from IVA where Valor_IVA={precioUFormatoSQL}");
                     producto.Iva1 = Convert.ToChar(tb.Rows[0]["ID_IVA"].ToString());
 
                     
