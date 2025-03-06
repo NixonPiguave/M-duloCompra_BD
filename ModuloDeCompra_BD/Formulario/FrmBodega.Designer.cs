@@ -175,6 +175,7 @@
             this.btnModificar.Size = new System.Drawing.Size(133, 53);
             this.btnModificar.TabIndex = 7;
             this.btnModificar.Text = "Modificar";
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // txtID_Bodega
             // 
