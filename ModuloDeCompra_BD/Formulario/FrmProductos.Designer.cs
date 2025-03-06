@@ -52,9 +52,8 @@
             this.dgvService = new System.Windows.Forms.DataGridView();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btnEliminar = new Guna.UI2.WinForms.Guna2Button();
-            this.btnEditar = new Guna.UI2.WinForms.Guna2Button();
             this.btnEliminarServicio = new Guna.UI2.WinForms.Guna2Button();
-            this.btnEditarServicio = new Guna.UI2.WinForms.Guna2Button();
+            this.btnEditarGeneral = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvService)).BeginInit();
@@ -144,6 +143,7 @@
             // guna2Panel2
             // 
             this.guna2Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
+            this.guna2Panel2.Controls.Add(this.btnEditarGeneral);
             this.guna2Panel2.Controls.Add(this.cmbEstadoProducto);
             this.guna2Panel2.Controls.Add(this.guna2HtmlLabel2);
             this.guna2Panel2.Controls.Add(this.label1);
@@ -432,23 +432,6 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
-            // btnEditar
-            // 
-            this.btnEditar.BorderRadius = 10;
-            this.btnEditar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnEditar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnEditar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnEditar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnEditar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(92)))), ((int)(((byte)(197)))));
-            this.btnEditar.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(618, 288);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(88, 36);
-            this.btnEditar.TabIndex = 23;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
-            // 
             // btnEliminarServicio
             // 
             this.btnEliminarServicio.BorderRadius = 10;
@@ -466,23 +449,22 @@
             this.btnEliminarServicio.Text = "Eliminar";
             this.btnEliminarServicio.Click += new System.EventHandler(this.btnEliminarServicio_Click);
             // 
-            // btnEditarServicio
+            // btnEditarGeneral
             // 
-            this.btnEditarServicio.BorderRadius = 10;
-            this.btnEditarServicio.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnEditarServicio.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnEditarServicio.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnEditarServicio.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnEditarServicio.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(92)))), ((int)(((byte)(197)))));
-            this.btnEditarServicio.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnEditarServicio.ForeColor = System.Drawing.Color.White;
-            this.btnEditarServicio.Location = new System.Drawing.Point(618, 630);
-            this.btnEditarServicio.Name = "btnEditarServicio";
-            this.btnEditarServicio.Size = new System.Drawing.Size(88, 36);
-            this.btnEditarServicio.TabIndex = 25;
-            this.btnEditarServicio.Text = "Editar";
-            this.btnEditarServicio.Click += new System.EventHandler(this.btnEditarServicio_Click);
-            this.btnEditarServicio.DoubleClick += new System.EventHandler(this.btnEditarServicio_DoubleClick);
+            this.btnEditarGeneral.BorderRadius = 20;
+            this.btnEditarGeneral.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnEditarGeneral.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnEditarGeneral.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnEditarGeneral.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnEditarGeneral.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
+            this.btnEditarGeneral.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnEditarGeneral.ForeColor = System.Drawing.Color.White;
+            this.btnEditarGeneral.Location = new System.Drawing.Point(161, 580);
+            this.btnEditarGeneral.Name = "btnEditarGeneral";
+            this.btnEditarGeneral.Size = new System.Drawing.Size(133, 53);
+            this.btnEditarGeneral.TabIndex = 23;
+            this.btnEditarGeneral.Text = "Editar";
+            this.btnEditarGeneral.Click += new System.EventHandler(this.btnEditarGeneral_Click);
             // 
             // FrmProductos
             // 
@@ -490,9 +472,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1132, 708);
-            this.Controls.Add(this.btnEditarServicio);
             this.Controls.Add(this.btnEliminarServicio);
-            this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.dgvService);
             this.Controls.Add(this.guna2HtmlLabel1);
@@ -535,11 +515,10 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button btnEliminar;
-        private Guna.UI2.WinForms.Guna2Button btnEditar;
         private Guna.UI2.WinForms.Guna2Button btnEliminarServicio;
-        private Guna.UI2.WinForms.Guna2Button btnEditarServicio;
         private Guna.UI2.WinForms.Guna2ComboBox cmbEstadoProducto;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2ComboBox cmbIVA;
+        private Guna.UI2.WinForms.Guna2Button btnEditarGeneral;
     }
 }

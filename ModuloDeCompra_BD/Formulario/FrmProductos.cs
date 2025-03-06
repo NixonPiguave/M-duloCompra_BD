@@ -70,12 +70,22 @@ namespace ModuloDeCompra_BD.Formulario
                     CsProducto producto = new CsProducto();
                     producto.Nom_Producto1 = txtNombreProducto.Text;
                     producto.Precio_Unit1 = precioU;
-                    string iva = cmbIVA.SelectedItem.ToString();
-                    string precioUFormatoSQL = iva.ToString(CultureInfo.InvariantCulture);
-                    precioUFormatoSQL=precioUFormatoSQL.Replace(',', '.');
-                    DataTable tb = CsComandosSql.RetornaDatos($"select * from IVA where Valor_IVA={precioUFormatoSQL}");
-                    var v = Convert.ToChar(tb.Rows[0]["ID_IVA"]);
-                    producto.Iva1 = v;
+                    if(cmbIVA.SelectedItem.ToString()== "Exento")
+                    {
+                        
+                    }
+                    else
+                    {
+                        string iva = cmbIVA.SelectedItem.ToString();
+                        producto.Estado1 = cmbEstadoProducto.SelectedItem.ToString();
+                        string precioUFormatoSQL = iva.ToString(CultureInfo.InvariantCulture);
+                        precioUFormatoSQL = precioUFormatoSQL.Replace(',', '.');
+                        DataTable tb = CsComandosSql.RetornaDatos($"select * from IVA where Valor_IVA={precioUFormatoSQL}");
+                        var v = Convert.ToChar(tb.Rows[0]["ID_IVA"]);
+                        producto.Iva1 = v;
+                    }
+                    producto.Estado1 = cmbEstadoProducto.SelectedItem.ToString();
+                    
 
                     producto.Categoria1 = Id;
                     producto.Proveedor1 = Id2;
@@ -115,10 +125,22 @@ namespace ModuloDeCompra_BD.Formulario
                     producto.Nom_Producto1 = txtNombreProducto.Text;
                     producto.Precio_Unit1 = precioU;
                     string iva = Convert.ToString(cmbIVA.SelectedItem);
-                    string precioUFormatoSQL = iva.ToString(CultureInfo.InvariantCulture);
-                    precioUFormatoSQL = precioUFormatoSQL.Replace(',', '.');
-                    DataTable tb = CsComandosSql.RetornaDatos($"select * from IVA where Valor_IVA={precioUFormatoSQL}");
-                    producto.Iva1 = Convert.ToChar(tb.Rows[0]["ID_IVA"].ToString());
+                    if(cmbEstadoProducto.SelectedItem.ToString()=="Exento")
+                    {
+                        //producto.Iva1 = '0';
+                    }
+                    else
+                    {
+                        string precioUFormatoSQL = iva.ToString(CultureInfo.InvariantCulture);
+                        precioUFormatoSQL = precioUFormatoSQL.Replace(',', '.');
+                        DataTable tb = CsComandosSql.RetornaDatos($"select * from IVA where Valor_IVA={precioUFormatoSQL}");
+                        producto.Iva1 = Convert.ToChar(tb.Rows[0]["ID_IVA"].ToString());
+                    }
+                    producto.Estado1 = cmbEstadoProducto.SelectedItem.ToString();
+                    //string precioUFormatoSQL = iva.ToString(CultureInfo.InvariantCulture);
+                    //precioUFormatoSQL = precioUFormatoSQL.Replace(',', '.');
+                    //DataTable tb = CsComandosSql.RetornaDatos($"select * from IVA where Valor_IVA={precioUFormatoSQL}");
+                    //producto.Iva1 = Convert.ToChar(tb.Rows[0]["ID_IVA"].ToString());
 
                     
                     producto.Proveedor1 = Id2;
@@ -221,36 +243,12 @@ namespace ModuloDeCompra_BD.Formulario
             }
             
         }
-
-        private void btnEditar_Click(object sender, EventArgs e)
-        {
-            CsProducto pro1 = new CsProducto();
-            int fila = dgvProducto.CurrentCell.RowIndex;
-            string nombre = txtNombreProducto.Text;
-            string precioUnit = txtPrecioUnitario.Text;
-            pro1.ModificarProducto(Id3,nombre, precioUnit);
-        }
         private void dgvProducto_DoubleClick(object sender, EventArgs e)
         {
             int fila = dgvProducto.CurrentCell.RowIndex;
             Id3 = Convert.ToInt32(dgvProducto[0, fila].Value);
-            txtNombreProducto.Text= dgvProducto[1, fila].Value.ToString();
-            txtPrecioUnitario.Text= dgvProducto[2, fila].Value.ToString();
-        }
-        private void btnEditarServicio_Click(object sender, EventArgs e)
-        {
-            CsProducto serv = new CsProducto();
-            int fila = dgvService.CurrentCell.RowIndex;
-            string nombre = txtNombreProducto.Text;
-            string precioUnit = txtPrecioUnitario.Text;
-            serv.ModificarProducto(Id4,nombre, precioUnit);
-        }
-
-        //MALLLLLLLLLL
-        private void btnEditarServicio_DoubleClick(object sender, EventArgs e)
-        {
-            
-
+            txtNombreProducto.Text = dgvProducto[1, fila].Value.ToString();
+            txtPrecioUnitario.Text = dgvProducto[2, fila].Value.ToString();
         }
 
         private void dgvService_DoubleClick(object sender, EventArgs e)
@@ -260,5 +258,121 @@ namespace ModuloDeCompra_BD.Formulario
             txtNombreProducto.Text = dgvService[1, fila].Value.ToString();
             txtPrecioUnitario.Text = dgvService[2, fila].Value.ToString();
         }
+
+        private void btnEditarGeneral_Click(object sender, EventArgs e)
+        {
+            if (cbTipoP.SelectedItem.ToString() == "Producto")
+            {
+                decimal precioU = 0;
+                try
+                {
+                    precioU = decimal.Parse(txtPrecioUnitario.Text, NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Precio no válido" + ex);
+                }
+                try
+                {
+                    CsProducto producto = new CsProducto();
+                    producto.Nom_Producto1 = txtNombreProducto.Text;
+                    producto.Precio_Unit1 = precioU;
+                    string iva = cmbIVA.SelectedItem.ToString();
+                    string precioUFormatoSQL = iva.ToString(CultureInfo.InvariantCulture);
+                    precioUFormatoSQL = precioUFormatoSQL.Replace(',', '.');
+                    DataTable tb = CsComandosSql.RetornaDatos($"select * from IVA where Valor_IVA={precioUFormatoSQL}");
+                    var v = Convert.ToChar(tb.Rows[0]["ID_IVA"]);
+                    producto.Iva1 = v;
+
+                    producto.Categoria1 = Id;
+                    producto.Proveedor1 = Id2;
+
+                    if (producto.ModificarProducto(Id3))
+                    {
+                        dgvProducto.DataSource = CsComandosSql.RetornaDatos("select ID_Producto, NomProducto, Costo from Producto");
+                        MessageBox.Show("Producto agregado correctamente");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al agregar producto, verifique que los datos sean correctos");
+                    }
+
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error" + ex);
+                }
+            }
+            else
+            {
+                decimal precioU = 0;
+                try
+                {
+                    precioU = decimal.Parse(txtPrecioUnitario.Text, NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Precio no válido" + ex);
+                }
+                try
+                {
+
+                    CsProducto producto = new CsProducto();
+                    producto.Nom_Producto1 = txtNombreProducto.Text;
+                    producto.Precio_Unit1 = precioU;
+                    string iva = Convert.ToString(cmbIVA.SelectedItem);
+                    string precioUFormatoSQL = iva.ToString(CultureInfo.InvariantCulture);
+                    precioUFormatoSQL = precioUFormatoSQL.Replace(',', '.');
+                    DataTable tb = CsComandosSql.RetornaDatos($"select * from IVA where Valor_IVA={precioUFormatoSQL}");
+                    producto.Iva1 = Convert.ToChar(tb.Rows[0]["ID_IVA"].ToString());
+
+
+                    producto.Proveedor1 = Id2;
+
+                    if (producto.ModificarServicio(Id4))
+                    {
+                        dgvService.DataSource = CsComandosSql.RetornaDatos("select ID_Servicio, Nom_Servicio, Costo from Servicio");
+                        MessageBox.Show("Servicio agregado correctamente");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al agregar Servicio, verifique que los datos sean correctos");
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error" + ex);
+                }
+            }
+        }
+
+        //private void btnEditar_Click(object sender, EventArgs e)
+        //{
+        //    CsProducto pro1 = new CsProducto();
+        //    int fila = dgvProducto.CurrentCell.RowIndex;
+        //    string nombre = txtNombreProducto.Text;
+        //    string precioUnit = txtPrecioUnitario.Text;
+        //    pro1.ModificarProducto(Id3,nombre, precioUnit);
+        //}
+
+        //private void btnEditarServicio_Click(object sender, EventArgs e)
+        //{
+        //    CsProducto serv = new CsProducto();
+        //    int fila = dgvService.CurrentCell.RowIndex;
+        //    string nombre = txtNombreProducto.Text;
+        //    string precioUnit = txtPrecioUnitario.Text;
+        //    serv.ModificarProducto(Id4,nombre, precioUnit);
+        //}
+
+        //MALLLLLLLLLL
+        //private void btnEditarServicio_DoubleClick(object sender, EventArgs e)
+        //{
+
+
+        //}
+
+
     }
 }
