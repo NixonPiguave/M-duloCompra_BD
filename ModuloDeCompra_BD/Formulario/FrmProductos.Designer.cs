@@ -42,6 +42,7 @@
             this.txtListadoProvee = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtListadoCategory = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnListadoCategoria = new Guna.UI2.WinForms.Guna2Button();
+            this.cmbIVA = new Guna.UI2.WinForms.Guna2ComboBox();
             this.txtNombreProducto = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -54,7 +55,6 @@
             this.btnEditar = new Guna.UI2.WinForms.Guna2Button();
             this.btnEliminarServicio = new Guna.UI2.WinForms.Guna2Button();
             this.btnEditarServicio = new Guna.UI2.WinForms.Guna2Button();
-            this.cmbIVA = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvService)).BeginInit();
@@ -123,7 +123,7 @@
             this.txtPrecioUnitario.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPrecioUnitario.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtPrecioUnitario.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPrecioUnitario.Location = new System.Drawing.Point(176, 185);
+            this.txtPrecioUnitario.Location = new System.Drawing.Point(199, 185);
             this.txtPrecioUnitario.Name = "txtPrecioUnitario";
             this.txtPrecioUnitario.PlaceholderText = "";
             this.txtPrecioUnitario.SelectedText = "";
@@ -135,7 +135,7 @@
             this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel4.ForeColor = System.Drawing.SystemColors.Control;
-            this.guna2HtmlLabel4.Location = new System.Drawing.Point(122, 246);
+            this.guna2HtmlLabel4.Location = new System.Drawing.Point(146, 246);
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
             this.guna2HtmlLabel4.Size = new System.Drawing.Size(34, 22);
             this.guna2HtmlLabel4.TabIndex = 2;
@@ -182,7 +182,7 @@
             this.cmbEstadoProducto.Items.AddRange(new object[] {
             "Activo",
             "Inactivo"});
-            this.cmbEstadoProducto.Location = new System.Drawing.Point(178, 321);
+            this.cmbEstadoProducto.Location = new System.Drawing.Point(198, 307);
             this.cmbEstadoProducto.Name = "cmbEstadoProducto";
             this.cmbEstadoProducto.Size = new System.Drawing.Size(209, 36);
             this.cmbEstadoProducto.TabIndex = 22;
@@ -192,18 +192,18 @@
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel2.ForeColor = System.Drawing.SystemColors.Control;
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(34, 321);
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(6, 321);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(122, 22);
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(189, 22);
             this.guna2HtmlLabel2.TabIndex = 21;
-            this.guna2HtmlLabel2.Text = "Estado Producto";
+            this.guna2HtmlLabel2.Text = "Estado Producto / Servicio";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(20, 128);
+            this.label1.Location = new System.Drawing.Point(44, 128);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(136, 20);
             this.label1.TabIndex = 20;
@@ -214,7 +214,7 @@
             this.guna2HtmlLabel9.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel9.ForeColor = System.Drawing.SystemColors.Control;
-            this.guna2HtmlLabel9.Location = new System.Drawing.Point(111, 86);
+            this.guna2HtmlLabel9.Location = new System.Drawing.Point(135, 86);
             this.guna2HtmlLabel9.Name = "guna2HtmlLabel9";
             this.guna2HtmlLabel9.Size = new System.Drawing.Size(37, 22);
             this.guna2HtmlLabel9.TabIndex = 19;
@@ -234,7 +234,7 @@
             this.cbTipoP.Items.AddRange(new object[] {
             "Producto",
             "Servicio"});
-            this.cbTipoP.Location = new System.Drawing.Point(175, 72);
+            this.cbTipoP.Location = new System.Drawing.Point(198, 72);
             this.cbTipoP.Name = "cbTipoP";
             this.cbTipoP.Size = new System.Drawing.Size(209, 36);
             this.cbTipoP.TabIndex = 18;
@@ -295,6 +295,24 @@
             this.btnListadoCategoria.Text = "Listado";
             this.btnListadoCategoria.Click += new System.EventHandler(this.btnListadoCategoria_Click);
             // 
+            // cmbIVA
+            // 
+            this.cmbIVA.BackColor = System.Drawing.Color.Transparent;
+            this.cmbIVA.BorderRadius = 10;
+            this.cmbIVA.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbIVA.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbIVA.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbIVA.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbIVA.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmbIVA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmbIVA.ItemHeight = 30;
+            this.cmbIVA.Items.AddRange(new object[] {
+            "Exento"});
+            this.cmbIVA.Location = new System.Drawing.Point(200, 246);
+            this.cmbIVA.Name = "cmbIVA";
+            this.cmbIVA.Size = new System.Drawing.Size(209, 36);
+            this.cmbIVA.TabIndex = 12;
+            // 
             // txtNombreProducto
             // 
             this.txtNombreProducto.BorderRadius = 10;
@@ -307,7 +325,7 @@
             this.txtNombreProducto.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNombreProducto.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtNombreProducto.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNombreProducto.Location = new System.Drawing.Point(177, 128);
+            this.txtNombreProducto.Location = new System.Drawing.Point(200, 128);
             this.txtNombreProducto.Name = "txtNombreProducto";
             this.txtNombreProducto.PlaceholderText = "";
             this.txtNombreProducto.SelectedText = "";
@@ -341,7 +359,7 @@
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel3.ForeColor = System.Drawing.SystemColors.Control;
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(46, 185);
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(70, 185);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
             this.guna2HtmlLabel3.Size = new System.Drawing.Size(110, 22);
             this.guna2HtmlLabel3.TabIndex = 1;
@@ -385,6 +403,7 @@
             this.dgvService.RowTemplate.Height = 18;
             this.dgvService.Size = new System.Drawing.Size(594, 233);
             this.dgvService.TabIndex = 21;
+            this.dgvService.DoubleClick += new System.EventHandler(this.dgvService_DoubleClick);
             // 
             // guna2HtmlLabel1
             // 
@@ -464,24 +483,6 @@
             this.btnEditarServicio.Text = "Editar";
             this.btnEditarServicio.Click += new System.EventHandler(this.btnEditarServicio_Click);
             this.btnEditarServicio.DoubleClick += new System.EventHandler(this.btnEditarServicio_DoubleClick);
-            // 
-            // cmbIVA
-            // 
-            this.cmbIVA.BackColor = System.Drawing.Color.Transparent;
-            this.cmbIVA.BorderRadius = 10;
-            this.cmbIVA.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbIVA.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbIVA.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbIVA.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbIVA.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cmbIVA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cmbIVA.ItemHeight = 30;
-            this.cmbIVA.Items.AddRange(new object[] {
-            "Exento"});
-            this.cmbIVA.Location = new System.Drawing.Point(177, 246);
-            this.cmbIVA.Name = "cmbIVA";
-            this.cmbIVA.Size = new System.Drawing.Size(209, 36);
-            this.cmbIVA.TabIndex = 12;
             // 
             // FrmProductos
             // 

@@ -37,11 +37,7 @@ namespace ModuloDeCompra_BD.Formulario
                 cmbIVA.Items.Add(tb.Rows[i]["Valor_IVA"].ToString());
             }
 
-            //DataTable tn = CsComandosSql.RetornaDatos("Select * from IVA");
-            //for (int i = 0; i < tn.Rows.Count; i++)
-            //{
-            //    cmbEstado.Items.Add(tn.Rows[i]["EstadoIVA"].ToString());
-            //}
+            
         }
         private void guna2Button1_Click(object sender, EventArgs e)
         {
@@ -79,14 +75,6 @@ namespace ModuloDeCompra_BD.Formulario
                     DataTable tb = CsComandosSql.RetornaDatos($"select * from IVA where Valor_IVA={iva}");
                     producto.Iva1 = Convert.ToChar(tb.Rows[0]["ID_IVA"].ToString());
 
-                    //DataTable T = CsComandosSql.RetornaDatos($"select ID_Estado from EstadoIVA where Estado='{cmbEstado.SelectedItem.ToString()}'");
-                    //producto.Estado1= Convert.ToInt32(T.Rows[0]["ID_Estado"].ToString());
-                    
-                    //string estadoSeleccionado = cmbEstado.SelectedItem.ToString();
-                    //producto.Estado1 = (estadoSeleccionado == "Activo") ? 1 : 0;
-                    //string estadoIVASeleccionado = cmbEstado.SelectedItem.ToString();
-                    //int estadoIVA = (estadoIVASeleccionado == "Activo") ? 1 : 0;
-                    
                     producto.Categoria1 = Id;
                     producto.Proveedor1 = Id2;
 
@@ -99,8 +87,7 @@ namespace ModuloDeCompra_BD.Formulario
                     {
                         MessageBox.Show("Error al agregar producto, verifique que los datos sean correctos");
                     }
-                    //string queryEstadoIVA = $"Update IVA set EstadoIVA= {estadoIVA} where ID_IVA= {producto.Iva1}";
-                    //CsComandosSql.InserDeletUpdate(queryEstadoIVA);
+                    
                     
                 }
                 catch (Exception ex)
@@ -121,20 +108,20 @@ namespace ModuloDeCompra_BD.Formulario
                 }
                 try
                 {
-                    //mal mal mal mal 
+                   
                     CsProducto producto = new CsProducto();
                     producto.Nom_Producto1 = txtNombreProducto.Text;
                     producto.Precio_Unit1 = precioU;
-                    double iva = Convert.ToDouble(cmbIVA.SelectedItem);
+                    string iva = Convert.ToString(cmbIVA.SelectedItem);
                     DataTable tb = CsComandosSql.RetornaDatos($"select * from IVA where Valor_IVA={iva}");
                     producto.Iva1 = Convert.ToChar(tb.Rows[0]["ID_IVA"].ToString());
-                    //DataTable T = CsComandosSql.RetornaDatos($"select ID_Estado from EstadoIVA where Estado='{cmbEstado.SelectedItem.ToString()}'");
-                    //producto.Estado1 = Convert.ToInt32(T.Rows[0]["ID_Estado"].ToString());
+
+                    
                     producto.Proveedor1 = Id2;
 
                     if (producto.AñadirServicio())
                     {
-                        dgvService.DataSource = CsComandosSql.RetornaDatos("select ID_Servicio, Nom_Servicio, Precio_Unit from Servicios");
+                        dgvService.DataSource = CsComandosSql.RetornaDatos("select ID_Servicio, Nom_Servicio, Costo from Servicio");
                         MessageBox.Show("Servicio agregado correctamente");
                     }
                     else
@@ -173,7 +160,7 @@ namespace ModuloDeCompra_BD.Formulario
             txtListadoCategory.Text = " ";
             txtListadoProvee.Text = " ";
             cmbIVA.SelectedIndex = -1;
-            //cmbEstado.SelectedIndex = -1;
+            
         }
 
         private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -187,37 +174,52 @@ namespace ModuloDeCompra_BD.Formulario
         }
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            CsProducto pro = new CsProducto();
-            int fila=dgvProducto.CurrentCell.RowIndex;
-            if(fila!=-1)
+            if (dgvProducto.SelectedRows.Count > 0)
             {
-                int prod=Convert.ToInt32(dgvProducto[0,fila].Value);
-                pro.EliminarProducto(prod);
+                int fila = dgvProducto.SelectedRows[0].Index; 
+                int prod = Convert.ToInt32(dgvProducto.Rows[fila].Cells[0].Value);  
+                CsProducto pro = new CsProducto();
+                if (pro.EliminarProducto(prod))  
+                {
+                    dgvProducto.DataSource = CsComandosSql.RetornaDatos("SELECT ID_Producto, NomProducto, Costo FROM Producto");
+                    MessageBox.Show("Producto eliminado correctamente");
+                }
+                else
+                {
+                    MessageBox.Show("Error al eliminar el producto.");
+                }
             }
             else
             {
-                MessageBox.Show("Escoja la fila del producto a eliminar");
+                MessageBox.Show("Por favor, seleccione un producto de la lista.");
             }
         }
         private void btnEliminarServicio_Click(object sender, EventArgs e)
         {
-            CsProducto prod = new CsProducto();
-            int fila = dgvService.CurrentCell.RowIndex;
-            if(fila!=-1)
+            if(dgvService.SelectedRows.Count > 0)
             {
-                int serv = Convert.ToInt32(dgvService[0, fila].Value);
-                prod.EliminarServicio(serv);
+                int fila = dgvService.SelectedRows[0].Index;
+                int prod = Convert.ToInt32(dgvService.Rows[fila].Cells[0].Value);
+                CsProducto pro = new CsProducto();
+                if(pro.EliminarServicio(prod))
+                {
+                    dgvService.DataSource = CsComandosSql.RetornaDatos("Select ID_Servicio, Nom_Servicio, Costo from Servicio ");
+                    MessageBox.Show("Servicio eliminado correctamente");
+                }
+                else
+                {
+                    MessageBox.Show("Error al eliminar el servicio");
+                }
             }
             else
             {
-                MessageBox.Show("Escoja la fila del servicio a eliminar");
+                MessageBox.Show("Por favor, seleccione un servicio de la lista");
             }
-
+            
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-
             CsProducto pro1 = new CsProducto();
             int fila = dgvProducto.CurrentCell.RowIndex;
             string nombre = txtNombreProducto.Text;
@@ -226,21 +228,10 @@ namespace ModuloDeCompra_BD.Formulario
         }
         private void dgvProducto_DoubleClick(object sender, EventArgs e)
         {
-
             int fila = dgvProducto.CurrentCell.RowIndex;
             Id3 = Convert.ToInt32(dgvProducto[0, fila].Value);
             txtNombreProducto.Text= dgvProducto[1, fila].Value.ToString();
             txtPrecioUnitario.Text= dgvProducto[2, fila].Value.ToString();
-
-        }
-
-        private void btnEditarServicio_DoubleClick(object sender, EventArgs e)
-        {
-            int fila = dgvService.CurrentCell.RowIndex;
-            Id4 = Convert.ToInt32(dgvProducto[0, fila].Value);
-            txtNombreProducto.Text = dgvService[1, fila].Value.ToString();
-            txtPrecioUnitario.Text = dgvService[2, fila].Value.ToString();
-
         }
         private void btnEditarServicio_Click(object sender, EventArgs e)
         {
@@ -248,7 +239,22 @@ namespace ModuloDeCompra_BD.Formulario
             int fila = dgvService.CurrentCell.RowIndex;
             string nombre = txtNombreProducto.Text;
             string precioUnit = txtPrecioUnitario.Text;
-            serv.ModificarProducto(Id4, nombre, precioUnit);
+            serv.ModificarProducto(Id4,nombre, precioUnit);
+        }
+
+        //MALLLLLLLLLL
+        private void btnEditarServicio_DoubleClick(object sender, EventArgs e)
+        {
+            
+
+        }
+
+        private void dgvService_DoubleClick(object sender, EventArgs e)
+        {
+            int fila = dgvService.CurrentCell.RowIndex;
+            Id4 = Convert.ToInt32(dgvService[0, fila].Value);
+            txtNombreProducto.Text = dgvService[1, fila].Value.ToString();
+            txtPrecioUnitario.Text = dgvService[2, fila].Value.ToString();
         }
     }
 }

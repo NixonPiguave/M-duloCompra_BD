@@ -27,9 +27,6 @@ namespace ModuloDeCompra_BD.Clases
 
         public bool AñadirProducto()
         {
-            //INSERT INTO Producto(NomProducto, Costo,EstadoProducto,ID_CAT,ID_IVA, ID_Proveedor) VALUES
-            //('{Nom_Producto}', 245.06, 'Activo', 1, 'A', 1);
-            //string estadoProducto = (Estado == 1) ? "Activo" : "Inactivo";
             string estadoProducto = (Estado == 1) ? "Activo" : "Inactivo";
             string precioUFormatoSQL = Precio_Unit.ToString(CultureInfo.InvariantCulture);
             string query = $"INSERT INTO Producto(NomProducto, Costo, EstadoProducto, ID_CAT,ID_IVA, ID_Proveedor) VALUES ('{Nom_Producto}', {precioUFormatoSQL}, '{estadoProducto}', {Categoria}, '{Iva}', {Proveedor})";
@@ -37,32 +34,35 @@ namespace ModuloDeCompra_BD.Clases
         }
         public bool AñadirServicio()
         {
-            //insert into Servicio (Nom_Servicio, Costo, ID_IVA, ID_Proveedor, EstadoServicio) values
-            //('Transporte', 100.00, 'A', 3, 'Activo')
-
+            
+            string estadoServicio = (Estado == 1) ? "Activo" : "Inactivo";
             string precioUFormatoSQL = Precio_Unit.ToString(CultureInfo.InvariantCulture);
-            string query = $"insert into Servicios (Nom_Servicio, Precio_Unit, ID_IVA, ID_Estado, ID_Prov) values ('{Nom_Producto}',{precioUFormatoSQL},{Iva},{Estado},{Proveedor})";
+            string query = $"insert into Servicio (Nom_Servicio, Costo, ID_IVA, ID_Proveedor, EstadoServicio) values ('{Nom_Producto}',{precioUFormatoSQL},'{Iva}',{Proveedor},'{estadoServicio}')";
 
             return CsComandosSql.InserDeletUpdate(query);
         }
         public bool ModificarProducto(int id, string nombreprodu, string precioUnit)
         {
-            string query = $"";
+            string estadoProducto = (Estado == 1) ? "Activo" : "Inactivo";
+            string precioUFormatoSQL = Precio_Unit.ToString(CultureInfo.InvariantCulture);
+            string query = $"Update Producto set NomProducto= '{nombreprodu}', Costo= {precioUFormatoSQL}, EstadoProducto={estadoProducto}, ID_CAT= {Categoria}, ID_IVA= '{Iva}', ID_Proveedor= {Proveedor} where ID_Producto= {id}";
             return CsComandosSql.InserDeletUpdate(query);
         }
-        public bool ModificarServicio()
+        public bool ModificarServicio(int id)
         {
-            string query = $"";
+            string estadoServicio = (Estado == 1) ? "Activo" : "Inactivo";
+            string precioUFormatoSQL = Precio_Unit.ToString(CultureInfo.InvariantCulture);
+            string query = $"Update Servicio set Nom_Servicio= '{Nom_Producto}', Costo= {precioUFormatoSQL}, ID_IVA= '{Iva}', ID_Proveedor= {Proveedor}, EstadoServicio= {estadoServicio} where ID_Servicio= {id}";
             return CsComandosSql.InserDeletUpdate(query);
         }
         public bool EliminarProducto(int ID)
         {
-            string query = $"exec EliminarProducto {ID}";
+            string query = $"delete Producto where ID_Producto={ID}";
             return CsComandosSql.InserDeletUpdate(query);
         }
         public bool EliminarServicio(int Id)
         {
-            string query = $"Delete Servicios where ID_Servicio= {Id}";
+            string query = $"Delete Servicio where ID_Servicio= {Id}";
             return CsComandosSql.InserDeletUpdate(query);
         }
         public DataTable ListaProducto()
