@@ -26,12 +26,12 @@ namespace ModuloDeCompra_BD.Formulario
         }
         private void FrmListadoProveedor_Load(object sender, EventArgs e)
         {
-            dgvListadoProveedores.DataSource = Prove.ListaProveedor("");
+            dgvListadoProveedores.DataSource = Prove.ListaProvee("");
         }
 
         private void txtBuscarProveedores_KeyUp(object sender, KeyEventArgs e)
         {
-            dgvListadoProveedores.DataSource = Prove.ListaProveedor(txtBuscarProveedores.Text);
+            dgvListadoProveedores.DataSource = Prove.ListaProvee(txtBuscarProveedores.Text);
         }
 
         private void btnSeleccionarProvee_Click(object sender, EventArgs e)

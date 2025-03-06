@@ -38,23 +38,29 @@ namespace ModuloDeCompra_BD.Clases
         public bool AñadirProveedor()
         {
             string precioUFormatoSQL = Descuento1.ToString(CultureInfo.InvariantCulture);
-            string query = $"INSERT INTO Proveedoress(Nombre_Proveedor, NombreContacto, Correo, Descuento_Predeterminado, Pais, Ciudad, Direccion, Telefono, Tipo_Documento, Num_Documento) VALUES ('{NombreProvee}', '{NombreContacto}', '{Correo}', {precioUFormatoSQL}, '{Pais}', '{Ciudad}', '{Direccion}', '{Telefono}', {TipoDoc}, '{NumDoc}');";
+            string query = $"INSERT INTO Proveedores(Nombre_Proveedor, NombreContacto, Correo, Descuento_Predeterminado, Pais, Ciudad, Direccion, Telefono, Tipo_Documento, Num_Documento) VALUES ('{NombreProvee}', '{NombreContacto}', '{Correo}', {precioUFormatoSQL}, '{Pais}', '{Ciudad}', '{Direccion}', '{Telefono}', {TipoDoc}, '{NumDoc}');";
             return CsComandosSql.InserDeletUpdate(query);
         }
         public bool ModificarProveedor()
         {
             string precioUFormatoSQL = Descuento1.ToString(CultureInfo.InvariantCulture);
-            string query = $"update Proveedoress set Nombre_Proveedor = '{NombreProvee1}', Nombre_Contacto = '{NombreContacto1}', Correo = '{Correo1}', Descuento_Predeterminado = {precioUFormatoSQL} , Pais = '{Pais1}', Ciudad = '{Ciudad1}', Direccion = '{Direccion1}', Telefono = '{Telefono1}', Tipo_Documento= {TipoDoc1}, Num_Documento= '{NumDoc1}' where ID_Prov= {IdProvee1}";
+            string query = $"update Proveedores set Nombre_Proveedor = '{NombreProvee1}', Nombre_Contacto = '{NombreContacto1}', Correo = '{Correo1}', Descuento_Predeterminado = {precioUFormatoSQL} , Pais = '{Pais1}', Ciudad = '{Ciudad1}', Direccion = '{Direccion1}', Telefono = '{Telefono1}', Tipo_Documento= {TipoDoc1}, Num_Documento= '{NumDoc1}' where ID_Prov= {IdProvee1}";
             return CsComandosSql.InserDeletUpdate(query);
         }
         public bool EliminarProveedor()
         {
-            string query = $"Delete from Proveedoress where ID_Prov = {IdProvee1}";
+            string query = $"Delete from Proveedores where ID_Prov = {IdProvee1}";
             return CsComandosSql.InserDeletUpdate(query);
         }
         public DataTable ListaProveedor(string m)
         {
-            string query = $"select P.ID_Prov, P.Nombre_Proveedor, P.NombreContacto, P.Correo, P.Descuento_Predeterminado, P.Pais, P.Ciudad, P.Direccion, P.Telefono, T.Tipo, P.Num_Documento from Proveedoress as P inner join TipoDocumento as T on P.Tipo_Documento=T.TipoID where Nombre_Proveedor like '%{m}%' or  ID_Prov like '%{m}%'";
+            string query = $"select P.ID_Prov, P.Nombre_Proveedor, P.NombreContacto, P.Correo, P.Descuento_Predeterminado, P.Pais, P.Ciudad, P.Direccion, P.Telefono, T.Tipo, P.Num_Documento from Proveedores as P inner join TipoDocumento as T on P.Tipo_Documento=T.TipoID where Nombre_Proveedor like '%{m}%' or  ID_Prov like '%{m}%'";
+            return CsComandosSql.RetornaDatos(query);
+        }
+
+        public DataTable ListaProvee(string d)
+        {
+            string query = $"Select ID_Proveedor, Nombre_Proveedor from Proveedores where Nombre_Proveedor like '%{d}%' ";
             return CsComandosSql.RetornaDatos(query);
         }
     }

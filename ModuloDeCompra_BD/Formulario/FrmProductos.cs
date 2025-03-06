@@ -27,21 +27,21 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void FrmProductos_Load(object sender, EventArgs e)
         {
-            dgvService.DataSource = CsComandosSql.RetornaDatos("select ID_Servicio, Nom_Servicio, Precio_Unit from Servicios");
-            dgvProducto.DataSource = CsComandosSql.RetornaDatos("select ID_Producto, Nom_Producto, Precio_Unit from Producto");
+            //
+            dgvService.DataSource = CsComandosSql.RetornaDatos("select ID_Servicio, Nom_Servicio, Costo from Servicio");
+            dgvProducto.DataSource = CsComandosSql.RetornaDatos("select ID_Producto, NomProducto, Costo from Producto");
             cbTipoP.SelectedIndex = 0;
-           DataTable tb= CsComandosSql.RetornaDatos("select * from IVA");
+           DataTable tb= CsComandosSql.RetornaDatos("select * from IVA where EstadoIVA= 1");
             for (int i = 0; i < tb.Rows.Count; i++)
             {
                 cmbIVA.Items.Add(tb.Rows[i]["Valor_IVA"].ToString());
             }
-            //AQUI VA LA PARTE DE LLENAR ESTADO PRODUCTO.
 
-            DataTable tn = CsComandosSql.RetornaDatos("Select * from EstadoIVA");
-            for (int i = 0; i < tn.Rows.Count; i++)
-            {
-                cmbEstado.Items.Add(tn.Rows[i]["Estado"].ToString());
-            }
+            //DataTable tn = CsComandosSql.RetornaDatos("Select * from IVA");
+            //for (int i = 0; i < tn.Rows.Count; i++)
+            //{
+            //    cmbEstado.Items.Add(tn.Rows[i]["EstadoIVA"].ToString());
+            //}
         }
         private void guna2Button1_Click(object sender, EventArgs e)
         {
@@ -74,24 +74,34 @@ namespace ModuloDeCompra_BD.Formulario
                     CsProducto producto = new CsProducto();
                     producto.Nom_Producto1 = txtNombreProducto.Text;
                     producto.Precio_Unit1 = precioU;
-                    double iva = Convert.ToDouble(cmbIVA.SelectedItem);
+
+                    string iva = Convert.ToString(cmbIVA.SelectedItem);
                     DataTable tb = CsComandosSql.RetornaDatos($"select * from IVA where Valor_IVA={iva}");
-                    producto.Iva1 = Convert.ToInt32(tb.Rows[0]["ID_IVA"].ToString());
-                    DataTable T = CsComandosSql.RetornaDatos($"select ID_Estado from EstadoIVA where Estado='{cmbEstado.SelectedItem.ToString()}'");
-                    producto.Estado1= Convert.ToInt32(T.Rows[0]["ID_Estado"].ToString());
+                    producto.Iva1 = Convert.ToChar(tb.Rows[0]["ID_IVA"].ToString());
+
+                    //DataTable T = CsComandosSql.RetornaDatos($"select ID_Estado from EstadoIVA where Estado='{cmbEstado.SelectedItem.ToString()}'");
+                    //producto.Estado1= Convert.ToInt32(T.Rows[0]["ID_Estado"].ToString());
+                    
+                    //string estadoSeleccionado = cmbEstado.SelectedItem.ToString();
+                    //producto.Estado1 = (estadoSeleccionado == "Activo") ? 1 : 0;
+                    //string estadoIVASeleccionado = cmbEstado.SelectedItem.ToString();
+                    //int estadoIVA = (estadoIVASeleccionado == "Activo") ? 1 : 0;
+                    
                     producto.Categoria1 = Id;
                     producto.Proveedor1 = Id2;
 
                     if (producto.AñadirProducto())
                     {
-                        dgvProducto.DataSource = CsComandosSql.RetornaDatos("select ID_Producto, Nom_Producto, Precio_Unit from Producto");
+                        dgvProducto.DataSource = CsComandosSql.RetornaDatos("select ID_Producto, NomProducto, Costo from Producto");
                         MessageBox.Show("Producto agregado correctamente");
                     }
                     else
                     {
                         MessageBox.Show("Error al agregar producto, verifique que los datos sean correctos");
                     }
-
+                    //string queryEstadoIVA = $"Update IVA set EstadoIVA= {estadoIVA} where ID_IVA= {producto.Iva1}";
+                    //CsComandosSql.InserDeletUpdate(queryEstadoIVA);
+                    
                 }
                 catch (Exception ex)
                 {
@@ -117,9 +127,9 @@ namespace ModuloDeCompra_BD.Formulario
                     producto.Precio_Unit1 = precioU;
                     double iva = Convert.ToDouble(cmbIVA.SelectedItem);
                     DataTable tb = CsComandosSql.RetornaDatos($"select * from IVA where Valor_IVA={iva}");
-                    producto.Iva1 = Convert.ToInt32(tb.Rows[0]["ID_IVA"].ToString());
-                    DataTable T = CsComandosSql.RetornaDatos($"select ID_Estado from EstadoIVA where Estado='{cmbEstado.SelectedItem.ToString()}'");
-                    producto.Estado1 = Convert.ToInt32(T.Rows[0]["ID_Estado"].ToString());
+                    producto.Iva1 = Convert.ToChar(tb.Rows[0]["ID_IVA"].ToString());
+                    //DataTable T = CsComandosSql.RetornaDatos($"select ID_Estado from EstadoIVA where Estado='{cmbEstado.SelectedItem.ToString()}'");
+                    //producto.Estado1 = Convert.ToInt32(T.Rows[0]["ID_Estado"].ToString());
                     producto.Proveedor1 = Id2;
 
                     if (producto.AñadirServicio())
@@ -163,7 +173,7 @@ namespace ModuloDeCompra_BD.Formulario
             txtListadoCategory.Text = " ";
             txtListadoProvee.Text = " ";
             cmbIVA.SelectedIndex = -1;
-            cmbEstado.SelectedIndex = -1;
+            //cmbEstado.SelectedIndex = -1;
         }
 
         private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
