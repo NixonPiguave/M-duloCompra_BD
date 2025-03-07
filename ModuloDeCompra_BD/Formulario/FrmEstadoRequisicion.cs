@@ -57,9 +57,11 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void btnRegresar_Click(object sender, EventArgs e)
         {
+            int posicion = dgvEstadoRequision.CurrentCell.RowIndex;
+            int ID = Convert.ToInt32(dgvEstadoRequision[0, posicion].Value);
             btnRegresar.Visible = false;
             btnDetalle.Visible = true;
-            dgvEstadoRequision.DataSource = CsComandosSql.RetornaDatos("select * from Requisicion");
+            dgvEstadoRequision.DataSource = CsComandosSql.RetornaDatos($"select * from Requisicion");
         }
     }
 }

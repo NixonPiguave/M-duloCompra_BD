@@ -80,12 +80,6 @@ namespace Menú
                 pnIventario.Visible = false;
                 pnMantenimientos.Visible=false;
             }
-            else
-            { 
-                pnlRequisiciones.Visible = false;
-                pnIventario.Visible = true;
-                pnMantenimientos.Visible = true;
-            }
         }
 
         private void btnUsuarios_Click(object sender, EventArgs e)
