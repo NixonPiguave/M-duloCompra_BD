@@ -10,23 +10,23 @@ namespace ModuloDeCompra_BD.Clases
 {
     internal class CsIVA
     {
-        string IDiva;
-        string estado;
-        double valorIVA;
+        char IDiva;
+        char estado;
+        decimal valorIVA;
 
-        public string IDIVA { get => IDiva; set => IDiva = value; }
-        public double ValorIva { get => valorIVA; set => valorIVA = value; }
-        public string Estado { get => estado; set => estado = value; }
+        public char IDIVA { get => IDiva; set => IDiva = value; }
+        public decimal ValorIva { get => valorIVA; set => valorIVA = value; }
+        public char Estado { get => estado; set => estado = value; }
         public bool AñadirIVA()
         {
-            decimal valorIva = Convert.ToDecimal(ValorIva, CultureInfo.InvariantCulture);
-            string query = $"insert into IVA (ID_IVA, Valor_IVA, EstadoIVA) values ('{IDIVA}', {ValorIva}, '{Estado}')";
+            string precioUFormatoSQL = ValorIva.ToString(CultureInfo.InvariantCulture);
+            string query = $"insert into IVA (ID_IVA, Valor_IVA, EstadoIVA) values ('{IDIVA}', {precioUFormatoSQL}, '{Estado}')";
             return CsComandosSql.InserDeletUpdate(query);
         }
         public bool ModificarIVA()
         {
-            decimal valorIva = Convert.ToDecimal(ValorIva, CultureInfo.InvariantCulture);
-            string query = $"Update IVA set ID_IVA = '{IDIVA}' Valor_IVA = {ValorIva}, EstadoIVA = '{Estado}' where ID_IVA = '{IDiva}'";
+            string precioUFormatoSQL = ValorIva.ToString(CultureInfo.InvariantCulture);
+            string query = $"Update IVA set Valor_IVA = {precioUFormatoSQL}, EstadoIVA = '{Estado}' where ID_IVA = '{IDIVA}'";
             return CsComandosSql.InserDeletUpdate(query);
         }
         public bool EliminarIVA()

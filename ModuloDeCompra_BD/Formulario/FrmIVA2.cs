@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace ModuloDeCompra_BD.Formulario
 {
-    public partial class FrmIVA: Form
+    public partial class FrmIVA2: Form
     {
-        public FrmIVA()
+        public FrmIVA2()
         {
             InitializeComponent();
         }
@@ -86,7 +86,7 @@ namespace ModuloDeCompra_BD.Formulario
             }
         }
 
-        private void FrmIVA_Load(object sender, EventArgs e)
+        private void FrmIVA2_Load(object sender, EventArgs e)
         {
             dgvIVA.DataSource = CsComandosSql.RetornaDatos("Select * from IVA");
         }
@@ -101,7 +101,6 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-
             if (!string.IsNullOrEmpty(txtIDIVA.Text) || !string.IsNullOrEmpty(txtValorIVA.Text))
             {
                 if (CsComandosSql.verificar($"select * from IVA where ID_IVA= '{txtIDIVA.Text}'"))
