@@ -16,6 +16,8 @@ namespace Menú
 {
     public partial class FrmMenu3: Form
     {
+
+        //uwuasa
         int IDusuario;
         public FrmMenu3()
         {
