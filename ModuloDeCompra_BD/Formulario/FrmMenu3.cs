@@ -45,6 +45,7 @@ namespace Menú
         private void guna2Button4_Click(object sender, EventArgs e)
         {
             pnMantenimientos.Visible = false;
+            pnlRequisiciones.Visible = false;
             if (!pnIventario.Visible)
                 pnIventario.Visible = true;
             else
@@ -54,6 +55,7 @@ namespace Menú
         private void guna2Button6_Click(object sender, EventArgs e)
         {
             pnIventario.Visible = false;
+            pnlRequisiciones.Visible = false;
             if (!pnMantenimientos.Visible)
                 pnMantenimientos.Visible = true;
             else
@@ -78,7 +80,11 @@ namespace Menú
             {
                 pnlRequisiciones.Visible = true;
                 pnIventario.Visible = false;
-                pnMantenimientos.Visible=false;
+                pnMantenimientos.Visible = false;
+            }
+            else if (pnlRequisiciones.Visible == true)
+            { 
+                pnlRequisiciones.Visible = false;
             }
         }
 
