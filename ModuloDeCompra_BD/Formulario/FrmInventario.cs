@@ -52,7 +52,7 @@ namespace ModuloDeCompra_BD.Formulario
         private void dgvInventario_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             int fila = dgvInventario.CurrentCell.RowIndex;
-            txtCantidad.Text = dgvInventario[2, fila].Value.ToString();
+            //txtCantidad.Text = dgvInventario[2, fila].Value.ToString();
             txtIDBodega.Text = dgvInventario[3, fila].Value.ToString();
             z= Convert.ToInt32(dgvInventario[0, fila].Value.ToString());
         }
