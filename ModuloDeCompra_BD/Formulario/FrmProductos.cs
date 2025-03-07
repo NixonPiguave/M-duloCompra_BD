@@ -290,11 +290,11 @@ namespace ModuloDeCompra_BD.Formulario
                     if (producto.ModificarProducto(Id3))
                     {
                         dgvProducto.DataSource = CsComandosSql.RetornaDatos("select ID_Producto, NomProducto, Costo from Producto");
-                        MessageBox.Show("Producto agregado correctamente");
+                        MessageBox.Show("Producto editado correctamente");
                     }
                     else
                     {
-                        MessageBox.Show("Error al agregar producto, verifique que los datos sean correctos");
+                        MessageBox.Show("Error al editar producto, verifique que los datos sean correctos");
                     }
 
 
@@ -333,11 +333,11 @@ namespace ModuloDeCompra_BD.Formulario
                     if (producto.ModificarServicio(Id4))
                     {
                         dgvService.DataSource = CsComandosSql.RetornaDatos("select ID_Servicio, Nom_Servicio, Costo from Servicio");
-                        MessageBox.Show("Servicio agregado correctamente");
+                        MessageBox.Show("Servicio editado correctamente");
                     }
                     else
                     {
-                        MessageBox.Show("Error al agregar Servicio, verifique que los datos sean correctos");
+                        MessageBox.Show("Error al editado Servicio, verifique que los datos sean correctos");
                     }
 
                 }
