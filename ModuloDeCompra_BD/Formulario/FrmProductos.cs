@@ -27,7 +27,7 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void FrmProductos_Load(object sender, EventArgs e)
         {
-            //
+            cmbEstadoProducto.SelectedItem = 1;
             dgvService.DataSource = CsComandosSql.RetornaDatos("select ID_Servicio, Nom_Servicio, Costo from Servicio");
             dgvProducto.DataSource = CsComandosSql.RetornaDatos("select ID_Producto, NomProducto, Costo from Producto");
             cbTipoP.SelectedIndex = 0;
@@ -72,7 +72,7 @@ namespace ModuloDeCompra_BD.Formulario
                     producto.Precio_Unit1 = precioU;
                     if(cmbIVA.SelectedItem.ToString()== "Exento")
                     {
-                        
+                        producto.Iva1 = 'C';
                     }
                     else
                     {
@@ -127,7 +127,7 @@ namespace ModuloDeCompra_BD.Formulario
                     string iva = Convert.ToString(cmbIVA.SelectedItem);
                     if(cmbEstadoProducto.SelectedItem.ToString()=="Exento")
                     {
-                        //producto.Iva1 = '0';
+                        producto.Iva1 = 'C';
                     }
                     else
                     {
