@@ -74,10 +74,18 @@ namespace Menú
 
         private void btnRequisiciones_Click(object sender, EventArgs e)
         {
-            FrmRequisiciones req = new FrmRequisiciones();
-            req.IDUsuario1 = IDusuario;
-            openChildForm(req);
-
+            if (pnlRequisiciones.Visible == false)
+            {
+                pnlRequisiciones.Visible = true;
+                pnIventario.Visible = false;
+                pnMantenimientos.Visible=false;
+            }
+            else
+            { 
+                pnlRequisiciones.Visible = false;
+                pnIventario.Visible = true;
+                pnMantenimientos.Visible = true;
+            }
         }
 
         private void btnUsuarios_Click(object sender, EventArgs e)
@@ -139,6 +147,20 @@ namespace Menú
             pnIventario.Visible = false;
             FrmBodega frmBodega = new FrmBodega();
             openChildForm(frmBodega);
+        }
+
+        private void btnCrearRequisicion_Click(object sender, EventArgs e)
+        {
+            FrmRequisiciones req = new FrmRequisiciones();
+            req.IDUsuario1 = IDusuario;
+            openChildForm(req);
+        }
+
+        private void btnRequisicionesPendientes_Click(object sender, EventArgs e)
+        {
+            FrmEstadoRequisiciones frmEstado = new FrmEstadoRequisiciones();
+            openChildForm(frmEstado);
+            pnlRequisiciones.Visible = false;
         }
     }
 }

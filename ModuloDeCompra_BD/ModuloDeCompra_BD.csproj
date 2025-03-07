@@ -68,6 +68,12 @@
     <Compile Include="Formulario\FrmIVA.Designer.cs">
       <DependentUpon>FrmIVA.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formulario\FrmEstadoRequisicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\FrmEstadoRequisicion.Designer.cs">
+      <DependentUpon>FrmEstadoRequisicion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formulario\FrmRol.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -210,6 +216,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Formulario\FrmIVA.resx">
       <DependentUpon>FrmIVA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\FrmEstadoRequisicion.resx">
+      <DependentUpon>FrmEstadoRequisicion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\FrmRol.resx">
       <DependentUpon>FrmRol.cs</DependentUpon>
