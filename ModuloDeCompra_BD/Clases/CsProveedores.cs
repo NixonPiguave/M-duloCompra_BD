@@ -40,18 +40,44 @@ namespace ModuloDeCompra_BD.Clases
         public bool AñadirProveedor()
         {
             string precioUFormatoSQL = Descuento1.ToString(CultureInfo.InvariantCulture);
-            string query = $"INSERT INTO Proveedores(Nombre_Proveedor, Nombre_Contacto, Correo, Pais, Ciudad, NroTelefono, TipoDocumento, NroDocumento, Descuento_Predeterminado, Direccion, EstadoProveedor) VALUES ('{NombreProvee}', '{NombreContacto}', '{Correo}', '{Pais}', '{Ciudad}', '{Telefono}', '{TipoDoc}', '{NumDoc}', {precioUFormatoSQL}, '{Direccion}', '{Estado}') ";
+            string cadenaXML = $@"<Proveedores>
+	                   <Proveedor>
+		                    <Nombre>{NombreProvee}</Nombre>
+		                    <Contacto>{NombreContacto}</Contacto>
+		                    <Correo>{Correo}</Correo>
+		                    <Pais>{Pais}</Pais>
+		                    <Ciudad>{Ciudad}</Ciudad>
+		                    <Telefono>{Telefono}</Telefono>
+		                    <TipoDocumento>{TipoDoc}</TipoDocumento>
+		                    <NroDocumento>{NumDoc}</NroDocumento>
+		                    <Descuento>{precioUFormatoSQL}</Descuento>
+		                    <Direccion>{Direccion}</Direccion>
+		                    <Estado>{Estado}</Estado>		
+	                        </Proveedor>
+                       </Proveedores>";
+            string query = $@"exec spRegistrarProveedor '{cadenaXML}'";
             return CsComandosSql.InserDeletUpdate(query);
         }
         public bool ModificarProveedor()
         {
             string precioUFormatoSQL = Descuento1.ToString(CultureInfo.InvariantCulture);
-            string query = $"update Proveedores set Nombre_Proveedor = '{NombreProvee1}', Nombre_Contacto = '{NombreContacto1}', Correo = '{Correo1}',  Pais = '{Pais1}', Ciudad = '{Ciudad1}', NroTelefono = '{Telefono1}', TipoDocumento= '{TipoDoc1}', NroDocumento= '{NumDoc1}', Descuento_Predeterminado = {precioUFormatoSQL}, Direccion = '{Direccion1}', EstadoProveedor = '{Estado1}' where ID_Proveedor= {IdProvee1}";
-            return CsComandosSql.InserDeletUpdate(query);
-        }
-        public bool EliminarProveedor()
-        {
-            string query = $"Delete from Proveedores where ID_Proveedor = {IdProvee1}";
+            string XMLcadena = $@"<Proveedores>
+                    <Proveedor>
+                        <ID_Proveedor>{IdProvee}</ID_Proveedor>
+                        <Nombre>{NombreProvee}</Nombre>
+                        <Contacto>{NombreContacto}</Contacto>
+                        <Correo>{Correo}</Correo>
+                        <Pais>{Pais}</Pais>
+                        <Ciudad>{Ciudad}</Ciudad>
+                        <Telefono>{Telefono}</Telefono>
+                        <TipoDocumento>{TipoDoc}</TipoDocumento>
+                        <NroDocumento>{NumDoc}</NroDocumento>
+                        <Descuento>{precioUFormatoSQL}</Descuento>
+                        <Direccion>{Direccion}</Direccion>
+                        <Estado>{Estado}</Estado>
+                    </Proveedor>
+                </Proveedores>";
+            string query = $@"exec spModificarProveedor '{XMLcadena}'";
             return CsComandosSql.InserDeletUpdate(query);
         }
         public DataTable ListaProveedor(string m)

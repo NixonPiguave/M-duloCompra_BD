@@ -27,6 +27,7 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void dgvProveedores_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            txtNroDocProveedor.Enabled = true;
             int posCelda = dgvProveedores.CurrentCell.RowIndex;
             id = Convert.ToInt32(dgvProveedores[0, posCelda].Value.ToString());
             txtNombreProveedor.Text = dgvProveedores[1, posCelda].Value.ToString();
@@ -53,9 +54,65 @@ namespace ModuloDeCompra_BD.Formulario
         {
             try
             {
-                if (!(CsComandosSql.verificar($"Select * from Proveedores where NroDocumento = {txtNroDocProveedor.Text}")))
+                if (txtNombreProveedor.Text != string.Empty && txtNombreContacto.Text != string.Empty && txtDescPredeterminadoProveedor.Text != string.Empty &&
+                    txtPais.Text != string.Empty && txtCiudad.Text != string.Empty && txtDireccion.Text != string.Empty && txtTelefono.Text != string.Empty &&
+                    cmbDocumento.SelectedIndex != -1 && txtNroDocProveedor.Text != string.Empty && cmbEstado.SelectedIndex != -1)
+                    if (!CsComandosSql.verificar($"Select * from Proveedores where NroDocumento = '{txtNroDocProveedor.Text}'"))
+                    {
+                        CsProveedores CsProveedor = new CsProveedores();
+                        CsProveedor.NombreProvee1 = txtNombreProveedor.Text;
+                        CsProveedor.NombreContacto1 = txtNombreContacto.Text;
+                        CsProveedor.Descuento1 = Convert.ToDouble(txtDescPredeterminadoProveedor.Text);
+                        CsProveedor.Correo1 = txtCorreoProveedor.Text;
+                        CsProveedor.Pais1 = txtPais.Text;
+                        CsProveedor.Ciudad1 = txtCiudad.Text;
+                        CsProveedor.Direccion1 = txtDireccion.Text;
+                        CsProveedor.Telefono1 = txtTelefono.Text;
+                        CsProveedor.TipoDoc1 = cmbDocumento.SelectedItem.ToString();
+                        CsProveedor.NumDoc1 = txtNroDocProveedor.Text;
+                        CsProveedor.Estado1 = (cmbEstado.SelectedIndex == 0) ? '1' : '0';
+                        if (CsProveedor.AñadirProveedor())
+                        {
+                            MessageBox.Show("Se ha agregado el proveedor");
+                            txtNombreProveedor.Text = string.Empty;
+                            txtNombreContacto.Text = string.Empty;
+                            txtDescPredeterminadoProveedor.Text = string.Empty;
+                            txtCorreoProveedor.Text = string.Empty;
+                            txtPais.Text = string.Empty;
+                            txtCiudad.Text = string.Empty;
+                            txtDireccion.Text = string.Empty;
+                            txtTelefono.Text = string.Empty;
+                            cmbDocumento.SelectedIndex = -1;
+                            cmbEstado.SelectedIndex = -1;
+                            txtNroDocProveedor.Text = string.Empty;
+                        }
+                        string sentencia = "select * from Proveedores"; dgvProveedores.DataSource = CsComandosSql.RetornaDatos(sentencia);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ya existe el número de documento que desea ingresar");
+                    }
+                else
+                {
+                    MessageBox.Show("Complete todos los campos");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Error al insertar proveedor");
+            }
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtNombreProveedor.Text != string.Empty && txtNombreContacto.Text != string.Empty && txtDescPredeterminadoProveedor.Text != string.Empty &&
+                    txtPais.Text != string.Empty && txtCiudad.Text != string.Empty && txtDireccion.Text != string.Empty && txtTelefono.Text != string.Empty &&
+                    cmbDocumento.SelectedIndex != -1 && txtNroDocProveedor.Text != string.Empty && cmbEstado.SelectedIndex != -1)
                 {
                     CsProveedores CsProveedor = new CsProveedores();
+                    CsProveedor.IdProvee1 = id;
                     CsProveedor.NombreProvee1 = txtNombreProveedor.Text;
                     CsProveedor.NombreContacto1 = txtNombreContacto.Text;
                     CsProveedor.Descuento1 = Convert.ToDouble(txtDescPredeterminadoProveedor.Text);
@@ -67,9 +124,9 @@ namespace ModuloDeCompra_BD.Formulario
                     CsProveedor.TipoDoc1 = cmbDocumento.SelectedItem.ToString();
                     CsProveedor.NumDoc1 = txtNroDocProveedor.Text;
                     CsProveedor.Estado1 = (cmbEstado.SelectedIndex == 0) ? '1' : '0';
-                    if (CsProveedor.AñadirProveedor())
+                    if (CsProveedor.ModificarProveedor())
                     {
-                        MessageBox.Show("Se ha agregado el proveedor");
+                        MessageBox.Show("Se ha cambiado el proveedor");
                         txtNombreProveedor.Text = string.Empty;
                         txtNombreContacto.Text = string.Empty;
                         txtDescPredeterminadoProveedor.Text = string.Empty;
@@ -82,53 +139,13 @@ namespace ModuloDeCompra_BD.Formulario
                         cmbEstado.SelectedIndex = -1;
                         txtNroDocProveedor.Text = string.Empty;
                     }
-                    string sentencia = "select * from Proveedores"; dgvProveedores.DataSource = CsComandosSql.RetornaDatos(sentencia);
+                    string sentencia = "select * from Proveedores";
+                    dgvProveedores.DataSource = CsComandosSql.RetornaDatos(sentencia);
                 }
                 else
                 {
-                    MessageBox.Show("Ya existe número de documento");
+                    MessageBox.Show("Complete todos los campos");
                 }
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show("Error al insertar proveedor"+ ex);
-            }
-        }
-
-        private void btnModificar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                CsProveedores CsProveedor = new CsProveedores();
-                CsProveedor.IdProvee1 = id;
-                CsProveedor.NombreProvee1 = txtNombreProveedor.Text;
-                CsProveedor.NombreContacto1 = txtNombreContacto.Text;
-                CsProveedor.Descuento1 = Convert.ToDouble(txtDescPredeterminadoProveedor.Text);
-                CsProveedor.Correo1 = txtCorreoProveedor.Text;
-                CsProveedor.Pais1 = txtPais.Text;
-                CsProveedor.Ciudad1 = txtCiudad.Text;
-                CsProveedor.Direccion1 = txtDireccion.Text;
-                CsProveedor.Telefono1 = txtTelefono.Text;
-                CsProveedor.TipoDoc1 = cmbDocumento.SelectedItem.ToString();
-                CsProveedor.NumDoc1 = txtNroDocProveedor.Text;
-                CsProveedor.Estado1 = (cmbEstado.SelectedIndex == 0) ? '1' : '0';
-                if (CsProveedor.ModificarProveedor())
-                {
-                    MessageBox.Show("Se ha cambiado el proveedor");
-                    txtNombreProveedor.Text = string.Empty;
-                    txtNombreContacto.Text = string.Empty;
-                    txtDescPredeterminadoProveedor.Text = string.Empty;
-                    txtCorreoProveedor.Text = string.Empty;
-                    txtPais.Text = string.Empty;
-                    txtCiudad.Text = string.Empty;
-                    txtDireccion.Text = string.Empty;
-                    txtTelefono.Text = string.Empty;
-                    cmbDocumento.SelectedIndex = -1;
-                    cmbEstado.SelectedIndex = -1;
-                    txtNroDocProveedor.Text = string.Empty;
-                }
-                string sentencia = "select * from Proveedores";
-                dgvProveedores.DataSource = CsComandosSql.RetornaDatos(sentencia);
             }
             catch
             {
@@ -140,6 +157,23 @@ namespace ModuloDeCompra_BD.Formulario
         {
             CsProveedores CsProveedor = new CsProveedores();
             dgvProveedores.DataSource = CsProveedor.ListaProveedor(txtBuscar.Text);
+        }
+
+        private void cmbDocumento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtNroDocProveedor.Enabled = true;
+            if (cmbDocumento.SelectedIndex == 0)
+            {
+                txtNroDocProveedor.MaxLength = 10;
+            }
+            else if (cmbDocumento.SelectedIndex == 1)
+            {
+                txtNroDocProveedor.MaxLength = 13;
+            }
+            else if (cmbDocumento.SelectedIndex == 2)
+            {
+                txtNroDocProveedor.MaxLength = 9;
+            }
         }
     }
 }
