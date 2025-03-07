@@ -40,6 +40,7 @@ namespace Menú
             childForm.Show();
             pnIventario.BringToFront();
             pnMantenimientos.BringToFront();
+            pnlRequisiciones.BringToFront();
 
         }
         private void guna2Button4_Click(object sender, EventArgs e)
@@ -66,6 +67,7 @@ namespace Menú
         {
             pnIventario.Visible = false;
             pnMantenimientos.Visible = false;
+            pnlRequisiciones.Visible = false;
             dgvOrdenesRequisicion.DataSource = CsComandosSql.RetornaDatos("select * from Requisicion");
         }
 
@@ -86,12 +88,19 @@ namespace Menú
             { 
                 pnlRequisiciones.Visible = false;
             }
+            else
+            { 
+                pnlRequisiciones.Visible = false;
+                pnIventario.Visible = false;
+                pnMantenimientos.Visible = false;
+            }
         }
 
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
             FrmUsuarios user = new FrmUsuarios();
             pnMantenimientos.Visible = false;
+            pnlRequisiciones.Visible = false;
             openChildForm(user);
         }
 
@@ -99,12 +108,14 @@ namespace Menú
         {
             FrmCategorias frmCate = new FrmCategorias();
             pnMantenimientos.Visible=false;
+            pnlRequisiciones.Visible = false;
             openChildForm(frmCate);
         }
 
         private void guna2Button11_Click(object sender, EventArgs e)
         {
             pnMantenimientos.Visible = false;
+            pnlRequisiciones.Visible = false;
             FrmProveedores frmProveedores = new FrmProveedores();
             openChildForm(frmProveedores);
         }
@@ -112,6 +123,7 @@ namespace Menú
         private void guna2Button12_Click(object sender, EventArgs e)
         {
             pnMantenimientos.Visible = false;
+            pnlRequisiciones.Visible = false;
             FrmProductos frmProductos = new FrmProductos();
             openChildForm(frmProductos);
         }
@@ -119,6 +131,7 @@ namespace Menú
         private void guna2Button14_Click(object sender, EventArgs e)
         {
             pnMantenimientos.Visible = false;
+            pnlRequisiciones.Visible = false;
             FrmRol frRol = new FrmRol();
             openChildForm(frRol);
         }
@@ -126,6 +139,7 @@ namespace Menú
         private void guna2Button15_Click(object sender, EventArgs e)
         {
             pnMantenimientos.Visible = false;
+            pnlRequisiciones.Visible = false;
             FrmDepartamento frmDepartamento = new FrmDepartamento();
             openChildForm(frmDepartamento);
         }
@@ -133,6 +147,7 @@ namespace Menú
         private void guna2Button16_Click(object sender, EventArgs e)
         {
             pnMantenimientos.Visible = false;
+            pnlRequisiciones.Visible = false;
             FrmIVA frmIVA = new FrmIVA();
             openChildForm(frmIVA);
         }
@@ -140,11 +155,13 @@ namespace Menú
         private void guna2Button8_Click(object sender, EventArgs e)
         {
             pnIventario.Visible = false;
+            pnlRequisiciones.Visible = false;
         }
 
         private void guna2Button9_Click(object sender, EventArgs e)
         {
             pnIventario.Visible = false;
+            pnlRequisiciones.Visible = false;
             FrmBodega frmBodega = new FrmBodega();
             openChildForm(frmBodega);
         }
@@ -152,6 +169,7 @@ namespace Menú
         private void btnCrearRequisicion_Click(object sender, EventArgs e)
         {
             FrmRequisiciones req = new FrmRequisiciones();
+            pnlRequisiciones.Visible = false;
             req.IDUsuario1 = IDusuario;
             openChildForm(req);
         }
