@@ -263,6 +263,7 @@
             this.ClientSize = new System.Drawing.Size(910, 506);
             this.Controls.Add(this.guna2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Frm_IncioSesion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
