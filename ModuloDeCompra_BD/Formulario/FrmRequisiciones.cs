@@ -88,8 +88,6 @@ namespace Menú.Formularios
 
         }
 
-       
-
         private void btnServicio_Click(object sender, EventArgs e)
         {
             btnAgregarP.Visible = false;

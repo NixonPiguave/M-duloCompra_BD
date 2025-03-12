@@ -128,6 +128,7 @@
             this.btnDevoluciones.Size = new System.Drawing.Size(180, 45);
             this.btnDevoluciones.TabIndex = 4;
             this.btnDevoluciones.Text = "Devoluciones";
+            this.btnDevoluciones.Click += new System.EventHandler(this.btnDevoluciones_Click);
             // 
             // btnInventario
             // 

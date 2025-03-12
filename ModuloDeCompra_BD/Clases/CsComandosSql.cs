@@ -99,6 +99,19 @@ namespace ModuloDeCompra_BD.Clases
             Desconectar();
             return rol;
         }
+        public static bool verificarRol(string usuario)
+        {
+            bool permiso = false;
+            Conectar();
+            string query = $"select U.Usuario, R.Rol from Usuario as U inner join Roles as R on U.ID_Rol = R.ID_Rol where U.Usuario = '{usuario}' and (R.Rol = 'Administrador' or R.Rol = 'Jefe Departamentario')";
+            SqlDataReader reader = comando.ExecuteReader();
+            if (reader.Read())
+            {
+                permiso = true;
+            }
+            Desconectar();
+            return permiso;
+        }
         public static int ObtenerIdUsuario(string user, string Contraseña)
         {
             

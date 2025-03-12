@@ -34,7 +34,7 @@ namespace ModuloDeCompra_BD.Formulario
             int posicion = dgvEstadoRequision.CurrentCell.RowIndex;
             int ID = Convert.ToInt32(dgvEstadoRequision[0, posicion].Value);
             if (cmbEstadoRechazar.SelectedIndex == 0)
-            {  
+            {
                 CsComandosSql.verificar($"Update Requisicion set Estado_Requisicion = 'Aprobado' where ID_Requisicion = {ID}");
                 dgvEstadoRequision.DataSource = CsComandosSql.RetornaDatos("Select * from Requisicion");
             }

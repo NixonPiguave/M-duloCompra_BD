@@ -182,5 +182,10 @@ namespace Menú
             openChildForm(frmEstado);
             pnlRequisiciones.Visible = false;
         }
+
+        private void btnDevoluciones_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

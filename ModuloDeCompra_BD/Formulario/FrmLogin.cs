@@ -52,7 +52,6 @@ namespace ModuloDeCompra_BD
                 user.Contraseña = encryp.Encriptar(txtContraseña.Text, txtCedula.Text);
                 string rol = CsComandosSql.verificarlogin(user.Cedula, user.Contraseña);
                 int IDusuario = CsComandosSql.ObtenerIdUsuario(user.Cedula, user.Contraseña);
-
                 if (!string.IsNullOrEmpty(rol))
                 {
                     if (rol == "Administrador")
