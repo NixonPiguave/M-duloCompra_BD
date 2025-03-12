@@ -47,21 +47,18 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void btnDetalle_Click(object sender, EventArgs e)
         {
-            int posicion = dgvEstadoRequision.CurrentCell.RowIndex;
-            int ID = Convert.ToInt32(dgvEstadoRequision[0, posicion].Value);
-            btnDetalle.Visible = false;
-            btnRegresar.Visible = true;
-            dgvEstadoRequision.DataSource = CsComandosSql.RetornaDatos($"Select * from Requi_Details where ID_Requisicion = {ID}");
-        }
-
-
-        private void btnRegresar_Click(object sender, EventArgs e)
-        {
-            int posicion = dgvEstadoRequision.CurrentCell.RowIndex;
-            int ID = Convert.ToInt32(dgvEstadoRequision[0, posicion].Value);
-            btnRegresar.Visible = false;
-            btnDetalle.Visible = true;
-            dgvEstadoRequision.DataSource = CsComandosSql.RetornaDatos($"select * from Requisicion");
+            if (!string.IsNullOrWhiteSpace(txtRequisicion.Text))
+            {
+                int celda = dgvEstadoRequision.CurrentCell.RowIndex;
+                FrmDetalleRequisicion frmDetalle = new FrmDetalleRequisicion();
+                frmDetalle.txtRequisicion.Text = txtRequisicion.Text;
+                frmDetalle.txtMotivo.Text = dgvEstadoRequision[5, celda].Value.ToString();
+                frmDetalle.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Escoga una requisición con doble click");
+            }
         }
     }
 }

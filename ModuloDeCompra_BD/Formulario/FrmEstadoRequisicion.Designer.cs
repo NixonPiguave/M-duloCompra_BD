@@ -28,18 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvEstadoRequision = new Guna.UI2.WinForms.Guna2DataGridView();
             this.pnlSubMenu = new System.Windows.Forms.Panel();
+            this.btnDetalle = new Guna.UI2.WinForms.Guna2Button();
+            this.cmbEstadoRechazar = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btnAceptar = new Guna.UI2.WinForms.Guna2Button();
             this.lblEstadoRequisicion = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txtRequisicion = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblRequisicion = new System.Windows.Forms.Label();
-            this.cmbEstadoRechazar = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.btnDetalle = new Guna.UI2.WinForms.Guna2Button();
-            this.btnRegresar = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstadoRequision)).BeginInit();
             this.pnlSubMenu.SuspendLayout();
             this.SuspendLayout();
@@ -50,26 +49,26 @@
             this.dgvEstadoRequision.AllowUserToDeleteRows = false;
             this.dgvEstadoRequision.AllowUserToResizeColumns = false;
             this.dgvEstadoRequision.AllowUserToResizeRows = false;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
-            this.dgvEstadoRequision.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEstadoRequision.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            this.dgvEstadoRequision.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEstadoRequision.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvEstadoRequision.ColumnHeadersHeight = 4;
             this.dgvEstadoRequision.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvEstadoRequision.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvEstadoRequision.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvEstadoRequision.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvEstadoRequision.Location = new System.Drawing.Point(456, 12);
             this.dgvEstadoRequision.Name = "dgvEstadoRequision";
@@ -102,7 +101,6 @@
             // pnlSubMenu
             // 
             this.pnlSubMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
-            this.pnlSubMenu.Controls.Add(this.btnRegresar);
             this.pnlSubMenu.Controls.Add(this.btnDetalle);
             this.pnlSubMenu.Controls.Add(this.cmbEstadoRechazar);
             this.pnlSubMenu.Controls.Add(this.btnAceptar);
@@ -114,6 +112,42 @@
             this.pnlSubMenu.Name = "pnlSubMenu";
             this.pnlSubMenu.Size = new System.Drawing.Size(319, 663);
             this.pnlSubMenu.TabIndex = 1;
+            // 
+            // btnDetalle
+            // 
+            this.btnDetalle.BorderRadius = 20;
+            this.btnDetalle.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDetalle.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDetalle.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDetalle.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDetalle.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
+            this.btnDetalle.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnDetalle.ForeColor = System.Drawing.Color.White;
+            this.btnDetalle.Location = new System.Drawing.Point(12, 591);
+            this.btnDetalle.Name = "btnDetalle";
+            this.btnDetalle.Size = new System.Drawing.Size(133, 53);
+            this.btnDetalle.TabIndex = 9;
+            this.btnDetalle.Text = "Ver Detalle de Requisición";
+            this.btnDetalle.Click += new System.EventHandler(this.btnDetalle_Click);
+            // 
+            // cmbEstadoRechazar
+            // 
+            this.cmbEstadoRechazar.BackColor = System.Drawing.Color.Transparent;
+            this.cmbEstadoRechazar.BorderRadius = 10;
+            this.cmbEstadoRechazar.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbEstadoRechazar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEstadoRechazar.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbEstadoRechazar.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbEstadoRechazar.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmbEstadoRechazar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmbEstadoRechazar.ItemHeight = 30;
+            this.cmbEstadoRechazar.Items.AddRange(new object[] {
+            "Aprobar",
+            "Rechazar"});
+            this.cmbEstadoRechazar.Location = new System.Drawing.Point(92, 258);
+            this.cmbEstadoRechazar.Name = "cmbEstadoRechazar";
+            this.cmbEstadoRechazar.Size = new System.Drawing.Size(140, 36);
+            this.cmbEstadoRechazar.TabIndex = 8;
             // 
             // btnAceptar
             // 
@@ -174,60 +208,6 @@
             this.lblRequisicion.TabIndex = 0;
             this.lblRequisicion.Text = "Orden Requisición";
             // 
-            // cmbEstadoRechazar
-            // 
-            this.cmbEstadoRechazar.BackColor = System.Drawing.Color.Transparent;
-            this.cmbEstadoRechazar.BorderRadius = 10;
-            this.cmbEstadoRechazar.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbEstadoRechazar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbEstadoRechazar.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbEstadoRechazar.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbEstadoRechazar.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cmbEstadoRechazar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cmbEstadoRechazar.ItemHeight = 30;
-            this.cmbEstadoRechazar.Items.AddRange(new object[] {
-            "Aprobar",
-            "Rechazar"});
-            this.cmbEstadoRechazar.Location = new System.Drawing.Point(92, 258);
-            this.cmbEstadoRechazar.Name = "cmbEstadoRechazar";
-            this.cmbEstadoRechazar.Size = new System.Drawing.Size(140, 36);
-            this.cmbEstadoRechazar.TabIndex = 8;
-            // 
-            // btnDetalle
-            // 
-            this.btnDetalle.BorderRadius = 20;
-            this.btnDetalle.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnDetalle.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnDetalle.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnDetalle.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDetalle.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
-            this.btnDetalle.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnDetalle.ForeColor = System.Drawing.Color.White;
-            this.btnDetalle.Location = new System.Drawing.Point(12, 591);
-            this.btnDetalle.Name = "btnDetalle";
-            this.btnDetalle.Size = new System.Drawing.Size(133, 53);
-            this.btnDetalle.TabIndex = 9;
-            this.btnDetalle.Text = "Ver Detalle de Requisición";
-            this.btnDetalle.Click += new System.EventHandler(this.btnDetalle_Click);
-            // 
-            // btnRegresar
-            // 
-            this.btnRegresar.BorderRadius = 20;
-            this.btnRegresar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnRegresar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnRegresar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnRegresar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnRegresar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
-            this.btnRegresar.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnRegresar.ForeColor = System.Drawing.Color.White;
-            this.btnRegresar.Location = new System.Drawing.Point(12, 591);
-            this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(133, 53);
-            this.btnRegresar.TabIndex = 10;
-            this.btnRegresar.Text = "Regresar a Requisición";
-            this.btnRegresar.Visible = false;
-            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
-            // 
             // FrmEstadoRequisiciones
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -247,15 +227,13 @@
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2DataGridView dgvEstadoRequision;
         private System.Windows.Forms.Panel pnlSubMenu;
         private System.Windows.Forms.Label lblRequisicion;
-        private Guna.UI2.WinForms.Guna2TextBox txtRequisicion;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblEstadoRequisicion;
         private Guna.UI2.WinForms.Guna2Button btnAceptar;
         private Guna.UI2.WinForms.Guna2ComboBox cmbEstadoRechazar;
         private Guna.UI2.WinForms.Guna2Button btnDetalle;
-        private Guna.UI2.WinForms.Guna2Button btnRegresar;
+        public Guna.UI2.WinForms.Guna2DataGridView dgvEstadoRequision;
+        public Guna.UI2.WinForms.Guna2TextBox txtRequisicion;
     }
 }
