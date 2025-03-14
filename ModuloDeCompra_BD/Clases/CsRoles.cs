@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TheArtOfDevHtmlRenderer.Adapters;
 
 namespace ModuloDeCompra_BD.Clases
 {
@@ -15,17 +16,33 @@ namespace ModuloDeCompra_BD.Clases
         public string Rol { get => rol; set => rol = value; }
         public bool AñadirRol()
         {
-            string query = $"insert into Roles (Rol) values ('{Rol}')";
+            string cadenaXML = $@"<Roles>
+                    <Rol>
+                        <Rol>{rol}</Rol>
+                    </Rol>
+                </Roles>";
+            string query = $@"exec spAgregarRol '{cadenaXML}'";
             return CsComandosSql.InserDeletUpdate(query);
         }
         public bool ModificarRol()
         {
-            string query = $"Update Roles set Rol = '{Rol}' where ID_Rol = {RolID}";
+            string cadenaXML = $@"<Roles>
+                <Rol>
+                    <ID_Rol>{idRol}</ID_Rol>
+                    <Rol>{rol}</Rol>
+                </Rol>
+            </Roles>";
+            string query = $@"exec spModificarRol '{cadenaXML}'";
             return CsComandosSql.InserDeletUpdate(query);
         }
         public bool EliminarRol()
         {
-            string query = $"Delete from Roles where ID_Rol = {RolID}";
+            string cadenaXML = $@"<Roles>
+                <Rol>
+                    <ID_Rol>{idRol}</ID_Rol>
+                </Rol>
+            </Roles";
+            string query = $@"exec spEliminarRol '{cadenaXML}'";
             return CsComandosSql.InserDeletUpdate(query);
         }
         public DataTable ListaRol(string m)
