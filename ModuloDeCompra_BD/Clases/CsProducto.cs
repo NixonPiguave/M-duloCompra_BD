@@ -28,48 +28,86 @@ namespace ModuloDeCompra_BD.Clases
 
         public bool AñadirProducto()
         {
-            string query;
-
             string precioUFormatoSQL = Precio_Unit.ToString(CultureInfo.InvariantCulture);
-            query = $"INSERT INTO Producto(NomProducto, Costo, EstadoProducto, ID_CAT,ID_IVA, ID_Proveedor) VALUES ('{Nom_Producto}', {precioUFormatoSQL}, '{Estado}', {Categoria}, '{Iva}', {Proveedor})";
+            string cadenaXML = $@"<Productos>
+                    <Producto>
+                        <NomProducto>{Nom_Producto}</NomProducto>
+                        <Costo>{precioUFormatoSQL}</Costo>
+                        <EstadoProducto>{Estado}</EstadoProducto>
+                        <ID_CAT>{Categoria}</ID_CAT>
+                        <ID_IVA>{Iva}</ID_IVA>
+                        <ID_Proveedor>{Proveedor}</ID_Proveedor>
+                    </Producto>
+                </Productos>";
+            string query = $@"exec spAgregarProducto '{cadenaXML}'";
             return CsComandosSql.InserDeletUpdate(query);
         }
         public bool AñadirServicio()
         {
-            string query;
-
             string precioUFormatoSQL = Precio_Unit.ToString(CultureInfo.InvariantCulture);
-            query = $"insert into Servicio (Nom_Servicio, Costo, ID_IVA, ID_Proveedor, EstadoServicio) values ('{Nom_Producto}',{precioUFormatoSQL},'{Iva}',{Proveedor},'{Estado}')";
-
-
+            string cadenaXML = $@"<Servicios>
+                    <Servicio>
+                        <Nom_Servicio>{Nom_Producto}</Nom_Servicio>
+                        <Costo>{precioUFormatoSQL}</Costo>
+                        <ID_IVA>{Iva}</ID_IVA>
+                        <ID_Proveedor>{Proveedor}</ID_Proveedor>
+                        <EstadoServicio>{Estado}</EstadoServicio>
+                    </Servicio>
+                </Servicios>";
+            string query = $@"exec spAgregarServicio '{cadenaXML}'";
             return CsComandosSql.InserDeletUpdate(query);
         }
         public bool ModificarProducto(int id)
         {
-            string query;
-
             string precioUFormatoSQL = Precio_Unit.ToString(CultureInfo.InvariantCulture);
-            query = $"Update Producto set NomProducto= '{Nom_Producto}', Costo= {precioUFormatoSQL}, EstadoProducto='{Estado}', ID_CAT= {Categoria}, ID_IVA= '{Iva}', ID_Proveedor= {Proveedor} where ID_Producto= {id}";
-
+            string cadenaXML = $@"<Productos>
+                    <Producto>
+                        <ID_Producto>{id}</ID_Producto>
+                        <NomProducto>{Nom_Producto}</NomProducto>
+                        <Costo>{precioUFormatoSQL}</Costo>
+                        <EstadoProducto>{Estado}</EstadoProducto>
+                        <ID_CAT>{Categoria}</ID_CAT>
+                        <ID_IVA>{Iva}</ID_IVA>
+                        <ID_Proveedor>{Proveedor}</ID_Proveedor>
+                    </Producto>
+                </Productos>";
+            string query = $@"exec spModificarProducto '{cadenaXML}'";
             return CsComandosSql.InserDeletUpdate(query);
         }
         public bool ModificarServicio(int id)
         {
-            string query;
-
             string precioUFormatoSQL = Precio_Unit.ToString(CultureInfo.InvariantCulture);
-            query = $"Update Servicio set Nom_Servicio= '{Nom_Producto}', Costo= {precioUFormatoSQL}, ID_IVA= '{Iva}', ID_Proveedor= {Proveedor}, EstadoServicio= '{Estado}' where ID_Servicio= {id}";
-
+            string cadenaXML = $@"<Servicios>
+                    <Servicio>
+                        <ID_Servicio>{id}</ID_Servicio>
+                        <Nom_Servicio>{Nom_Producto}</Nom_Servicio>
+                        <Costo>{precioUFormatoSQL}</Costo>
+                        <ID_IVA>{Iva}</ID_IVA>
+                        <ID_Proveedor>{Proveedor}</ID_Proveedor>
+                        <EstadoServicio>{Estado}</EstadoServicio>
+                    </Servicio>
+                </Servicios>";
+            string query = $@"exec spModificarServicio '{cadenaXML}'";
             return CsComandosSql.InserDeletUpdate(query);
         }
         public bool EliminarProducto(int ID)
         {
-            string query = $"delete Producto where ID_Producto={ID}";
+            string cadenaXML = $@"<Productos>
+                    <Producto>
+                        <ID_Producto>{ID}</ID_Producto>
+                    </Producto>
+                </Productos>";
+            string query = $@"exec spEliminarProducto '{cadenaXML}'";
             return CsComandosSql.InserDeletUpdate(query);
         }
         public bool EliminarServicio(int Id)
         {
-            string query = $"Delete Servicio where ID_Servicio= {Id}";
+            string cadenaXML = $@"<Servicios>
+                    <Servicio>
+                        <ID_Servicio>{Id}</ID_Servicio>
+                    </Servicio>
+                </Servicios>";
+            string query = $@"exec spEliminarServicio '{cadenaXML}'";
             return CsComandosSql.InserDeletUpdate(query);
         }
         public DataTable ListaProducto()

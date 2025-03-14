@@ -16,17 +16,33 @@ namespace ModuloDeCompra_BD.Clases
         public string Depa{ get => departamento; set => departamento = value; }
         public bool AñadirDepartamento()
         {
-            string query = $"insert into Departamento (Nombre_Departamento) values ('{Depa}')";
+            string cadenaXML = $@"<Departamentos>
+                    <Departamento>
+                            <Nombre_Departamento>{departamento}</Nombre_Departamento>
+                    </Departamento>
+                </Departamentos>";
+            string query = $@"exec spAgregarDepartamento '{cadenaXML}'";
             return CsComandosSql.InserDeletUpdate(query);
         }
         public bool ModificarDepartamento()
         {
-            string query = $"Update Departamento set Nombre_Departamento = '{Depa}' where ID_Depa = {DepaID}";
+            string cadenaXML = $@"<Departamentos>
+                    <Departamento>
+                        <ID_Depa>{DepartamentoID}</ID_Depa>
+                        <Nombre_Departamento>{departamento}</Nombre_Departamento>
+                    </Departamento>
+                </Departamentos>";
+            string query = $@"exec spModificarDepartamento '{cadenaXML}'";
             return CsComandosSql.InserDeletUpdate(query);
         }
         public bool EliminarDepartamento()
         {
-            string query = $"Delete from Departamento where ID_Depa = {DepaID}";
+            string cadenaXML = $@"<Departamentos>
+                    <Departamento>
+                        <ID_Depa>{DepartamentoID}</ID_Depa>
+                    </Departamento>
+                </Departamentos>";
+            string query = $@"exec spEliminarDepartamento '{cadenaXML}'";
             return CsComandosSql.InserDeletUpdate(query);
         }
         public DataTable ListaCategoria(string m)

@@ -20,18 +20,37 @@ namespace ModuloDeCompra_BD.Clases
         public bool AñadirIVA()
         {
             string precioUFormatoSQL = ValorIva.ToString(CultureInfo.InvariantCulture);
-            string query = $"insert into IVA (ID_IVA, Valor_IVA, EstadoIVA) values ('{IDIVA}', {precioUFormatoSQL}, '{Estado}')";
+            string cadenaXML = $@"<IVA>
+                    <RegistroIVA>
+                        <ID_IVA>{IDiva}</ID_IVA>
+                        <Valor_IVA>{precioUFormatoSQL}</Valor_IVA>
+                        <EstadoIVA>{estado}</EstadoIVA>
+                    </RegistroIVA>
+                </IVA>";
+            string query = $@"exec spAgregarIVA '{cadenaXML}'";
             return CsComandosSql.InserDeletUpdate(query);
         }
         public bool ModificarIVA()
         {
             string precioUFormatoSQL = ValorIva.ToString(CultureInfo.InvariantCulture);
-            string query = $"Update IVA set Valor_IVA = {precioUFormatoSQL}, EstadoIVA = '{Estado}' where ID_IVA = '{IDIVA}'";
+            string cadenaXML = $@"<IVA>
+                    <RegistroIVA>
+                        <ID_IVA>{IDiva}</ID_IVA>
+                        <Valor_IVA>{precioUFormatoSQL}</Valor_IVA>
+                        <EstadoIVA>{Estado}</EstadoIVA>
+                    </RegistroIVA>
+                </IVA>";
+            string query = $@"exec spModificarIVA '{cadenaXML}'";
             return CsComandosSql.InserDeletUpdate(query);
         }
         public bool EliminarIVA()
         {
-            string query = $"Delete from IVA where ID_IVA = '{IDiva}'";
+            string cadenaXML = $@"<IVA>
+                    <RegistroIVA>
+                        <ID_IVA>{IDiva}</ID_IVA>
+                    </RegistroIVA>
+                </IVA>";
+            string query = $@"exec spEliminarIVA '{cadenaXML}'";
             return CsComandosSql.InserDeletUpdate(query);
         }
         public DataTable ListaIVA(string m)

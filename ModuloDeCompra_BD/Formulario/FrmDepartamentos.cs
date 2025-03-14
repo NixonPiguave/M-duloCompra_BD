@@ -32,7 +32,7 @@ namespace ModuloDeCompra_BD.Formulario
                 }
                 try
                 {
-                    if (!CsComandosSql.verificar($"Select * from Departamento where Nombre_Departament '{txtNombreDepartamento.Text}'"))
+                    if (!CsComandosSql.verificar($"Select * from Departamento where Nombre_Departamento = '{txtNombreDepartamento.Text}'"))
                     {
                         csDepa.Depa = txtNombreDepartamento.Text;
                         csDepa.AñadirDepartamento();

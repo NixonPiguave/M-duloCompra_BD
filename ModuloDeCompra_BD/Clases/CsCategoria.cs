@@ -17,17 +17,33 @@ namespace ModuloDeCompra_BD.Clases
         public string Categoria { get => categoria; set => categoria = value; }
         public bool AñadirCategoria()
         {
-            string query = $"insert into Categoria (Categoria) values ('{Categoria}')";
+            string cadenaXML = $@"<Categorias>
+                    <Categoria>
+                        <Categoria>{categoria}</Categoria>
+                    </Categoria>
+                </Categorias>";
+            string query = $@"exec spAgregarCategoria '{cadenaXML}'";
             return CsComandosSql.InserDeletUpdate(query);
         }
         public bool ModificarCategoria()
         {
-            string query = $"Update Categoria set Categoria = '{Categoria}' where ID_CAT = {IdCat}";
+            string cadenaXML = $@"<Categorias>
+                    <Categoria>
+                        <ID_CAT>{IDCat}</ID_CAT>
+                        <Categoria>{categoria}</Categoria>
+                    </Categoria>
+                </Categorias>";
+            string query = $@"exec spModificarCategoria '{cadenaXML}'";
             return CsComandosSql.InserDeletUpdate(query);
         }
         public bool EliminarCategoria()
         {
-            string query = $"Delete Categoria from Categoria where ID_CAT = {IdCat}";
+            string cadenaXML = $@"<Categorias>
+                   <Categoria>
+                        <ID_CAT>{IDCat}</ID_CAT>
+                   </Categoria>
+                </Categorias>";
+            string query = $@"exec spEliminarCategoria '{cadenaXML}'";
             return CsComandosSql.InserDeletUpdate(query);
         }
         public DataTable ListaCategoria(string m)
