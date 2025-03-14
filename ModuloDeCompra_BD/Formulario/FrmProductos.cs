@@ -56,14 +56,16 @@ namespace ModuloDeCompra_BD.Formulario
         {
             if (cbTipoP.SelectedItem.ToString()=="Producto")
             {
-                decimal precioU=0;
-                try
+                decimal precioU = 0;
+                string precioTexto = txtPrecioUnitario.Text.Trim(); 
+                                                                    
+                precioTexto = precioTexto.Replace(',', '.');
+
+               
+                if (!decimal.TryParse(precioTexto, NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out precioU))
                 {
-                    precioU = decimal.Parse(txtPrecioUnitario.Text, NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Precio no válido" + ex);
+                    MessageBox.Show("Precio no válido. Asegúrate de ingresar un número con punto decimal.");
+                    return;
                 }
                 try
                 {
@@ -109,14 +111,16 @@ namespace ModuloDeCompra_BD.Formulario
             }
             else
             {
-                 decimal precioU=0;
-                try
+                decimal precioU = 0;
+                string precioTexto = txtPrecioUnitario.Text.Trim(); 
+                                                                    
+                precioTexto = precioTexto.Replace(',', '.');
+
+                
+                if (!decimal.TryParse(precioTexto, NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out precioU))
                 {
-                    precioU = decimal.Parse(txtPrecioUnitario.Text, NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Precio no válido" + ex);
+                    MessageBox.Show("Precio no válido. Asegúrate de ingresar un número con punto decimal.");
+                    return; 
                 }
                 try
                 {
@@ -137,11 +141,7 @@ namespace ModuloDeCompra_BD.Formulario
                         producto.Iva1 = Convert.ToChar(tb.Rows[0]["ID_IVA"].ToString());
                     }
                     producto.Estado1 = cmbEstadoProducto.SelectedItem.ToString();
-                    //string precioUFormatoSQL = iva.ToString(CultureInfo.InvariantCulture);
-                    //precioUFormatoSQL = precioUFormatoSQL.Replace(',', '.');
-                    //DataTable tb = CsComandosSql.RetornaDatos($"select * from IVA where Valor_IVA={precioUFormatoSQL}");
-                    //producto.Iva1 = Convert.ToChar(tb.Rows[0]["ID_IVA"].ToString());
-
+                    
                     
                     producto.Proveedor1 = Id2;
 
@@ -264,13 +264,15 @@ namespace ModuloDeCompra_BD.Formulario
             if (cbTipoP.SelectedItem.ToString() == "Producto")
             {
                 decimal precioU = 0;
-                try
+                string precioTexto = txtPrecioUnitario.Text.Trim(); 
+                                                                 
+                precioTexto = precioTexto.Replace(',', '.');
+
+               
+                if (!decimal.TryParse(precioTexto, NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out precioU))
                 {
-                    precioU = decimal.Parse(txtPrecioUnitario.Text, NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Precio no válido" + ex);
+                    MessageBox.Show("Precio no válido. Asegúrate de ingresar un número con punto decimal.");
+                    return; 
                 }
                 try
                 {
@@ -307,13 +309,15 @@ namespace ModuloDeCompra_BD.Formulario
             else
             {
                 decimal precioU = 0;
-                try
+                string precioTexto = txtPrecioUnitario.Text.Trim(); 
+                                                                    
+                precioTexto = precioTexto.Replace(',', '.');
+
+                
+                if (!decimal.TryParse(precioTexto, NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out precioU))
                 {
-                    precioU = decimal.Parse(txtPrecioUnitario.Text, NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Precio no válido" + ex);
+                    MessageBox.Show("Precio no válido. Asegúrate de ingresar un número con punto decimal.");
+                    return; 
                 }
                 try
                 {
@@ -348,30 +352,7 @@ namespace ModuloDeCompra_BD.Formulario
             }
         }
 
-        //private void btnEditar_Click(object sender, EventArgs e)
-        //{
-        //    CsProducto pro1 = new CsProducto();
-        //    int fila = dgvProducto.CurrentCell.RowIndex;
-        //    string nombre = txtNombreProducto.Text;
-        //    string precioUnit = txtPrecioUnitario.Text;
-        //    pro1.ModificarProducto(Id3,nombre, precioUnit);
-        //}
-
-        //private void btnEditarServicio_Click(object sender, EventArgs e)
-        //{
-        //    CsProducto serv = new CsProducto();
-        //    int fila = dgvService.CurrentCell.RowIndex;
-        //    string nombre = txtNombreProducto.Text;
-        //    string precioUnit = txtPrecioUnitario.Text;
-        //    serv.ModificarProducto(Id4,nombre, precioUnit);
-        //}
-
-        //MALLLLLLLLLL
-        //private void btnEditarServicio_DoubleClick(object sender, EventArgs e)
-        //{
-
-
-        //}
+        
 
 
     }
