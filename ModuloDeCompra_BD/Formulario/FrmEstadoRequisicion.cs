@@ -33,14 +33,35 @@ namespace ModuloDeCompra_BD.Formulario
         {
             int posicion = dgvEstadoRequision.CurrentCell.RowIndex;
             int ID = Convert.ToInt32(dgvEstadoRequision[0, posicion].Value);
+            string Estado;
             if (cmbEstadoRechazar.SelectedIndex == 0)
             {
-                CsComandosSql.verificar($"Update Requisicion set Estado_Requisicion = 'Aprobado' where ID_Requisicion = {ID}");
+                Estado = "Aprobado";
+                string Observacion = "Requisición aprobada por el departamento de finanzas";
+                string cadenaXML = $@"<Requisiciones>
+                        <Requisicion>
+                            <ID_Requisicion>{ID}</ID_Requisicion>
+                            <Estado_Requisicion>{Estado}</Estado_Requisicion>
+                            <Observacion>{Observacion}</Observacion>
+                        </Requisicion>
+                    </Requisiciones>";
+                string query = $@"exec spModificarRequisicion '{cadenaXML}'";
+                CsComandosSql.InserDeletUpdate(query);
                 dgvEstadoRequision.DataSource = CsComandosSql.RetornaDatos("Select * from Requisicion");
             }
             else
             {
-                CsComandosSql.verificar($"Update Requisicion set Estado_Requisicion = 'Rechazado' where ID_Requisicion = {ID}");
+                Estado = "Rechazado";
+                string Observacion = "Requisición aprobada por el departamento de finanzas";
+                string cadenaXML = $@"<Requisiciones>
+                        <Requisicion>
+                            <ID_Requisicion>{ID}</ID_Requisicion>
+                            <Estado_Requisicion>{Estado}</Estado_Requisicion>
+                            <Observacion>{Observacion}</Observacion>
+                        </Requisicion>
+                    </Requisiciones>";
+                string query = $@"exec spModificarRequisicion '{cadenaXML}'";
+                CsComandosSql.InserDeletUpdate(query);
                 dgvEstadoRequision.DataSource = CsComandosSql.RetornaDatos("Select * from Requisicion");
             }
         }

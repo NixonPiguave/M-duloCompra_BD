@@ -33,7 +33,7 @@ namespace ModuloDeCompra_BD.Formulario
             txtNombreProveedor.Text = dgvProveedores[1, posCelda].Value.ToString();
             txtNombreContacto.Text = dgvProveedores[2, posCelda].Value.ToString();
             txtCorreoProveedor.Text = dgvProveedores[3, posCelda].Value.ToString();
-            txtPais.Text = dgvProveedores[4, posCelda].Value.ToString();
+            cmbPais.Text = dgvProveedores[4, posCelda].Value.ToString();
             txtCiudad.Text = dgvProveedores[5, posCelda].Value.ToString();
             txtTelefono.Text = dgvProveedores[6, posCelda].Value.ToString();
             cmbDocumento.Text = dgvProveedores[7, posCelda].Value.ToString();
@@ -55,7 +55,7 @@ namespace ModuloDeCompra_BD.Formulario
             try
             {
                 if (txtNombreProveedor.Text != string.Empty && txtNombreContacto.Text != string.Empty && txtDescPredeterminadoProveedor.Text != string.Empty &&
-                    txtPais.Text != string.Empty && txtCiudad.Text != string.Empty && txtDireccion.Text != string.Empty && txtTelefono.Text != string.Empty &&
+                    cmbPais.SelectedIndex != -1 && txtCiudad.Text != string.Empty && txtDireccion.Text != string.Empty && txtTelefono.Text != string.Empty &&
                     cmbDocumento.SelectedIndex != -1 && txtNroDocProveedor.Text != string.Empty && cmbEstado.SelectedIndex != -1)
                     if (!CsComandosSql.verificar($"Select * from Proveedores where NroDocumento = '{txtNroDocProveedor.Text}'"))
                     {
@@ -64,7 +64,7 @@ namespace ModuloDeCompra_BD.Formulario
                         CsProveedor.NombreContacto1 = txtNombreContacto.Text;
                         CsProveedor.Descuento1 = Convert.ToDouble(txtDescPredeterminadoProveedor.Text);
                         CsProveedor.Correo1 = txtCorreoProveedor.Text;
-                        CsProveedor.Pais1 = txtPais.Text;
+                        CsProveedor.Pais1 = cmbPais.SelectedItem.ToString();
                         CsProveedor.Ciudad1 = txtCiudad.Text;
                         CsProveedor.Direccion1 = txtDireccion.Text;
                         CsProveedor.Telefono1 = txtTelefono.Text;
@@ -78,7 +78,7 @@ namespace ModuloDeCompra_BD.Formulario
                             txtNombreContacto.Text = string.Empty;
                             txtDescPredeterminadoProveedor.Text = string.Empty;
                             txtCorreoProveedor.Text = string.Empty;
-                            txtPais.Text = string.Empty;
+                            cmbPais.SelectedIndex = -1;
                             txtCiudad.Text = string.Empty;
                             txtDireccion.Text = string.Empty;
                             txtTelefono.Text = string.Empty;
@@ -108,7 +108,7 @@ namespace ModuloDeCompra_BD.Formulario
             try
             {
                 if (txtNombreProveedor.Text != string.Empty && txtNombreContacto.Text != string.Empty && txtDescPredeterminadoProveedor.Text != string.Empty &&
-                    txtPais.Text != string.Empty && txtCiudad.Text != string.Empty && txtDireccion.Text != string.Empty && txtTelefono.Text != string.Empty &&
+                    cmbPais.SelectedIndex != -1 && txtCiudad.Text != string.Empty && txtDireccion.Text != string.Empty && txtTelefono.Text != string.Empty &&
                     cmbDocumento.SelectedIndex != -1 && txtNroDocProveedor.Text != string.Empty && cmbEstado.SelectedIndex != -1)
                 {
                     CsProveedores CsProveedor = new CsProveedores();
@@ -117,7 +117,7 @@ namespace ModuloDeCompra_BD.Formulario
                     CsProveedor.NombreContacto1 = txtNombreContacto.Text;
                     CsProveedor.Descuento1 = Convert.ToDouble(txtDescPredeterminadoProveedor.Text);
                     CsProveedor.Correo1 = txtCorreoProveedor.Text;
-                    CsProveedor.Pais1 = txtPais.Text;
+                    CsProveedor.Pais1 = cmbPais.SelectedItem.ToString();
                     CsProveedor.Ciudad1 = txtCiudad.Text;
                     CsProveedor.Direccion1 = txtDireccion.Text;
                     CsProveedor.Telefono1 = txtTelefono.Text;
@@ -131,13 +131,14 @@ namespace ModuloDeCompra_BD.Formulario
                         txtNombreContacto.Text = string.Empty;
                         txtDescPredeterminadoProveedor.Text = string.Empty;
                         txtCorreoProveedor.Text = string.Empty;
-                        txtPais.Text = string.Empty;
+                        cmbPais.SelectedIndex = -1;
                         txtCiudad.Text = string.Empty;
                         txtDireccion.Text = string.Empty;
                         txtTelefono.Text = string.Empty;
                         cmbDocumento.SelectedIndex = -1;
                         cmbEstado.SelectedIndex = -1;
                         txtNroDocProveedor.Text = string.Empty;
+                        txtNroDocProveedor.Enabled = false;
                     }
                     string sentencia = "select * from Proveedores";
                     dgvProveedores.DataSource = CsComandosSql.RetornaDatos(sentencia);
