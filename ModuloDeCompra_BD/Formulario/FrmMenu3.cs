@@ -75,7 +75,8 @@ namespace Menú
 
         private void btnOrdenesCompra_Click(object sender, EventArgs e)
         {
-
+            FrmOrdenCompra frmOrdenCompra = new FrmOrdenCompra();
+            openChildForm(frmOrdenCompra);
         }
 
         private void btnRequisiciones_Click(object sender, EventArgs e)

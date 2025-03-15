@@ -173,7 +173,7 @@
             this.btnOrdenesCompra.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOrdenesCompra.ForeColor = System.Drawing.Color.White;
             this.btnOrdenesCompra.HoverState.ForeColor = System.Drawing.Color.Yellow;
-            this.btnOrdenesCompra.Location = new System.Drawing.Point(238, 12);
+            this.btnOrdenesCompra.Location = new System.Drawing.Point(264, 12);
             this.btnOrdenesCompra.Name = "btnOrdenesCompra";
             this.btnOrdenesCompra.Size = new System.Drawing.Size(155, 45);
             this.btnOrdenesCompra.TabIndex = 1;

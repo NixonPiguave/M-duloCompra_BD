@@ -72,7 +72,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvEstadoRequision.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvEstadoRequision.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvEstadoRequision.Location = new System.Drawing.Point(448, 12);
+            this.dgvEstadoRequision.Location = new System.Drawing.Point(438, 12);
             this.dgvEstadoRequision.Name = "dgvEstadoRequision";
             this.dgvEstadoRequision.RowHeadersVisible = false;
             this.dgvEstadoRequision.Size = new System.Drawing.Size(808, 632);

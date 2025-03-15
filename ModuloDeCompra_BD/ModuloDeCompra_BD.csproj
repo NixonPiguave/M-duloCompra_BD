@@ -57,11 +57,24 @@
     <Compile Include="Clases\CsConeccionServer.cs" />
     <Compile Include="Clases\CsDepartamentos.cs" />
     <Compile Include="Clases\CsEncriptarMDS.cs" />
+    <Compile Include="Clases\csOrdenCompra.cs" />
     <Compile Include="Clases\CsProducto.cs" />
     <Compile Include="Clases\CsProveedores.cs" />
     <Compile Include="Clases\CsUsuario.cs" />
     <Compile Include="Clases\CsRoles.cs" />
     <Compile Include="Clases\CsIVA.cs" />
+    <Compile Include="Formulario\FrmListadoRequisicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\FrmListadoRequisicion.Designer.cs">
+      <DependentUpon>FrmListadoRequisicion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\FrmOrdenCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\FrmOrdenCompra.Designer.cs">
+      <DependentUpon>FrmOrdenCompra.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formulario\FrmModificarRequisicion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -220,6 +233,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formulario\FrmListadoRequisicion.resx">
+      <DependentUpon>FrmListadoRequisicion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\FrmOrdenCompra.resx">
+      <DependentUpon>FrmOrdenCompra.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formulario\FrmModificarRequisicion.resx">
       <DependentUpon>FrmModificarRequisicion.cs</DependentUpon>
     </EmbeddedResource>
