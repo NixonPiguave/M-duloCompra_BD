@@ -19,7 +19,7 @@ namespace ModuloDeCompra_BD.Clases
                     throw new ArgumentException("Los campos ID Bodega y Dirección no pueden estar vacíos.");
                 }
 
-                bool success = CsComandosSql.InserDeletUpdate($"INSERT INTO Bodega(Ubicacion, StockActual, StockMin, StockMax) VALUES('{direccion}', 0, 0, 0)");
+                bool success = CsComandosSql.InserDeletUpdate($"INSERT INTO Bodega(Ubicacion, StockActual, StockMin, StockMax) VALUES('0,0,{direccion}')");
 
                 if (success)
                 {
