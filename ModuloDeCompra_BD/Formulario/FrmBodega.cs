@@ -89,6 +89,7 @@ namespace ModuloDeCompra_BD.Formulario
         {
             int fila = dgvBodega.CurrentCell.RowIndex;
             int id = Convert.ToInt32(dgvBodega[0, fila].Value.ToString());
+
         }
     }
 }
