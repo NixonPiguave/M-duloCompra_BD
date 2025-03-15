@@ -15,6 +15,7 @@ namespace ModuloDeCompra_BD.Formulario
     public partial class FrmBodega: Form
     {
         int id;
+        string min,max;
         public FrmBodega()
         {
             InitializeComponent();
@@ -32,20 +33,24 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txtDireccion.Text))
+            {
+                MessageBox.Show("La dirección no puede estar vacía.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             CsBodega bodega = new CsBodega();
             bool resultado = bodega.agregarBodega(txtDireccion.Text);
 
             if (resultado)
             {
                 MessageBox.Show("Bodega creada exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                 dgvBodega.DataSource = CsComandosSql.RetornaDatos("SELECT * FROM Bodega");
             }
             else
             {
                 MessageBox.Show("Error al crear la bodega. Verifique los datos ingresados.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-  
 
         }
 
@@ -58,37 +63,49 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            try
+            if (string.IsNullOrEmpty(txtStockMin.Text) || string.IsNullOrEmpty(txtStockMax.Text))
             {
-                double stockMin = Convert.ToDouble(txtStockMin.Text);
-                double stockMax = Convert.ToDouble(txtStockMax.Text);
-                CsBodega bodega = new CsBodega();
-                bool resultado = bodega.ModificarStockBodega(id, stockMin, stockMax);
-
-                if (resultado)
-                {
-                    MessageBox.Show("Bodega modificada exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    dgvBodega.DataSource = CsComandosSql.RetornaDatos("SELECT * FROM Bodega");
-
-                    txtStockMin.Text = string.Empty;
-                    txtStockMax.Text = string.Empty;
-                }
+                MessageBox.Show("Los campos Stock Mínimo y Stock Máximo no pueden estar vacíos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-            catch (FormatException)
+
+            if (!double.TryParse(txtStockMin.Text, out double stockMin) || !double.TryParse(txtStockMax.Text, out double stockMax))
             {
                 MessageBox.Show("Los valores de Stock Mínimo y Stock Máximo deben ser números válidos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-            catch (Exception ex)
+
+            if (stockMin <= 0 || stockMax <= 0)
             {
-                MessageBox.Show($"Ocurrió un error al procesar la modificación: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Los valores de Stock Mínimo y Stock Máximo deben ser mayores que 0.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            CsBodega bodega = new CsBodega();
+            bool resultado = bodega.ModificarStockBodega(id, stockMin, stockMax);
+
+            if (resultado)
+            {
+                MessageBox.Show("Bodega modificada exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dgvBodega.DataSource = CsComandosSql.RetornaDatos("SELECT * FROM Bodega");
+
+                txtStockMin.Text = string.Empty;
+                txtStockMax.Text = string.Empty;
+            }
+            else
+            {
+                MessageBox.Show("Error al modificar la bodega en la base de datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void dgvBodega_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             int fila = dgvBodega.CurrentCell.RowIndex;
-            int id = Convert.ToInt32(dgvBodega[0, fila].Value.ToString());
+            id = Convert.ToInt32(dgvBodega[0, fila].Value.ToString());
+            min = dgvBodega[1, fila].Value.ToString();
+            max = dgvBodega[2, fila].Value.ToString();
+
+            txtStockMin.Text = min;
+            txtStockMax.Text = max;
 
         }
     }
