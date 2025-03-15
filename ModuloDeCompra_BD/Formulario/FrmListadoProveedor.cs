@@ -41,6 +41,7 @@ namespace ModuloDeCompra_BD.Formulario
             Nombre = dgvListadoProveedores[1, fila].Value.ToString();
             IdProvee = Convert.ToInt32(dgvListadoProveedores[0, fila].Value);
             MessageBox.Show("Proveedor seleccionado");
+            this.Close();
             
         }
 

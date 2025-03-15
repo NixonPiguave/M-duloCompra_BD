@@ -34,6 +34,7 @@ namespace ModuloDeCompra_BD.Formulario
             txtRequisicionID.Text = dgvListadoRequisicion[0, fila].Value.ToString();
             IdReq = Convert.ToInt32(dgvListadoRequisicion[0, fila].Value);
             MessageBox.Show("Requisición seleccionada");
+            this.Close();
         }
 
         private void txtBuscarCategoria_KeyUp(object sender, KeyEventArgs e)

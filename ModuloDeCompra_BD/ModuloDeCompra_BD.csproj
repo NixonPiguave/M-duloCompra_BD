@@ -70,12 +70,6 @@
     <Compile Include="Formulario\FrmListadoRequisicion.Designer.cs">
       <DependentUpon>FrmListadoRequisicion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formulario\FrmOrdenCompra.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formulario\FrmOrdenCompra.Designer.cs">
-      <DependentUpon>FrmOrdenCompra.cs</DependentUpon>
-    </Compile>
     <Compile Include="Formulario\FrmModificarRequisicion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +87,12 @@
     </Compile>
     <Compile Include="Formulario\FrmEstadoRequisicion.Designer.cs">
       <DependentUpon>FrmEstadoRequisicion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\FrmOrdenCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\FrmOrdenCompra.Designer.cs">
+      <DependentUpon>FrmOrdenCompra.cs</DependentUpon>
     </Compile>
     <Compile Include="Formulario\FrmRol.cs">
       <SubType>Form</SubType>
@@ -237,9 +237,6 @@
     <EmbeddedResource Include="Formulario\FrmListadoRequisicion.resx">
       <DependentUpon>FrmListadoRequisicion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formulario\FrmOrdenCompra.resx">
-      <DependentUpon>FrmOrdenCompra.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Formulario\FrmModificarRequisicion.resx">
       <DependentUpon>FrmModificarRequisicion.cs</DependentUpon>
     </EmbeddedResource>
@@ -248,6 +245,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\FrmEstadoRequisicion.resx">
       <DependentUpon>FrmEstadoRequisicion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\FrmOrdenCompra.resx">
+      <DependentUpon>FrmOrdenCompra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\FrmRol.resx">
       <DependentUpon>FrmRol.cs</DependentUpon>
