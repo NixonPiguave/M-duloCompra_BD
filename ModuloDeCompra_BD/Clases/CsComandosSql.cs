@@ -14,9 +14,12 @@ namespace ModuloDeCompra_BD.Clases
     {
         private static SqlConnection conex;
         private static SqlCommand comando;
-
+        string usuario;
+        string contraseña;
+        public string Usuario { get => usuario; set => usuario = value; }
+        public string Contraseña { get => contraseña; set => contraseña = value; }
         // Método para obtener la conexión (ya configurada)
-        private static void Conectar()
+        public static void Conectar()
         {
             conex = CsConeccionServer.ObtenerConexion();
         }
@@ -31,7 +34,7 @@ namespace ModuloDeCompra_BD.Clases
                 MessageBox.Show("Error en la Consulta Sql");
             }
         }
-        private static void Desconectar()
+        public static void Desconectar()
         {
             CsConeccionServer.desconectarse();
             comando.Dispose();
@@ -128,7 +131,29 @@ namespace ModuloDeCompra_BD.Clases
             Desconectar();
             return id;
         }
-
+        public bool LoginBD()
+        {
+            SqlConnection conex = CsConeccionServer.ObtenerConexion();
+            string query = $"IF NOT EXISTS (SELECT * FROM sys.server_principals WHERE name = '{usuario}') BEGIN " +
+                $"CREATE LOGIN {usuario} WITH PASSWORD = '{Contraseña}'; END " +
+                $"USE ModuloCompras; IF NOT EXISTS (SELECT * FROM sys.database_principals WHERE name = '{usuario}') " +
+                $"BEGIN CREATE USER {usuario} FOR LOGIN {usuario}; ALTER ROLE db_owner ADD MEMBER {usuario}; END";
+            SqlCommand oCom = new SqlCommand(query, conex);
+            try
+            {
+                oCom.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            finally
+            {
+                CsConeccionServer.desconectarse();
+            }
+        }
         //este metodo es para generar secuenciales para facturas por ejemplo
         public static string GenerarSecuencial(string secuencia)
         {

@@ -200,9 +200,9 @@
             // pn2
             // 
             this.pn2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pn2.Controls.Add(this.pnMantenimientos);
             this.pn2.Controls.Add(this.pnlRequisiciones);
             this.pn2.Controls.Add(this.pnIventario);
-            this.pn2.Controls.Add(this.pnMantenimientos);
             this.pn2.Controls.Add(this.dgvOrdenesRequisicion);
             this.pn2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pn2.Location = new System.Drawing.Point(0, 69);

@@ -57,16 +57,22 @@ namespace ModuloDeCompra_BD.Formulario
                     DataTable dt = CsComandosSql.RetornaDatos($"select * from Roles where Rol='{cbRol.SelectedItem.ToString()}'");
                     user.Rol = Convert.ToInt32(dt.Rows[0]["ID_Rol"].ToString());
                     user.Departamento = Id;
-                
+                    CsComandosSql comand = new CsComandosSql();
                     if (user.AñadirUser())
                     {
-                        MessageBox.Show("Usuario Agregado");
-                        txtNombre.Text = string.Empty;
-                        txtListDepa.Text = string.Empty;
-                        txtContra.Text = string.Empty;
-                        txtcedula.Text = string.Empty;
-                        txtApellido.Text = string.Empty;
-                        dgvUser.DataSource = user.ListadoUser();
+                        comand.Usuario = txtUsuario.Text;
+                        comand.Contraseña = txtContra.Text;
+                        if (comand.LoginBD())
+                        {
+                            MessageBox.Show("Usuario Base de Datos Agregado");
+                            MessageBox.Show("Usuario Agregado");
+                            txtNombre.Text = string.Empty;
+                            txtListDepa.Text = string.Empty;
+                            txtContra.Text = string.Empty;
+                            txtcedula.Text = string.Empty;
+                            txtApellido.Text = string.Empty;
+                            dgvUser.DataSource = user.ListadoUser();
+                        }
                     }
                     else
                         MessageBox.Show("Error, Verifique que los datos sean correctos");

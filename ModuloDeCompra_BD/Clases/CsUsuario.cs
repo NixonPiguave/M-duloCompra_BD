@@ -1,15 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ModuloDeCompra_BD.Clases
 {
     public class CsUsuario
     {
+        CsComandosSql CsComandosSql = new CsComandosSql();
         int Id;
         string nombre;
         string apellido;
@@ -39,6 +42,14 @@ namespace ModuloDeCompra_BD.Clases
         public bool EliminarUser()
         {
             string query = $"delete Usuario where ID_Usuario='{Id}'";
+            return CsComandosSql.InserDeletUpdate(query);
+        }
+        public bool AñadirUserBD()
+        {
+            string query = $"IF NOT EXIST (SELECT * FROM sys.server_principals WHERE name = '{usuario}') BEGIN " +
+                $"CREATE LOGIN {usuario} WITH PASSWORD = '{contraseña}'; END" +
+                $"  USE ModuloCompras; IF NOT EXISTS (SELECT * FROM sys.database_principals WHERE name = '{usuario}')" +
+                $"   BEGIN CREATE USER {usuario} FOR LOGIN {usuario}; ALTER ROLE db_owner ADD MEMBER {usuario}; END";
             return CsComandosSql.InserDeletUpdate(query);
         }
         public DataTable ListadoUser()

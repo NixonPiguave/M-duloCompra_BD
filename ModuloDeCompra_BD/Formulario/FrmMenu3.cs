@@ -101,10 +101,9 @@ namespace Menú
 
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
-            FrmUsuarios user = new FrmUsuarios();
-            pnMantenimientos.Visible = false;
-            pnlRequisiciones.Visible = false;
-            openChildForm(user);
+            FrmUsuarios usuario = new FrmUsuarios();
+            openChildForm(usuario);
+            pnMantenimientos.Visible=false;
         }
 
         private void guna2Button13_Click(object sender, EventArgs e)
@@ -187,6 +186,13 @@ namespace Menú
         private void btnDevoluciones_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnUsuarioSistemaaa_Click(object sender, EventArgs e)
+        {
+            FrmUsuarios usuario = new FrmUsuarios();
+            openChildForm(usuario);
+            pnMantenimientos.Visible = false;
         }
     }
 }
