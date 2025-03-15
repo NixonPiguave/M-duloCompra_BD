@@ -41,12 +41,6 @@
             this.btnOrdenesCompra = new Guna.UI2.WinForms.Guna2Button();
             this.btnRequisiciones = new Guna.UI2.WinForms.Guna2Button();
             this.pn2 = new System.Windows.Forms.Panel();
-            this.pnlRequisiciones = new System.Windows.Forms.Panel();
-            this.btnCrearRequisicion = new Guna.UI2.WinForms.Guna2Button();
-            this.btnRequisicionesPendientes = new Guna.UI2.WinForms.Guna2Button();
-            this.pnIventario = new System.Windows.Forms.Panel();
-            this.guna2Button9 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button8 = new Guna.UI2.WinForms.Guna2Button();
             this.pnMantenimientos = new System.Windows.Forms.Panel();
             this.guna2Button16 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button15 = new Guna.UI2.WinForms.Guna2Button();
@@ -55,12 +49,19 @@
             this.guna2Button12 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button11 = new Guna.UI2.WinForms.Guna2Button();
             this.btnUsuarios = new Guna.UI2.WinForms.Guna2Button();
+            this.pnlRequisiciones = new System.Windows.Forms.Panel();
+            this.btnCrearRequisicion = new Guna.UI2.WinForms.Guna2Button();
+            this.btnRequisicionesPendientes = new Guna.UI2.WinForms.Guna2Button();
+            this.pnIventario = new System.Windows.Forms.Panel();
+            this.guna2Button9 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button8 = new Guna.UI2.WinForms.Guna2Button();
             this.dgvOrdenesRequisicion = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.btnInventariooo = new Guna.UI2.WinForms.Guna2Button();
             this.pn1.SuspendLayout();
             this.pn2.SuspendLayout();
+            this.pnMantenimientos.SuspendLayout();
             this.pnlRequisiciones.SuspendLayout();
             this.pnIventario.SuspendLayout();
-            this.pnMantenimientos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrdenesRequisicion)).BeginInit();
             this.SuspendLayout();
             // 
@@ -210,95 +211,6 @@
             this.pn2.Size = new System.Drawing.Size(1386, 663);
             this.pn2.TabIndex = 1;
             // 
-            // pnlRequisiciones
-            // 
-            this.pnlRequisiciones.BackColor = System.Drawing.Color.Black;
-            this.pnlRequisiciones.Controls.Add(this.btnCrearRequisicion);
-            this.pnlRequisiciones.Controls.Add(this.btnRequisicionesPendientes);
-            this.pnlRequisiciones.Location = new System.Drawing.Point(59, 0);
-            this.pnlRequisiciones.Name = "pnlRequisiciones";
-            this.pnlRequisiciones.Size = new System.Drawing.Size(183, 116);
-            this.pnlRequisiciones.TabIndex = 8;
-            this.pnlRequisiciones.Visible = false;
-            // 
-            // btnCrearRequisicion
-            // 
-            this.btnCrearRequisicion.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnCrearRequisicion.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnCrearRequisicion.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnCrearRequisicion.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnCrearRequisicion.FillColor = System.Drawing.Color.Black;
-            this.btnCrearRequisicion.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCrearRequisicion.ForeColor = System.Drawing.Color.White;
-            this.btnCrearRequisicion.HoverState.ForeColor = System.Drawing.Color.Yellow;
-            this.btnCrearRequisicion.Location = new System.Drawing.Point(3, 6);
-            this.btnCrearRequisicion.Name = "btnCrearRequisicion";
-            this.btnCrearRequisicion.Size = new System.Drawing.Size(177, 45);
-            this.btnCrearRequisicion.TabIndex = 6;
-            this.btnCrearRequisicion.Text = "Crear Requisición";
-            this.btnCrearRequisicion.Click += new System.EventHandler(this.btnCrearRequisicion_Click);
-            // 
-            // btnRequisicionesPendientes
-            // 
-            this.btnRequisicionesPendientes.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnRequisicionesPendientes.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnRequisicionesPendientes.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnRequisicionesPendientes.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnRequisicionesPendientes.FillColor = System.Drawing.Color.Black;
-            this.btnRequisicionesPendientes.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRequisicionesPendientes.ForeColor = System.Drawing.Color.White;
-            this.btnRequisicionesPendientes.HoverState.ForeColor = System.Drawing.Color.Yellow;
-            this.btnRequisicionesPendientes.Location = new System.Drawing.Point(3, 57);
-            this.btnRequisicionesPendientes.Name = "btnRequisicionesPendientes";
-            this.btnRequisicionesPendientes.Size = new System.Drawing.Size(177, 45);
-            this.btnRequisicionesPendientes.TabIndex = 7;
-            this.btnRequisicionesPendientes.Text = "Ver Requisiciones pendientes";
-            this.btnRequisicionesPendientes.Click += new System.EventHandler(this.btnRequisicionesPendientes_Click);
-            // 
-            // pnIventario
-            // 
-            this.pnIventario.BackColor = System.Drawing.Color.Black;
-            this.pnIventario.Controls.Add(this.guna2Button9);
-            this.pnIventario.Controls.Add(this.guna2Button8);
-            this.pnIventario.Location = new System.Drawing.Point(575, 0);
-            this.pnIventario.Name = "pnIventario";
-            this.pnIventario.Size = new System.Drawing.Size(183, 116);
-            this.pnIventario.TabIndex = 1;
-            // 
-            // guna2Button9
-            // 
-            this.guna2Button9.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button9.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button9.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button9.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button9.FillColor = System.Drawing.Color.Black;
-            this.guna2Button9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button9.ForeColor = System.Drawing.Color.White;
-            this.guna2Button9.HoverState.ForeColor = System.Drawing.Color.Yellow;
-            this.guna2Button9.Location = new System.Drawing.Point(24, 57);
-            this.guna2Button9.Name = "guna2Button9";
-            this.guna2Button9.Size = new System.Drawing.Size(133, 45);
-            this.guna2Button9.TabIndex = 7;
-            this.guna2Button9.Text = "Bodega";
-            this.guna2Button9.Click += new System.EventHandler(this.guna2Button9_Click);
-            // 
-            // guna2Button8
-            // 
-            this.guna2Button8.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button8.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button8.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button8.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button8.FillColor = System.Drawing.Color.Black;
-            this.guna2Button8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button8.ForeColor = System.Drawing.Color.White;
-            this.guna2Button8.HoverState.ForeColor = System.Drawing.Color.Yellow;
-            this.guna2Button8.Location = new System.Drawing.Point(24, 6);
-            this.guna2Button8.Name = "guna2Button8";
-            this.guna2Button8.Size = new System.Drawing.Size(131, 45);
-            this.guna2Button8.TabIndex = 6;
-            this.guna2Button8.Text = "Movimientos";
-            this.guna2Button8.Click += new System.EventHandler(this.guna2Button8_Click);
-            // 
             // pnMantenimientos
             // 
             this.pnMantenimientos.BackColor = System.Drawing.Color.Black;
@@ -433,6 +345,96 @@
             this.btnUsuarios.Text = "Usuarios";
             this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
             // 
+            // pnlRequisiciones
+            // 
+            this.pnlRequisiciones.BackColor = System.Drawing.Color.Black;
+            this.pnlRequisiciones.Controls.Add(this.btnCrearRequisicion);
+            this.pnlRequisiciones.Controls.Add(this.btnRequisicionesPendientes);
+            this.pnlRequisiciones.Location = new System.Drawing.Point(59, 0);
+            this.pnlRequisiciones.Name = "pnlRequisiciones";
+            this.pnlRequisiciones.Size = new System.Drawing.Size(183, 116);
+            this.pnlRequisiciones.TabIndex = 8;
+            this.pnlRequisiciones.Visible = false;
+            // 
+            // btnCrearRequisicion
+            // 
+            this.btnCrearRequisicion.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCrearRequisicion.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCrearRequisicion.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCrearRequisicion.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCrearRequisicion.FillColor = System.Drawing.Color.Black;
+            this.btnCrearRequisicion.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCrearRequisicion.ForeColor = System.Drawing.Color.White;
+            this.btnCrearRequisicion.HoverState.ForeColor = System.Drawing.Color.Yellow;
+            this.btnCrearRequisicion.Location = new System.Drawing.Point(3, 6);
+            this.btnCrearRequisicion.Name = "btnCrearRequisicion";
+            this.btnCrearRequisicion.Size = new System.Drawing.Size(177, 45);
+            this.btnCrearRequisicion.TabIndex = 6;
+            this.btnCrearRequisicion.Text = "Crear Requisición";
+            this.btnCrearRequisicion.Click += new System.EventHandler(this.btnCrearRequisicion_Click);
+            // 
+            // btnRequisicionesPendientes
+            // 
+            this.btnRequisicionesPendientes.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnRequisicionesPendientes.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnRequisicionesPendientes.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnRequisicionesPendientes.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnRequisicionesPendientes.FillColor = System.Drawing.Color.Black;
+            this.btnRequisicionesPendientes.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRequisicionesPendientes.ForeColor = System.Drawing.Color.White;
+            this.btnRequisicionesPendientes.HoverState.ForeColor = System.Drawing.Color.Yellow;
+            this.btnRequisicionesPendientes.Location = new System.Drawing.Point(3, 57);
+            this.btnRequisicionesPendientes.Name = "btnRequisicionesPendientes";
+            this.btnRequisicionesPendientes.Size = new System.Drawing.Size(177, 45);
+            this.btnRequisicionesPendientes.TabIndex = 7;
+            this.btnRequisicionesPendientes.Text = "Ver Requisiciones pendientes";
+            this.btnRequisicionesPendientes.Click += new System.EventHandler(this.btnRequisicionesPendientes_Click);
+            // 
+            // pnIventario
+            // 
+            this.pnIventario.BackColor = System.Drawing.Color.Black;
+            this.pnIventario.Controls.Add(this.btnInventariooo);
+            this.pnIventario.Controls.Add(this.guna2Button9);
+            this.pnIventario.Controls.Add(this.guna2Button8);
+            this.pnIventario.Location = new System.Drawing.Point(575, 0);
+            this.pnIventario.Name = "pnIventario";
+            this.pnIventario.Size = new System.Drawing.Size(183, 168);
+            this.pnIventario.TabIndex = 1;
+            // 
+            // guna2Button9
+            // 
+            this.guna2Button9.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button9.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button9.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button9.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button9.FillColor = System.Drawing.Color.Black;
+            this.guna2Button9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button9.ForeColor = System.Drawing.Color.White;
+            this.guna2Button9.HoverState.ForeColor = System.Drawing.Color.Yellow;
+            this.guna2Button9.Location = new System.Drawing.Point(24, 108);
+            this.guna2Button9.Name = "guna2Button9";
+            this.guna2Button9.Size = new System.Drawing.Size(133, 45);
+            this.guna2Button9.TabIndex = 7;
+            this.guna2Button9.Text = "Bodega";
+            this.guna2Button9.Click += new System.EventHandler(this.guna2Button9_Click);
+            // 
+            // guna2Button8
+            // 
+            this.guna2Button8.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button8.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button8.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button8.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button8.FillColor = System.Drawing.Color.Black;
+            this.guna2Button8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button8.ForeColor = System.Drawing.Color.White;
+            this.guna2Button8.HoverState.ForeColor = System.Drawing.Color.Yellow;
+            this.guna2Button8.Location = new System.Drawing.Point(24, 57);
+            this.guna2Button8.Name = "guna2Button8";
+            this.guna2Button8.Size = new System.Drawing.Size(131, 45);
+            this.guna2Button8.TabIndex = 6;
+            this.guna2Button8.Text = "Movimientos";
+            this.guna2Button8.Click += new System.EventHandler(this.guna2Button8_Click);
+            // 
             // dgvOrdenesRequisicion
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
@@ -483,6 +485,23 @@
             this.dgvOrdenesRequisicion.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvOrdenesRequisicion.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
+            // btnInventariooo
+            // 
+            this.btnInventariooo.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnInventariooo.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnInventariooo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnInventariooo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnInventariooo.FillColor = System.Drawing.Color.Black;
+            this.btnInventariooo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInventariooo.ForeColor = System.Drawing.Color.White;
+            this.btnInventariooo.HoverState.ForeColor = System.Drawing.Color.Yellow;
+            this.btnInventariooo.Location = new System.Drawing.Point(22, 6);
+            this.btnInventariooo.Name = "btnInventariooo";
+            this.btnInventariooo.Size = new System.Drawing.Size(133, 45);
+            this.btnInventariooo.TabIndex = 8;
+            this.btnInventariooo.Text = "Ver inventario";
+            this.btnInventariooo.Click += new System.EventHandler(this.btnInventariooo_Click);
+            // 
             // FrmMenu3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -497,9 +516,9 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.pn1.ResumeLayout(false);
             this.pn2.ResumeLayout(false);
+            this.pnMantenimientos.ResumeLayout(false);
             this.pnlRequisiciones.ResumeLayout(false);
             this.pnIventario.ResumeLayout(false);
-            this.pnMantenimientos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrdenesRequisicion)).EndInit();
             this.ResumeLayout(false);
 
@@ -531,6 +550,7 @@
         private System.Windows.Forms.Panel pnlRequisiciones;
         private Guna.UI2.WinForms.Guna2Button btnRequisicionesPendientes;
         private Guna.UI2.WinForms.Guna2Button btnCrearRequisicion;
+        private Guna.UI2.WinForms.Guna2Button btnInventariooo;
     }
 }
 

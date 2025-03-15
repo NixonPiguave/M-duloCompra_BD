@@ -47,7 +47,7 @@
             this.dgvInventario.Location = new System.Drawing.Point(12, 166);
             this.dgvInventario.Name = "dgvInventario";
             this.dgvInventario.RowTemplate.Height = 18;
-            this.dgvInventario.Size = new System.Drawing.Size(1143, 471);
+            this.dgvInventario.Size = new System.Drawing.Size(1325, 471);
             this.dgvInventario.TabIndex = 20;
             this.dgvInventario.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInventario_CellDoubleClick);
             // 
@@ -59,7 +59,7 @@
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel2.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(1167, 135);
+            this.guna2Panel2.Size = new System.Drawing.Size(1349, 135);
             this.guna2Panel2.TabIndex = 21;
             // 
             // txtID_Inventario
@@ -74,7 +74,7 @@
             this.txtID_Inventario.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtID_Inventario.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtID_Inventario.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtID_Inventario.Location = new System.Drawing.Point(471, 67);
+            this.txtID_Inventario.Location = new System.Drawing.Point(519, 69);
             this.txtID_Inventario.Name = "txtID_Inventario";
             this.txtID_Inventario.PlaceholderText = "";
             this.txtID_Inventario.SelectedText = "";
@@ -84,11 +84,11 @@
             // guna2HtmlLabel4
             // 
             this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel4.Font = new System.Drawing.Font("Cooper Black", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel4.ForeColor = System.Drawing.SystemColors.Control;
-            this.guna2HtmlLabel4.Location = new System.Drawing.Point(529, 39);
+            this.guna2HtmlLabel4.Location = new System.Drawing.Point(553, 30);
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            this.guna2HtmlLabel4.Size = new System.Drawing.Size(94, 22);
+            this.guna2HtmlLabel4.Size = new System.Drawing.Size(135, 23);
             this.guna2HtmlLabel4.TabIndex = 2;
             this.guna2HtmlLabel4.Text = "ID Inventario";
             // 
@@ -96,7 +96,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1167, 701);
+            this.ClientSize = new System.Drawing.Size(1349, 701);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.dgvInventario);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
