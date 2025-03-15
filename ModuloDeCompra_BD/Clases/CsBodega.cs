@@ -12,9 +12,6 @@ namespace ModuloDeCompra_BD.Clases
     {
         public bool agregarBodega(string direccion)
         {
-
-
-
             return CsComandosSql.InserDeletUpdate($"  insert into Bodega (StockMin,StockMax,Ubicacion)values('0','0','{direccion}')");
         }
 
