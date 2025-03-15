@@ -232,6 +232,7 @@
             this.dgvBodega.RowTemplate.Height = 18;
             this.dgvBodega.Size = new System.Drawing.Size(649, 588);
             this.dgvBodega.TabIndex = 28;
+            this.dgvBodega.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBodega_CellDoubleClick);
             // 
             // FrmBodega
             // 

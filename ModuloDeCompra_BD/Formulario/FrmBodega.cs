@@ -14,6 +14,7 @@ namespace ModuloDeCompra_BD.Formulario
 {
     public partial class FrmBodega: Form
     {
+        int id;
         public FrmBodega()
         {
             InitializeComponent();
@@ -31,35 +32,21 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            CsBodega bodega = new CsBodega();
+            bool resultado = bodega.agregarBodega(txtDireccion.Text);
 
-
-            try
+            if (resultado)
             {
-                string x = txtID_Bodega.Text;
-                              
-                    try
-                    {
+                MessageBox.Show("Bodega creada exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        bool success = CsComandosSql.InserDeletUpdate($"INSERT INTO Bodega(Ubicacion, StockActual, StockMin, StockMax) VALUES('{txtDireccion.Text}', {txtStockMin.Text},0, {txtStockMax.Text})");
-
-                        if (success)
-                        {
-                            MessageBox.Show("Bodega creada exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            dgvBodega.DataSource = CsComandosSql.RetornaDatos("select * from Bodega");
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error, verifique que se esté ingresando correctamente los datos, Detalles del error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                
-               
+                dgvBodega.DataSource = CsComandosSql.RetornaDatos("SELECT * FROM Bodega");
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show($"Ocurrió un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error al crear la bodega. Verifique los datos ingresados.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            dgvBodega.DataSource=CsComandosSql.InserDeletUpdate($"INSERT INTO Bodega(Ubicacion, StockActual, StockMin, StockMax) VALUES('{txtDireccion.Text}', 0, 0, 0)");
+  
+
         }
 
         private void txtID_Bodega_KeyUp(object sender, KeyEventArgs e)
@@ -73,49 +60,35 @@ namespace ModuloDeCompra_BD.Formulario
         {
             try
             {
-                double x = Convert.ToDouble(txtStockMin.Text);
-                double y = Convert.ToDouble(txtStockMax.Text);
+                double stockMin = Convert.ToDouble(txtStockMin.Text);
+                double stockMax = Convert.ToDouble(txtStockMax.Text);
+                CsBodega bodega = new CsBodega();
+                bool resultado = bodega.ModificarStockBodega(id, stockMin, stockMax);
 
-                if (x > 0 && y > 0)
+                if (resultado)
                 {
-                    if (string.IsNullOrWhiteSpace(txtStockMin.Text) || string.IsNullOrWhiteSpace(txtStockMax.Text))
-                    {
-                        
-                        MessageBox.Show("Todos los campos son obligatorios.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
+                    MessageBox.Show("Bodega modificada exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    
-                        try
-                        {
-                            dgvBodega.DataSource = CsComandosSql.RetornaDatos($"select * from Bodega");
-                            bool success = CsComandosSql.InserDeletUpdate($"update Bodega set StockMin='{x}', StockMax='{y}' where ID_Bodega='9'");
+                    dgvBodega.DataSource = CsComandosSql.RetornaDatos("SELECT * FROM Bodega");
 
-                            if (success)
-                            {
-                                MessageBox.Show("Medicina modificada exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                dgvBodega.DataSource = CsComandosSql.RetornaDatos("select * from Bodega");
-
-                                txtStockMin.Text = string.Empty;
-                                txtStockMax.Text = string.Empty;
-                            }
-
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show($"Error al modificar la medicina. Detalles del error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        } 
-                    
+                    txtStockMin.Text = string.Empty;
+                    txtStockMax.Text = string.Empty;
                 }
-                else
-                {
-                    MessageBox.Show("El precio y la cantidad deben ser valores positivos y encima de 0.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Los valores de Stock Mínimo y Stock Máximo deben ser números válidos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Ocurrió un error al procesar la modificación: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void dgvBodega_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int fila = dgvBodega.CurrentCell.RowIndex;
+            int id = Convert.ToInt32(dgvBodega[0, fila].Value.ToString());
         }
     }
 }
