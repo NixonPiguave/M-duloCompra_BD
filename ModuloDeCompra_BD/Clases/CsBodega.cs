@@ -20,12 +20,17 @@ namespace ModuloDeCompra_BD.Clases
         }
         public bool ModificarStockBodega(int idBodega, double stockMin, double stockMax)
         {
-            string cadenaXML = $@"<ModificarBodega>
-                                    <ID_Bodega>{idBodega}</ID_Bodega>
-                                    <StockMin>{stockMin}</StockMin>
-                                    <StockMax>{stockMax}</StockMax>
-                                  </ModificarBodega>";
+            string cadenaXML = $@"
+                    <Bodegas>
+                        <Bodega>
+                            <ID_Bodega>{idBodega}</ID_Bodega>
+                            <StockMin>{stockMin}</StockMin>
+                            <StockMax>{stockMax}</StockMax>
+                        </Bodega>
+                    </Bodegas>";
+
             string query = $@"EXEC spModificarBodega '{cadenaXML}'";
+
             return CsComandosSql.InserDeletUpdate(query);
         }
     }

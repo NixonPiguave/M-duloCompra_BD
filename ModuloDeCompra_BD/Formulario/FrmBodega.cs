@@ -46,6 +46,7 @@ namespace ModuloDeCompra_BD.Formulario
             {
                 MessageBox.Show("Bodega creada exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 dgvBodega.DataSource = CsComandosSql.RetornaDatos("SELECT * FROM Bodega");
+                txtDireccion.Text = string.Empty;
             }
             else
             {
