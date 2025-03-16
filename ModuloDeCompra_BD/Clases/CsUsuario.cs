@@ -21,6 +21,7 @@ namespace ModuloDeCompra_BD.Clases
         string contraseña;
         int departamento;
         int rol;
+        string rolname;
         public string Nombre { get => nombre; set => nombre = value; }
         public string Apellido { get => apellido; set => apellido = value; }
         public string Usuario { get => usuario; set => usuario = value; }
@@ -29,10 +30,35 @@ namespace ModuloDeCompra_BD.Clases
         public int Departamento { get => departamento; set => departamento = value; }
         public int Rol { get => rol; set => rol = value; }
         public int ID { get => Id; set => Id = value; }
+        public string Rolname { get => rolname; set => rolname = value; }
 
-        public bool AñadirUser() {
+        public bool AñadirUser()
+        {
             string query = $"insert into Usuario (Nombre, Apellido, Cedula, Contraseña, ID_Depa, ID_Rol, Usuario) values ('{nombre}', '{apellido}', '{cedula}', '{contraseña}',{departamento} ,{rol} , '{usuario}')";
-            return CsComandosSql.InserDeletUpdate(query);
+            CsComandosSql.InserDeletUpdate(query);
+            switch (rolname)
+            {
+                case "Administrador":
+                    {
+                        string query2 = $"CREATE LOGIN [{usuario}] WITH PASSWORD = '{contraseña}';" +
+                            $"USE ModuloCompras; " +
+                            $"CREATE USER [{usuario}] FOR LOGIN [{usuario}]" +
+                            $"EXEC sp_addrolemember 'db_owner', '{usuario}'";
+                        CsComandosSql.InserDeletUpdate(query2);
+                    }
+                    break;
+                default:
+                    {
+                        string query2 = $"CREATE LOGIN [{usuario}] WITH PASSWORD = '{contraseña}';" +
+                            $"USE ModuloCompras; " +
+                            $"CREATE USER [{usuario}] FOR LOGIN [{usuario}]" +
+                            $"EXEC sp_addrolemember 'db_datareader', '{usuario}'" +
+                            $"EXEC sp_addrolemember 'db_datawriter', '{usuario}';";
+                        CsComandosSql.InserDeletUpdate(query2);
+                    }
+                    break;
+            }
+            return true;
         }
         public bool ModificarUser()
         {

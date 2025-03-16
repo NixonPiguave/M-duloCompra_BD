@@ -57,6 +57,7 @@ namespace ModuloDeCompra_BD.Formulario
                     DataTable dt = CsComandosSql.RetornaDatos($"select * from Roles where Rol='{cbRol.SelectedItem.ToString()}'");
                     user.Rol = Convert.ToInt32(dt.Rows[0]["ID_Rol"].ToString());
                     user.Departamento = Id;
+                    user.Rolname = cbRol.SelectedItem.ToString();
                     CsComandosSql comand = new CsComandosSql();
                     if (user.AñadirUser())
                     {
