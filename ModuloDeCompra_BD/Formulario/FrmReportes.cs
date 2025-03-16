@@ -21,8 +21,8 @@ namespace reporte
 
         private void btnreport_Click(object sender, System.EventArgs e)
         {
-            string sentencia = "select * from Orden_Compra";
-            frmreport ventas = new frmreport(sentencia, "dsCompra", "Reporte.rptCompra.rdlc");
+            string sentencia = "EXEC sp_SumarVentasPorOrden";
+            frmreport ventas = new frmreport(sentencia, "dsCompra", "Reporte.rptVentasOrden.rdlc");
             ventas.ShowDialog();
         }
     }
