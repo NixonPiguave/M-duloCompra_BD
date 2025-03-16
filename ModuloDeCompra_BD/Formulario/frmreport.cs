@@ -23,7 +23,7 @@ namespace reporte
             ReportDataSource dataset = new ReportDataSource();
             reportViewer1.LocalReport.DataSources.Clear();
             Dt = CsComandosSql.RetornaDatos(Sentencia);
-            reportViewer1.LocalReport.ReportEmbeddedResource = "reporte." + RptInforme;
+            reportViewer1.LocalReport.ReportEmbeddedResource = "ModuloDeCompra_BD." + RptInforme;
             try
             {
                 dataset = new ReportDataSource(DsInforme, Dt);
