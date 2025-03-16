@@ -51,7 +51,6 @@ namespace Menú.Formularios
             nudCantidad.Value = 1;
             dgvListadoProductos.DataSource = CsComandosSql.RetornaDatos("select ID_Producto, NomProducto, Costo from Producto WHERE EstadoProducto='Activo'");
             dgvListadoServicio.DataSource = CsComandosSql.RetornaDatos("select ID_Servicio, Nom_Servicio, Costo from Servicio WHERE EstadoServicio='Activo'");
-            dgvRequisiciones.DataSource = CsComandosSql.RetornaDatos("select * from Requisicion");
         }
 
         private void txtFiltroProduc_KeyUp(object sender, KeyEventArgs e)
@@ -146,7 +145,7 @@ namespace Menú.Formularios
             string xmlRequisicion = $@"
             <Requisiciones>
               <Requisicion>
-                <FechaRequisicion>{DateTime.Now}</FechaRequisicion>
+                <FechaRequisicion>{DateTime.Now.ToString("yyyy-MM-dd")}</FechaRequisicion>
                 <EstadoRequisicion>Pendiente</EstadoRequisicion>
                 <Observacion></Observacion>
                 <IDUsuario>{IDUsuario1}</IDUsuario>
@@ -156,9 +155,9 @@ namespace Menú.Formularios
             try
             {
                 string query = $@"
-            DECLARE @TempID INT;
-            EXEC SpRequisicion @XMLrequisicion = '{xmlRequisicion}', @IDIngresada=@TempID OUTPUT;
-            SELECT @TempID AS IDGenerado;";
+                DECLARE @TempID INT;
+                EXEC SpRequisicion @XMLrequisicion = '{xmlRequisicion}', @IDIngresada=@TempID OUTPUT;
+                SELECT @TempID AS IDGenerado;";
 
                 DataTable dt = CsComandosSql.RetornaDatos(query);
 
@@ -215,7 +214,6 @@ namespace Menú.Formularios
                             if (CsComandosSql.InserDeletUpdate(queryD))
                             {
                                 MessageBox.Show("Requisicion creada");
-                                dgvRequisiciones.DataSource = CsComandosSql.RetornaDatos("select * from Requisicion");
                             }
                             else
                                 MessageBox.Show("Error al insertar detalle");

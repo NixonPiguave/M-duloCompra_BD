@@ -115,6 +115,7 @@
             this.Controls.Add(this.dgvListadoOrdenCompra);
             this.Controls.Add(this.guna2Panel1);
             this.Name = "FrmListadoOrdenCompra";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmListadoOrdenCompra";
             this.Load += new System.EventHandler(this.FrmListadoOrdenCompra_Load);
             this.guna2Panel1.ResumeLayout(false);

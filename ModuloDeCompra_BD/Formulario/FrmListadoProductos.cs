@@ -24,7 +24,7 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void FrmListadoProductos_Load(object sender, EventArgs e)
         {
-            dgvListadoProductos.DataSource = CsComandosSql.RetornaDatos($"select RE.ID_Producto, RE.Producto from Orden_Compra as O inner join Requisicion as R on O.ID_REQUI = R.ID_Requisicion inner join Requi_Details as RE on RE.ID_Requisicion = R.ID_Requisicion where O.ID_Orden = {Orden}");
+            dgvListadoProductos.DataSource = CsComandosSql.RetornaDatos($"select D.ID_Producto, D.ID_Servicio, D.Cantidad from Orden_Compra as O inner join Detalle_Orden as D on O.ID_Orden = D.ID_Orden inner join Producto as P on P.ID_Producto = D.ID_Producto where O.ID_Orden = {Orden}");
         }
 
         private void btnSeleccionarProductos_Click(object sender, EventArgs e)

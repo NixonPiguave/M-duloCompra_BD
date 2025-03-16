@@ -129,6 +129,12 @@
     <Compile Include="Formulario\FrmDevolucionesRTV.Designer.cs">
       <DependentUpon>FrmDevolucionesRTV.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formulario\FrmHeaderGRN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\FrmHeaderGRN.Designer.cs">
+      <DependentUpon>FrmHeaderGRN.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formulario\FrmOrdenCompra.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -295,6 +301,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\FrmDevolucionesRTV.resx">
       <DependentUpon>FrmDevolucionesRTV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\FrmHeaderGRN.resx">
+      <DependentUpon>FrmHeaderGRN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\FrmOrdenCompra.resx">
       <DependentUpon>FrmOrdenCompra.cs</DependentUpon>

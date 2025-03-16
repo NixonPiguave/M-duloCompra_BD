@@ -27,8 +27,9 @@ namespace ModuloDeCompra_BD.Clases
 
         public bool AgregarDevolucion()
         {
-            string cadenaXML = $@"<Devoluciones>
-                 <Devolucion>
+            string cadenaXML = $@"
+            <Devoluciones>
+                <Devolucion>
                     <Cantidad_Devuelta>{Cantidad}</Cantidad_Devuelta>
                     <Motivo>{Motivo}</Motivo>
                     <Fecha_Devolucion>{DateTime.Now.ToString("yyyy-MM-dd")}</Fecha_Devolucion>
@@ -37,7 +38,7 @@ namespace ModuloDeCompra_BD.Clases
                     <ID_Producto>{ID_Producto}</ID_Producto>
                 </Devolucion>
             </Devoluciones>";
-            string query = $@"exec spAgregarDevolucion '{cadenaXML}'";
+            string query = $@"exec spRealizarDevolucion '{cadenaXML}'";
             return CsComandosSql.InserDeletUpdate(query);
         }
 

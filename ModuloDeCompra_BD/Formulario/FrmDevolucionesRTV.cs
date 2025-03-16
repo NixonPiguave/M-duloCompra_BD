@@ -39,6 +39,7 @@ namespace ModuloDeCompra_BD.Formulario
                 rtv.ID_Proveedor1 = ProveedorID;
                 rtv.ID_Producto1 = ProduID;
                 rtv.AgregarDevolucion();
+                MessageBox.Show("Devolución realizada");
             }
             else
             {

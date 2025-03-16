@@ -11,18 +11,18 @@ using System.Windows.Forms;
 
 namespace ModuloDeCompra_BD.Formulario
 {
-    public partial class FrmOrdenCompra: Form
+    public partial class FrnGRNHeader: Form
     {
         int idproveedor;
         int idUsuario;
         public int IdUsuario { get => idUsuario; set => idUsuario = value; }
 
-        public FrmOrdenCompra()
+        public FrnGRNHeader()
         {
             InitializeComponent();
         }
 
-        private void FrmOrdenCompra_Load(object sender, EventArgs e)
+        private void FrnGRNHeader_Load(object sender, EventArgs e)
         {
             
            
@@ -31,14 +31,7 @@ namespace ModuloDeCompra_BD.Formulario
         {
             try
             {
-                DateTime fechaLimite = dtpFechaLimite.Value;
                 DateTime fechaActual = DateTime.Now;
-
-                if (fechaLimite <= fechaActual)
-                {
-                    MessageBox.Show("La Fecha Límite debe ser mayor a la fecha actual.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
                 foreach (DataGridViewRow fila in dgvRequisiciones.Rows)
                 {
                     if (fila.IsNewRow)
@@ -73,7 +66,6 @@ namespace ModuloDeCompra_BD.Formulario
                 string xmlOrdenCompra = $@"
                 <ORDEN>
                   <FECHAORDEN>{DateTime.Now.ToString("yyyy-MM-dd")}</FECHAORDEN>
-                  <FECHALIMITE>{dtpFechaLimite.Value.ToString("yyyy-MM-dd")}</FECHALIMITE>
                   <ESTADORDEN>Pendiente</ESTADORDEN>
                   <IDREQUI>{txtRequisicionID.Text}</IDREQUI>
                   <IDUSUARIO>{idUsuario}</IDUSUARIO>
@@ -122,7 +114,6 @@ namespace ModuloDeCompra_BD.Formulario
                                 <IDSERVICIO>{(string.IsNullOrEmpty(idServicio) ? "NULL" : idServicio)}</IDSERVICIO>
                                 <IDPRODUCTO>{(string.IsNullOrEmpty(idProducto) ? "NULL" : idProducto)}</IDPRODUCTO>
                                 <IDORDEN>{idGenerado}</IDORDEN>
-                                <ESTADO>Pendiente</ESTADO>
                             </DETALLEORDEN>
                         </DETALLEORDENES>";
 
