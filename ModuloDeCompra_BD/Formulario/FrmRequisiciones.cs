@@ -219,6 +219,7 @@ namespace Menú.Formularios
                             MessageBox.Show("Error: " + ex.Message);
                         }
                     }
+                    MessageBox.Show("Requisición Creada");
                 }
             }
             catch (Exception ex)

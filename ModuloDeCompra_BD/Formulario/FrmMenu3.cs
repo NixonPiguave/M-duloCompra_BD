@@ -78,6 +78,7 @@ namespace Menú
         private void btnOrdenesCompra_Click(object sender, EventArgs e)
         {
             FrmOrdenCompra frmOrdenCompra = new FrmOrdenCompra();
+            frmOrdenCompra.IdUsuario = IDusuario;
             pnIventario.Visible = false;
             pnlRequisiciones.Visible = false;
             pnMantenimientos.Visible = false;
