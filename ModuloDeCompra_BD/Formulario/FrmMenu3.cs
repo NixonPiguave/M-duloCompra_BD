@@ -188,7 +188,11 @@ namespace Menú
 
         private void btnDevoluciones_Click(object sender, EventArgs e)
         {
-
+            FrmRTV frmRTV = new FrmRTV();
+            openChildForm(frmRTV);
+            pnlRequisiciones.Visible = false;
+            pnIventario.Visible = false;
+            pnMantenimientos.Visible = false;
         }
 
         private void btnUsuarioSistemaaa_Click(object sender, EventArgs e)

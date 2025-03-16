@@ -52,6 +52,7 @@
             this.btnSeleccionarProductos.Size = new System.Drawing.Size(93, 26);
             this.btnSeleccionarProductos.TabIndex = 8;
             this.btnSeleccionarProductos.Text = "Seleccionar";
+            this.btnSeleccionarProductos.Click += new System.EventHandler(this.btnSeleccionarProductos_Click);
             // 
             // txtBuscarProductos
             // 
@@ -114,6 +115,7 @@
             this.Controls.Add(this.guna2Panel1);
             this.Name = "FrmListadoProductos";
             this.Text = "FrmListadoProductos";
+            this.Load += new System.EventHandler(this.FrmListadoProductos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoProductos)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
