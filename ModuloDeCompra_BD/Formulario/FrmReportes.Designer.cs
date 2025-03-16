@@ -37,13 +37,13 @@
             this.btnreport.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnreport.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnreport.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnreport.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnreport.Font = new System.Drawing.Font("Showcard Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnreport.ForeColor = System.Drawing.Color.White;
-            this.btnreport.Location = new System.Drawing.Point(475, 192);
+            this.btnreport.Location = new System.Drawing.Point(394, 190);
             this.btnreport.Name = "btnreport";
             this.btnreport.Size = new System.Drawing.Size(342, 214);
             this.btnreport.TabIndex = 0;
-            this.btnreport.Text = "El Reporte";
+            this.btnreport.Text = "El Reporte por Ordenes";
             this.btnreport.Click += new System.EventHandler(this.btnreport_Click);
             // 
             // FrmReportes
