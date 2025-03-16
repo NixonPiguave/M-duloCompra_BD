@@ -24,7 +24,7 @@ namespace ModuloDeCompra_BD.Reporte {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class dsreporte : global::System.Data.DataSet {
         
-        private VentasPorOrdenDataTable tableVentasPorOrden;
+        private VentasPorOrden1DataTable tableVentasPorOrden1;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -54,8 +54,8 @@ namespace ModuloDeCompra_BD.Reporte {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["VentasPorOrden"] != null)) {
-                    base.Tables.Add(new VentasPorOrdenDataTable(ds.Tables["VentasPorOrden"]));
+                if ((ds.Tables["VentasPorOrden1"] != null)) {
+                    base.Tables.Add(new VentasPorOrden1DataTable(ds.Tables["VentasPorOrden1"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace ModuloDeCompra_BD.Reporte {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public VentasPorOrdenDataTable VentasPorOrden {
+        public VentasPorOrden1DataTable VentasPorOrden1 {
             get {
-                return this.tableVentasPorOrden;
+                return this.tableVentasPorOrden1;
             }
         }
         
@@ -152,8 +152,8 @@ namespace ModuloDeCompra_BD.Reporte {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["VentasPorOrden"] != null)) {
-                    base.Tables.Add(new VentasPorOrdenDataTable(ds.Tables["VentasPorOrden"]));
+                if ((ds.Tables["VentasPorOrden1"] != null)) {
+                    base.Tables.Add(new VentasPorOrden1DataTable(ds.Tables["VentasPorOrden1"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace ModuloDeCompra_BD.Reporte {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableVentasPorOrden = ((VentasPorOrdenDataTable)(base.Tables["VentasPorOrden"]));
+            this.tableVentasPorOrden1 = ((VentasPorOrden1DataTable)(base.Tables["VentasPorOrden1"]));
             if ((initTable == true)) {
-                if ((this.tableVentasPorOrden != null)) {
-                    this.tableVentasPorOrden.InitVars();
+                if ((this.tableVentasPorOrden1 != null)) {
+                    this.tableVentasPorOrden1.InitVars();
                 }
             }
         }
@@ -204,13 +204,13 @@ namespace ModuloDeCompra_BD.Reporte {
             this.Namespace = "http://tempuri.org/dsreporte.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableVentasPorOrden = new VentasPorOrdenDataTable();
-            base.Tables.Add(this.tableVentasPorOrden);
+            this.tableVentasPorOrden1 = new VentasPorOrden1DataTable();
+            base.Tables.Add(this.tableVentasPorOrden1);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeVentasPorOrden() {
+        private bool ShouldSerializeVentasPorOrden1() {
             return false;
         }
         
@@ -270,14 +270,14 @@ namespace ModuloDeCompra_BD.Reporte {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void VentasPorOrdenRowChangeEventHandler(object sender, VentasPorOrdenRowChangeEvent e);
+        public delegate void VentasPorOrden1RowChangeEventHandler(object sender, VentasPorOrden1RowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class VentasPorOrdenDataTable : global::System.Data.TypedTableBase<VentasPorOrdenRow> {
+        public partial class VentasPorOrden1DataTable : global::System.Data.TypedTableBase<VentasPorOrden1Row> {
             
             private global::System.Data.DataColumn columnID_Orden;
             
@@ -289,14 +289,14 @@ namespace ModuloDeCompra_BD.Reporte {
             
             private global::System.Data.DataColumn columnEstado_Orden;
             
-            private global::System.Data.DataColumn columnID_Proveedor;
+            private global::System.Data.DataColumn columnProveedorNombre;
             
-            private global::System.Data.DataColumn columnID_Usuario;
+            private global::System.Data.DataColumn columnUsuarioNombre;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public VentasPorOrdenDataTable() {
-                this.TableName = "VentasPorOrden";
+            public VentasPorOrden1DataTable() {
+                this.TableName = "VentasPorOrden1";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -304,7 +304,7 @@ namespace ModuloDeCompra_BD.Reporte {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal VentasPorOrdenDataTable(global::System.Data.DataTable table) {
+            internal VentasPorOrden1DataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -321,7 +321,7 @@ namespace ModuloDeCompra_BD.Reporte {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected VentasPorOrdenDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected VentasPorOrden1DataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -368,17 +368,17 @@ namespace ModuloDeCompra_BD.Reporte {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn ID_ProveedorColumn {
+            public global::System.Data.DataColumn ProveedorNombreColumn {
                 get {
-                    return this.columnID_Proveedor;
+                    return this.columnProveedorNombre;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn ID_UsuarioColumn {
+            public global::System.Data.DataColumn UsuarioNombreColumn {
                 get {
-                    return this.columnID_Usuario;
+                    return this.columnUsuarioNombre;
                 }
             }
             
@@ -393,51 +393,51 @@ namespace ModuloDeCompra_BD.Reporte {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public VentasPorOrdenRow this[int index] {
+            public VentasPorOrden1Row this[int index] {
                 get {
-                    return ((VentasPorOrdenRow)(this.Rows[index]));
+                    return ((VentasPorOrden1Row)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event VentasPorOrdenRowChangeEventHandler VentasPorOrdenRowChanging;
+            public event VentasPorOrden1RowChangeEventHandler VentasPorOrden1RowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event VentasPorOrdenRowChangeEventHandler VentasPorOrdenRowChanged;
+            public event VentasPorOrden1RowChangeEventHandler VentasPorOrden1RowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event VentasPorOrdenRowChangeEventHandler VentasPorOrdenRowDeleting;
+            public event VentasPorOrden1RowChangeEventHandler VentasPorOrden1RowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event VentasPorOrdenRowChangeEventHandler VentasPorOrdenRowDeleted;
+            public event VentasPorOrden1RowChangeEventHandler VentasPorOrden1RowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddVentasPorOrdenRow(VentasPorOrdenRow row) {
+            public void AddVentasPorOrden1Row(VentasPorOrden1Row row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public VentasPorOrdenRow AddVentasPorOrdenRow(int ID_Orden, int Anio, int Mes, decimal CostoTotal, string Estado_Orden, int ID_Proveedor, int ID_Usuario) {
-                VentasPorOrdenRow rowVentasPorOrdenRow = ((VentasPorOrdenRow)(this.NewRow()));
+            public VentasPorOrden1Row AddVentasPorOrden1Row(int ID_Orden, int Anio, int Mes, decimal CostoTotal, string Estado_Orden, string ProveedorNombre, string UsuarioNombre) {
+                VentasPorOrden1Row rowVentasPorOrden1Row = ((VentasPorOrden1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID_Orden,
                         Anio,
                         Mes,
                         CostoTotal,
                         Estado_Orden,
-                        ID_Proveedor,
-                        ID_Usuario};
-                rowVentasPorOrdenRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowVentasPorOrdenRow);
-                return rowVentasPorOrdenRow;
+                        ProveedorNombre,
+                        UsuarioNombre};
+                rowVentasPorOrden1Row.ItemArray = columnValuesArray;
+                this.Rows.Add(rowVentasPorOrden1Row);
+                return rowVentasPorOrden1Row;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                VentasPorOrdenDataTable cln = ((VentasPorOrdenDataTable)(base.Clone()));
+                VentasPorOrden1DataTable cln = ((VentasPorOrden1DataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -445,7 +445,7 @@ namespace ModuloDeCompra_BD.Reporte {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new VentasPorOrdenDataTable();
+                return new VentasPorOrden1DataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -456,8 +456,8 @@ namespace ModuloDeCompra_BD.Reporte {
                 this.columnMes = base.Columns["Mes"];
                 this.columnCostoTotal = base.Columns["CostoTotal"];
                 this.columnEstado_Orden = base.Columns["Estado_Orden"];
-                this.columnID_Proveedor = base.Columns["ID_Proveedor"];
-                this.columnID_Usuario = base.Columns["ID_Usuario"];
+                this.columnProveedorNombre = base.Columns["ProveedorNombre"];
+                this.columnUsuarioNombre = base.Columns["UsuarioNombre"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -473,37 +473,39 @@ namespace ModuloDeCompra_BD.Reporte {
                 base.Columns.Add(this.columnCostoTotal);
                 this.columnEstado_Orden = new global::System.Data.DataColumn("Estado_Orden", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEstado_Orden);
-                this.columnID_Proveedor = new global::System.Data.DataColumn("ID_Proveedor", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID_Proveedor);
-                this.columnID_Usuario = new global::System.Data.DataColumn("ID_Usuario", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID_Usuario);
+                this.columnProveedorNombre = new global::System.Data.DataColumn("ProveedorNombre", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnProveedorNombre);
+                this.columnUsuarioNombre = new global::System.Data.DataColumn("UsuarioNombre", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUsuarioNombre);
                 this.columnEstado_Orden.MaxLength = 50;
+                this.columnProveedorNombre.MaxLength = 255;
+                this.columnUsuarioNombre.MaxLength = 255;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public VentasPorOrdenRow NewVentasPorOrdenRow() {
-                return ((VentasPorOrdenRow)(this.NewRow()));
+            public VentasPorOrden1Row NewVentasPorOrden1Row() {
+                return ((VentasPorOrden1Row)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new VentasPorOrdenRow(builder);
+                return new VentasPorOrden1Row(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(VentasPorOrdenRow);
+                return typeof(VentasPorOrden1Row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.VentasPorOrdenRowChanged != null)) {
-                    this.VentasPorOrdenRowChanged(this, new VentasPorOrdenRowChangeEvent(((VentasPorOrdenRow)(e.Row)), e.Action));
+                if ((this.VentasPorOrden1RowChanged != null)) {
+                    this.VentasPorOrden1RowChanged(this, new VentasPorOrden1RowChangeEvent(((VentasPorOrden1Row)(e.Row)), e.Action));
                 }
             }
             
@@ -511,8 +513,8 @@ namespace ModuloDeCompra_BD.Reporte {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.VentasPorOrdenRowChanging != null)) {
-                    this.VentasPorOrdenRowChanging(this, new VentasPorOrdenRowChangeEvent(((VentasPorOrdenRow)(e.Row)), e.Action));
+                if ((this.VentasPorOrden1RowChanging != null)) {
+                    this.VentasPorOrden1RowChanging(this, new VentasPorOrden1RowChangeEvent(((VentasPorOrden1Row)(e.Row)), e.Action));
                 }
             }
             
@@ -520,8 +522,8 @@ namespace ModuloDeCompra_BD.Reporte {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.VentasPorOrdenRowDeleted != null)) {
-                    this.VentasPorOrdenRowDeleted(this, new VentasPorOrdenRowChangeEvent(((VentasPorOrdenRow)(e.Row)), e.Action));
+                if ((this.VentasPorOrden1RowDeleted != null)) {
+                    this.VentasPorOrden1RowDeleted(this, new VentasPorOrden1RowChangeEvent(((VentasPorOrden1Row)(e.Row)), e.Action));
                 }
             }
             
@@ -529,14 +531,14 @@ namespace ModuloDeCompra_BD.Reporte {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.VentasPorOrdenRowDeleting != null)) {
-                    this.VentasPorOrdenRowDeleting(this, new VentasPorOrdenRowChangeEvent(((VentasPorOrdenRow)(e.Row)), e.Action));
+                if ((this.VentasPorOrden1RowDeleting != null)) {
+                    this.VentasPorOrden1RowDeleting(this, new VentasPorOrden1RowChangeEvent(((VentasPorOrden1Row)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveVentasPorOrdenRow(VentasPorOrdenRow row) {
+            public void RemoveVentasPorOrden1Row(VentasPorOrden1Row row) {
                 this.Rows.Remove(row);
             }
             
@@ -563,7 +565,7 @@ namespace ModuloDeCompra_BD.Reporte {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "VentasPorOrdenDataTable";
+                attribute2.FixedValue = "VentasPorOrden1DataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -607,15 +609,15 @@ namespace ModuloDeCompra_BD.Reporte {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class VentasPorOrdenRow : global::System.Data.DataRow {
+        public partial class VentasPorOrden1Row : global::System.Data.DataRow {
             
-            private VentasPorOrdenDataTable tableVentasPorOrden;
+            private VentasPorOrden1DataTable tableVentasPorOrden1;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal VentasPorOrdenRow(global::System.Data.DataRowBuilder rb) : 
+            internal VentasPorOrden1Row(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableVentasPorOrden = ((VentasPorOrdenDataTable)(this.Table));
+                this.tableVentasPorOrden1 = ((VentasPorOrden1DataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -623,14 +625,14 @@ namespace ModuloDeCompra_BD.Reporte {
             public int ID_Orden {
                 get {
                     try {
-                        return ((int)(this[this.tableVentasPorOrden.ID_OrdenColumn]));
+                        return ((int)(this[this.tableVentasPorOrden1.ID_OrdenColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ID_Orden\' de la tabla \'VentasPorOrden\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ID_Orden\' de la tabla \'VentasPorOrden1\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableVentasPorOrden.ID_OrdenColumn] = value;
+                    this[this.tableVentasPorOrden1.ID_OrdenColumn] = value;
                 }
             }
             
@@ -639,14 +641,14 @@ namespace ModuloDeCompra_BD.Reporte {
             public int Anio {
                 get {
                     try {
-                        return ((int)(this[this.tableVentasPorOrden.AnioColumn]));
+                        return ((int)(this[this.tableVentasPorOrden1.AnioColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Anio\' de la tabla \'VentasPorOrden\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Anio\' de la tabla \'VentasPorOrden1\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableVentasPorOrden.AnioColumn] = value;
+                    this[this.tableVentasPorOrden1.AnioColumn] = value;
                 }
             }
             
@@ -655,14 +657,14 @@ namespace ModuloDeCompra_BD.Reporte {
             public int Mes {
                 get {
                     try {
-                        return ((int)(this[this.tableVentasPorOrden.MesColumn]));
+                        return ((int)(this[this.tableVentasPorOrden1.MesColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Mes\' de la tabla \'VentasPorOrden\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Mes\' de la tabla \'VentasPorOrden1\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableVentasPorOrden.MesColumn] = value;
+                    this[this.tableVentasPorOrden1.MesColumn] = value;
                 }
             }
             
@@ -671,14 +673,14 @@ namespace ModuloDeCompra_BD.Reporte {
             public decimal CostoTotal {
                 get {
                     try {
-                        return ((decimal)(this[this.tableVentasPorOrden.CostoTotalColumn]));
+                        return ((decimal)(this[this.tableVentasPorOrden1.CostoTotalColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'CostoTotal\' de la tabla \'VentasPorOrden\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'CostoTotal\' de la tabla \'VentasPorOrden1\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableVentasPorOrden.CostoTotalColumn] = value;
+                    this[this.tableVentasPorOrden1.CostoTotalColumn] = value;
                 }
             }
             
@@ -687,131 +689,132 @@ namespace ModuloDeCompra_BD.Reporte {
             public string Estado_Orden {
                 get {
                     try {
-                        return ((string)(this[this.tableVentasPorOrden.Estado_OrdenColumn]));
+                        return ((string)(this[this.tableVentasPorOrden1.Estado_OrdenColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Estado_Orden\' de la tabla \'VentasPorOrden\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Estado_Orden\' de la tabla \'VentasPorOrden1\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableVentasPorOrden.Estado_OrdenColumn] = value;
+                    this[this.tableVentasPorOrden1.Estado_OrdenColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int ID_Proveedor {
+            public string ProveedorNombre {
                 get {
                     try {
-                        return ((int)(this[this.tableVentasPorOrden.ID_ProveedorColumn]));
+                        return ((string)(this[this.tableVentasPorOrden1.ProveedorNombreColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ID_Proveedor\' de la tabla \'VentasPorOrden\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ProveedorNombre\' de la tabla \'VentasPorOrden1\' es DBNull." +
+                                "", e);
                     }
                 }
                 set {
-                    this[this.tableVentasPorOrden.ID_ProveedorColumn] = value;
+                    this[this.tableVentasPorOrden1.ProveedorNombreColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int ID_Usuario {
+            public string UsuarioNombre {
                 get {
                     try {
-                        return ((int)(this[this.tableVentasPorOrden.ID_UsuarioColumn]));
+                        return ((string)(this[this.tableVentasPorOrden1.UsuarioNombreColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ID_Usuario\' de la tabla \'VentasPorOrden\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'UsuarioNombre\' de la tabla \'VentasPorOrden1\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableVentasPorOrden.ID_UsuarioColumn] = value;
+                    this[this.tableVentasPorOrden1.UsuarioNombreColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsID_OrdenNull() {
-                return this.IsNull(this.tableVentasPorOrden.ID_OrdenColumn);
+                return this.IsNull(this.tableVentasPorOrden1.ID_OrdenColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetID_OrdenNull() {
-                this[this.tableVentasPorOrden.ID_OrdenColumn] = global::System.Convert.DBNull;
+                this[this.tableVentasPorOrden1.ID_OrdenColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsAnioNull() {
-                return this.IsNull(this.tableVentasPorOrden.AnioColumn);
+                return this.IsNull(this.tableVentasPorOrden1.AnioColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetAnioNull() {
-                this[this.tableVentasPorOrden.AnioColumn] = global::System.Convert.DBNull;
+                this[this.tableVentasPorOrden1.AnioColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsMesNull() {
-                return this.IsNull(this.tableVentasPorOrden.MesColumn);
+                return this.IsNull(this.tableVentasPorOrden1.MesColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetMesNull() {
-                this[this.tableVentasPorOrden.MesColumn] = global::System.Convert.DBNull;
+                this[this.tableVentasPorOrden1.MesColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsCostoTotalNull() {
-                return this.IsNull(this.tableVentasPorOrden.CostoTotalColumn);
+                return this.IsNull(this.tableVentasPorOrden1.CostoTotalColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetCostoTotalNull() {
-                this[this.tableVentasPorOrden.CostoTotalColumn] = global::System.Convert.DBNull;
+                this[this.tableVentasPorOrden1.CostoTotalColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsEstado_OrdenNull() {
-                return this.IsNull(this.tableVentasPorOrden.Estado_OrdenColumn);
+                return this.IsNull(this.tableVentasPorOrden1.Estado_OrdenColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetEstado_OrdenNull() {
-                this[this.tableVentasPorOrden.Estado_OrdenColumn] = global::System.Convert.DBNull;
+                this[this.tableVentasPorOrden1.Estado_OrdenColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsID_ProveedorNull() {
-                return this.IsNull(this.tableVentasPorOrden.ID_ProveedorColumn);
+            public bool IsProveedorNombreNull() {
+                return this.IsNull(this.tableVentasPorOrden1.ProveedorNombreColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetID_ProveedorNull() {
-                this[this.tableVentasPorOrden.ID_ProveedorColumn] = global::System.Convert.DBNull;
+            public void SetProveedorNombreNull() {
+                this[this.tableVentasPorOrden1.ProveedorNombreColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsID_UsuarioNull() {
-                return this.IsNull(this.tableVentasPorOrden.ID_UsuarioColumn);
+            public bool IsUsuarioNombreNull() {
+                return this.IsNull(this.tableVentasPorOrden1.UsuarioNombreColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetID_UsuarioNull() {
-                this[this.tableVentasPorOrden.ID_UsuarioColumn] = global::System.Convert.DBNull;
+            public void SetUsuarioNombreNull() {
+                this[this.tableVentasPorOrden1.UsuarioNombreColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -819,22 +822,22 @@ namespace ModuloDeCompra_BD.Reporte {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class VentasPorOrdenRowChangeEvent : global::System.EventArgs {
+        public class VentasPorOrden1RowChangeEvent : global::System.EventArgs {
             
-            private VentasPorOrdenRow eventRow;
+            private VentasPorOrden1Row eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public VentasPorOrdenRowChangeEvent(VentasPorOrdenRow row, global::System.Data.DataRowAction action) {
+            public VentasPorOrden1RowChangeEvent(VentasPorOrden1Row row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public VentasPorOrdenRow Row {
+            public VentasPorOrden1Row Row {
                 get {
                     return this.eventRow;
                 }
@@ -862,7 +865,7 @@ namespace ModuloDeCompra_BD.Reporte.dsreporteTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class VentasPorOrdenTableAdapter : global::System.ComponentModel.Component {
+    public partial class VentasPorOrden1TableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -876,7 +879,7 @@ namespace ModuloDeCompra_BD.Reporte.dsreporteTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public VentasPorOrdenTableAdapter() {
+        public VentasPorOrden1TableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -973,28 +976,28 @@ namespace ModuloDeCompra_BD.Reporte.dsreporteTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "VentasPorOrden";
+            tableMapping.DataSetTable = "VentasPorOrden1";
             tableMapping.ColumnMappings.Add("ID_Orden", "ID_Orden");
             tableMapping.ColumnMappings.Add("Anio", "Anio");
             tableMapping.ColumnMappings.Add("Mes", "Mes");
             tableMapping.ColumnMappings.Add("CostoTotal", "CostoTotal");
             tableMapping.ColumnMappings.Add("Estado_Orden", "Estado_Orden");
-            tableMapping.ColumnMappings.Add("ID_Proveedor", "ID_Proveedor");
-            tableMapping.ColumnMappings.Add("ID_Usuario", "ID_Usuario");
+            tableMapping.ColumnMappings.Add("ProveedorNombre", "ProveedorNombre");
+            tableMapping.ColumnMappings.Add("UsuarioNombre", "UsuarioNombre");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[VentasPorOrden] ([ID_Orden], [Anio], [Mes], [CostoTotal], [Est" +
-                "ado_Orden], [ID_Proveedor], [ID_Usuario]) VALUES (@ID_Orden, @Anio, @Mes, @Costo" +
-                "Total, @Estado_Orden, @ID_Proveedor, @ID_Usuario)";
+                "ado_Orden], [ProveedorNombre], [UsuarioNombre]) VALUES (@ID_Orden, @Anio, @Mes, " +
+                "@CostoTotal, @Estado_Orden, @ProveedorNombre, @UsuarioNombre)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Orden", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Orden", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Anio", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Anio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Mes", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Mes", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CostoTotal", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "CostoTotal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Estado_Orden", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Estado_Orden", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Proveedor", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Proveedor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Usuario", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Usuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ProveedorNombre", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ProveedorNombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UsuarioNombre", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UsuarioNombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1010,8 +1013,8 @@ namespace ModuloDeCompra_BD.Reporte.dsreporteTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID_Orden, Anio, Mes, CostoTotal, Estado_Orden, ID_Proveedor, ID_Usuario FR" +
-                "OM dbo.VentasPorOrden";
+            this._commandCollection[0].CommandText = "SELECT ID_Orden, Anio, Mes, CostoTotal, Estado_Orden, ProveedorNombre, UsuarioNom" +
+                "bre FROM dbo.VentasPorOrden";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1019,7 +1022,7 @@ namespace ModuloDeCompra_BD.Reporte.dsreporteTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(dsreporte.VentasPorOrdenDataTable dataTable) {
+        public virtual int Fill(dsreporte.VentasPorOrden1DataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1032,9 +1035,9 @@ namespace ModuloDeCompra_BD.Reporte.dsreporteTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual dsreporte.VentasPorOrdenDataTable GetData() {
+        public virtual dsreporte.VentasPorOrden1DataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            dsreporte.VentasPorOrdenDataTable dataTable = new dsreporte.VentasPorOrdenDataTable();
+            dsreporte.VentasPorOrden1DataTable dataTable = new dsreporte.VentasPorOrden1DataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1042,7 +1045,7 @@ namespace ModuloDeCompra_BD.Reporte.dsreporteTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(dsreporte.VentasPorOrdenDataTable dataTable) {
+        public virtual int Update(dsreporte.VentasPorOrden1DataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -1050,7 +1053,7 @@ namespace ModuloDeCompra_BD.Reporte.dsreporteTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(dsreporte dataSet) {
-            return this.Adapter.Update(dataSet, "VentasPorOrden");
+            return this.Adapter.Update(dataSet, "VentasPorOrden1");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1072,7 +1075,7 @@ namespace ModuloDeCompra_BD.Reporte.dsreporteTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<int> ID_Orden, global::System.Nullable<int> Anio, global::System.Nullable<int> Mes, global::System.Nullable<decimal> CostoTotal, string Estado_Orden, global::System.Nullable<int> ID_Proveedor, global::System.Nullable<int> ID_Usuario) {
+        public virtual int Insert(global::System.Nullable<int> ID_Orden, global::System.Nullable<int> Anio, global::System.Nullable<int> Mes, global::System.Nullable<decimal> CostoTotal, string Estado_Orden, string ProveedorNombre, string UsuarioNombre) {
             if ((ID_Orden.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ID_Orden.Value));
             }
@@ -1103,17 +1106,17 @@ namespace ModuloDeCompra_BD.Reporte.dsreporteTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Estado_Orden));
             }
-            if ((ID_Proveedor.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((int)(ID_Proveedor.Value));
-            }
-            else {
+            if ((ProveedorNombre == null)) {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
-            if ((ID_Usuario.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((int)(ID_Usuario.Value));
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(ProveedorNombre));
+            }
+            if ((UsuarioNombre == null)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(UsuarioNombre));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1144,7 +1147,7 @@ namespace ModuloDeCompra_BD.Reporte.dsreporteTableAdapters {
         
         private UpdateOrderOption _updateOrder;
         
-        private VentasPorOrdenTableAdapter _ventasPorOrdenTableAdapter;
+        private VentasPorOrden1TableAdapter _ventasPorOrden1TableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -1166,12 +1169,12 @@ namespace ModuloDeCompra_BD.Reporte.dsreporteTableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public VentasPorOrdenTableAdapter VentasPorOrdenTableAdapter {
+        public VentasPorOrden1TableAdapter VentasPorOrden1TableAdapter {
             get {
-                return this._ventasPorOrdenTableAdapter;
+                return this._ventasPorOrden1TableAdapter;
             }
             set {
-                this._ventasPorOrdenTableAdapter = value;
+                this._ventasPorOrden1TableAdapter = value;
             }
         }
         
@@ -1194,9 +1197,9 @@ namespace ModuloDeCompra_BD.Reporte.dsreporteTableAdapters {
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._ventasPorOrdenTableAdapter != null) 
-                            && (this._ventasPorOrdenTableAdapter.Connection != null))) {
-                    return this._ventasPorOrdenTableAdapter.Connection;
+                if (((this._ventasPorOrden1TableAdapter != null) 
+                            && (this._ventasPorOrden1TableAdapter.Connection != null))) {
+                    return this._ventasPorOrden1TableAdapter.Connection;
                 }
                 return null;
             }
@@ -1211,7 +1214,7 @@ namespace ModuloDeCompra_BD.Reporte.dsreporteTableAdapters {
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._ventasPorOrdenTableAdapter != null)) {
+                if ((this._ventasPorOrden1TableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1225,12 +1228,12 @@ namespace ModuloDeCompra_BD.Reporte.dsreporteTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private int UpdateUpdatedRows(dsreporte dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._ventasPorOrdenTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.VentasPorOrden.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._ventasPorOrden1TableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.VentasPorOrden1.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._ventasPorOrdenTableAdapter.Update(updatedRows));
+                    result = (result + this._ventasPorOrden1TableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1244,11 +1247,11 @@ namespace ModuloDeCompra_BD.Reporte.dsreporteTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private int UpdateInsertedRows(dsreporte dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._ventasPorOrdenTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.VentasPorOrden.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._ventasPorOrden1TableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.VentasPorOrden1.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._ventasPorOrdenTableAdapter.Update(addedRows));
+                    result = (result + this._ventasPorOrden1TableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1262,11 +1265,11 @@ namespace ModuloDeCompra_BD.Reporte.dsreporteTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private int UpdateDeletedRows(dsreporte dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._ventasPorOrdenTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.VentasPorOrden.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._ventasPorOrden1TableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.VentasPorOrden1.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._ventasPorOrdenTableAdapter.Update(deletedRows));
+                    result = (result + this._ventasPorOrden1TableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1309,8 +1312,8 @@ namespace ModuloDeCompra_BD.Reporte.dsreporteTableAdapters {
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._ventasPorOrdenTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._ventasPorOrdenTableAdapter.Connection) == false))) {
+            if (((this._ventasPorOrden1TableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._ventasPorOrden1TableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("Todos los TableAdapters administrados por un TableAdapterManager deben usar la mi" +
                         "sma cadena de conexión.");
             }
@@ -1346,13 +1349,13 @@ namespace ModuloDeCompra_BD.Reporte.dsreporteTableAdapters {
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._ventasPorOrdenTableAdapter != null)) {
-                    revertConnections.Add(this._ventasPorOrdenTableAdapter, this._ventasPorOrdenTableAdapter.Connection);
-                    this._ventasPorOrdenTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._ventasPorOrdenTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._ventasPorOrdenTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._ventasPorOrdenTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._ventasPorOrdenTableAdapter.Adapter);
+                if ((this._ventasPorOrden1TableAdapter != null)) {
+                    revertConnections.Add(this._ventasPorOrden1TableAdapter, this._ventasPorOrden1TableAdapter.Connection);
+                    this._ventasPorOrden1TableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._ventasPorOrden1TableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._ventasPorOrden1TableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._ventasPorOrden1TableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._ventasPorOrden1TableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1413,9 +1416,9 @@ namespace ModuloDeCompra_BD.Reporte.dsreporteTableAdapters {
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._ventasPorOrdenTableAdapter != null)) {
-                    this._ventasPorOrdenTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._ventasPorOrdenTableAdapter]));
-                    this._ventasPorOrdenTableAdapter.Transaction = null;
+                if ((this._ventasPorOrden1TableAdapter != null)) {
+                    this._ventasPorOrden1TableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._ventasPorOrden1TableAdapter]));
+                    this._ventasPorOrden1TableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

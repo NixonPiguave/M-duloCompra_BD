@@ -419,21 +419,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="ID_Proveedor">
+                    <Textbox Name="ProveedorNombre">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!ID_Proveedor.Value</Value>
+                              <Value>=Fields!ProveedorNombre.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>ID_Proveedor</rd:DefaultName>
+                      <rd:DefaultName>ProveedorNombre</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -449,21 +449,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="ID_Usuario">
+                    <Textbox Name="UsuarioNombre">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!ID_Usuario.Value</Value>
+                              <Value>=Fields!UsuarioNombre.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>ID_Usuario</rd:DefaultName>
+                      <rd:DefaultName>UsuarioNombre</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -475,6 +475,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -842,22 +843,22 @@
           <DataField>Estado_Orden</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="ID_Proveedor">
-          <DataField>ID_Proveedor</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+        <Field Name="ProveedorNombre">
+          <DataField>ProveedorNombre</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="ID_Usuario">
-          <DataField>ID_Usuario</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+        <Field Name="UsuarioNombre">
+          <DataField>UsuarioNombre</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>dsreporte</rd:DataSetName>
         <rd:SchemaPath>C:\Users\Equipo\source\repos\M-duloCompra_BD\ModuloDeCompra_BD\Reporte\dsreporte.xsd</rd:SchemaPath>
-        <rd:TableName>VentasPorOrden</rd:TableName>
+        <rd:TableName>VentasPorOrden1</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>VentasPorOrdenTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>VentasPorOrden1TableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
