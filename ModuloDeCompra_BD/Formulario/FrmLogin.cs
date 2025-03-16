@@ -20,7 +20,7 @@ namespace ModuloDeCompra_BD
         public Frm_IncioSesion()
         {
             InitializeComponent();
-            
+
         }
         int PosY = 0;
         int PosX = 0;
@@ -47,31 +47,41 @@ namespace ModuloDeCompra_BD
             try
             {
                 CsUsuario user = new CsUsuario();
-                user.Cedula = txtCedula.Text;
+                user.Cedula = txtUser.Text;
+
                 CsEncriptarMDS encryp = new CsEncriptarMDS();
-                user.Contraseña = encryp.Encriptar(txtContraseña.Text, txtCedula.Text);
+                user.Contraseña = encryp.Encriptar(txtContraseña.Text, txtUser.Text);
+
                 string rol = CsComandosSql.verificarlogin(user.Cedula, user.Contraseña);
                 int IDusuario = CsComandosSql.ObtenerIdUsuario(user.Cedula, user.Contraseña);
+
+
                 if (!string.IsNullOrEmpty(rol))
                 {
+
+                    CsConeccionServer.Usuario = txtUser.Text;
+                    CsConeccionServer.Password = user.Contraseña;
+                    CsConeccionServer.ActualizarCadenaConexion(txtUser.Text, user.Contraseña);
+                    CsConeccionServer.ObtenerConexion();
+
                     if (rol == "Administrador")
                     {
-
                         MessageBox.Show("Inicio de sesión Exitoso");
                         FrmMenu3 ini = new FrmMenu3();
                         ini.IDusuario1 = IDusuario;
-                        txtCedula.Text = string.Empty;
+                        txtUser.Text = string.Empty;
                         txtContraseña.Text = string.Empty;
                         this.Hide();
                         ini.ShowDialog();
                         this.Show();
                     }
+
                     if (rol == "Usuario")
                     {
                         MessageBox.Show("Inicio de sesión Exitoso");
                         FrmInicioUsuario ini = new FrmInicioUsuario();
-                        //ini.IDusuario1 = IDusuario;
-                        txtCedula.Text = string.Empty;
+                        //ini.IDusuario1 = IDusuario; // Puedes pasar el ID de usuario si lo necesitas
+                        txtUser.Text = string.Empty;
                         txtContraseña.Text = string.Empty;
                         this.Hide();
                         ini.ShowDialog();
@@ -93,12 +103,12 @@ namespace ModuloDeCompra_BD
         {
             if (txtContraseña.UseSystemPasswordChar)
             {
-                txtContraseña.UseSystemPasswordChar = false; 
+                txtContraseña.UseSystemPasswordChar = false;
                 pbxOjo.Image = Properties.Resources.ojo_abierto1;
             }
             else
             {
-                txtContraseña.UseSystemPasswordChar = true; 
+                txtContraseña.UseSystemPasswordChar = true;
                 pbxOjo.Image = Properties.Resources.ojo_cerrado1;
             }
         }

@@ -37,7 +37,7 @@
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.pbxOjo = new System.Windows.Forms.PictureBox();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.txtCedula = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtUser = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnLogin = new Guna.UI2.WinForms.Guna2GradientButton();
             this.txtContraseña = new Guna.UI2.WinForms.Guna2TextBox();
             this.pnlMover = new Guna.UI2.WinForms.Guna2GradientPanel();
@@ -113,7 +113,7 @@
             this.guna2GradientPanel1.BackColor = System.Drawing.Color.White;
             this.guna2GradientPanel1.Controls.Add(this.pbxOjo);
             this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel1);
-            this.guna2GradientPanel1.Controls.Add(this.txtCedula);
+            this.guna2GradientPanel1.Controls.Add(this.txtUser);
             this.guna2GradientPanel1.Controls.Add(this.btnLogin);
             this.guna2GradientPanel1.Controls.Add(this.txtContraseña);
             this.guna2GradientPanel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -146,29 +146,29 @@
             this.guna2HtmlLabel1.TabIndex = 0;
             this.guna2HtmlLabel1.Text = "Login";
             // 
-            // txtCedula
+            // txtUser
             // 
-            this.txtCedula.Animated = true;
-            this.txtCedula.BorderColor = System.Drawing.Color.Thistle;
-            this.txtCedula.BorderRadius = 8;
-            this.txtCedula.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCedula.DefaultText = "";
-            this.txtCedula.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtCedula.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtCedula.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCedula.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCedula.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtCedula.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCedula.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtCedula.ForeColor = System.Drawing.Color.Black;
-            this.txtCedula.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCedula.Location = new System.Drawing.Point(107, 187);
-            this.txtCedula.Name = "txtCedula";
-            this.txtCedula.PlaceholderForeColor = System.Drawing.Color.Gray;
-            this.txtCedula.PlaceholderText = "Usuario";
-            this.txtCedula.SelectedText = "";
-            this.txtCedula.Size = new System.Drawing.Size(227, 36);
-            this.txtCedula.TabIndex = 1;
+            this.txtUser.Animated = true;
+            this.txtUser.BorderColor = System.Drawing.Color.Thistle;
+            this.txtUser.BorderRadius = 8;
+            this.txtUser.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtUser.DefaultText = "";
+            this.txtUser.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtUser.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtUser.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtUser.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtUser.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtUser.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtUser.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtUser.ForeColor = System.Drawing.Color.Black;
+            this.txtUser.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtUser.Location = new System.Drawing.Point(107, 187);
+            this.txtUser.Name = "txtUser";
+            this.txtUser.PlaceholderForeColor = System.Drawing.Color.Gray;
+            this.txtUser.PlaceholderText = "Usuario";
+            this.txtUser.SelectedText = "";
+            this.txtUser.Size = new System.Drawing.Size(227, 36);
+            this.txtUser.TabIndex = 1;
             // 
             // btnLogin
             // 
@@ -294,7 +294,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pbxOjo;
-        public Guna.UI2.WinForms.Guna2TextBox txtCedula;
+        public Guna.UI2.WinForms.Guna2TextBox txtUser;
     }
 }
 

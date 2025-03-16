@@ -2,6 +2,7 @@
 using ModuloDeCompra_BD.Clases;
 using ModuloDeCompra_BD.Formulario;
 using ModuloDeCompra_BD.Properties;
+using reporte;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -67,6 +68,7 @@ namespace Menú
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            CsComandosSql.InserDeletUpdate("INSERT INTO Auditoria (Usuario, Accion, Fecha, Detalles) VALUES (SUSER_NAME(), 'INICIO SESION', GETDATE(), 'El usuario: ' + SUSER_NAME() + ', ha iniciado sesión');");
             pnIventario.Visible = false;
             pnMantenimientos.Visible = false;
             pnlRequisiciones.Visible = false;
@@ -218,6 +220,15 @@ namespace Menú
             pnMantenimientos.Visible = false;
             pnlRequisiciones.Visible = false;
             openChildForm(frmEmpresa);
+        }
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            FrmReportes reportes = new FrmReportes();
+            pnIventario.Visible = false;
+            pnlRequisiciones.Visible = false;
+            pnMantenimientos.Visible = false;
+            openChildForm(reportes);
         }
     }
 }

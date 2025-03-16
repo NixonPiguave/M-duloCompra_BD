@@ -25,6 +25,16 @@ namespace ModuloDeCompra_BD.Clases
                         "Initial Catalog=" + bd + ";" +
                         "Persist Security Info=true;";
 
+        public static string Usuario { get => usuario; set => usuario = value; }
+        public static string Password { get => password; set => password = value; }
+        public static void ActualizarCadenaConexion(string usuario, string password)
+        {
+            cadenaConexion = "Data Source=" + servidor + "," + puerto + ";" +
+                             "User ID=" + usuario + ";" +
+                             "Password=" + password + ";" +
+                             "Initial Catalog=" + bd + ";" +
+                             "Persist Security Info=true;";
+        }
         public static SqlConnection ObtenerConexion()
         {
             try
@@ -36,7 +46,7 @@ namespace ModuloDeCompra_BD.Clases
 
                 con.ConnectionString = cadenaConexion;
                 con.Open();
-                
+
             }
             catch (SqlException e)
             {

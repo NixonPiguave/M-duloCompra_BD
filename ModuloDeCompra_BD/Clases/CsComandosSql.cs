@@ -18,7 +18,7 @@ namespace ModuloDeCompra_BD.Clases
         string contraseña;
         public string Usuario { get => usuario; set => usuario = value; }
         public string Contraseña { get => contraseña; set => contraseña = value; }
-        // Método para obtener la conexión (ya configurada)
+
         public static void Conectar()
         {
             conex = CsConeccionServer.ObtenerConexion();

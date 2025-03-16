@@ -42,6 +42,7 @@
             this.btnRequisiciones = new Guna.UI2.WinForms.Guna2Button();
             this.pn2 = new System.Windows.Forms.Panel();
             this.pnMantenimientos = new System.Windows.Forms.Panel();
+            this.btnEmpresa = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button16 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button15 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button14 = new Guna.UI2.WinForms.Guna2Button();
@@ -57,7 +58,6 @@
             this.guna2Button9 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button8 = new Guna.UI2.WinForms.Guna2Button();
             this.dgvOrdenesRequisicion = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.btnEmpresa = new Guna.UI2.WinForms.Guna2Button();
             this.pn1.SuspendLayout();
             this.pn2.SuspendLayout();
             this.pnMantenimientos.SuspendLayout();
@@ -97,6 +97,7 @@
             this.btnReportes.Size = new System.Drawing.Size(133, 45);
             this.btnReportes.TabIndex = 1;
             this.btnReportes.Text = "Reportes";
+            this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
             // 
             // btnMantenimiento
             // 
@@ -227,6 +228,23 @@
             this.pnMantenimientos.Name = "pnMantenimientos";
             this.pnMantenimientos.Size = new System.Drawing.Size(188, 421);
             this.pnMantenimientos.TabIndex = 0;
+            // 
+            // btnEmpresa
+            // 
+            this.btnEmpresa.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnEmpresa.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnEmpresa.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnEmpresa.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnEmpresa.FillColor = System.Drawing.Color.Black;
+            this.btnEmpresa.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEmpresa.ForeColor = System.Drawing.Color.White;
+            this.btnEmpresa.HoverState.ForeColor = System.Drawing.Color.Yellow;
+            this.btnEmpresa.Location = new System.Drawing.Point(27, 363);
+            this.btnEmpresa.Name = "btnEmpresa";
+            this.btnEmpresa.Size = new System.Drawing.Size(135, 45);
+            this.btnEmpresa.TabIndex = 12;
+            this.btnEmpresa.Text = "Empresa";
+            this.btnEmpresa.Click += new System.EventHandler(this.btnEmpresa_Click);
             // 
             // guna2Button16
             // 
@@ -503,23 +521,6 @@
             this.dgvOrdenesRequisicion.ThemeStyle.RowsStyle.Height = 22;
             this.dgvOrdenesRequisicion.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvOrdenesRequisicion.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            // 
-            // btnEmpresa
-            // 
-            this.btnEmpresa.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnEmpresa.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnEmpresa.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnEmpresa.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnEmpresa.FillColor = System.Drawing.Color.Black;
-            this.btnEmpresa.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEmpresa.ForeColor = System.Drawing.Color.White;
-            this.btnEmpresa.HoverState.ForeColor = System.Drawing.Color.Yellow;
-            this.btnEmpresa.Location = new System.Drawing.Point(27, 363);
-            this.btnEmpresa.Name = "btnEmpresa";
-            this.btnEmpresa.Size = new System.Drawing.Size(135, 45);
-            this.btnEmpresa.TabIndex = 12;
-            this.btnEmpresa.Text = "Empresa";
-            this.btnEmpresa.Click += new System.EventHandler(this.btnEmpresa_Click);
             // 
             // FrmMenu3
             // 
