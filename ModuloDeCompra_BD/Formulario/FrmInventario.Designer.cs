@@ -80,6 +80,7 @@
             this.txtID_Inventario.SelectedText = "";
             this.txtID_Inventario.Size = new System.Drawing.Size(210, 35);
             this.txtID_Inventario.TabIndex = 6;
+            this.txtID_Inventario.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtID_Inventario_KeyUp);
             // 
             // guna2HtmlLabel4
             // 

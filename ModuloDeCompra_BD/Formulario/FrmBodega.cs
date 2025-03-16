@@ -75,9 +75,14 @@ namespace ModuloDeCompra_BD.Formulario
                 return;
             }
 
-            if (stockMin <= 0 || stockMax <= 0)
+            if ((stockMin <= 0 || stockMax <= 0)&&(stockMin > stockMax ))
             {
                 MessageBox.Show("Los valores de Stock Mínimo y Stock Máximo deben ser mayores que 0.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (stockMin >= stockMax)
+            {
+                MessageBox.Show("El Stock Mínimo debe ser menor que el Stock Máximo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             CsBodega bodega = new CsBodega();

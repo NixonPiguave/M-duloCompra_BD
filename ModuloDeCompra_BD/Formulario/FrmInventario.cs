@@ -23,8 +23,7 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void txtNombreProducto_KeyUp(object sender, KeyEventArgs e)
         {
-            dgvInventario.DataSource = CsComandosSql.RetornaDatos($"\r\n  select I.ID_Product, P.Nom_Producto, I.StockMin, I.StockMax, I.StockActual  From Inventario I Inner Join Producto P on I.ID_Product= P.ID_Producto where P.Nom_Producto like '{txtID_Inventario.Text}%'");
-
+            
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -45,7 +44,7 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void FrmInventario_Load(object sender, EventArgs e)
         {
-           dgvInventario.DataSource = CsComandosSql.RetornaDatos($"select I.ID_Product, P.Nom_Producto, I.StockMin, I.StockMax, I.StockActual  From Inventario I Inner Join Producto P on I.ID_Product= P.ID_Producto");
+           dgvInventario.DataSource = CsComandosSql.RetornaDatos($"select I.ID_Inventario,I.ID_Producto,P.NomProducto,P.Costo, P.EstadoProducto, I.ID_Bodega from Inventario I inner Join Producto P on I.ID_Producto=P.ID_Producto");
             
         }
 
@@ -56,6 +55,12 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void guna2HtmlLabel9_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void txtID_Inventario_KeyUp(object sender, KeyEventArgs e)
+        {
+            dgvInventario.DataSource = CsComandosSql.RetornaDatos($"select I.ID_Producto,P.NomProducto,P.Costo, P.EstadoProducto, I.ID_Bodega,i.ID_Inventario  From Inventario I Inner Join Producto P on I.ID_Producto= P.ID_Producto where I.ID_Inventario like '{txtID_Inventario.Text}%'");
 
         }
     }
