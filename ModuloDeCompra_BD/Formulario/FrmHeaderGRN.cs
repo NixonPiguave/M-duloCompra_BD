@@ -180,13 +180,13 @@ namespace ModuloDeCompra_BD.Formulario
                 MessageBox.Show("Error : "+ ex);
             }
         }
-        private void txtProveedor_Click(object sender, EventArgs e)
+        /*private void txtProveedor_Click(object sender, EventArgs e)
         {
             FrmListadoProveedor prov = new FrmListadoProveedor();
             prov.ShowDialog();
             idproveedor= prov.IdProvee1;
             txtProve.Text= prov.Nombre1;
-        }
+        }*/
 
         private void dgvRequisiciones_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
