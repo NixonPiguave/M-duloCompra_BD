@@ -82,6 +82,7 @@
     <Compile Include="Clases\csOrdenCompra.cs" />
     <Compile Include="Clases\CsProducto.cs" />
     <Compile Include="Clases\CsProveedores.cs" />
+    <Compile Include="Clases\CsRTV.cs" />
     <Compile Include="Clases\CsUsuario.cs" />
     <Compile Include="Clases\CsRoles.cs" />
     <Compile Include="Clases\CsIVA.cs" />

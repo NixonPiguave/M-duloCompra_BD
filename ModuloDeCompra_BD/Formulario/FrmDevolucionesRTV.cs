@@ -25,7 +25,25 @@ namespace ModuloDeCompra_BD.Formulario
         }
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            int ProveedorID = Convert.ToInt32(dgvRequisiciones[6, 0].Value.ToString());
+            if (txtMotivo.Text != string.Empty || txtCantidad.Text != string.Empty || txtOrdenCompraID.Text != string.Empty || txtOrdenCompraID.Text != string.Empty || txtProducto.Text != string.Empty || txtProve.Text != string.Empty)
+            {
+                int cantidad = Convert.ToInt32(txtCantidad.Text);
+                string motivo = txtMotivo.Text;
+                int Orden = Convert.ToInt32(txtOrdenCompraID.Text);
+                int ProveedorID = Convert.ToInt32(dgvRequisiciones[6, 0].Value.ToString());
+                int ProduID = Convert.ToInt32(txtProducto.Text);
+                CsRTV rtv = new CsRTV();
+                rtv.Cantidad1 = cantidad;
+                rtv.Motivo1 = motivo;
+                rtv.ID_Orden1 = Orden;
+                rtv.ID_Proveedor1 = ProveedorID;
+                rtv.ID_Producto1 = ProduID;
+                rtv.AgregarDevolucion();
+            }
+            else
+            {
+                MessageBox.Show("Rellene todos los campos");
+            }
         }
 
         private void btnDetalle_Click(object sender, EventArgs e)

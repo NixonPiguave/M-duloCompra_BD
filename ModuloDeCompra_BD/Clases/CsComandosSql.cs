@@ -67,7 +67,7 @@ namespace ModuloDeCompra_BD.Clases
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error");
+                MessageBox.Show("Error" + ex.Message);
             }
             return result > 0;
         }
