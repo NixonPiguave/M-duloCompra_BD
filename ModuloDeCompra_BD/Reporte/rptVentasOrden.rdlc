@@ -21,10 +21,10 @@
               <Width>2.5cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>4.08277cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>3.69063cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -205,7 +205,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>ID Proveedor</Value>
+                              <Value>Nombre Proveedor</Value>
                               <Style>
                                 <Color>White</Color>
                               </Style>
@@ -238,7 +238,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>ID Usuario</Value>
+                              <Value>Nombre Usuario</Value>
                               <Style>
                                 <Color>White</Color>
                               </Style>
@@ -475,7 +475,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -505,9 +504,9 @@
         </TablixRowHierarchy>
         <DataSetName>dsCompra</DataSetName>
         <Top>1.63724cm</Top>
-        <Left>3.69294cm</Left>
+        <Left>2.58847cm</Left>
         <Height>1.2cm</Height>
-        <Width>17.5cm</Width>
+        <Width>20.27339cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
