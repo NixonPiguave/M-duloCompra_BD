@@ -12,11 +12,21 @@ namespace ModuloDeCompra_BD.Clases
     {
         public bool agregarBodega(string direccion)
         {
-            return CsComandosSql.InserDeletUpdate($"  insert into Bodega (StockMin,StockMax,Ubicacion)values('0','0','{direccion}')");
+            string cadenaXML = $@"<AgregarBodega>
+                                    <Ubicacion>{direccion}</Ubicacion>
+                                  </AgregarBodega>";
+            string query = $@"EXEC spAgregarBodega '{cadenaXML}'";
+            return CsComandosSql.InserDeletUpdate(query);
         }
         public bool ModificarStockBodega(int idBodega, double stockMin, double stockMax)
         {
-            return CsComandosSql.InserDeletUpdate($"  UPDATE Bodega SET StockMin='{stockMin}', StockMax='{stockMax}' WHERE ID_Bodega={idBodega}");
+            string cadenaXML = $@"<ModificarBodega>
+                                    <ID_Bodega>{idBodega}</ID_Bodega>
+                                    <StockMin>{stockMin}</StockMin>
+                                    <StockMax>{stockMax}</StockMax>
+                                  </ModificarBodega>";
+            string query = $@"EXEC spModificarBodega '{cadenaXML}'";
+            return CsComandosSql.InserDeletUpdate(query);
         }
     }
 }
