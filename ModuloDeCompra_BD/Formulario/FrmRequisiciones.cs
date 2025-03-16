@@ -49,18 +49,18 @@ namespace Menú.Formularios
 
             nudCantidad.Minimum = 1;
             nudCantidad.Value = 1;
-            dgvListadoProductos.DataSource = CsComandosSql.RetornaDatos("select ID_Producto, NomProducto, Costo from Producto WHERE EstadoProducto='Activo'");
-            dgvListadoServicio.DataSource = CsComandosSql.RetornaDatos("select ID_Servicio, Nom_Servicio, Costo from Servicio WHERE EstadoServicio='Activo'");
+            dgvListadoProductos.DataSource = CsComandosSql.RetornaDatos("select ID_Producto, NomProducto from Producto WHERE EstadoProducto='Activo'");
+            dgvListadoServicio.DataSource = CsComandosSql.RetornaDatos("select ID_Servicio, Nom_Servicio from Servicio WHERE EstadoServicio='Activo'");
         }
 
         private void txtFiltroProduc_KeyUp(object sender, KeyEventArgs e)
         {
-            dgvListadoProductos.DataSource = CsComandosSql.RetornaDatos($"select ID_Producto, NomProducto, Costo from Producto WHERE EstadoProducto='Activo' and NomProducto like '%{txtFiltroProduc.Text}%'");
+            dgvListadoProductos.DataSource = CsComandosSql.RetornaDatos($"select ID_Producto, NomProducto  from Producto WHERE EstadoProducto='Activo' and NomProducto like '%{txtFiltroProduc.Text}%'");
         }
 
         private void txtFiltroServicio_KeyUp(object sender, KeyEventArgs e)
         {
-            dgvListadoServicio.DataSource = CsComandosSql.RetornaDatos($"select ID_Servicio, Nom_Servicio, Costo from Servicio WHERE EstadoServicio='Activo'and Nom_Servicio like '%{txtFiltroServicio.Text}%'");
+            dgvListadoServicio.DataSource = CsComandosSql.RetornaDatos($"select ID_Servicio, Nom_Servicio  from Servicio WHERE EstadoServicio='Activo'and Nom_Servicio like '%{txtFiltroServicio.Text}%'");
         }
 
         private void btnProducto_Click(object sender, EventArgs e)
@@ -185,8 +185,7 @@ namespace Menú.Formularios
                             MessageBox.Show("Solo debe seleccionar un producto o un servicio, no ambos.");
                             continue;
                         }
-
-              
+            
                         int cantidadValida;
                         if (!int.TryParse(cantidad, out cantidadValida))
                         {
@@ -194,7 +193,6 @@ namespace Menú.Formularios
                             continue;
                         }
 
-                
                         string xmlDetalleRequi = $@"
                         <DRequiciciones>
                             <DRequisicion>
@@ -208,12 +206,10 @@ namespace Menú.Formularios
                         </DRequiciciones>";
 
                         string queryD = $"exec SpDetalleRequi @XMLdetalleRequi = '{xmlDetalleRequi}'";
-
                         try
                         {
                             if (CsComandosSql.InserDeletUpdate(queryD))
                             {
-                                MessageBox.Show("Requisicion creada");
                             }
                             else
                                 MessageBox.Show("Error al insertar detalle");
@@ -223,16 +219,12 @@ namespace Menú.Formularios
                             MessageBox.Show("Error: " + ex.Message);
                         }
                     }
-
-
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error al insertar requisición: " + ex.Message);
             }
-
-
         }
     }
 }
