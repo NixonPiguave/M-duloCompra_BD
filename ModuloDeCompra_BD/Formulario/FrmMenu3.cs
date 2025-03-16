@@ -211,5 +211,13 @@ namespace Menú
             openChildForm(invent);
 
         }
+
+        private void btnEmpresa_Click(object sender, EventArgs e)
+        {
+            FrmEmpresa frmEmpresa = new FrmEmpresa();
+            pnMantenimientos.Visible = false;
+            pnlRequisiciones.Visible = false;
+            openChildForm(frmEmpresa);
+        }
     }
 }

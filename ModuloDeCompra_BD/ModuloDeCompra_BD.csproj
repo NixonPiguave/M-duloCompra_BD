@@ -78,6 +78,7 @@
     <Compile Include="Clases\CsComandosSql.cs" />
     <Compile Include="Clases\CsConeccionServer.cs" />
     <Compile Include="Clases\CsDepartamentos.cs" />
+    <Compile Include="Clases\CsEmpresa.cs" />
     <Compile Include="Clases\CsEncriptarMDS.cs" />
     <Compile Include="Clases\csOrdenCompra.cs" />
     <Compile Include="Clases\CsProducto.cs" />
@@ -86,6 +87,12 @@
     <Compile Include="Clases\CsUsuario.cs" />
     <Compile Include="Clases\CsRoles.cs" />
     <Compile Include="Clases\CsIVA.cs" />
+    <Compile Include="Formulario\FrmEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\FrmEmpresa.Designer.cs">
+      <DependentUpon>FrmEmpresa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formulario\FrmListadoOrdenCompra.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -268,7 +275,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="Formulario\FrmEmpresa.resx">
+      <DependentUpon>FrmEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formulario\FrmListadoOrdenCompra.resx">
       <DependentUpon>FrmListadoOrdenCompra.cs</DependentUpon>
     </EmbeddedResource>
@@ -412,21 +421,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Añadir un subtítulo.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="SqlServerTypes\readme.htm" />
-    <Content Include="SqlServerTypes\x64\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

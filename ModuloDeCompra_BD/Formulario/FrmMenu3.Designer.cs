@@ -53,10 +53,11 @@
             this.btnCrearRequisicion = new Guna.UI2.WinForms.Guna2Button();
             this.btnRequisicionesPendientes = new Guna.UI2.WinForms.Guna2Button();
             this.pnIventario = new System.Windows.Forms.Panel();
+            this.btnInventariooo = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button9 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button8 = new Guna.UI2.WinForms.Guna2Button();
             this.dgvOrdenesRequisicion = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.btnInventariooo = new Guna.UI2.WinForms.Guna2Button();
+            this.btnEmpresa = new Guna.UI2.WinForms.Guna2Button();
             this.pn1.SuspendLayout();
             this.pn2.SuspendLayout();
             this.pnMantenimientos.SuspendLayout();
@@ -78,7 +79,7 @@
             this.pn1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pn1.Location = new System.Drawing.Point(0, 0);
             this.pn1.Name = "pn1";
-            this.pn1.Size = new System.Drawing.Size(1386, 69);
+            this.pn1.Size = new System.Drawing.Size(1370, 69);
             this.pn1.TabIndex = 0;
             // 
             // btnReportes
@@ -208,12 +209,13 @@
             this.pn2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pn2.Location = new System.Drawing.Point(0, 69);
             this.pn2.Name = "pn2";
-            this.pn2.Size = new System.Drawing.Size(1386, 663);
+            this.pn2.Size = new System.Drawing.Size(1370, 663);
             this.pn2.TabIndex = 1;
             // 
             // pnMantenimientos
             // 
             this.pnMantenimientos.BackColor = System.Drawing.Color.Black;
+            this.pnMantenimientos.Controls.Add(this.btnEmpresa);
             this.pnMantenimientos.Controls.Add(this.guna2Button16);
             this.pnMantenimientos.Controls.Add(this.guna2Button15);
             this.pnMantenimientos.Controls.Add(this.guna2Button14);
@@ -223,7 +225,7 @@
             this.pnMantenimientos.Controls.Add(this.btnUsuarios);
             this.pnMantenimientos.Location = new System.Drawing.Point(965, 0);
             this.pnMantenimientos.Name = "pnMantenimientos";
-            this.pnMantenimientos.Size = new System.Drawing.Size(188, 371);
+            this.pnMantenimientos.Size = new System.Drawing.Size(188, 421);
             this.pnMantenimientos.TabIndex = 0;
             // 
             // guna2Button16
@@ -401,6 +403,23 @@
             this.pnIventario.Size = new System.Drawing.Size(183, 168);
             this.pnIventario.TabIndex = 1;
             // 
+            // btnInventariooo
+            // 
+            this.btnInventariooo.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnInventariooo.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnInventariooo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnInventariooo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnInventariooo.FillColor = System.Drawing.Color.Black;
+            this.btnInventariooo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInventariooo.ForeColor = System.Drawing.Color.White;
+            this.btnInventariooo.HoverState.ForeColor = System.Drawing.Color.Yellow;
+            this.btnInventariooo.Location = new System.Drawing.Point(22, 6);
+            this.btnInventariooo.Name = "btnInventariooo";
+            this.btnInventariooo.Size = new System.Drawing.Size(133, 45);
+            this.btnInventariooo.TabIndex = 8;
+            this.btnInventariooo.Text = "Ver inventario";
+            this.btnInventariooo.Click += new System.EventHandler(this.btnInventariooo_Click);
+            // 
             // guna2Button9
             // 
             this.guna2Button9.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -485,28 +504,28 @@
             this.dgvOrdenesRequisicion.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvOrdenesRequisicion.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
-            // btnInventariooo
+            // btnEmpresa
             // 
-            this.btnInventariooo.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnInventariooo.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnInventariooo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnInventariooo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnInventariooo.FillColor = System.Drawing.Color.Black;
-            this.btnInventariooo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInventariooo.ForeColor = System.Drawing.Color.White;
-            this.btnInventariooo.HoverState.ForeColor = System.Drawing.Color.Yellow;
-            this.btnInventariooo.Location = new System.Drawing.Point(22, 6);
-            this.btnInventariooo.Name = "btnInventariooo";
-            this.btnInventariooo.Size = new System.Drawing.Size(133, 45);
-            this.btnInventariooo.TabIndex = 8;
-            this.btnInventariooo.Text = "Ver inventario";
-            this.btnInventariooo.Click += new System.EventHandler(this.btnInventariooo_Click);
+            this.btnEmpresa.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnEmpresa.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnEmpresa.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnEmpresa.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnEmpresa.FillColor = System.Drawing.Color.Black;
+            this.btnEmpresa.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEmpresa.ForeColor = System.Drawing.Color.White;
+            this.btnEmpresa.HoverState.ForeColor = System.Drawing.Color.Yellow;
+            this.btnEmpresa.Location = new System.Drawing.Point(27, 363);
+            this.btnEmpresa.Name = "btnEmpresa";
+            this.btnEmpresa.Size = new System.Drawing.Size(135, 45);
+            this.btnEmpresa.TabIndex = 12;
+            this.btnEmpresa.Text = "Empresa";
+            this.btnEmpresa.Click += new System.EventHandler(this.btnEmpresa_Click);
             // 
             // FrmMenu3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1386, 732);
+            this.ClientSize = new System.Drawing.Size(1370, 732);
             this.Controls.Add(this.pn2);
             this.Controls.Add(this.pn1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -551,6 +570,7 @@
         private Guna.UI2.WinForms.Guna2Button btnRequisicionesPendientes;
         private Guna.UI2.WinForms.Guna2Button btnCrearRequisicion;
         private Guna.UI2.WinForms.Guna2Button btnInventariooo;
+        private Guna.UI2.WinForms.Guna2Button btnEmpresa;
     }
 }
 
