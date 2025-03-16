@@ -22,7 +22,7 @@ namespace reporte
         private void btnreport_Click(object sender, System.EventArgs e)
         {
             string sentencia = "select * from Orden_Compra";
-            frmreport ventas = new frmreport(sentencia, "dsCompra", "rptCompra.rdlc");
+            frmreport ventas = new frmreport(sentencia, "dsCompra", "Reporte.rptCompra.rdlc");
             ventas.ShowDialog();
         }
     }
