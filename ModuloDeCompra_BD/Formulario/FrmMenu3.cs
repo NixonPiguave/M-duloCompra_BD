@@ -46,6 +46,7 @@ namespace Menú
             pnIventario.BringToFront();
             pnMantenimientos.BringToFront();
             pnlRequisiciones.BringToFront();
+            pnlSubMenuOrdenCompra.BringToFront();
 
         }
         private void guna2Button4_Click(object sender, EventArgs e)
