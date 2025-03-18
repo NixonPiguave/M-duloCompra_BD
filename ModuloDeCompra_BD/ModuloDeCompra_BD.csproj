@@ -78,6 +78,12 @@
     <Compile Include="Formulario\FrmEditarEmpresa.Designer.cs">
       <DependentUpon>FrmEditarEmpresa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formulario\FrmListadoBodega.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\FrmListadoBodega.Designer.cs">
+      <DependentUpon>FrmListadoBodega.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formulario\FrmOrdenCompraDirecta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -303,6 +309,9 @@
     </Compile>
     <EmbeddedResource Include="Formulario\FrmEditarEmpresa.resx">
       <DependentUpon>FrmEditarEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\FrmListadoBodega.resx">
+      <DependentUpon>FrmListadoBodega.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\FrmOrdenCompraDirecta.resx">
       <DependentUpon>FrmOrdenCompraDirecta.cs</DependentUpon>

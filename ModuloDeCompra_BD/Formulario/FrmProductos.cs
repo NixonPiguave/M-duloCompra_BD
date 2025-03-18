@@ -19,6 +19,7 @@ namespace ModuloDeCompra_BD.Formulario
         int Id2;
         int Id3;
         int Id4;
+        int Id5;
 
         public FrmProductos()
         {
@@ -183,6 +184,13 @@ namespace ModuloDeCompra_BD.Formulario
             listadoProveedor.ShowDialog();
             txtListadoProvee.Text = listadoProveedor.Nombre1;
             Id2 = listadoProveedor.IdProvee1;
+        }
+        private void btnListadoUbiBodega_Click(object sender, EventArgs e)
+        {
+            FrmListadoBodega listadoBodega = new FrmListadoBodega();
+            listadoBodega.ShowDialog();
+            txtListadoUbiBodega.Text = listadoBodega.Nombre1;
+            Id5 = listadoBodega.Id1;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -365,7 +373,5 @@ namespace ModuloDeCompra_BD.Formulario
         }
 
         
-
-
     }
 }

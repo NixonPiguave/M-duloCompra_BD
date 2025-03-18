@@ -1,6 +1,7 @@
 ﻿using ModuloDeCompra_BD.Clases;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,5 +34,11 @@ namespace ModuloDeCompra_BD.Clases
 
             return CsComandosSql.InserDeletUpdate(query);
         }
+        public DataTable ListaBodega(string m)
+        {
+            string query = $"Select ID_Bodega, Ubicacion from Bodega where Ubicacion like '%{m}%'";
+            return CsComandosSql.RetornaDatos(query);
+        }
+        
     }
 }
