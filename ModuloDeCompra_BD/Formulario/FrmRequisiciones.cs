@@ -49,6 +49,8 @@ namespace Menú.Formularios
 
             nudCantidad.Minimum = 1;
             nudCantidad.Value = 1;
+            nudServicio.Minimum = 1;
+            nudServicio.Value = 1;
             dgvListadoProductos.DataSource = CsComandosSql.RetornaDatos("select ID_Producto, NomProducto from Producto WHERE EstadoProducto='Activo'");
             dgvListadoServicio.DataSource = CsComandosSql.RetornaDatos("select ID_Servicio, Nom_Servicio from Servicio WHERE EstadoServicio='Activo'");
         }
@@ -121,57 +123,66 @@ namespace Menú.Formularios
 
         private void btnAgregarS_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow fila in dgvProductosAgregados.Rows)
+            if (!string.IsNullOrEmpty(txtIDServi.Text) && !string.IsNullOrEmpty(txtServicio.Text))
             {
-                if (fila.IsNewRow)
-                    continue;
-
-                string idProducto = fila.Cells["ID_Producto"].Value?.ToString();
-                string idServicio = fila.Cells["ID_Servicio"].Value?.ToString();
-                string producto = fila.Cells["Producto/Servicio"].Value?.ToString();
-                string cantidad = fila.Cells["Cantidad"].Value?.ToString();
-
-                if (string.IsNullOrEmpty(idProducto) && string.IsNullOrEmpty(idServicio))
+                bool Verificar = false;
+                foreach (DataGridViewRow fila in dgvProductosAgregados.Rows)
                 {
-                    MessageBox.Show("Debe seleccionar un producto o un servicio.");
-                    continue;
+                    string servicio = fila.Cells["Producto/Servicio"].Value?.ToString();
+                    if (txtServicio.Text == servicio)
+                    {
+                        Verificar = true;
+                    }
                 }
-
-                if (!string.IsNullOrEmpty(idProducto) && !string.IsNullOrEmpty(idServicio))
+                if (!Verificar)
                 {
-                    MessageBox.Show("Solo debe seleccionar un producto o un servicio, no ambos.");
-                    continue;
+                    tabla.Rows.Add(null, txtIDServi.Text, txtServicio.Text, nudServicio.Value);
+                    dgvProductosAgregados.DataSource = tabla;
+                    txtServicio.Text = string.Empty;
+                    nudServicio.Value = 1;
+                    txtIDServi.Text = string.Empty;
                 }
-
-                int cantidadValida;
-                if (!int.TryParse(cantidad, out cantidadValida))
+                else
                 {
-                    MessageBox.Show("La cantidad debe ser un número válido.");
-                    continue;
+                    MessageBox.Show("El servicio ya existe en la requisición");
                 }
             }
-            MessageBox.Show("Requisición Creada");
+            else
+            {
+                MessageBox.Show("Rellene todos los campos por favor");
+            }
         }
 
         private void btnAgregarP_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow fila in dgvProductosAgregados.Rows)
+            if (!string.IsNullOrEmpty(txtID.Text) && !string.IsNullOrEmpty(txtProducto.Text))
             {
-                string producto = fila.Cells["Producto/Servicio"].Value?.ToString();
-                if (txtProducto.Text != producto)
+                bool Verificar = false;
+                foreach (DataGridViewRow fila in dgvProductosAgregados.Rows)
+                {
+                    string producto = fila.Cells["Producto/Servicio"].Value?.ToString();
+                    if (txtProducto.Text == producto)
+                    {
+                        Verificar = true;
+                        break;
+                    }
+                }
+                if (!Verificar)
                 {
                     tabla.Rows.Add(txtID.Text, null, txtProducto.Text, nudCantidad.Value);
                     dgvProductosAgregados.DataSource = tabla;
                     txtProducto.Text = string.Empty;
                     txtID.Text = string.Empty;
                     nudCantidad.Value = 1;
-                    break;
                 }
                 else
                 {
                     MessageBox.Show("El producto ya existe en la requisición");
-                    break;
                 }
+            }
+            else
+            {
+                MessageBox.Show("Rellene los campos por favor");
             }
         }
 
