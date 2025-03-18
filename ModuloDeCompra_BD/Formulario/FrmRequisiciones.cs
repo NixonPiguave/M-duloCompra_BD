@@ -268,6 +268,8 @@ namespace Menú.Formularios
                         }
                     }
                     MessageBox.Show("Requisición Creada");
+                    tabla.Clear();
+                    txtMotivo.Text = string.Empty;
                 }
             }
             catch (Exception ex)
