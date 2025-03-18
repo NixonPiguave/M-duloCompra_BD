@@ -11,12 +11,12 @@ using System.Windows.Forms;
 
 namespace Menú.Formularios
 {
-   
-    public partial class FrmRequisiciones: Form
-    {
-         DataTable tabla = new DataTable();
-        int IDUsuario;
 
+    public partial class FrmRequisiciones : Form
+    {
+        DataTable tabla = new DataTable();
+        int IDUsuario;
+        bool primerEjecucion = true;
         public int IDUsuario1 { get => IDUsuario; set => IDUsuario = value; }
 
         public FrmRequisiciones()
@@ -121,21 +121,58 @@ namespace Menú.Formularios
 
         private void btnAgregarS_Click(object sender, EventArgs e)
         {
-            tabla.Rows.Add( null, txtIDServi.Text, txtServicio.Text, nudServicio.Value);
-            dgvProductosAgregados.DataSource = tabla;
-            txtServicio.Text = string.Empty;
-            nudServicio.Value = 1;
-            txtIDServi.Text = string.Empty;
+            foreach (DataGridViewRow fila in dgvProductosAgregados.Rows)
+            {
+                if (fila.IsNewRow)
+                    continue;
 
+                string idProducto = fila.Cells["ID_Producto"].Value?.ToString();
+                string idServicio = fila.Cells["ID_Servicio"].Value?.ToString();
+                string producto = fila.Cells["Producto/Servicio"].Value?.ToString();
+                string cantidad = fila.Cells["Cantidad"].Value?.ToString();
+
+                if (string.IsNullOrEmpty(idProducto) && string.IsNullOrEmpty(idServicio))
+                {
+                    MessageBox.Show("Debe seleccionar un producto o un servicio.");
+                    continue;
+                }
+
+                if (!string.IsNullOrEmpty(idProducto) && !string.IsNullOrEmpty(idServicio))
+                {
+                    MessageBox.Show("Solo debe seleccionar un producto o un servicio, no ambos.");
+                    continue;
+                }
+
+                int cantidadValida;
+                if (!int.TryParse(cantidad, out cantidadValida))
+                {
+                    MessageBox.Show("La cantidad debe ser un número válido.");
+                    continue;
+                }
+            }
+            MessageBox.Show("Requisición Creada");
         }
 
         private void btnAgregarP_Click(object sender, EventArgs e)
         {
-            tabla.Rows.Add(txtID.Text, null, txtProducto.Text, nudCantidad.Value);
-            dgvProductosAgregados.DataSource = tabla;
-            txtProducto.Text = string.Empty;
-            txtID.Text = string.Empty;
-            nudCantidad.Value = 1;
+            foreach (DataGridViewRow fila in dgvProductosAgregados.Rows)
+            {
+                string producto = fila.Cells["Producto/Servicio"].Value?.ToString();
+                if (txtProducto.Text != producto)
+                {
+                    tabla.Rows.Add(txtID.Text, null, txtProducto.Text, nudCantidad.Value);
+                    dgvProductosAgregados.DataSource = tabla;
+                    txtProducto.Text = string.Empty;
+                    txtID.Text = string.Empty;
+                    nudCantidad.Value = 1;
+                    break;
+                }
+                else
+                {
+                    MessageBox.Show("El producto ya existe en la requisición");
+                    break;
+                }
+            }
         }
 
         private void btnCrearRequi_Click(object sender, EventArgs e)

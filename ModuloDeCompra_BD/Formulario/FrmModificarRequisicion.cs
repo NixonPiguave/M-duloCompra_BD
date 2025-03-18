@@ -49,6 +49,8 @@ namespace ModuloDeCompra_BD.Formulario
             lblMotivo.Location = posArribaLbL;
             txtMotivo.Location = posArribaTxT;
 
+
+
         }
 
         private void btnRegresar_Click(object sender, EventArgs e)
