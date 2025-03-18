@@ -83,6 +83,16 @@ namespace ModuloDeCompra_BD.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap arrow_down_triangle_icon_183095 {
+            get {
+                object obj = ResourceManager.GetObject("arrow_down_triangle_icon_183095", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap brows_browsing_find_search_seo_web_zoom_icon_123196 {
             get {
                 object obj = ResourceManager.GetObject("brows_browsing_find_search_seo_web_zoom_icon_123196", resourceCulture);
@@ -106,6 +116,26 @@ namespace ModuloDeCompra_BD.Properties {
         internal static System.Drawing.Bitmap compraslogo {
             get {
                 object obj = ResourceManager.GetObject("compraslogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Edit_icon_icons_com_55921 {
+            get {
+                object obj = ResourceManager.GetObject("Edit_icon-icons.com_55921", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Edit_icon_icons1 {
+            get {
+                object obj = ResourceManager.GetObject("Edit_icon-icons1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

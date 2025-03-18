@@ -469,5 +469,14 @@
   <ItemGroup>
     <None Include="Resources\Añadir un subtítulo.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_down_triangle_icon_183095.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit_icon-icons.com_55921.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit_icon-icons.com_559211.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
