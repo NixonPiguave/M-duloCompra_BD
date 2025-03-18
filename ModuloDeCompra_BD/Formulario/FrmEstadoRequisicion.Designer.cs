@@ -144,8 +144,8 @@
             this.cmbEstadoRechazar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cmbEstadoRechazar.ItemHeight = 30;
             this.cmbEstadoRechazar.Items.AddRange(new object[] {
-            "Aprobar",
-            "Rechazar"});
+            "Aprobada",
+            "Rechazada"});
             this.cmbEstadoRechazar.Location = new System.Drawing.Point(92, 258);
             this.cmbEstadoRechazar.Name = "cmbEstadoRechazar";
             this.cmbEstadoRechazar.Size = new System.Drawing.Size(140, 36);

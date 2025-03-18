@@ -1,4 +1,5 @@
-﻿using ModuloDeCompra_BD.Clases;
+﻿using Menú.Formularios;
+using ModuloDeCompra_BD.Clases;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,18 +12,18 @@ using System.Windows.Forms;
 
 namespace ModuloDeCompra_BD.Formulario
 {
-    public partial class FrmOrdenCompra: Form
+    public partial class FrmOrdenCompraDirecta: Form
     {
         int idproveedor;
         int idUsuario;
         public int IdUsuario { get => idUsuario; set => idUsuario = value; }
 
-        public FrmOrdenCompra()
+        public FrmOrdenCompraDirecta()
         {
             InitializeComponent();
         }
 
-        private void FrmOrdenCompra_Load(object sender, EventArgs e)
+        private void FrmOrdenCompraDirecta_Load(object sender, EventArgs e)
         {
             
            
@@ -56,17 +57,17 @@ namespace ModuloDeCompra_BD.Formulario
                     if (!decimal.TryParse(costo, out costoValido))
                     {
                         MessageBox.Show("El costo debe ser un número válido.");
-                        return; 
+                        return;
                     }
                     if (costoValido <= 0)
                     {
                         MessageBox.Show("El costo debe ser mayor a cero.");
-                        return; 
+                        return;
                     }
                     if (!decimal.TryParse(descuento, out descuentoValido))
                     {
                         MessageBox.Show("El descuento debe ser un número válido.");
-                        return; 
+                        return;
                     }
                 }
                 int idGenerado = -1;
@@ -75,7 +76,7 @@ namespace ModuloDeCompra_BD.Formulario
                   <FECHAORDEN>{DateTime.Now.ToString("yyyy-MM-dd")}</FECHAORDEN>
                   <FECHALIMITE>{dtpFechaLimite.Value.ToString("yyyy-MM-dd")}</FECHALIMITE>
                   <ESTADORDEN>Pendiente</ESTADORDEN>
-                  <IDREQUI>{txtRequisicionID.Text}</IDREQUI>
+                  <IDREQUI></IDREQUI>
                   <IDUSUARIO>{idUsuario}</IDUSUARIO>
                   <IDPROVE>{idproveedor}</IDPROVE>
                 </ORDEN>";
@@ -98,48 +99,13 @@ namespace ModuloDeCompra_BD.Formulario
                 {
                     MessageBox.Show($"Error: {ex.Message}");
                 }
-
-                foreach (DataGridViewRow fila in dgvRequisiciones.Rows)
-                {
-                    if (fila.IsNewRow)
-                        continue;
-
-                    string idProducto = fila.Cells["ID_Producto"].Value?.ToString();
-                    string idServicio = fila.Cells["ID_Servicio"].Value?.ToString();
-                    string cantidad = fila.Cells["Cantidad"].Value?.ToString();
-                    string costo = fila.Cells["Costo"].Value?.ToString();
-                    string descuento = fila.Cells["Descuento"].Value?.ToString();
-
-                    costo = costo.Replace(',', '.');
-                    descuento = descuento.Replace(',', '.');
-
-                    string xmlDetalleOrden = $@"
-                        <DETALLEORDENES>
-                            <DETALLEORDEN>
-                                <CANTIDAD>{cantidad}</CANTIDAD>
-                                <COSTO>{costo}</COSTO>
-                                <DESCUENTO>{descuento}</DESCUENTO>
-                                <IDSERVICIO>{(string.IsNullOrEmpty(idServicio) ? "NULL" : idServicio)}</IDSERVICIO>
-                                <IDPRODUCTO>{(string.IsNullOrEmpty(idProducto) ? "NULL" : idProducto)}</IDPRODUCTO>
-                                <IDORDEN>{idGenerado}</IDORDEN>
-                                <ESTADO>Pendiente</ESTADO>
-                            </DETALLEORDEN>
-                        </DETALLEORDENES>";
-
-                    string queryD = $"exec SpDetalleOrden @XMLdetalleOrden = '{xmlDetalleOrden}'";
-
-                    try
-                    {
-                        if (!CsComandosSql.InserDeletUpdate(queryD))
-                            MessageBox.Show("Error al insertar detalle de orden");
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error: " + ex.Message);
-                    }
-                }
-
                 MessageBox.Show("La orden ha sido guardada correctamente.");
+                DialogResult result = MessageBox.Show("Añadir Productos", "Aceptar");
+                if (result == DialogResult.OK)
+                {
+                    FrmProductosOrdenCompraDirecta frmProductos = new FrmProductosOrdenCompraDirecta();
+                    frmProductos.ShowDialog();
+                }
             }
             catch (Exception ex)
             {
@@ -147,47 +113,6 @@ namespace ModuloDeCompra_BD.Formulario
             }
 
 
-        }
-
-        private void btnDetalle_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                FrmListadoRequisicion frmListado = new FrmListadoRequisicion();
-                frmListado.ShowDialog();
-                txtRequisicionID.Text = frmListado.RequisicionID.ToString();
-                DataTable Tb = new DataTable();
-                Tb = CsComandosSql.RetornaDatos($"select Cantidad, ID_Servicio, ID_Producto from Requi_Details  where Estado = 'Aprobado' and ID_Requisicion='{txtRequisicionID.Text}'");
-                Tb.Columns.Add("Costo", typeof(decimal));
-                Tb.Columns.Add("Descuento", typeof(decimal));
-               
-                foreach (DataRow row in Tb.Rows)
-                {
-                    row["Costo"] = 0;
-                    row["Descuento"] = 0;
-                }
-                Tb.Columns["Costo"].SetOrdinal(1);
-                Tb.Columns["Descuento"].SetOrdinal(2);
-
-                dgvRequisiciones.DataSource = Tb;
-                dgvRequisiciones.Columns["Costo"].DefaultCellStyle.Format = "C2";
-                dgvRequisiciones.Columns["Descuento"].DefaultCellStyle.Format = "C2";
-                dgvRequisiciones.Columns["Costo"].ReadOnly = false;
-                dgvRequisiciones.Columns["Descuento"].ReadOnly = false;
-
-                foreach (DataGridViewColumn column in dgvRequisiciones.Columns)
-                {
-                    if (column.Name != "Costo" && column.Name != "Descuento")
-                    {
-                        column.ReadOnly = true;
-                    }
-                }
-
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show("Error : "+ ex);
-            }
         }
         private void txtProveedor_Click(object sender, EventArgs e)
         {
@@ -235,22 +160,7 @@ namespace ModuloDeCompra_BD.Formulario
             }
         }
 
-        private void lblFechaLimite_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void dtpFechaLimite_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmbEstadoOrden_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

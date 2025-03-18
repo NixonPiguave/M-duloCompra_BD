@@ -33,37 +33,19 @@ namespace ModuloDeCompra_BD.Formulario
         {
             int posicion = dgvEstadoRequision.CurrentCell.RowIndex;
             int ID = Convert.ToInt32(dgvEstadoRequision[0, posicion].Value);
-            string Estado;
-            if (cmbEstadoRechazar.SelectedIndex == 0)
-            {
-                Estado = "Aprobado";
-                string Observacion = "Requisición aprobada por el departamento de finanzas";
-                string cadenaXML = $@"<Requisiciones>
+            string Observacion = $"Requisición {cmbEstadoRechazar.SelectedItem.ToString()} por el departamento de finanzas";
+            string cadenaXML = $@"<Requisiciones>
                         <Requisicion>
                             <ID_Requisicion>{ID}</ID_Requisicion>
-                            <Estado_Requisicion>{Estado}</Estado_Requisicion>
+                            <Estado_Requisicion>{cmbEstadoRechazar.SelectedItem.ToString()}</Estado_Requisicion>
                             <Observacion>{Observacion}</Observacion>
                         </Requisicion>
                     </Requisiciones>";
-                string query = $@"exec spModificarRequisicion '{cadenaXML}'";
-                CsComandosSql.InserDeletUpdate(query);
-                dgvEstadoRequision.DataSource = CsComandosSql.RetornaDatos("Select * from Requisicion");
-            }
-            else
-            {
-                Estado = "Rechazado";
-                string Observacion = "Requisición aprobada por el departamento de finanzas";
-                string cadenaXML = $@"<Requisiciones>
-                        <Requisicion>
-                            <ID_Requisicion>{ID}</ID_Requisicion>
-                            <Estado_Requisicion>{Estado}</Estado_Requisicion>
-                            <Observacion>{Observacion}</Observacion>
-                        </Requisicion>
-                    </Requisiciones>";
-                string query = $@"exec spModificarRequisicion '{cadenaXML}'";
-                CsComandosSql.InserDeletUpdate(query);
-                dgvEstadoRequision.DataSource = CsComandosSql.RetornaDatos("Select * from Requisicion");
-            }
+            string query = $@"exec spModificarRequisicion '{cadenaXML}'";
+            CsComandosSql.InserDeletUpdate(query);
+            dgvEstadoRequision.DataSource = CsComandosSql.RetornaDatos("Select * from Requisicion");
+            MessageBox.Show($"Se ha {cmbEstadoRechazar.SelectedItem.ToString()} la requisición");
+            cmbEstadoRechazar.SelectedIndex = -1;
         }
 
         private void btnDetalle_Click(object sender, EventArgs e)

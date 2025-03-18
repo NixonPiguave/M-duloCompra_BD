@@ -41,6 +41,9 @@
             this.btnOrdenesCompra = new Guna.UI2.WinForms.Guna2Button();
             this.btnRequisiciones = new Guna.UI2.WinForms.Guna2Button();
             this.pn2 = new System.Windows.Forms.Panel();
+            this.pnlSubMenuOrdenCompra = new System.Windows.Forms.Panel();
+            this.btnOrdenCompraRequisicion = new Guna.UI2.WinForms.Guna2Button();
+            this.btnOrdenCompra = new Guna.UI2.WinForms.Guna2Button();
             this.pnMantenimientos = new System.Windows.Forms.Panel();
             this.btnEmpresa = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button16 = new Guna.UI2.WinForms.Guna2Button();
@@ -60,6 +63,7 @@
             this.dgvOrdenesRequisicion = new Guna.UI2.WinForms.Guna2DataGridView();
             this.pn1.SuspendLayout();
             this.pn2.SuspendLayout();
+            this.pnlSubMenuOrdenCompra.SuspendLayout();
             this.pnMantenimientos.SuspendLayout();
             this.pnlRequisiciones.SuspendLayout();
             this.pnIventario.SuspendLayout();
@@ -176,7 +180,7 @@
             this.btnOrdenesCompra.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOrdenesCompra.ForeColor = System.Drawing.Color.White;
             this.btnOrdenesCompra.HoverState.ForeColor = System.Drawing.Color.Yellow;
-            this.btnOrdenesCompra.Location = new System.Drawing.Point(264, 12);
+            this.btnOrdenesCompra.Location = new System.Drawing.Point(274, 12);
             this.btnOrdenesCompra.Name = "btnOrdenesCompra";
             this.btnOrdenesCompra.Size = new System.Drawing.Size(155, 45);
             this.btnOrdenesCompra.TabIndex = 1;
@@ -203,6 +207,7 @@
             // pn2
             // 
             this.pn2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pn2.Controls.Add(this.pnlSubMenuOrdenCompra);
             this.pn2.Controls.Add(this.pnMantenimientos);
             this.pn2.Controls.Add(this.pnlRequisiciones);
             this.pn2.Controls.Add(this.pnIventario);
@@ -212,6 +217,51 @@
             this.pn2.Name = "pn2";
             this.pn2.Size = new System.Drawing.Size(1370, 663);
             this.pn2.TabIndex = 1;
+            // 
+            // pnlSubMenuOrdenCompra
+            // 
+            this.pnlSubMenuOrdenCompra.BackColor = System.Drawing.Color.Black;
+            this.pnlSubMenuOrdenCompra.Controls.Add(this.btnOrdenCompraRequisicion);
+            this.pnlSubMenuOrdenCompra.Controls.Add(this.btnOrdenCompra);
+            this.pnlSubMenuOrdenCompra.Location = new System.Drawing.Point(264, 0);
+            this.pnlSubMenuOrdenCompra.Name = "pnlSubMenuOrdenCompra";
+            this.pnlSubMenuOrdenCompra.Size = new System.Drawing.Size(183, 116);
+            this.pnlSubMenuOrdenCompra.TabIndex = 9;
+            this.pnlSubMenuOrdenCompra.Visible = false;
+            // 
+            // btnOrdenCompraRequisicion
+            // 
+            this.btnOrdenCompraRequisicion.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnOrdenCompraRequisicion.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnOrdenCompraRequisicion.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnOrdenCompraRequisicion.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnOrdenCompraRequisicion.FillColor = System.Drawing.Color.Black;
+            this.btnOrdenCompraRequisicion.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOrdenCompraRequisicion.ForeColor = System.Drawing.Color.White;
+            this.btnOrdenCompraRequisicion.HoverState.ForeColor = System.Drawing.Color.Yellow;
+            this.btnOrdenCompraRequisicion.Location = new System.Drawing.Point(3, 6);
+            this.btnOrdenCompraRequisicion.Name = "btnOrdenCompraRequisicion";
+            this.btnOrdenCompraRequisicion.Size = new System.Drawing.Size(177, 45);
+            this.btnOrdenCompraRequisicion.TabIndex = 6;
+            this.btnOrdenCompraRequisicion.Text = "Crear por Requisición";
+            this.btnOrdenCompraRequisicion.Click += new System.EventHandler(this.btnOrdenCompraRequisicion_Click);
+            // 
+            // btnOrdenCompra
+            // 
+            this.btnOrdenCompra.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnOrdenCompra.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnOrdenCompra.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnOrdenCompra.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnOrdenCompra.FillColor = System.Drawing.Color.Black;
+            this.btnOrdenCompra.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOrdenCompra.ForeColor = System.Drawing.Color.White;
+            this.btnOrdenCompra.HoverState.ForeColor = System.Drawing.Color.Yellow;
+            this.btnOrdenCompra.Location = new System.Drawing.Point(3, 57);
+            this.btnOrdenCompra.Name = "btnOrdenCompra";
+            this.btnOrdenCompra.Size = new System.Drawing.Size(177, 45);
+            this.btnOrdenCompra.TabIndex = 7;
+            this.btnOrdenCompra.Text = "Crear Orden de Compra";
+            this.btnOrdenCompra.Click += new System.EventHandler(this.btnOrdenCompra_Click);
             // 
             // pnMantenimientos
             // 
@@ -536,6 +586,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.pn1.ResumeLayout(false);
             this.pn2.ResumeLayout(false);
+            this.pnlSubMenuOrdenCompra.ResumeLayout(false);
             this.pnMantenimientos.ResumeLayout(false);
             this.pnlRequisiciones.ResumeLayout(false);
             this.pnIventario.ResumeLayout(false);
@@ -572,6 +623,9 @@
         private Guna.UI2.WinForms.Guna2Button btnCrearRequisicion;
         private Guna.UI2.WinForms.Guna2Button btnInventariooo;
         private Guna.UI2.WinForms.Guna2Button btnEmpresa;
+        private System.Windows.Forms.Panel pnlSubMenuOrdenCompra;
+        private Guna.UI2.WinForms.Guna2Button btnOrdenCompraRequisicion;
+        private Guna.UI2.WinForms.Guna2Button btnOrdenCompra;
     }
 }
 

@@ -49,6 +49,7 @@ namespace Menú
         private void guna2Button4_Click(object sender, EventArgs e)
         {
             pnMantenimientos.Visible = false;
+            pnlSubMenuOrdenCompra.Visible = false;
             pnlRequisiciones.Visible = false;
             if (!pnIventario.Visible)
                 pnIventario.Visible = true;
@@ -58,6 +59,7 @@ namespace Menú
 
         private void guna2Button6_Click(object sender, EventArgs e)
         {
+            pnlSubMenuOrdenCompra.Visible = false;
             pnIventario.Visible = false;
             pnlRequisiciones.Visible = false;
             if (!pnMantenimientos.Visible)
@@ -77,12 +79,13 @@ namespace Menú
 
         private void btnOrdenesCompra_Click(object sender, EventArgs e)
         {
-            FrmOrdenCompra frmOrdenCompra = new FrmOrdenCompra();
-            frmOrdenCompra.IdUsuario = IDusuario;
+            pnMantenimientos.Visible = false;
             pnIventario.Visible = false;
             pnlRequisiciones.Visible = false;
-            pnMantenimientos.Visible = false;
-            openChildForm(frmOrdenCompra);
+            if (!pnlSubMenuOrdenCompra.Visible)
+                pnlSubMenuOrdenCompra.Visible = true;
+            else
+                pnlSubMenuOrdenCompra.Visible = false;
         }
 
         private void btnRequisiciones_Click(object sender, EventArgs e)
@@ -92,6 +95,7 @@ namespace Menú
                 pnlRequisiciones.Visible = true;
                 pnIventario.Visible = false;
                 pnMantenimientos.Visible = false;
+                pnlSubMenuOrdenCompra.Visible = false;
             }
             else if (pnlRequisiciones.Visible == true)
             { 
@@ -102,6 +106,7 @@ namespace Menú
                 pnlRequisiciones.Visible = false;
                 pnIventario.Visible = false;
                 pnMantenimientos.Visible = false;
+                pnlSubMenuOrdenCompra.Visible = false;
             }
         }
 
@@ -230,6 +235,27 @@ namespace Menú
             pnlRequisiciones.Visible = false;
             pnMantenimientos.Visible = false;
             openChildForm(reportes);
+        }
+
+        private void btnOrdenCompraRequisicion_Click(object sender, EventArgs e)
+        {
+            FrmOrdenCompra frmOrdenCompra = new FrmOrdenCompra();
+            frmOrdenCompra.IdUsuario = IDusuario;
+            pnIventario.Visible = false;
+            pnlRequisiciones.Visible = false;
+            pnMantenimientos.Visible = false;
+            openChildForm(frmOrdenCompra);
+        }
+
+        private void btnOrdenCompra_Click(object sender, EventArgs e)
+        {
+            FrmOrdenCompraDirecta frmDirecta = new FrmOrdenCompraDirecta();
+            frmDirecta.IdUsuario = IDusuario;
+            pnIventario.Visible = false;
+            pnlRequisiciones.Visible = false;
+            pnMantenimientos.Visible = false;
+            pnlSubMenuOrdenCompra.Visible = false;
+            openChildForm(frmDirecta);
         }
     }
 }

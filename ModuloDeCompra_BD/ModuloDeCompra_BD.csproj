@@ -72,6 +72,12 @@
     <Compile Include="Clases\CsUsuario.cs" />
     <Compile Include="Clases\CsRoles.cs" />
     <Compile Include="Clases\CsIVA.cs" />
+    <Compile Include="Formulario\FrmOrdenCompraDirecta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\FrmOrdenCompraDirecta.Designer.cs">
+      <DependentUpon>FrmOrdenCompraDirecta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formulario\FrmReportes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +143,12 @@
     </Compile>
     <Compile Include="Formulario\frmreport.Designer.cs">
       <DependentUpon>frmreport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\FrmProductosOrdenCompraDirecta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\FrmProductosOrdenCompraDirecta.Designer.cs">
+      <DependentUpon>FrmProductosOrdenCompraDirecta.cs</DependentUpon>
     </Compile>
     <Compile Include="Formulario\FrmRol.cs">
       <SubType>Form</SubType>
@@ -283,6 +295,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Formulario\FrmOrdenCompraDirecta.resx">
+      <DependentUpon>FrmOrdenCompraDirecta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formulario\FrmReportes.resx">
       <DependentUpon>FrmReportes.cs</DependentUpon>
     </EmbeddedResource>
@@ -315,6 +330,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\frmreport.resx">
       <DependentUpon>frmreport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\FrmProductosOrdenCompraDirecta.resx">
+      <DependentUpon>FrmProductosOrdenCompraDirecta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\FrmRol.resx">
       <DependentUpon>FrmRol.cs</DependentUpon>
