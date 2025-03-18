@@ -153,6 +153,16 @@ namespace ModuloDeCompra_BD.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap images {
+            get {
+                object obj = ResourceManager.GetObject("images", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap lock_padlock_locked_protected_security_icon_131240 {
             get {
                 object obj = ResourceManager.GetObject("lock_padlock_locked_protected_security_icon_131240", resourceCulture);

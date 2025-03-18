@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,7 @@ namespace Menú
         public FrmMenu3()
         {
             InitializeComponent();
+            CargarLogoEmpresa();
         }
 
         private Form activeForm = null;
@@ -262,6 +264,35 @@ namespace Menú
         {
             string query = "insert into AuditoriaSesion (Usuario, Accion, Fecha, Detalles) values (SUSER_NAME(), 'CERRAR SESIÓN', GETDATE(), 'El usuario '+ SUSER_NAME() + ' ha cerrado sesión')";
             CsComandosSql.InserDeletUpdate(query);
+        }
+
+        private void pbEditarEmpresa_Click(object sender, EventArgs e)
+        {
+            FrmEditarEmpresa EditarEmpresa = new FrmEditarEmpresa();
+            EditarEmpresa.ShowDialog();
+            CargarLogoEmpresa();
+        }
+        private void CargarLogoEmpresa()
+        {
+            string sentencia = "Select Logo_Empresa from Empresa where ID_Empresa = 1";
+            DataTable dt = CsComandosSql.RetornaDatos(sentencia);
+
+            if (dt.Rows.Count > 0)
+            {
+                DataRow row = dt.Rows[0];
+                if (row["Logo_Empresa"] != DBNull.Value)
+                {
+                    byte[] imagenBytes = (byte[])row["Logo_Empresa"];
+                    using (MemoryStream ms = new MemoryStream(imagenBytes))
+                    {
+                        pbEditarEmpresa.Image = Image.FromStream(ms);
+                    }
+                }
+                else
+                {
+                    pbEditarEmpresa.Image = null; 
+                }
+            }
         }
     }
 }

@@ -72,6 +72,12 @@
     <Compile Include="Clases\CsUsuario.cs" />
     <Compile Include="Clases\CsRoles.cs" />
     <Compile Include="Clases\CsIVA.cs" />
+    <Compile Include="Formulario\FrmEditarEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\FrmEditarEmpresa.Designer.cs">
+      <DependentUpon>FrmEditarEmpresa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formulario\FrmOrdenCompraDirecta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -295,6 +301,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Formulario\FrmEditarEmpresa.resx">
+      <DependentUpon>FrmEditarEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formulario\FrmOrdenCompraDirecta.resx">
       <DependentUpon>FrmOrdenCompraDirecta.cs</DependentUpon>
     </EmbeddedResource>
@@ -477,6 +486,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Edit_icon-icons.com_559211.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

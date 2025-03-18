@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenu3));
             this.pn1 = new System.Windows.Forms.Panel();
-            this.pbMenuEmpresa = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.btnReportes = new Guna.UI2.WinForms.Guna2Button();
             this.btnMantenimiento = new Guna.UI2.WinForms.Guna2Button();
             this.btnDevoluciones = new Guna.UI2.WinForms.Guna2Button();
@@ -43,11 +44,6 @@
             this.btnOrdenesCompra = new Guna.UI2.WinForms.Guna2Button();
             this.btnRequisiciones = new Guna.UI2.WinForms.Guna2Button();
             this.pn2 = new System.Windows.Forms.Panel();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnAgregarCambios = new Guna.UI2.WinForms.Guna2Button();
-            this.btnEditar = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.txtNombreEmpresa = new Guna.UI2.WinForms.Guna2TextBox();
-            this.pbLogo = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.pnlSubMenuOrdenCompra = new System.Windows.Forms.Panel();
             this.btnOrdenCompraRequisicion = new Guna.UI2.WinForms.Guna2Button();
             this.btnOrdenCompra = new Guna.UI2.WinForms.Guna2Button();
@@ -68,25 +64,23 @@
             this.guna2Button9 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button8 = new Guna.UI2.WinForms.Guna2Button();
             this.dgvOrdenesRequisicion = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.pbEditarEmpresa = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.dgvEmpresa = new Guna.UI2.WinForms.Guna2DataGridView();
             this.pn1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbMenuEmpresa)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.pn2.SuspendLayout();
-            this.guna2Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEditar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.pnlSubMenuOrdenCompra.SuspendLayout();
             this.pnMantenimientos.SuspendLayout();
             this.pnlRequisiciones.SuspendLayout();
             this.pnIventario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrdenesRequisicion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEditarEmpresa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpresa)).BeginInit();
             this.SuspendLayout();
             // 
             // pn1
             // 
             this.pn1.BackColor = System.Drawing.Color.Black;
-            this.pn1.Controls.Add(this.pbMenuEmpresa);
-            this.pn1.Controls.Add(this.guna2CirclePictureBox1);
+            this.pn1.Controls.Add(this.pbEditarEmpresa);
             this.pn1.Controls.Add(this.btnReportes);
             this.pn1.Controls.Add(this.btnMantenimiento);
             this.pn1.Controls.Add(this.btnDevoluciones);
@@ -99,30 +93,6 @@
             this.pn1.Name = "pn1";
             this.pn1.Size = new System.Drawing.Size(1370, 69);
             this.pn1.TabIndex = 0;
-            // 
-            // pbMenuEmpresa
-            // 
-            this.pbMenuEmpresa.BackColor = System.Drawing.Color.Transparent;
-            this.pbMenuEmpresa.Image = global::ModuloDeCompra_BD.Properties.Resources.arrow_down_triangle_icon_183095;
-            this.pbMenuEmpresa.ImageRotate = 0F;
-            this.pbMenuEmpresa.Location = new System.Drawing.Point(1310, 23);
-            this.pbMenuEmpresa.Name = "pbMenuEmpresa";
-            this.pbMenuEmpresa.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.pbMenuEmpresa.Size = new System.Drawing.Size(24, 25);
-            this.pbMenuEmpresa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbMenuEmpresa.TabIndex = 7;
-            this.pbMenuEmpresa.TabStop = false;
-            this.pbMenuEmpresa.UseTransparentBackground = true;
-            // 
-            // guna2CirclePictureBox1
-            // 
-            this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(1305, 20);
-            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(35, 31);
-            this.guna2CirclePictureBox1.TabIndex = 6;
-            this.guna2CirclePictureBox1.TabStop = false;
             // 
             // btnReportes
             // 
@@ -245,7 +215,7 @@
             // pn2
             // 
             this.pn2.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pn2.Controls.Add(this.guna2Panel1);
+            this.pn2.Controls.Add(this.dgvEmpresa);
             this.pn2.Controls.Add(this.pnlSubMenuOrdenCompra);
             this.pn2.Controls.Add(this.pnMantenimientos);
             this.pn2.Controls.Add(this.pnlRequisiciones);
@@ -256,76 +226,6 @@
             this.pn2.Name = "pn2";
             this.pn2.Size = new System.Drawing.Size(1370, 663);
             this.pn2.TabIndex = 1;
-            // 
-            // guna2Panel1
-            // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.Gray;
-            this.guna2Panel1.Controls.Add(this.btnAgregarCambios);
-            this.guna2Panel1.Controls.Add(this.btnEditar);
-            this.guna2Panel1.Controls.Add(this.txtNombreEmpresa);
-            this.guna2Panel1.Controls.Add(this.pbLogo);
-            this.guna2Panel1.Location = new System.Drawing.Point(882, -15);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(452, 337);
-            this.guna2Panel1.TabIndex = 8;
-            this.guna2Panel1.Visible = false;
-            // 
-            // btnAgregarCambios
-            // 
-            this.btnAgregarCambios.BorderRadius = 4;
-            this.btnAgregarCambios.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnAgregarCambios.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnAgregarCambios.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnAgregarCambios.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAgregarCambios.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnAgregarCambios.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarCambios.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarCambios.Location = new System.Drawing.Point(148, 240);
-            this.btnAgregarCambios.Name = "btnAgregarCambios";
-            this.btnAgregarCambios.Size = new System.Drawing.Size(180, 45);
-            this.btnAgregarCambios.TabIndex = 3;
-            this.btnAgregarCambios.Text = "Agregar cambios";
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.Image = global::ModuloDeCompra_BD.Properties.Resources.Edit_icon_icons1;
-            this.btnEditar.ImageRotate = 0F;
-            this.btnEditar.Location = new System.Drawing.Point(369, 198);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btnEditar.Size = new System.Drawing.Size(38, 36);
-            this.btnEditar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnEditar.TabIndex = 2;
-            this.btnEditar.TabStop = false;
-            // 
-            // txtNombreEmpresa
-            // 
-            this.txtNombreEmpresa.BorderRadius = 4;
-            this.txtNombreEmpresa.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtNombreEmpresa.DefaultText = "";
-            this.txtNombreEmpresa.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtNombreEmpresa.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtNombreEmpresa.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtNombreEmpresa.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtNombreEmpresa.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNombreEmpresa.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtNombreEmpresa.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNombreEmpresa.Location = new System.Drawing.Point(110, 198);
-            this.txtNombreEmpresa.Name = "txtNombreEmpresa";
-            this.txtNombreEmpresa.PlaceholderText = "";
-            this.txtNombreEmpresa.SelectedText = "";
-            this.txtNombreEmpresa.Size = new System.Drawing.Size(252, 36);
-            this.txtNombreEmpresa.TabIndex = 1;
-            // 
-            // pbLogo
-            // 
-            this.pbLogo.ImageRotate = 0F;
-            this.pbLogo.Location = new System.Drawing.Point(157, 32);
-            this.pbLogo.Name = "pbLogo";
-            this.pbLogo.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.pbLogo.Size = new System.Drawing.Size(162, 151);
-            this.pbLogo.TabIndex = 0;
-            this.pbLogo.TabStop = false;
             // 
             // pnlSubMenuOrdenCompra
             // 
@@ -633,26 +533,26 @@
             // 
             // dgvOrdenesRequisicion
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvOrdenesRequisicion.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvOrdenesRequisicion.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgvOrdenesRequisicion.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvOrdenesRequisicion.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvOrdenesRequisicion.ColumnHeadersHeight = 4;
             this.dgvOrdenesRequisicion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvOrdenesRequisicion.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvOrdenesRequisicion.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvOrdenesRequisicion.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvOrdenesRequisicion.Location = new System.Drawing.Point(30, 34);
             this.dgvOrdenesRequisicion.Name = "dgvOrdenesRequisicion";
@@ -681,6 +581,73 @@
             this.dgvOrdenesRequisicion.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvOrdenesRequisicion.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
+            // pbEditarEmpresa
+            // 
+            this.pbEditarEmpresa.Image = global::ModuloDeCompra_BD.Properties.Resources.images;
+            this.pbEditarEmpresa.ImageRotate = 0F;
+            this.pbEditarEmpresa.Location = new System.Drawing.Point(1291, 12);
+            this.pbEditarEmpresa.Name = "pbEditarEmpresa";
+            this.pbEditarEmpresa.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.pbEditarEmpresa.Size = new System.Drawing.Size(52, 51);
+            this.pbEditarEmpresa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbEditarEmpresa.TabIndex = 6;
+            this.pbEditarEmpresa.TabStop = false;
+            this.pbEditarEmpresa.Click += new System.EventHandler(this.pbEditarEmpresa_Click);
+            // 
+            // dgvEmpresa
+            // 
+            this.dgvEmpresa.AllowUserToAddRows = false;
+            this.dgvEmpresa.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvEmpresa.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEmpresa.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvEmpresa.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvEmpresa.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvEmpresa.Location = new System.Drawing.Point(1225, 608);
+            this.dgvEmpresa.MultiSelect = false;
+            this.dgvEmpresa.Name = "dgvEmpresa";
+            this.dgvEmpresa.ReadOnly = true;
+            this.dgvEmpresa.RowHeadersVisible = false;
+            this.dgvEmpresa.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvEmpresa.Size = new System.Drawing.Size(145, 55);
+            this.dgvEmpresa.TabIndex = 10;
+            this.dgvEmpresa.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvEmpresa.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dgvEmpresa.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dgvEmpresa.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dgvEmpresa.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dgvEmpresa.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dgvEmpresa.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvEmpresa.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dgvEmpresa.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvEmpresa.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvEmpresa.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvEmpresa.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvEmpresa.ThemeStyle.HeaderStyle.Height = 23;
+            this.dgvEmpresa.ThemeStyle.ReadOnly = true;
+            this.dgvEmpresa.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvEmpresa.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvEmpresa.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvEmpresa.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvEmpresa.ThemeStyle.RowsStyle.Height = 22;
+            this.dgvEmpresa.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvEmpresa.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvEmpresa.Visible = false;
+            // 
             // FrmMenu3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -695,17 +662,14 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMenu3_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.pn1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbMenuEmpresa)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             this.pn2.ResumeLayout(false);
-            this.guna2Panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnEditar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.pnlSubMenuOrdenCompra.ResumeLayout(false);
             this.pnMantenimientos.ResumeLayout(false);
             this.pnlRequisiciones.ResumeLayout(false);
             this.pnIventario.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrdenesRequisicion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEditarEmpresa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpresa)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -741,13 +705,8 @@
         private System.Windows.Forms.Panel pnlSubMenuOrdenCompra;
         private Guna.UI2.WinForms.Guna2Button btnOrdenCompraRequisicion;
         private Guna.UI2.WinForms.Guna2Button btnOrdenCompra;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox pbMenuEmpresa;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2TextBox txtNombreEmpresa;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox pbLogo;
-        private Guna.UI2.WinForms.Guna2Button btnAgregarCambios;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox btnEditar;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox pbEditarEmpresa;
+        private Guna.UI2.WinForms.Guna2DataGridView dgvEmpresa;
     }
 }
 
