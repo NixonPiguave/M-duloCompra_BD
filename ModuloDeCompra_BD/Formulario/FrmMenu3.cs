@@ -70,7 +70,7 @@ namespace Menú
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            CsComandosSql.InserDeletUpdate("INSERT INTO Auditoria (Usuario, Accion, Fecha, Detalles) VALUES (SUSER_NAME(), 'INICIO SESION', GETDATE(), 'El usuario: ' + SUSER_NAME() + ', ha iniciado sesión');");
+            CsComandosSql.InserDeletUpdate("insert into AuditoriaSesion (Usuario, Accion, Fecha, Detalles) values (SUSER_NAME(), 'INICIO SESIÓN', GETDATE(), 'El usuario '+ SUSER_NAME() + ' ha iniciado sesión')");
             pnIventario.Visible = false;
             pnMantenimientos.Visible = false;
             pnlRequisiciones.Visible = false;
@@ -256,6 +256,12 @@ namespace Menú
             pnMantenimientos.Visible = false;
             pnlSubMenuOrdenCompra.Visible = false;
             openChildForm(frmDirecta);
+        }
+
+        private void FrmMenu3_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            string query = "insert into AuditoriaSesion (Usuario, Accion, Fecha, Detalles) values (SUSER_NAME(), 'CERRAR SESIÓN', GETDATE(), 'El usuario '+ SUSER_NAME() + ' ha cerrado sesión')";
+            CsComandosSql.InserDeletUpdate(query);
         }
     }
 }

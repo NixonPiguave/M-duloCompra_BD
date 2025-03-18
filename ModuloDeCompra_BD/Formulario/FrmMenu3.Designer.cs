@@ -33,6 +33,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenu3));
             this.pn1 = new System.Windows.Forms.Panel();
+            this.pbMenuEmpresa = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.btnReportes = new Guna.UI2.WinForms.Guna2Button();
             this.btnMantenimiento = new Guna.UI2.WinForms.Guna2Button();
             this.btnDevoluciones = new Guna.UI2.WinForms.Guna2Button();
@@ -41,6 +43,11 @@
             this.btnOrdenesCompra = new Guna.UI2.WinForms.Guna2Button();
             this.btnRequisiciones = new Guna.UI2.WinForms.Guna2Button();
             this.pn2 = new System.Windows.Forms.Panel();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnAgregarCambios = new Guna.UI2.WinForms.Guna2Button();
+            this.btnEditar = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.txtNombreEmpresa = new Guna.UI2.WinForms.Guna2TextBox();
+            this.pbLogo = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.pnlSubMenuOrdenCompra = new System.Windows.Forms.Panel();
             this.btnOrdenCompraRequisicion = new Guna.UI2.WinForms.Guna2Button();
             this.btnOrdenCompra = new Guna.UI2.WinForms.Guna2Button();
@@ -61,25 +68,18 @@
             this.guna2Button9 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button8 = new Guna.UI2.WinForms.Guna2Button();
             this.dgvOrdenesRequisicion = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.txtNombreEmpresa = new Guna.UI2.WinForms.Guna2TextBox();
-            this.pbLogo = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.pbMenuEmpresa = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.btnEditar = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.btnAgregarCambios = new Guna.UI2.WinForms.Guna2Button();
             this.pn1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMenuEmpresa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.pn2.SuspendLayout();
+            this.guna2Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.pnlSubMenuOrdenCompra.SuspendLayout();
             this.pnMantenimientos.SuspendLayout();
             this.pnlRequisiciones.SuspendLayout();
             this.pnIventario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrdenesRequisicion)).BeginInit();
-            this.guna2Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbMenuEmpresa)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEditar)).BeginInit();
             this.SuspendLayout();
             // 
             // pn1
@@ -99,6 +99,30 @@
             this.pn1.Name = "pn1";
             this.pn1.Size = new System.Drawing.Size(1370, 69);
             this.pn1.TabIndex = 0;
+            // 
+            // pbMenuEmpresa
+            // 
+            this.pbMenuEmpresa.BackColor = System.Drawing.Color.Transparent;
+            this.pbMenuEmpresa.Image = global::ModuloDeCompra_BD.Properties.Resources.arrow_down_triangle_icon_183095;
+            this.pbMenuEmpresa.ImageRotate = 0F;
+            this.pbMenuEmpresa.Location = new System.Drawing.Point(1310, 23);
+            this.pbMenuEmpresa.Name = "pbMenuEmpresa";
+            this.pbMenuEmpresa.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.pbMenuEmpresa.Size = new System.Drawing.Size(24, 25);
+            this.pbMenuEmpresa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbMenuEmpresa.TabIndex = 7;
+            this.pbMenuEmpresa.TabStop = false;
+            this.pbMenuEmpresa.UseTransparentBackground = true;
+            // 
+            // guna2CirclePictureBox1
+            // 
+            this.guna2CirclePictureBox1.ImageRotate = 0F;
+            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(1305, 20);
+            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
+            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(35, 31);
+            this.guna2CirclePictureBox1.TabIndex = 6;
+            this.guna2CirclePictureBox1.TabStop = false;
             // 
             // btnReportes
             // 
@@ -232,6 +256,76 @@
             this.pn2.Name = "pn2";
             this.pn2.Size = new System.Drawing.Size(1370, 663);
             this.pn2.TabIndex = 1;
+            // 
+            // guna2Panel1
+            // 
+            this.guna2Panel1.BackColor = System.Drawing.Color.Gray;
+            this.guna2Panel1.Controls.Add(this.btnAgregarCambios);
+            this.guna2Panel1.Controls.Add(this.btnEditar);
+            this.guna2Panel1.Controls.Add(this.txtNombreEmpresa);
+            this.guna2Panel1.Controls.Add(this.pbLogo);
+            this.guna2Panel1.Location = new System.Drawing.Point(882, -15);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Size = new System.Drawing.Size(452, 337);
+            this.guna2Panel1.TabIndex = 8;
+            this.guna2Panel1.Visible = false;
+            // 
+            // btnAgregarCambios
+            // 
+            this.btnAgregarCambios.BorderRadius = 4;
+            this.btnAgregarCambios.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAgregarCambios.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAgregarCambios.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAgregarCambios.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAgregarCambios.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnAgregarCambios.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarCambios.ForeColor = System.Drawing.Color.White;
+            this.btnAgregarCambios.Location = new System.Drawing.Point(148, 240);
+            this.btnAgregarCambios.Name = "btnAgregarCambios";
+            this.btnAgregarCambios.Size = new System.Drawing.Size(180, 45);
+            this.btnAgregarCambios.TabIndex = 3;
+            this.btnAgregarCambios.Text = "Agregar cambios";
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Image = global::ModuloDeCompra_BD.Properties.Resources.Edit_icon_icons1;
+            this.btnEditar.ImageRotate = 0F;
+            this.btnEditar.Location = new System.Drawing.Point(369, 198);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btnEditar.Size = new System.Drawing.Size(38, 36);
+            this.btnEditar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnEditar.TabIndex = 2;
+            this.btnEditar.TabStop = false;
+            // 
+            // txtNombreEmpresa
+            // 
+            this.txtNombreEmpresa.BorderRadius = 4;
+            this.txtNombreEmpresa.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtNombreEmpresa.DefaultText = "";
+            this.txtNombreEmpresa.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtNombreEmpresa.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtNombreEmpresa.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtNombreEmpresa.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtNombreEmpresa.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtNombreEmpresa.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtNombreEmpresa.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtNombreEmpresa.Location = new System.Drawing.Point(110, 198);
+            this.txtNombreEmpresa.Name = "txtNombreEmpresa";
+            this.txtNombreEmpresa.PlaceholderText = "";
+            this.txtNombreEmpresa.SelectedText = "";
+            this.txtNombreEmpresa.Size = new System.Drawing.Size(252, 36);
+            this.txtNombreEmpresa.TabIndex = 1;
+            // 
+            // pbLogo
+            // 
+            this.pbLogo.ImageRotate = 0F;
+            this.pbLogo.Location = new System.Drawing.Point(157, 32);
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.pbLogo.Size = new System.Drawing.Size(162, 151);
+            this.pbLogo.TabIndex = 0;
+            this.pbLogo.TabStop = false;
             // 
             // pnlSubMenuOrdenCompra
             // 
@@ -587,100 +681,6 @@
             this.dgvOrdenesRequisicion.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvOrdenesRequisicion.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
-            // guna2Panel1
-            // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.Gray;
-            this.guna2Panel1.Controls.Add(this.btnAgregarCambios);
-            this.guna2Panel1.Controls.Add(this.btnEditar);
-            this.guna2Panel1.Controls.Add(this.txtNombreEmpresa);
-            this.guna2Panel1.Controls.Add(this.pbLogo);
-            this.guna2Panel1.Location = new System.Drawing.Point(882, -15);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(452, 337);
-            this.guna2Panel1.TabIndex = 8;
-            this.guna2Panel1.Visible = false;
-            // 
-            // txtNombreEmpresa
-            // 
-            this.txtNombreEmpresa.BorderRadius = 4;
-            this.txtNombreEmpresa.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtNombreEmpresa.DefaultText = "";
-            this.txtNombreEmpresa.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtNombreEmpresa.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtNombreEmpresa.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtNombreEmpresa.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtNombreEmpresa.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNombreEmpresa.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtNombreEmpresa.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNombreEmpresa.Location = new System.Drawing.Point(110, 198);
-            this.txtNombreEmpresa.Name = "txtNombreEmpresa";
-            this.txtNombreEmpresa.PlaceholderText = "";
-            this.txtNombreEmpresa.SelectedText = "";
-            this.txtNombreEmpresa.Size = new System.Drawing.Size(252, 36);
-            this.txtNombreEmpresa.TabIndex = 1;
-            // 
-            // pbLogo
-            // 
-            this.pbLogo.ImageRotate = 0F;
-            this.pbLogo.Location = new System.Drawing.Point(157, 32);
-            this.pbLogo.Name = "pbLogo";
-            this.pbLogo.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.pbLogo.Size = new System.Drawing.Size(162, 151);
-            this.pbLogo.TabIndex = 0;
-            this.pbLogo.TabStop = false;
-            // 
-            // pbMenuEmpresa
-            // 
-            this.pbMenuEmpresa.BackColor = System.Drawing.Color.Transparent;
-            this.pbMenuEmpresa.Image = global::ModuloDeCompra_BD.Properties.Resources.arrow_down_triangle_icon_183095;
-            this.pbMenuEmpresa.ImageRotate = 0F;
-            this.pbMenuEmpresa.Location = new System.Drawing.Point(1310, 23);
-            this.pbMenuEmpresa.Name = "pbMenuEmpresa";
-            this.pbMenuEmpresa.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.pbMenuEmpresa.Size = new System.Drawing.Size(24, 25);
-            this.pbMenuEmpresa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbMenuEmpresa.TabIndex = 7;
-            this.pbMenuEmpresa.TabStop = false;
-            this.pbMenuEmpresa.UseTransparentBackground = true;
-            // 
-            // guna2CirclePictureBox1
-            // 
-            this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(1305, 20);
-            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(35, 31);
-            this.guna2CirclePictureBox1.TabIndex = 6;
-            this.guna2CirclePictureBox1.TabStop = false;
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.Image = global::ModuloDeCompra_BD.Properties.Resources.Edit_icon_icons1;
-            this.btnEditar.ImageRotate = 0F;
-            this.btnEditar.Location = new System.Drawing.Point(369, 198);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btnEditar.Size = new System.Drawing.Size(38, 36);
-            this.btnEditar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnEditar.TabIndex = 2;
-            this.btnEditar.TabStop = false;
-            // 
-            // btnAgregarCambios
-            // 
-            this.btnAgregarCambios.BorderRadius = 4;
-            this.btnAgregarCambios.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnAgregarCambios.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnAgregarCambios.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnAgregarCambios.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAgregarCambios.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnAgregarCambios.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarCambios.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarCambios.Location = new System.Drawing.Point(148, 240);
-            this.btnAgregarCambios.Name = "btnAgregarCambios";
-            this.btnAgregarCambios.Size = new System.Drawing.Size(180, 45);
-            this.btnAgregarCambios.TabIndex = 3;
-            this.btnAgregarCambios.Text = "Agregar cambios";
-            // 
             // FrmMenu3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -692,19 +692,20 @@
             this.Name = "FrmMenu3";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Módulo de compras";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMenu3_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.pn1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbMenuEmpresa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             this.pn2.ResumeLayout(false);
+            this.guna2Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnEditar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.pnlSubMenuOrdenCompra.ResumeLayout(false);
             this.pnMantenimientos.ResumeLayout(false);
             this.pnlRequisiciones.ResumeLayout(false);
             this.pnIventario.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrdenesRequisicion)).EndInit();
-            this.guna2Panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbMenuEmpresa)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEditar)).EndInit();
             this.ResumeLayout(false);
 
         }
