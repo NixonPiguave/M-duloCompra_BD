@@ -96,6 +96,12 @@ namespace ModuloDeCompra_BD.Formulario
                     {
                         dgvProducto.DataSource = CsComandosSql.RetornaDatos("select ID_Producto, NomProducto, Costo from Producto");
                         MessageBox.Show("Producto agregado correctamente");
+                        txtNombreProducto.Text = string.Empty;
+                        txtPrecioUnitario.Text = string.Empty;
+                        cmbIVA.SelectedIndex = -1;
+                        cmbEstadoProducto.SelectedIndex = -1;
+                        txtListadoCategory.Text = string.Empty;
+                        txtListadoProvee.Text = string.Empty;
                     }
                     else
                     {
@@ -293,6 +299,12 @@ namespace ModuloDeCompra_BD.Formulario
                     {
                         dgvProducto.DataSource = CsComandosSql.RetornaDatos("select ID_Producto, NomProducto, Costo from Producto");
                         MessageBox.Show("Producto editado correctamente");
+                        txtNombreProducto.Text = string.Empty;
+                        txtPrecioUnitario.Text = string.Empty;
+                        cmbIVA.SelectedIndex = -1;
+                        cmbEstadoProducto.SelectedIndex = -1;
+                        txtListadoCategory.Text = string.Empty;
+                        txtListadoProvee.Text = string.Empty;
                     }
                     else
                     {
