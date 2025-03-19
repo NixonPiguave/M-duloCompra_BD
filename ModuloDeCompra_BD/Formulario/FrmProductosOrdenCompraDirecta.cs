@@ -1,4 +1,5 @@
 ﻿using ModuloDeCompra_BD.Clases;
+using ModuloDeCompra_BD.Formulario;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,8 +17,10 @@ namespace Menú.Formularios
     {
         DataTable tabla = new DataTable();
         int IDUsuario;
+        string proveedor;
         bool primerEjecucion = true;
         public int IDUsuario1 { get => IDUsuario; set => IDUsuario = value; }
+        public string Proveedor { get => proveedor; set => proveedor = value; }
 
         public FrmProductosOrdenCompraDirecta()
         {
@@ -51,8 +54,8 @@ namespace Menú.Formularios
             nudCantidad.Value = 1;
             nudServicio.Minimum = 1;
             nudServicio.Value = 1;
-            dgvListadoProductos.DataSource = CsComandosSql.RetornaDatos("select ID_Producto, NomProducto from Producto WHERE EstadoProducto='Activo'");
-            dgvListadoServicio.DataSource = CsComandosSql.RetornaDatos("select ID_Servicio, Nom_Servicio from Servicio WHERE EstadoServicio='Activo'");
+            dgvListadoProductos.DataSource = CsComandosSql.RetornaDatos($"select Pr.ID_Producto, Pr.NomProducto from Producto as Pr inner join Proveedores as P on Pr.ID_Proveedor = P.ID_Proveedor WHERE EstadoProducto='Activo' and P.Nombre_Proveedor = '{Proveedor}'");
+            dgvListadoServicio.DataSource = CsComandosSql.RetornaDatos($"select Pr.ID_Producto, Pr.NomProducto from Producto as Pr inner join Proveedores as P on Pr.ID_Proveedor = P.ID_Proveedor WHERE EstadoProducto='Activo' and P.Nombre_Proveedor = '{Proveedor}'");
         }
 
         private void txtFiltroProduc_KeyUp(object sender, KeyEventArgs e)
@@ -188,59 +191,69 @@ namespace Menú.Formularios
 
         private void btnCrearRequi_Click(object sender, EventArgs e)
         {
-            //int idGenerado = -1;
-            //string query = $@"
-            //        DECLARE @TempID INT;
-            //        EXEC SpOrdenCompra @cadena = '{xmlOrdenCompra}', @IDIngresada = @TempID OUTPUT;
-            //        SELECT @TempID AS IDGenerado;";
+            int idGenerado = -1;
+            string xmlRequisicion = $@"
+            <Requisiciones>
+              <Requisicion>
+                <FechaRequisicion>{DateTime.Now.ToString("yyyy-MM-dd")}</FechaRequisicion>
+                <EstadoRequisicion>Pendiente</EstadoRequisicion>
+                <Observacion></Observacion>
+                <IDUsuario>{IDUsuario1}</IDUsuario>
+                <MotivoRequisicion>{txtMotivo.Text}</MotivoRequisicion>
+              </Requisicion>
+            </Requisiciones>";
+            string query = $@"
+                    DECLARE @TempID INT;
+                    EXEC SpOrdenCompra @cadena = '{xmlRequisicion}', @IDIngresada = @TempID OUTPUT;
+                    SELECT @TempID AS IDGenerado;";
 
-            //DataTable dt = CsComandosSql.RetornaDatos(query);
+            DataTable dt = CsComandosSql.RetornaDatos(query);
 
-            //if (dt.Rows.Count > 0)
-            //{
-            //    idGenerado = Convert.ToInt32(dt.Rows[0]["IDGenerado"]);
-            //}
-            //foreach (DataGridViewRow fila in dgvProductosAgregados.Rows)
-            //{
-            //    if (fila.IsNewRow)
-            //        continue;
+            if (dt.Rows.Count > 0)
+            {
+                idGenerado = Convert.ToInt32(dt.Rows[0]["IDGenerado"]);
+            }
+            foreach (DataGridViewRow fila in dgvProductosAgregados.Rows)
+            {
+                if (fila.IsNewRow)
+                    continue;
 
-            //    string idProducto = fila.Cells["ID_Producto"].Value?.ToString();
-            //    string idServicio = fila.Cells["ID_Servicio"].Value?.ToString();
-            //    string cantidad = fila.Cells["Cantidad"].Value?.ToString();
-            //    string costo = fila.Cells["Costo"].Value?.ToString();
-            //    string descuento = fila.Cells["Descuento"].Value?.ToString();
+                string idProducto = fila.Cells["ID_Producto"].Value?.ToString();
+                string idServicio = fila.Cells["ID_Servicio"].Value?.ToString();
+                string cantidad = fila.Cells["Cantidad"].Value?.ToString();
+                string costo = fila.Cells["Costo"].Value?.ToString();
+                string descuento = fila.Cells["Descuento"].Value?.ToString();
 
-            //    costo = costo.Replace(',', '.');
-            //    descuento = descuento.Replace(',', '.');
+                costo = costo.Replace(',', '.');
+                descuento = descuento.Replace(',', '.');
 
-            //    string xmlDetalleOrden = $@"
-            //            <DETALLEORDENES>
-            //                <DETALLEORDEN>
-            //                    <CANTIDAD>{cantidad}</CANTIDAD>
-            //                    <COSTO>{costo}</COSTO>
-            //                    <DESCUENTO>{descuento}</DESCUENTO>
-            //                    <IDSERVICIO>{(string.IsNullOrEmpty(idServicio) ? "NULL" : idServicio)}</IDSERVICIO>
-            //                    <IDPRODUCTO>{(string.IsNullOrEmpty(idProducto) ? "NULL" : idProducto)}</IDPRODUCTO>
-            //                    <IDORDEN>{idGenerado}</IDORDEN>
-            //                    <ESTADO>Pendiente</ESTADO>
-            //                </DETALLEORDEN>
-            //            </DETALLEORDENES>";
+                string xmlDetalleOrden = $@"
+                        <DETALLEORDENES>
+                            <DETALLEORDEN>
+                                <CANTIDAD>{cantidad}</CANTIDAD>
+                                <COSTO>{costo}</COSTO>
+                                <DESCUENTO>{descuento}</DESCUENTO>
+                                <IDSERVICIO>{(string.IsNullOrEmpty(idServicio) ? "NULL" : idServicio)}</IDSERVICIO>
+                                <IDPRODUCTO>{(string.IsNullOrEmpty(idProducto) ? "NULL" : idProducto)}</IDPRODUCTO>
+                                <IDORDEN>{idGenerado}</IDORDEN>
+                                <ESTADO>Pendiente</ESTADO>
+                            </DETALLEORDEN>
+                        </DETALLEORDENES>";
 
-            //    string queryD = $"exec SpDetalleOrden @XMLdetalleOrden = '{xmlDetalleOrden}'";
+                string queryD = $"exec SpDetalleOrden @XMLdetalleOrden = '{xmlDetalleOrden}'";
 
-            //    try
-            //    {
-            //        if (!CsComandosSql.InserDeletUpdate(queryD))
-            //            MessageBox.Show("Error al insertar detalle de orden");
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        MessageBox.Show("Error: " + ex.Message);
-            //    }
-            //}
-            //tabla.Clear();
-            //txtMotivo.Text = string.Empty;
+                try
+                {
+                    if (!CsComandosSql.InserDeletUpdate(queryD))
+                        MessageBox.Show("Error al insertar detalle de orden");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+            tabla.Clear();
+            txtMotivo.Text = string.Empty;
             this.Close();
         }
     }
