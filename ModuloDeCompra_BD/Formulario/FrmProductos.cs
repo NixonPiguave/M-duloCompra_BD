@@ -119,54 +119,65 @@ namespace ModuloDeCompra_BD.Formulario
             else
             {
                 decimal precioU = 0;
-                string precioTexto = txtPrecioUnitario.Text.Trim(); 
-                                                                    
+                string precioTexto = txtPrecioUnitario.Text.Trim();
                 precioTexto = precioTexto.Replace(',', '.');
-
-                
                 if (!decimal.TryParse(precioTexto, NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out precioU))
                 {
                     MessageBox.Show("Precio no válido. Asegúrate de ingresar un número con punto decimal.");
-                    return; 
+                    return;
                 }
+
                 try
                 {
-                   
                     CsProducto producto = new CsProducto();
                     producto.Nom_Producto1 = txtNombreProducto.Text;
                     producto.Precio_Unit1 = precioU;
-                    string iva = Convert.ToString(cmbIVA.SelectedItem);
-                    if(cmbEstadoProducto.SelectedItem.ToString()=="Exento")
+                    if (cmbIVA.SelectedItem != null)
                     {
-                        producto.Iva1 = 'C';
+                        string iva = cmbIVA.SelectedItem.ToString();
+
+                        if (iva == "Exento")
+                        {
+                            producto.Iva1 = 'C';
+                        }
+                        else
+                        {
+                            string precioUFormatoSQL = iva.ToString(CultureInfo.InvariantCulture);
+                            precioUFormatoSQL = precioUFormatoSQL.Replace(',', '.');
+                            DataTable tb = CsComandosSql.RetornaDatos($"SELECT * FROM IVA WHERE Valor_IVA = '{precioUFormatoSQL}'");
+                            if (tb.Rows.Count > 0)
+                            {
+                                producto.Iva1 = Convert.ToChar(tb.Rows[0]["ID_IVA"]);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Error: No se encontró un valor de IVA válido en la base de datos.");
+                                return;
+                            }
+                        }
                     }
                     else
                     {
-                        string precioUFormatoSQL = iva.ToString(CultureInfo.InvariantCulture);
-                        precioUFormatoSQL = precioUFormatoSQL.Replace(',', '.');
-                        DataTable tb = CsComandosSql.RetornaDatos($"select * from IVA where Valor_IVA={precioUFormatoSQL}");
-                        producto.Iva1 = Convert.ToChar(tb.Rows[0]["ID_IVA"].ToString());
+                        MessageBox.Show("Seleccione un valor de IVA.");
+                        return;
                     }
                     producto.Estado1 = cmbEstadoProducto.SelectedItem.ToString();
-                    
-                    
                     producto.Proveedor1 = Id2;
-
                     if (producto.AñadirServicio())
                     {
-                        dgvService.DataSource = CsComandosSql.RetornaDatos("select ID_Servicio, Nom_Servicio, Costo from Servicio");
+                        dgvService.DataSource = CsComandosSql.RetornaDatos("SELECT ID_Servicio, Nom_Servicio, Costo FROM Servicio");
                         MessageBox.Show("Servicio agregado correctamente");
                     }
                     else
                     {
                         MessageBox.Show("Error al agregar Servicio, verifique que los datos sean correctos");
                     }
-
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error" + ex);
+                    MessageBox.Show("Error: " + ex.Message);
                 }
+
             }
         }
 
