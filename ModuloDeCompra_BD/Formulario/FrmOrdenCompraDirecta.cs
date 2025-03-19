@@ -18,6 +18,7 @@ namespace ModuloDeCompra_BD.Formulario
         int idUsuario;
         DataTable tabla = new DataTable();
         public int IdUsuario { get => idUsuario; set => idUsuario = value; }
+
         public FrmOrdenCompraDirecta()
         {
             InitializeComponent();
@@ -25,6 +26,12 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void FrmOrdenCompraDirecta_Load(object sender, EventArgs e)
         {
+            tabla.Columns.Add("Cantidad", typeof(int));
+            tabla.Columns.Add("Costo", typeof(decimal));
+            tabla.Columns.Add("Descuento", typeof(decimal));
+            tabla.Columns.Add("Producto/Servicio", typeof(string));
+            tabla.Columns.Add("ID_Servicio", typeof(int));
+            tabla.Columns.Add("ID_Producto", typeof(int));
             btnAgregarP.Visible = false;
             lbID.Visible = false;
             lbProduc.Visible = false;
@@ -60,22 +67,24 @@ namespace ModuloDeCompra_BD.Formulario
                         MessageBox.Show("La Fecha Límite debe ser mayor a la fecha actual.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
+
                     int idGenerado = -1;
                     string xmlOrdenCompra = $@"
-                    <ORDEN>
-                      <FECHAORDEN>{DateTime.Now.ToString("yyyy-MM-dd")}</FECHAORDEN>
-                      <FECHALIMITE>{dtpFechaLimite.Value.ToString("yyyy-MM-dd")}</FECHALIMITE>
-                      <ESTADORDEN>Pendiente</ESTADORDEN>
-                      <IDUSUARIO>{idUsuario}</IDUSUARIO>
-                      <IDPROVE>{idproveedor}</IDPROVE>
-                    </ORDEN>";
+            <ORDEN>
+              <FECHAORDEN>{DateTime.Now.ToString("yyyy-MM-dd")}</FECHAORDEN>
+              <FECHALIMITE>{dtpFechaLimite.Value.ToString("yyyy-MM-dd")}</FECHALIMITE>
+              <ESTADORDEN>Pendiente</ESTADORDEN>
+              <IDUSUARIO>{idUsuario}</IDUSUARIO>
+              <IDPROVE>{idproveedor}</IDPROVE>
+            </ORDEN>";
 
                     try
                     {
+                        // Crear la orden de compra
                         string query = $@"
-                        DECLARE @TempID INT;
-                        EXEC SpOrdenCompra @cadena = '{xmlOrdenCompra}', @IDIngresada = @TempID OUTPUT;
-                        SELECT @TempID AS IDGenerado;";
+                DECLARE @TempID INT;
+                EXEC SpOrdenCompra @cadena = '{xmlOrdenCompra}', @IDIngresada = @TempID OUTPUT;
+                SELECT @TempID AS IDGenerado;";
 
                         DataTable dt = CsComandosSql.RetornaDatos(query);
 
@@ -84,6 +93,7 @@ namespace ModuloDeCompra_BD.Formulario
                             idGenerado = Convert.ToInt32(dt.Rows[0]["IDGenerado"]);
                         }
 
+                        // Enviar el detalle de la orden
                         foreach (DataGridViewRow fila in dgvProductosAgregados.Rows)
                         {
                             if (fila.IsNewRow)
@@ -99,17 +109,17 @@ namespace ModuloDeCompra_BD.Formulario
                             descuento = descuento.Replace(',', '.');
 
                             string xmlDetalleOrden = $@"
-                            <DETALLEORDENES>
-                                <DETALLEORDEN>
-                                    <CANTIDAD>{cantidad}</CANTIDAD>
-                                    <COSTO>{costo}</COSTO>
-                                    <DESCUENTO>{descuento}</DESCUENTO>
-                                    <IDSERVICIO>{(string.IsNullOrEmpty(idServicio) ? "NULL" : idServicio)}</IDSERVICIO>
-                                    <IDPRODUCTO>{(string.IsNullOrEmpty(idProducto) ? "NULL" : idProducto)}</IDPRODUCTO>
-                                    <IDORDEN>{idGenerado}</IDORDEN>
-                                    <ESTADO>Pendiente</ESTADO>
-                                </DETALLEORDEN>
-                            </DETALLEORDENES>";
+                    <DETALLEORDENES>
+                        <DETALLEORDEN>
+                            <CANTIDAD>{cantidad}</CANTIDAD>
+                            <COSTO>{costo}</COSTO>
+                            <DESCUENTO>{descuento}</DESCUENTO>
+                            <IDSERVICIO>{(string.IsNullOrEmpty(idServicio) ? "NULL" : idServicio)}</IDSERVICIO>
+                            <IDPRODUCTO>{(string.IsNullOrEmpty(idProducto) ? "NULL" : idProducto)}</IDPRODUCTO>
+                            <IDORDEN>{idGenerado}</IDORDEN>
+                            <ESTADO>Pendiente</ESTADO>
+                        </DETALLEORDEN>
+                    </DETALLEORDENES>";
 
                             string queryD = $"exec SpDetalleOrden @XMLdetalleOrden = '{xmlDetalleOrden}'";
 
@@ -123,6 +133,8 @@ namespace ModuloDeCompra_BD.Formulario
                                 MessageBox.Show("Error: " + ex.Message);
                             }
                         }
+
+                        tabla.Clear();
                         dgvProductosAgregados.DataSource = null;
                         txtMotivo.Text = string.Empty;
                     }
@@ -130,13 +142,13 @@ namespace ModuloDeCompra_BD.Formulario
                     {
                         MessageBox.Show($"Error: {ex.Message}");
                     }
+
                     MessageBox.Show("La orden ha sido guardada correctamente.");
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error: " + ex.Message, "Error al guardar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
             }
             else
             {
@@ -227,9 +239,17 @@ namespace ModuloDeCompra_BD.Formulario
                         break;
                     }
                 }
+
                 if (!Verificar)
                 {
-                    tabla.Rows.Add(txtID.Text, null, txtProducto.Text, nudCantidad.Value);
+                    int cantidad = (int)nudCantidad.Value;
+                    decimal costo = 0;
+                    decimal descuento = 0;
+                    string nombreProducto = txtProducto.Text;
+                    int idProducto = Convert.ToInt32(txtID.Text);
+
+                    tabla.Rows.Add(cantidad, costo, descuento, nombreProducto, null, idProducto);
+
                     dgvProductosAgregados.DataSource = tabla;
                     txtProducto.Text = string.Empty;
                     txtID.Text = string.Empty;
@@ -244,6 +264,7 @@ namespace ModuloDeCompra_BD.Formulario
             {
                 MessageBox.Show("Rellene los campos por favor");
             }
+
         }
 
         private void btnServicio_Click(object sender, EventArgs e)
@@ -279,12 +300,22 @@ namespace ModuloDeCompra_BD.Formulario
                     if (txtServicio.Text == servicio)
                     {
                         Verificar = true;
+                        break;
                     }
                 }
+
                 if (!Verificar)
                 {
-                    tabla.Rows.Add(null, txtIDServi.Text, txtServicio.Text, nudServicio.Value);
+                    int cantidad = (int)nudServicio.Value;
+                    decimal costo = 0;
+                    decimal descuento = 0;
+                    string nombreServicio = txtServicio.Text;
+                    int idServicio = Convert.ToInt32(txtIDServi.Text);
+
+                    tabla.Rows.Add(cantidad, costo, descuento, nombreServicio, idServicio, null);
+
                     dgvProductosAgregados.DataSource = tabla;
+
                     txtServicio.Text = string.Empty;
                     nudServicio.Value = 1;
                     txtIDServi.Text = string.Empty;
