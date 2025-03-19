@@ -190,6 +190,7 @@
             this.btnRecepcion.Size = new System.Drawing.Size(147, 45);
             this.btnRecepcion.TabIndex = 2;
             this.btnRecepcion.Text = "Recepción ";
+            this.btnRecepcion.Click += new System.EventHandler(this.btnRecepcion_Click);
             // 
             // btnOrdenesCompra
             // 

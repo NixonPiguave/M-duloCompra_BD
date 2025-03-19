@@ -90,6 +90,12 @@
     <Compile Include="Formulario\FrmOrdenCompraDirecta.Designer.cs">
       <DependentUpon>FrmOrdenCompraDirecta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formulario\FrmRecepcionCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\FrmRecepcionCompra.Designer.cs">
+      <DependentUpon>FrmRecepcionCompra.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formulario\FrmReportes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -315,6 +321,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\FrmOrdenCompraDirecta.resx">
       <DependentUpon>FrmOrdenCompraDirecta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\FrmRecepcionCompra.resx">
+      <DependentUpon>FrmRecepcionCompra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\FrmReportes.resx">
       <DependentUpon>FrmReportes.cs</DependentUpon>

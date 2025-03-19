@@ -295,5 +295,15 @@ namespace Menú
                 }
             }
         }
+
+        private void btnRecepcion_Click(object sender, EventArgs e)
+        {
+            FrmRecepcionCompra recepcionCompra = new FrmRecepcionCompra();
+            pnIventario.Visible = false;
+            pnlRequisiciones.Visible = false;
+            pnMantenimientos.Visible = false;
+            pnlSubMenuOrdenCompra.Visible = false;
+            openChildForm(recepcionCompra);
+        }
     }
 }
