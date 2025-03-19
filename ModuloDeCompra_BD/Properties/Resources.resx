@@ -139,6 +139,9 @@
   <data name="user_account_person_avatar_icon_131248" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user_account_person_avatar_icon_131248.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="images" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\images.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="imagen_desenfocada" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imagen_desenfocada1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -157,7 +160,7 @@
   <data name="arrow_down_triangle_icon_183095" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\arrow_down_triangle_icon_183095.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="images" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\images.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="masculine-avatar-user-with-suit_icon-icons.com_68296" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\masculine-avatar-user-with-suit_icon-icons.com_68296.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

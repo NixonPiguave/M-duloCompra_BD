@@ -48,14 +48,28 @@ namespace ModuloDeCompra_BD.Formulario
                 empresa.Logo1 = imagenActual;
             }
 
-            if (empresa.ModificarEmpresa())
+            bool resultado;
+
+            string queryVerificar = $"Select ID_Empresa FROM Empresa WHERE ID_Empresa = {empresa.ID_Empresa1}";
+            bool existe = CsComandosSql.verificar(queryVerificar);
+
+            if (existe)
             {
-                MessageBox.Show("Empresa modificada correctamente.");
+                resultado = empresa.ModificarEmpresa();
+            }
+            else
+            {
+                resultado = empresa.AgregarEmpresa();
+            }
+
+            if (resultado)
+            {
+                MessageBox.Show(existe ? "Empresa modificada correctamente." : "Empresa agregada correctamente.");
                 this.Close();
             }
             else
             {
-                MessageBox.Show("Error al modificar la empresa.");
+                MessageBox.Show("Error al realizar la operación.");
             }
         }
 
