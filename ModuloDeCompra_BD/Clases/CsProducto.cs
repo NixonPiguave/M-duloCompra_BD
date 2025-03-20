@@ -26,22 +26,26 @@ namespace ModuloDeCompra_BD.Clases
         public int Categoria1 { get => Categoria; set => Categoria = value; }
         public int Proveedor1 { get => Proveedor; set => Proveedor = value; }
 
-        public bool AñadirProducto()
+        public bool AñadirProducto(int idBodega)
         {
             string precioUFormatoSQL = Precio_Unit.ToString(CultureInfo.InvariantCulture);
+
             string cadenaXML = $@"<Productos>
-                    <Producto>
-                        <NomProducto>{Nom_Producto}</NomProducto>
-                        <Costo>{precioUFormatoSQL}</Costo>
-                        <EstadoProducto>{Estado}</EstadoProducto>
-                        <ID_CAT>{Categoria}</ID_CAT>
-                        <ID_IVA>{Iva}</ID_IVA>
-                        <ID_Proveedor>{Proveedor}</ID_Proveedor>
-                    </Producto>
-                </Productos>";
-            string query = $@"exec spAgregarProducto '{cadenaXML}'";
+                <Producto>
+                    <NomProducto>{Nom_Producto}</NomProducto>
+                    <Costo>{precioUFormatoSQL}</Costo>
+                    <EstadoProducto>{Estado}</EstadoProducto>
+                    <ID_CAT>{Categoria}</ID_CAT>
+                    <ID_IVA>{Iva}</ID_IVA>
+                    <ID_Proveedor>{Proveedor}</ID_Proveedor>
+                </Producto>
+            </Productos>";
+
+            
+            string query = $@"exec spAgregarProducto '{cadenaXML}', {idBodega}";
             return CsComandosSql.InserDeletUpdate(query);
         }
+
         public bool AñadirServicio()
         {
             string precioUFormatoSQL = Precio_Unit.ToString(CultureInfo.InvariantCulture);

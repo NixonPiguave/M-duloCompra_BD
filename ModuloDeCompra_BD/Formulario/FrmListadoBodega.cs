@@ -40,6 +40,7 @@ namespace ModuloDeCompra_BD.Formulario
             this.Close();
         }
 
+
         private void txtBuscarBodega_KeyUp(object sender, KeyEventArgs e)
         {
             dgvListadoUbiBodega.DataSource = bodega.ListaBodega(txtBuscarBodega.Text);

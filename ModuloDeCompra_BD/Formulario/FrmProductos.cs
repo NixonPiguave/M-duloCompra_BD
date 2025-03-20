@@ -55,61 +55,81 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (cbTipoP.SelectedItem.ToString()=="Producto")
+            if (cbTipoP.SelectedItem.ToString() == "Producto")
             {
                 decimal precioU = 0;
-                string precioTexto = txtPrecioUnitario.Text.Trim(); 
-                                                                    
+                string precioTexto = txtPrecioUnitario.Text.Trim();
                 precioTexto = precioTexto.Replace(',', '.');
 
-               
                 if (!decimal.TryParse(precioTexto, NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out precioU))
                 {
                     MessageBox.Show("Precio no válido. Asegúrate de ingresar un número con punto decimal.");
                     return;
                 }
+
                 try
                 {
                     CsProducto producto = new CsProducto();
                     producto.Nom_Producto1 = txtNombreProducto.Text;
                     producto.Precio_Unit1 = precioU;
-                    if(cmbIVA.SelectedItem.ToString()== "Exento")
+
+                    if (cmbIVA.SelectedItem.ToString() == "Exento")
                     {
                         producto.Iva1 = 'C';
                     }
                     else
                     {
                         string iva = cmbIVA.SelectedItem.ToString();
-                        producto.Estado1 = cmbEstadoProducto.SelectedItem.ToString();
+                       
                         string precioUFormatoSQL = iva.ToString(CultureInfo.InvariantCulture);
                         precioUFormatoSQL = precioUFormatoSQL.Replace(',', '.');
-                        DataTable tb = CsComandosSql.RetornaDatos($"select * from IVA where Valor_IVA={precioUFormatoSQL}");
-                        var v = Convert.ToChar(tb.Rows[0]["ID_IVA"]);
-                        producto.Iva1 = v;
-                    }
-                    producto.Estado1 = cmbEstadoProducto.SelectedItem.ToString();
-                    
+                        DataTable tb = CsComandosSql.RetornaDatos($"SELECT * FROM IVA WHERE Valor_IVA = '{precioUFormatoSQL}'");
 
+                        if (tb.Rows.Count > 0)
+                        {
+                            var v = Convert.ToChar(tb.Rows[0]["ID_IVA"]);
+                            producto.Iva1 = v;
+                        }
+                        else
+                        {
+                            MessageBox.Show("El IVA seleccionado no existe en la base de datos.");
+                            return; 
+                        }
+                    }
+
+                    producto.Estado1 = cmbEstadoProducto.SelectedItem.ToString();
                     producto.Categoria1 = Id;
                     producto.Proveedor1 = Id2;
 
-                    if (producto.AñadirProducto())
+                   
+                    string ubicacionBodega = txtListadoUbiBodega.Text.Trim();
+                    DataTable ubicacionBodegaData = CsComandosSql.RetornaDatos($"SELECT ID_Bodega FROM Bodega WHERE Ubicacion = '{ubicacionBodega}'");
+
+                    if (ubicacionBodegaData.Rows.Count > 0)
                     {
-                        dgvProducto.DataSource = CsComandosSql.RetornaDatos("select ID_Producto, NomProducto, Costo from Producto");
-                        MessageBox.Show("Producto agregado correctamente");
-                        txtNombreProducto.Text = string.Empty;
-                        txtPrecioUnitario.Text = string.Empty;
-                        cmbIVA.SelectedIndex = -1;
-                        cmbEstadoProducto.SelectedIndex = -1;
-                        txtListadoCategory.Text = string.Empty;
-                        txtListadoProvee.Text = string.Empty;
+                        int idBodega = Convert.ToInt32(ubicacionBodegaData.Rows[0]["ID_Bodega"]);
+
+                        if (producto.AñadirProducto(idBodega))
+                        {
+                            dgvProducto.DataSource = CsComandosSql.RetornaDatos("select ID_Producto, NomProducto, Costo from Producto");
+                            MessageBox.Show("Producto agregado correctamente");
+                            txtNombreProducto.Text = string.Empty;
+                            txtPrecioUnitario.Text = string.Empty;
+                            cmbIVA.SelectedIndex = -1;
+                            cmbEstadoProducto.SelectedIndex = -1;
+                            txtListadoCategory.Text = string.Empty;
+                            txtListadoProvee.Text = string.Empty;
+                            txtListadoUbiBodega.Text = string.Empty;  
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error al agregar producto, verifique que los datos sean correctos");
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Error al agregar producto, verifique que los datos sean correctos");
+                        MessageBox.Show("Ubicación de bodega no válida.");
                     }
-                    
-                    
                 }
                 catch (Exception ex)
                 {
@@ -219,6 +239,7 @@ namespace ModuloDeCompra_BD.Formulario
             if (cbTipoP.SelectedItem.ToString() == "Servicio")
             {
                 btnListadoCategoria.Enabled = false;
+                btnListadoUbiBodega.Enabled = false;
             }
             else
                 btnListadoCategoria.Enabled = true;
@@ -383,6 +404,18 @@ namespace ModuloDeCompra_BD.Formulario
             }
         }
 
-        
+        private void LimpiarCampos()
+        {
+            txtNombreProducto.Text = string.Empty;
+            txtPrecioUnitario.Text = string.Empty;
+            cmbIVA.SelectedIndex = -1;
+            cmbEstadoProducto.SelectedIndex = -1;
+            txtListadoCategory.Text = string.Empty;
+            txtListadoProvee.Text = string.Empty;
+            txtListadoUbiBodega.Text = string.Empty;  // Limpiar el campo de la ubicación
+        }
+
+
+
     }
 }
