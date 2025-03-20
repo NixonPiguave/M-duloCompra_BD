@@ -31,23 +31,23 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_IncioSesion));
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.pbxOjo = new System.Windows.Forms.PictureBox();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txtUser = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnLogin = new Guna.UI2.WinForms.Guna2GradientButton();
             this.txtContraseña = new Guna.UI2.WinForms.Guna2TextBox();
             this.pnlMover = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.btnCerrar = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbxOjo = new System.Windows.Forms.PictureBox();
             this.guna2Panel1.SuspendLayout();
             this.guna2GradientPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.guna2GradientPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxOjo)).BeginInit();
             this.pnlMover.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxOjo)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Panel1
@@ -73,17 +73,6 @@
             this.guna2GradientPanel2.Name = "guna2GradientPanel2";
             this.guna2GradientPanel2.Size = new System.Drawing.Size(458, 466);
             this.guna2GradientPanel2.TabIndex = 6;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(148, 258);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(155, 177);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
             // 
             // label2
             // 
@@ -121,18 +110,6 @@
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
             this.guna2GradientPanel1.Size = new System.Drawing.Size(452, 466);
             this.guna2GradientPanel1.TabIndex = 5;
-            // 
-            // pbxOjo
-            // 
-            this.pbxOjo.BackColor = System.Drawing.Color.Transparent;
-            this.pbxOjo.Image = global::ModuloDeCompra_BD.Properties.Resources.ojo_cerrado1;
-            this.pbxOjo.Location = new System.Drawing.Point(350, 249);
-            this.pbxOjo.Name = "pbxOjo";
-            this.pbxOjo.Size = new System.Drawing.Size(47, 36);
-            this.pbxOjo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbxOjo.TabIndex = 5;
-            this.pbxOjo.TabStop = false;
-            this.pbxOjo.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // guna2HtmlLabel1
             // 
@@ -256,6 +233,29 @@
             this.btnCerrar.UseTransparentBackground = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(148, 258);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(155, 177);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pbxOjo
+            // 
+            this.pbxOjo.BackColor = System.Drawing.Color.Transparent;
+            this.pbxOjo.Image = global::ModuloDeCompra_BD.Properties.Resources.ojo_cerrado1;
+            this.pbxOjo.Location = new System.Drawing.Point(350, 249);
+            this.pbxOjo.Name = "pbxOjo";
+            this.pbxOjo.Size = new System.Drawing.Size(47, 36);
+            this.pbxOjo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxOjo.TabIndex = 5;
+            this.pbxOjo.TabStop = false;
+            this.pbxOjo.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
             // Frm_IncioSesion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -271,11 +271,11 @@
             this.guna2Panel1.ResumeLayout(false);
             this.guna2GradientPanel2.ResumeLayout(false);
             this.guna2GradientPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.guna2GradientPanel1.ResumeLayout(false);
             this.guna2GradientPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxOjo)).EndInit();
             this.pnlMover.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxOjo)).EndInit();
             this.ResumeLayout(false);
 
         }

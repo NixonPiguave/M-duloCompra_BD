@@ -173,6 +173,16 @@ namespace ModuloDeCompra_BD.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap LogoDefault {
+            get {
+                object obj = ResourceManager.GetObject("LogoDefault", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap masculine_avatar_user_with_suit_icon_icons_com_68296 {
             get {
                 object obj = ResourceManager.GetObject("masculine-avatar-user-with-suit_icon-icons.com_68296", resourceCulture);

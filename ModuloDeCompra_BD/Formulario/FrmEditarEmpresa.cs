@@ -83,6 +83,7 @@ namespace ModuloDeCompra_BD.Formulario
 
             if (dgvEmpresa.Rows.Count > 0)
             {
+                pbLogo.SizeMode = PictureBoxSizeMode.StretchImage;
                 DataGridViewRow row = dgvEmpresa.Rows[0];
                 txtNombreEmpresa.Text = row.Cells["Nombre_Empresa"].Value.ToString();
 
@@ -92,6 +93,7 @@ namespace ModuloDeCompra_BD.Formulario
                     using (MemoryStream ms = new MemoryStream(imagenActual))
                     {
                         pbLogo.Image = Image.FromStream(ms);
+                        
                     }
                 }
             }
@@ -117,4 +119,5 @@ namespace ModuloDeCompra_BD.Formulario
             }
         }
     }
+
 }

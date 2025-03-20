@@ -16,12 +16,12 @@ using System.Windows.Forms;
 
 namespace Menú
 {
-    public partial class FrmMenu3: Form
+    public partial class FrmMenuComprador: Form
     {
         public string rol;
         //uwuasa
         int IDusuario;
-        public FrmMenu3()
+        public FrmMenuComprador()
         {
             InitializeComponent();
             CargarLogoEmpresa();
@@ -78,6 +78,13 @@ namespace Menú
             pnMantenimientos.Visible = false;
             pnlRequisiciones.Visible = false;
             dgvOrdenesRequisicion.DataSource = CsComandosSql.RetornaDatos("select * from Requisicion");
+
+            if(rol == "Empleado")
+            {
+                btnUsuarios.Visible = false;
+                guna2Button11.Visible = false; //btnProveedores
+                guna2Button14.Visible = false; //btnRoles
+            }
         }
 
         private void btnOrdenesCompra_Click(object sender, EventArgs e)
@@ -261,7 +268,7 @@ namespace Menú
             openChildForm(frmDirecta);
         }
 
-        private void FrmMenu3_FormClosing(object sender, FormClosingEventArgs e)
+        private void FrmMenuComprador_FormClosing(object sender, FormClosingEventArgs e)
         {
             string query = "insert into AuditoriaSesion (Usuario, Accion, Fecha, Detalles) values (SUSER_NAME(), 'CERRAR SESIÓN', GETDATE(), 'El usuario '+ SUSER_NAME() + ' ha cerrado sesión')";
             CsComandosSql.InserDeletUpdate(query);

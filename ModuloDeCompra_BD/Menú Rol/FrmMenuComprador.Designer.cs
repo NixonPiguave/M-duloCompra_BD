@@ -1,6 +1,6 @@
 ﻿namespace Menú
 {
-    partial class FrmMenu3
+    partial class FrmMenuComprador
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -34,7 +34,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenu3));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenuComprador));
             this.pn1 = new System.Windows.Forms.Panel();
             this.pbEditarEmpresa = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.btnReportes = new Guna.UI2.WinForms.Guna2Button();
@@ -96,7 +96,7 @@
             // 
             // pbEditarEmpresa
             // 
-            this.pbEditarEmpresa.Image = global::ModuloDeCompra_BD.Properties.Resources.LogoDefault;
+            this.pbEditarEmpresa.Image = global::ModuloDeCompra_BD.Properties.Resources.images;
             this.pbEditarEmpresa.ImageRotate = 0F;
             this.pbEditarEmpresa.Location = new System.Drawing.Point(1291, 12);
             this.pbEditarEmpresa.Name = "pbEditarEmpresa";
@@ -649,7 +649,7 @@
             this.dgvOrdenesRequisicion.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvOrdenesRequisicion.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
-            // FrmMenu3
+            // FrmMenuComprador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -657,10 +657,10 @@
             this.Controls.Add(this.pn2);
             this.Controls.Add(this.pn1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "FrmMenu3";
+            this.Name = "FrmMenuComprador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Módulo de compras";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMenu3_FormClosing);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMenuComprador_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.pn1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbEditarEmpresa)).EndInit();
@@ -693,7 +693,6 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button13;
         private Guna.UI2.WinForms.Guna2Button guna2Button12;
         private Guna.UI2.WinForms.Guna2Button guna2Button11;
-        private Guna.UI2.WinForms.Guna2Button btnUsuarios;
         private Guna.UI2.WinForms.Guna2Button guna2Button16;
         private Guna.UI2.WinForms.Guna2Button guna2Button15;
         private Guna.UI2.WinForms.Guna2Button guna2Button14;
@@ -708,6 +707,7 @@
         private Guna.UI2.WinForms.Guna2Button btnOrdenCompra;
         private Guna.UI2.WinForms.Guna2CirclePictureBox pbEditarEmpresa;
         private Guna.UI2.WinForms.Guna2DataGridView dgvEmpresa;
+        private Guna.UI2.WinForms.Guna2Button btnUsuarios;
     }
 }
 

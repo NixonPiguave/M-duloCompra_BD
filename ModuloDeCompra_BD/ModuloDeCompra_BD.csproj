@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -186,36 +201,6 @@
     <Compile Include="Formulario\FrmRequisiciones.Designer.cs">
       <DependentUpon>FrmRequisiciones.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formulario Usuarios\FrmCategorias.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formulario Usuarios\FrmCategorias.Designer.cs">
-      <DependentUpon>FrmCategorias.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formulario Usuarios\FrmDepartamentosUsuario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formulario Usuarios\FrmDepartamentosUsuario.Designer.cs">
-      <DependentUpon>FrmDepartamentosUsuario.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formulario Usuarios\FrmInicioUsuario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formulario Usuarios\FrmInicioUsuario.Designer.cs">
-      <DependentUpon>FrmInicioUsuario.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formulario Usuarios\FrmInventarioUsuario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formulario Usuarios\FrmInventarioUsuario.Designer.cs">
-      <DependentUpon>FrmInventarioUsuario.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formulario Usuarios\FrmProductosUsuarios.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formulario Usuarios\FrmProductosUsuarios.Designer.cs">
-      <DependentUpon>FrmProductosUsuarios.cs</DependentUpon>
-    </Compile>
     <Compile Include="Formulario\FrmBodega.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -306,6 +291,30 @@
     <Compile Include="Formulario\FrmServicios.Designer.cs">
       <DependentUpon>FrmServicios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Menú Rol\FrmMenuBodeguero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menú Rol\FrmMenuBodeguero.Designer.cs">
+      <DependentUpon>FrmMenuBodeguero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menú Rol\FrmMenuComprador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menú Rol\FrmMenuComprador.Designer.cs">
+      <DependentUpon>FrmMenuComprador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menú Rol\FrmMenuEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menú Rol\FrmMenuEmpleado.Designer.cs">
+      <DependentUpon>FrmMenuEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menú Rol\FrmMenuJefeDepartamental.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menú Rol\FrmMenuJefeDepartamental.Designer.cs">
+      <DependentUpon>FrmMenuJefeDepartamental.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reporte\dsreporte.Designer.cs">
@@ -370,21 +379,6 @@
     <EmbeddedResource Include="Formulario\FrmRequisiciones.resx">
       <DependentUpon>FrmRequisiciones.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formulario Usuarios\FrmCategorias.resx">
-      <DependentUpon>FrmCategorias.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formulario Usuarios\FrmDepartamentosUsuario.resx">
-      <DependentUpon>FrmDepartamentosUsuario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formulario Usuarios\FrmInicioUsuario.resx">
-      <DependentUpon>FrmInicioUsuario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formulario Usuarios\FrmInventarioUsuario.resx">
-      <DependentUpon>FrmInventarioUsuario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formulario Usuarios\FrmProductosUsuarios.resx">
-      <DependentUpon>FrmProductosUsuarios.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Formulario\FrmBodega.resx">
       <DependentUpon>FrmBodega.cs</DependentUpon>
     </EmbeddedResource>
@@ -429,6 +423,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\FrmServicios.resx">
       <DependentUpon>FrmServicios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menú Rol\FrmMenuBodeguero.resx">
+      <DependentUpon>FrmMenuBodeguero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menú Rol\FrmMenuComprador.resx">
+      <DependentUpon>FrmMenuComprador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menú Rol\FrmMenuEmpleado.resx">
+      <DependentUpon>FrmMenuEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menú Rol\FrmMenuJefeDepartamental.resx">
+      <DependentUpon>FrmMenuJefeDepartamental.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -510,6 +516,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\masculine-avatar-user-with-suit_icon-icons.com_68296.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LogoDefault.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
