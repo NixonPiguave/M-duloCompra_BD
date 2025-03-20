@@ -178,6 +178,7 @@ namespace ModuloDeCompra_BD.Formulario
                     }
                     else
                     {
+
                         MessageBox.Show("Seleccione un valor de IVA.");
                         return;
                     }
