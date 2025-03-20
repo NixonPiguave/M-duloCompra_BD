@@ -256,6 +256,7 @@ namespace ModuloDeCompra_BD.Formulario
                 {
                     dgvProducto.DataSource = CsComandosSql.RetornaDatos("SELECT ID_Producto, NomProducto, Costo FROM Producto");
                     MessageBox.Show("Producto eliminado correctamente");
+
                 }
                 else
                 {
