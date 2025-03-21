@@ -25,5 +25,70 @@ namespace reporte
             frmreport ventas = new frmreport(sentencia, "dsCompra", "Reporte.rptVentasOrden.rdlc");
             ventas.ShowDialog();
         }
+        private void btnProveedor_Click(object sender, EventArgs e)
+        {
+            string sentencia = "EXEC sp_Proveedores_ProductosComprados";
+            frmreport ventas = new frmreport(sentencia, "dsReporteProveedores", "Reporte.rpt_Reporte_Proveedores.rdlc");
+            ventas.ShowDialog();
+        }
+
+        private void btnCompras_Click(object sender, EventArgs e)
+        {
+            string sentencia = "EXEC sp_ReporteComprasPorProveedor";
+            frmreport ventas = new frmreport(sentencia, "dsReporteComprasVentas", "Reporte.rpt_ReporteComprasVentas.rdlc");
+            ventas.ShowDialog();
+        }
+
+        private void btnDevoluciones_Click(object sender, EventArgs e)
+        {
+            string sentencia = "EXEC rpt_Reporte_DevolucionesProducto";
+            frmreport ventas = new frmreport(sentencia, "dsReporteDevolucionesProducto", "Reporte.rpt_ReporteDevolucionesProducto.rdlc");
+            ventas.ShowDialog();
+        }
+
+        private void btnstock_Click(object sender, EventArgs e)
+        {
+            string sentencia = "EXEC sp_ReporteEstadoStock";
+            frmreport ventas = new frmreport(sentencia, "dsReporteEstadoStock", "Reporte.rpt_ReporteEstadoStock.rdlc");
+            ventas.ShowDialog();
+        }
+
+        private void btnIva_Click(object sender, EventArgs e)
+        {
+            string sentencia = "EXEC sp_ReporteIVAProductosServicios";
+            frmreport ventas = new frmreport(sentencia, "dsReporteIVAPS", "Reporte.rpt_ReporteIVAProductos_Servicios.rdlc");
+            ventas.ShowDialog();
+        }
+
+        private void btnmovimientos_Click(object sender, EventArgs e)
+        {
+            string sentencia = "EXEC sp_MovimientosInventario";
+            frmreport ventas = new frmreport(sentencia, "dsReporteMovimientosInventario", "Reporte.rpt_ReporteMovimientosInventario.rdlc");
+            ventas.ShowDialog();
+        }
+        //allison
+        private void btnrequisicion_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnusuario_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void btnCategoria_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDetalles_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnProducto_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

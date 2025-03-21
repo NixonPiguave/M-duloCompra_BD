@@ -460,17 +460,17 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reporte\rptVentasOrden.rdlc" />
-    <EmbeddedResource Include="Reporte\rpt_CategoriasDetalles.rdlc" />
-    <EmbeddedResource Include="Reporte\rpt_OrdenesDetalles.rdlc" />
-    <EmbeddedResource Include="Reporte\rpt_ProductosRequiDetalles.rdlc" />
+    <EmbeddedResource Include="Reporte\dArpt_CategoriasDetalles.rdlc" />
+    <EmbeddedResource Include="Reporte\dArpt_OrdenesDetalles.rdlc" />
+    <EmbeddedResource Include="Reporte\dArpt_ProductosRequiDetalles.rdlc" />
     <EmbeddedResource Include="Reporte\rpt_ReporteComprasVentas.rdlc" />
     <EmbeddedResource Include="Reporte\rpt_ReporteDevolucionesProducto.rdlc" />
     <EmbeddedResource Include="Reporte\rpt_ReporteEstadoStock.rdlc" />
     <EmbeddedResource Include="Reporte\rpt_ReporteIVAProductos_Servicios.rdlc" />
     <EmbeddedResource Include="Reporte\rpt_ReporteMovimientosInventario.rdlc" />
     <EmbeddedResource Include="Reporte\rpt_Reporte_Proveedores.rdlc" />
-    <EmbeddedResource Include="Reporte\rpt_RequisicionesDetalles.rdlc" />
-    <EmbeddedResource Include="Reporte\rpt_UsuarioRoles.rdlc" />
+    <EmbeddedResource Include="Reporte\dArpt_RequisicionesDetalles.rdlc" />
+    <EmbeddedResource Include="Reporte\dArpt_UsuarioRoles.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
