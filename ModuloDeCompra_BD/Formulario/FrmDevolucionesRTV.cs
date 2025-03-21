@@ -70,7 +70,14 @@ namespace ModuloDeCompra_BD.Formulario
                 FrmListadoProductos frmProducto = new FrmListadoProductos();
                 frmProducto.Orden = Convert.ToInt32(txtOrdenCompraID.Text);
                 frmProducto.ShowDialog();
-                txtProducto.Text = frmProducto.Producto.ToString();
+                if (txtProducto.Text != frmProducto.Producto.ToString())
+                {
+                    txtProducto.Text = frmProducto.Producto.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Escoja una opción");
+                }
             }
             catch
             {

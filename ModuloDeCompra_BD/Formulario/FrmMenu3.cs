@@ -172,6 +172,10 @@ namespace Menú
         {
             pnIventario.Visible = false;
             pnlRequisiciones.Visible = false;
+            pnlSubMenuOrdenCompra.Visible = false;
+            pnMantenimientos.Visible=false;
+            FrmMovimientoInventario frmInventario = new FrmMovimientoInventario();
+            openChildForm(frmInventario);
         }
 
         private void guna2Button9_Click(object sender, EventArgs e)
