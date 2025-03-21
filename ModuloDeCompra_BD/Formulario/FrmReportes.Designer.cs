@@ -39,7 +39,7 @@
             this.btnreport.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnreport.Font = new System.Drawing.Font("Showcard Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnreport.ForeColor = System.Drawing.Color.White;
-            this.btnreport.Location = new System.Drawing.Point(394, 190);
+            this.btnreport.Location = new System.Drawing.Point(63, 12);
             this.btnreport.Name = "btnreport";
             this.btnreport.Size = new System.Drawing.Size(342, 214);
             this.btnreport.TabIndex = 0;
