@@ -506,7 +506,7 @@
         <Top>1.63724cm</Top>
         <Left>2.58847cm</Left>
         <Height>1.2cm</Height>
-        <Width>20.27339cm</Width>
+        <Width>20.2734cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -531,7 +531,20 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Gestor de Ventas</Value>
+                  <Value>Compras</Value>
+                  <Style>
+                    <FontFamily>Arial Black</FontFamily>
+                    <FontSize>16pt</FontSize>
+                    <Color>Indigo</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value />
                   <Style>
                     <FontFamily>Arial Black</FontFamily>
                     <FontSize>16pt</FontSize>
@@ -544,9 +557,9 @@
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
           <Top>0.37184cm</Top>
-          <Left>9.57787cm</Left>
-          <Height>0.7905cm</Height>
-          <Width>5.56917cm</Width>
+          <Left>11.00662cm</Left>
+          <Height>0.89788cm</Height>
+          <Width>3.0106cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
