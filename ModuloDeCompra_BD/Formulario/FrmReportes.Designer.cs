@@ -200,7 +200,7 @@
             this.btnrequisicion.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnrequisicion.Font = new System.Drawing.Font("Showcard Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnrequisicion.ForeColor = System.Drawing.Color.White;
-            this.btnrequisicion.Location = new System.Drawing.Point(12, 254);
+            this.btnrequisicion.Location = new System.Drawing.Point(12, 258);
             this.btnrequisicion.Name = "btnrequisicion";
             this.btnrequisicion.Size = new System.Drawing.Size(187, 97);
             this.btnrequisicion.TabIndex = 10;
@@ -215,7 +215,7 @@
             this.btnusuario.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnusuario.Font = new System.Drawing.Font("Showcard Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnusuario.ForeColor = System.Drawing.Color.White;
-            this.btnusuario.Location = new System.Drawing.Point(222, 254);
+            this.btnusuario.Location = new System.Drawing.Point(222, 258);
             this.btnusuario.Name = "btnusuario";
             this.btnusuario.Size = new System.Drawing.Size(187, 97);
             this.btnusuario.TabIndex = 11;

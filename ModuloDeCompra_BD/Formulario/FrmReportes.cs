@@ -18,7 +18,6 @@ namespace reporte
         {
             InitializeComponent();
         }
-
         private void btnreport_Click(object sender, System.EventArgs e)
         {
             string sentencia = "EXEC sp_SumarVentasPorOrden";
@@ -67,28 +66,35 @@ namespace reporte
             ventas.ShowDialog();
         }
         //allison
+        private void btnDetalles_Click(object sender, EventArgs e)
+        {
+            string sentencia = "EXEC ObtenerOrdenesCompraConDetalles";
+            frmreport ventas = new frmreport(sentencia, "dsOrdenesDetalles", "Reporte.dArpt_OrdenesDetalles.rdlc");
+            ventas.ShowDialog();
+        }
         private void btnrequisicion_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void btnusuario_Click(object sender, EventArgs e)
-        {
-
+            string sentencia = "EXEC ObtenerRequisicionesConDetalles";
+            frmreport ventas = new frmreport(sentencia, "dsRequisicionesDetalle", "Reporte.dArpt_RequisicionesDetalles.rdlc");
+            ventas.ShowDialog();
         }
         private void btnCategoria_Click(object sender, EventArgs e)
         {
-
+            string sentencia = "EXEC rpt_ObtenerCategoriasConDetalles";
+            frmreport ventas = new frmreport(sentencia, "dsCategoriaDetalles", "Reporte.dArpt_CategoriasDetalles.rdlc");
+            ventas.ShowDialog();
         }
-
-        private void btnDetalles_Click(object sender, EventArgs e)
+        private void btnusuario_Click(object sender, EventArgs e)
         {
-
+            string sentencia = "EXEC rpt_RolesPorUsuario";
+            frmreport ventas = new frmreport(sentencia, "dsUsuarioRoles", "Reporte.dArpt_UsuarioRoles.rdlc");
+            ventas.ShowDialog();
         }
-
         private void btnProducto_Click(object sender, EventArgs e)
         {
-
+            string sentencia = "EXEC rpt_DetallesPorRequisicion";
+            frmreport ventas = new frmreport(sentencia, "dsProductoRequiDetalles", "Reporte.dArpt_ProductosRequiDetalles.rdlc");
+            ventas.ShowDialog();
         }
     }
 }
