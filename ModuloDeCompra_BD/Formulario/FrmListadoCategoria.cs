@@ -39,6 +39,7 @@ namespace ModuloDeCompra_BD.Formulario
             Nombre= dgvListadoCategoria[1, fila].Value.ToString();
             IdCat= Convert.ToInt32(dgvListadoCategoria[0, fila].Value);
             MessageBox.Show("Categoria seleccionada");
+            this.Close();
         }
 
         private void txtBuscarCategoria_KeyUp(object sender, KeyEventArgs e)

@@ -61,7 +61,7 @@ namespace ModuloDeCompra_BD.Clases
             string query = $@"exec spAgregarServicio '{cadenaXML}'";
             return CsComandosSql.InserDeletUpdate(query);
         }
-        public bool ModificarProducto(int id)
+        public bool ModificarProducto(int id, int idBodega)
         {
             string precioUFormatoSQL = Precio_Unit.ToString(CultureInfo.InvariantCulture);
             string cadenaXML = $@"<Productos>
@@ -75,7 +75,7 @@ namespace ModuloDeCompra_BD.Clases
                         <ID_Proveedor>{Proveedor}</ID_Proveedor>
                     </Producto>
                 </Productos>";
-            string query = $@"exec spModificarProducto '{cadenaXML}'";
+            string query = $@"exec spModificarProducto '{cadenaXML}', {idBodega}";
             return CsComandosSql.InserDeletUpdate(query);
         }
         public bool ModificarServicio(int id)

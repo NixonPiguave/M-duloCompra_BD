@@ -297,6 +297,8 @@ namespace ModuloDeCompra_BD.Formulario
             Id3 = Convert.ToInt32(dgvProducto[0, fila].Value);
             txtNombreProducto.Text = dgvProducto[1, fila].Value.ToString();
             txtPrecioUnitario.Text = dgvProducto[2, fila].Value.ToString();
+            DataTable dt = CsComandosSql.RetornaDatos($"select Ubicacion from Inventario I inner join Bodega B on I.ID_Bodega=B.ID_Bodega where ID_Producto={Id3}");
+            txtListadoUbiBodega.Text = dt.Rows[0]["Ubicacion"].ToString();
         }
 
         private void dgvService_DoubleClick(object sender, EventArgs e)
@@ -309,6 +311,8 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void btnEditarGeneral_Click(object sender, EventArgs e)
         {
+
+
             if (cbTipoP.SelectedItem.ToString() == "Producto")
             {
                 decimal precioU = 0;
@@ -327,30 +331,59 @@ namespace ModuloDeCompra_BD.Formulario
                     CsProducto producto = new CsProducto();
                     producto.Nom_Producto1 = txtNombreProducto.Text;
                     producto.Precio_Unit1 = precioU;
-                    string iva = cmbIVA.SelectedItem.ToString();
-                    string precioUFormatoSQL = iva.ToString(CultureInfo.InvariantCulture);
-                    precioUFormatoSQL = precioUFormatoSQL.Replace(',', '.');
-                    DataTable tb = CsComandosSql.RetornaDatos($"select * from IVA where Valor_IVA={precioUFormatoSQL}");
-                    var v = Convert.ToChar(tb.Rows[0]["ID_IVA"]);
-                    producto.Iva1 = v;
-
-                    producto.Categoria1 = Id;
-                    producto.Proveedor1 = Id2;
-
-                    if (producto.ModificarProducto(Id3))
+                    if (cmbIVA.SelectedItem.ToString() == "Exento")
                     {
-                        dgvProducto.DataSource = CsComandosSql.RetornaDatos("select ID_Producto, NomProducto, Costo from Producto");
-                        MessageBox.Show("Producto editado correctamente");
-                        txtNombreProducto.Text = string.Empty;
-                        txtPrecioUnitario.Text = string.Empty;
-                        cmbIVA.SelectedIndex = -1;
-                        cmbEstadoProducto.SelectedIndex = -1;
-                        txtListadoCategory.Text = string.Empty;
-                        txtListadoProvee.Text = string.Empty;
+                        producto.Iva1=  'C';
                     }
                     else
                     {
-                        MessageBox.Show("Error al editar producto, verifique que los datos sean correctos");
+                        string iva = cmbIVA.SelectedItem.ToString();
+
+                        string precioUFormatoSQL = iva.ToString(CultureInfo.InvariantCulture);
+                        precioUFormatoSQL = precioUFormatoSQL.Replace(',', '.');
+                        DataTable tb = CsComandosSql.RetornaDatos($"SELECT * FROM IVA WHERE Valor_IVA = '{precioUFormatoSQL}'");
+
+                        if (tb.Rows.Count > 0)
+                        {
+                            var v = Convert.ToChar(tb.Rows[0]["ID_IVA"]);
+                            producto.Iva1 = v;
+                        }
+                        else
+                        {
+                            MessageBox.Show("El IVA seleccionado no existe en la base de datos.");
+                            return;
+                        }
+                    }
+
+                    producto.Estado1 = cmbEstadoProducto.SelectedItem.ToString();
+                    producto.Categoria1 = Id;
+                    producto.Proveedor1 = Id2;
+                    string ubicacionBodega = txtListadoUbiBodega.Text.Trim();
+                    DataTable ubicacionBodegaData = CsComandosSql.RetornaDatos($"SELECT ID_Bodega FROM Bodega WHERE Ubicacion = '{ubicacionBodega}'");
+
+                    if (ubicacionBodegaData.Rows.Count > 0)
+                    {
+                        int idBodega = Convert.ToInt32(ubicacionBodegaData.Rows[0]["ID_Bodega"]);
+
+                        if (producto.ModificarProducto(Id3, idBodega))
+                        {
+                            dgvProducto.DataSource = CsComandosSql.RetornaDatos("select ID_Producto, NomProducto, Costo from Producto");
+                            MessageBox.Show("Producto editado correctamente");
+                            txtNombreProducto.Text = string.Empty;
+                            txtPrecioUnitario.Text = string.Empty;
+                            cmbIVA.SelectedIndex = -1;
+                            cmbEstadoProducto.SelectedIndex = -1;
+                            txtListadoCategory.Text = string.Empty;
+                            txtListadoProvee.Text = string.Empty;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error al editar producto, verifique que los datos sean correctos");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ubicación de bodega no válida.");
                     }
 
 
