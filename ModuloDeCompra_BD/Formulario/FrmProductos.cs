@@ -242,8 +242,10 @@ namespace ModuloDeCompra_BD.Formulario
                 btnListadoUbiBodega.Enabled = false;
             }
             else
+            {
                 btnListadoCategoria.Enabled = true;
                 btnListadoUbiBodega.Enabled = true;
+            }
         }
         private void btnEliminar_Click(object sender, EventArgs e)
         {
