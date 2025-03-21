@@ -26,7 +26,7 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>3.18792cm</Width>
+              <Width>0.96542cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>2.8175cm</Width>
@@ -48,7 +48,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Id Orden</Value>
+                              <Value>Id </Value>
                               <Style>
                                 <FontFamily>Times New Roman</FontFamily>
                                 <FontSize>14pt</FontSize>
@@ -273,7 +273,7 @@
         <Top>1.16099cm</Top>
         <Left>1.42558cm</Left>
         <Height>1.2cm</Height>
-        <Width>14.45854cm</Width>
+        <Width>12.23604cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>

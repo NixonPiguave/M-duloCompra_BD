@@ -26,7 +26,7 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>3.34579cm</Width>
+              <Width>0.991cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>2.84396cm</Width>
@@ -51,7 +51,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Id Requisición</Value>
+                              <Value>Id</Value>
                               <Style>
                                 <FontFamily>times New Roman</FontFamily>
                                 <FontSize>14pt</FontSize>
@@ -345,7 +345,7 @@
         <Top>1.08162cm</Top>
         <Left>0.70803cm</Left>
         <Height>1.2cm</Height>
-        <Width>15.28532cm</Width>
+        <Width>12.93053cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
