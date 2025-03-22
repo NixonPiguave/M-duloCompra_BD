@@ -76,20 +76,7 @@ namespace ModuloDeCompra_BD
                         ini.ShowDialog();
                         this.Show();
                     }
-
-                    if (rol == "Empleado")
-                    {
-                        MessageBox.Show("Inicio de sesión Exitoso");
-                        FrmMenuEmpleado ini = new FrmMenuEmpleado();
-                        ini.IDusuario1 = IDusuario; // Puedes pasar el ID de usuario si lo necesitas
-                        ini.rol = rol;
-                        txtUser.Text = string.Empty;
-                        txtContraseña.Text = string.Empty;
-                        this.Hide();
-                        ini.ShowDialog();
-                        this.Show();
-                    }
-                    if (rol == "Jefe Departamentario")
+                    else if (rol == "Jefe Departamentario")
                     {
                         MessageBox.Show("Inicio de sesión Exitoso");
                         FrmMenuJefeDepartamental ini = new FrmMenuJefeDepartamental();
@@ -101,7 +88,7 @@ namespace ModuloDeCompra_BD
                         ini.ShowDialog();
                         this.Show();
                     }
-                    if (rol == "Comprador")
+                    else if (rol == "Comprador")
                     {
                         MessageBox.Show("Inicio de sesión Exitoso");
                         FrmMenuComprador ini = new FrmMenuComprador();
@@ -113,10 +100,21 @@ namespace ModuloDeCompra_BD
                         ini.ShowDialog();
                         this.Show();
                     }
-                    if (rol == "Bodeguero")
+                    else if (rol == "Bodeguero")
                     {
                         MessageBox.Show("Inicio de sesión Exitoso");
                         FrmMenuBodeguero ini = new FrmMenuBodeguero();
+                        ini.IDusuario1 = IDusuario; // Puedes pasar el ID de usuario si lo necesitas
+                        ini.rol = rol;
+                        txtUser.Text = string.Empty;
+                        txtContraseña.Text = string.Empty;
+                        this.Hide();
+                        ini.ShowDialog();
+                        this.Show();
+                    }
+                    else { 
+                        MessageBox.Show("Inicio de sesión Exitoso");
+                        FrmMenuEmpleado ini = new FrmMenuEmpleado();
                         ini.IDusuario1 = IDusuario; // Puedes pasar el ID de usuario si lo necesitas
                         ini.rol = rol;
                         txtUser.Text = string.Empty;
