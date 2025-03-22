@@ -117,7 +117,7 @@ namespace ModuloDeCompra_BD.Formulario
                         //la orden de compra
                         string query = $@"
                 DECLARE @TempID INT;
-                EXEC SpOrdenCompra @cadena = '{xmlOrdenCompra}', @IDIngresada = @TempID OUTPUT;
+                EXEC SpOrdenCompraDirecta @cadena = '{xmlOrdenCompra}', @IDIngresada = @TempID OUTPUT;
                 SELECT @TempID AS IDGenerado;";
 
                         DataTable dt = CsComandosSql.RetornaDatos(query);
