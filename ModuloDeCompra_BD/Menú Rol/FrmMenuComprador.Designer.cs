@@ -44,6 +44,7 @@
             this.btnOrdenCompraRequisicion = new Guna.UI2.WinForms.Guna2Button();
             this.btnOrdenCompra = new Guna.UI2.WinForms.Guna2Button();
             this.dgvOrdenesRequisicion = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
             this.pn1.SuspendLayout();
             this.pn2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpresa)).BeginInit();
@@ -54,6 +55,7 @@
             // pn1
             // 
             this.pn1.BackColor = System.Drawing.Color.Black;
+            this.pn1.Controls.Add(this.label1);
             this.pn1.Controls.Add(this.btnReportes);
             this.pn1.Controls.Add(this.btnOrdenesCompra);
             this.pn1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -257,6 +259,18 @@
             this.dgvOrdenesRequisicion.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvOrdenesRequisicion.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(25, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(181, 25);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Seccion Compras";
+            // 
             // FrmMenuComprador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -271,6 +285,7 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMenuComprador_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.pn1.ResumeLayout(false);
+            this.pn1.PerformLayout();
             this.pn2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpresa)).EndInit();
             this.pnlSubMenuOrdenCompra.ResumeLayout(false);
@@ -290,6 +305,7 @@
         private Guna.UI2.WinForms.Guna2Button btnOrdenCompraRequisicion;
         private Guna.UI2.WinForms.Guna2Button btnOrdenCompra;
         private Guna.UI2.WinForms.Guna2DataGridView dgvEmpresa;
+        private System.Windows.Forms.Label label1;
     }
 }
 

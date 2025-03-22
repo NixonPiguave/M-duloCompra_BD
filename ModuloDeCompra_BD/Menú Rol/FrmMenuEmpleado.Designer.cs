@@ -36,12 +36,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenuEmpleado));
             this.pn1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnCrearRequisicion = new Guna.UI2.WinForms.Guna2Button();
             this.btnReportes = new Guna.UI2.WinForms.Guna2Button();
             this.pn2 = new System.Windows.Forms.Panel();
             this.dgvEmpresa = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.btnCrearRequisicion = new Guna.UI2.WinForms.Guna2Button();
             this.dgvOrdenesRequisicion = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
             this.pn1.SuspendLayout();
             this.pn2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpresa)).BeginInit();
@@ -59,6 +59,35 @@
             this.pn1.Name = "pn1";
             this.pn1.Size = new System.Drawing.Size(1370, 69);
             this.pn1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(26, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(191, 25);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Seccion Empleado";
+            // 
+            // btnCrearRequisicion
+            // 
+            this.btnCrearRequisicion.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCrearRequisicion.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCrearRequisicion.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCrearRequisicion.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCrearRequisicion.FillColor = System.Drawing.Color.Black;
+            this.btnCrearRequisicion.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCrearRequisicion.ForeColor = System.Drawing.Color.White;
+            this.btnCrearRequisicion.HoverState.ForeColor = System.Drawing.Color.Yellow;
+            this.btnCrearRequisicion.Location = new System.Drawing.Point(1006, 12);
+            this.btnCrearRequisicion.Name = "btnCrearRequisicion";
+            this.btnCrearRequisicion.Size = new System.Drawing.Size(177, 45);
+            this.btnCrearRequisicion.TabIndex = 6;
+            this.btnCrearRequisicion.Text = "Crear Requisición";
+            this.btnCrearRequisicion.Click += new System.EventHandler(this.btnCrearRequisicion_Click);
             // 
             // btnReportes
             // 
@@ -142,23 +171,6 @@
             this.dgvEmpresa.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvEmpresa.Visible = false;
             // 
-            // btnCrearRequisicion
-            // 
-            this.btnCrearRequisicion.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnCrearRequisicion.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnCrearRequisicion.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnCrearRequisicion.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnCrearRequisicion.FillColor = System.Drawing.Color.Black;
-            this.btnCrearRequisicion.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCrearRequisicion.ForeColor = System.Drawing.Color.White;
-            this.btnCrearRequisicion.HoverState.ForeColor = System.Drawing.Color.Yellow;
-            this.btnCrearRequisicion.Location = new System.Drawing.Point(1006, 12);
-            this.btnCrearRequisicion.Name = "btnCrearRequisicion";
-            this.btnCrearRequisicion.Size = new System.Drawing.Size(177, 45);
-            this.btnCrearRequisicion.TabIndex = 6;
-            this.btnCrearRequisicion.Text = "Crear Requisición";
-            this.btnCrearRequisicion.Click += new System.EventHandler(this.btnCrearRequisicion_Click);
-            // 
             // dgvOrdenesRequisicion
             // 
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
@@ -208,18 +220,6 @@
             this.dgvOrdenesRequisicion.ThemeStyle.RowsStyle.Height = 22;
             this.dgvOrdenesRequisicion.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvOrdenesRequisicion.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Cooper Black", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(26, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(198, 24);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Seccion empleado";
             // 
             // FrmMenuEmpleado
             // 

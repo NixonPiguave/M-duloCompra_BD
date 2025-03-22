@@ -29,46 +29,55 @@ namespace ModuloDeCompra_BD.Formulario
         {
             try
             {
-                foreach (DataGridViewRow fila in dgvAux.Rows)
+                string validar = $"select G.ID_GRN, D.ID_GRNDetails, O.ID_Orden, DO.ID_Detail, P.ID_Producto, G.TotalPagar, D.Cantidad, D.Costo, P.Costo, DO.Costo from GRN_Header as G inner join Grn_Details as D on G.ID_GRN = D.ID_GRN inner join Orden_Compra as O on G.ID_Orden = O.ID_Orden inner join Detalle_Orden as DO on O.ID_Orden = DO.ID_Orden AND D.ID_Producto = DO.ID_Producto inner join Producto as P on P.ID_Producto = DO.ID_Producto where G.ID_GRN = {txtIDGRN.Text}";
+                DataTable dt = CsComandosSql.RetornaDatos(validar);
+                if (dt.Rows.Count < 0)
                 {
-                    if (!fila.IsNewRow)
+                    foreach (DataGridViewRow fila in dgvAux.Rows)
                     {
-                        decimal Valor = decimal.Parse(fila.Cells["TotalPagar"].Value.ToString());
-                        decimal CostoUni = decimal.Parse(fila.Cells["CostoUnit"].Value.ToString());
-                        decimal CostoInve = decimal.Parse(fila.Cells["CostoInventario"].Value.ToString());
-                        decimal CUCompra = decimal.Parse(fila.Cells["CUCompra"].Value.ToString());
-                        int cantidad = int.Parse(fila.Cells["Cantidad"].Value.ToString());
-                        int GRNDetalle = int.Parse(fila.Cells["ID_GRNDetails"].Value.ToString());
-                        var culture = System.Globalization.CultureInfo.InvariantCulture;
-                        string XML = $@"
-                        <Movimiento>
-                            <Info>
-                                <VALOR>{Valor.ToString(culture)}</VALOR>
-                                <FECHA>{DateTime.Now.ToString("yyyy-MM-dd")}</FECHA>
-                                <CANTIDAD>{cantidad}</CANTIDAD>
-                                <COSTOUNI>{CostoUni.ToString(culture)}</COSTOUNI>
-                                <COSTOINVE>{CostoInve.ToString(culture)}</COSTOINVE>
-                                <CUCOMPRA>{CUCompra.ToString(culture)}</CUCOMPRA>
-                                <TIPOMOV>R</TIPOMOV>
-                                <GRNDETALLE>{GRNDetalle}</GRNDETALLE>
-                            </Info>
-                        </Movimiento>";
-
-                        MessageBox.Show(XML);
-                        string query = $"exec spMovInventario @cadena = '{XML}'";
-
-                        try
+                        if (!fila.IsNewRow)
                         {
-                            if (CsComandosSql.InserDeletUpdate(query))
+                            decimal Valor = decimal.Parse(fila.Cells["TotalPagar"].Value.ToString());
+                            decimal CostoUni = decimal.Parse(fila.Cells["CostoUnit"].Value.ToString());
+                            decimal CostoInve = decimal.Parse(fila.Cells["CostoInventario"].Value.ToString());
+                            decimal CUCompra = decimal.Parse(fila.Cells["CUCompra"].Value.ToString());
+                            int cantidad = int.Parse(fila.Cells["Cantidad"].Value.ToString());
+                            int GRNDetalle = int.Parse(fila.Cells["ID_GRNDetails"].Value.ToString());
+                            var culture = System.Globalization.CultureInfo.InvariantCulture;
+                            string XML = $@"
+                            <Movimiento>
+                                <Info>
+                                    <VALOR>{Valor.ToString(culture)}</VALOR>
+                                    <FECHA>{DateTime.Now.ToString("yyyy-MM-dd")}</FECHA>
+                                    <CANTIDAD>{cantidad}</CANTIDAD>
+                                    <COSTOUNI>{CostoUni.ToString(culture)}</COSTOUNI>
+                                    <COSTOINVE>{CostoInve.ToString(culture)}</COSTOINVE>
+                                    <CUCOMPRA>{CUCompra.ToString(culture)}</CUCOMPRA>
+                                    <TIPOMOV>R</TIPOMOV>
+                                    <GRNDETALLE>{GRNDetalle}</GRNDETALLE>
+                                </Info>
+                            </Movimiento>";
+
+                            MessageBox.Show(XML);
+                            string query = $"exec spMovInventario @cadena = '{XML}'";
+
+                            try
                             {
-                                MessageBox.Show($"Se ha registrado un movimiento de inventario para la fila {fila.Index + 1}");
+                                if (CsComandosSql.InserDeletUpdate(query))
+                                {
+                                    MessageBox.Show($"Se ha registrado un movimiento de inventario para la fila {fila.Index + 1}");
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show($"Error en fila {fila.Index + 1}: {ex.Message}");
                             }
                         }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show($"Error en fila {fila.Index + 1}: {ex.Message}");
-                        }
                     }
+                }
+                else
+                {
+                    MessageBox.Show("Ya se ha registrado este detalle de GRN");
                 }
                 txtValor.Text = string.Empty;
                 txtCantidad.Text = string.Empty;
