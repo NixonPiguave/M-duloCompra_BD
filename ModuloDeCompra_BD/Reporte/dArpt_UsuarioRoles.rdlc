@@ -467,9 +467,9 @@
         </TablixRowHierarchy>
         <DataSetName>dsUsuarioRoles</DataSetName>
         <Top>1.50495cm</Top>
-        <Left>3.145cm</Left>
+        <Left>2.40417cm</Left>
         <Height>1.2cm</Height>
-        <Width>15.32478cm</Width>
+        <Width>15.32477cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -528,7 +528,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox12</rd:DefaultName>
           <Top>1.13453cm</Top>
-          <Left>4.86516cm</Left>
+          <Left>2.25224cm</Left>
           <Height>0.97042cm</Height>
           <Width>12.54629cm</Width>
           <Style>
@@ -621,8 +621,8 @@
             </Textbox>
           </ReportItems>
           <KeepTogether>true</KeepTogether>
-          <Top>0.82978cm</Top>
-          <Left>2.25224cm</Left>
+          <Top>0.80861cm</Top>
+          <Left>1.19391cm</Left>
           <Height>0.9125cm</Height>
           <Width>8.76767cm</Width>
           <Style>
@@ -735,7 +735,7 @@
           </ReportItems>
           <KeepTogether>true</KeepTogether>
           <Top>0.76422cm</Top>
-          <Left>14.6768cm</Left>
+          <Left>13.9783cm</Left>
           <Height>1.01156cm</Height>
           <Width>3.05214cm</Width>
           <ZIndex>1</ZIndex>
