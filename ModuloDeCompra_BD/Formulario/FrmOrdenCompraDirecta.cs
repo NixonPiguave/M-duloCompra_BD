@@ -68,6 +68,40 @@ namespace ModuloDeCompra_BD.Formulario
                         return;
                     }
 
+                    foreach (DataGridViewRow fila in dgvProductosAgregados.Rows)
+                    {
+                        if (fila.IsNewRow)
+                            continue;
+
+                        string cantidad = fila.Cells["Cantidad"].Value?.ToString();
+                        if (!int.TryParse(cantidad, out int cantidadValida) || cantidadValida <= 0)
+                        {
+                            MessageBox.Show("La cantidad debe ser un número entero válido y mayor que cero");
+                            return;
+                        }
+
+                        string costo = fila.Cells["Costo"].Value?.ToString();
+                        if (!decimal.TryParse(costo, out decimal costoValido) || costoValido <= 0)
+                        {
+                            MessageBox.Show("El costo debe ser un número válido y mayor que cero");
+                            return;
+                        }
+
+                        string descuento = fila.Cells["Descuento"].Value?.ToString();
+                        if (!decimal.TryParse(descuento, out decimal descuentoValido) || descuentoValido < 0)
+                        {
+                            MessageBox.Show("El descuento debe ser un número válido y no puede ser negativo");
+                            return;
+                        }
+
+                        if (descuentoValido > costoValido)
+                        {
+                            MessageBox.Show("El descuento no puede ser mayor que el costo");
+                            return;
+                        }
+                    }
+
+
                     int idGenerado = -1;
                     string xmlOrdenCompra = $@"
             <ORDEN>
@@ -80,7 +114,7 @@ namespace ModuloDeCompra_BD.Formulario
 
                     try
                     {
-                        // Crear la orden de compra
+                        //la orden de compra
                         string query = $@"
                 DECLARE @TempID INT;
                 EXEC SpOrdenCompra @cadena = '{xmlOrdenCompra}', @IDIngresada = @TempID OUTPUT;
@@ -93,7 +127,7 @@ namespace ModuloDeCompra_BD.Formulario
                             idGenerado = Convert.ToInt32(dt.Rows[0]["IDGenerado"]);
                         }
 
-                        // Enviar el detalle de la orden
+                        //el detalle de la orden
                         foreach (DataGridViewRow fila in dgvProductosAgregados.Rows)
                         {
                             if (fila.IsNewRow)
@@ -143,11 +177,26 @@ namespace ModuloDeCompra_BD.Formulario
                         MessageBox.Show($"Error: {ex.Message}");
                     }
 
-                    MessageBox.Show("La orden ha sido guardada correctamente.");
+                    MessageBox.Show("La orden ha sido guardada correctamente");
+                    btnAgregarP.Visible = false;
+                    lbID.Visible = false;
+                    lbProduc.Visible = false;
+                    lbCantidad.Visible = false;
+                    txtProducto.Visible = false;
+                    txtID.Visible = false;
+                    nudCantidad.Visible = false;
+
+                    btnAgregarS.Visible = false;
+                    lbIDserv.Visible = false;
+                    lbCanServ.Visible = false;
+                    lbServi.Visible = false;
+                    txtServicio.Visible = false;
+                    txtIDServi.Visible = false;
+                    nudServicio.Visible = false;
                 }
-                catch (Exception ex)
+                catch
                 {
-                    MessageBox.Show("Error: " + ex.Message, "Error al guardar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error al guardar");
                 }
             }
             else
@@ -159,8 +208,8 @@ namespace ModuloDeCompra_BD.Formulario
         {
             FrmListadoProveedor prov = new FrmListadoProveedor();
             prov.ShowDialog();
-            idproveedor= prov.IdProvee1;
-            txtProveedor.Text= prov.Nombre1;
+            idproveedor = prov.IdProvee1;
+            txtProveedor.Text = prov.Nombre1;
         }
         private void dtpFechaLimite_ValueChanged(object sender, EventArgs e)
         {
@@ -204,6 +253,11 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void btnProducto_Click(object sender, EventArgs e)
         {
+            if (idproveedor == 0 || string.IsNullOrEmpty(txtProveedor.Text))
+            {
+                MessageBox.Show("Debe seleccionar un proveedor antes de elegir un producto");
+                return;
+            }
             btnAgregarP.Visible = true;
             lbID.Visible = true;
             lbProduc.Visible = true;
@@ -220,13 +274,25 @@ namespace ModuloDeCompra_BD.Formulario
             txtIDServi.Visible = false;
             nudServicio.Visible = false;
 
-            int fila = dgvListadoProductos.CurrentCell.RowIndex;
-            txtID.Text = dgvListadoProductos[0, fila].Value.ToString();
-            txtProducto.Text = dgvListadoProductos[1, fila].Value.ToString();
+            if (dgvListadoProductos.CurrentCell != null)
+            {
+                int fila = dgvListadoProductos.CurrentCell.RowIndex;
+                txtID.Text = dgvListadoProductos[0, fila].Value.ToString();
+                txtProducto.Text = dgvListadoProductos[1, fila].Value.ToString();
+            }
+            else
+            {
+                MessageBox.Show("No se ha seleccionado ningún producto");
+            }
         }
 
         private void btnAgregarP_Click(object sender, EventArgs e)
         {
+            if (nudCantidad.Value <= 0)
+            {
+                MessageBox.Show("La cantidad debe ser mayor que cero");
+                return;
+            }
             if (!string.IsNullOrEmpty(txtID.Text) && !string.IsNullOrEmpty(txtProducto.Text))
             {
                 bool Verificar = false;
@@ -254,6 +320,15 @@ namespace ModuloDeCompra_BD.Formulario
                     txtProducto.Text = string.Empty;
                     txtID.Text = string.Empty;
                     nudCantidad.Value = 1;
+
+                    btnAgregarP.Visible = false;
+                    lbID.Visible = false;
+                    lbProduc.Visible = false;
+                    lbCantidad.Visible = false;
+                    txtProducto.Visible = false;
+                    txtID.Visible = false;
+                    nudCantidad.Visible = false;
+
                 }
                 else
                 {
@@ -269,6 +344,11 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void btnServicio_Click(object sender, EventArgs e)
         {
+            if (idproveedor == 0 || string.IsNullOrEmpty(txtProveedor.Text))
+            {
+                MessageBox.Show("Debe seleccionar un proveedor antes de elegir un servicio");
+                return;
+            }
             btnAgregarP.Visible = false;
             lbID.Visible = false;
             lbProduc.Visible = false;
@@ -284,13 +364,26 @@ namespace ModuloDeCompra_BD.Formulario
             txtServicio.Visible = true;
             txtIDServi.Visible = true;
             nudServicio.Visible = true;
-            int fila = dgvListadoServicio.CurrentCell.RowIndex;
-            txtIDServi.Text = dgvListadoServicio[0, fila].Value.ToString();
-            txtServicio.Text = dgvListadoServicio[1, fila].Value.ToString();
+
+            if (dgvListadoProductos.CurrentCell != null)
+            {
+                int fila = dgvListadoServicio.CurrentCell.RowIndex;
+                txtIDServi.Text = dgvListadoServicio[0, fila].Value.ToString();
+                txtServicio.Text = dgvListadoServicio[1, fila].Value.ToString();
+            }
+            else
+            {
+                MessageBox.Show("No se ha seleccionado ningún servicio");
+            }
         }
 
         private void btnAgregarS_Click(object sender, EventArgs e)
         {
+            if (nudCantidad.Value <= 0)
+            {
+                MessageBox.Show("La cantidad debe ser mayor que cero");
+                return;
+            }
             if (!string.IsNullOrEmpty(txtIDServi.Text) && !string.IsNullOrEmpty(txtServicio.Text))
             {
                 bool Verificar = false;
@@ -319,6 +412,14 @@ namespace ModuloDeCompra_BD.Formulario
                     txtServicio.Text = string.Empty;
                     nudServicio.Value = 1;
                     txtIDServi.Text = string.Empty;
+
+                    btnAgregarS.Visible = false;
+                    lbIDserv.Visible = false;
+                    lbCanServ.Visible = false;
+                    lbServi.Visible = false;
+                    txtServicio.Visible = false;
+                    txtIDServi.Visible = false;
+                    nudServicio.Visible = false;
                 }
                 else
                 {
