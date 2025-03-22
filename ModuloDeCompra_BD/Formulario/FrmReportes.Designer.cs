@@ -129,7 +129,7 @@
             this.btnProveedor.Name = "btnProveedor";
             this.btnProveedor.Size = new System.Drawing.Size(179, 97);
             this.btnProveedor.TabIndex = 4;
-            this.btnProveedor.Text = "Reporte Proveedor";
+            this.btnProveedor.Text = "Productos Comprados";
             this.btnProveedor.Click += new System.EventHandler(this.btnProveedor_Click);
             // 
             // btnCompras
