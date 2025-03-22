@@ -45,6 +45,7 @@ namespace ModuloDeCompra_BD.Formulario
             dgvDetalleOrden.Columns["CantidadRecibida"].ReadOnly = false;
             string queryDetalle = $"select * from GRN_Header where ID_Orden={idorden}";
             dgvGrnDeOrden.DataSource = CsComandosSql.RetornaDatos(queryDetalle);
+            dgvDetalleOrden.RowTemplate.Height = 30;
             foreach (DataGridViewColumn column in dgvDetalleOrden.Columns)
             {
                 if (column.Name != "CantidadRecibida")
@@ -53,7 +54,13 @@ namespace ModuloDeCompra_BD.Formulario
                 }
 
             }
-            
+            foreach (DataGridViewRow row in dgvDetalleOrden.Rows)
+            {
+                row.Cells["CantidadRecibida"].Style.BackColor = Color.LightGray;
+                row.Cells["CantidadRecibida"].Style.ForeColor = Color.Black;
+            }
+
+
         }
         private void ActualizarEstadoRecibido(int idorden)
         {
@@ -258,6 +265,26 @@ namespace ModuloDeCompra_BD.Formulario
         private void FrmRecepcionCompra_Load(object sender, EventArgs e)
         {
             lbCantRecib.Visible = false;
+        }
+
+        private void dgvDetalleOrden_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+           
+            if (dgvDetalleOrden.Columns[e.ColumnIndex].Name == "CantidadRecibida" && e.RowIndex >= 0)
+            {
+            
+                if (dgvDetalleOrden.Rows[e.RowIndex].Selected)
+                {
+                    e.Handled = true; 
+
+                    using (SolidBrush brush = new SolidBrush(Color.LightGray)) 
+                    {
+                        e.Graphics.FillRectangle(brush, e.CellBounds);
+                    }
+
+                    e.PaintContent(e.ClipBounds);
+                }
+            }
         }
     }
 }
