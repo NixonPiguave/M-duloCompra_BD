@@ -67,6 +67,8 @@ namespace Menú
         private void guna2Button8_Click(object sender, EventArgs e) //movimientos
         {
             pnIventario.Visible = false;
+            FrmMovimientoInventario MovimientoInventario = new FrmMovimientoInventario();
+            openChildForm(MovimientoInventario);
         }
 
         private void guna2Button9_Click(object sender, EventArgs e) // bodega
