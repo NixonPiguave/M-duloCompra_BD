@@ -31,12 +31,12 @@ namespace ModuloDeCompra_BD.Clases
         }
         public bool ModificarEmpresa()
         {
-            string logoBase64 = Convert.ToBase64String(Logo);
+            string logoBase64 = Logo != null ? Convert.ToBase64String(Logo) : string.Empty;
             string cadenaXML = $@"<Empresas>
                 <Empresa>
-                    <ID_Empresa>{ID_Empresa}</ID_Empresa>
-                    <Nombre_Empresa>{Nombre_Empresa}</Nombre_Empresa>
-                    <Logo_Empresa>{logoBase64}</Logo_Empresa>
+                        <ID_Empresa>{ID_Empresa}</ID_Empresa>
+                        <Nombre_Empresa>{Nombre_Empresa}</Nombre_Empresa>
+                        <Logo_Empresa>{logoBase64}</Logo_Empresa>
                 </Empresa>
             </Empresas>";
             string query = $@"exec spModificarEmpresa '{cadenaXML}'";

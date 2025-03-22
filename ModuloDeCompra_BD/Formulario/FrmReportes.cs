@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Reporting.WinForms;
 using ModuloDeCompra_BD.Clases;
+using ModuloDeCompra_BD.Formulario;
 
 namespace reporte
 {
@@ -95,6 +96,19 @@ namespace reporte
             string sentencia = "EXEC rpt_DetallesPorRequisicion";
             frmreport ventas = new frmreport(sentencia, "dsProductoRequiDetalles", "Reporte.dArpt_ProductosRequiDetalles.rdlc");
             ventas.ShowDialog();
+        }
+
+        private void btnReportAuditoria_Click(object sender, EventArgs e)
+        {
+            frmReporteAuditoria audit = new frmReporteAuditoria();
+            audit.ShowDialog();
+        }
+
+        private void btnReporteSesion_Click(object sender, EventArgs e)
+        {
+            string sentencia = $"Select * from AuditoriaSesion ";
+            frmreport reporteAuditoriaSesion = new frmreport(sentencia, "dsAuditoriaSesion", "Reporte.rpt_AuditoriaSesion.rdlc");
+            reporteAuditoriaSesion.ShowDialog();
         }
     }
 }

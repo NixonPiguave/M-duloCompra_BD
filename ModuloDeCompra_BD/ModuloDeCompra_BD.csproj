@@ -123,6 +123,12 @@
     <Compile Include="Formulario\FrmRecepcionCompra.Designer.cs">
       <DependentUpon>FrmRecepcionCompra.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formulario\frmReporteAuditoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\frmReporteAuditoria.Designer.cs">
+      <DependentUpon>frmReporteAuditoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formulario\FrmReportes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -352,6 +358,9 @@
     <EmbeddedResource Include="Formulario\FrmRecepcionCompra.resx">
       <DependentUpon>FrmRecepcionCompra.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\frmReporteAuditoria.resx">
+      <DependentUpon>frmReporteAuditoria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formulario\FrmReportes.resx">
       <DependentUpon>FrmReportes.cs</DependentUpon>
     </EmbeddedResource>
@@ -463,6 +472,8 @@
     <EmbeddedResource Include="Reporte\dArpt_CategoriasDetalles.rdlc" />
     <EmbeddedResource Include="Reporte\dArpt_OrdenesDetalles.rdlc" />
     <EmbeddedResource Include="Reporte\dArpt_ProductosRequiDetalles.rdlc" />
+    <EmbeddedResource Include="Reporte\rpt_Auditoria.rdlc" />
+    <EmbeddedResource Include="Reporte\rpt_AuditoriaSesion.rdlc" />
     <EmbeddedResource Include="Reporte\rpt_ReporteComprasVentas.rdlc" />
     <EmbeddedResource Include="Reporte\rpt_ReporteDevolucionesProducto.rdlc" />
     <EmbeddedResource Include="Reporte\rpt_ReporteEstadoStock.rdlc" />

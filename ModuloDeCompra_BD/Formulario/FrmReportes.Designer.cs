@@ -40,6 +40,8 @@
             this.btnmovimientos = new Guna.UI2.WinForms.Guna2Button();
             this.btnrequisicion = new Guna.UI2.WinForms.Guna2Button();
             this.btnusuario = new Guna.UI2.WinForms.Guna2Button();
+            this.btnReportAuditoria = new Guna.UI2.WinForms.Guna2Button();
+            this.btnReporteSesion = new Guna.UI2.WinForms.Guna2Button();
             this.SuspendLayout();
             // 
             // btnreport
@@ -215,12 +217,42 @@
             this.btnusuario.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnusuario.Font = new System.Drawing.Font("Showcard Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnusuario.ForeColor = System.Drawing.Color.White;
-            this.btnusuario.Location = new System.Drawing.Point(222, 258);
+            this.btnusuario.Location = new System.Drawing.Point(207, 258);
             this.btnusuario.Name = "btnusuario";
             this.btnusuario.Size = new System.Drawing.Size(187, 97);
             this.btnusuario.TabIndex = 11;
             this.btnusuario.Text = "Reporte Usuarios";
             this.btnusuario.Click += new System.EventHandler(this.btnusuario_Click);
+            // 
+            // btnReportAuditoria
+            // 
+            this.btnReportAuditoria.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnReportAuditoria.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnReportAuditoria.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnReportAuditoria.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnReportAuditoria.Font = new System.Drawing.Font("Showcard Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReportAuditoria.ForeColor = System.Drawing.Color.White;
+            this.btnReportAuditoria.Location = new System.Drawing.Point(405, 258);
+            this.btnReportAuditoria.Name = "btnReportAuditoria";
+            this.btnReportAuditoria.Size = new System.Drawing.Size(187, 97);
+            this.btnReportAuditoria.TabIndex = 12;
+            this.btnReportAuditoria.Text = "Reporte Auditoria";
+            this.btnReportAuditoria.Click += new System.EventHandler(this.btnReportAuditoria_Click);
+            // 
+            // btnReporteSesion
+            // 
+            this.btnReporteSesion.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnReporteSesion.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnReporteSesion.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnReporteSesion.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnReporteSesion.Font = new System.Drawing.Font("Showcard Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReporteSesion.ForeColor = System.Drawing.Color.White;
+            this.btnReporteSesion.Location = new System.Drawing.Point(604, 258);
+            this.btnReporteSesion.Name = "btnReporteSesion";
+            this.btnReporteSesion.Size = new System.Drawing.Size(187, 97);
+            this.btnReporteSesion.TabIndex = 13;
+            this.btnReporteSesion.Text = "Historial de sesiones";
+            this.btnReporteSesion.Click += new System.EventHandler(this.btnReporteSesion_Click);
             // 
             // FrmReportes
             // 
@@ -228,6 +260,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(1291, 666);
+            this.Controls.Add(this.btnReporteSesion);
+            this.Controls.Add(this.btnReportAuditoria);
             this.Controls.Add(this.btnusuario);
             this.Controls.Add(this.btnrequisicion);
             this.Controls.Add(this.btnmovimientos);
@@ -261,6 +295,8 @@
         private Guna.UI2.WinForms.Guna2Button btnmovimientos;
         private Guna.UI2.WinForms.Guna2Button btnrequisicion;
         private Guna.UI2.WinForms.Guna2Button btnusuario;
+        private Guna.UI2.WinForms.Guna2Button btnReportAuditoria;
+        private Guna.UI2.WinForms.Guna2Button btnReporteSesion;
     }
 }
 
