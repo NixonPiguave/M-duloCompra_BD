@@ -70,7 +70,6 @@ namespace ModuloDeCompra_BD.Formulario
                         }
                     }
                 }
-                txtIDGRN.Text = string.Empty;
                 txtValor.Text = string.Empty;
                 txtCantidad.Text = string.Empty;
                 txtCostoUni.Text = string.Empty;
