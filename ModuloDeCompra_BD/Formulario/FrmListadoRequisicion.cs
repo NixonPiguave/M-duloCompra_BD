@@ -25,16 +25,23 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void FrmListadoRequisicion_Load(object sender, EventArgs e)
         {
-            dgvListadoRequisicion.DataSource = CsComandosSql.RetornaDatos("select ID_Requisicion, Estado_Requisicion, ID_Usuario from Requisicion where Estado_Requisicion = 'Aprobado'");
+            dgvListadoRequisicion.DataSource = CsComandosSql.RetornaDatos("select ID_Requisicion, Estado_Requisicion, ID_Usuario from Requisicion where Estado_Requisicion = 'Aprobada'");
         }
 
         private void btnSeleccionarCatego_Click(object sender, EventArgs e)
         {
-            int fila = dgvListadoRequisicion.CurrentCell.RowIndex;
-            txtRequisicionID.Text = dgvListadoRequisicion[0, fila].Value.ToString();
-            IdReq = Convert.ToInt32(dgvListadoRequisicion[0, fila].Value);
-            MessageBox.Show("Requisición seleccionada");
-            this.Close();
+            try
+            {
+                int fila = dgvListadoRequisicion.CurrentCell.RowIndex;
+                txtRequisicionID.Text = dgvListadoRequisicion[0, fila].Value.ToString();
+                IdReq = Convert.ToInt32(dgvListadoRequisicion[0, fila].Value);
+                MessageBox.Show("Requisición seleccionada");
+                this.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Error en Listado Requisición");
+            }
         }
 
         private void txtBuscarCategoria_KeyUp(object sender, KeyEventArgs e)

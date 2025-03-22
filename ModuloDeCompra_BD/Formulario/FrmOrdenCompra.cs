@@ -140,6 +140,9 @@ namespace ModuloDeCompra_BD.Formulario
                 }
 
                 MessageBox.Show("La orden ha sido guardada correctamente.");
+                dgvRequisiciones.DataSource = null;
+                txtProve.Text = string.Empty;
+                txtRequisicionID.Text = string.Empty;
             }
             catch (Exception ex)
             {
@@ -157,7 +160,7 @@ namespace ModuloDeCompra_BD.Formulario
                 frmListado.ShowDialog();
                 txtRequisicionID.Text = frmListado.RequisicionID.ToString();
                 DataTable Tb = new DataTable();
-                Tb = CsComandosSql.RetornaDatos($"select Cantidad, ID_Servicio, ID_Producto from Requi_Details  where Estado = 'Aprobado' and ID_Requisicion='{txtRequisicionID.Text}'");
+                Tb = CsComandosSql.RetornaDatos($"SELECT R.Cantidad, R.ID_Servicio, R.ID_Producto,\r\n       COALESCE(S.Nom_Servicio, P.NomProducto) AS 'Producto/Servicio'\r\nFROM Requi_Details R\r\nLEFT JOIN Servicio S ON R.ID_Servicio = S.ID_Servicio\r\nLEFT JOIN Producto P ON R.ID_Producto = P.ID_Producto\r\nWHERE R.Estado = 'Aprobada'\r\nAND R.ID_Requisicion='{txtRequisicionID.Text}'");
                 Tb.Columns.Add("Costo", typeof(decimal));
                 Tb.Columns.Add("Descuento", typeof(decimal));
                
