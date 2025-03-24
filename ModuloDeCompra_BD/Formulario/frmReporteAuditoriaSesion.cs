@@ -13,14 +13,14 @@ using static Guna.UI2.Native.WinApi;
 
 namespace ModuloDeCompra_BD.Formulario
 {
-    public partial class frmReporteAuditoria : Form
+    public partial class frmReporteAuditoriaSesion : Form
     {
-        public frmReporteAuditoria()
+        public frmReporteAuditoriaSesion()
         {
             InitializeComponent();
         }
 
-        private void frmReporteAuditoria_Load(object sender, EventArgs e)
+        private void frmReporteAuditoriaSesion_Load(object sender, EventArgs e)
         {
             dtpDesde.Value = DateTime.Today;
             dtpHasta.Value = DateTime.Today;
@@ -53,18 +53,18 @@ namespace ModuloDeCompra_BD.Formulario
                 }
 
                 string usuarioSeleccionado = cbUsuarios.SelectedItem.ToString();
-                string sentencia = $"Select * from Auditoria where Usuario = '{usuarioSeleccionado}' and Fecha between '{fechaDesde:yyyy-MM-dd HH:mm:ss}' and '{fechaHasta:yyyy-MM-dd HH:mm:ss}'";
+                string sentencia = $"Select * from AuditoriaSesion where Usuario = '{usuarioSeleccionado}' and Fecha between '{fechaDesde:yyyy-MM-dd HH:mm:ss}' and '{fechaHasta:yyyy-MM-dd HH:mm:ss}'";
 
-                frmreport reporteAuditoria = new frmreport(sentencia, "dsAuditoria", "Reporte.rpt_Auditoria.rdlc");
-                reporteAuditoria.ShowDialog();
+                frmreport reporteAuditoriaSesion = new frmreport(sentencia, "dsAuditoriaSesion", "Reporte.rpt_AuditoriaSesion.rdlc");
+                reporteAuditoriaSesion.ShowDialog();
             }
             else if (chbGeneral.Checked == true)
             {
                 chbUsuario.Checked = false;
-                string sentencia = $"Select * from Auditoria where Fecha between '{fechaDesde:yyyy-MM-dd HH:mm:ss}' and '{fechaHasta:yyyy-MM-dd HH:mm:ss}'";
+                string sentencia = $"Select * from AuditoriaSesion where Fecha between '{fechaDesde:yyyy-MM-dd HH:mm:ss}' and '{fechaHasta:yyyy-MM-dd HH:mm:ss}'";
 
-                frmreport reporteAuditoria = new frmreport(sentencia, "dsAuditoria", "Reporte.rpt_Auditoria.rdlc");
-                reporteAuditoria.ShowDialog();
+                frmreport reporteAuditoriaSesion = new frmreport(sentencia, "dsAuditoriaSesion", "Reporte.rpt_AuditoriaSesion.rdlc");
+                reporteAuditoriaSesion.ShowDialog();
             }
         }
 

@@ -106,9 +106,8 @@ namespace reporte
 
         private void btnReporteSesion_Click(object sender, EventArgs e)
         {
-            string sentencia = $"Select * from AuditoriaSesion ";
-            frmreport reporteAuditoriaSesion = new frmreport(sentencia, "dsAuditoriaSesion", "Reporte.rpt_AuditoriaSesion.rdlc");
-            reporteAuditoriaSesion.ShowDialog();
+            frmReporteAuditoriaSesion audit = new frmReporteAuditoriaSesion();
+            audit.ShowDialog();
         }
     }
 }

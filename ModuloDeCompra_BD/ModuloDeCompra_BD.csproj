@@ -123,6 +123,12 @@
     <Compile Include="Formulario\FrmRecepcionCompra.Designer.cs">
       <DependentUpon>FrmRecepcionCompra.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formulario\frmReporteAuditoriaSesion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\frmReporteAuditoriaSesion.Designer.cs">
+      <DependentUpon>frmReporteAuditoriaSesion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formulario\frmReporteAuditoria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -357,6 +363,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\FrmRecepcionCompra.resx">
       <DependentUpon>FrmRecepcionCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\frmReporteAuditoriaSesion.resx">
+      <DependentUpon>frmReporteAuditoriaSesion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\frmReporteAuditoria.resx">
       <DependentUpon>frmReporteAuditoria.cs</DependentUpon>

@@ -1,6 +1,6 @@
 ﻿namespace ModuloDeCompra_BD.Formulario
 {
-    partial class frmReporteAuditoria
+    partial class frmReporteAuditoriaSesion
     {
         /// <summary>
         /// Required designer variable.
@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.pnlCheck = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblHasta = new System.Windows.Forms.Label();
+            this.lblDesde = new System.Windows.Forms.Label();
+            this.dtpHasta = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.dtpDesde = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.chbGeneral = new Guna.UI2.WinForms.Guna2CheckBox();
             this.chbUsuario = new Guna.UI2.WinForms.Guna2CheckBox();
@@ -36,10 +40,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.cbUsuarios = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.dtpDesde = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.dtpHasta = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.lblDesde = new System.Windows.Forms.Label();
-            this.lblHasta = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlCheck.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
@@ -60,14 +60,66 @@
             this.pnlCheck.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlCheck.Location = new System.Drawing.Point(0, 0);
             this.pnlCheck.Name = "pnlCheck";
-            this.pnlCheck.Size = new System.Drawing.Size(451, 332);
+            this.pnlCheck.Size = new System.Drawing.Size(451, 335);
             this.pnlCheck.TabIndex = 0;
+            // 
+            // lblHasta
+            // 
+            this.lblHasta.AutoSize = true;
+            this.lblHasta.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHasta.Location = new System.Drawing.Point(237, 203);
+            this.lblHasta.Name = "lblHasta";
+            this.lblHasta.Size = new System.Drawing.Size(37, 15);
+            this.lblHasta.TabIndex = 9;
+            this.lblHasta.Text = "Hasta";
+            this.lblHasta.Visible = false;
+            // 
+            // lblDesde
+            // 
+            this.lblDesde.AutoSize = true;
+            this.lblDesde.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDesde.Location = new System.Drawing.Point(12, 203);
+            this.lblDesde.Name = "lblDesde";
+            this.lblDesde.Size = new System.Drawing.Size(40, 15);
+            this.lblDesde.TabIndex = 8;
+            this.lblDesde.Text = "Desde";
+            this.lblDesde.Visible = false;
+            // 
+            // dtpHasta
+            // 
+            this.dtpHasta.Checked = true;
+            this.dtpHasta.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtpHasta.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.dtpHasta.Location = new System.Drawing.Point(240, 222);
+            this.dtpHasta.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpHasta.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpHasta.Name = "dtpHasta";
+            this.dtpHasta.Size = new System.Drawing.Size(199, 36);
+            this.dtpHasta.TabIndex = 7;
+            this.dtpHasta.Value = new System.DateTime(2025, 3, 24, 17, 47, 5, 996);
+            this.dtpHasta.Visible = false;
+            // 
+            // dtpDesde
+            // 
+            this.dtpDesde.Animated = true;
+            this.dtpDesde.Checked = true;
+            this.dtpDesde.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.dtpDesde.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtpDesde.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.dtpDesde.Location = new System.Drawing.Point(12, 222);
+            this.dtpDesde.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpDesde.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpDesde.Name = "dtpDesde";
+            this.dtpDesde.Size = new System.Drawing.Size(200, 36);
+            this.dtpDesde.TabIndex = 0;
+            this.dtpDesde.Value = new System.DateTime(2025, 3, 24, 17, 44, 11, 930);
+            this.dtpDesde.Visible = false;
             // 
             // guna2Panel2
             // 
             this.guna2Panel2.Controls.Add(this.chbGeneral);
             this.guna2Panel2.Controls.Add(this.chbUsuario);
-            this.guna2Panel2.Location = new System.Drawing.Point(33, 76);
+            this.guna2Panel2.Location = new System.Drawing.Point(32, 79);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(150, 66);
             this.guna2Panel2.TabIndex = 6;
@@ -120,7 +172,7 @@
             this.btnGenerarReporte.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnGenerarReporte.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnGenerarReporte.ForeColor = System.Drawing.Color.White;
-            this.btnGenerarReporte.Location = new System.Drawing.Point(121, 272);
+            this.btnGenerarReporte.Location = new System.Drawing.Point(120, 275);
             this.btnGenerarReporte.Name = "btnGenerarReporte";
             this.btnGenerarReporte.Size = new System.Drawing.Size(180, 45);
             this.btnGenerarReporte.TabIndex = 3;
@@ -134,15 +186,15 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(115, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(231, 30);
+            this.label2.Size = new System.Drawing.Size(225, 30);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Reporte de auditoria ";
+            this.label2.Text = "Reporte de auditoria";
             // 
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.Location = new System.Drawing.Point(33, 145);
+            this.lblUsuario.Location = new System.Drawing.Point(32, 148);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(47, 15);
             this.lblUsuario.TabIndex = 1;
@@ -159,84 +211,32 @@
             this.cbUsuarios.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbUsuarios.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbUsuarios.ItemHeight = 30;
-            this.cbUsuarios.Location = new System.Drawing.Point(33, 161);
+            this.cbUsuarios.Location = new System.Drawing.Point(32, 164);
             this.cbUsuarios.Name = "cbUsuarios";
             this.cbUsuarios.Size = new System.Drawing.Size(205, 36);
             this.cbUsuarios.TabIndex = 0;
             this.cbUsuarios.Visible = false;
             // 
-            // dtpDesde
-            // 
-            this.dtpDesde.Animated = true;
-            this.dtpDesde.Checked = true;
-            this.dtpDesde.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.dtpDesde.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dtpDesde.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dtpDesde.Location = new System.Drawing.Point(13, 219);
-            this.dtpDesde.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtpDesde.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtpDesde.Name = "dtpDesde";
-            this.dtpDesde.Size = new System.Drawing.Size(200, 36);
-            this.dtpDesde.TabIndex = 0;
-            this.dtpDesde.Value = new System.DateTime(2025, 3, 24, 17, 44, 11, 930);
-            this.dtpDesde.Visible = false;
-            // 
-            // dtpHasta
-            // 
-            this.dtpHasta.Checked = true;
-            this.dtpHasta.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dtpHasta.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dtpHasta.Location = new System.Drawing.Point(241, 219);
-            this.dtpHasta.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtpHasta.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtpHasta.Name = "dtpHasta";
-            this.dtpHasta.Size = new System.Drawing.Size(199, 36);
-            this.dtpHasta.TabIndex = 7;
-            this.dtpHasta.Value = new System.DateTime(2025, 3, 24, 17, 47, 5, 996);
-            this.dtpHasta.Visible = false;
-            // 
-            // lblDesde
-            // 
-            this.lblDesde.AutoSize = true;
-            this.lblDesde.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDesde.Location = new System.Drawing.Point(13, 200);
-            this.lblDesde.Name = "lblDesde";
-            this.lblDesde.Size = new System.Drawing.Size(40, 15);
-            this.lblDesde.TabIndex = 8;
-            this.lblDesde.Text = "Desde";
-            this.lblDesde.Visible = false;
-            // 
-            // lblHasta
-            // 
-            this.lblHasta.AutoSize = true;
-            this.lblHasta.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHasta.Location = new System.Drawing.Point(238, 200);
-            this.lblHasta.Name = "lblHasta";
-            this.lblHasta.Size = new System.Drawing.Size(37, 15);
-            this.lblHasta.TabIndex = 9;
-            this.lblHasta.Text = "Hasta";
-            this.lblHasta.Visible = false;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(115, 39);
+            this.label1.Location = new System.Drawing.Point(102, 39);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(227, 25);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Movimientos de usuarios";
+            this.label1.Size = new System.Drawing.Size(249, 25);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Entrada y salida de usuarios";
             // 
-            // frmReporteAuditoria
+            // frmReporteAuditoriaSesion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(451, 332);
+            this.ClientSize = new System.Drawing.Size(451, 335);
             this.Controls.Add(this.pnlCheck);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.Name = "frmReporteAuditoria";
-            this.Text = "Reporte Auditoria";
-            this.Load += new System.EventHandler(this.frmReporteAuditoria_Load);
+            this.Name = "frmReporteAuditoriaSesion";
+            this.Text = "Reporte de Auditoria";
+            this.Load += new System.EventHandler(this.frmReporteAuditoriaSesion_Load);
             this.pnlCheck.ResumeLayout(false);
             this.pnlCheck.PerformLayout();
             this.guna2Panel2.ResumeLayout(false);
