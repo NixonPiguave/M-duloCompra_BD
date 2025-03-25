@@ -168,5 +168,36 @@ namespace ModuloDeCompra_BD.Clases
             }
             return secu;
         }
+        public static int[] Funcion_Rol(string user, string contraseña)
+        {
+            Conectar();
+
+            string countQuery = $"SELECT COUNT(RF.ID_Funcion) FROM Usuario U INNER JOIN Roles R ON U.ID_Rol = R.ID_Rol INNER JOIN Roles_Funciones RF ON R.ID_Rol = RF.ID_Rol WHERE U.Usuario = '{user}' AND U.Contraseña = '{contraseña}'";
+
+            ConfigurarComando(countQuery);
+
+            int count = Convert.ToInt32(comando.ExecuteScalar());
+
+            int[] funciones = new int[count];
+
+            if (count > 0)
+            {
+                string Query = $"SELECT RF.ID_Funcion FROM Usuario U INNER JOIN Roles R ON U.ID_Rol = R.ID_Rol INNER JOIN Roles_Funciones RF ON R.ID_Rol = RF.ID_Rol WHERE U.Usuario = '{user}' AND U.Contraseña = '{contraseña}'";
+
+                ConfigurarComando(Query);
+
+                SqlDataReader reader = comando.ExecuteReader();
+                int x = 0;
+
+                while (reader.Read())
+                {
+                    funciones[x] = Convert.ToInt32(reader["ID_Funcion"]);
+                    x++;
+                }
+            }
+
+            Desconectar();
+            return funciones;
+        }
     }
 }

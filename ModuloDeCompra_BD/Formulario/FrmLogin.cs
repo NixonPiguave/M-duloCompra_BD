@@ -53,8 +53,10 @@ namespace ModuloDeCompra_BD
                 user.Contraseña = encryp.Encriptar(txtContraseña.Text, txtUser.Text);
 
                 string rol = CsComandosSql.verificarlogin(user.Cedula, user.Contraseña);
+                int[] funcion = CsComandosSql.Funcion_Rol(user.Cedula, user.Contraseña);
                 int IDusuario = CsComandosSql.ObtenerIdUsuario(user.Cedula, user.Contraseña);
-
+                string idsTexto = string.Join(", ", funcion);
+                //MessageBox.Show("IDs de funciones: " + idsTexto);
 
                 if (!string.IsNullOrEmpty(rol))
                 {
@@ -64,8 +66,8 @@ namespace ModuloDeCompra_BD
                     CsConeccionServer.ActualizarCadenaConexion(txtUser.Text, user.Contraseña);
                     CsConeccionServer.ObtenerConexion();
 
-                    if (rol == "Administrador")
-                    {
+                    //if (rol == "Administrador")
+                    //{
                         MessageBox.Show("Inicio de sesión Exitoso");
                         FrmMenu3 ini = new FrmMenu3();
                         ini.IDusuario1 = IDusuario;
@@ -75,8 +77,8 @@ namespace ModuloDeCompra_BD
                         this.Hide();
                         ini.ShowDialog();
                         this.Show();
-                    }
-                    else if (rol == "Jefe Departamentario")
+                    //}
+                    /*else if (rol == "Jefe Departamentario")
                     {
                         MessageBox.Show("Inicio de sesión Exitoso");
                         FrmMenuJefeDepartamental ini = new FrmMenuJefeDepartamental();
@@ -122,7 +124,7 @@ namespace ModuloDeCompra_BD
                         this.Hide();
                         ini.ShowDialog();
                         this.Show();
-                    }
+                    }*/
                 }
                 else
                 {
