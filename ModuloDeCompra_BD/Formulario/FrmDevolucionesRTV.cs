@@ -21,67 +21,113 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void FrmRTV_Load(object sender, EventArgs e)
         {
-            
+            lbCantRecib.Visible = false;
         }
-        private void btnAceptar_Click(object sender, EventArgs e)
+
+        private void btnSeleccionarGRN_Click(object sender, EventArgs e)
         {
-            if (txtMotivo.Text != string.Empty || txtCantidad.Text != string.Empty || txtOrdenCompraID.Text != string.Empty || txtOrdenCompraID.Text != string.Empty || txtProducto.Text != string.Empty || txtProve.Text != string.Empty)
+            FrmListadoGRN grn = new FrmListadoGRN();
+            grn.ShowDialog();
+            txtSeleccionGRN.Text = grn.ID.ToString();
+            txtProveedor.Text = grn.IDProv1.ToString();
+            if (txtProveedor.Text != 0.ToString())
             {
-                int cantidad = Convert.ToInt32(txtCantidad.Text);
-                string motivo = txtMotivo.Text;
-                int Orden = Convert.ToInt32(txtOrdenCompraID.Text);
-                int ProveedorID = Convert.ToInt32(dgvRequisiciones[6, 0].Value.ToString());
-                int ProduID = Convert.ToInt32(txtProducto.Text);
-                CsRTV rtv = new CsRTV();
-                rtv.Cantidad1 = cantidad;
-                rtv.Motivo1 = motivo;
-                rtv.ID_Orden1 = Orden;
-                rtv.ID_Proveedor1 = ProveedorID;
-                rtv.ID_Producto1 = ProduID;
-                rtv.AgregarDevolucion();
-                MessageBox.Show("Devolución realizada");
+                string query = $"select GR.ID_GRNDetails as [Cod Detalle], GR.ID_Producto, Cantidad [Cantidad Recibida], 0 as [Cantidad a Devolver]," +
+                    $"(case when (select D.Cantidad from RTV_Header H inner join RTV_Details D on H.ID_RTV=D.ID_RTV where H.ID_GRN={grn.ID} AND D.ID_Producto=GR.ID_Producto) IS NULL " +
+                    $"then 0 else (select D.Cantidad from RTV_Header H inner join RTV_Details D on H.ID_RTV=D.ID_RTV where H.ID_GRN={grn.ID} AND D.ID_Producto=GR.ID_Producto) end) as [CantidadDevuelta] " +
+                    $"from Grn_Details GR where ID_GRN={grn.ID} and ID_Servicio IS NULL";
+                dgvDetalleGrn.DataSource = CsComandosSql.RetornaDatos(query);
+                lbCantRecib.Visible = true;
+
+                dgvDetalleGrn.Columns["Cantidad a Devolver"].ReadOnly = false;
+                dgvDetalleGrn.RowTemplate.Height = 80;
+                dgvDetalleGrn.AllowUserToResizeColumns = true;
+                dgvDetalleGrn.AllowUserToResizeRows = false;
+
+
+                foreach (DataGridViewColumn column in dgvDetalleGrn.Columns)
+                {
+                    if (column.Name != "Cantidad a Devolver")
+                    {
+                        column.ReadOnly = true;
+                    }
+
+                }
+                foreach (DataGridViewRow row in dgvDetalleGrn.Rows)
+                {
+                    row.Cells["Cantidad a Devolver"].Style.BackColor = Color.LightGray;
+                    row.Cells["Cantidad a Devolver"].Style.ForeColor = Color.Black;
+                }
+
+            }
+        }
+
+        private void dgvDetalleGrn_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            if (dgvDetalleGrn.CurrentCell.ColumnIndex == dgvDetalleGrn.Columns["Cantidad a Devolver"].Index)
+            {
+                TextBox editingControl = e.Control as TextBox;
+                if (editingControl != null)
+                {
+                    editingControl.KeyPress -= new KeyPressEventHandler(EditingControl_KeyPress);
+                    editingControl.KeyPress += new KeyPressEventHandler(EditingControl_KeyPress);
+                }
+            }
+        }
+        private void EditingControl_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void dgvDetalleGrn_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            if (dgvDetalleGrn.Columns[e.ColumnIndex].Name == "Cantidad a Devolver")
+            {
+                MessageBox.Show("El valor ingresado no es válido. Por favor, ingrese numeros enteros");
+                e.Cancel = true;
+                dgvDetalleGrn.CancelEdit();
+                dgvDetalleGrn[e.ColumnIndex, e.RowIndex].Value = 0;
             }
             else
             {
-                MessageBox.Show("Rellene todos los campos");
+
+                e.Cancel = true;
             }
         }
 
-        private void btnDetalle_Click(object sender, EventArgs e)
+        private void dgvDetalleGrn_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
-            FrmListadoOrdenCompra frmOrden = new FrmListadoOrdenCompra();
-            frmOrden.ShowDialog();
-            txtOrdenCompraID.Text = frmOrden.IdCat1.ToString();
-            int proveedor = Convert.ToInt32(dgvRequisiciones[6, 0].Value.ToString());
-            dgvAux.DataSource = CsComandosSql.RetornaDatos($"select P.Nombre_Proveedor from Orden_Compra as O inner join Proveedores as P on O.ID_Proveedor = P.ID_Proveedor where O.ID_Proveedor = {proveedor}");
-            txtProve.Text = dgvAux[0, 0].Value.ToString();
 
-        }
-
-        private void txtOrdenCompraID_TextChanged(object sender, EventArgs e)
-        {
-            dgvRequisiciones.DataSource = CsComandosSql.RetornaDatos($"select * from Orden_Compra where ID_Orden = {txtOrdenCompraID.Text}");
-        }
-
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
-            try
+            if (dgvDetalleGrn.Columns[e.ColumnIndex].Name == "Cantidad a Devolver" && e.RowIndex >= 0)
             {
-                FrmListadoProductos frmProducto = new FrmListadoProductos();
-                frmProducto.Orden = Convert.ToInt32(txtOrdenCompraID.Text);
-                frmProducto.ShowDialog();
-                if (txtProducto.Text != frmProducto.Producto.ToString())
+
+                if (dgvDetalleGrn.Rows[e.RowIndex].Selected)
                 {
-                    txtProducto.Text = frmProducto.Producto.ToString();
-                }
-                else
-                {
-                    MessageBox.Show("Escoja una opción");
+                    e.Handled = true;
+
+                    using (SolidBrush brush = new SolidBrush(Color.LightGray))
+                    {
+                        e.Graphics.FillRectangle(brush, e.CellBounds);
+                    }
+
+                    e.PaintContent(e.ClipBounds);
                 }
             }
-            catch
+        }
+
+        private void dgvDetalleGrn_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvDetalleGrn.Columns[e.ColumnIndex].Name == "Cantidad a Devolver")
             {
-                MessageBox.Show("Escoja una opcion");
+                var value = dgvDetalleGrn[e.ColumnIndex, e.RowIndex].Value;
+                if (value == null || string.IsNullOrWhiteSpace(value.ToString()))
+                {
+                    dgvDetalleGrn[e.ColumnIndex, e.RowIndex].Value = 0;
+                    return;
+                }
             }
         }
     }

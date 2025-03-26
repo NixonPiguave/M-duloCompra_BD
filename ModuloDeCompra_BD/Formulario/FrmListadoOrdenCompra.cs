@@ -36,13 +36,20 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void btnSeleccionarCatego_Click(object sender, EventArgs e)
         {
-            int fila = dgvListadoOrdenCompra.CurrentCell.RowIndex;
-            txtOrdenCompraID.Text = dgvListadoOrdenCompra[0, fila].Value.ToString();
-            Nombre = dgvListadoOrdenCompra[1, fila].Value.ToString();
-            IdCat = Convert.ToInt32(dgvListadoOrdenCompra[0, fila].Value);
-            idProv = Convert.ToInt32(dgvListadoOrdenCompra[6, fila].Value);
-            MessageBox.Show("Orden de Compra seleccionada");
-            this.Close();
+            try
+            {
+                int fila = dgvListadoOrdenCompra.CurrentCell.RowIndex;
+                txtOrdenCompraID.Text = dgvListadoOrdenCompra[0, fila].Value.ToString();
+                Nombre = dgvListadoOrdenCompra[1, fila].Value.ToString();
+                IdCat = Convert.ToInt32(dgvListadoOrdenCompra[0, fila].Value);
+                idProv = Convert.ToInt32(dgvListadoOrdenCompra[6, fila].Value);
+                MessageBox.Show("Orden de Compra seleccionada");
+                this.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Error al seleccionar");
+            }
         }
 
         private void txtBuscarCategoria_KeyUp(object sender, KeyEventArgs e)
