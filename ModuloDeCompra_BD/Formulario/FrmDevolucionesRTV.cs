@@ -178,15 +178,15 @@ namespace ModuloDeCompra_BD.Formulario
                                         <HEADER>
                                             <IDGRN>{txtSeleccionGRN.Text}</IDGRN>
                                             <Motivo>{"aawawa"}</Motivo>
-                                            <ID_Proveedor>{txtProveedor.Text}</ID_Proveedor>
+                                            <ID_Proveedor>{txtProveedor}</ID_Proveedor>
                                         </HEADER>
                                         {detalle}
                                  </RTV>'
                         ";
                     string queryD = $"EXEC InsertarRTV {xml}";
                     MessageBox.Show(xml);
-                    CsComandosSql.InserDeletUpdate(queryD);
-                    MessageBox.Show("RTV REGISTRADO");
+                    if(CsComandosSql.InserDeletUpdate(queryD))
+                           MessageBox.Show("RTV REGISTRADO");
                 }
                 catch (SqlException ex)
                 {
