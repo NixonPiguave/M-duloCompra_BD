@@ -128,6 +128,7 @@
             this.btnRegistrarRTV.Size = new System.Drawing.Size(122, 34);
             this.btnRegistrarRTV.TabIndex = 6;
             this.btnRegistrarRTV.Text = "Registrar RTV";
+            this.btnRegistrarRTV.Click += new System.EventHandler(this.btnRegistrarRTV_Click);
             // 
             // label2
             // 

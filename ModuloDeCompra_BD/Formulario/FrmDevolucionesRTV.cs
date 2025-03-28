@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -120,13 +121,76 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void dgvDetalleGrn_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvDetalleGrn.Columns[e.ColumnIndex].Name == "Cantidad a Devolver")
+            try
             {
-                var value = dgvDetalleGrn[e.ColumnIndex, e.RowIndex].Value;
-                if (value == null || string.IsNullOrWhiteSpace(value.ToString()))
+                if (dgvDetalleGrn.Columns[e.ColumnIndex].Name == "Cantidad a Devolver")
                 {
-                    dgvDetalleGrn[e.ColumnIndex, e.RowIndex].Value = 0;
-                    return;
+                    var value = dgvDetalleGrn[e.ColumnIndex, e.RowIndex].Value;
+                    if (value == null || string.IsNullOrWhiteSpace(value.ToString()))
+                    {
+                        dgvDetalleGrn[e.ColumnIndex, e.RowIndex].Value = 0;
+                        return;
+                    }
+
+                    int cantidadRecibida = Convert.ToInt32(dgvDetalleGrn[2, e.RowIndex].Value);
+                    int cantidadDevolver = Convert.ToInt32(dgvDetalleGrn[e.ColumnIndex, e.RowIndex].Value?.ToString());
+                    if (cantidadDevolver > cantidadRecibida)
+                    {
+                        MessageBox.Show("La cantidad Devuelta no puede ser mayor que la cantidad que se recivió.");
+                        dgvDetalleGrn[e.ColumnIndex, e.RowIndex].Value = 0;
+                    }
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Error");
+            }
+        }
+
+        private void btnRegistrarRTV_Click(object sender, EventArgs e)
+        {
+            if( !String.IsNullOrEmpty(txtProveedor.Text))
+            {
+                string detalle = "";
+
+                foreach (DataGridViewRow fila in dgvDetalleGrn.Rows)
+                {
+                    if (fila.IsNewRow)
+                        continue;
+
+                    string idProducto = fila.Cells["ID_Producto"].Value?.ToString();
+                    string cantidad = fila.Cells["Cantidad a Devolver"].Value?.ToString();
+                    int cant = Convert.ToInt32(cantidad);
+                    if (cant > 0)
+                    {
+
+                        detalle += $@"
+                                <DETALLE>
+                                    <ID_Producto>{idProducto}</ID_Producto>
+                                    <Cantidad>{cantidad}</Cantidad>
+                                </DETALLE>";
+
+                    }
+                }
+                try
+                {
+                    string xml = $@"'<RTV>
+                                        <HEADER>
+                                            <IDGRN>{txtSeleccionGRN.Text}</IDGRN>
+                                            <Motivo>{"aawawa"}</Motivo>
+                                            <ID_Proveedor>{txtProveedor.Text}</ID_Proveedor>
+                                        </HEADER>
+                                        {detalle}
+                                 </RTV>'
+                        ";
+                    string queryD = $"EXEC InsertarRTV {xml}";
+                    MessageBox.Show(xml);
+                    CsComandosSql.InserDeletUpdate(queryD);
+                    MessageBox.Show("RTV REGISTRADO");
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("" + ex);
                 }
             }
         }
