@@ -59,10 +59,11 @@ namespace Menú
             guna2Button16.Visible = false;
             pbEditarEmpresa.Visible = false;
             btnReportes.Visible = false;
-            /*if(botones.Contains(10) && botones.Contains(11) && botones.Contains(12) && botones.Contains(13) && botones.Contains(14) && botones.Contains(15) && botones.Contains(16))
+            if(!botones.Contains(10) && !botones.Contains(11) && !botones.Contains(12) && !botones.Contains(13) && !botones.Contains(14) && !botones.Contains(15) && !botones.Contains(16))
             {
                 btnMantenimiento.Visible= false;
-            }*/
+            }
+
             if (botones.Contains(5))
             {
                 //Recepción
