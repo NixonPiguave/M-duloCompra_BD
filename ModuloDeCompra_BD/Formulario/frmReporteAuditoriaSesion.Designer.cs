@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pnlCheck = new Guna.UI2.WinForms.Guna2Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.lblHasta = new System.Windows.Forms.Label();
             this.lblDesde = new System.Windows.Forms.Label();
             this.dtpHasta = new Guna.UI2.WinForms.Guna2DateTimePicker();
@@ -40,13 +41,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.cbUsuarios = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.pnlFecha = new Guna.UI2.WinForms.Guna2Panel();
+            this.chbGeneralFecha = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.chbFecha = new Guna.UI2.WinForms.Guna2CheckBox();
             this.pnlCheck.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
+            this.pnlFecha.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlCheck
             // 
+            this.pnlCheck.Controls.Add(this.pnlFecha);
             this.pnlCheck.Controls.Add(this.label1);
             this.pnlCheck.Controls.Add(this.lblHasta);
             this.pnlCheck.Controls.Add(this.lblDesde);
@@ -62,6 +67,16 @@
             this.pnlCheck.Name = "pnlCheck";
             this.pnlCheck.Size = new System.Drawing.Size(451, 335);
             this.pnlCheck.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(102, 39);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(249, 25);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Entrada y salida de usuarios";
             // 
             // lblHasta
             // 
@@ -217,15 +232,53 @@
             this.cbUsuarios.TabIndex = 0;
             this.cbUsuarios.Visible = false;
             // 
-            // label1
+            // pnlFecha
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(102, 39);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(249, 25);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Entrada y salida de usuarios";
+            this.pnlFecha.Controls.Add(this.chbGeneralFecha);
+            this.pnlFecha.Controls.Add(this.chbFecha);
+            this.pnlFecha.Location = new System.Drawing.Point(212, 79);
+            this.pnlFecha.Name = "pnlFecha";
+            this.pnlFecha.Size = new System.Drawing.Size(139, 66);
+            this.pnlFecha.TabIndex = 13;
+            this.pnlFecha.Visible = false;
+            // 
+            // chbGeneralFecha
+            // 
+            this.chbGeneralFecha.AutoSize = true;
+            this.chbGeneralFecha.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.chbGeneralFecha.CheckedState.BorderRadius = 0;
+            this.chbGeneralFecha.CheckedState.BorderThickness = 0;
+            this.chbGeneralFecha.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.chbGeneralFecha.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.chbGeneralFecha.Location = new System.Drawing.Point(12, 12);
+            this.chbGeneralFecha.Name = "chbGeneralFecha";
+            this.chbGeneralFecha.Size = new System.Drawing.Size(125, 19);
+            this.chbGeneralFecha.TabIndex = 1;
+            this.chbGeneralFecha.Text = "Sin rango de fecha";
+            this.chbGeneralFecha.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chbGeneralFecha.UncheckedState.BorderRadius = 0;
+            this.chbGeneralFecha.UncheckedState.BorderThickness = 0;
+            this.chbGeneralFecha.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chbGeneralFecha.CheckedChanged += new System.EventHandler(this.chbGeneralFecha_CheckedChanged);
+            // 
+            // chbFecha
+            // 
+            this.chbFecha.AutoSize = true;
+            this.chbFecha.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.chbFecha.CheckedState.BorderRadius = 0;
+            this.chbFecha.CheckedState.BorderThickness = 0;
+            this.chbFecha.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.chbFecha.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.chbFecha.Location = new System.Drawing.Point(12, 37);
+            this.chbFecha.Name = "chbFecha";
+            this.chbFecha.Size = new System.Drawing.Size(110, 19);
+            this.chbFecha.TabIndex = 0;
+            this.chbFecha.Text = "Rango de Fecha";
+            this.chbFecha.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chbFecha.UncheckedState.BorderRadius = 0;
+            this.chbFecha.UncheckedState.BorderThickness = 0;
+            this.chbFecha.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chbFecha.CheckedChanged += new System.EventHandler(this.chbFecha_CheckedChanged);
             // 
             // frmReporteAuditoriaSesion
             // 
@@ -241,6 +294,8 @@
             this.pnlCheck.PerformLayout();
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
+            this.pnlFecha.ResumeLayout(false);
+            this.pnlFecha.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -260,5 +315,8 @@
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpHasta;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpDesde;
         private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2Panel pnlFecha;
+        private Guna.UI2.WinForms.Guna2CheckBox chbGeneralFecha;
+        private Guna.UI2.WinForms.Guna2CheckBox chbFecha;
     }
 }
