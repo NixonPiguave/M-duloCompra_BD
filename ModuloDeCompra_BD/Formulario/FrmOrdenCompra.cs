@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -39,66 +40,7 @@ namespace ModuloDeCompra_BD.Formulario
                     MessageBox.Show("La Fecha Límite debe ser mayor a la fecha actual.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                foreach (DataGridViewRow fila in dgvRequisiciones.Rows)
-                {
-                    if (fila.IsNewRow)
-                        continue;
-
-                    string costo = fila.Cells["Costo"].Value?.ToString();
-                    string descuento = fila.Cells["Descuento"].Value?.ToString();
-
-                    // Reemplazar las comas por puntos
-                    costo = costo.Replace(',', '.');
-                    descuento = descuento.Replace(',', '.');
-
-                    decimal costoValido, descuentoValido;
-
-                    if (!decimal.TryParse(costo, out costoValido))
-                    {
-                        MessageBox.Show("El costo debe ser un número válido.");
-                        return; 
-                    }
-                    if (costoValido <= 0)
-                    {
-                        MessageBox.Show("El costo debe ser mayor a cero.");
-                        return; 
-                    }
-                    if (!decimal.TryParse(descuento, out descuentoValido))
-                    {
-                        MessageBox.Show("El descuento debe ser un número válido.");
-                        return; 
-                    }
-                }
-                int idGenerado = -1;
-                string xmlOrdenCompra = $@"
-                <ORDEN>
-                  <FECHAORDEN>{DateTime.Now.ToString("yyyy-MM-dd")}</FECHAORDEN>
-                  <FECHALIMITE>{dtpFechaLimite.Value.ToString("yyyy-MM-dd")}</FECHALIMITE>
-                  <ESTADORDEN>Pendiente</ESTADORDEN>
-                  <IDREQUI>{txtRequisicionID.Text}</IDREQUI>
-                  <IDUSUARIO>{idUsuario}</IDUSUARIO>
-                  <IDPROVE>{idproveedor}</IDPROVE>
-                </ORDEN>";
-
-                try
-                {
-                    string query = $@"
-                    DECLARE @TempID INT;
-                    EXEC SpOrdenCompra @cadena = '{xmlOrdenCompra}', @IDIngresada = @TempID OUTPUT;
-                    SELECT @TempID AS IDGenerado;";
-
-                    DataTable dt = CsComandosSql.RetornaDatos(query);
-
-                    if (dt.Rows.Count > 0)
-                    {
-                        idGenerado = Convert.ToInt32(dt.Rows[0]["IDGenerado"]);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Error: {ex.Message}");
-                }
-
+                string DetalleOrden = "";
                 foreach (DataGridViewRow fila in dgvRequisiciones.Rows)
                 {
                     if (fila.IsNewRow)
@@ -113,43 +55,51 @@ namespace ModuloDeCompra_BD.Formulario
                     costo = costo.Replace(',', '.');
                     descuento = descuento.Replace(',', '.');
 
-                    string xmlDetalleOrden = $@"
-                        <DETALLEORDENES>
+                    DetalleOrden += $@"
                             <DETALLEORDEN>
                                 <CANTIDAD>{cantidad}</CANTIDAD>
                                 <COSTO>{costo}</COSTO>
                                 <DESCUENTO>{descuento}</DESCUENTO>
                                 <IDSERVICIO>{(string.IsNullOrEmpty(idServicio) ? "NULL" : idServicio)}</IDSERVICIO>
                                 <IDPRODUCTO>{(string.IsNullOrEmpty(idProducto) ? "NULL" : idProducto)}</IDPRODUCTO>
-                                <IDORDEN>{idGenerado}</IDORDEN>
                                 <ESTADO>Pendiente</ESTADO>
-                            </DETALLEORDEN>
-                        </DETALLEORDENES>";
+                            </DETALLEORDEN>";
 
-                    string queryD = $"exec SpDetalleOrden @XMLdetalleOrden = '{xmlDetalleOrden}'";
+                }
+                try
+                {
+                    string xmlOrdenCompra = $@"
+                '<DETALLEORDENES>
+                <ORDEN>
+                  <FECHAORDEN>{DateTime.Now.ToString("yyyy-MM-dd")}</FECHAORDEN>
+                  <FECHALIMITE>{dtpFechaLimite.Value.ToString("yyyy-MM-dd")}</FECHALIMITE>
+                  <ESTADORDEN>Pendiente</ESTADORDEN>  
+                  <IDREQUI>{txtRequisicionID.Text}</IDREQUI>
+                  <IDUSUARIO>{idUsuario}</IDUSUARIO>
+                  <IDPROVE>{idproveedor}</IDPROVE>
+                </ORDEN>
+                     {DetalleOrden}
+                </DETALLEORDENES>' ";
 
-                    try
+                    MessageBox.Show(xmlOrdenCompra);
+                    string query = $"exec InsertarOrdenCompraRequisicion {xmlOrdenCompra}";
+                    if (CsComandosSql.InserDeletUpdate(query))
                     {
-                        if (!CsComandosSql.InserDeletUpdate(queryD))
-                            MessageBox.Show("Error al insertar detalle de orden");
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error: " + ex.Message);
+                        MessageBox.Show("La orden ha sido guardada correctamente.");
+                        dgvRequisiciones.DataSource = null;
+                        txtProve.Text = string.Empty;
+                        txtRequisicionID.Text = string.Empty;
                     }
                 }
-
-                MessageBox.Show("La orden ha sido guardada correctamente.");
-                dgvRequisiciones.DataSource = null;
-                txtProve.Text = string.Empty;
-                txtRequisicionID.Text = string.Empty;
+                catch (SqlException es)
+                {
+                    MessageBox.Show("" + es);
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message, "Error al guardar", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-
         }
 
         private void btnDetalle_Click(object sender, EventArgs e)
