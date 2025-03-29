@@ -89,38 +89,51 @@ namespace ModuloDeCompra_BD.Formulario
             txtRol.Text = dgvRol[1, celda].Value.ToString();
         }
         private void btnModificar_Click(object sender, EventArgs e)
-        {
-            Point boton = new Point();
-            Point btnAgregarLocalizacion = new Point();
-            boton.Y = 317;
-            boton.X = 175;
-            btnAgregarLocalizacion.Y = boton.Y;
-            btnAgregarLocalizacion.X = 12;
-            btnModificar.Location = boton;
-            btnAgregar.Location = btnAgregarLocalizacion;
+        {  
+                if (string.IsNullOrWhiteSpace(txtRol.Text))
+                {
+                    CsRoles csRol = new CsRoles();
+                    FrmFunciones abri = new FrmFunciones(this);
+                    abri.ShowDialog();
 
-            if (txtModificarRol.Visible == false)
-            {
-                lblModificarRol.Visible = true;
-                txtModificarRol.Visible = true;
-                btnAceptar.Visible = true;
-                btnAgregar.Visible = false;
-            }
-            else
-            {
-                Point regresarPosicionBtnModificar = new Point();
-                Point regresarPosicionBtnAgregar = new Point();
-                regresarPosicionBtnModificar.X = 175;
-                regresarPosicionBtnModificar.Y = 217;
-                regresarPosicionBtnAgregar.X = 12;
-                regresarPosicionBtnAgregar.Y = 217;
-                btnAgregar.Location = regresarPosicionBtnAgregar;
-                btnModificar.Location = regresarPosicionBtnModificar;
-                lblModificarRol.Visible = false;
-                txtModificarRol.Visible = false;
-                btnAceptar.Visible = false;
-                btnAgregar.Visible = true;
-            }
+                    Point boton = new Point();
+                    Point btnAgregarLocalizacion = new Point();
+                    boton.Y = 317;
+                    boton.X = 175;
+                    btnAgregarLocalizacion.Y = boton.Y;
+                    btnAgregarLocalizacion.X = 12;
+                    btnModificar.Location = boton;
+                    btnAgregar.Location = btnAgregarLocalizacion;
+
+
+                    if (txtModificarRol.Visible == false)
+                    {
+                        lblModificarRol.Visible = true;
+                        txtModificarRol.Visible = true;
+                        btnAceptar.Visible = true;
+                        btnAgregar.Visible = false;
+                    }
+                    else
+                    {
+                        Point regresarPosicionBtnModificar = new Point();
+                        Point regresarPosicionBtnAgregar = new Point();
+                        regresarPosicionBtnModificar.X = 175;
+                        regresarPosicionBtnModificar.Y = 217;
+                        regresarPosicionBtnAgregar.X = 12;
+                        regresarPosicionBtnAgregar.Y = 217;
+                        btnAgregar.Location = regresarPosicionBtnAgregar;
+                        btnModificar.Location = regresarPosicionBtnModificar;
+                        lblModificarRol.Visible = false;
+                        txtModificarRol.Visible = false;
+                        btnAceptar.Visible = false;
+                        btnAgregar.Visible = true;
+
+                    }
+                }
+                else
+                {
+                    MessageBox.Show($"Error no selecciono Rol");
+                }
         }
         private void btnAceptar_Click(object sender, EventArgs e)
         {
