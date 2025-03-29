@@ -41,7 +41,7 @@ namespace Menú
             dgvOrdenesRequisicion.DataSource = CsComandosSql.RetornaDatos("select * from Requisicion");
             btnEmpresa.Visible = false;
             
-           /* btnCrearRequisicion.Visible = false;
+            btnCrearRequisicion.Visible = false;
             btnRequisicionesPendientes.Visible = false;
             btnOrdenCompraRequisicion.Visible = false;
             btnOrdenCompra.Visible = false;
@@ -58,11 +58,11 @@ namespace Menú
             guna2Button15.Visible = false;
             guna2Button16.Visible = false;
             pbEditarEmpresa.Visible = false;
-            btnReportes.Visible = true;
-            if(botones.Contains(10) && botones.Contains(11) && botones.Contains(12) && botones.Contains(13) && botones.Contains(14) && botones.Contains(15) && botones.Contains(16))
+            btnReportes.Visible = false;
+            /*if(botones.Contains(10) && botones.Contains(11) && botones.Contains(12) && botones.Contains(13) && botones.Contains(14) && botones.Contains(15) && botones.Contains(16))
             {
                 btnMantenimiento.Visible= false;
-            }
+            }*/
             if (botones.Contains(5))
             {
                 //Recepción
@@ -80,11 +80,11 @@ namespace Menú
                 //Empresa
                 pbEditarEmpresa.Visible = true;
             }
-            if (!botones.Contains(18))
+            if (botones.Contains(18))
             {
                 //Reportes
                 btnReportes.Visible = true;
-            }*/
+            }
         }
         private void btnCrearRequisicion_Click(object sender, EventArgs e)
         {
@@ -120,6 +120,21 @@ namespace Menú
         }
         private void guna2Button4_Click(object sender, EventArgs e)
         {
+            if (botones.Contains(6))
+            {
+                //Ver Inventario
+                btnInventariooo.Visible = true;
+            }
+            if (botones.Contains(7))
+            {
+                //Movimientos
+                guna2Button8.Visible = true;
+            }
+            if (botones.Contains(8))
+            {
+                //Bodega
+                guna2Button9.Visible = true;
+            }
             pnMantenimientos.Visible = false;
             pnlSubMenuOrdenCompra.Visible = false;
             pnlRequisiciones.Visible = false;
@@ -131,10 +146,10 @@ namespace Menú
         private void guna2Button6_Click(object sender, EventArgs e)
         {
             
-            /*if (botones.Contains(10))
+            if (botones.Contains(10))
             {
                 //Usuarios
-               * btnUsuarios.Visible = true;
+               btnUsuarios.Visible = true;
             }
             if (botones.Contains(11))
             {
@@ -165,7 +180,7 @@ namespace Menú
             {
                 //IVA
                 guna2Button16.Visible = true;
-            }*/
+            }
             pnlSubMenuOrdenCompra.Visible = false;
             pnIventario.Visible = false;
             pnlRequisiciones.Visible = false;
@@ -176,7 +191,7 @@ namespace Menú
         }
         private void btnOrdenesCompra_Click(object sender, EventArgs e)
         {
-            /*if (botones.Contains(3))
+            if (botones.Contains(3))
             {
                 //Crear por Requisición
                 btnOrdenCompraRequisicion.Visible = true;
@@ -185,7 +200,7 @@ namespace Menú
             {
                 //Crear por Orden de Compra
                 btnOrdenCompra.Visible = true;
-            }*/
+            }
             pnMantenimientos.Visible = false;
             pnIventario.Visible = false;
             pnlRequisiciones.Visible = false;
@@ -197,7 +212,7 @@ namespace Menú
 
         private void btnRequisiciones_Click(object sender, EventArgs e)
         {
-            /*if (botones.Contains(1))
+            if (botones.Contains(1))
             {
                 //Crear Requisicion
                 btnCrearRequisicion.Visible = true;
@@ -206,7 +221,7 @@ namespace Menú
             {
                 //Ver Requisiciones Pendientes
                 btnRequisicionesPendientes.Visible = true;
-            }*/
+            }
             if (pnlRequisiciones.Visible == false)
             {
                 pnlRequisiciones.Visible = true;
@@ -317,21 +332,7 @@ namespace Menú
         }
         private void btnInventariooo_Click(object sender, EventArgs e)
         {
-            /*if (botones.Contains(6))
-            {
-                //Ver Inventario
-                btnInventariooo.Visible = true;
-            }
-            if (botones.Contains(7))
-            {
-                //Movimientos
-                guna2Button8.Visible = true;
-            }
-            if (botones.Contains(8))
-            {
-                //Bodega
-                guna2Button9.Visible = true;
-            }*/
+            
             FrmInventario invent = new FrmInventario();
             pnIventario.Visible = false;
             pnlRequisiciones.Visible = false;
