@@ -12,10 +12,12 @@ namespace ModuloDeCompra_BD.Clases
     {
         int idRol;
         string rol;
+        int idrolfun;
         int funciones;
         public int RolID { get => idRol; set => idRol = value; }
         public string Rol { get => rol; set => rol = value; }
         public int Funciones { get => funciones; set => funciones = value; }
+        public int Idrolfun { get => idrolfun; set => idrolfun = value; }
 
         public bool AñadirRol()
         {
@@ -28,9 +30,8 @@ namespace ModuloDeCompra_BD.Clases
             return CsComandosSql.InserDeletUpdate(query);
         }
         public bool funcionRol()
-        {
-                string cadenaXML = $"{Funciones}";
-                string query = "";
+        {       
+                string query = $"exec sp_AsignarFuncionARol '{idrolfun}','{funciones}'";
                 return CsComandosSql.InserDeletUpdate(query);
         }
         public bool ModificarRol()

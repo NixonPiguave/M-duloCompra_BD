@@ -203,19 +203,23 @@ namespace ModuloDeCompra_BD.Clases
         {
             Conectar();
             string query = sentencia;
-
             ConfigurarComando(query);
             object result = comando.ExecuteScalar();
+            Desconectar();
 
-            int valorEntero = 0;
-
-            if (result != null && result != DBNull.Value)
+            if (result == null || result == DBNull.Value)
             {
-                valorEntero = Convert.ToInt32(result);
+                throw new Exception("La consulta no devolvió ningún resultado.");
             }
 
-            Desconectar();
-            return valorEntero;
+            try
+            {
+                return Convert.ToInt32(result);
+            }
+            catch (FormatException)
+            {
+                throw new Exception($"No se pudo convertir el valor '{result}' a número. Verifica que la consulta devuelva un ID válido.");
+            }
         }
     }
 }

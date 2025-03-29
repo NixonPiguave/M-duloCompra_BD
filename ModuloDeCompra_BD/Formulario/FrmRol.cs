@@ -13,7 +13,7 @@ namespace ModuloDeCompra_BD.Formulario
 {
     public partial class FrmRol: Form
     {
-        int[] funcion ;
+        int[] funcion = new int[0];
 
         public int[] Funcion { get => funcion; set => funcion = value; }
 
@@ -33,21 +33,29 @@ namespace ModuloDeCompra_BD.Formulario
                     return;
 
                 }
+                if (Funcion == null || Funcion.Length == 0)
+                {
+                    MessageBox.Show("No se han seleccionado funciones.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 try
                 {
                     if (!CsComandosSql.verificar($"Select * from Roles where Rol = '{txtRol.Text}'"))
                     {
-                        int tam = Funcion.Length;
-                        for (int i=0;i<tam; i++)
-                        {
-                            int funciones =funcion[i];
-                            csRol.Funciones=funciones;
-                            csRol.funcionRol();
-                        }
+                       int tam = Funcion.Length;
+                        
                         csRol.Rol = txtRol.Text;
                         csRol.AñadirRol();
                         dgvRol.DataSource = CsComandosSql.RetornaDatos($"select * from Roles");
                         MessageBox.Show("Se ha agregado el Roles");
+                        int rol = Convert.ToInt32(ObtenerIDDelRol(txtRol.Text));
+                        for (int i = 0; i < tam; i++)
+                        {
+                            int funciones = Funcion[i];
+                            csRol.Funciones = funciones;
+                            csRol.Idrolfun = rol;
+                            csRol.funcionRol();
+                        }
                     }
                     else
                     {
@@ -65,10 +73,15 @@ namespace ModuloDeCompra_BD.Formulario
                 MessageBox.Show($"Ocurrió un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        public int ObtenerIDDelRol(string nombreRol)
+        {
+            string query = $"SELECT TOP 1 ID_Rol FROM Roles WHERE Rol = '{nombreRol}' ORDER BY ID_Rol DESC";
+            return Convert.ToInt32(CsComandosSql.obtenerID(query));
+        }
         private void btnfuncionalidad_Click(object sender, EventArgs e)
         {
             CsRoles csRol = new CsRoles();
-            FrmFunciones abri = new FrmFunciones();
+            FrmFunciones abri = new FrmFunciones(this); 
             abri.ShowDialog();
         }
         private void FrmRol_Load(object sender, EventArgs e)
@@ -116,51 +129,51 @@ namespace ModuloDeCompra_BD.Formulario
         }
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            CsRoles csRoles = new CsRoles();
             try
             {
-
-                if (string.IsNullOrWhiteSpace(txtRol.Text) || string.IsNullOrEmpty(txtModificarRol.Text))
+                // Validación de campos
+                if (string.IsNullOrWhiteSpace(txtModificarRol.Text))
                 {
-                    MessageBox.Show("Todos los campos son obligatorios.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("El nombre del rol es obligatorio.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
-
-                }
-                try
-                {
-                    if (txtModificarRol.Text== "Administrador")
-                    {
-                        if (!CsComandosSql.verificar($"Select * from Roles where Rol= '{txtModificarRol.Text}'"))
-                        {
-                            int posicion = dgvRol.CurrentCell.RowIndex;
-                            int ID = Convert.ToInt32(dgvRol[0, posicion].Value);
-                            csRoles.RolID = ID;
-                            csRoles.Rol = txtModificarRol.Text;
-                            csRoles.ModificarRol();
-                            dgvRol.DataSource = CsComandosSql.RetornaDatos($"select * from Roles");
-                            MessageBox.Show("Se ha modificado el rol.");
-                        }
-                        else
-                        {
-                            MessageBox.Show("El departamento ya existe");
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("El Administrador no se puede modificar");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
+                // Obtener ID del rol a modificar
+                int posicion = dgvRol.CurrentCell.RowIndex;
+                int ID = Convert.ToInt32(dgvRol[0, posicion].Value);
+
+                // Verificar si es el rol Administrador (que no debería modificarse)
+                string rolActual = dgvRol[1, posicion].Value.ToString();
+                if (rolActual.Equals("Administrador", StringComparison.OrdinalIgnoreCase))
+                {
+                    MessageBox.Show("El rol Administrador no se puede modificar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Verificar si el nuevo nombre ya existe
+                if (CsComandosSql.verificar($"Select * from Roles where Rol = '{txtModificarRol.Text}' AND RolID <> {ID}"))
+                {
+                    MessageBox.Show("Ya existe un rol con ese nombre.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Realizar la modificación
+                CsRoles csRoles = new CsRoles
+                {
+                    RolID = ID,
+                    Rol = txtModificarRol.Text
+                };
+
+                csRoles.ModificarRol();
+                dgvRol.DataSource = CsComandosSql.RetornaDatos("select * from Roles");
+                MessageBox.Show("Rol modificado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Ocurrió un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error al modificar el rol: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
     }
 }
 

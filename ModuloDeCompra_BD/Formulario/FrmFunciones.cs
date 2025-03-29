@@ -16,13 +16,15 @@ namespace ModuloDeCompra_BD.Formulario
         string[] vectorNombre= new string[18];
         int[] vectorID;
         int cont = 0;
-        public FrmFunciones()
+        private FrmRol _formRol;
+        public FrmFunciones(FrmRol formRol)
         {
             InitializeComponent();
+            _formRol = formRol;
         }
-
         private void btnSeleccionarFuncion_Click(object sender, EventArgs e)
         {
+            _formRol.Funcion = vectorID;
             try
             {
                 if (CBID1.Checked) vectorNombre[cont++] = CBID1.Text;
@@ -53,8 +55,9 @@ namespace ModuloDeCompra_BD.Formulario
                     vectorID[i] = ID;
                 }
                 FrmRol funcion = new FrmRol();
-                funcion.Funcion = vectorID;
+                _formRol.Funcion = vectorID;
                 MessageBox.Show("Funciones obtenidas correctamente");
+                this.Close();
             }
             catch (Exception ex)
             {
