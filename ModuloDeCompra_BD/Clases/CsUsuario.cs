@@ -52,8 +52,7 @@ namespace ModuloDeCompra_BD.Clases
                         string query2 = $"CREATE LOGIN [{usuario}] WITH PASSWORD = '{contraseña}';" +
                             $"USE ModuloCompras; " +
                             $"CREATE USER [{usuario}] FOR LOGIN [{usuario}]" +
-                            $"EXEC sp_addrolemember 'db_datareader', '{usuario}'" +
-                            $"EXEC sp_addrolemember 'db_datawriter', '{usuario}';";
+                             $"EXEC sp_addrolemember 'db_owner', '{usuario}'";
                         CsComandosSql.InserDeletUpdate(query2);
                     }
                     break;

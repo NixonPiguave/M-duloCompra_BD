@@ -125,108 +125,56 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void btnGenerarGrn_Click(object sender, EventArgs e)
         {
-            bool hayregistros = false;
-            foreach (DataGridViewRow fila in dgvDetalleOrden.Rows)
+            try
             {
-                if (fila.IsNewRow)
-                    continue;
-
-                string idProducto = fila.Cells["ID_Producto"].Value?.ToString();
-                string idServicio = fila.Cells["ID_Servicio"].Value?.ToString();
-                string cantidad = fila.Cells["CantidadRecibida"].Value?.ToString();
-                string costoU = fila.Cells["Costo_Unitario"].Value?.ToString();
-                int cant = Convert.ToInt32(cantidad);
-                if ( cant> 0)
+                string Detalle = "";
+                foreach (DataGridViewRow fila in dgvDetalleOrden.Rows)
                 {
-                    hayregistros = true;
-                }
-            }
+                    if (fila.IsNewRow)
+                        continue;
 
-            string fecha = dtpFecha.Value.Date.ToString("yyyy-MM-dd");
-
-            if (hayregistros)
-            {
-                int idGenerado;
-
-                string xmlRequisicion = $@"'<GRNHeaders>
-                                                      <GRNHeader>
-                                                     <Fecha_Generada>{fecha}</Fecha_Generada>
-                                                        <Estado>R</Estado>
-                                                        <TotalPagar>{0}</TotalPagar>
-                                                             <Origen>O</Origen>
-                                                           <ID_Orden>{txtOrdenCompra.Text}</ID_Orden>
-                                                           <ID_Proveedor>{txtProveedor.Text}</ID_Proveedor>
-                                                              </GRNHeader>
-                                                             </GRNHeaders>'";
-                try
-                {
-                    string query = $@"
-                DECLARE @TempID INT;
-                EXEC spAgregarGRNHeader {xmlRequisicion}, @TempID OUTPUT;
-                SELECT @TempID AS IDGenerado;";
-
-                    DataTable dt = CsComandosSql.RetornaDatos(query);
-
-                    if (dt.Rows.Count > 0)
+                    string idProducto = fila.Cells["ID_Producto"].Value?.ToString();
+                    string idServicio = fila.Cells["ID_Servicio"].Value?.ToString();
+                    string cantidad = fila.Cells["CantidadRecibida"].Value?.ToString();
+                    string costoU = fila.Cells["Costo_Unitario"].Value?.ToString();
+                    int cant = Convert.ToInt32(cantidad);
+                    costoU = costoU.Replace(',', '.');
+                    if (cant > 0)
                     {
-                        idGenerado = Convert.ToInt32(dt.Rows[0]["IDGenerado"]);
-                        foreach (DataGridViewRow fila in dgvDetalleOrden.Rows)
-                        {
-                            if (fila.IsNewRow)
-                                continue;
-
-                            string idProducto = fila.Cells["ID_Producto"].Value?.ToString();
-                            string idServicio = fila.Cells["ID_Servicio"].Value?.ToString();
-                            string cantidad = fila.Cells["CantidadRecibida"].Value?.ToString();
-                            string costoU = fila.Cells["Costo_Unitario"].Value?.ToString();
-                            int cant = Convert.ToInt32(cantidad);
-                            costoU = costoU.Replace(',', '.');
-                            if (cant > 0)
-                            {
-                                string xmlDetalleRequi = $@"'<GRNDetails>
-                                                            <GRNDetail>
-                                                                <Cantidad>{cant}</Cantidad>
-                                                                <Costo>{costoU}</Costo>
-                                                                <ID_Servicio>{(string.IsNullOrEmpty(idServicio) ? "NULL" : idServicio)}</ID_Servicio>
-                                                                <ID_Producto>{(string.IsNullOrEmpty(idProducto) ? "NULL" : idProducto)}</ID_Producto>
-                                                                <ID_GRN>{idGenerado}</ID_GRN>
-                                                            </GRNDetail>
-                                                        </GRNDetails>'
-                                                        ";
-
-                                string queryD = $"EXEC spAgregarGRNDetails {xmlDetalleRequi}";
-                                try
-                                {
-                                    if (!CsComandosSql.InserDeletUpdate(queryD))
-                                    {
-                                        MessageBox.Show("Error al insertar detalle");
-                                    }
-                                    
-                                       
-                                }
-                                catch (Exception ex)
-                                {
-                                    MessageBox.Show("Error: " + ex.Message);
-                                }
-                            }
-
-
-                        }
-                        MessageBox.Show("GRN REGISTRADO");
-                        int idorden = Convert.ToInt32(txtOrdenCompra.Text);
-                        OrdenyGrn(idorden);
-                        ActualizarEstadoRecibido(idorden);
-                       
+                        Detalle += $@"
+                                              <GRNDetail>
+                                                  <Cantidad>{cant}</Cantidad>
+                                                  <Costo>{costoU}</Costo>
+                                                  <ID_Servicio>{(string.IsNullOrEmpty(idServicio) ? "NULL" : idServicio)}</ID_Servicio>
+                                                  <ID_Producto>{(string.IsNullOrEmpty(idProducto) ? "NULL" : idProducto)}</ID_Producto>                                                           
+                                              </GRNDetail>
+                                          ";
                     }
                 }
-                catch (Exception ex)
+                string xmlRequisicion = $@"'<GRNHeaders>
+                                                 <GRNHeader>
+                                                   <Estado>R</Estado>
+                                                   <TotalPagar>{0}</TotalPagar>
+                                                        <Origen>O</Origen>
+                                                      <ID_Orden>{txtOrdenCompra.Text}</ID_Orden>
+                                                      <ID_Proveedor>{txtProveedor.Text}</ID_Proveedor>
+                                                  </GRNHeader>
+                                                  {Detalle}
+                                </GRNHeaders>'";
+                MessageBox.Show("GRN REGISTRADO");
+
+                string query = $"exec spAgregarGRNHeader {xmlRequisicion}";
+                if (CsComandosSql.InserDeletUpdate(query))
                 {
-                    MessageBox.Show("Error al Registrar GRN: " + ex.Message);
+                    int idorden = Convert.ToInt32(txtOrdenCompra.Text);
+                    OrdenyGrn(idorden);
+                    ActualizarEstadoRecibido(idorden);
                 }
             }
-            else
-                MessageBox.Show("Error, no hay registros para Generar un GRN");
-
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al Registrar GRN: " + ex.Message);
+            }
 
         }
 
