@@ -1,4 +1,5 @@
-﻿using Menú.Formularios;
+﻿using Guna.UI2.WinForms;
+using Menú.Formularios;
 using ModuloDeCompra_BD.Clases;
 using ModuloDeCompra_BD.Formulario;
 using ModuloDeCompra_BD.Properties;
@@ -40,7 +41,8 @@ namespace Menú
             pnlRequisiciones.Visible = false;
             dgvOrdenesRequisicion.DataSource = CsComandosSql.RetornaDatos("select * from Requisicion");
             btnEmpresa.Visible = false;
-            
+
+
             btnCrearRequisicion.Visible = false;
             btnRequisicionesPendientes.Visible = false;
             btnOrdenCompraRequisicion.Visible = false;
@@ -63,7 +65,14 @@ namespace Menú
             {
                 btnMantenimiento.Visible= false;
             }
-
+            if(!botones.Contains(6) && !botones.Contains(7) && !botones.Contains(8))
+            {
+                btnInventario.Visible= false;
+            }
+            if(!botones.Contains(3) && !botones.Contains(4))
+            {
+                btnOrdenesCompra.Visible= false;
+            }
             if (botones.Contains(5))
             {
                 //Recepción
