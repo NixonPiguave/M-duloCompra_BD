@@ -67,7 +67,7 @@ namespace reporte
         }        
         private void reportViewer1_Load(object sender, EventArgs e)
         {
-            // No es necesario implementar nada aquí
+
         }
     }
 
