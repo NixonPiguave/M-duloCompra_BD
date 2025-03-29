@@ -33,7 +33,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvRol = new Guna.UI2.WinForms.Guna2DataGridView();
             this.pnlSubMenu = new System.Windows.Forms.Panel();
-            this.btnEliminar = new Guna.UI2.WinForms.Guna2Button();
             this.btnAceptar = new Guna.UI2.WinForms.Guna2Button();
             this.lblModificarRol = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txtModificarRol = new Guna.UI2.WinForms.Guna2TextBox();
@@ -41,6 +40,7 @@
             this.btnModificar = new Guna.UI2.WinForms.Guna2Button();
             this.txtRol = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblRol = new System.Windows.Forms.Label();
+            this.btnfuncionalidad = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRol)).BeginInit();
             this.pnlSubMenu.SuspendLayout();
             this.SuspendLayout();
@@ -103,7 +103,7 @@
             // pnlSubMenu
             // 
             this.pnlSubMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
-            this.pnlSubMenu.Controls.Add(this.btnEliminar);
+            this.pnlSubMenu.Controls.Add(this.btnfuncionalidad);
             this.pnlSubMenu.Controls.Add(this.btnAceptar);
             this.pnlSubMenu.Controls.Add(this.lblModificarRol);
             this.pnlSubMenu.Controls.Add(this.txtModificarRol);
@@ -116,23 +116,6 @@
             this.pnlSubMenu.Name = "pnlSubMenu";
             this.pnlSubMenu.Size = new System.Drawing.Size(319, 663);
             this.pnlSubMenu.TabIndex = 1;
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.BorderRadius = 20;
-            this.btnEliminar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnEliminar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnEliminar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnEliminar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnEliminar.FillColor = System.Drawing.Color.Red;
-            this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(12, 591);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(133, 53);
-            this.btnEliminar.TabIndex = 7;
-            this.btnEliminar.Text = "Eliminar Rol";
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnAceptar
             // 
@@ -248,6 +231,23 @@
             this.lblRol.TabIndex = 0;
             this.lblRol.Text = "Rol";
             // 
+            // btnfuncionalidad
+            // 
+            this.btnfuncionalidad.BorderRadius = 20;
+            this.btnfuncionalidad.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnfuncionalidad.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnfuncionalidad.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnfuncionalidad.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnfuncionalidad.FillColor = System.Drawing.Color.DodgerBlue;
+            this.btnfuncionalidad.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnfuncionalidad.ForeColor = System.Drawing.Color.White;
+            this.btnfuncionalidad.Location = new System.Drawing.Point(94, 427);
+            this.btnfuncionalidad.Name = "btnfuncionalidad";
+            this.btnfuncionalidad.Size = new System.Drawing.Size(133, 53);
+            this.btnfuncionalidad.TabIndex = 7;
+            this.btnfuncionalidad.Text = "Seleccionar Funcionalidades";
+            this.btnfuncionalidad.Click += new System.EventHandler(this.btnfuncionalidad_Click);
+            // 
             // FrmRol
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -277,6 +277,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lblModificarRol;
         private Guna.UI2.WinForms.Guna2TextBox txtModificarRol;
         private Guna.UI2.WinForms.Guna2Button btnAceptar;
-        private Guna.UI2.WinForms.Guna2Button btnEliminar;
+        private Guna.UI2.WinForms.Guna2Button btnfuncionalidad;
     }
 }

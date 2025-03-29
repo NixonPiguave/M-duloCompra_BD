@@ -13,11 +13,14 @@ namespace ModuloDeCompra_BD.Formulario
 {
     public partial class FrmRol: Form
     {
+        int[] funcion ;
+
+        public int[] Funcion { get => funcion; set => funcion = value; }
+
         public FrmRol()
         {
             InitializeComponent();
         }
-
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             CsRoles csRol = new CsRoles();
@@ -34,6 +37,13 @@ namespace ModuloDeCompra_BD.Formulario
                 {
                     if (!CsComandosSql.verificar($"Select * from Roles where Rol = '{txtRol.Text}'"))
                     {
+                        int tam = Funcion.Length;
+                        for (int i=0;i<tam; i++)
+                        {
+                            int funciones =funcion[i];
+                            csRol.Funciones=funciones;
+                            csRol.funcionRol();
+                        }
                         csRol.Rol = txtRol.Text;
                         csRol.AñadirRol();
                         dgvRol.DataSource = CsComandosSql.RetornaDatos($"select * from Roles");
@@ -55,7 +65,21 @@ namespace ModuloDeCompra_BD.Formulario
                 MessageBox.Show($"Ocurrió un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
+        private void btnfuncionalidad_Click(object sender, EventArgs e)
+        {
+            CsRoles csRol = new CsRoles();
+            FrmFunciones abri = new FrmFunciones();
+            abri.ShowDialog();
+        }
+        private void FrmRol_Load(object sender, EventArgs e)
+        {
+            dgvRol.DataSource = CsComandosSql.RetornaDatos("Select * from Roles");
+        }
+        private void dgvCategoria_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int celda = dgvRol.CurrentCell.RowIndex;
+            txtRol.Text = dgvRol[1, celda].Value.ToString();
+        }
         private void btnModificar_Click(object sender, EventArgs e)
         {
             Point boton = new Point();
@@ -66,7 +90,7 @@ namespace ModuloDeCompra_BD.Formulario
             btnAgregarLocalizacion.X = 12;
             btnModificar.Location = boton;
             btnAgregar.Location = btnAgregarLocalizacion;
- 
+
             if (txtModificarRol.Visible == false)
             {
                 lblModificarRol.Visible = true;
@@ -90,18 +114,6 @@ namespace ModuloDeCompra_BD.Formulario
                 btnAgregar.Visible = true;
             }
         }
-
-        private void FrmRol_Load(object sender, EventArgs e)
-        {
-            dgvRol.DataSource = CsComandosSql.RetornaDatos("Select * from Roles");
-        }
-
-        private void dgvCategoria_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int celda = dgvRol.CurrentCell.RowIndex;
-            txtRol.Text = dgvRol[1, celda].Value.ToString();
-        }
-
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             CsRoles csRoles = new CsRoles();
@@ -116,53 +128,27 @@ namespace ModuloDeCompra_BD.Formulario
                 }
                 try
                 {
-                    if (!CsComandosSql.verificar($"Select * from Roles where Rol= '{txtModificarRol.Text}'"))
+                    if (txtModificarRol.Text== "Administrador")
                     {
-                        int posicion = dgvRol.CurrentCell.RowIndex;
-                        int ID = Convert.ToInt32(dgvRol[0, posicion].Value);
-                        csRoles.RolID= ID;
-                        csRoles.Rol = txtModificarRol.Text;
-                        csRoles.ModificarRol();
-                        dgvRol.DataSource = CsComandosSql.RetornaDatos($"select * from Roles");
-                        MessageBox.Show("Se ha modificado el rol.");
+                        if (!CsComandosSql.verificar($"Select * from Roles where Rol= '{txtModificarRol.Text}'"))
+                        {
+                            int posicion = dgvRol.CurrentCell.RowIndex;
+                            int ID = Convert.ToInt32(dgvRol[0, posicion].Value);
+                            csRoles.RolID = ID;
+                            csRoles.Rol = txtModificarRol.Text;
+                            csRoles.ModificarRol();
+                            dgvRol.DataSource = CsComandosSql.RetornaDatos($"select * from Roles");
+                            MessageBox.Show("Se ha modificado el rol.");
+                        }
+                        else
+                        {
+                            MessageBox.Show("El departamento ya existe");
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("El departamento ya existe");
+                        MessageBox.Show("El Administrador no se puede modificar");
                     }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Ocurrió un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            CsRoles csrol = new CsRoles();
-            try
-            {
-
-                if (string.IsNullOrWhiteSpace(txtRol.Text))
-                {
-                    MessageBox.Show("Todos los campos son obligatorios.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-
-                }
-                try
-                {
-                    int posicion = dgvRol.CurrentCell.RowIndex;
-                    int ID = Convert.ToInt32(dgvRol[0, posicion].Value);
-                    csrol.RolID = ID;
-                    csrol.EliminarRol();
-                    dgvRol.DataSource = CsComandosSql.RetornaDatos($"select * from Roles");
-                    MessageBox.Show("Se ha eliminado el rol");
                 }
                 catch (Exception ex)
                 {
@@ -177,3 +163,4 @@ namespace ModuloDeCompra_BD.Formulario
         }
     }
 }
+

@@ -87,6 +87,12 @@
     <Compile Include="Clases\CsUsuario.cs" />
     <Compile Include="Clases\CsRoles.cs" />
     <Compile Include="Clases\CsIVA.cs" />
+    <Compile Include="Formulario\FrmFunciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\FrmFunciones.Designer.cs">
+      <DependentUpon>FrmFunciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formulario\FrmListadoGRN.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -346,6 +352,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Formulario\FrmFunciones.resx">
+      <DependentUpon>FrmFunciones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formulario\FrmListadoGRN.resx">
       <DependentUpon>FrmListadoGRN.cs</DependentUpon>
     </EmbeddedResource>

@@ -199,5 +199,23 @@ namespace ModuloDeCompra_BD.Clases
             Desconectar();
             return funciones;
         }
+        public static int obtenerID(string sentencia)
+        {
+            Conectar();
+            string query = sentencia;
+
+            ConfigurarComando(query);
+            object result = comando.ExecuteScalar();
+
+            int valorEntero = 0;
+
+            if (result != null && result != DBNull.Value)
+            {
+                valorEntero = Convert.ToInt32(result);
+            }
+
+            Desconectar();
+            return valorEntero;
+        }
     }
 }

@@ -21,6 +21,7 @@ namespace Menú
         public string rol;
         //uwuasa
         int IDusuario;
+        int []botones;
         public FrmMenu3()
         {
             InitializeComponent();
@@ -30,6 +31,7 @@ namespace Menú
         private Form activeForm = null;
 
         public int IDusuario1 { get => IDusuario; set => IDusuario = value; }
+        public int[] Botones { get => botones; set => botones = value; }
 
         public void openChildForm(Form childForm)
         {
