@@ -39,11 +39,62 @@ namespace Menú
             pnMantenimientos.Visible = false;
             pnlRequisiciones.Visible = false;
             dgvOrdenesRequisicion.DataSource = CsComandosSql.RetornaDatos("select * from Requisicion");
-            if (botones.Contains(1))
+            btnEmpresa.Visible = false;
+            //
+            btnCrearRequisicion.Visible = false;
+            btnRequisicionesPendientes.Visible = false;
+            btnOrdenCompraRequisicion.Visible = false;
+            btnOrdenCompra.Visible = false;
+            btnRecepcion.Visible = false;
+            btnInventariooo.Visible = false;
+            guna2Button8.Visible = false;
+            guna2Button9.Visible = false;
+            btnDevoluciones.Visible = false;
+            btnUsuarios.Visible = false;
+            guna2Button11.Visible = false;
+            guna2Button12.Visible = false;
+            guna2Button13.Visible = false;
+            guna2Button14.Visible = false;
+            guna2Button15.Visible = false;
+            guna2Button16.Visible = false;
+            pbEditarEmpresa.Visible = false;
+            btnReportes.Visible = false;
+            if (botones.Contains(5))
             {
-                btnReportes.Visible = false;
+                //Recepción
+                btnRecepcion.Visible = true;
             }
 
+            if (botones.Contains(9))
+            {
+                //Devoluciones
+                btnDevoluciones.Visible = true;
+            }
+            
+            if (botones.Contains(17))
+            {
+                //Empresa
+                pbEditarEmpresa.Visible = true;
+            }
+            if (!botones.Contains(18))
+            {
+                //Reportes
+                btnReportes.Visible = true;
+            }
+        }
+        private void btnCrearRequisicion_Click(object sender, EventArgs e)
+        {
+            FrmRequisiciones req = new FrmRequisiciones();
+            pnlRequisiciones.Visible = false;
+            req.IDUsuario1 = IDusuario;
+            openChildForm(req);
+        }
+        private void btnRequisicionesPendientes_Click(object sender, EventArgs e)
+        {
+            FrmAprobarRequisicion frmAprobarRequisicion = new FrmAprobarRequisicion();
+            frmAprobarRequisicion.IdUsuario = IDusuario;
+            openChildForm(frmAprobarRequisicion);
+            pnlRequisiciones.Visible = false;
         }
         public void openChildForm(Form childForm)
         {
@@ -73,9 +124,44 @@ namespace Menú
             else
                 pnIventario.Visible = false;
         }
-
         private void guna2Button6_Click(object sender, EventArgs e)
         {
+            
+            if (botones.Contains(10))
+            {
+                //Usuarios
+                btnUsuarios.Visible = true;
+            }
+            if (botones.Contains(11))
+            {
+                //Proveedores
+                guna2Button11.Visible = true;
+            }
+            if (botones.Contains(12))
+            {
+                //Productos
+                guna2Button12.Visible = true;
+            }
+            if (botones.Contains(13))
+            {
+                //Categorias
+                guna2Button13.Visible = true;
+            }
+            if (botones.Contains(14))
+            {
+                //Roles
+                guna2Button14.Visible = true;
+            }
+            if (botones.Contains(15))
+            {
+                //Departamentos
+                guna2Button15.Visible = true;
+            }
+            if (botones.Contains(16))
+            {
+                //IVA
+                guna2Button16.Visible = true;
+            }
             pnlSubMenuOrdenCompra.Visible = false;
             pnIventario.Visible = false;
             pnlRequisiciones.Visible = false;
@@ -84,11 +170,18 @@ namespace Menú
             else
                 pnMantenimientos.Visible = false;
         }
-
-       
-
         private void btnOrdenesCompra_Click(object sender, EventArgs e)
         {
+            if (botones.Contains(3))
+            {
+                //Crear por Requisición
+                btnOrdenCompraRequisicion.Visible = true;
+            }
+            if (botones.Contains(4))
+            {
+                //Crear por Orden de Compra
+                btnOrdenCompra.Visible = true;
+            }
             pnMantenimientos.Visible = false;
             pnIventario.Visible = false;
             pnlRequisiciones.Visible = false;
@@ -100,6 +193,16 @@ namespace Menú
 
         private void btnRequisiciones_Click(object sender, EventArgs e)
         {
+            if (botones.Contains(1))
+            {
+                //Crear Requisicion
+                btnCrearRequisicion.Visible = true;
+            }
+            if (botones.Contains(2))
+            {
+                //Ver Requisiciones Pendientes
+                btnRequisicionesPendientes.Visible = true;
+            }
             if (pnlRequisiciones.Visible == false)
             {
                 pnlRequisiciones.Visible = true;
@@ -193,22 +296,6 @@ namespace Menú
             openChildForm(frmBodega);
         }
 
-        private void btnCrearRequisicion_Click(object sender, EventArgs e)
-        {
-            FrmRequisiciones req = new FrmRequisiciones();
-            pnlRequisiciones.Visible = false;
-            req.IDUsuario1 = IDusuario;
-            openChildForm(req);
-        }
-
-        private void btnRequisicionesPendientes_Click(object sender, EventArgs e)
-        {
-            FrmAprobarRequisicion frmAprobarRequisicion = new FrmAprobarRequisicion();
-            frmAprobarRequisicion.IdUsuario = IDusuario;
-            openChildForm(frmAprobarRequisicion);
-            pnlRequisiciones.Visible = false;
-        }
-
         private void btnDevoluciones_Click(object sender, EventArgs e)
         {
             FrmRTV frmRTV = new FrmRTV();
@@ -224,9 +311,23 @@ namespace Menú
             openChildForm(usuario);
             pnMantenimientos.Visible = false;
         }
-
         private void btnInventariooo_Click(object sender, EventArgs e)
         {
+            if (botones.Contains(6))
+            {
+                //Ver Inventario
+                btnInventariooo.Visible = true;
+            }
+            if (botones.Contains(7))
+            {
+                //Movimientos
+                guna2Button8.Visible = true;
+            }
+            if (botones.Contains(8))
+            {
+                //Bodega
+                guna2Button9.Visible = true;
+            }
             FrmInventario invent = new FrmInventario();
             pnIventario.Visible = false;
             pnlRequisiciones.Visible = false;
