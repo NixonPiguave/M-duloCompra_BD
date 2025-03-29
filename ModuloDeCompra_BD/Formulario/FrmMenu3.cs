@@ -32,7 +32,19 @@ namespace Menú
 
         public int IDusuario1 { get => IDusuario; set => IDusuario = value; }
         public int[] Botones { get => botones; set => botones = value; }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            CsComandosSql.InserDeletUpdate("insert into AuditoriaSesion (Usuario, Accion, Fecha, Detalles) values (SUSER_NAME(), 'INICIO SESIÓN', GETDATE(), 'El usuario '+ SUSER_NAME() + ' ha iniciado sesión')");
+            pnIventario.Visible = false;
+            pnMantenimientos.Visible = false;
+            pnlRequisiciones.Visible = false;
+            dgvOrdenesRequisicion.DataSource = CsComandosSql.RetornaDatos("select * from Requisicion");
+            if (botones.Contains(1))
+            {
+                btnReportes.Visible = false;
+            }
 
+        }
         public void openChildForm(Form childForm)
         {
             if (activeForm != null)
@@ -73,19 +85,7 @@ namespace Menú
                 pnMantenimientos.Visible = false;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            CsComandosSql.InserDeletUpdate("insert into AuditoriaSesion (Usuario, Accion, Fecha, Detalles) values (SUSER_NAME(), 'INICIO SESIÓN', GETDATE(), 'El usuario '+ SUSER_NAME() + ' ha iniciado sesión')");
-            pnIventario.Visible = false;
-            pnMantenimientos.Visible = false;
-            pnlRequisiciones.Visible = false;
-            dgvOrdenesRequisicion.DataSource = CsComandosSql.RetornaDatos("select * from Requisicion");
-            if (botones.Contains(1))
-            {
-                btnReportes.Visible = false;
-            }
-
-        }
+       
 
         private void btnOrdenesCompra_Click(object sender, EventArgs e)
         {
