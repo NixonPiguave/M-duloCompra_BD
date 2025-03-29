@@ -152,7 +152,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>#d473fe</BackgroundColor>
+                            <BackgroundColor>#e678f1</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -187,7 +187,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>#d473fe</BackgroundColor>
+                            <BackgroundColor>#e678f1</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -222,7 +222,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>#d473fe</BackgroundColor>
+                            <BackgroundColor>#e678f1</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -257,7 +257,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>#d473fe</BackgroundColor>
+                            <BackgroundColor>#e678f1</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -292,7 +292,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>#d473fe</BackgroundColor>
+                            <BackgroundColor>#e678f1</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -327,7 +327,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>#d473fe</BackgroundColor>
+                            <BackgroundColor>#e678f1</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -558,7 +558,7 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>dsAuditoria</DataSetName>
-            <Top>0.94933cm</Top>
+            <Top>0.34079cm</Top>
             <Left>0.47188cm</Left>
             <Height>2.33772cm</Height>
             <Width>18.68557cm</Width>
@@ -1237,8 +1237,8 @@
                 </Textbox>
               </ReportItems>
               <KeepTogether>true</KeepTogether>
-              <Top>0.73158cm</Top>
-              <Left>16.10531cm</Left>
+              <Top>0.76685cm</Top>
+              <Left>15.40681cm</Left>
               <Height>0.81167cm</Height>
               <Width>3.05214cm</Width>
               <ZIndex>1</ZIndex>
