@@ -108,9 +108,14 @@ namespace ModuloDeCompra_BD.Formulario
         {
             try
             {
-                if (dgvDetalleRequiPendiente.CurrentRow == null)
+                if (dgvDetalleRequiPendiente.SelectedRows.Count == 0)
                 {
                     MessageBox.Show("¡Debe seleccionar una fila primero antes de modificar la cantidad!", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(txtCantidad.Text))
+                {
+                    MessageBox.Show("¡La cantidad no puede estar vacía!", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 string CadenaXML = $@"<RequiDetalle> 
