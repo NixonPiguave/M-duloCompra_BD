@@ -27,7 +27,7 @@ namespace reporte
             RptInforme = rptInforme;
 
             // Siempre obtener el logo de la empresa
-            DataTable dtEmpresa = CsComandosSql.RetornaDatos("SELECT Logo_Empresa FROM Empresa WHERE ID_Empresa = 1");
+            DataTable dtEmpresa = CsComandosSql.RetornaDatos("Select Logo_Empresa from Empresa where ID_Empresa = 1");
             if (dtEmpresa.Rows.Count > 0 && dtEmpresa.Rows[0]["Logo_Empresa"] != DBNull.Value)
             {
                 imagenLogo = (byte[])dtEmpresa.Rows[0]["Logo_Empresa"];
@@ -42,7 +42,7 @@ namespace reporte
                 DataTable DtPrincipal = CsComandosSql.RetornaDatos(Sentencia);
 
                 // 2. Obtener datos completos de empresa (para dsEmpresa)
-                DataTable DtEmpresa = CsComandosSql.RetornaDatos("SELECT * FROM Empresa WHERE ID_Empresa = 1");
+                DataTable DtEmpresa = CsComandosSql.RetornaDatos("Select * from Empresa where ID_Empresa = 1");
 
                 // 3. Configurar reporte
                 reportViewer1.LocalReport.DataSources.Clear();
