@@ -33,11 +33,6 @@ namespace ModuloDeCompra_BD.Formulario
                     return;
 
                 }
-                if (Funcion == null || Funcion.Length == 0)
-                {
-                    MessageBox.Show("No se han seleccionado funciones.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
                 try
                 {
                     if (!CsComandosSql.verificar($"Select * from Roles where Rol = '{txtRol.Text}'"))
@@ -147,7 +142,7 @@ namespace ModuloDeCompra_BD.Formulario
                     return;
                 }
 
-                if (CsComandosSql.verificar($"Select * from Roles where Rol = '{txtModificarRol.Text}' AND RolID <> {ID}"))
+                if (CsComandosSql.verificar($"Select * from Roles where Rol = '{txtModificarRol.Text}' AND RolID = {ID}"))
                 {
                     MessageBox.Show("Ya existe un rol con ese nombre.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
