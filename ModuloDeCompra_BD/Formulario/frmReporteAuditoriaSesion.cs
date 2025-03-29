@@ -34,7 +34,7 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void btnGenerarReporte_Click(object sender, EventArgs e)
         {
-            if (dtpDesde.Value > dtpHasta.Value)
+            if (dtpDesde.Visible && dtpDesde.Value > dtpHasta.Value)
             {
                 MessageBox.Show("La fecha inicial no puede ser mayor que la fecha final");
                 return;
@@ -43,29 +43,44 @@ namespace ModuloDeCompra_BD.Formulario
             DateTime fechaDesde = dtpDesde.Value.Date;
             DateTime fechaHasta = dtpHasta.Value.Date.AddDays(1).AddSeconds(-1);
 
-            if (chbUsuario.Checked == true)
+            string sentencia = "";
+
+            if (chbUsuario.Checked)
             {
-                chbGeneral.Checked = false;
                 if (cbUsuarios.SelectedItem == null)
                 {
                     MessageBox.Show("Por favor, seleccione un usuario");
                     return;
                 }
 
-                string usuarioSeleccionado = cbUsuarios.SelectedItem.ToString();
-                string sentencia = $"Select * from AuditoriaSesion where Usuario = '{usuarioSeleccionado}' and Fecha between '{fechaDesde:yyyy-MM-dd HH:mm:ss}' and '{fechaHasta:yyyy-MM-dd HH:mm:ss}'";
-
-                frmreport reporteAuditoriaSesion = new frmreport(sentencia, "dsAuditoriaSesion", "Reporte.rpt_AuditoriaSesion.rdlc");
-                reporteAuditoriaSesion.ShowDialog();
+                if (chbFecha.Checked)
+                {
+                    sentencia = $"Select * from AuditoriaSesion where Usuario = '{cbUsuarios.SelectedItem}' and Fecha between '{fechaDesde:yyyy-MM-dd HH:mm:ss}' and '{fechaHasta:yyyy-MM-dd HH:mm:ss}'";
+                }
+                else
+                {
+                    sentencia = $"Select * from AuditoriaSesion where Usuario = '{cbUsuarios.SelectedItem}'";
+                }
             }
-            else if (chbGeneral.Checked == true)
+            else if (chbGeneral.Checked)
             {
-                chbUsuario.Checked = false;
-                string sentencia = $"Select * from AuditoriaSesion where Fecha between '{fechaDesde:yyyy-MM-dd HH:mm:ss}' and '{fechaHasta:yyyy-MM-dd HH:mm:ss}'";
-
-                frmreport reporteAuditoriaSesion = new frmreport(sentencia, "dsAuditoriaSesion", "Reporte.rpt_AuditoriaSesion.rdlc");
-                reporteAuditoriaSesion.ShowDialog();
+                if (chbFecha.Checked)
+                {
+                    sentencia = $"Select * from AuditoriaSesion where Fecha between '{fechaDesde:yyyy-MM-dd HH:mm:ss}' and '{fechaHasta:yyyy-MM-dd HH:mm:ss}'";
+                }
+                else
+                {
+                    sentencia = "Select * from AuditoriaSesion";
+                }
             }
+            else
+            {
+                MessageBox.Show("Por favor, seleccione una opción de reporte");
+                return;
+            }
+
+            frmreport reporteAuditoriaSesion = new frmreport(sentencia, "dsAuditoriaSesion", "Reporte.rpt_AuditoriaSesion.rdlc");
+            reporteAuditoriaSesion.ShowDialog();
         }
 
         private void chbGeneral_CheckedChanged(object sender, EventArgs e)
@@ -76,10 +91,7 @@ namespace ModuloDeCompra_BD.Formulario
                 lblUsuario.Visible = false;
                 cbUsuarios.Visible = false;
                 btnGenerarReporte.Visible = true;
-                lblDesde.Visible = true;
-                lblHasta.Visible = true;
-                dtpDesde.Visible = true;
-                dtpHasta.Visible = true;
+                pnlFecha.Visible = true;
             }
             else
             {
@@ -90,6 +102,7 @@ namespace ModuloDeCompra_BD.Formulario
                 lblHasta.Visible = false;
                 dtpDesde.Visible = false;
                 dtpHasta.Visible = false;
+                pnlFecha.Visible = false;
             }
         }
 
@@ -101,10 +114,7 @@ namespace ModuloDeCompra_BD.Formulario
                 lblUsuario.Visible = true;
                 cbUsuarios.Visible = true;
                 btnGenerarReporte.Visible = true;
-                lblDesde.Visible = true;
-                lblHasta.Visible = true;
-                dtpDesde.Visible = true;
-                dtpHasta.Visible = true;
+                pnlFecha.Visible = true;
             }
             else
             {
@@ -115,6 +125,38 @@ namespace ModuloDeCompra_BD.Formulario
                 lblHasta.Visible = false;
                 dtpDesde.Visible = false;
                 dtpHasta.Visible = false;
+                pnlFecha.Visible = false;
+            }
+        }
+
+        private void chbGeneralFecha_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chbGeneralFecha.Checked)
+            {
+                chbFecha.Checked = false;
+                dtpDesde.Visible = false;
+                dtpHasta.Visible = false;
+                lblDesde.Visible = false;
+                lblHasta.Visible = false;
+            }
+        }
+
+        private void chbFecha_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chbFecha.Checked)
+            {
+                chbGeneralFecha.Checked = false;
+                dtpDesde.Visible = true;
+                dtpHasta.Visible = true;
+                lblDesde.Visible = true;
+                lblHasta.Visible = true;
+            }
+            else
+            {
+                dtpDesde.Visible = false;
+                dtpHasta.Visible = false;
+                lblDesde.Visible = false;
+                lblHasta.Visible = false;
             }
         }
     }

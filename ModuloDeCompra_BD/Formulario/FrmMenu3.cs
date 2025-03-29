@@ -58,7 +58,7 @@ namespace Menú
             guna2Button15.Visible = false;
             guna2Button16.Visible = false;
             pbEditarEmpresa.Visible = false;
-            btnReportes.Visible = false;
+            btnReportes.Visible = true;
             if(botones.Contains(10) && botones.Contains(11) && botones.Contains(12) && botones.Contains(13) && botones.Contains(14) && botones.Contains(15) && botones.Contains(16))
             {
                 btnMantenimiento.Visible= false;
