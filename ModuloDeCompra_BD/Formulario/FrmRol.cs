@@ -40,7 +40,7 @@ namespace ModuloDeCompra_BD.Formulario
 
                     FrmFunciones abri = new FrmFunciones(this);
                     ag = 1;
-                    abri.Id=
+                    
                     abri.Agregar = ag;
                     abri.ShowDialog();
                     if (!CsComandosSql.verificar($"Select * from Roles where Rol = '{txtRol.Text}'"))
