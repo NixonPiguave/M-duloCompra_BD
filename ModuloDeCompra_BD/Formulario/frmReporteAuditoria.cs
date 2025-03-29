@@ -43,29 +43,18 @@ namespace ModuloDeCompra_BD.Formulario
             DateTime fechaDesde = dtpDesde.Value.Date;
             DateTime fechaHasta = dtpHasta.Value.Date.AddDays(1).AddSeconds(-1);
 
-            if (chbUsuario.Checked == true)
+            string sentencia = chbUsuario.Checked
+                ? $"Select * from Auditoria where Usuario = '{cbUsuarios.SelectedItem}' and Fecha between '{fechaDesde:yyyy-MM-dd HH:mm:ss}' and '{fechaHasta:yyyy-MM-dd HH:mm:ss}'"
+                : $"Select * from Auditoria where Fecha between '{fechaDesde:yyyy-MM-dd HH:mm:ss}' and '{fechaHasta:yyyy-MM-dd HH:mm:ss}'";
+
+            if (chbUsuario.Checked && cbUsuarios.SelectedItem == null)
             {
-                chbGeneral.Checked = false;
-                if (cbUsuarios.SelectedItem == null)
-                {
-                    MessageBox.Show("Por favor, seleccione un usuario");
-                    return;
-                }
-
-                string usuarioSeleccionado = cbUsuarios.SelectedItem.ToString();
-                string sentencia = $"Select * from Auditoria where Usuario = '{usuarioSeleccionado}' and Fecha between '{fechaDesde:yyyy-MM-dd HH:mm:ss}' and '{fechaHasta:yyyy-MM-dd HH:mm:ss}'";
-
-                frmreport reporteAuditoria = new frmreport(sentencia, "dsAuditoria", "Reporte.rpt_Auditoria.rdlc");
-                reporteAuditoria.ShowDialog();
+                MessageBox.Show("Por favor, seleccione un usuario");
+                return;
             }
-            else if (chbGeneral.Checked == true)
-            {
-                chbUsuario.Checked = false;
-                string sentencia = $"Select * from Auditoria where Fecha between '{fechaDesde:yyyy-MM-dd HH:mm:ss}' and '{fechaHasta:yyyy-MM-dd HH:mm:ss}'";
-
-                frmreport reporteAuditoria = new frmreport(sentencia, "dsAuditoria", "Reporte.rpt_Auditoria.rdlc");
-                reporteAuditoria.ShowDialog();
-            }
+         
+            frmreport reporteAuditoria = new frmreport(sentencia, "dsAuditoria", "Reporte.rpt_Auditoria.rdlc");
+            reporteAuditoria.ShowDialog();
         }
 
         private void chbGeneral_CheckedChanged(object sender, EventArgs e)
