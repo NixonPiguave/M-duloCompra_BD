@@ -32,12 +32,19 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void btnSelecRequi_Click(object sender, EventArgs e)
         {
-            int fila = dgvListRequiPendientes.CurrentCell.RowIndex;
-            txtBuscarRequiPendiente.Text = dgvListRequiPendientes[0, fila].Value.ToString();
-            Nombre = dgvListRequiPendientes[0, fila].Value.ToString();
-            Id = Convert.ToInt32(dgvListRequiPendientes[0, fila].Value);
-            MessageBox.Show("Requisición seleccionada");
-            this.Close();
+            try
+            {
+                int fila = dgvListRequiPendientes.CurrentCell.RowIndex;
+                txtBuscarRequiPendiente.Text = dgvListRequiPendientes[0, fila].Value.ToString();
+                Nombre = dgvListRequiPendientes[0, fila].Value.ToString();
+                Id = Convert.ToInt32(dgvListRequiPendientes[0, fila].Value);
+                MessageBox.Show("Requisición seleccionada");
+                this.Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error " + ex);
+            }
         }
     }
 }

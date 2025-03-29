@@ -28,9 +28,11 @@ namespace ModuloDeCompra_BD.Formulario
             listaRequiPendiente.ShowDialog();
             txtIDRequisicionPendiente.Text = listaRequiPendiente.Nombre1;
             id = listaRequiPendiente.Id1;
-
-            int idRequi = int.Parse(txtIDRequisicionPendiente.Text);
-            LlenarDgv(idRequi);
+            if (!String.IsNullOrEmpty(txtIDRequisicionPendiente.Text))
+            {
+                int idRequi = int.Parse(txtIDRequisicionPendiente.Text);
+                LlenarDgv(idRequi);
+            }
         }
         private void LlenarDgv(int idRequi)
         {
