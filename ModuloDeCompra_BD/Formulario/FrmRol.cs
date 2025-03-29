@@ -131,18 +131,15 @@ namespace ModuloDeCompra_BD.Formulario
         {
             try
             {
-                // Validación de campos
                 if (string.IsNullOrWhiteSpace(txtModificarRol.Text))
                 {
                     MessageBox.Show("El nombre del rol es obligatorio.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
-                // Obtener ID del rol a modificar
                 int posicion = dgvRol.CurrentCell.RowIndex;
                 int ID = Convert.ToInt32(dgvRol[0, posicion].Value);
 
-                // Verificar si es el rol Administrador (que no debería modificarse)
                 string rolActual = dgvRol[1, posicion].Value.ToString();
                 if (rolActual.Equals("Administrador", StringComparison.OrdinalIgnoreCase))
                 {
@@ -150,14 +147,12 @@ namespace ModuloDeCompra_BD.Formulario
                     return;
                 }
 
-                // Verificar si el nuevo nombre ya existe
                 if (CsComandosSql.verificar($"Select * from Roles where Rol = '{txtModificarRol.Text}' AND RolID <> {ID}"))
                 {
                     MessageBox.Show("Ya existe un rol con ese nombre.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
-                // Realizar la modificación
                 CsRoles csRoles = new CsRoles
                 {
                     RolID = ID,
