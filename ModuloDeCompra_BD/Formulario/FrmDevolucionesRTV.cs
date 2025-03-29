@@ -149,7 +149,8 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void btnRegistrarRTV_Click(object sender, EventArgs e)
         {
-            if( !String.IsNullOrEmpty(txtProveedor.Text))
+            string Motivo = "PRODUCTO EN MAL ESTADO";
+            if (!String.IsNullOrEmpty(txtProveedor.Text))
             {
                 string detalle = "";
 
@@ -163,21 +164,23 @@ namespace ModuloDeCompra_BD.Formulario
                     int cant = Convert.ToInt32(cantidad);
                     if (cant > 0)
                     {
-
                         detalle += $@"
                                 <DETALLE>
                                     <ID_Producto>{idProducto}</ID_Producto>
                                     <Cantidad>{cantidad}</Cantidad>
                                 </DETALLE>";
-
                     }
                 }
                 try
                 {
+                    if (!string.IsNullOrEmpty(txtMotivo.Text))
+                    {
+                        Motivo = txtMotivo.Text;
+                    }
                     string xml = $@"'<RTV>
                                         <HEADER>
                                             <IDGRN>{txtSeleccionGRN.Text}</IDGRN>
-                                            <Motivo>{"aawawa"}</Motivo>
+                                            <Motivo>{Motivo}</Motivo>
                                             <ID_Proveedor>{txtProveedor}</ID_Proveedor>
                                         </HEADER>
                                         {detalle}
@@ -185,8 +188,8 @@ namespace ModuloDeCompra_BD.Formulario
                         ";
                     string queryD = $"EXEC InsertarRTV {xml}";
                     MessageBox.Show(xml);
-                    if(CsComandosSql.InserDeletUpdate(queryD))
-                           MessageBox.Show("RTV REGISTRADO");
+                    if (CsComandosSql.InserDeletUpdate(queryD))
+                        MessageBox.Show("RTV REGISTRADO");
                 }
                 catch (SqlException ex)
                 {
