@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -161,14 +162,21 @@ namespace ModuloDeCompra_BD.Formulario
                                                   </GRNHeader>
                                                   {Detalle}
                                 </GRNHeaders>'";
-                MessageBox.Show("GRN REGISTRADO");
-
-                string query = $"exec spAgregarGRNHeader {xmlRequisicion}";
-                if (CsComandosSql.InserDeletUpdate(query))
+              
+                string query = $"exec spAgregarGRNHeader {xmlRequisicion}, {1}";
+                try
                 {
-                    int idorden = Convert.ToInt32(txtOrdenCompra.Text);
-                    OrdenyGrn(idorden);
-                    ActualizarEstadoRecibido(idorden);
+                    if (CsComandosSql.InserDeletUpdate(query))
+                    {
+                        int idorden = Convert.ToInt32(txtOrdenCompra.Text);
+                        OrdenyGrn(idorden);
+                        ActualizarEstadoRecibido(idorden);
+                        MessageBox.Show("GRN REGISTRADO");
+                    }
+                }
+                catch(SqlException esc)
+                {
+                    MessageBox.Show("Error: " + esc);
                 }
             }
             catch (Exception ex)

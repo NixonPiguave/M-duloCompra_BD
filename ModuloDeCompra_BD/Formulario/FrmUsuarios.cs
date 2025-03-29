@@ -44,7 +44,7 @@ namespace ModuloDeCompra_BD.Formulario
         {
             try
             {
-                if (!(CsComandosSql.verificar($"Select * from Usuario where Cedula = {txtcedula.Text}")))
+                if (!(CsComandosSql.verificar($"Select * from Usuario where Cedula = {txtcedula.Text} or Usuario='{txtUsuario.Text}'")))
                 {
                     CsEncriptarMDS encrypt = new CsEncriptarMDS();
                     string contraEncrypt = encrypt.Encriptar(txtContra.Text, txtUsuario.Text);
@@ -79,7 +79,7 @@ namespace ModuloDeCompra_BD.Formulario
                         MessageBox.Show("Error, Verifique que los datos sean correctos");
                 }
                 else
-                    MessageBox.Show("Ya existe un usuario con esa cédula");
+                    MessageBox.Show("Ya existe ese usuario");
             }
             catch
             {
