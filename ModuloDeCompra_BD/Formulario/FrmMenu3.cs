@@ -198,8 +198,9 @@ namespace Menú
 
         private void btnRequisicionesPendientes_Click(object sender, EventArgs e)
         {
-            FrmEstadoRequisiciones frmEstado = new FrmEstadoRequisiciones();
-            openChildForm(frmEstado);
+            FrmAprobarRequisicion frmAprobarRequisicion = new FrmAprobarRequisicion();
+            frmAprobarRequisicion.IdUsuario = IDusuario;
+            openChildForm(frmAprobarRequisicion);
             pnlRequisiciones.Visible = false;
         }
 
