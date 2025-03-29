@@ -15,6 +15,7 @@ namespace ModuloDeCompra_BD.Formulario
     {
         int[] funcion = new int[0];
         int ag;
+        int idq;
         public int[] Funcion { get => funcion; set => funcion = value; }
 
         public FrmRol()
@@ -39,6 +40,7 @@ namespace ModuloDeCompra_BD.Formulario
 
                     FrmFunciones abri = new FrmFunciones(this);
                     ag = 1;
+                    abri.Id=
                     abri.Agregar = ag;
                     abri.ShowDialog();
                     if (!CsComandosSql.verificar($"Select * from Roles where Rol = '{txtRol.Text}'"))
@@ -93,6 +95,7 @@ namespace ModuloDeCompra_BD.Formulario
         {
             int celda = dgvRol.CurrentCell.RowIndex;
             txtRol.Text = dgvRol[1, celda].Value.ToString();
+            idq = Convert.ToInt32(dgvRol[0, celda].Value.ToString());
         }
         private void btnModificar_Click(object sender, EventArgs e)
         { 

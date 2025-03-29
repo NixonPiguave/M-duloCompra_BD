@@ -80,6 +80,11 @@ namespace Menú
             pnMantenimientos.Visible = false;
             pnlRequisiciones.Visible = false;
             dgvOrdenesRequisicion.DataSource = CsComandosSql.RetornaDatos("select * from Requisicion");
+            if (botones.Contains(1))
+            {
+                btnReportes.Visible = false;
+            }
+
         }
 
         private void btnOrdenesCompra_Click(object sender, EventArgs e)

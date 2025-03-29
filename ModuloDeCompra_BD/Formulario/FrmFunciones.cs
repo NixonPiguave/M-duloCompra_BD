@@ -76,10 +76,9 @@ namespace ModuloDeCompra_BD.Formulario
         {
             try
             {
-
-                if (Agregar == 0)
+                if (agregar == 0)
                 {
-                    MessageBox.Show($"{Agregar}");
+                    
                     CsComandosSql.InserDeletUpdate($"DELETE FROM Roles_Funciones WHERE ID_Rol = {id}");
                 }
 
@@ -114,7 +113,6 @@ namespace ModuloDeCompra_BD.Formulario
                         string nombreFuncion = vectorNombre[i];
                         int funcionId = CsComandosSql.obtenerID($"SELECT ID_Funcion FROM Funciones WHERE Funcion = '{nombreFuncion}'");
                         vectorID[i] = funcionId;
-
                         CsComandosSql.InserDeletUpdate(
                             $"INSERT INTO Roles_Funciones (ID_Rol, ID_Funcion) VALUES ({id}, {funcionId})");
                     }
