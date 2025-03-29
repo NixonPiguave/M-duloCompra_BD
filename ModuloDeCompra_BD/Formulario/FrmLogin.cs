@@ -48,7 +48,6 @@ namespace ModuloDeCompra_BD
             {
                 CsUsuario user = new CsUsuario();
                 user.Cedula = txtUser.Text;
-
                 CsEncriptarMDS encryp = new CsEncriptarMDS();
                 user.Contraseña = encryp.Encriptar(txtContraseña.Text, txtUser.Text);
 

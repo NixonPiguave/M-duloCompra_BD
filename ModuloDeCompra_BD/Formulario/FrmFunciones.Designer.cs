@@ -423,6 +423,7 @@
             this.Controls.Add(this.guna2Panel1);
             this.Name = "FrmFunciones";
             this.Text = "FrmFunciones";
+            this.Load += new System.EventHandler(this.FrmFunciones_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             this.ResumeLayout(false);

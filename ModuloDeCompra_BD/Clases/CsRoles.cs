@@ -45,20 +45,5 @@ namespace ModuloDeCompra_BD.Clases
             string query = $@"exec spModificarRol '{cadenaXML}'";
             return CsComandosSql.InserDeletUpdate(query);
         }
-        public bool EliminarRol()
-        {
-            string cadenaXML = $@"<Roles>
-                <Rol>
-                    <ID_Rol>{idRol}</ID_Rol>
-                </Rol>
-            </Roles";
-            string query = $@"exec spEliminarRol '{cadenaXML}'";
-            return CsComandosSql.InserDeletUpdate(query);
-        }
-        public DataTable ListaRol(string m)
-        {
-            string query = $"Select * from Categoria where Categoria like '%{m}%'";
-            return CsComandosSql.RetornaDatos(query);
-        }
     }
 }

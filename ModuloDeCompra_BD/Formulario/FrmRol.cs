@@ -14,7 +14,7 @@ namespace ModuloDeCompra_BD.Formulario
     public partial class FrmRol: Form
     {
         int[] funcion = new int[0];
-
+        int ag;
         public int[] Funcion { get => funcion; set => funcion = value; }
 
         public FrmRol()
@@ -26,7 +26,7 @@ namespace ModuloDeCompra_BD.Formulario
             CsRoles csRol = new CsRoles();
             try
             {
-                
+               
                 if (string.IsNullOrWhiteSpace(txtRol.Text))
                 {
                     MessageBox.Show("Todos los campos son obligatorios.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -35,6 +35,12 @@ namespace ModuloDeCompra_BD.Formulario
                 }
                 try
                 {
+                  
+
+                    FrmFunciones abri = new FrmFunciones(this);
+                    ag = 1;
+                    abri.Agregar = ag;
+                    abri.ShowDialog();
                     if (!CsComandosSql.verificar($"Select * from Roles where Rol = '{txtRol.Text}'"))
                     {
                        int tam = Funcion.Length;
@@ -89,12 +95,7 @@ namespace ModuloDeCompra_BD.Formulario
             txtRol.Text = dgvRol[1, celda].Value.ToString();
         }
         private void btnModificar_Click(object sender, EventArgs e)
-        {  
-                if (string.IsNullOrWhiteSpace(txtRol.Text))
-                {
-                    CsRoles csRol = new CsRoles();
-                    FrmFunciones abri = new FrmFunciones(this);
-                    abri.ShowDialog();
+        { 
 
                     Point boton = new Point();
                     Point btnAgregarLocalizacion = new Point();
@@ -129,11 +130,8 @@ namespace ModuloDeCompra_BD.Formulario
                         btnAgregar.Visible = true;
 
                     }
-                }
-                else
-                {
-                    MessageBox.Show($"Error no selecciono Rol");
-                }
+                
+                
         }
         private void btnAceptar_Click(object sender, EventArgs e)
         {
@@ -144,9 +142,15 @@ namespace ModuloDeCompra_BD.Formulario
                     MessageBox.Show("El nombre del rol es obligatorio.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-
                 int posicion = dgvRol.CurrentCell.RowIndex;
                 int ID = Convert.ToInt32(dgvRol[0, posicion].Value);
+                FrmFunciones abri = new FrmFunciones(this);
+                abri.Tam = CsComandosSql.Tam($"select count(*) from Roles_Funciones where ID_Rol = {ID}");
+                abri.Id = ID;
+                abri.VectorID = CsComandosSql.IDmod(ID);
+                abri.ShowDialog();
+
+                
 
                 string rolActual = dgvRol[1, posicion].Value.ToString();
                 if (rolActual.Equals("Administrador", StringComparison.OrdinalIgnoreCase))
@@ -155,7 +159,7 @@ namespace ModuloDeCompra_BD.Formulario
                     return;
                 }
 
-                if (CsComandosSql.verificar($"Select * from Roles where Rol = '{txtModificarRol.Text}' AND RolID = {ID}"))
+                if (CsComandosSql.verificar($"Select * from Roles where Rol = '{txtModificarRol.Text}' AND ID_Rol = {ID}"))
                 {
                     MessageBox.Show("Ya existe un rol con ese nombre.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
@@ -176,7 +180,6 @@ namespace ModuloDeCompra_BD.Formulario
                 MessageBox.Show($"Error al modificar el rol: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
     }
 }
 

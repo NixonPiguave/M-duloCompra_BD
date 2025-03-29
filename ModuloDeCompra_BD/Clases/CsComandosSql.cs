@@ -154,7 +154,6 @@ namespace ModuloDeCompra_BD.Clases
                 CsConeccionServer.desconectarse();
             }
         }
-        //este metodo es para generar secuenciales para facturas por ejemplo
         public static string GenerarSecuencial(string secuencia)
         {
             string secu = secuencia;
@@ -163,7 +162,6 @@ namespace ModuloDeCompra_BD.Clases
             while (verificar($"select * from [Orden de Compra] where NumOrden='{secu}'"))
             {
                 sufijo++;
-                // Reemplazar los últimos dígitos por el nuevo sufijo
                 secu = secuencia.Substring(0, secuencia.Length - sufijo.ToString().Length) + sufijo.ToString();
             }
             return secu;
@@ -195,7 +193,6 @@ namespace ModuloDeCompra_BD.Clases
                     x++;
                 }
             }
-
             Desconectar();
             return funciones;
         }
@@ -220,6 +217,46 @@ namespace ModuloDeCompra_BD.Clases
             {
                 throw new Exception($"No se pudo convertir el valor '{result}' a número. Verifica que la consulta devuelva un ID válido.");
             }
+        }
+        public static int Tam(string sentencia)
+        {
+            Conectar();
+            string countQuery = sentencia;
+
+            ConfigurarComando(countQuery);
+            return( Convert.ToInt32(comando.ExecuteScalar()));
+
+        }
+        public static int[] IDmod(int idrol)
+        {
+            Conectar();
+
+            string countQuery = $"select count(*) from Roles_Funciones where ID_Rol='{idrol}'";
+
+            ConfigurarComando(countQuery);
+
+            int count = Convert.ToInt32(comando.ExecuteScalar());
+
+            int[] funciones = new int[count];
+
+            if (count > 0)
+            {
+                string Query = $"SELECT ID_Funcion FROM Roles_Funciones  WHERE ID_Rol='{idrol}'";
+
+                ConfigurarComando(Query);
+
+                SqlDataReader reader = comando.ExecuteReader();
+                int x = 0;
+
+                while (reader.Read())
+                {
+                    funciones[x] = Convert.ToInt32(reader["ID_Funcion"]);
+                    x++;
+                }
+            }
+            Desconectar();
+            return funciones;
+
         }
     }
 }
