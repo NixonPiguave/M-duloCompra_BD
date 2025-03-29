@@ -49,7 +49,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.reportViewer1);
             this.Name = "frmreport";
-            this.Text = "frmreport";
+            this.Text = "Reportes";
             this.Load += new System.EventHandler(this.frmreport_Load);
             this.ResumeLayout(false);
 

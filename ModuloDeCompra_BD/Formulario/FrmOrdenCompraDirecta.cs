@@ -101,102 +101,85 @@ namespace ModuloDeCompra_BD.Formulario
                         }
                     }
 
-
-                    int idGenerado = -1;
                     string xmlOrdenCompra = $@"
-            <ORDEN>
-              <FECHAORDEN>{DateTime.Now.ToString("yyyy-MM-dd")}</FECHAORDEN>
-              <FECHALIMITE>{dtpFechaLimite.Value.ToString("yyyy-MM-dd")}</FECHALIMITE>
-              <ESTADORDEN>Pendiente</ESTADORDEN>
-              <IDUSUARIO>{idUsuario}</IDUSUARIO>
-              <IDPROVE>{idproveedor}</IDPROVE>
-            </ORDEN>";
+                <ORDEN>
+                    <FECHAORDEN>{DateTime.Now.ToString("yyyy-MM-dd")}</FECHAORDEN>
+                    <FECHALIMITE>{dtpFechaLimite.Value.ToString("yyyy-MM-dd")}</FECHALIMITE>
+                    <ESTADORDEN>Pendiente</ESTADORDEN>
+                    <IDUSUARIO>{idUsuario}</IDUSUARIO>
+                    <IDPROVE>{idproveedor}</IDPROVE>
+                </ORDEN>";
 
-                    try
+                    StringBuilder sbDetalle = new StringBuilder();
+                    sbDetalle.Append("<DETALLEORDENES>");
+
+                    foreach (DataGridViewRow fila in dgvProductosAgregados.Rows)
                     {
-                        //la orden de compra
-                        string query = $@"
+                        if (fila.IsNewRow)
+                            continue;
+
+                        string idProducto = fila.Cells["ID_Producto"].Value?.ToString();
+                        string idServicio = fila.Cells["ID_Servicio"].Value?.ToString();
+                        string cantidad = fila.Cells["Cantidad"].Value?.ToString();
+                        string costo = fila.Cells["Costo"].Value?.ToString();
+                        string descuento = fila.Cells["Descuento"].Value?.ToString();
+
+                        costo = costo.Replace(',', '.');
+                        descuento = descuento.Replace(',', '.');
+
+                        sbDetalle.Append($@"
+                    <DETALLEORDEN>
+                        <CANTIDAD>{cantidad}</CANTIDAD>
+                        <COSTO>{costo}</COSTO>
+                        <DESCUENTO>{descuento}</DESCUENTO>
+                        <IDSERVICIO>{(string.IsNullOrEmpty(idServicio) ? "NULL" : idServicio)}</IDSERVICIO>
+                        <IDPRODUCTO>{(string.IsNullOrEmpty(idProducto) ? "NULL" : idProducto)}</IDPRODUCTO>
+                        <ESTADO>Pendiente</ESTADO>
+                    </DETALLEORDEN>");
+                    }
+
+                    sbDetalle.Append("</DETALLEORDENES>");
+                    string xmlDetalleOrden = sbDetalle.ToString();
+
+                    string query = $@"
                 DECLARE @TempID INT;
-                EXEC SpOrdenCompraDirecta @cadena = '{xmlOrdenCompra}', @IDIngresada = @TempID OUTPUT;
+                EXEC SpOrdenCompraDirecta 
+                    @XMLOrden = '{xmlOrdenCompra}', 
+                    @XMLdetalleOrden = '{xmlDetalleOrden}', 
+                    @IDIngresada = @TempID OUTPUT;
                 SELECT @TempID AS IDGenerado;";
 
-                        DataTable dt = CsComandosSql.RetornaDatos(query);
+                    DataTable dt = CsComandosSql.RetornaDatos(query);
 
-                        if (dt.Rows.Count > 0)
-                        {
-                            idGenerado = Convert.ToInt32(dt.Rows[0]["IDGenerado"]);
-                        }
-
-                        //el detalle de la orden
-                        foreach (DataGridViewRow fila in dgvProductosAgregados.Rows)
-                        {
-                            if (fila.IsNewRow)
-                                continue;
-
-                            string idProducto = fila.Cells["ID_Producto"].Value?.ToString();
-                            string idServicio = fila.Cells["ID_Servicio"].Value?.ToString();
-                            string cantidad = fila.Cells["Cantidad"].Value?.ToString();
-                            string costo = fila.Cells["Costo"].Value?.ToString();
-                            string descuento = fila.Cells["Descuento"].Value?.ToString();
-
-                            costo = costo.Replace(',', '.');
-                            descuento = descuento.Replace(',', '.');
-
-                            string xmlDetalleOrden = $@"
-                    <DETALLEORDENES>
-                        <DETALLEORDEN>
-                            <CANTIDAD>{cantidad}</CANTIDAD>
-                            <COSTO>{costo}</COSTO>
-                            <DESCUENTO>{descuento}</DESCUENTO>
-                            <IDSERVICIO>{(string.IsNullOrEmpty(idServicio) ? "NULL" : idServicio)}</IDSERVICIO>
-                            <IDPRODUCTO>{(string.IsNullOrEmpty(idProducto) ? "NULL" : idProducto)}</IDPRODUCTO>
-                            <IDORDEN>{idGenerado}</IDORDEN>
-                            <ESTADO>Pendiente</ESTADO>
-                        </DETALLEORDEN>
-                    </DETALLEORDENES>";
-
-                            string queryD = $"exec SpDetalleOrden @XMLdetalleOrden = '{xmlDetalleOrden}'";
-
-                            try
-                            {
-                                if (!CsComandosSql.InserDeletUpdate(queryD))
-                                    MessageBox.Show("Error al insertar detalle de orden");
-                            }
-                            catch (Exception ex)
-                            {
-                                MessageBox.Show("Error: " + ex.Message);
-                            }
-                        }
+                    if (dt.Rows.Count > 0)
+                    {
+                        int idGenerado = Convert.ToInt32(dt.Rows[0]["IDGenerado"]);
 
                         tabla.Clear();
                         dgvProductosAgregados.DataSource = null;
                         txtMotivo.Text = string.Empty;
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show($"Error: {ex.Message}");
-                    }
 
-                    MessageBox.Show("La orden ha sido guardada correctamente");
-                    btnAgregarP.Visible = false;
-                    lbID.Visible = false;
-                    lbProduc.Visible = false;
-                    lbCantidad.Visible = false;
-                    txtProducto.Visible = false;
-                    txtID.Visible = false;
-                    nudCantidad.Visible = false;
+                        MessageBox.Show("La orden ha sido guardada correctamente");
+                        btnAgregarP.Visible = false;
+                        lbID.Visible = false;
+                        lbProduc.Visible = false;
+                        lbCantidad.Visible = false;
+                        txtProducto.Visible = false;
+                        txtID.Visible = false;
+                        nudCantidad.Visible = false;
 
-                    btnAgregarS.Visible = false;
-                    lbIDserv.Visible = false;
-                    lbCanServ.Visible = false;
-                    lbServi.Visible = false;
-                    txtServicio.Visible = false;
-                    txtIDServi.Visible = false;
-                    nudServicio.Visible = false;
+                        btnAgregarS.Visible = false;
+                        lbIDserv.Visible = false;
+                        lbCanServ.Visible = false;
+                        lbServi.Visible = false;
+                        txtServicio.Visible = false;
+                        txtIDServi.Visible = false;
+                        nudServicio.Visible = false;
+                    }
                 }
-                catch
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Error al guardar");
+                    MessageBox.Show($"Error al guardar: {ex.Message}");
                 }
             }
             else
