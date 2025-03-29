@@ -33,11 +33,7 @@ namespace ModuloDeCompra_BD.Formulario
             txtProveedor.Text = grn.IDProv1.ToString();
             if (txtProveedor.Text != 0.ToString())
             {
-                string query = $"select GR.ID_GRNDetails as [Cod Detalle], GR.ID_Producto, Cantidad [Cantidad Recibida], 0 as [Cantidad a Devolver]," +
-                    $"(case when (select D.Cantidad from RTV_Header H inner join RTV_Details D on H.ID_RTV=D.ID_RTV where H.ID_GRN={grn.ID} AND D.ID_Producto=GR.ID_Producto) IS NULL " +
-                    $"then 0 else (select D.Cantidad from RTV_Header H inner join RTV_Details D on H.ID_RTV=D.ID_RTV where H.ID_GRN={grn.ID} AND D.ID_Producto=GR.ID_Producto) end) as [CantidadDevuelta] " +
-                    $"from Grn_Details GR where ID_GRN={grn.ID} and ID_Servicio IS NULL";
-                dgvDetalleGrn.DataSource = CsComandosSql.RetornaDatos(query);
+                CargarDGV(grn.ID);
                 lbCantRecib.Visible = true;
 
                 dgvDetalleGrn.Columns["Cantidad a Devolver"].ReadOnly = false;
@@ -61,6 +57,17 @@ namespace ModuloDeCompra_BD.Formulario
                 }
 
             }
+        }
+        private void CargarDGV(int ID)
+        {
+            string query = $"SELECT * FROM (SELECT  GR.ID_GRNDetails AS [Cod Detalle], GR.ID_Producto, GR.Cantidad AS [Cantidad Recibida], " +
+                $"0 AS [Cantidad a Devolver],CASE WHEN ISNULL((SELECT sum(D.Cantidad) FROM RTV_Details D  " +
+                $"  WHERE D.ID_GRN = {ID} AND D.ID_Producto = GR.ID_Producto), 0) = 0 " +
+                $" THEN 0 ELSE ISNULL((SELECT sum(D.Cantidad) FROM RTV_Details D  " +
+                $"WHERE D.ID_GRN = {ID} AND D.ID_Producto = GR.ID_Producto), 0) END AS [CantidadDevuelta] " +
+                $"FROM Grn_Details GR WHERE GR.ID_GRN = {ID} AND GR.ID_Servicio IS NULL) AS X WHERE [Cantidad Recibida] <> CantidadDevuelta;";
+
+            dgvDetalleGrn.DataSource = CsComandosSql.RetornaDatos(query);
         }
 
         private void dgvDetalleGrn_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
@@ -134,9 +141,10 @@ namespace ModuloDeCompra_BD.Formulario
 
                     int cantidadRecibida = Convert.ToInt32(dgvDetalleGrn[2, e.RowIndex].Value);
                     int cantidadDevolver = Convert.ToInt32(dgvDetalleGrn[e.ColumnIndex, e.RowIndex].Value?.ToString());
-                    if (cantidadDevolver > cantidadRecibida)
+                    int cantidadDevuelta = Convert.ToInt32(dgvDetalleGrn[4, e.RowIndex].Value);
+                    if (cantidadDevolver > cantidadRecibida - cantidadDevuelta)
                     {
-                        MessageBox.Show("La cantidad Devuelta no puede ser mayor que la cantidad que se recivió.");
+                        MessageBox.Show("La cantidad Devuelta no puede ser mayor que la cantidad que se recibió.");
                         dgvDetalleGrn[e.ColumnIndex, e.RowIndex].Value = 0;
                     }
                 }
@@ -181,7 +189,7 @@ namespace ModuloDeCompra_BD.Formulario
                                         <HEADER>
                                             <IDGRN>{txtSeleccionGRN.Text}</IDGRN>
                                             <Motivo>{Motivo}</Motivo>
-                                            <ID_Proveedor>{txtProveedor}</ID_Proveedor>
+                                            <ID_Proveedor>{txtProveedor.Text}</ID_Proveedor>
                                         </HEADER>
                                         {detalle}
                                  </RTV>'
@@ -189,13 +197,27 @@ namespace ModuloDeCompra_BD.Formulario
                     string queryD = $"EXEC InsertarRTV {xml}";
                     MessageBox.Show(xml);
                     if (CsComandosSql.InserDeletUpdate(queryD))
+                    {
                         MessageBox.Show("RTV REGISTRADO");
+                        CargarDGV(Convert.ToInt32(txtSeleccionGRN.Text));
+                    }
+
                 }
                 catch (SqlException ex)
                 {
                     MessageBox.Show("" + ex);
                 }
             }
+        }
+
+        private void btnCancelar_Click_1(object sender, EventArgs e)
+        {
+
+            dgvDetalleGrn.DataSource = null;
+            txtMotivo.Text = string.Empty;
+            txtProveedor.Text = string.Empty;
+            txtSeleccionGRN.Text = string.Empty;
+
         }
     }
 }

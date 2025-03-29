@@ -35,6 +35,9 @@
             this.lblRequisicionID = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblOrdenID = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.txtMotivo = new System.Windows.Forms.TextBox();
             this.btnCancelar = new Guna.UI2.WinForms.Guna2Button();
             this.btnRegistrarRTV = new Guna.UI2.WinForms.Guna2Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,13 +49,10 @@
             this.txtSeleccionGRN = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnSeleccionarGRN = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtMotivo = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
+            this.guna2Panel2.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleGrn)).BeginInit();
-            this.guna2Panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblEstadoOrden
@@ -105,6 +105,35 @@
             this.panel1.Size = new System.Drawing.Size(1362, 639);
             this.panel1.TabIndex = 2;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.label4.Font = new System.Drawing.Font("Cooper Black", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(648, 80);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(169, 17);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Motivo de devolución";
+            // 
+            // guna2Panel2
+            // 
+            this.guna2Panel2.BorderColor = System.Drawing.Color.Black;
+            this.guna2Panel2.BorderThickness = 2;
+            this.guna2Panel2.Controls.Add(this.txtMotivo);
+            this.guna2Panel2.Location = new System.Drawing.Point(254, 113);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.Size = new System.Drawing.Size(1013, 117);
+            this.guna2Panel2.TabIndex = 8;
+            // 
+            // txtMotivo
+            // 
+            this.txtMotivo.Location = new System.Drawing.Point(20, 13);
+            this.txtMotivo.Multiline = true;
+            this.txtMotivo.Name = "txtMotivo";
+            this.txtMotivo.Size = new System.Drawing.Size(970, 90);
+            this.txtMotivo.TabIndex = 0;
+            // 
             // btnCancelar
             // 
             this.btnCancelar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -119,6 +148,7 @@
             this.btnCancelar.Size = new System.Drawing.Size(122, 34);
             this.btnCancelar.TabIndex = 7;
             this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click_1);
             // 
             // btnRegistrarRTV
             // 
@@ -302,35 +332,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "DEVOLUCIONES DE PRODUCTOS  (RTV)";
             // 
-            // guna2Panel2
-            // 
-            this.guna2Panel2.BorderColor = System.Drawing.Color.Black;
-            this.guna2Panel2.BorderThickness = 2;
-            this.guna2Panel2.Controls.Add(this.txtMotivo);
-            this.guna2Panel2.Location = new System.Drawing.Point(254, 113);
-            this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(1013, 117);
-            this.guna2Panel2.TabIndex = 8;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.label4.Font = new System.Drawing.Font("Cooper Black", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(648, 80);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(169, 17);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Motivo de devolución";
-            // 
-            // txtMotivo
-            // 
-            this.txtMotivo.Location = new System.Drawing.Point(20, 13);
-            this.txtMotivo.Multiline = true;
-            this.txtMotivo.Name = "txtMotivo";
-            this.txtMotivo.Size = new System.Drawing.Size(970, 90);
-            this.txtMotivo.TabIndex = 0;
-            // 
             // FrmRTV
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -343,11 +344,11 @@
             this.Load += new System.EventHandler(this.FrmRTV_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.guna2Panel2.ResumeLayout(false);
+            this.guna2Panel2.PerformLayout();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleGrn)).EndInit();
-            this.guna2Panel2.ResumeLayout(false);
-            this.guna2Panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
