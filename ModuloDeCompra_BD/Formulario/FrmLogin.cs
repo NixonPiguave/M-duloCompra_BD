@@ -54,6 +54,8 @@ namespace ModuloDeCompra_BD
                 string rol = CsComandosSql.verificarlogin(user.Cedula, user.Contraseña);
                 int[] funcion = CsComandosSql.Funcion_Rol(user.Cedula, user.Contraseña);
                 int IDusuario = CsComandosSql.ObtenerIdUsuario(user.Cedula, user.Contraseña);
+                FrmMenu3 menu = new FrmMenu3();
+                menu.Botones=funcion;
                 string idsTexto = string.Join(", ", funcion);
                 //MessageBox.Show("IDs de funciones: " + idsTexto);
 
