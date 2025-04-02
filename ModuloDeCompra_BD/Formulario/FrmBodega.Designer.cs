@@ -65,14 +65,16 @@
             // 
             // btnAgregar
             // 
+            this.btnAgregar.Animated = true;
             this.btnAgregar.BorderRadius = 20;
             this.btnAgregar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnAgregar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnAgregar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnAgregar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAgregar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnAgregar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
+            this.btnAgregar.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnAgregar.ForeColor = System.Drawing.Color.White;
+            this.btnAgregar.IndicateFocus = true;
             this.btnAgregar.Location = new System.Drawing.Point(139, 323);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(133, 53);
@@ -162,14 +164,16 @@
             // 
             // btnModificar
             // 
+            this.btnModificar.Animated = true;
             this.btnModificar.BorderRadius = 20;
             this.btnModificar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnModificar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnModificar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnModificar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnModificar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
-            this.btnModificar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnModificar.ForeColor = System.Drawing.Color.White;
+            this.btnModificar.IndicateFocus = true;
             this.btnModificar.Location = new System.Drawing.Point(139, 608);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(133, 53);
@@ -229,6 +233,7 @@
             this.dgvBodega.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBodega.Location = new System.Drawing.Point(495, 43);
             this.dgvBodega.Name = "dgvBodega";
+            this.dgvBodega.RowHeadersVisible = false;
             this.dgvBodega.RowTemplate.Height = 18;
             this.dgvBodega.Size = new System.Drawing.Size(649, 588);
             this.dgvBodega.TabIndex = 28;

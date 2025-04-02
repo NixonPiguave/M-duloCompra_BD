@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblEstadoOrden = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblRequisicionID = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblOrdenID = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -108,11 +108,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.label4.Font = new System.Drawing.Font("Cooper Black", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(648, 80);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(169, 17);
+            this.label4.Size = new System.Drawing.Size(176, 20);
             this.label4.TabIndex = 9;
             this.label4.Text = "Motivo de devolución";
             // 
@@ -136,13 +136,16 @@
             // 
             // btnCancelar
             // 
+            this.btnCancelar.Animated = true;
+            this.btnCancelar.BorderRadius = 10;
             this.btnCancelar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnCancelar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnCancelar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnCancelar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnCancelar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
+            this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.IndicateFocus = true;
             this.btnCancelar.Location = new System.Drawing.Point(264, 586);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(122, 34);
@@ -152,13 +155,16 @@
             // 
             // btnRegistrarRTV
             // 
+            this.btnRegistrarRTV.Animated = true;
+            this.btnRegistrarRTV.BorderRadius = 10;
             this.btnRegistrarRTV.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnRegistrarRTV.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnRegistrarRTV.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnRegistrarRTV.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnRegistrarRTV.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnRegistrarRTV.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrarRTV.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
+            this.btnRegistrarRTV.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnRegistrarRTV.ForeColor = System.Drawing.Color.White;
+            this.btnRegistrarRTV.IndicateFocus = true;
             this.btnRegistrarRTV.Location = new System.Drawing.Point(103, 586);
             this.btnRegistrarRTV.Name = "btnRegistrarRTV";
             this.btnRegistrarRTV.Size = new System.Drawing.Size(122, 34);
@@ -169,11 +175,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.label2.Font = new System.Drawing.Font("Cooper Black", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(128, 183);
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(126, 180);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 17);
+            this.label2.Size = new System.Drawing.Size(81, 20);
             this.label2.TabIndex = 5;
             this.label2.Text = "Proveedor";
             // 
@@ -211,11 +217,11 @@
             // lbCantRecib
             // 
             this.lbCantRecib.AutoSize = true;
-            this.lbCantRecib.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.lbCantRecib.Font = new System.Drawing.Font("Cooper Black", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCantRecib.BackColor = System.Drawing.Color.Transparent;
+            this.lbCantRecib.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCantRecib.Location = new System.Drawing.Point(714, 34);
             this.lbCantRecib.Name = "lbCantRecib";
-            this.lbCantRecib.Size = new System.Drawing.Size(216, 17);
+            this.lbCantRecib.Size = new System.Drawing.Size(227, 20);
             this.lbCantRecib.TabIndex = 8;
             this.lbCantRecib.Text = "Registre cantidad Devuelta";
             // 
@@ -223,24 +229,24 @@
             // 
             this.dgvDetalleGrn.AllowUserToAddRows = false;
             this.dgvDetalleGrn.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvDetalleGrn.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetalleGrn.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDetalleGrn.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            this.dgvDetalleGrn.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetalleGrn.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDetalleGrn.DefaultCellStyle = dataGridViewCellStyle12;
             this.dgvDetalleGrn.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvDetalleGrn.Location = new System.Drawing.Point(26, 66);
             this.dgvDetalleGrn.MultiSelect = false;
@@ -279,11 +285,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.label3.Font = new System.Drawing.Font("Cooper Black", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(417, 15);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(184, 17);
+            this.label3.Size = new System.Drawing.Size(200, 20);
             this.label3.TabIndex = 6;
             this.label3.Text = "Detalle de la Recepción";
             // 
@@ -308,13 +314,16 @@
             // 
             // btnSeleccionarGRN
             // 
+            this.btnSeleccionarGRN.Animated = true;
+            this.btnSeleccionarGRN.BorderRadius = 10;
             this.btnSeleccionarGRN.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnSeleccionarGRN.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnSeleccionarGRN.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnSeleccionarGRN.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSeleccionarGRN.FillColor = System.Drawing.Color.Purple;
-            this.btnSeleccionarGRN.Font = new System.Drawing.Font("Cooper Black", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSeleccionarGRN.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
+            this.btnSeleccionarGRN.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnSeleccionarGRN.ForeColor = System.Drawing.Color.White;
+            this.btnSeleccionarGRN.IndicateFocus = true;
             this.btnSeleccionarGRN.Location = new System.Drawing.Point(112, 97);
             this.btnSeleccionarGRN.Name = "btnSeleccionarGRN";
             this.btnSeleccionarGRN.Size = new System.Drawing.Size(122, 39);
@@ -325,10 +334,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Cooper Black", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(520, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(326, 17);
+            this.label1.Size = new System.Drawing.Size(451, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "DEVOLUCIONES DE PRODUCTOS  (RTV)";
             // 

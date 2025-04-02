@@ -42,7 +42,6 @@
             this.guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txtNombreContacto = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.cmbDocumento = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btnModificar = new Guna.UI2.WinForms.Guna2Button();
             this.dgvProveedores = new System.Windows.Forms.DataGridView();
@@ -75,7 +74,6 @@
             this.guna2Panel1.Controls.Add(this.guna2HtmlLabel7);
             this.guna2Panel1.Controls.Add(this.txtNombreContacto);
             this.guna2Panel1.Controls.Add(this.guna2HtmlLabel11);
-            this.guna2Panel1.Controls.Add(this.guna2HtmlLabel6);
             this.guna2Panel1.Controls.Add(this.cmbDocumento);
             this.guna2Panel1.Controls.Add(this.btnModificar);
             this.guna2Panel1.Controls.Add(this.dgvProveedores);
@@ -485,17 +483,6 @@
             this.guna2HtmlLabel11.TabIndex = 35;
             this.guna2HtmlLabel11.Text = "Nombre de contacto:";
             // 
-            // guna2HtmlLabel6
-            // 
-            this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel6.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel6.Location = new System.Drawing.Point(330, 29);
-            this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
-            this.guna2HtmlLabel6.Size = new System.Drawing.Size(147, 18);
-            this.guna2HtmlLabel6.TabIndex = 35;
-            this.guna2HtmlLabel6.Text = "Nombre de contacto:";
-            // 
             // cmbDocumento
             // 
             this.cmbDocumento.BackColor = System.Drawing.Color.Transparent;
@@ -519,15 +506,15 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.BorderRadius = 3;
+            this.btnModificar.BorderRadius = 10;
             this.btnModificar.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
             this.btnModificar.CustomBorderColor = System.Drawing.Color.Transparent;
             this.btnModificar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnModificar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnModificar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnModificar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnModificar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(92)))), ((int)(((byte)(197)))));
-            this.btnModificar.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.btnModificar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
+            this.btnModificar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.Color.White;
             this.btnModificar.IndicateFocus = true;
             this.btnModificar.Location = new System.Drawing.Point(625, 170);
@@ -619,15 +606,15 @@
             // 
             // btnAggProveedor
             // 
-            this.btnAggProveedor.BorderRadius = 3;
+            this.btnAggProveedor.BorderRadius = 10;
             this.btnAggProveedor.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
             this.btnAggProveedor.CustomBorderColor = System.Drawing.Color.Transparent;
             this.btnAggProveedor.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnAggProveedor.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnAggProveedor.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnAggProveedor.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAggProveedor.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(92)))), ((int)(((byte)(197)))));
-            this.btnAggProveedor.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.btnAggProveedor.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
+            this.btnAggProveedor.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAggProveedor.ForeColor = System.Drawing.Color.White;
             this.btnAggProveedor.IndicateFocus = true;
             this.btnAggProveedor.Location = new System.Drawing.Point(433, 170);
@@ -741,7 +728,6 @@
         private Guna.UI2.WinForms.Guna2Button btnModificar;
         private Guna.UI2.WinForms.Guna2ComboBox cmbDocumento;
         private Guna.UI2.WinForms.Guna2TextBox txtNombreContacto;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel7;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel8;
         private Guna.UI2.WinForms.Guna2TextBox txtCiudad;

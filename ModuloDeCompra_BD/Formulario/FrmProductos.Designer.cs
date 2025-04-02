@@ -34,6 +34,9 @@
             this.txtPrecioUnitario = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.txtListadoUbiBodega = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnListadoUbiBodega = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btnEditarGeneral = new Guna.UI2.WinForms.Guna2Button();
             this.cmbEstadoProducto = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -54,9 +57,6 @@
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btnEliminar = new Guna.UI2.WinForms.Guna2Button();
             this.btnEliminarServicio = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.btnListadoUbiBodega = new Guna.UI2.WinForms.Guna2Button();
-            this.txtListadoUbiBodega = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvService)).BeginInit();
@@ -64,6 +64,7 @@
             // 
             // btnCancelar
             // 
+            this.btnCancelar.Animated = true;
             this.btnCancelar.BorderRadius = 20;
             this.btnCancelar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnCancelar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -72,6 +73,7 @@
             this.btnCancelar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
             this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.IndicateFocus = true;
             this.btnCancelar.Location = new System.Drawing.Point(291, 571);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(133, 53);
@@ -81,6 +83,7 @@
             // 
             // btnGuardar
             // 
+            this.btnGuardar.Animated = true;
             this.btnGuardar.BorderRadius = 20;
             this.btnGuardar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnGuardar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -89,6 +92,7 @@
             this.btnGuardar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
             this.btnGuardar.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
+            this.btnGuardar.IndicateFocus = true;
             this.btnGuardar.Location = new System.Drawing.Point(15, 571);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(133, 53);
@@ -174,8 +178,56 @@
             this.guna2Panel2.Size = new System.Drawing.Size(434, 708);
             this.guna2Panel2.TabIndex = 5;
             // 
+            // txtListadoUbiBodega
+            // 
+            this.txtListadoUbiBodega.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtListadoUbiBodega.DefaultText = "";
+            this.txtListadoUbiBodega.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtListadoUbiBodega.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtListadoUbiBodega.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtListadoUbiBodega.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtListadoUbiBodega.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtListadoUbiBodega.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtListadoUbiBodega.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtListadoUbiBodega.Location = new System.Drawing.Point(288, 417);
+            this.txtListadoUbiBodega.Name = "txtListadoUbiBodega";
+            this.txtListadoUbiBodega.PlaceholderText = "";
+            this.txtListadoUbiBodega.ReadOnly = true;
+            this.txtListadoUbiBodega.SelectedText = "";
+            this.txtListadoUbiBodega.Size = new System.Drawing.Size(97, 26);
+            this.txtListadoUbiBodega.TabIndex = 26;
+            // 
+            // btnListadoUbiBodega
+            // 
+            this.btnListadoUbiBodega.BorderRadius = 10;
+            this.btnListadoUbiBodega.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnListadoUbiBodega.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnListadoUbiBodega.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnListadoUbiBodega.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnListadoUbiBodega.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(92)))), ((int)(((byte)(197)))));
+            this.btnListadoUbiBodega.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnListadoUbiBodega.ForeColor = System.Drawing.Color.White;
+            this.btnListadoUbiBodega.Location = new System.Drawing.Point(175, 407);
+            this.btnListadoUbiBodega.Name = "btnListadoUbiBodega";
+            this.btnListadoUbiBodega.Size = new System.Drawing.Size(88, 36);
+            this.btnListadoUbiBodega.TabIndex = 25;
+            this.btnListadoUbiBodega.Text = "Listado";
+            this.btnListadoUbiBodega.Click += new System.EventHandler(this.btnListadoUbiBodega_Click);
+            // 
+            // guna2HtmlLabel5
+            // 
+            this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel5.ForeColor = System.Drawing.SystemColors.Control;
+            this.guna2HtmlLabel5.Location = new System.Drawing.Point(16, 421);
+            this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
+            this.guna2HtmlLabel5.Size = new System.Drawing.Size(135, 22);
+            this.guna2HtmlLabel5.TabIndex = 24;
+            this.guna2HtmlLabel5.Text = "Ubicación bodega:";
+            // 
             // btnEditarGeneral
             // 
+            this.btnEditarGeneral.Animated = true;
             this.btnEditarGeneral.BorderRadius = 20;
             this.btnEditarGeneral.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnEditarGeneral.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -184,6 +236,7 @@
             this.btnEditarGeneral.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
             this.btnEditarGeneral.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnEditarGeneral.ForeColor = System.Drawing.Color.White;
+            this.btnEditarGeneral.IndicateFocus = true;
             this.btnEditarGeneral.Location = new System.Drawing.Point(152, 571);
             this.btnEditarGeneral.Name = "btnEditarGeneral";
             this.btnEditarGeneral.Size = new System.Drawing.Size(133, 53);
@@ -408,6 +461,7 @@
             this.dgvProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProducto.Location = new System.Drawing.Point(507, 55);
             this.dgvProducto.Name = "dgvProducto";
+            this.dgvProducto.RowHeadersVisible = false;
             this.dgvProducto.RowTemplate.Height = 18;
             this.dgvProducto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProducto.Size = new System.Drawing.Size(594, 220);
@@ -423,6 +477,7 @@
             this.dgvService.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvService.Location = new System.Drawing.Point(507, 382);
             this.dgvService.Name = "dgvService";
+            this.dgvService.RowHeadersVisible = false;
             this.dgvService.RowTemplate.Height = 18;
             this.dgvService.Size = new System.Drawing.Size(594, 233);
             this.dgvService.TabIndex = 21;
@@ -471,53 +526,6 @@
             this.btnEliminarServicio.TabIndex = 24;
             this.btnEliminarServicio.Text = "Eliminar";
             this.btnEliminarServicio.Click += new System.EventHandler(this.btnEliminarServicio_Click);
-            // 
-            // guna2HtmlLabel5
-            // 
-            this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel5.ForeColor = System.Drawing.SystemColors.Control;
-            this.guna2HtmlLabel5.Location = new System.Drawing.Point(16, 421);
-            this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            this.guna2HtmlLabel5.Size = new System.Drawing.Size(135, 22);
-            this.guna2HtmlLabel5.TabIndex = 24;
-            this.guna2HtmlLabel5.Text = "Ubicación bodega:";
-            // 
-            // btnListadoUbiBodega
-            // 
-            this.btnListadoUbiBodega.BorderRadius = 10;
-            this.btnListadoUbiBodega.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnListadoUbiBodega.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnListadoUbiBodega.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnListadoUbiBodega.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnListadoUbiBodega.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(92)))), ((int)(((byte)(197)))));
-            this.btnListadoUbiBodega.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnListadoUbiBodega.ForeColor = System.Drawing.Color.White;
-            this.btnListadoUbiBodega.Location = new System.Drawing.Point(175, 407);
-            this.btnListadoUbiBodega.Name = "btnListadoUbiBodega";
-            this.btnListadoUbiBodega.Size = new System.Drawing.Size(88, 36);
-            this.btnListadoUbiBodega.TabIndex = 25;
-            this.btnListadoUbiBodega.Text = "Listado";
-            this.btnListadoUbiBodega.Click += new System.EventHandler(this.btnListadoUbiBodega_Click);
-            // 
-            // txtListadoUbiBodega
-            // 
-            this.txtListadoUbiBodega.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtListadoUbiBodega.DefaultText = "";
-            this.txtListadoUbiBodega.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtListadoUbiBodega.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtListadoUbiBodega.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtListadoUbiBodega.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtListadoUbiBodega.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtListadoUbiBodega.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtListadoUbiBodega.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtListadoUbiBodega.Location = new System.Drawing.Point(288, 417);
-            this.txtListadoUbiBodega.Name = "txtListadoUbiBodega";
-            this.txtListadoUbiBodega.PlaceholderText = "";
-            this.txtListadoUbiBodega.ReadOnly = true;
-            this.txtListadoUbiBodega.SelectedText = "";
-            this.txtListadoUbiBodega.Size = new System.Drawing.Size(97, 26);
-            this.txtListadoUbiBodega.TabIndex = 26;
             // 
             // FrmProductos
             // 

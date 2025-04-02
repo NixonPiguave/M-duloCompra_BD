@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnListRequiPendientes = new Guna.UI2.WinForms.Guna2Button();
             this.txtIDRequisicionPendiente = new System.Windows.Forms.TextBox();
             this.dgvDetalleRequiPendiente = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -66,7 +66,7 @@
             this.btnListRequiPendientes.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnListRequiPendientes.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnListRequiPendientes.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnListRequiPendientes.FillColor = System.Drawing.Color.Purple;
+            this.btnListRequiPendientes.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
             this.btnListRequiPendientes.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnListRequiPendientes.ForeColor = System.Drawing.Color.White;
             this.btnListRequiPendientes.Location = new System.Drawing.Point(41, 46);
@@ -90,25 +90,25 @@
             // 
             this.dgvDetalleRequiPendiente.AllowUserToAddRows = false;
             this.dgvDetalleRequiPendiente.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvDetalleRequiPendiente.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetalleRequiPendiente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle43.BackColor = System.Drawing.Color.White;
+            this.dgvDetalleRequiPendiente.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle43;
+            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle44.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle44.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle44.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle44.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle44.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle44.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetalleRequiPendiente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle44;
             this.dgvDetalleRequiPendiente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDetalleRequiPendiente.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle45.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle45.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle45.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle45.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle45.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle45.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDetalleRequiPendiente.DefaultCellStyle = dataGridViewCellStyle45;
             this.dgvDetalleRequiPendiente.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvDetalleRequiPendiente.Location = new System.Drawing.Point(205, 337);
             this.dgvDetalleRequiPendiente.Name = "dgvDetalleRequiPendiente";
@@ -141,25 +141,27 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Gray;
-            this.label1.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(20, 367);
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label1.Location = new System.Drawing.Point(37, 372);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(162, 19);
+            this.label1.Size = new System.Drawing.Size(138, 20);
             this.label1.TabIndex = 4;
             this.label1.Text = "Modificar cantidad";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // btnModificarCantidadRequi
             // 
+            this.btnModificarCantidadRequi.Animated = true;
             this.btnModificarCantidadRequi.BorderRadius = 5;
             this.btnModificarCantidadRequi.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnModificarCantidadRequi.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnModificarCantidadRequi.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnModificarCantidadRequi.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnModificarCantidadRequi.FillColor = System.Drawing.Color.Purple;
+            this.btnModificarCantidadRequi.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
             this.btnModificarCantidadRequi.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnModificarCantidadRequi.ForeColor = System.Drawing.Color.White;
+            this.btnModificarCantidadRequi.IndicateFocus = true;
             this.btnModificarCantidadRequi.Location = new System.Drawing.Point(41, 395);
             this.btnModificarCantidadRequi.Name = "btnModificarCantidadRequi";
             this.btnModificarCantidadRequi.Size = new System.Drawing.Size(118, 30);
@@ -170,21 +172,23 @@
             // txtCantidad
             // 
             this.txtCantidad.BackColor = System.Drawing.Color.White;
-            this.txtCantidad.Location = new System.Drawing.Point(51, 431);
+            this.txtCantidad.Location = new System.Drawing.Point(41, 431);
             this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(108, 20);
+            this.txtCantidad.Size = new System.Drawing.Size(118, 20);
             this.txtCantidad.TabIndex = 6;
             // 
             // btnAprobarRequi
             // 
+            this.btnAprobarRequi.Animated = true;
             this.btnAprobarRequi.BorderRadius = 5;
             this.btnAprobarRequi.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnAprobarRequi.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnAprobarRequi.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnAprobarRequi.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAprobarRequi.FillColor = System.Drawing.Color.Green;
-            this.btnAprobarRequi.Font = new System.Drawing.Font("Cooper Black", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAprobarRequi.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
+            this.btnAprobarRequi.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnAprobarRequi.ForeColor = System.Drawing.Color.White;
+            this.btnAprobarRequi.IndicateFocus = true;
             this.btnAprobarRequi.Location = new System.Drawing.Point(864, 146);
             this.btnAprobarRequi.Name = "btnAprobarRequi";
             this.btnAprobarRequi.Size = new System.Drawing.Size(118, 44);
@@ -194,14 +198,16 @@
             // 
             // btnRechazarRequi
             // 
+            this.btnRechazarRequi.Animated = true;
             this.btnRechazarRequi.BorderRadius = 5;
             this.btnRechazarRequi.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnRechazarRequi.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnRechazarRequi.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnRechazarRequi.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnRechazarRequi.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(70)))), ((int)(((byte)(74)))));
-            this.btnRechazarRequi.Font = new System.Drawing.Font("Cooper Black", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRechazarRequi.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
+            this.btnRechazarRequi.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnRechazarRequi.ForeColor = System.Drawing.Color.White;
+            this.btnRechazarRequi.IndicateFocus = true;
             this.btnRechazarRequi.Location = new System.Drawing.Point(1012, 146);
             this.btnRechazarRequi.Name = "btnRechazarRequi";
             this.btnRechazarRequi.Size = new System.Drawing.Size(118, 44);
@@ -211,17 +217,19 @@
             // 
             // btnRechazarProducto
             // 
+            this.btnRechazarProducto.Animated = true;
             this.btnRechazarProducto.BorderRadius = 5;
             this.btnRechazarProducto.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnRechazarProducto.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnRechazarProducto.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnRechazarProducto.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnRechazarProducto.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(70)))), ((int)(((byte)(74)))));
-            this.btnRechazarProducto.Font = new System.Drawing.Font("Cooper Black", 9.75F);
+            this.btnRechazarProducto.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
+            this.btnRechazarProducto.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnRechazarProducto.ForeColor = System.Drawing.Color.White;
+            this.btnRechazarProducto.IndicateFocus = true;
             this.btnRechazarProducto.Location = new System.Drawing.Point(662, 539);
             this.btnRechazarProducto.Name = "btnRechazarProducto";
-            this.btnRechazarProducto.Size = new System.Drawing.Size(184, 44);
+            this.btnRechazarProducto.Size = new System.Drawing.Size(166, 44);
             this.btnRechazarProducto.TabIndex = 10;
             this.btnRechazarProducto.Text = "Rechazar Producto/Servicio";
             this.btnRechazarProducto.Click += new System.EventHandler(this.btnRechazarProducto_Click);
@@ -229,11 +237,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label2.Font = new System.Drawing.Font("Cooper Black", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
             this.label2.Location = new System.Drawing.Point(598, 294);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(248, 21);
+            this.label2.Size = new System.Drawing.Size(250, 25);
             this.label2.TabIndex = 11;
             this.label2.Text = "Detalle de la Requisición";
             // 
@@ -258,22 +266,22 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(213)))), ((int)(((byte)(229)))));
-            this.label4.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label4.Location = new System.Drawing.Point(453, 539);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(80, 21);
+            this.label4.Size = new System.Drawing.Size(85, 20);
             this.label4.TabIndex = 15;
             this.label4.Text = "ID Servicio";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(213)))), ((int)(((byte)(229)))));
-            this.label5.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label5.Location = new System.Drawing.Point(218, 541);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(91, 21);
+            this.label5.Size = new System.Drawing.Size(94, 20);
             this.label5.TabIndex = 16;
             this.label5.Text = "ID Producto";
             // 
@@ -281,37 +289,37 @@
             // 
             this.DgvRequisicionPendiente.AllowUserToAddRows = false;
             this.DgvRequisicionPendiente.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.DgvRequisicionPendiente.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvRequisicionPendiente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle46.BackColor = System.Drawing.Color.White;
+            this.DgvRequisicionPendiente.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle46;
+            dataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle47.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle47.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle47.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle47.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle47.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle47.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvRequisicionPendiente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle47;
             this.DgvRequisicionPendiente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgvRequisicionPendiente.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle48.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle48.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle48.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle48.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle48.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle48.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle48.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvRequisicionPendiente.DefaultCellStyle = dataGridViewCellStyle48;
             this.DgvRequisicionPendiente.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.DgvRequisicionPendiente.Location = new System.Drawing.Point(25, 19);
             this.DgvRequisicionPendiente.MultiSelect = false;
             this.DgvRequisicionPendiente.Name = "DgvRequisicionPendiente";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvRequisicionPendiente.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle49.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle49.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle49.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle49.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle49.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle49.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle49.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvRequisicionPendiente.RowHeadersDefaultCellStyle = dataGridViewCellStyle49;
             this.DgvRequisicionPendiente.RowHeadersVisible = false;
             this.DgvRequisicionPendiente.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.DgvRequisicionPendiente.Size = new System.Drawing.Size(1105, 113);
@@ -374,10 +382,11 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Cooper Black", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
             this.label9.Location = new System.Drawing.Point(539, 9);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(329, 17);
+            this.label9.Size = new System.Drawing.Size(422, 25);
             this.label9.TabIndex = 0;
             this.label9.Text = "APROBAR REQUISICIONES PENDIENTES";
             // 
@@ -385,7 +394,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1400, 655);
+            this.ClientSize = new System.Drawing.Size(1386, 655);
             this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
