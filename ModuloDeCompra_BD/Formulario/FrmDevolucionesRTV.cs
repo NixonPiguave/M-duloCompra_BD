@@ -60,12 +60,14 @@ namespace ModuloDeCompra_BD.Formulario
         }
         private void CargarDGV(int ID)
         {
-            string query = $"SELECT * FROM (SELECT  GR.ID_GRNDetails AS [Cod Detalle], GR.ID_Producto, GR.Cantidad AS [Cantidad Recibida], " +
-                $"0 AS [Cantidad a Devolver],CASE WHEN ISNULL((SELECT sum(D.Cantidad) FROM RTV_Details D  " +
-                $"  WHERE D.ID_GRN = {ID} AND D.ID_Producto = GR.ID_Producto), 0) = 0 " +
-                $" THEN 0 ELSE ISNULL((SELECT sum(D.Cantidad) FROM RTV_Details D  " +
-                $"WHERE D.ID_GRN = {ID} AND D.ID_Producto = GR.ID_Producto), 0) END AS [CantidadDevuelta] " +
-                $"FROM Grn_Details GR WHERE GR.ID_GRN = {ID} AND GR.ID_Servicio IS NULL) AS X WHERE [Cantidad Recibida] <> CantidadDevuelta;";
+            string query = $"SELECT X.[Cod Detalle], X.ID_Producto, X.ID_Servicio,p.NomProducto,s.Nom_Servicio, X.[Cantidad Recibida], X.[Cantidad a Devolver], X.CantidadDevuelta " +
+                $" FROM (SELECT  GR.ID_GRNDetails AS [Cod Detalle], GR.ID_Producto, GR.ID_Servicio, GR.Cantidad AS [Cantidad Recibida]," +
+                $"  0 AS [Cantidad a Devolver],CASE WHEN ISNULL((SELECT sum(D.Cantidad) FROM RTV_Details D " +
+                $" WHERE D.ID_GRN = {ID} AND (D.ID_Producto = GR.ID_Producto or D.ID_Servicio=GR.ID_Servicio)), 0) = 0 " +
+                $" THEN 0 ELSE ISNULL((SELECT sum(D.Cantidad) FROM RTV_Details D" +
+                $"  WHERE D.ID_GRN = {ID} AND (D.ID_Producto = GR.ID_Producto or D.ID_Servicio=GR.ID_Servicio)), 0) END AS [CantidadDevuelta] " +
+                $" FROM Grn_Details GR WHERE GR.ID_GRN = {ID} ) AS X Left join Producto p on X.ID_Producto=p.ID_Producto  " +
+                $"left join Servicio s on s.ID_Servicio=X.ID_Servicio WHERE [Cantidad Recibida] <> CantidadDevuelta";
 
             dgvDetalleGrn.DataSource = CsComandosSql.RetornaDatos(query);
         }
@@ -139,9 +141,9 @@ namespace ModuloDeCompra_BD.Formulario
                         return;
                     }
 
-                    int cantidadRecibida = Convert.ToInt32(dgvDetalleGrn[2, e.RowIndex].Value);
+                    int cantidadRecibida = Convert.ToInt32(dgvDetalleGrn[5, e.RowIndex].Value);
                     int cantidadDevolver = Convert.ToInt32(dgvDetalleGrn[e.ColumnIndex, e.RowIndex].Value?.ToString());
-                    int cantidadDevuelta = Convert.ToInt32(dgvDetalleGrn[4, e.RowIndex].Value);
+                    int cantidadDevuelta = Convert.ToInt32(dgvDetalleGrn[7, e.RowIndex].Value);
                     if (cantidadDevolver > cantidadRecibida - cantidadDevuelta)
                     {
                         MessageBox.Show("La cantidad Devuelta no puede ser mayor que la cantidad que se recibió.");
@@ -167,6 +169,7 @@ namespace ModuloDeCompra_BD.Formulario
                     if (fila.IsNewRow)
                         continue;
 
+                    string idServicio = fila.Cells["ID_Servicio"].Value?.ToString();
                     string idProducto = fila.Cells["ID_Producto"].Value?.ToString();
                     string cantidad = fila.Cells["Cantidad a Devolver"].Value?.ToString();
                     int cant = Convert.ToInt32(cantidad);
@@ -174,7 +177,8 @@ namespace ModuloDeCompra_BD.Formulario
                     {
                         detalle += $@"
                                 <DETALLE>
-                                    <ID_Producto>{idProducto}</ID_Producto>
+                                     <IDSERVICIO>{(string.IsNullOrEmpty(idServicio) ? "NULL" : idServicio)}</IDSERVICIO>
+                                <IDPRODUCTO>{(string.IsNullOrEmpty(idProducto) ? "NULL" : idProducto)}</IDPRODUCTO>
                                     <Cantidad>{cantidad}</Cantidad>
                                 </DETALLE>";
                     }
