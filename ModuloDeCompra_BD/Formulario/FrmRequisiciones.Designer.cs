@@ -68,11 +68,12 @@
             // 
             // btnProducto
             // 
+            this.btnProducto.BorderRadius = 10;
             this.btnProducto.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnProducto.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnProducto.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnProducto.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnProducto.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnProducto.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
             this.btnProducto.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProducto.ForeColor = System.Drawing.Color.White;
             this.btnProducto.Location = new System.Drawing.Point(271, 56);
@@ -114,11 +115,12 @@
             // 
             // btnAgregarP
             // 
+            this.btnAgregarP.BorderRadius = 10;
             this.btnAgregarP.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnAgregarP.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnAgregarP.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnAgregarP.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAgregarP.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnAgregarP.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
             this.btnAgregarP.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarP.ForeColor = System.Drawing.Color.White;
             this.btnAgregarP.Location = new System.Drawing.Point(532, 285);
@@ -140,6 +142,7 @@
             // 
             // txtIDServi
             // 
+            this.txtIDServi.BorderRadius = 5;
             this.txtIDServi.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtIDServi.DefaultText = "";
             this.txtIDServi.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -186,6 +189,7 @@
             // 
             // txtServicio
             // 
+            this.txtServicio.BorderRadius = 5;
             this.txtServicio.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtServicio.DefaultText = "";
             this.txtServicio.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -216,6 +220,7 @@
             // 
             // txtID
             // 
+            this.txtID.BorderRadius = 5;
             this.txtID.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtID.DefaultText = "";
             this.txtID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -236,11 +241,12 @@
             // 
             // btnAgregarS
             // 
+            this.btnAgregarS.BorderRadius = 10;
             this.btnAgregarS.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnAgregarS.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnAgregarS.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnAgregarS.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAgregarS.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnAgregarS.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
             this.btnAgregarS.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarS.ForeColor = System.Drawing.Color.White;
             this.btnAgregarS.Location = new System.Drawing.Point(532, 552);
@@ -252,11 +258,12 @@
             // 
             // btnServicio
             // 
+            this.btnServicio.BorderRadius = 10;
             this.btnServicio.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnServicio.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnServicio.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnServicio.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnServicio.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnServicio.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
             this.btnServicio.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnServicio.ForeColor = System.Drawing.Color.White;
             this.btnServicio.Location = new System.Drawing.Point(271, 379);
@@ -268,7 +275,7 @@
             // 
             // txtFiltroServicio
             // 
-            this.txtFiltroServicio.BorderRadius = 10;
+            this.txtFiltroServicio.BorderRadius = 5;
             this.txtFiltroServicio.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtFiltroServicio.DefaultText = "";
             this.txtFiltroServicio.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -341,6 +348,7 @@
             // 
             // txtProducto
             // 
+            this.txtProducto.BorderRadius = 5;
             this.txtProducto.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtProducto.DefaultText = "";
             this.txtProducto.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -360,7 +368,7 @@
             // 
             // txtFiltroProduc
             // 
-            this.txtFiltroProduc.BorderRadius = 10;
+            this.txtFiltroProduc.BorderRadius = 5;
             this.txtFiltroProduc.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtFiltroProduc.DefaultText = "";
             this.txtFiltroProduc.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -443,11 +451,12 @@
             this.txtMotivo.Name = "txtMotivo";
             this.txtMotivo.PlaceholderText = "";
             this.txtMotivo.SelectedText = "";
-            this.txtMotivo.Size = new System.Drawing.Size(213, 522);
+            this.txtMotivo.Size = new System.Drawing.Size(213, 205);
             this.txtMotivo.TabIndex = 8;
             // 
             // btnCrearRequi
             // 
+            this.btnCrearRequi.BorderRadius = 10;
             this.btnCrearRequi.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnCrearRequi.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnCrearRequi.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -455,9 +464,9 @@
             this.btnCrearRequi.FillColor = System.Drawing.Color.MediumSeaGreen;
             this.btnCrearRequi.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnCrearRequi.ForeColor = System.Drawing.Color.Black;
-            this.btnCrearRequi.Location = new System.Drawing.Point(255, 606);
+            this.btnCrearRequi.Location = new System.Drawing.Point(466, 309);
             this.btnCrearRequi.Name = "btnCrearRequi";
-            this.btnCrearRequi.Size = new System.Drawing.Size(172, 33);
+            this.btnCrearRequi.Size = new System.Drawing.Size(139, 52);
             this.btnCrearRequi.TabIndex = 7;
             this.btnCrearRequi.Text = "Crear Requisición";
             this.btnCrearRequi.Click += new System.EventHandler(this.btnCrearRequi_Click);

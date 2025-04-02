@@ -50,12 +50,12 @@
             // 
             // btnreport
             // 
-            this.btnreport.BorderRadius = 20;
+            this.btnreport.BorderRadius = 10;
             this.btnreport.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnreport.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnreport.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnreport.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnreport.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(77)))), ((int)(((byte)(235)))));
+            this.btnreport.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
             this.btnreport.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnreport.ForeColor = System.Drawing.Color.White;
             this.btnreport.Location = new System.Drawing.Point(12, 111);
@@ -67,12 +67,12 @@
             // 
             // btnCategoria
             // 
-            this.btnCategoria.BorderRadius = 20;
+            this.btnCategoria.BorderRadius = 10;
             this.btnCategoria.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnCategoria.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnCategoria.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnCategoria.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnCategoria.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(77)))), ((int)(((byte)(235)))));
+            this.btnCategoria.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
             this.btnCategoria.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCategoria.ForeColor = System.Drawing.Color.White;
             this.btnCategoria.Location = new System.Drawing.Point(274, 111);
@@ -84,12 +84,12 @@
             // 
             // btnDetalles
             // 
-            this.btnDetalles.BorderRadius = 20;
+            this.btnDetalles.BorderRadius = 10;
             this.btnDetalles.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnDetalles.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnDetalles.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnDetalles.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDetalles.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(77)))), ((int)(((byte)(235)))));
+            this.btnDetalles.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
             this.btnDetalles.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDetalles.ForeColor = System.Drawing.Color.White;
             this.btnDetalles.Location = new System.Drawing.Point(544, 111);
@@ -101,12 +101,12 @@
             // 
             // btnProducto
             // 
-            this.btnProducto.BorderRadius = 20;
+            this.btnProducto.BorderRadius = 10;
             this.btnProducto.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnProducto.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnProducto.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnProducto.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnProducto.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(77)))), ((int)(((byte)(235)))));
+            this.btnProducto.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
             this.btnProducto.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProducto.ForeColor = System.Drawing.Color.White;
             this.btnProducto.Location = new System.Drawing.Point(819, 111);
@@ -118,12 +118,12 @@
             // 
             // btnProveedor
             // 
-            this.btnProveedor.BorderRadius = 20;
+            this.btnProveedor.BorderRadius = 10;
             this.btnProveedor.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnProveedor.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnProveedor.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnProveedor.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnProveedor.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(77)))), ((int)(((byte)(235)))));
+            this.btnProveedor.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
             this.btnProveedor.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProveedor.ForeColor = System.Drawing.Color.White;
             this.btnProveedor.Location = new System.Drawing.Point(1076, 111);
@@ -140,7 +140,7 @@
             this.btnCompras.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnCompras.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnCompras.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnCompras.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(77)))), ((int)(((byte)(235)))));
+            this.btnCompras.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
             this.btnCompras.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCompras.ForeColor = System.Drawing.Color.White;
             this.btnCompras.Location = new System.Drawing.Point(12, 262);
@@ -152,12 +152,12 @@
             // 
             // btnDevoluciones
             // 
-            this.btnDevoluciones.BorderRadius = 20;
+            this.btnDevoluciones.BorderRadius = 10;
             this.btnDevoluciones.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnDevoluciones.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnDevoluciones.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnDevoluciones.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDevoluciones.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(77)))), ((int)(((byte)(235)))));
+            this.btnDevoluciones.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
             this.btnDevoluciones.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDevoluciones.ForeColor = System.Drawing.Color.White;
             this.btnDevoluciones.Location = new System.Drawing.Point(265, 262);
@@ -169,12 +169,12 @@
             // 
             // btnstock
             // 
-            this.btnstock.BorderRadius = 20;
+            this.btnstock.BorderRadius = 10;
             this.btnstock.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnstock.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnstock.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnstock.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnstock.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(77)))), ((int)(((byte)(235)))));
+            this.btnstock.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
             this.btnstock.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnstock.ForeColor = System.Drawing.Color.White;
             this.btnstock.Location = new System.Drawing.Point(535, 262);
@@ -186,12 +186,12 @@
             // 
             // btnIva
             // 
-            this.btnIva.BorderRadius = 20;
+            this.btnIva.BorderRadius = 10;
             this.btnIva.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnIva.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnIva.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnIva.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnIva.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(77)))), ((int)(((byte)(235)))));
+            this.btnIva.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
             this.btnIva.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIva.ForeColor = System.Drawing.Color.White;
             this.btnIva.Location = new System.Drawing.Point(810, 262);
@@ -203,12 +203,12 @@
             // 
             // btnmovimientos
             // 
-            this.btnmovimientos.BorderRadius = 20;
+            this.btnmovimientos.BorderRadius = 10;
             this.btnmovimientos.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnmovimientos.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnmovimientos.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnmovimientos.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnmovimientos.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(77)))), ((int)(((byte)(235)))));
+            this.btnmovimientos.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
             this.btnmovimientos.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnmovimientos.ForeColor = System.Drawing.Color.White;
             this.btnmovimientos.Location = new System.Drawing.Point(1076, 262);
@@ -225,7 +225,7 @@
             this.btnrequisicion.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnrequisicion.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnrequisicion.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnrequisicion.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(77)))), ((int)(((byte)(235)))));
+            this.btnrequisicion.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
             this.btnrequisicion.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnrequisicion.ForeColor = System.Drawing.Color.White;
             this.btnrequisicion.Location = new System.Drawing.Point(12, 406);
@@ -237,12 +237,12 @@
             // 
             // btnusuario
             // 
-            this.btnusuario.BorderRadius = 20;
+            this.btnusuario.BorderRadius = 10;
             this.btnusuario.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnusuario.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnusuario.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnusuario.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnusuario.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(77)))), ((int)(((byte)(235)))));
+            this.btnusuario.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
             this.btnusuario.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnusuario.ForeColor = System.Drawing.Color.White;
             this.btnusuario.Location = new System.Drawing.Point(265, 406);
@@ -254,12 +254,12 @@
             // 
             // btnReportAuditoria
             // 
-            this.btnReportAuditoria.BorderRadius = 20;
+            this.btnReportAuditoria.BorderRadius = 10;
             this.btnReportAuditoria.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnReportAuditoria.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnReportAuditoria.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnReportAuditoria.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnReportAuditoria.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(77)))), ((int)(((byte)(235)))));
+            this.btnReportAuditoria.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
             this.btnReportAuditoria.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReportAuditoria.ForeColor = System.Drawing.Color.White;
             this.btnReportAuditoria.Location = new System.Drawing.Point(535, 406);
@@ -271,12 +271,12 @@
             // 
             // btnReporteSesion
             // 
-            this.btnReporteSesion.BorderRadius = 20;
+            this.btnReporteSesion.BorderRadius = 10;
             this.btnReporteSesion.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnReporteSesion.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnReporteSesion.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnReporteSesion.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnReporteSesion.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(77)))), ((int)(((byte)(235)))));
+            this.btnReporteSesion.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
             this.btnReporteSesion.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReporteSesion.ForeColor = System.Drawing.Color.White;
             this.btnReporteSesion.Location = new System.Drawing.Point(802, 406);
@@ -309,12 +309,12 @@
             // 
             // btnFactura
             // 
-            this.btnFactura.BorderRadius = 20;
+            this.btnFactura.BorderRadius = 10;
             this.btnFactura.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnFactura.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnFactura.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnFactura.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnFactura.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(77)))), ((int)(((byte)(235)))));
+            this.btnFactura.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
             this.btnFactura.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFactura.ForeColor = System.Drawing.Color.White;
             this.btnFactura.Location = new System.Drawing.Point(1076, 406);
@@ -328,7 +328,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1291, 666);
             this.Controls.Add(this.btnFactura);
             this.Controls.Add(this.panel1);

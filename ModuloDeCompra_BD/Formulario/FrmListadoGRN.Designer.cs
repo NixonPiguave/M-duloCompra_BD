@@ -39,7 +39,7 @@
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
+            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(7)))), ((int)(((byte)(109)))));
             this.guna2Panel1.Controls.Add(this.lblGRN);
             this.guna2Panel1.Location = new System.Drawing.Point(1, 0);
             this.guna2Panel1.Name = "guna2Panel1";

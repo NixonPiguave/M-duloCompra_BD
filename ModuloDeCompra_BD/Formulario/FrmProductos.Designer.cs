@@ -65,7 +65,7 @@
             // btnCancelar
             // 
             this.btnCancelar.Animated = true;
-            this.btnCancelar.BorderRadius = 20;
+            this.btnCancelar.BorderRadius = 10;
             this.btnCancelar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnCancelar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnCancelar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -84,7 +84,7 @@
             // btnGuardar
             // 
             this.btnGuardar.Animated = true;
-            this.btnGuardar.BorderRadius = 20;
+            this.btnGuardar.BorderRadius = 10;
             this.btnGuardar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnGuardar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnGuardar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -119,7 +119,7 @@
             // 
             // txtPrecioUnitario
             // 
-            this.txtPrecioUnitario.BorderRadius = 10;
+            this.txtPrecioUnitario.BorderRadius = 5;
             this.txtPrecioUnitario.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPrecioUnitario.DefaultText = "";
             this.txtPrecioUnitario.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -180,6 +180,7 @@
             // 
             // txtListadoUbiBodega
             // 
+            this.txtListadoUbiBodega.BorderRadius = 5;
             this.txtListadoUbiBodega.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtListadoUbiBodega.DefaultText = "";
             this.txtListadoUbiBodega.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -228,7 +229,7 @@
             // btnEditarGeneral
             // 
             this.btnEditarGeneral.Animated = true;
-            this.btnEditarGeneral.BorderRadius = 20;
+            this.btnEditarGeneral.BorderRadius = 10;
             this.btnEditarGeneral.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnEditarGeneral.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnEditarGeneral.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -247,7 +248,7 @@
             // cmbEstadoProducto
             // 
             this.cmbEstadoProducto.BackColor = System.Drawing.Color.Transparent;
-            this.cmbEstadoProducto.BorderRadius = 10;
+            this.cmbEstadoProducto.BorderRadius = 5;
             this.cmbEstadoProducto.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cmbEstadoProducto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEstadoProducto.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -299,7 +300,7 @@
             // cbTipoP
             // 
             this.cbTipoP.BackColor = System.Drawing.Color.Transparent;
-            this.cbTipoP.BorderRadius = 10;
+            this.cbTipoP.BorderRadius = 5;
             this.cbTipoP.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbTipoP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTipoP.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -318,6 +319,7 @@
             // 
             // txtListadoProvee
             // 
+            this.txtListadoProvee.BorderRadius = 5;
             this.txtListadoProvee.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtListadoProvee.DefaultText = "";
             this.txtListadoProvee.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -337,6 +339,7 @@
             // 
             // txtListadoCategory
             // 
+            this.txtListadoCategory.BorderRadius = 5;
             this.txtListadoCategory.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtListadoCategory.DefaultText = "";
             this.txtListadoCategory.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -374,7 +377,7 @@
             // cmbIVA
             // 
             this.cmbIVA.BackColor = System.Drawing.Color.Transparent;
-            this.cmbIVA.BorderRadius = 10;
+            this.cmbIVA.BorderRadius = 5;
             this.cmbIVA.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cmbIVA.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbIVA.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -391,7 +394,7 @@
             // 
             // txtNombreProducto
             // 
-            this.txtNombreProducto.BorderRadius = 10;
+            this.txtNombreProducto.BorderRadius = 5;
             this.txtNombreProducto.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtNombreProducto.DefaultText = "";
             this.txtNombreProducto.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));

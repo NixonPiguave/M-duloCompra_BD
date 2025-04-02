@@ -33,21 +33,21 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvIVA = new Guna.UI2.WinForms.Guna2DataGridView();
             this.pnlSubMenu = new System.Windows.Forms.Panel();
+            this.txtNuevoEstadoIVA = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtEstadoIVA = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblNuevoEstadoIVA = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblEstadoIVA = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.txtNuevoValorIVA = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtValorIVA = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblNuevoValorIVA = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblModificarCategoria = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblIVAEscogido = new System.Windows.Forms.Label();
+            this.lblCategoria = new System.Windows.Forms.Label();
+            this.btnEliminar = new Guna.UI2.WinForms.Guna2Button();
             this.btnAceptar = new Guna.UI2.WinForms.Guna2Button();
             this.btnAgregar = new Guna.UI2.WinForms.Guna2Button();
             this.btnModificar = new Guna.UI2.WinForms.Guna2Button();
             this.txtIDIVA = new Guna.UI2.WinForms.Guna2TextBox();
-            this.lblCategoria = new System.Windows.Forms.Label();
-            this.lblIVAEscogido = new System.Windows.Forms.Label();
-            this.btnEliminar = new Guna.UI2.WinForms.Guna2Button();
-            this.lblModificarCategoria = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lblNuevoValorIVA = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.txtValorIVA = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtNuevoValorIVA = new Guna.UI2.WinForms.Guna2TextBox();
-            this.lblEstadoIVA = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lblNuevoEstadoIVA = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.txtEstadoIVA = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtNuevoEstadoIVA = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIVA)).BeginInit();
             this.pnlSubMenu.SuspendLayout();
             this.SuspendLayout();
@@ -131,9 +131,173 @@
             this.pnlSubMenu.Size = new System.Drawing.Size(319, 663);
             this.pnlSubMenu.TabIndex = 1;
             // 
+            // txtNuevoEstadoIVA
+            // 
+            this.txtNuevoEstadoIVA.BorderRadius = 5;
+            this.txtNuevoEstadoIVA.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtNuevoEstadoIVA.DefaultText = "";
+            this.txtNuevoEstadoIVA.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtNuevoEstadoIVA.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtNuevoEstadoIVA.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtNuevoEstadoIVA.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtNuevoEstadoIVA.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtNuevoEstadoIVA.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtNuevoEstadoIVA.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtNuevoEstadoIVA.Location = new System.Drawing.Point(55, 329);
+            this.txtNuevoEstadoIVA.Name = "txtNuevoEstadoIVA";
+            this.txtNuevoEstadoIVA.PlaceholderText = "";
+            this.txtNuevoEstadoIVA.SelectedText = "";
+            this.txtNuevoEstadoIVA.Size = new System.Drawing.Size(200, 36);
+            this.txtNuevoEstadoIVA.TabIndex = 20;
+            this.txtNuevoEstadoIVA.Visible = false;
+            // 
+            // txtEstadoIVA
+            // 
+            this.txtEstadoIVA.BorderRadius = 10;
+            this.txtEstadoIVA.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtEstadoIVA.DefaultText = "";
+            this.txtEstadoIVA.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtEstadoIVA.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtEstadoIVA.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtEstadoIVA.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtEstadoIVA.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtEstadoIVA.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtEstadoIVA.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtEstadoIVA.Location = new System.Drawing.Point(55, 329);
+            this.txtEstadoIVA.Name = "txtEstadoIVA";
+            this.txtEstadoIVA.PlaceholderText = "";
+            this.txtEstadoIVA.SelectedText = "";
+            this.txtEstadoIVA.Size = new System.Drawing.Size(200, 36);
+            this.txtEstadoIVA.TabIndex = 19;
+            // 
+            // lblNuevoEstadoIVA
+            // 
+            this.lblNuevoEstadoIVA.BackColor = System.Drawing.Color.Transparent;
+            this.lblNuevoEstadoIVA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNuevoEstadoIVA.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblNuevoEstadoIVA.Location = new System.Drawing.Point(87, 292);
+            this.lblNuevoEstadoIVA.Name = "lblNuevoEstadoIVA";
+            this.lblNuevoEstadoIVA.Size = new System.Drawing.Size(134, 22);
+            this.lblNuevoEstadoIVA.TabIndex = 18;
+            this.lblNuevoEstadoIVA.Text = "Nuevo Estado IVA";
+            this.lblNuevoEstadoIVA.Visible = false;
+            // 
+            // lblEstadoIVA
+            // 
+            this.lblEstadoIVA.BackColor = System.Drawing.Color.Transparent;
+            this.lblEstadoIVA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstadoIVA.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblEstadoIVA.Location = new System.Drawing.Point(87, 292);
+            this.lblEstadoIVA.Name = "lblEstadoIVA";
+            this.lblEstadoIVA.Size = new System.Drawing.Size(135, 22);
+            this.lblEstadoIVA.TabIndex = 17;
+            this.lblEstadoIVA.Text = "Añadir Estado IVA";
+            // 
+            // txtNuevoValorIVA
+            // 
+            this.txtNuevoValorIVA.BorderRadius = 5;
+            this.txtNuevoValorIVA.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtNuevoValorIVA.DefaultText = "";
+            this.txtNuevoValorIVA.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtNuevoValorIVA.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtNuevoValorIVA.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtNuevoValorIVA.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtNuevoValorIVA.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtNuevoValorIVA.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtNuevoValorIVA.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtNuevoValorIVA.Location = new System.Drawing.Point(55, 234);
+            this.txtNuevoValorIVA.Name = "txtNuevoValorIVA";
+            this.txtNuevoValorIVA.PlaceholderText = "";
+            this.txtNuevoValorIVA.SelectedText = "";
+            this.txtNuevoValorIVA.Size = new System.Drawing.Size(200, 36);
+            this.txtNuevoValorIVA.TabIndex = 16;
+            this.txtNuevoValorIVA.Visible = false;
+            // 
+            // txtValorIVA
+            // 
+            this.txtValorIVA.BorderRadius = 10;
+            this.txtValorIVA.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtValorIVA.DefaultText = "";
+            this.txtValorIVA.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtValorIVA.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtValorIVA.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtValorIVA.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtValorIVA.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtValorIVA.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtValorIVA.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtValorIVA.Location = new System.Drawing.Point(55, 234);
+            this.txtValorIVA.Name = "txtValorIVA";
+            this.txtValorIVA.PlaceholderText = "";
+            this.txtValorIVA.SelectedText = "";
+            this.txtValorIVA.Size = new System.Drawing.Size(200, 36);
+            this.txtValorIVA.TabIndex = 15;
+            // 
+            // lblNuevoValorIVA
+            // 
+            this.lblNuevoValorIVA.BackColor = System.Drawing.Color.Transparent;
+            this.lblNuevoValorIVA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNuevoValorIVA.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblNuevoValorIVA.Location = new System.Drawing.Point(80, 206);
+            this.lblNuevoValorIVA.Name = "lblNuevoValorIVA";
+            this.lblNuevoValorIVA.Size = new System.Drawing.Size(141, 22);
+            this.lblNuevoValorIVA.TabIndex = 14;
+            this.lblNuevoValorIVA.Text = "Nuevo valor del IVA";
+            this.lblNuevoValorIVA.Visible = false;
+            // 
+            // lblModificarCategoria
+            // 
+            this.lblModificarCategoria.BackColor = System.Drawing.Color.Transparent;
+            this.lblModificarCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblModificarCategoria.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblModificarCategoria.Location = new System.Drawing.Point(100, 206);
+            this.lblModificarCategoria.Name = "lblModificarCategoria";
+            this.lblModificarCategoria.Size = new System.Drawing.Size(121, 22);
+            this.lblModificarCategoria.TabIndex = 12;
+            this.lblModificarCategoria.Text = "Añadir Valor IVA";
+            // 
+            // lblIVAEscogido
+            // 
+            this.lblIVAEscogido.AutoSize = true;
+            this.lblIVAEscogido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblIVAEscogido.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblIVAEscogido.Location = new System.Drawing.Point(105, 110);
+            this.lblIVAEscogido.Name = "lblIVAEscogido";
+            this.lblIVAEscogido.Size = new System.Drawing.Size(106, 20);
+            this.lblIVAEscogido.TabIndex = 11;
+            this.lblIVAEscogido.Text = "IVA Escogido";
+            this.lblIVAEscogido.Visible = false;
+            // 
+            // lblCategoria
+            // 
+            this.lblCategoria.AutoSize = true;
+            this.lblCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblCategoria.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblCategoria.Location = new System.Drawing.Point(115, 110);
+            this.lblCategoria.Name = "lblCategoria";
+            this.lblCategoria.Size = new System.Drawing.Size(86, 20);
+            this.lblCategoria.TabIndex = 8;
+            this.lblCategoria.Text = "Añadir IVA";
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BorderRadius = 10;
+            this.btnEliminar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnEliminar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnEliminar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnEliminar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnEliminar.FillColor = System.Drawing.Color.Red;
+            this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnEliminar.ForeColor = System.Drawing.Color.White;
+            this.btnEliminar.Location = new System.Drawing.Point(12, 591);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(133, 53);
+            this.btnEliminar.TabIndex = 7;
+            this.btnEliminar.Text = "Eliminar IVA";
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
             // btnAceptar
             // 
-            this.btnAceptar.BorderRadius = 20;
+            this.btnAceptar.BorderRadius = 10;
             this.btnAceptar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnAceptar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnAceptar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -168,7 +332,7 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.BorderRadius = 20;
+            this.btnModificar.BorderRadius = 10;
             this.btnModificar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnModificar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnModificar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -185,7 +349,7 @@
             // 
             // txtIDIVA
             // 
-            this.txtIDIVA.BorderRadius = 10;
+            this.txtIDIVA.BorderRadius = 5;
             this.txtIDIVA.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtIDIVA.DefaultText = "";
             this.txtIDIVA.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -201,170 +365,6 @@
             this.txtIDIVA.SelectedText = "";
             this.txtIDIVA.Size = new System.Drawing.Size(200, 36);
             this.txtIDIVA.TabIndex = 1;
-            // 
-            // lblCategoria
-            // 
-            this.lblCategoria.AutoSize = true;
-            this.lblCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblCategoria.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblCategoria.Location = new System.Drawing.Point(115, 110);
-            this.lblCategoria.Name = "lblCategoria";
-            this.lblCategoria.Size = new System.Drawing.Size(86, 20);
-            this.lblCategoria.TabIndex = 8;
-            this.lblCategoria.Text = "Añadir IVA";
-            // 
-            // lblIVAEscogido
-            // 
-            this.lblIVAEscogido.AutoSize = true;
-            this.lblIVAEscogido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblIVAEscogido.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblIVAEscogido.Location = new System.Drawing.Point(105, 110);
-            this.lblIVAEscogido.Name = "lblIVAEscogido";
-            this.lblIVAEscogido.Size = new System.Drawing.Size(106, 20);
-            this.lblIVAEscogido.TabIndex = 11;
-            this.lblIVAEscogido.Text = "IVA Escogido";
-            this.lblIVAEscogido.Visible = false;
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.BorderRadius = 20;
-            this.btnEliminar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnEliminar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnEliminar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnEliminar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnEliminar.FillColor = System.Drawing.Color.Red;
-            this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(12, 591);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(133, 53);
-            this.btnEliminar.TabIndex = 7;
-            this.btnEliminar.Text = "Eliminar IVA";
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // lblModificarCategoria
-            // 
-            this.lblModificarCategoria.BackColor = System.Drawing.Color.Transparent;
-            this.lblModificarCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblModificarCategoria.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblModificarCategoria.Location = new System.Drawing.Point(100, 206);
-            this.lblModificarCategoria.Name = "lblModificarCategoria";
-            this.lblModificarCategoria.Size = new System.Drawing.Size(121, 22);
-            this.lblModificarCategoria.TabIndex = 12;
-            this.lblModificarCategoria.Text = "Añadir Valor IVA";
-            // 
-            // lblNuevoValorIVA
-            // 
-            this.lblNuevoValorIVA.BackColor = System.Drawing.Color.Transparent;
-            this.lblNuevoValorIVA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNuevoValorIVA.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblNuevoValorIVA.Location = new System.Drawing.Point(80, 206);
-            this.lblNuevoValorIVA.Name = "lblNuevoValorIVA";
-            this.lblNuevoValorIVA.Size = new System.Drawing.Size(141, 22);
-            this.lblNuevoValorIVA.TabIndex = 14;
-            this.lblNuevoValorIVA.Text = "Nuevo valor del IVA";
-            this.lblNuevoValorIVA.Visible = false;
-            // 
-            // txtValorIVA
-            // 
-            this.txtValorIVA.BorderRadius = 10;
-            this.txtValorIVA.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtValorIVA.DefaultText = "";
-            this.txtValorIVA.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtValorIVA.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtValorIVA.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtValorIVA.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtValorIVA.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtValorIVA.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtValorIVA.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtValorIVA.Location = new System.Drawing.Point(55, 234);
-            this.txtValorIVA.Name = "txtValorIVA";
-            this.txtValorIVA.PlaceholderText = "";
-            this.txtValorIVA.SelectedText = "";
-            this.txtValorIVA.Size = new System.Drawing.Size(200, 36);
-            this.txtValorIVA.TabIndex = 15;
-            // 
-            // txtNuevoValorIVA
-            // 
-            this.txtNuevoValorIVA.BorderRadius = 10;
-            this.txtNuevoValorIVA.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtNuevoValorIVA.DefaultText = "";
-            this.txtNuevoValorIVA.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtNuevoValorIVA.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtNuevoValorIVA.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtNuevoValorIVA.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtNuevoValorIVA.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNuevoValorIVA.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtNuevoValorIVA.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNuevoValorIVA.Location = new System.Drawing.Point(55, 234);
-            this.txtNuevoValorIVA.Name = "txtNuevoValorIVA";
-            this.txtNuevoValorIVA.PlaceholderText = "";
-            this.txtNuevoValorIVA.SelectedText = "";
-            this.txtNuevoValorIVA.Size = new System.Drawing.Size(200, 36);
-            this.txtNuevoValorIVA.TabIndex = 16;
-            this.txtNuevoValorIVA.Visible = false;
-            // 
-            // lblEstadoIVA
-            // 
-            this.lblEstadoIVA.BackColor = System.Drawing.Color.Transparent;
-            this.lblEstadoIVA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEstadoIVA.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblEstadoIVA.Location = new System.Drawing.Point(87, 292);
-            this.lblEstadoIVA.Name = "lblEstadoIVA";
-            this.lblEstadoIVA.Size = new System.Drawing.Size(135, 22);
-            this.lblEstadoIVA.TabIndex = 17;
-            this.lblEstadoIVA.Text = "Añadir Estado IVA";
-            // 
-            // lblNuevoEstadoIVA
-            // 
-            this.lblNuevoEstadoIVA.BackColor = System.Drawing.Color.Transparent;
-            this.lblNuevoEstadoIVA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNuevoEstadoIVA.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblNuevoEstadoIVA.Location = new System.Drawing.Point(87, 292);
-            this.lblNuevoEstadoIVA.Name = "lblNuevoEstadoIVA";
-            this.lblNuevoEstadoIVA.Size = new System.Drawing.Size(134, 22);
-            this.lblNuevoEstadoIVA.TabIndex = 18;
-            this.lblNuevoEstadoIVA.Text = "Nuevo Estado IVA";
-            this.lblNuevoEstadoIVA.Visible = false;
-            // 
-            // txtEstadoIVA
-            // 
-            this.txtEstadoIVA.BorderRadius = 10;
-            this.txtEstadoIVA.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtEstadoIVA.DefaultText = "";
-            this.txtEstadoIVA.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtEstadoIVA.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtEstadoIVA.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtEstadoIVA.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtEstadoIVA.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtEstadoIVA.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtEstadoIVA.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtEstadoIVA.Location = new System.Drawing.Point(55, 329);
-            this.txtEstadoIVA.Name = "txtEstadoIVA";
-            this.txtEstadoIVA.PlaceholderText = "";
-            this.txtEstadoIVA.SelectedText = "";
-            this.txtEstadoIVA.Size = new System.Drawing.Size(200, 36);
-            this.txtEstadoIVA.TabIndex = 19;
-            // 
-            // txtNuevoEstadoIVA
-            // 
-            this.txtNuevoEstadoIVA.BorderRadius = 10;
-            this.txtNuevoEstadoIVA.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtNuevoEstadoIVA.DefaultText = "";
-            this.txtNuevoEstadoIVA.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtNuevoEstadoIVA.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtNuevoEstadoIVA.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtNuevoEstadoIVA.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtNuevoEstadoIVA.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNuevoEstadoIVA.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtNuevoEstadoIVA.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNuevoEstadoIVA.Location = new System.Drawing.Point(55, 329);
-            this.txtNuevoEstadoIVA.Name = "txtNuevoEstadoIVA";
-            this.txtNuevoEstadoIVA.PlaceholderText = "";
-            this.txtNuevoEstadoIVA.SelectedText = "";
-            this.txtNuevoEstadoIVA.Size = new System.Drawing.Size(200, 36);
-            this.txtNuevoEstadoIVA.TabIndex = 20;
-            this.txtNuevoEstadoIVA.Visible = false;
             // 
             // FrmIVA
             // 

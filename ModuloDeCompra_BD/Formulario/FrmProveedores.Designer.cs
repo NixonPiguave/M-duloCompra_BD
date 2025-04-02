@@ -337,6 +337,7 @@
             // 
             // txtBuscar
             // 
+            this.txtBuscar.BorderRadius = 5;
             this.txtBuscar.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtBuscar.DefaultText = "";
             this.txtBuscar.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -368,6 +369,7 @@
             // 
             // txtTelefono
             // 
+            this.txtTelefono.BorderRadius = 5;
             this.txtTelefono.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTelefono.DefaultText = "";
             this.txtTelefono.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -377,7 +379,7 @@
             this.txtTelefono.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTelefono.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtTelefono.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTelefono.Location = new System.Drawing.Point(512, 114);
+            this.txtTelefono.Location = new System.Drawing.Point(512, 119);
             this.txtTelefono.MaxLength = 10;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.PlaceholderText = "";
@@ -398,6 +400,7 @@
             // 
             // txtDireccion
             // 
+            this.txtDireccion.BorderRadius = 5;
             this.txtDireccion.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDireccion.DefaultText = "";
             this.txtDireccion.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -427,6 +430,7 @@
             // 
             // txtCiudad
             // 
+            this.txtCiudad.BorderRadius = 5;
             this.txtCiudad.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtCiudad.DefaultText = "";
             this.txtCiudad.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -456,6 +460,7 @@
             // 
             // txtNombreContacto
             // 
+            this.txtNombreContacto.BorderRadius = 5;
             this.txtNombreContacto.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtNombreContacto.DefaultText = "";
             this.txtNombreContacto.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -558,6 +563,7 @@
             // 
             // txtDescPredeterminadoProveedor
             // 
+            this.txtDescPredeterminadoProveedor.BorderRadius = 5;
             this.txtDescPredeterminadoProveedor.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDescPredeterminadoProveedor.DefaultText = "";
             this.txtDescPredeterminadoProveedor.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -587,6 +593,7 @@
             // 
             // txtNroDocProveedor
             // 
+            this.txtNroDocProveedor.BorderRadius = 5;
             this.txtNroDocProveedor.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtNroDocProveedor.DefaultText = "";
             this.txtNroDocProveedor.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -637,6 +644,7 @@
             // 
             // txtNombreProveedor
             // 
+            this.txtNombreProveedor.BorderRadius = 5;
             this.txtNombreProveedor.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtNombreProveedor.DefaultText = "";
             this.txtNombreProveedor.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -677,6 +685,7 @@
             // 
             // txtCorreoProveedor
             // 
+            this.txtCorreoProveedor.BorderRadius = 5;
             this.txtCorreoProveedor.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtCorreoProveedor.DefaultText = "";
             this.txtCorreoProveedor.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));

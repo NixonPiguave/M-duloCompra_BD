@@ -44,7 +44,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.BorderRadius = 20;
+            this.btnAceptar.BorderRadius = 10;
             this.btnAceptar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnAceptar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnAceptar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -61,7 +61,7 @@
             // 
             // btnEscogerRequisicion
             // 
-            this.btnEscogerRequisicion.BorderRadius = 20;
+            this.btnEscogerRequisicion.BorderRadius = 10;
             this.btnEscogerRequisicion.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnEscogerRequisicion.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnEscogerRequisicion.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -78,7 +78,7 @@
             // 
             // txtRequisicionID
             // 
-            this.txtRequisicionID.BorderRadius = 15;
+            this.txtRequisicionID.BorderRadius = 5;
             this.txtRequisicionID.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtRequisicionID.DefaultText = "";
             this.txtRequisicionID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -155,11 +155,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(716, 86);
+            this.label4.Location = new System.Drawing.Point(734, 61);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(333, 25);
+            this.label4.Size = new System.Drawing.Size(417, 31);
             this.label4.TabIndex = 22;
             this.label4.Text = "Detalle Requisición Seleccionada";
             // 

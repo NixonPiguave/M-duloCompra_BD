@@ -259,7 +259,7 @@
             // 
             // btnEscogerGRN
             // 
-            this.btnEscogerGRN.BorderRadius = 20;
+            this.btnEscogerGRN.BorderRadius = 10;
             this.btnEscogerGRN.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnEscogerGRN.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnEscogerGRN.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -276,7 +276,7 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.BorderRadius = 20;
+            this.btnAgregar.BorderRadius = 10;
             this.btnAgregar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnAgregar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnAgregar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -293,7 +293,7 @@
             // 
             // txtIDGRN
             // 
-            this.txtIDGRN.BorderRadius = 10;
+            this.txtIDGRN.BorderRadius = 5;
             this.txtIDGRN.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtIDGRN.DefaultText = "";
             this.txtIDGRN.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));

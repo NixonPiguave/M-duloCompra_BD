@@ -66,7 +66,7 @@
             // btnAgregar
             // 
             this.btnAgregar.Animated = true;
-            this.btnAgregar.BorderRadius = 20;
+            this.btnAgregar.BorderRadius = 10;
             this.btnAgregar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnAgregar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnAgregar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -84,7 +84,7 @@
             // 
             // txtDireccion
             // 
-            this.txtDireccion.BorderRadius = 10;
+            this.txtDireccion.BorderRadius = 5;
             this.txtDireccion.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDireccion.DefaultText = "";
             this.txtDireccion.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -125,7 +125,7 @@
             // 
             // txtStockMin
             // 
-            this.txtStockMin.BorderRadius = 10;
+            this.txtStockMin.BorderRadius = 5;
             this.txtStockMin.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtStockMin.DefaultText = "";
             this.txtStockMin.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -135,17 +135,17 @@
             this.txtStockMin.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtStockMin.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtStockMin.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtStockMin.Location = new System.Drawing.Point(2, 541);
+            this.txtStockMin.Location = new System.Drawing.Point(12, 541);
             this.txtStockMin.Name = "txtStockMin";
             this.txtStockMin.PlaceholderText = "";
             this.txtStockMin.SelectedText = "";
-            this.txtStockMin.Size = new System.Drawing.Size(195, 31);
+            this.txtStockMin.Size = new System.Drawing.Size(169, 31);
             this.txtStockMin.TabIndex = 21;
             this.txtStockMin.TextChanged += new System.EventHandler(this.txtCantidad_TextChanged);
             // 
             // txtStockMax
             // 
-            this.txtStockMax.BorderRadius = 10;
+            this.txtStockMax.BorderRadius = 5;
             this.txtStockMax.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtStockMax.DefaultText = "";
             this.txtStockMax.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -155,17 +155,17 @@
             this.txtStockMax.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtStockMax.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtStockMax.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtStockMax.Location = new System.Drawing.Point(228, 541);
+            this.txtStockMax.Location = new System.Drawing.Point(234, 542);
             this.txtStockMax.Name = "txtStockMax";
             this.txtStockMax.PlaceholderText = "";
             this.txtStockMax.SelectedText = "";
-            this.txtStockMax.Size = new System.Drawing.Size(194, 31);
+            this.txtStockMax.Size = new System.Drawing.Size(169, 31);
             this.txtStockMax.TabIndex = 20;
             // 
             // btnModificar
             // 
             this.btnModificar.Animated = true;
-            this.btnModificar.BorderRadius = 20;
+            this.btnModificar.BorderRadius = 10;
             this.btnModificar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnModificar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnModificar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -183,7 +183,7 @@
             // 
             // txtID_Bodega
             // 
-            this.txtID_Bodega.BorderRadius = 10;
+            this.txtID_Bodega.BorderRadius = 5;
             this.txtID_Bodega.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtID_Bodega.DefaultText = "";
             this.txtID_Bodega.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));

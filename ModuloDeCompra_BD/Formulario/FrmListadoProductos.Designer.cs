@@ -47,7 +47,7 @@
             this.btnSeleccionarProductos.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(170)))), ((int)(((byte)(239)))));
             this.btnSeleccionarProductos.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnSeleccionarProductos.ForeColor = System.Drawing.Color.White;
-            this.btnSeleccionarProductos.Location = new System.Drawing.Point(216, 122);
+            this.btnSeleccionarProductos.Location = new System.Drawing.Point(205, 99);
             this.btnSeleccionarProductos.Name = "btnSeleccionarProductos";
             this.btnSeleccionarProductos.Size = new System.Drawing.Size(93, 26);
             this.btnSeleccionarProductos.TabIndex = 8;
@@ -65,7 +65,7 @@
             this.txtBuscarProductos.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtBuscarProductos.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtBuscarProductos.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtBuscarProductos.Location = new System.Drawing.Point(51, 122);
+            this.txtBuscarProductos.Location = new System.Drawing.Point(40, 99);
             this.txtBuscarProductos.Name = "txtBuscarProductos";
             this.txtBuscarProductos.PlaceholderText = "";
             this.txtBuscarProductos.SelectedText = "";
@@ -77,7 +77,7 @@
             this.dgvListadoProductos.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvListadoProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListadoProductos.GridColor = System.Drawing.Color.Silver;
-            this.dgvListadoProductos.Location = new System.Drawing.Point(51, 154);
+            this.dgvListadoProductos.Location = new System.Drawing.Point(40, 131);
             this.dgvListadoProductos.Name = "dgvListadoProductos";
             this.dgvListadoProductos.RowHeadersVisible = false;
             this.dgvListadoProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -86,11 +86,11 @@
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
+            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(7)))), ((int)(((byte)(109)))));
             this.guna2Panel1.Controls.Add(this.guna2HtmlLabel1);
-            this.guna2Panel1.Location = new System.Drawing.Point(0, 17);
+            this.guna2Panel1.Location = new System.Drawing.Point(0, 2);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(335, 63);
+            this.guna2Panel1.Size = new System.Drawing.Size(335, 78);
             this.guna2Panel1.TabIndex = 5;
             // 
             // guna2HtmlLabel1
@@ -98,7 +98,7 @@
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(74, 22);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(73, 25);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(191, 27);
             this.guna2HtmlLabel1.TabIndex = 0;

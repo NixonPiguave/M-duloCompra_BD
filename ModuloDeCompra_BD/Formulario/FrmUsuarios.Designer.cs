@@ -56,13 +56,13 @@
             // 
             // btnAñadir
             // 
-            this.btnAñadir.BorderRadius = 5;
+            this.btnAñadir.BorderRadius = 10;
             this.btnAñadir.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnAñadir.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnAñadir.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnAñadir.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnAñadir.FillColor = System.Drawing.Color.Purple;
-            this.btnAñadir.Font = new System.Drawing.Font("Cooper Black", 12F);
+            this.btnAñadir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnAñadir.ForeColor = System.Drawing.Color.White;
             this.btnAñadir.Location = new System.Drawing.Point(386, 151);
             this.btnAñadir.Name = "btnAñadir";
@@ -74,26 +74,26 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(123, 53);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 19);
+            this.label1.Size = new System.Drawing.Size(65, 20);
             this.label1.TabIndex = 2;
             this.label1.Text = "Nombre";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(327, 53);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 19);
+            this.label2.Size = new System.Drawing.Size(65, 20);
             this.label2.TabIndex = 4;
             this.label2.Text = "Apellido";
             // 
             // txtApellido
             // 
-            this.txtApellido.BorderRadius = 10;
+            this.txtApellido.BorderRadius = 5;
             this.txtApellido.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtApellido.DefaultText = "";
             this.txtApellido.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -113,16 +113,16 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(550, 53);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 19);
+            this.label3.Size = new System.Drawing.Size(59, 20);
             this.label3.TabIndex = 6;
             this.label3.Text = "Cedula";
             // 
             // txtcedula
             // 
-            this.txtcedula.BorderRadius = 10;
+            this.txtcedula.BorderRadius = 5;
             this.txtcedula.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtcedula.DefaultText = "";
             this.txtcedula.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -143,10 +143,10 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(960, 53);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(103, 19);
+            this.label4.Size = new System.Drawing.Size(92, 20);
             this.label4.TabIndex = 8;
             this.label4.Text = "Contraseña";
             this.label4.Click += new System.EventHandler(this.label4_Click);
@@ -174,7 +174,7 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.BorderRadius = 10;
+            this.txtNombre.BorderRadius = 5;
             this.txtNombre.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtNombre.DefaultText = "";
             this.txtNombre.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -193,7 +193,7 @@
             // 
             // txtContra
             // 
-            this.txtContra.BorderRadius = 10;
+            this.txtContra.BorderRadius = 5;
             this.txtContra.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtContra.DefaultText = "";
             this.txtContra.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -212,17 +212,17 @@
             // 
             // btnListadoDepa
             // 
-            this.btnListadoDepa.BorderRadius = 5;
+            this.btnListadoDepa.BorderRadius = 10;
             this.btnListadoDepa.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnListadoDepa.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnListadoDepa.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnListadoDepa.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnListadoDepa.FillColor = System.Drawing.Color.Purple;
-            this.btnListadoDepa.Font = new System.Drawing.Font("Cooper Black", 12F);
+            this.btnListadoDepa.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
+            this.btnListadoDepa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnListadoDepa.ForeColor = System.Drawing.Color.White;
             this.btnListadoDepa.Location = new System.Drawing.Point(105, 128);
             this.btnListadoDepa.Name = "btnListadoDepa";
-            this.btnListadoDepa.Size = new System.Drawing.Size(226, 27);
+            this.btnListadoDepa.Size = new System.Drawing.Size(232, 27);
             this.btnListadoDepa.TabIndex = 11;
             this.btnListadoDepa.Text = "Listado Departamentos";
             this.btnListadoDepa.Click += new System.EventHandler(this.guna2Button2_Click);
@@ -230,7 +230,7 @@
             // cbRol
             // 
             this.cbRol.BackColor = System.Drawing.Color.Transparent;
-            this.cbRol.BorderRadius = 20;
+            this.cbRol.BorderRadius = 5;
             this.cbRol.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbRol.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -246,10 +246,10 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(1189, 52);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(37, 19);
+            this.label5.Size = new System.Drawing.Size(33, 20);
             this.label5.TabIndex = 14;
             this.label5.Text = "Rol";
             // 
@@ -273,16 +273,16 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Cooper Black", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(519, 39);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(327, 34);
+            this.label6.Size = new System.Drawing.Size(295, 33);
             this.label6.TabIndex = 16;
             this.label6.Text = "Usuarios Registrados";
             // 
             // txtBuscarCed
             // 
-            this.txtBuscarCed.BorderRadius = 10;
+            this.txtBuscarCed.BorderRadius = 5;
             this.txtBuscarCed.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtBuscarCed.DefaultText = "";
             this.txtBuscarCed.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -303,10 +303,10 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(52, 101);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(70, 19);
+            this.label7.Size = new System.Drawing.Size(63, 20);
             this.label7.TabIndex = 18;
             this.label7.Text = "Cedula:";
             // 
@@ -318,7 +318,7 @@
             this.txtEliminar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.txtEliminar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.txtEliminar.FillColor = System.Drawing.Color.Crimson;
-            this.txtEliminar.Font = new System.Drawing.Font("Cooper Black", 12F);
+            this.txtEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtEliminar.ForeColor = System.Drawing.Color.White;
             this.txtEliminar.Location = new System.Drawing.Point(332, 95);
             this.txtEliminar.Name = "txtEliminar";
@@ -343,17 +343,17 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(758, 53);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(75, 19);
+            this.label8.Size = new System.Drawing.Size(64, 20);
             this.label8.TabIndex = 23;
             this.label8.Text = "Usuario";
             this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // txtUsuario
             // 
-            this.txtUsuario.BorderRadius = 10;
+            this.txtUsuario.BorderRadius = 5;
             this.txtUsuario.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtUsuario.DefaultText = "";
             this.txtUsuario.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -378,7 +378,7 @@
             this.btnLimpiar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnLimpiar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnLimpiar.FillColor = System.Drawing.Color.Green;
-            this.btnLimpiar.Font = new System.Drawing.Font("Cooper Black", 12F);
+            this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnLimpiar.ForeColor = System.Drawing.Color.White;
             this.btnLimpiar.Location = new System.Drawing.Point(585, 151);
             this.btnLimpiar.Name = "btnLimpiar";
@@ -391,7 +391,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1400, 655);
+            this.ClientSize = new System.Drawing.Size(1386, 655);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtUsuario);
