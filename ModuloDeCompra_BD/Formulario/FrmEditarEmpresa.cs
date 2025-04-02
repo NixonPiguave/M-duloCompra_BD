@@ -58,9 +58,9 @@ namespace ModuloDeCompra_BD.Formulario
                         empresa.Logo1 = null;
                     }
                 }
-                catch (System.Runtime.InteropServices.ExternalException ex)
+                catch (System.Runtime.InteropServices.ExternalException exe)
                 {
-                    MessageBox.Show("Error al guardar la imagen: La imagen no es compatible o está corrupta.", "Error de imagen", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error al guardar la imagen: La imagen no es compatible o está corrupta. " + exe, "Error de imagen", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 catch (Exception ex)
@@ -137,7 +137,7 @@ namespace ModuloDeCompra_BD.Formulario
         {
             using (OpenFileDialog ofd = new OpenFileDialog())
             {
-                ofd.Filter = "Imágenes compatibles|*.jpg;*.jpeg;*.png;*.bmp";
+                ofd.Filter = "Imágenes compatibles|*.png;";
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
                     if (EsImagenValida(ofd.FileName))

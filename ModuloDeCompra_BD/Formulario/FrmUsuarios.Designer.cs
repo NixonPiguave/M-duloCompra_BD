@@ -45,7 +45,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtBuscarCed = new Guna.UI2.WinForms.Guna2TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtModificar = new Guna.UI2.WinForms.Guna2Button();
             this.txtEliminar = new Guna.UI2.WinForms.Guna2Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
@@ -57,7 +56,7 @@
             // 
             // btnAñadir
             // 
-            this.btnAñadir.BorderRadius = 10;
+            this.btnAñadir.BorderRadius = 5;
             this.btnAñadir.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnAñadir.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnAñadir.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -213,7 +212,7 @@
             // 
             // btnListadoDepa
             // 
-            this.btnListadoDepa.BorderRadius = 10;
+            this.btnListadoDepa.BorderRadius = 5;
             this.btnListadoDepa.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnListadoDepa.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnListadoDepa.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -264,6 +263,7 @@
             this.dgvUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUser.Location = new System.Drawing.Point(44, 135);
             this.dgvUser.Name = "dgvUser";
+            this.dgvUser.RowHeadersVisible = false;
             this.dgvUser.RowTemplate.Height = 18;
             this.dgvUser.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUser.Size = new System.Drawing.Size(1303, 257);
@@ -309,23 +309,6 @@
             this.label7.Size = new System.Drawing.Size(70, 19);
             this.label7.TabIndex = 18;
             this.label7.Text = "Cedula:";
-            // 
-            // txtModificar
-            // 
-            this.txtModificar.BorderRadius = 10;
-            this.txtModificar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.txtModificar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.txtModificar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.txtModificar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.txtModificar.FillColor = System.Drawing.Color.Navy;
-            this.txtModificar.Font = new System.Drawing.Font("Cooper Black", 12F);
-            this.txtModificar.ForeColor = System.Drawing.Color.White;
-            this.txtModificar.Location = new System.Drawing.Point(576, 151);
-            this.txtModificar.Name = "txtModificar";
-            this.txtModificar.Size = new System.Drawing.Size(165, 36);
-            this.txtModificar.TabIndex = 19;
-            this.txtModificar.Text = "Modificar";
-            this.txtModificar.Click += new System.EventHandler(this.txtModificar_Click);
             // 
             // txtEliminar
             // 
@@ -397,7 +380,7 @@
             this.btnLimpiar.FillColor = System.Drawing.Color.Green;
             this.btnLimpiar.Font = new System.Drawing.Font("Cooper Black", 12F);
             this.btnLimpiar.ForeColor = System.Drawing.Color.White;
-            this.btnLimpiar.Location = new System.Drawing.Point(778, 151);
+            this.btnLimpiar.Location = new System.Drawing.Point(585, 151);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(159, 36);
             this.btnLimpiar.TabIndex = 24;
@@ -413,7 +396,6 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.txtModificar);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cbRol);
             this.Controls.Add(this.btnListadoDepa);
@@ -458,7 +440,6 @@
         private System.Windows.Forms.Label label6;
         private Guna.UI2.WinForms.Guna2TextBox txtBuscarCed;
         private System.Windows.Forms.Label label7;
-        private Guna.UI2.WinForms.Guna2Button txtModificar;
         private Guna.UI2.WinForms.Guna2Button txtEliminar;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label8;
