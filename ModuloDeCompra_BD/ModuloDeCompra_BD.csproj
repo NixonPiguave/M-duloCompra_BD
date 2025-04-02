@@ -513,6 +513,7 @@
     <EmbeddedResource Include="Reporte\dArpt_ProductosRequiDetalles.rdlc" />
     <EmbeddedResource Include="Reporte\rpt_Auditoria.rdlc" />
     <EmbeddedResource Include="Reporte\rpt_AuditoriaSesion.rdlc" />
+    <EmbeddedResource Include="Reporte\rpt_Factura.rdlc" />
     <EmbeddedResource Include="Reporte\rpt_ReporteComprasVentas.rdlc" />
     <EmbeddedResource Include="Reporte\rpt_ReporteDevolucionesProducto.rdlc" />
     <EmbeddedResource Include="Reporte\rpt_ReporteEstadoStock.rdlc" />
