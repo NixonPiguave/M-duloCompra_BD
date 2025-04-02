@@ -611,7 +611,7 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvOrdenesRequisicion.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvOrdenesRequisicion.ColumnHeadersHeight = 4;
+            this.dgvOrdenesRequisicion.ColumnHeadersHeight = 20;
             this.dgvOrdenesRequisicion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
@@ -624,7 +624,6 @@
             this.dgvOrdenesRequisicion.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvOrdenesRequisicion.Location = new System.Drawing.Point(30, 34);
             this.dgvOrdenesRequisicion.Name = "dgvOrdenesRequisicion";
-            this.dgvOrdenesRequisicion.RowHeadersVisible = false;
             this.dgvOrdenesRequisicion.Size = new System.Drawing.Size(1325, 580);
             this.dgvOrdenesRequisicion.TabIndex = 2;
             this.dgvOrdenesRequisicion.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -639,7 +638,7 @@
             this.dgvOrdenesRequisicion.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvOrdenesRequisicion.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dgvOrdenesRequisicion.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvOrdenesRequisicion.ThemeStyle.HeaderStyle.Height = 4;
+            this.dgvOrdenesRequisicion.ThemeStyle.HeaderStyle.Height = 20;
             this.dgvOrdenesRequisicion.ThemeStyle.ReadOnly = false;
             this.dgvOrdenesRequisicion.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvOrdenesRequisicion.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
