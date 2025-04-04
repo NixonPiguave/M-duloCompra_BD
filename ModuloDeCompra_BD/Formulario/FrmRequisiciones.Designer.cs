@@ -461,9 +461,9 @@
             this.btnCrearRequi.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnCrearRequi.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnCrearRequi.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnCrearRequi.FillColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnCrearRequi.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
             this.btnCrearRequi.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnCrearRequi.ForeColor = System.Drawing.Color.Black;
+            this.btnCrearRequi.ForeColor = System.Drawing.Color.White;
             this.btnCrearRequi.Location = new System.Drawing.Point(466, 309);
             this.btnCrearRequi.Name = "btnCrearRequi";
             this.btnCrearRequi.Size = new System.Drawing.Size(139, 52);

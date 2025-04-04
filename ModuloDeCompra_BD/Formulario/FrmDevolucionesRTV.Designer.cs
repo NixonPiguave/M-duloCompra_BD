@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblEstadoOrden = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblRequisicionID = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblOrdenID = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -49,10 +49,12 @@
             this.txtSeleccionGRN = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnSeleccionarGRN = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleGrn)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblEstadoOrden
@@ -90,15 +92,10 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.guna2Panel2);
-            this.panel1.Controls.Add(this.btnCancelar);
-            this.panel1.Controls.Add(this.btnRegistrarRTV);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.txtProveedor);
             this.panel1.Controls.Add(this.guna2Panel1);
-            this.panel1.Controls.Add(this.txtSeleccionGRN);
-            this.panel1.Controls.Add(this.btnSeleccionarGRN);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
@@ -110,7 +107,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(648, 80);
+            this.label4.Location = new System.Drawing.Point(649, 61);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(176, 20);
             this.label4.TabIndex = 9;
@@ -118,20 +115,21 @@
             // 
             // guna2Panel2
             // 
-            this.guna2Panel2.BorderColor = System.Drawing.Color.Black;
+            this.guna2Panel2.BackColor = System.Drawing.SystemColors.Control;
+            this.guna2Panel2.BorderColor = System.Drawing.Color.DarkGray;
             this.guna2Panel2.BorderThickness = 2;
             this.guna2Panel2.Controls.Add(this.txtMotivo);
-            this.guna2Panel2.Location = new System.Drawing.Point(254, 113);
+            this.guna2Panel2.Location = new System.Drawing.Point(543, 96);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(1013, 117);
+            this.guna2Panel2.Size = new System.Drawing.Size(398, 117);
             this.guna2Panel2.TabIndex = 8;
             // 
             // txtMotivo
             // 
-            this.txtMotivo.Location = new System.Drawing.Point(20, 13);
+            this.txtMotivo.Location = new System.Drawing.Point(25, 11);
             this.txtMotivo.Multiline = true;
             this.txtMotivo.Name = "txtMotivo";
-            this.txtMotivo.Size = new System.Drawing.Size(970, 90);
+            this.txtMotivo.Size = new System.Drawing.Size(355, 90);
             this.txtMotivo.TabIndex = 0;
             // 
             // btnCancelar
@@ -146,9 +144,9 @@
             this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
             this.btnCancelar.IndicateFocus = true;
-            this.btnCancelar.Location = new System.Drawing.Point(1122, 586);
+            this.btnCancelar.Location = new System.Drawing.Point(47, 434);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(122, 34);
+            this.btnCancelar.Size = new System.Drawing.Size(122, 54);
             this.btnCancelar.TabIndex = 7;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click_1);
@@ -165,9 +163,9 @@
             this.btnRegistrarRTV.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnRegistrarRTV.ForeColor = System.Drawing.Color.White;
             this.btnRegistrarRTV.IndicateFocus = true;
-            this.btnRegistrarRTV.Location = new System.Drawing.Point(933, 586);
+            this.btnRegistrarRTV.Location = new System.Drawing.Point(47, 346);
             this.btnRegistrarRTV.Name = "btnRegistrarRTV";
-            this.btnRegistrarRTV.Size = new System.Drawing.Size(123, 34);
+            this.btnRegistrarRTV.Size = new System.Drawing.Size(122, 55);
             this.btnRegistrarRTV.TabIndex = 6;
             this.btnRegistrarRTV.Text = "Registrar RTV";
             this.btnRegistrarRTV.Click += new System.EventHandler(this.btnRegistrarRTV_Click);
@@ -177,7 +175,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(126, 180);
+            this.label2.Location = new System.Drawing.Point(62, 177);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(81, 20);
             this.label2.TabIndex = 5;
@@ -195,7 +193,7 @@
             this.txtProveedor.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtProveedor.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtProveedor.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtProveedor.Location = new System.Drawing.Point(129, 203);
+            this.txtProveedor.Location = new System.Drawing.Point(65, 200);
             this.txtProveedor.Name = "txtProveedor";
             this.txtProveedor.PlaceholderText = "";
             this.txtProveedor.ReadOnly = true;
@@ -205,14 +203,14 @@
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.BorderColor = System.Drawing.Color.Black;
+            this.guna2Panel1.BorderColor = System.Drawing.Color.DarkGray;
             this.guna2Panel1.BorderThickness = 2;
             this.guna2Panel1.Controls.Add(this.lbCantRecib);
             this.guna2Panel1.Controls.Add(this.dgvDetalleGrn);
             this.guna2Panel1.Controls.Add(this.label3);
-            this.guna2Panel1.Location = new System.Drawing.Point(103, 237);
+            this.guna2Panel1.Location = new System.Drawing.Point(208, 237);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1164, 343);
+            this.guna2Panel1.Size = new System.Drawing.Size(1151, 343);
             this.guna2Panel1.TabIndex = 3;
             // 
             // lbCantRecib
@@ -230,32 +228,32 @@
             // 
             this.dgvDetalleGrn.AllowUserToAddRows = false;
             this.dgvDetalleGrn.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dgvDetalleGrn.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetalleGrn.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDetalleGrn.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            this.dgvDetalleGrn.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetalleGrn.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDetalleGrn.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvDetalleGrn.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvDetalleGrn.Location = new System.Drawing.Point(26, 66);
+            this.dgvDetalleGrn.Location = new System.Drawing.Point(28, 57);
             this.dgvDetalleGrn.MultiSelect = false;
             this.dgvDetalleGrn.Name = "dgvDetalleGrn";
             this.dgvDetalleGrn.RowHeadersVisible = false;
             this.dgvDetalleGrn.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvDetalleGrn.RowTemplate.Height = 45;
-            this.dgvDetalleGrn.Size = new System.Drawing.Size(1115, 262);
+            this.dgvDetalleGrn.Size = new System.Drawing.Size(1107, 262);
             this.dgvDetalleGrn.TabIndex = 7;
             this.dgvDetalleGrn.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvDetalleGrn.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -306,7 +304,7 @@
             this.txtSeleccionGRN.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSeleccionGRN.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtSeleccionGRN.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSeleccionGRN.Location = new System.Drawing.Point(130, 142);
+            this.txtSeleccionGRN.Location = new System.Drawing.Point(66, 139);
             this.txtSeleccionGRN.Name = "txtSeleccionGRN";
             this.txtSeleccionGRN.PlaceholderText = "";
             this.txtSeleccionGRN.ReadOnly = true;
@@ -326,7 +324,7 @@
             this.btnSeleccionarGRN.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnSeleccionarGRN.ForeColor = System.Drawing.Color.White;
             this.btnSeleccionarGRN.IndicateFocus = true;
-            this.btnSeleccionarGRN.Location = new System.Drawing.Point(112, 97);
+            this.btnSeleccionarGRN.Location = new System.Drawing.Point(48, 94);
             this.btnSeleccionarGRN.Name = "btnSeleccionarGRN";
             this.btnSeleccionarGRN.Size = new System.Drawing.Size(122, 39);
             this.btnSeleccionarGRN.TabIndex = 1;
@@ -342,6 +340,20 @@
             this.label1.Size = new System.Drawing.Size(451, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "DEVOLUCIONES DE PRODUCTOS  (RTV)";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
+            this.panel2.Controls.Add(this.btnSeleccionarGRN);
+            this.panel2.Controls.Add(this.txtSeleccionGRN);
+            this.panel2.Controls.Add(this.txtProveedor);
+            this.panel2.Controls.Add(this.btnCancelar);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.btnRegistrarRTV);
+            this.panel2.Location = new System.Drawing.Point(-12, -14);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(214, 662);
+            this.panel2.TabIndex = 10;
             // 
             // FrmRTV
             // 
@@ -360,6 +372,8 @@
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleGrn)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -383,5 +397,6 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtMotivo;
+        private System.Windows.Forms.Panel panel2;
     }
 }

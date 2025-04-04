@@ -61,7 +61,7 @@
             this.btnAñadir.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnAñadir.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnAñadir.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAñadir.FillColor = System.Drawing.Color.Purple;
+            this.btnAñadir.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
             this.btnAñadir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnAñadir.ForeColor = System.Drawing.Color.White;
             this.btnAñadir.Location = new System.Drawing.Point(386, 151);
@@ -317,7 +317,7 @@
             this.txtEliminar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.txtEliminar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.txtEliminar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.txtEliminar.FillColor = System.Drawing.Color.Crimson;
+            this.txtEliminar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
             this.txtEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtEliminar.ForeColor = System.Drawing.Color.White;
             this.txtEliminar.Location = new System.Drawing.Point(332, 95);
@@ -377,7 +377,7 @@
             this.btnLimpiar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnLimpiar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnLimpiar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnLimpiar.FillColor = System.Drawing.Color.Green;
+            this.btnLimpiar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
             this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnLimpiar.ForeColor = System.Drawing.Color.White;
             this.btnLimpiar.Location = new System.Drawing.Point(585, 151);
