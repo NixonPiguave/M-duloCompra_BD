@@ -50,7 +50,6 @@
             this.btnOrdenCompraRequisicion = new Guna.UI2.WinForms.Guna2Button();
             this.btnOrdenCompra = new Guna.UI2.WinForms.Guna2Button();
             this.pnMantenimientos = new System.Windows.Forms.Panel();
-            this.btnEmpresa = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button16 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button15 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button14 = new Guna.UI2.WinForms.Guna2Button();
@@ -343,7 +342,6 @@
             // pnMantenimientos
             // 
             this.pnMantenimientos.BackColor = System.Drawing.Color.Black;
-            this.pnMantenimientos.Controls.Add(this.btnEmpresa);
             this.pnMantenimientos.Controls.Add(this.guna2Button16);
             this.pnMantenimientos.Controls.Add(this.guna2Button15);
             this.pnMantenimientos.Controls.Add(this.guna2Button14);
@@ -353,25 +351,8 @@
             this.pnMantenimientos.Controls.Add(this.btnUsuarios);
             this.pnMantenimientos.Location = new System.Drawing.Point(965, 0);
             this.pnMantenimientos.Name = "pnMantenimientos";
-            this.pnMantenimientos.Size = new System.Drawing.Size(188, 421);
+            this.pnMantenimientos.Size = new System.Drawing.Size(188, 361);
             this.pnMantenimientos.TabIndex = 0;
-            // 
-            // btnEmpresa
-            // 
-            this.btnEmpresa.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnEmpresa.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnEmpresa.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnEmpresa.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnEmpresa.FillColor = System.Drawing.Color.Black;
-            this.btnEmpresa.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEmpresa.ForeColor = System.Drawing.Color.White;
-            this.btnEmpresa.HoverState.ForeColor = System.Drawing.Color.Yellow;
-            this.btnEmpresa.Location = new System.Drawing.Point(27, 363);
-            this.btnEmpresa.Name = "btnEmpresa";
-            this.btnEmpresa.Size = new System.Drawing.Size(135, 45);
-            this.btnEmpresa.TabIndex = 12;
-            this.btnEmpresa.Text = "Empresa";
-            this.btnEmpresa.Click += new System.EventHandler(this.btnEmpresa_Click);
             // 
             // guna2Button16
             // 
@@ -624,6 +605,7 @@
             this.dgvOrdenesRequisicion.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvOrdenesRequisicion.Location = new System.Drawing.Point(30, 34);
             this.dgvOrdenesRequisicion.Name = "dgvOrdenesRequisicion";
+            this.dgvOrdenesRequisicion.RowHeadersVisible = false;
             this.dgvOrdenesRequisicion.Size = new System.Drawing.Size(1325, 580);
             this.dgvOrdenesRequisicion.TabIndex = 2;
             this.dgvOrdenesRequisicion.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -701,7 +683,6 @@
         private Guna.UI2.WinForms.Guna2Button btnRequisicionesPendientes;
         private Guna.UI2.WinForms.Guna2Button btnCrearRequisicion;
         private Guna.UI2.WinForms.Guna2Button btnInventariooo;
-        private Guna.UI2.WinForms.Guna2Button btnEmpresa;
         private System.Windows.Forms.Panel pnlSubMenuOrdenCompra;
         private Guna.UI2.WinForms.Guna2Button btnOrdenCompraRequisicion;
         private Guna.UI2.WinForms.Guna2Button btnOrdenCompra;

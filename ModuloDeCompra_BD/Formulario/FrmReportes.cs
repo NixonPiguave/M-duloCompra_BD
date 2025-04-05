@@ -109,17 +109,5 @@ namespace reporte
             frmReporteAuditoriaSesion audit = new frmReporteAuditoriaSesion();
             audit.ShowDialog();
         }
-
-        private void btnFactura_Click(object sender, EventArgs e)
-        {
-            //        string sentencia = $"select Mo.Documento ,H.ID_GRN, Pr.Nombre_Proveedor as Proveedor ,H.Fecha_Generada as Fecha," +
-            //$"                 COALESCE(S.Nom_Servicio, P.NomProducto) AS Producto, D.Cantidad, D.Costo from GRN_Header H" +
-            //$"               inner Join Grn_Details D on H.ID_GRN = D.ID_GRN LEFT JOIN Servicio S ON D.ID_Servicio = S.ID_Servicio LEFT JOIN" +
-            //$"                 Producto P ON D.ID_Producto = P.ID_Producto inner join Proveedores Pr on Pr.ID_Proveedor = H.ID_Proveedor" +
-            //$" inner join Mov_Inventario Mo on Mo.ID_GRNDetails = D.ID_GRNDetails where H.ID_GRN = 1";
-            string sentencia = "select * from Empresa";
-            frmreport factura = new frmreport(sentencia, "dsFactura", "Reporte.rpt_Factura.rdlc");
-            factura.ShowDialog();
-        }
     }
 }

@@ -44,7 +44,6 @@
             this.btnReporteSesion = new Guna.UI2.WinForms.Guna2Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnFactura = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -307,30 +306,12 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "SECCIÓN DE REPORTES";
             // 
-            // btnFactura
-            // 
-            this.btnFactura.BorderRadius = 10;
-            this.btnFactura.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnFactura.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnFactura.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnFactura.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnFactura.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
-            this.btnFactura.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFactura.ForeColor = System.Drawing.Color.White;
-            this.btnFactura.Location = new System.Drawing.Point(1076, 406);
-            this.btnFactura.Name = "btnFactura";
-            this.btnFactura.Size = new System.Drawing.Size(187, 97);
-            this.btnFactura.TabIndex = 15;
-            this.btnFactura.Text = "Factura";
-            this.btnFactura.Click += new System.EventHandler(this.btnFactura_Click);
-            // 
             // FrmReportes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1291, 666);
-            this.Controls.Add(this.btnFactura);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnReporteSesion);
             this.Controls.Add(this.btnReportAuditoria);
@@ -373,7 +354,6 @@
         private Guna.UI2.WinForms.Guna2Button btnReporteSesion;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2Button btnFactura;
     }
 }
 

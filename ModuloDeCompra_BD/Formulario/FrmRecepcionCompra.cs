@@ -1,4 +1,5 @@
 ﻿using ModuloDeCompra_BD.Clases;
+using reporte;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -241,6 +242,13 @@ namespace ModuloDeCompra_BD.Formulario
                     e.PaintContent(e.ClipBounds);
                 }
             }
+        }
+
+        private void btnGenerarFactura_Click(object sender, EventArgs e)
+        {
+            string sentencia = "SELECT Mo.Documento, H.ID_GRN, Pr.Nombre_Proveedor AS Proveedor, H.Fecha_Generada AS Fecha, COALESCE(S.Nom_Servicio, P.NomProducto) AS Producto, D.Cantidad, D.Costo FROM GRN_Header H INNER JOIN Grn_Details D ON H.ID_GRN = D.ID_GRN LEFT JOIN Servicio S ON D.ID_Servicio = S.ID_Servicio LEFT JOIN Producto P ON D.ID_Producto = P.ID_Producto INNER JOIN Proveedores Pr ON Pr.ID_Proveedor = H.ID_Proveedor INNER JOIN Mov_Inventario Mo ON Mo.ID_GRNDetails = D.ID_GRNDetails WHERE H.ID_GRN = 1";
+            frmreport factura = new frmreport(sentencia, "dsFactura", "Reporte.rpt_FacturaCompra.rdlc");
+            factura.ShowDialog();
         }
     }
 }

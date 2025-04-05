@@ -36,6 +36,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnGenerarFactura = new Guna.UI2.WinForms.Guna2Button();
             this.label4 = new System.Windows.Forms.Label();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
@@ -70,6 +71,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnGenerarFactura);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.dtpFecha);
             this.panel1.Controls.Add(this.guna2Button1);
@@ -84,6 +86,25 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1362, 366);
             this.panel1.TabIndex = 1;
+            // 
+            // btnGenerarFactura
+            // 
+            this.btnGenerarFactura.Animated = true;
+            this.btnGenerarFactura.BorderRadius = 10;
+            this.btnGenerarFactura.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnGenerarFactura.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnGenerarFactura.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnGenerarFactura.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnGenerarFactura.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
+            this.btnGenerarFactura.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnGenerarFactura.ForeColor = System.Drawing.Color.White;
+            this.btnGenerarFactura.IndicateFocus = true;
+            this.btnGenerarFactura.Location = new System.Drawing.Point(1194, 299);
+            this.btnGenerarFactura.Name = "btnGenerarFactura";
+            this.btnGenerarFactura.Size = new System.Drawing.Size(128, 44);
+            this.btnGenerarFactura.TabIndex = 10;
+            this.btnGenerarFactura.Text = "Generar factura";
+            this.btnGenerarFactura.Click += new System.EventHandler(this.btnGenerarFactura_Click);
             // 
             // label4
             // 
@@ -415,5 +436,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.Label lbCantRecib;
+        private Guna.UI2.WinForms.Guna2Button btnGenerarFactura;
     }
 }

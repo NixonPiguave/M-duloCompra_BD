@@ -93,6 +93,12 @@
     <Compile Include="Formulario\FrmAprobarRequisicion.Designer.cs">
       <DependentUpon>FrmAprobarRequisicion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formulario\FrmCatalogoCuentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\FrmCatalogoCuentas.Designer.cs">
+      <DependentUpon>FrmCatalogoCuentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formulario\FrmFunciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,12 +164,6 @@
     </Compile>
     <Compile Include="Formulario\FrmReportes.Designer.cs">
       <DependentUpon>FrmReportes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formulario\FrmEmpresa.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formulario\FrmEmpresa.Designer.cs">
-      <DependentUpon>FrmEmpresa.cs</DependentUpon>
     </Compile>
     <Compile Include="Formulario\FrmListadoOrdenCompra.cs">
       <SubType>Form</SubType>
@@ -403,9 +403,6 @@
     <EmbeddedResource Include="Formulario\FrmReportes.resx">
       <DependentUpon>FrmReportes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formulario\FrmEmpresa.resx">
-      <DependentUpon>FrmEmpresa.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Formulario\FrmListadoOrdenCompra.resx">
       <DependentUpon>FrmListadoOrdenCompra.cs</DependentUpon>
     </EmbeddedResource>
@@ -514,6 +511,7 @@
     <EmbeddedResource Include="Reporte\rpt_Auditoria.rdlc" />
     <EmbeddedResource Include="Reporte\rpt_AuditoriaSesion.rdlc" />
     <EmbeddedResource Include="Reporte\rpt_Factura.rdlc" />
+    <EmbeddedResource Include="Reporte\rpt_FacturaCompra.rdlc" />
     <EmbeddedResource Include="Reporte\rpt_ReporteComprasVentas.rdlc" />
     <EmbeddedResource Include="Reporte\rpt_ReporteDevolucionesProducto.rdlc" />
     <EmbeddedResource Include="Reporte\rpt_ReporteEstadoStock.rdlc" />

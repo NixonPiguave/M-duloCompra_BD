@@ -40,7 +40,6 @@ namespace Menú
             pnMantenimientos.Visible = false;
             pnlRequisiciones.Visible = false;
             dgvOrdenesRequisicion.DataSource = CsComandosSql.RetornaDatos($"select Fecha_Requisicion, Estado_Requisicion,Observacion, MotivoRequisicion\r\nfrom Requisicion where ID_Usuario={IDusuario} and Estado_Requisicion='Pendiente'");
-            btnEmpresa.Visible = false;
 
 
             btnCrearRequisicion.Visible = false;
@@ -353,10 +352,7 @@ namespace Menú
 
         private void btnEmpresa_Click(object sender, EventArgs e)
         {
-            FrmEmpresa frmEmpresa = new FrmEmpresa();
-            pnMantenimientos.Visible = false;
-            pnlRequisiciones.Visible = false;
-            openChildForm(frmEmpresa);
+
         }
 
         private void btnReportes_Click(object sender, EventArgs e)
