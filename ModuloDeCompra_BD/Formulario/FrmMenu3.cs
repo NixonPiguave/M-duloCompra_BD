@@ -231,6 +231,10 @@ namespace Menú
                 //Ver Requisiciones Pendientes
                 btnRequisicionesPendientes.Visible = true;
             }
+            else
+            {
+                pnlRequisiciones.Size = new System.Drawing.Size(183, 58);
+            }
             if (pnlRequisiciones.Visible == false)
             {
                 pnlRequisiciones.Visible = true;
@@ -239,11 +243,11 @@ namespace Menú
                 pnlSubMenuOrdenCompra.Visible = false;
             }
             else if (pnlRequisiciones.Visible == true)
-            { 
+            {
                 pnlRequisiciones.Visible = false;
             }
             else
-            { 
+            {
                 pnlRequisiciones.Visible = false;
                 pnIventario.Visible = false;
                 pnMantenimientos.Visible = false;
