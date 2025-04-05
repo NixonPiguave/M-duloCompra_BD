@@ -251,7 +251,7 @@
             this.btnServicio.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
             this.btnServicio.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnServicio.ForeColor = System.Drawing.Color.White;
-            this.btnServicio.Location = new System.Drawing.Point(450, 85);
+            this.btnServicio.Location = new System.Drawing.Point(439, 85);
             this.btnServicio.Name = "btnServicio";
             this.btnServicio.Size = new System.Drawing.Size(134, 45);
             this.btnServicio.TabIndex = 12;
