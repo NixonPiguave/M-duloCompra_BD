@@ -7,7 +7,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Security;
 using System.Windows.Forms;
+using static System.ComponentModel.Design.ObjectSelectorEditor;
 
 namespace ModuloDeCompra_BD.Formulario
 {
@@ -40,7 +42,8 @@ namespace ModuloDeCompra_BD.Formulario
 
                     FrmFunciones abri = new FrmFunciones(this);
                     ag = 1;
-                    
+                    idq=CsComandosSql.obtenerID("SELECT MAX(ID_Rol) AS UltimoID FROM Roles");
+                    abri.Id = idq;
                     abri.Agregar = ag;
                     abri.ShowDialog();
                     if (!CsComandosSql.verificar($"Select * from Roles where Rol = '{txtRol.Text}'"))

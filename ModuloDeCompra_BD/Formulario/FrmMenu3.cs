@@ -72,6 +72,10 @@ namespace Menú
             {
                 btnOrdenesCompra.Visible= false;
             }
+            if(!botones.Contains(1) && !botones.Contains(2))
+            {
+                btnRequisiciones.Visible= false;
+            }
             if (botones.Contains(5))
             {
                 //Recepción
@@ -127,31 +131,6 @@ namespace Menú
             pnlSubMenuOrdenCompra.BringToFront();
 
         }
-        private void guna2Button4_Click(object sender, EventArgs e)
-        {
-            if (botones.Contains(6))
-            {
-                //Ver Inventario
-                btnInventariooo.Visible = true;
-            }
-            if (botones.Contains(7))
-            {
-                //Movimientos
-                guna2Button8.Visible = true;
-            }
-            if (botones.Contains(8))
-            {
-                //Bodega
-                guna2Button9.Visible = true;
-            }
-            pnMantenimientos.Visible = false;
-            pnlSubMenuOrdenCompra.Visible = false;
-            pnlRequisiciones.Visible = false;
-            if (!pnIventario.Visible)
-                pnIventario.Visible = true;
-            else
-                pnIventario.Visible = false;
-        }
         private void guna2Button6_Click(object sender, EventArgs e)
         {
             
@@ -198,49 +177,103 @@ namespace Menú
             else
                 pnMantenimientos.Visible = false;
         }
-        private void btnOrdenesCompra_Click(object sender, EventArgs e)
+        private void guna2Button4_Click(object sender, EventArgs e)
         {
-            if (botones.Contains(3))
+            if (botones.Contains(6) || botones.Contains(7) || botones.Contains(8))
             {
-                //Crear por Requisición
-                btnOrdenCompraRequisicion.Visible = true;
-            }
-            if (botones.Contains(4))
-            {
-                //Crear por Orden de Compra
-                btnOrdenCompra.Visible = true;
+                if (botones.Contains(6))
+                {
+                    //Ver Inventario
+                    btnInventariooo.Visible = true;
+                }
+                else
+                {
+                    guna2Button8.Location = new Point(22, 9);
+                    guna2Button9.Location = new Point(24, 57);
+                    pnIventario.Size = new System.Drawing.Size(183, 112);
+                }
+                if (botones.Contains(7))
+                {
+                    //Movimientos
+                    guna2Button8.Visible = true;
+                }
+                if (botones.Contains(8))
+                {
+                    //Bodega
+                    guna2Button9.Visible = true;
+                }
             }
             pnMantenimientos.Visible = false;
-            pnIventario.Visible = false;
+            pnlSubMenuOrdenCompra.Visible = false;
             pnlRequisiciones.Visible = false;
-            if (!pnlSubMenuOrdenCompra.Visible)
-                pnlSubMenuOrdenCompra.Visible = true;
+            if (!pnIventario.Visible)
+                pnIventario.Visible = true;
             else
-                pnlSubMenuOrdenCompra.Visible = false;
+                pnIventario.Visible = false;
+        }
+        private void btnOrdenesCompra_Click(object sender, EventArgs e)
+        {
+            if (botones.Contains(3) || botones.Contains(4))
+            {
+                if (botones.Contains(3))
+                {
+                    //Crear por Requisición
+                    btnOrdenCompraRequisicion.Visible = true;
+                }
+                else
+                {
+                    btnOrdenCompra.Location = new Point(3, 6);
+                }
+                if (botones.Contains(4))
+                {
+                    //Crear por Orden de Compra
+                    btnOrdenCompra.Visible = true;
+                    if (!botones.Contains(3))
+                    {
+                        pnlSubMenuOrdenCompra.Size = new System.Drawing.Size(183, 58);
+                    }
+                }
+                else
+                {
+                    pnlSubMenuOrdenCompra.Size = new System.Drawing.Size(183, 58);
+                }
+            }
+                pnMantenimientos.Visible = false;
+                pnIventario.Visible = false;
+                pnlRequisiciones.Visible = false;
+                if (!pnlSubMenuOrdenCompra.Visible)
+                    pnlSubMenuOrdenCompra.Visible = true;
+                else
+                    pnlSubMenuOrdenCompra.Visible = false;
+            
         }
 
         private void btnRequisiciones_Click(object sender, EventArgs e)
         {
-            if (botones.Contains(1))
+            if (botones.Contains(1) || botones.Contains(2))
             {
-                //Crear Requisicion
-                btnCrearRequisicion.Visible = true;
-            }else
-            {
-                btnRequisicionesPendientes.Location = new Point(3, 6);
-            }
-            if (botones.Contains(2))
-            {
-                //Ver Requisiciones Pendientes
-                btnRequisicionesPendientes.Visible = true;
-                if (!botones.Contains(1))
+                if (botones.Contains(1))
+                {
+                    //Crear Requisicion
+                    btnCrearRequisicion.Visible = true;
+                }
+                else
+                {
+                    btnRequisicionesPendientes.Location = new Point(3, 6);
+                }
+                if (botones.Contains(2))
+                {
+                    //Ver Requisiciones Pendientes
+                    btnRequisicionesPendientes.Visible = true;
+                    if (!botones.Contains(1))
+                    {
+                        pnlRequisiciones.Size = new System.Drawing.Size(183, 58);
+                    }
+                }
+                else
                 {
                     pnlRequisiciones.Size = new System.Drawing.Size(183, 58);
                 }
-            }
-            else
-            {
-                pnlRequisiciones.Size = new System.Drawing.Size(183, 58);
             }
             if (pnlRequisiciones.Visible == false)
             {
