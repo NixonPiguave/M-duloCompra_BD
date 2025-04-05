@@ -225,11 +225,18 @@ namespace Menú
             {
                 //Crear Requisicion
                 btnCrearRequisicion.Visible = true;
+            }else
+            {
+                btnRequisicionesPendientes.Location = new Point(3, 6);
             }
             if (botones.Contains(2))
             {
                 //Ver Requisiciones Pendientes
                 btnRequisicionesPendientes.Visible = true;
+                if (!botones.Contains(1))
+                {
+                    pnlRequisiciones.Size = new System.Drawing.Size(183, 58);
+                }
             }
             else
             {
