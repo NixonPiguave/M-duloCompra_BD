@@ -305,5 +305,25 @@ namespace ModuloDeCompra_BD.Formulario
             ListadoCC.ShowDialog();
             txtCredito.Text = ListadoCC.Id1.ToString();
         }
+
+        private void txtOrdenCompra_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDebito_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtProveedor_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCredito_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

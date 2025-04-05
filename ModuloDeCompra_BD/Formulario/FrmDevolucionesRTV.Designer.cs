@@ -35,13 +35,6 @@
             this.lblRequisicionID = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblOrdenID = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnSeleccionarGRN = new Guna.UI2.WinForms.Guna2Button();
-            this.txtSeleccionGRN = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtProveedor = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnCancelar = new Guna.UI2.WinForms.Guna2Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnRegistrarRTV = new Guna.UI2.WinForms.Guna2Button();
             this.label4 = new System.Windows.Forms.Label();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.txtMotivo = new System.Windows.Forms.TextBox();
@@ -50,11 +43,18 @@
             this.dgvDetalleGrn = new Guna.UI2.WinForms.Guna2DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnSeleccionarGRN = new Guna.UI2.WinForms.Guna2Button();
+            this.txtSeleccionGRN = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtProveedor = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnCancelar = new Guna.UI2.WinForms.Guna2Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnRegistrarRTV = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleGrn)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblEstadoOrden
@@ -100,129 +100,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1362, 639);
             this.panel1.TabIndex = 2;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
-            this.panel2.Controls.Add(this.btnSeleccionarGRN);
-            this.panel2.Controls.Add(this.txtSeleccionGRN);
-            this.panel2.Controls.Add(this.txtProveedor);
-            this.panel2.Controls.Add(this.btnCancelar);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.btnRegistrarRTV);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(214, 663);
-            this.panel2.TabIndex = 10;
-            // 
-            // btnSeleccionarGRN
-            // 
-            this.btnSeleccionarGRN.Animated = true;
-            this.btnSeleccionarGRN.BorderRadius = 10;
-            this.btnSeleccionarGRN.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSeleccionarGRN.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnSeleccionarGRN.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSeleccionarGRN.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSeleccionarGRN.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
-            this.btnSeleccionarGRN.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnSeleccionarGRN.ForeColor = System.Drawing.Color.White;
-            this.btnSeleccionarGRN.IndicateFocus = true;
-            this.btnSeleccionarGRN.Location = new System.Drawing.Point(48, 94);
-            this.btnSeleccionarGRN.Name = "btnSeleccionarGRN";
-            this.btnSeleccionarGRN.Size = new System.Drawing.Size(122, 39);
-            this.btnSeleccionarGRN.TabIndex = 1;
-            this.btnSeleccionarGRN.Text = "Seleccionar GRN";
-            this.btnSeleccionarGRN.Click += new System.EventHandler(this.btnSeleccionarGRN_Click);
-            // 
-            // txtSeleccionGRN
-            // 
-            this.txtSeleccionGRN.BorderRadius = 5;
-            this.txtSeleccionGRN.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSeleccionGRN.DefaultText = "";
-            this.txtSeleccionGRN.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtSeleccionGRN.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtSeleccionGRN.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSeleccionGRN.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSeleccionGRN.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSeleccionGRN.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtSeleccionGRN.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSeleccionGRN.Location = new System.Drawing.Point(66, 139);
-            this.txtSeleccionGRN.Name = "txtSeleccionGRN";
-            this.txtSeleccionGRN.PlaceholderText = "";
-            this.txtSeleccionGRN.ReadOnly = true;
-            this.txtSeleccionGRN.SelectedText = "";
-            this.txtSeleccionGRN.Size = new System.Drawing.Size(86, 27);
-            this.txtSeleccionGRN.TabIndex = 2;
-            // 
-            // txtProveedor
-            // 
-            this.txtProveedor.BorderRadius = 5;
-            this.txtProveedor.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtProveedor.DefaultText = "";
-            this.txtProveedor.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtProveedor.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtProveedor.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtProveedor.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtProveedor.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtProveedor.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtProveedor.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtProveedor.Location = new System.Drawing.Point(65, 200);
-            this.txtProveedor.Name = "txtProveedor";
-            this.txtProveedor.PlaceholderText = "";
-            this.txtProveedor.ReadOnly = true;
-            this.txtProveedor.SelectedText = "";
-            this.txtProveedor.Size = new System.Drawing.Size(86, 27);
-            this.txtProveedor.TabIndex = 4;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Animated = true;
-            this.btnCancelar.BorderRadius = 10;
-            this.btnCancelar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnCancelar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnCancelar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnCancelar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnCancelar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
-            this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.IndicateFocus = true;
-            this.btnCancelar.Location = new System.Drawing.Point(47, 434);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(122, 54);
-            this.btnCancelar.TabIndex = 7;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click_1);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(62, 177);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 20);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Proveedor";
-            // 
-            // btnRegistrarRTV
-            // 
-            this.btnRegistrarRTV.Animated = true;
-            this.btnRegistrarRTV.BorderRadius = 10;
-            this.btnRegistrarRTV.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnRegistrarRTV.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnRegistrarRTV.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnRegistrarRTV.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnRegistrarRTV.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
-            this.btnRegistrarRTV.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnRegistrarRTV.ForeColor = System.Drawing.Color.White;
-            this.btnRegistrarRTV.IndicateFocus = true;
-            this.btnRegistrarRTV.Location = new System.Drawing.Point(47, 346);
-            this.btnRegistrarRTV.Name = "btnRegistrarRTV";
-            this.btnRegistrarRTV.Size = new System.Drawing.Size(122, 55);
-            this.btnRegistrarRTV.TabIndex = 6;
-            this.btnRegistrarRTV.Text = "Registrar RTV";
-            this.btnRegistrarRTV.Click += new System.EventHandler(this.btnRegistrarRTV_Click);
             // 
             // label4
             // 
@@ -355,6 +232,129 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "DEVOLUCIONES DE PRODUCTOS  (RTV)";
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
+            this.panel2.Controls.Add(this.btnSeleccionarGRN);
+            this.panel2.Controls.Add(this.txtSeleccionGRN);
+            this.panel2.Controls.Add(this.txtProveedor);
+            this.panel2.Controls.Add(this.btnCancelar);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.btnRegistrarRTV);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(214, 663);
+            this.panel2.TabIndex = 10;
+            // 
+            // btnSeleccionarGRN
+            // 
+            this.btnSeleccionarGRN.Animated = true;
+            this.btnSeleccionarGRN.BorderRadius = 10;
+            this.btnSeleccionarGRN.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSeleccionarGRN.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSeleccionarGRN.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSeleccionarGRN.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSeleccionarGRN.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
+            this.btnSeleccionarGRN.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSeleccionarGRN.ForeColor = System.Drawing.Color.White;
+            this.btnSeleccionarGRN.IndicateFocus = true;
+            this.btnSeleccionarGRN.Location = new System.Drawing.Point(48, 94);
+            this.btnSeleccionarGRN.Name = "btnSeleccionarGRN";
+            this.btnSeleccionarGRN.Size = new System.Drawing.Size(122, 39);
+            this.btnSeleccionarGRN.TabIndex = 1;
+            this.btnSeleccionarGRN.Text = "Seleccionar GRN";
+            this.btnSeleccionarGRN.Click += new System.EventHandler(this.btnSeleccionarGRN_Click);
+            // 
+            // txtSeleccionGRN
+            // 
+            this.txtSeleccionGRN.BorderRadius = 5;
+            this.txtSeleccionGRN.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSeleccionGRN.DefaultText = "";
+            this.txtSeleccionGRN.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSeleccionGRN.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSeleccionGRN.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSeleccionGRN.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSeleccionGRN.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSeleccionGRN.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtSeleccionGRN.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSeleccionGRN.Location = new System.Drawing.Point(66, 139);
+            this.txtSeleccionGRN.Name = "txtSeleccionGRN";
+            this.txtSeleccionGRN.PlaceholderText = "";
+            this.txtSeleccionGRN.ReadOnly = true;
+            this.txtSeleccionGRN.SelectedText = "";
+            this.txtSeleccionGRN.Size = new System.Drawing.Size(86, 27);
+            this.txtSeleccionGRN.TabIndex = 2;
+            // 
+            // txtProveedor
+            // 
+            this.txtProveedor.BorderRadius = 5;
+            this.txtProveedor.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtProveedor.DefaultText = "";
+            this.txtProveedor.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtProveedor.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtProveedor.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtProveedor.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtProveedor.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtProveedor.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtProveedor.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtProveedor.Location = new System.Drawing.Point(65, 200);
+            this.txtProveedor.Name = "txtProveedor";
+            this.txtProveedor.PlaceholderText = "";
+            this.txtProveedor.ReadOnly = true;
+            this.txtProveedor.SelectedText = "";
+            this.txtProveedor.Size = new System.Drawing.Size(86, 27);
+            this.txtProveedor.TabIndex = 4;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Animated = true;
+            this.btnCancelar.BorderRadius = 10;
+            this.btnCancelar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCancelar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCancelar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCancelar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCancelar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
+            this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.IndicateFocus = true;
+            this.btnCancelar.Location = new System.Drawing.Point(47, 441);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(122, 47);
+            this.btnCancelar.TabIndex = 7;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click_1);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(62, 177);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(81, 20);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Proveedor";
+            // 
+            // btnRegistrarRTV
+            // 
+            this.btnRegistrarRTV.Animated = true;
+            this.btnRegistrarRTV.BorderRadius = 10;
+            this.btnRegistrarRTV.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnRegistrarRTV.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnRegistrarRTV.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnRegistrarRTV.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnRegistrarRTV.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
+            this.btnRegistrarRTV.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnRegistrarRTV.ForeColor = System.Drawing.Color.White;
+            this.btnRegistrarRTV.IndicateFocus = true;
+            this.btnRegistrarRTV.Location = new System.Drawing.Point(47, 346);
+            this.btnRegistrarRTV.Name = "btnRegistrarRTV";
+            this.btnRegistrarRTV.Size = new System.Drawing.Size(122, 55);
+            this.btnRegistrarRTV.TabIndex = 6;
+            this.btnRegistrarRTV.Text = "Registrar RTV";
+            this.btnRegistrarRTV.Click += new System.EventHandler(this.btnRegistrarRTV_Click);
+            // 
             // FrmRTV
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -368,13 +368,13 @@
             this.Load += new System.EventHandler(this.FrmRTV_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleGrn)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
