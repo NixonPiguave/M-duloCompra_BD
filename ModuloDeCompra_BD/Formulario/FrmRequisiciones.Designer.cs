@@ -57,6 +57,9 @@
             this.btnCrearRequi = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvProductosAgregados = new System.Windows.Forms.DataGridView();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudServicio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoServicio)).BeginInit();
@@ -64,6 +67,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoProductos)).BeginInit();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductosAgregados)).BeginInit();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnProducto
@@ -76,7 +82,7 @@
             this.btnProducto.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
             this.btnProducto.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProducto.ForeColor = System.Drawing.Color.White;
-            this.btnProducto.Location = new System.Drawing.Point(271, 56);
+            this.btnProducto.Location = new System.Drawing.Point(439, 91);
             this.btnProducto.Name = "btnProducto";
             this.btnProducto.Size = new System.Drawing.Size(134, 45);
             this.btnProducto.TabIndex = 0;
@@ -86,28 +92,7 @@
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.DarkGray;
-            this.guna2Panel1.Controls.Add(this.btnAgregarP);
-            this.guna2Panel1.Controls.Add(this.lbIDserv);
-            this.guna2Panel1.Controls.Add(this.txtIDServi);
-            this.guna2Panel1.Controls.Add(this.lbCanServ);
-            this.guna2Panel1.Controls.Add(this.nudServicio);
-            this.guna2Panel1.Controls.Add(this.lbServi);
-            this.guna2Panel1.Controls.Add(this.txtServicio);
-            this.guna2Panel1.Controls.Add(this.lbID);
-            this.guna2Panel1.Controls.Add(this.txtID);
-            this.guna2Panel1.Controls.Add(this.btnAgregarS);
-            this.guna2Panel1.Controls.Add(this.btnServicio);
-            this.guna2Panel1.Controls.Add(this.txtFiltroServicio);
-            this.guna2Panel1.Controls.Add(this.dgvListadoServicio);
-            this.guna2Panel1.Controls.Add(this.label8);
-            this.guna2Panel1.Controls.Add(this.lbCantidad);
-            this.guna2Panel1.Controls.Add(this.nudCantidad);
-            this.guna2Panel1.Controls.Add(this.lbProduc);
-            this.guna2Panel1.Controls.Add(this.txtProducto);
-            this.guna2Panel1.Controls.Add(this.btnProducto);
-            this.guna2Panel1.Controls.Add(this.txtFiltroProduc);
-            this.guna2Panel1.Controls.Add(this.dgvListadoProductos);
-            this.guna2Panel1.Controls.Add(this.lbListado);
+            this.guna2Panel1.Controls.Add(this.tabControl1);
             this.guna2Panel1.Location = new System.Drawing.Point(12, 12);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(691, 652);
@@ -123,7 +108,7 @@
             this.btnAgregarP.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
             this.btnAgregarP.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarP.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarP.Location = new System.Drawing.Point(532, 285);
+            this.btnAgregarP.Location = new System.Drawing.Point(353, 497);
             this.btnAgregarP.Name = "btnAgregarP";
             this.btnAgregarP.Size = new System.Drawing.Size(120, 45);
             this.btnAgregarP.TabIndex = 25;
@@ -134,7 +119,7 @@
             // 
             this.lbIDserv.AutoSize = true;
             this.lbIDserv.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbIDserv.Location = new System.Drawing.Point(578, 341);
+            this.lbIDserv.Location = new System.Drawing.Point(186, 349);
             this.lbIDserv.Name = "lbIDserv";
             this.lbIDserv.Size = new System.Drawing.Size(26, 20);
             this.lbIDserv.TabIndex = 24;
@@ -152,7 +137,7 @@
             this.txtIDServi.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtIDServi.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtIDServi.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtIDServi.Location = new System.Drawing.Point(570, 363);
+            this.txtIDServi.Location = new System.Drawing.Point(178, 371);
             this.txtIDServi.Name = "txtIDServi";
             this.txtIDServi.PlaceholderText = "";
             this.txtIDServi.ReadOnly = true;
@@ -164,7 +149,7 @@
             // 
             this.lbCanServ.AutoSize = true;
             this.lbCanServ.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCanServ.Location = new System.Drawing.Point(554, 487);
+            this.lbCanServ.Location = new System.Drawing.Point(394, 424);
             this.lbCanServ.Name = "lbCanServ";
             this.lbCanServ.Size = new System.Drawing.Size(73, 20);
             this.lbCanServ.TabIndex = 22;
@@ -172,7 +157,7 @@
             // 
             // nudServicio
             // 
-            this.nudServicio.Location = new System.Drawing.Point(532, 509);
+            this.nudServicio.Location = new System.Drawing.Point(372, 446);
             this.nudServicio.Name = "nudServicio";
             this.nudServicio.Size = new System.Drawing.Size(120, 20);
             this.nudServicio.TabIndex = 21;
@@ -181,7 +166,7 @@
             // 
             this.lbServi.AutoSize = true;
             this.lbServi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbServi.Location = new System.Drawing.Point(561, 412);
+            this.lbServi.Location = new System.Drawing.Point(401, 349);
             this.lbServi.Name = "lbServi";
             this.lbServi.Size = new System.Drawing.Size(64, 20);
             this.lbServi.TabIndex = 20;
@@ -199,7 +184,7 @@
             this.txtServicio.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtServicio.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtServicio.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtServicio.Location = new System.Drawing.Point(517, 434);
+            this.txtServicio.Location = new System.Drawing.Point(357, 371);
             this.txtServicio.Name = "txtServicio";
             this.txtServicio.PlaceholderText = "";
             this.txtServicio.ReadOnly = true;
@@ -211,7 +196,7 @@
             // 
             this.lbID.AutoSize = true;
             this.lbID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbID.Location = new System.Drawing.Point(578, 70);
+            this.lbID.Location = new System.Drawing.Point(167, 353);
             this.lbID.Name = "lbID";
             this.lbID.Size = new System.Drawing.Size(26, 20);
             this.lbID.TabIndex = 18;
@@ -230,7 +215,7 @@
             this.txtID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtID.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtID.Location = new System.Drawing.Point(570, 92);
+            this.txtID.Location = new System.Drawing.Point(159, 375);
             this.txtID.Name = "txtID";
             this.txtID.PlaceholderText = "";
             this.txtID.ReadOnly = true;
@@ -249,7 +234,7 @@
             this.btnAgregarS.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
             this.btnAgregarS.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarS.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarS.Location = new System.Drawing.Point(532, 552);
+            this.btnAgregarS.Location = new System.Drawing.Point(372, 489);
             this.btnAgregarS.Name = "btnAgregarS";
             this.btnAgregarS.Size = new System.Drawing.Size(120, 45);
             this.btnAgregarS.TabIndex = 16;
@@ -266,7 +251,7 @@
             this.btnServicio.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
             this.btnServicio.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnServicio.ForeColor = System.Drawing.Color.White;
-            this.btnServicio.Location = new System.Drawing.Point(271, 379);
+            this.btnServicio.Location = new System.Drawing.Point(450, 85);
             this.btnServicio.Name = "btnServicio";
             this.btnServicio.Size = new System.Drawing.Size(134, 45);
             this.btnServicio.TabIndex = 12;
@@ -286,7 +271,7 @@
             this.txtFiltroServicio.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtFiltroServicio.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtFiltroServicio.IconRight = global::ModuloDeCompra_BD.Properties.Resources.brows_browsing_find_search_seo_web_zoom_icon_123196;
-            this.txtFiltroServicio.Location = new System.Drawing.Point(38, 388);
+            this.txtFiltroServicio.Location = new System.Drawing.Point(69, 94);
             this.txtFiltroServicio.Name = "txtFiltroServicio";
             this.txtFiltroServicio.PlaceholderText = "";
             this.txtFiltroServicio.SelectedText = "";
@@ -301,19 +286,19 @@
             this.dgvListadoServicio.BackgroundColor = System.Drawing.Color.White;
             this.dgvListadoServicio.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvListadoServicio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListadoServicio.Location = new System.Drawing.Point(38, 440);
+            this.dgvListadoServicio.Location = new System.Drawing.Point(69, 136);
             this.dgvListadoServicio.Name = "dgvListadoServicio";
             this.dgvListadoServicio.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvListadoServicio.RowHeadersVisible = false;
             this.dgvListadoServicio.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListadoServicio.Size = new System.Drawing.Size(447, 199);
+            this.dgvListadoServicio.Size = new System.Drawing.Size(515, 184);
             this.dgvListadoServicio.TabIndex = 13;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(34, 351);
+            this.label8.Location = new System.Drawing.Point(65, 59);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(120, 20);
             this.label8.TabIndex = 14;
@@ -323,7 +308,7 @@
             // 
             this.lbCantidad.AutoSize = true;
             this.lbCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCantidad.Location = new System.Drawing.Point(554, 216);
+            this.lbCantidad.Location = new System.Drawing.Point(375, 428);
             this.lbCantidad.Name = "lbCantidad";
             this.lbCantidad.Size = new System.Drawing.Size(73, 20);
             this.lbCantidad.TabIndex = 11;
@@ -331,7 +316,7 @@
             // 
             // nudCantidad
             // 
-            this.nudCantidad.Location = new System.Drawing.Point(532, 238);
+            this.nudCantidad.Location = new System.Drawing.Point(353, 450);
             this.nudCantidad.Name = "nudCantidad";
             this.nudCantidad.Size = new System.Drawing.Size(120, 20);
             this.nudCantidad.TabIndex = 10;
@@ -340,7 +325,7 @@
             // 
             this.lbProduc.AutoSize = true;
             this.lbProduc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbProduc.Location = new System.Drawing.Point(545, 141);
+            this.lbProduc.Location = new System.Drawing.Point(366, 353);
             this.lbProduc.Name = "lbProduc";
             this.lbProduc.Size = new System.Drawing.Size(73, 20);
             this.lbProduc.TabIndex = 9;
@@ -358,7 +343,7 @@
             this.txtProducto.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtProducto.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtProducto.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtProducto.Location = new System.Drawing.Point(517, 163);
+            this.txtProducto.Location = new System.Drawing.Point(338, 375);
             this.txtProducto.Name = "txtProducto";
             this.txtProducto.PlaceholderText = "";
             this.txtProducto.ReadOnly = true;
@@ -379,7 +364,7 @@
             this.txtFiltroProduc.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtFiltroProduc.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtFiltroProduc.IconRight = global::ModuloDeCompra_BD.Properties.Resources.brows_browsing_find_search_seo_web_zoom_icon_123196;
-            this.txtFiltroProduc.Location = new System.Drawing.Point(38, 65);
+            this.txtFiltroProduc.Location = new System.Drawing.Point(75, 94);
             this.txtFiltroProduc.Name = "txtFiltroProduc";
             this.txtFiltroProduc.PlaceholderText = "";
             this.txtFiltroProduc.SelectedText = "";
@@ -394,19 +379,19 @@
             this.dgvListadoProductos.BackgroundColor = System.Drawing.Color.White;
             this.dgvListadoProductos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvListadoProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListadoProductos.Location = new System.Drawing.Point(38, 117);
+            this.dgvListadoProductos.Location = new System.Drawing.Point(75, 142);
             this.dgvListadoProductos.Name = "dgvListadoProductos";
             this.dgvListadoProductos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvListadoProductos.RowHeadersVisible = false;
             this.dgvListadoProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListadoProductos.Size = new System.Drawing.Size(447, 187);
+            this.dgvListadoProductos.Size = new System.Drawing.Size(498, 184);
             this.dgvListadoProductos.TabIndex = 4;
             // 
             // lbListado
             // 
             this.lbListado.AutoSize = true;
             this.lbListado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbListado.Location = new System.Drawing.Point(34, 28);
+            this.lbListado.Location = new System.Drawing.Point(71, 59);
             this.lbListado.Name = "lbListado";
             this.lbListado.Size = new System.Drawing.Size(137, 20);
             this.lbListado.TabIndex = 5;
@@ -446,7 +431,7 @@
             this.txtMotivo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtMotivo.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtMotivo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMotivo.Location = new System.Drawing.Point(419, 75);
+            this.txtMotivo.Location = new System.Drawing.Point(433, 75);
             this.txtMotivo.Multiline = true;
             this.txtMotivo.Name = "txtMotivo";
             this.txtMotivo.PlaceholderText = "";
@@ -492,8 +477,60 @@
             this.dgvProductosAgregados.Name = "dgvProductosAgregados";
             this.dgvProductosAgregados.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvProductosAgregados.RowHeadersVisible = false;
-            this.dgvProductosAgregados.Size = new System.Drawing.Size(376, 522);
+            this.dgvProductosAgregados.Size = new System.Drawing.Size(386, 470);
             this.dgvProductosAgregados.TabIndex = 7;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Location = new System.Drawing.Point(3, 3);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(685, 646);
+            this.tabControl1.TabIndex = 26;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.dgvListadoProductos);
+            this.tabPage1.Controls.Add(this.btnAgregarP);
+            this.tabPage1.Controls.Add(this.lbListado);
+            this.tabPage1.Controls.Add(this.txtFiltroProduc);
+            this.tabPage1.Controls.Add(this.btnProducto);
+            this.tabPage1.Controls.Add(this.txtProducto);
+            this.tabPage1.Controls.Add(this.lbProduc);
+            this.tabPage1.Controls.Add(this.nudCantidad);
+            this.tabPage1.Controls.Add(this.lbCantidad);
+            this.tabPage1.Controls.Add(this.lbID);
+            this.tabPage1.Controls.Add(this.txtID);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(677, 620);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Productos";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabPage2.Controls.Add(this.dgvListadoServicio);
+            this.tabPage2.Controls.Add(this.lbIDserv);
+            this.tabPage2.Controls.Add(this.label8);
+            this.tabPage2.Controls.Add(this.txtIDServi);
+            this.tabPage2.Controls.Add(this.txtFiltroServicio);
+            this.tabPage2.Controls.Add(this.lbCanServ);
+            this.tabPage2.Controls.Add(this.btnServicio);
+            this.tabPage2.Controls.Add(this.nudServicio);
+            this.tabPage2.Controls.Add(this.txtServicio);
+            this.tabPage2.Controls.Add(this.lbServi);
+            this.tabPage2.Controls.Add(this.btnAgregarS);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(677, 620);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Servicio";
             // 
             // FrmRequisiciones
             // 
@@ -508,7 +545,6 @@
             this.Text = "FrmRequisiciones";
             this.Load += new System.EventHandler(this.FrmRequisiciones_Load);
             this.guna2Panel1.ResumeLayout(false);
-            this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudServicio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoServicio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).EndInit();
@@ -516,6 +552,11 @@
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductosAgregados)).EndInit();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -551,5 +592,8 @@
         private System.Windows.Forms.Label lbServi;
         private Guna.UI2.WinForms.Guna2TextBox txtServicio;
         private Guna.UI2.WinForms.Guna2Button btnAgregarP;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
     }
 }
