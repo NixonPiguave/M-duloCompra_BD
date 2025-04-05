@@ -46,6 +46,7 @@
             this.dgvInventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInventario.Location = new System.Drawing.Point(12, 166);
             this.dgvInventario.Name = "dgvInventario";
+            this.dgvInventario.RowHeadersVisible = false;
             this.dgvInventario.RowTemplate.Height = 18;
             this.dgvInventario.Size = new System.Drawing.Size(1325, 471);
             this.dgvInventario.TabIndex = 20;

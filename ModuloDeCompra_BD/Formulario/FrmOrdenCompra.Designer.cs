@@ -230,6 +230,7 @@
             this.dgvRequisiciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRequisiciones.Location = new System.Drawing.Point(495, 129);
             this.dgvRequisiciones.Name = "dgvRequisiciones";
+            this.dgvRequisiciones.RowHeadersVisible = false;
             this.dgvRequisiciones.Size = new System.Drawing.Size(836, 395);
             this.dgvRequisiciones.TabIndex = 21;
             this.dgvRequisiciones.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvRequisiciones_DataError);

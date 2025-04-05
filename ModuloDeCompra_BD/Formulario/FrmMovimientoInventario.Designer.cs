@@ -347,6 +347,7 @@
             this.dgvAux.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAux.Location = new System.Drawing.Point(32, 135);
             this.dgvAux.Name = "dgvAux";
+            this.dgvAux.RowHeadersVisible = false;
             this.dgvAux.RowTemplate.Height = 18;
             this.dgvAux.Size = new System.Drawing.Size(1298, 508);
             this.dgvAux.TabIndex = 29;
