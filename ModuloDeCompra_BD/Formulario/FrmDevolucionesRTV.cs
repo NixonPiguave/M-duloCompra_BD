@@ -199,7 +199,7 @@ namespace ModuloDeCompra_BD.Formulario
                                  </RTV>'
                         ";
                     string queryD = $"EXEC InsertarRTV {xml}";
-                    MessageBox.Show(xml);
+                    //MessageBox.Show(xml);
                     if (CsComandosSql.InserDeletUpdate(queryD))
                     {
                         MessageBox.Show("RTV REGISTRADO");

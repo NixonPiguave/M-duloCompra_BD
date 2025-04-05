@@ -60,7 +60,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvRol.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvRol.ColumnHeadersHeight = 4;
+            this.dgvRol.ColumnHeadersHeight = 20;
             this.dgvRol.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
@@ -88,7 +88,7 @@
             this.dgvRol.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvRol.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dgvRol.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvRol.ThemeStyle.HeaderStyle.Height = 4;
+            this.dgvRol.ThemeStyle.HeaderStyle.Height = 20;
             this.dgvRol.ThemeStyle.ReadOnly = false;
             this.dgvRol.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvRol.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;

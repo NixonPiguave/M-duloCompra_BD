@@ -333,6 +333,7 @@
             this.dgvMovimientoInventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMovimientoInventario.Location = new System.Drawing.Point(32, 135);
             this.dgvMovimientoInventario.Name = "dgvMovimientoInventario";
+            this.dgvMovimientoInventario.RowHeadersVisible = false;
             this.dgvMovimientoInventario.RowTemplate.Height = 18;
             this.dgvMovimientoInventario.Size = new System.Drawing.Size(1298, 508);
             this.dgvMovimientoInventario.TabIndex = 28;
@@ -345,6 +346,7 @@
             this.dgvAux.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvAux.BackgroundColor = System.Drawing.Color.White;
             this.dgvAux.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAux.ColumnHeadersVisible = false;
             this.dgvAux.Location = new System.Drawing.Point(32, 135);
             this.dgvAux.Name = "dgvAux";
             this.dgvAux.RowHeadersVisible = false;
