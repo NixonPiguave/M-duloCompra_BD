@@ -196,6 +196,16 @@ namespace Menú
                 {
                     //Movimientos
                     guna2Button8.Visible = true;
+                    if (!botones.Contains(6))
+                    {
+                        pnIventario.Size = new System.Drawing.Size(183, 112);
+                    }
+                }
+                else
+                {
+                    guna2Button8.Location = new Point(22, 9);
+                    guna2Button9.Location = new Point(24, 57);
+                    pnIventario.Size = new System.Drawing.Size(183, 112);
                 }
                 if (botones.Contains(8))
                 {
@@ -203,6 +213,7 @@ namespace Menú
                     guna2Button9.Visible = true;
                 }
             }
+
             pnMantenimientos.Visible = false;
             pnlSubMenuOrdenCompra.Visible = false;
             pnlRequisiciones.Visible = false;
