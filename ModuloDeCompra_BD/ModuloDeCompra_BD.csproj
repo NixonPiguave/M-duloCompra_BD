@@ -78,6 +78,7 @@
     <Compile Include="Clases\CsComandosSql.cs" />
     <Compile Include="Clases\CsConeccionServer.cs" />
     <Compile Include="Clases\CsDepartamentos.cs" />
+    <Compile Include="Clases\CsEmail.cs" />
     <Compile Include="Clases\CsEmpresa.cs" />
     <Compile Include="Clases\CsEncriptarMDS.cs" />
     <Compile Include="Clases\csOrdenCompra.cs" />
