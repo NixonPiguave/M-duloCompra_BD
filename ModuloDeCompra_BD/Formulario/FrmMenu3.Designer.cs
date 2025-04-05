@@ -65,6 +65,7 @@
             this.guna2Button9 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button8 = new Guna.UI2.WinForms.Guna2Button();
             this.dgvOrdenesRequisicion = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.btnCatalogoCuentas = new Guna.UI2.WinForms.Guna2Button();
             this.pn1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbEditarEmpresa)).BeginInit();
             this.pn2.SuspendLayout();
@@ -342,6 +343,7 @@
             // pnMantenimientos
             // 
             this.pnMantenimientos.BackColor = System.Drawing.Color.Black;
+            this.pnMantenimientos.Controls.Add(this.btnCatalogoCuentas);
             this.pnMantenimientos.Controls.Add(this.guna2Button16);
             this.pnMantenimientos.Controls.Add(this.guna2Button15);
             this.pnMantenimientos.Controls.Add(this.guna2Button14);
@@ -351,7 +353,7 @@
             this.pnMantenimientos.Controls.Add(this.btnUsuarios);
             this.pnMantenimientos.Location = new System.Drawing.Point(965, 0);
             this.pnMantenimientos.Name = "pnMantenimientos";
-            this.pnMantenimientos.Size = new System.Drawing.Size(188, 361);
+            this.pnMantenimientos.Size = new System.Drawing.Size(188, 421);
             this.pnMantenimientos.TabIndex = 0;
             // 
             // guna2Button16
@@ -630,6 +632,23 @@
             this.dgvOrdenesRequisicion.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvOrdenesRequisicion.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
+            // btnCatalogoCuentas
+            // 
+            this.btnCatalogoCuentas.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCatalogoCuentas.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCatalogoCuentas.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCatalogoCuentas.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCatalogoCuentas.FillColor = System.Drawing.Color.Black;
+            this.btnCatalogoCuentas.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCatalogoCuentas.ForeColor = System.Drawing.Color.White;
+            this.btnCatalogoCuentas.HoverState.ForeColor = System.Drawing.Color.Yellow;
+            this.btnCatalogoCuentas.Location = new System.Drawing.Point(27, 363);
+            this.btnCatalogoCuentas.Name = "btnCatalogoCuentas";
+            this.btnCatalogoCuentas.Size = new System.Drawing.Size(135, 45);
+            this.btnCatalogoCuentas.TabIndex = 12;
+            this.btnCatalogoCuentas.Text = "Catálogos Cuenta";
+            this.btnCatalogoCuentas.Click += new System.EventHandler(this.btnCatalogoCuentas_Click);
+            // 
             // FrmMenu3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -688,6 +707,7 @@
         private Guna.UI2.WinForms.Guna2Button btnOrdenCompra;
         private Guna.UI2.WinForms.Guna2CirclePictureBox pbEditarEmpresa;
         private Guna.UI2.WinForms.Guna2DataGridView dgvEmpresa;
+        private Guna.UI2.WinForms.Guna2Button btnCatalogoCuentas;
     }
 }
 

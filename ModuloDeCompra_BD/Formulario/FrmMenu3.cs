@@ -430,5 +430,15 @@ namespace Menú
             pnlSubMenuOrdenCompra.Visible = false;
             openChildForm(recepcionCompra);
         }
+
+        private void btnCatalogoCuentas_Click(object sender, EventArgs e)
+        {
+            FrnListadoCatalogoCuentas frmCatalogo = new FrnListadoCatalogoCuentas();
+            pnIventario.Visible = false;
+            pnlRequisiciones.Visible = false;
+            pnMantenimientos.Visible = false;
+            pnlSubMenuOrdenCompra.Visible = false;
+            openChildForm(frmCatalogo);
+        }
     }
 }
