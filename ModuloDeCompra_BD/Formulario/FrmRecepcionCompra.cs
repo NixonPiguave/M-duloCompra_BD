@@ -143,36 +143,81 @@ namespace ModuloDeCompra_BD.Formulario
                     costoU = costoU.Replace(',', '.');
                     if (cant > 0)
                     {
-                        Detalle += $@"
-                                              <GRNDetail>
-                                                  <Cantidad>{cant}</Cantidad>
-                                                  <Costo>{costoU}</Costo>
-                                                  <ID_Servicio>{(string.IsNullOrEmpty(idServicio) ? "NULL" : idServicio)}</ID_Servicio>
-                                                  <ID_Producto>{(string.IsNullOrEmpty(idProducto) ? "NULL" : idProducto)}</ID_Producto>                                                           
-                                              </GRNDetail>
-                                          ";
+                        Detalle += $@"<GRNDetail>
+                                        <Cantidad>{cant}</Cantidad>
+                                        <Costo>{costoU}</Costo>
+                                        <ID_Servicio>{(string.IsNullOrEmpty(idServicio) ? "NULL" : idServicio)}</ID_Servicio>
+                                        <ID_Producto>{(string.IsNullOrEmpty(idProducto) ? "NULL" : idProducto)}</ID_Producto>                                                           
+                                    </GRNDetail>";
                     }
                 }
-                string xmlRequisicion = $@"'<GRNHeaders>
-                                                 <GRNHeader>
-                                                   <Estado>R</Estado>
-                                                   <TotalPagar>{0}</TotalPagar>
-                                                        <Origen>O</Origen>
-                                                      <ID_Orden>{txtOrdenCompra.Text}</ID_Orden>
-                                                      <ID_Proveedor>{txtProveedor.Text}</ID_Proveedor>
-                                                  </GRNHeader>
-                                                  {Detalle}
-                                </GRNHeaders>'";
-              
-                string query = $"exec spAgregarGRNHeader {xmlRequisicion}, {1}";
+                string xmlRequisicion = $@"<GRNHeaders>
+                                            <GRNHeader>
+                                              <Estado>R</Estado>
+                                              <TotalPagar>{0}</TotalPagar>
+                                              <Origen>O</Origen>
+                                              <ID_Orden>{txtOrdenCompra.Text}</ID_Orden>
+                                              <ID_Proveedor>{txtProveedor.Text}</ID_Proveedor>
+                                            </GRNHeader>
+                                            {Detalle}
+                                         </GRNHeaders>";
+
                 try
                 {
-                    if (CsComandosSql.InserDeletUpdate(query))
+
+                    if (!string.IsNullOrEmpty(txtDebito.Text) || !string.IsNullOrEmpty(txtCredito.Text))
                     {
-                        int idorden = Convert.ToInt32(txtOrdenCompra.Text);
-                        OrdenyGrn(idorden);
-                        ActualizarEstadoRecibido(idorden);
-                        MessageBox.Show("GRN REGISTRADO");
+                        string query = $@"
+                        DECLARE @GRNID INT, @DIARIOID INT;
+                        EXEC spAgregarGRNHeader 
+                            @XML_GRNHeader = '{xmlRequisicion}', 
+                            @Bodega = {1}, 
+                            @GRNHeaderID = @GRNID OUTPUT, 
+                            @DiarioInveID = @DIARIOID OUTPUT;
+                        SELECT @GRNID AS GRN_ID, @DIARIOID AS DIARIO_ID;";
+
+                        dgvaux.DataSource = CsComandosSql.RetornaDatos(query);
+
+                        if (dgvaux.Rows.Count > 0)
+                        {
+                            int grnId = Convert.ToInt32(dgvaux.Rows[0].Cells[1].Value);
+                            int diarioId = Convert.ToInt32(dgvaux.Rows[0].Cells[2].Value);
+
+                            string queryContable = $@"
+                            EXEC SP_RegistrarDiarioContableGRN
+                                @ID_GRN = {grnId}, 
+                                @Diario = {diarioId}, 
+                                @CuentaDebito = '{txtDebito.Text}',  
+                                @CuentaCredito = '{txtCredito.Text}'";
+
+                            if (grnId > 0 && diarioId > 0)
+                            {
+                                int idorden = Convert.ToInt32(txtOrdenCompra.Text);
+                                OrdenyGrn(idorden);
+                                ActualizarEstadoRecibido(idorden);
+
+                                if (CsComandosSql.InserDeletUpdate(queryContable))
+                                {
+                                    MessageBox.Show("GRN REGISTRADO");
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Error al Registrar la Contabilidad");
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Error al registrar el GRN - IDs no válidos");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se obtuvieron resultados del registro GRN");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Rellene todos los campos");
                     }
                 }
                 catch(SqlException esc)
@@ -184,7 +229,6 @@ namespace ModuloDeCompra_BD.Formulario
             {
                 MessageBox.Show("Error al Registrar GRN: " + ex.Message);
             }
-
         }
 
         private void dgvDetalleOrden_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -199,15 +243,12 @@ namespace ModuloDeCompra_BD.Formulario
                 }
                 int cantidadPendiente = Convert.ToInt32(dgvDetalleOrden[7, e.RowIndex].Value);
                 int cantidadRecibida = Convert.ToInt32(dgvDetalleOrden[e.ColumnIndex, e.RowIndex].Value?.ToString());
-                    if (cantidadRecibida > cantidadPendiente)
-                    {
-                        MessageBox.Show("La cantidad recibida no puede ser mayor que la cantidad pendiente.");
-                        dgvDetalleOrden[e.ColumnIndex, e.RowIndex].Value = 0;
-                    }
-                
-                
+                if (cantidadRecibida > cantidadPendiente)
+                {
+                    MessageBox.Show("La cantidad recibida no puede ser mayor que la cantidad pendiente.");
+                    dgvDetalleOrden[e.ColumnIndex, e.RowIndex].Value = 0;
+                }
             }
-
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -249,6 +290,20 @@ namespace ModuloDeCompra_BD.Formulario
             string sentencia = "SELECT Mo.Documento, H.ID_GRN, Pr.Nombre_Proveedor AS Proveedor, H.Fecha_Generada AS Fecha, COALESCE(S.Nom_Servicio, P.NomProducto) AS Producto, D.Cantidad, D.Costo FROM GRN_Header H INNER JOIN Grn_Details D ON H.ID_GRN = D.ID_GRN LEFT JOIN Servicio S ON D.ID_Servicio = S.ID_Servicio LEFT JOIN Producto P ON D.ID_Producto = P.ID_Producto INNER JOIN Proveedores Pr ON Pr.ID_Proveedor = H.ID_Proveedor INNER JOIN Mov_Inventario Mo ON Mo.ID_GRNDetails = D.ID_GRNDetails WHERE H.ID_GRN = 1";
             frmreport factura = new frmreport(sentencia, "dsFactura", "Reporte.rpt_FacturaCompra.rdlc");
             factura.ShowDialog();
+        }
+
+        private void btnDebito_Click(object sender, EventArgs e)
+        {
+            FrnListadoCatalogoCuentas ListadoCC = new FrnListadoCatalogoCuentas();
+            ListadoCC.ShowDialog();
+            txtDebito.Text = ListadoCC.Id1.ToString();
+        }
+
+        private void btnCredito_Click(object sender, EventArgs e)
+        {
+            FrnListadoCatalogoCuentas ListadoCC = new FrnListadoCatalogoCuentas();
+            ListadoCC.ShowDialog();
+            txtCredito.Text = ListadoCC.Id1.ToString();
         }
     }
 }

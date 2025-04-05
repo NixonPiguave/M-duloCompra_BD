@@ -372,6 +372,7 @@ namespace Menú
             pnlRequisiciones.Visible = false;
             pnMantenimientos.Visible = false;
             openChildForm(frmOrdenCompra);
+            pnlSubMenuOrdenCompra.Visible = false;
         }
 
         private void btnOrdenCompra_Click(object sender, EventArgs e)

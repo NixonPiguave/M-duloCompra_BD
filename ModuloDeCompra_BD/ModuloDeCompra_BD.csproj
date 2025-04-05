@@ -93,17 +93,23 @@
     <Compile Include="Formulario\FrmAprobarRequisicion.Designer.cs">
       <DependentUpon>FrmAprobarRequisicion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formulario\FrmCatalogoCuentas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formulario\FrmCatalogoCuentas.Designer.cs">
-      <DependentUpon>FrmCatalogoCuentas.cs</DependentUpon>
-    </Compile>
     <Compile Include="Formulario\FrmFunciones.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formulario\FrmFunciones.Designer.cs">
       <DependentUpon>FrmFunciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\FrmCatalogoCuenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\FrmCatalogoCuenta.Designer.cs">
+      <DependentUpon>FrmCatalogoCuenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\FrmListadoCuentaContable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\FrmListadoCuentaContable.Designer.cs">
+      <DependentUpon>FrmListadoCuentaContable.cs</DependentUpon>
     </Compile>
     <Compile Include="Formulario\FrmListadoGRN.cs">
       <SubType>Form</SubType>
@@ -373,6 +379,12 @@
     <EmbeddedResource Include="Formulario\FrmFunciones.resx">
       <DependentUpon>FrmFunciones.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\FrmCatalogoCuenta.resx">
+      <DependentUpon>FrmCatalogoCuenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\FrmListadoCuentaContable.resx">
+      <DependentUpon>FrmListadoCuentaContable.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formulario\FrmListadoGRN.resx">
       <DependentUpon>FrmListadoGRN.cs</DependentUpon>
     </EmbeddedResource>
@@ -510,7 +522,6 @@
     <EmbeddedResource Include="Reporte\dArpt_ProductosRequiDetalles.rdlc" />
     <EmbeddedResource Include="Reporte\rpt_Auditoria.rdlc" />
     <EmbeddedResource Include="Reporte\rpt_AuditoriaSesion.rdlc" />
-    <EmbeddedResource Include="Reporte\rpt_Factura.rdlc" />
     <EmbeddedResource Include="Reporte\rpt_FacturaCompra.rdlc" />
     <EmbeddedResource Include="Reporte\rpt_ReporteComprasVentas.rdlc" />
     <EmbeddedResource Include="Reporte\rpt_ReporteDevolucionesProducto.rdlc" />

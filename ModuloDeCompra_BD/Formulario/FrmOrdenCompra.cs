@@ -81,7 +81,6 @@ namespace ModuloDeCompra_BD.Formulario
                      {DetalleOrden}
                 </DETALLEORDENES>' ";
 
-                    MessageBox.Show(xmlOrdenCompra);
                     string query = $"exec InsertarOrdenCompraRequisicion {xmlOrdenCompra}";
                     if (CsComandosSql.InserDeletUpdate(query))
                     {
