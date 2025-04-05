@@ -190,5 +190,10 @@ namespace ModuloDeCompra_BD.Formulario
         {
 
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

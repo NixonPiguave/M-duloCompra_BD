@@ -31,14 +31,18 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtDebito = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtCredito = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnCredito = new Guna.UI2.WinForms.Guna2Button();
+            this.btnDebito = new Guna.UI2.WinForms.Guna2Button();
             this.btnGenerarFactura = new Guna.UI2.WinForms.Guna2Button();
             this.label4 = new System.Windows.Forms.Label();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
@@ -50,22 +54,18 @@
             this.lbCantRecib = new System.Windows.Forms.Label();
             this.dgvDetalleOrden = new Guna.UI2.WinForms.Guna2DataGridView();
             this.label3 = new System.Windows.Forms.Label();
+            this.dgvaux = new Guna.UI2.WinForms.Guna2DataGridView();
             this.txtOrdenCompra = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnOrdenCompra = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.dgvGrnDeOrden = new Guna.UI2.WinForms.Guna2DataGridView();
             this.label6 = new System.Windows.Forms.Label();
-            this.btnDebito = new Guna.UI2.WinForms.Guna2Button();
-            this.btnCredito = new Guna.UI2.WinForms.Guna2Button();
-            this.txtCredito = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtDebito = new Guna.UI2.WinForms.Guna2TextBox();
-            this.dgvaux = new Guna.UI2.WinForms.Guna2DataGridView();
             this.panel1.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleOrden)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvaux)).BeginInit();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrnDeOrden)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvaux)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -99,6 +99,80 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1362, 366);
             this.panel1.TabIndex = 1;
+            // 
+            // txtDebito
+            // 
+            this.txtDebito.BorderRadius = 5;
+            this.txtDebito.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDebito.DefaultText = "";
+            this.txtDebito.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtDebito.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtDebito.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDebito.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDebito.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDebito.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtDebito.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDebito.Location = new System.Drawing.Point(204, 86);
+            this.txtDebito.Name = "txtDebito";
+            this.txtDebito.PlaceholderText = "";
+            this.txtDebito.ReadOnly = true;
+            this.txtDebito.SelectedText = "";
+            this.txtDebito.Size = new System.Drawing.Size(86, 27);
+            this.txtDebito.TabIndex = 14;
+            // 
+            // txtCredito
+            // 
+            this.txtCredito.BorderRadius = 5;
+            this.txtCredito.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCredito.DefaultText = "";
+            this.txtCredito.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtCredito.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtCredito.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCredito.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCredito.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCredito.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtCredito.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCredito.Location = new System.Drawing.Point(204, 182);
+            this.txtCredito.Name = "txtCredito";
+            this.txtCredito.PlaceholderText = "";
+            this.txtCredito.ReadOnly = true;
+            this.txtCredito.SelectedText = "";
+            this.txtCredito.Size = new System.Drawing.Size(86, 27);
+            this.txtCredito.TabIndex = 13;
+            // 
+            // btnCredito
+            // 
+            this.btnCredito.BorderRadius = 10;
+            this.btnCredito.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCredito.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCredito.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCredito.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCredito.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
+            this.btnCredito.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnCredito.ForeColor = System.Drawing.Color.White;
+            this.btnCredito.Location = new System.Drawing.Point(186, 144);
+            this.btnCredito.Name = "btnCredito";
+            this.btnCredito.Size = new System.Drawing.Size(122, 35);
+            this.btnCredito.TabIndex = 12;
+            this.btnCredito.Text = "Crédito";
+            this.btnCredito.Click += new System.EventHandler(this.btnCredito_Click);
+            // 
+            // btnDebito
+            // 
+            this.btnDebito.BorderRadius = 10;
+            this.btnDebito.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDebito.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDebito.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDebito.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDebito.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
+            this.btnDebito.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnDebito.ForeColor = System.Drawing.Color.White;
+            this.btnDebito.Location = new System.Drawing.Point(186, 46);
+            this.btnDebito.Name = "btnDebito";
+            this.btnDebito.Size = new System.Drawing.Size(122, 35);
+            this.btnDebito.TabIndex = 11;
+            this.btnDebito.Text = "Débito";
+            this.btnDebito.Click += new System.EventHandler(this.btnDebito_Click);
             // 
             // btnGenerarFactura
             // 
@@ -297,6 +371,60 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Detalles de la Orden de Compra";
             // 
+            // dgvaux
+            // 
+            this.dgvaux.AllowUserToAddRows = false;
+            this.dgvaux.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgvaux.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvaux.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvaux.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvaux.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvaux.Location = new System.Drawing.Point(27, 40);
+            this.dgvaux.MultiSelect = false;
+            this.dgvaux.Name = "dgvaux";
+            this.dgvaux.RowHeadersVisible = false;
+            this.dgvaux.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvaux.RowTemplate.Height = 40;
+            this.dgvaux.Size = new System.Drawing.Size(411, 181);
+            this.dgvaux.TabIndex = 9;
+            this.dgvaux.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvaux.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dgvaux.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dgvaux.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dgvaux.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dgvaux.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dgvaux.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvaux.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dgvaux.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvaux.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvaux.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvaux.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvaux.ThemeStyle.HeaderStyle.Height = 23;
+            this.dgvaux.ThemeStyle.ReadOnly = false;
+            this.dgvaux.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvaux.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvaux.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvaux.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvaux.ThemeStyle.RowsStyle.Height = 40;
+            this.dgvaux.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvaux.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvaux.Visible = false;
+            // 
             // txtOrdenCompra
             // 
             this.txtOrdenCompra.BorderRadius = 5;
@@ -408,134 +536,6 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "GRN  Generados para esta Orden";
             // 
-            // btnDebito
-            // 
-            this.btnDebito.BorderRadius = 10;
-            this.btnDebito.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnDebito.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnDebito.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnDebito.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDebito.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
-            this.btnDebito.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnDebito.ForeColor = System.Drawing.Color.White;
-            this.btnDebito.Location = new System.Drawing.Point(186, 46);
-            this.btnDebito.Name = "btnDebito";
-            this.btnDebito.Size = new System.Drawing.Size(122, 35);
-            this.btnDebito.TabIndex = 11;
-            this.btnDebito.Text = "Débito";
-            this.btnDebito.Click += new System.EventHandler(this.btnDebito_Click);
-            // 
-            // btnCredito
-            // 
-            this.btnCredito.BorderRadius = 10;
-            this.btnCredito.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnCredito.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnCredito.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnCredito.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnCredito.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
-            this.btnCredito.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnCredito.ForeColor = System.Drawing.Color.White;
-            this.btnCredito.Location = new System.Drawing.Point(186, 144);
-            this.btnCredito.Name = "btnCredito";
-            this.btnCredito.Size = new System.Drawing.Size(122, 35);
-            this.btnCredito.TabIndex = 12;
-            this.btnCredito.Text = "Crédito";
-            this.btnCredito.Click += new System.EventHandler(this.btnCredito_Click);
-            // 
-            // txtCredito
-            // 
-            this.txtCredito.BorderRadius = 5;
-            this.txtCredito.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCredito.DefaultText = "";
-            this.txtCredito.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtCredito.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtCredito.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCredito.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCredito.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCredito.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtCredito.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCredito.Location = new System.Drawing.Point(204, 182);
-            this.txtCredito.Name = "txtCredito";
-            this.txtCredito.PlaceholderText = "";
-            this.txtCredito.ReadOnly = true;
-            this.txtCredito.SelectedText = "";
-            this.txtCredito.Size = new System.Drawing.Size(86, 27);
-            this.txtCredito.TabIndex = 13;
-            // 
-            // txtDebito
-            // 
-            this.txtDebito.BorderRadius = 5;
-            this.txtDebito.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtDebito.DefaultText = "";
-            this.txtDebito.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtDebito.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtDebito.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtDebito.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtDebito.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDebito.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtDebito.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDebito.Location = new System.Drawing.Point(204, 86);
-            this.txtDebito.Name = "txtDebito";
-            this.txtDebito.PlaceholderText = "";
-            this.txtDebito.ReadOnly = true;
-            this.txtDebito.SelectedText = "";
-            this.txtDebito.Size = new System.Drawing.Size(86, 27);
-            this.txtDebito.TabIndex = 14;
-            // 
-            // dgvaux
-            // 
-            this.dgvaux.AllowUserToAddRows = false;
-            this.dgvaux.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dgvaux.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvaux.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvaux.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvaux.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvaux.Location = new System.Drawing.Point(27, 40);
-            this.dgvaux.MultiSelect = false;
-            this.dgvaux.Name = "dgvaux";
-            this.dgvaux.RowHeadersVisible = false;
-            this.dgvaux.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgvaux.RowTemplate.Height = 40;
-            this.dgvaux.Size = new System.Drawing.Size(411, 181);
-            this.dgvaux.TabIndex = 9;
-            this.dgvaux.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvaux.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.dgvaux.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.dgvaux.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.dgvaux.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dgvaux.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.dgvaux.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvaux.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dgvaux.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvaux.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvaux.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dgvaux.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvaux.ThemeStyle.HeaderStyle.Height = 23;
-            this.dgvaux.ThemeStyle.ReadOnly = false;
-            this.dgvaux.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvaux.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvaux.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvaux.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dgvaux.ThemeStyle.RowsStyle.Height = 40;
-            this.dgvaux.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvaux.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dgvaux.Visible = false;
-            // 
             // FrmRecepcionCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -552,10 +552,10 @@
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleOrden)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvaux)).EndInit();
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrnDeOrden)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvaux)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -55,38 +55,16 @@
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txtCorreoProveedor = new Guna.UI2.WinForms.Guna2TextBox();
+            this.pnlSubMenu = new System.Windows.Forms.Panel();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProveedores)).BeginInit();
+            this.pnlSubMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.Controls.Add(this.cmbPais);
-            this.guna2Panel1.Controls.Add(this.cmbEstado);
-            this.guna2Panel1.Controls.Add(this.guna2HtmlLabel12);
-            this.guna2Panel1.Controls.Add(this.txtBuscar);
-            this.guna2Panel1.Controls.Add(this.guna2HtmlLabel10);
-            this.guna2Panel1.Controls.Add(this.txtTelefono);
-            this.guna2Panel1.Controls.Add(this.guna2HtmlLabel9);
-            this.guna2Panel1.Controls.Add(this.txtDireccion);
-            this.guna2Panel1.Controls.Add(this.guna2HtmlLabel8);
-            this.guna2Panel1.Controls.Add(this.txtCiudad);
-            this.guna2Panel1.Controls.Add(this.guna2HtmlLabel7);
-            this.guna2Panel1.Controls.Add(this.txtNombreContacto);
-            this.guna2Panel1.Controls.Add(this.guna2HtmlLabel11);
-            this.guna2Panel1.Controls.Add(this.cmbDocumento);
-            this.guna2Panel1.Controls.Add(this.btnModificar);
             this.guna2Panel1.Controls.Add(this.dgvProveedores);
-            this.guna2Panel1.Controls.Add(this.guna2HtmlLabel5);
-            this.guna2Panel1.Controls.Add(this.txtDescPredeterminadoProveedor);
-            this.guna2Panel1.Controls.Add(this.guna2HtmlLabel4);
-            this.guna2Panel1.Controls.Add(this.txtNroDocProveedor);
-            this.guna2Panel1.Controls.Add(this.btnAggProveedor);
-            this.guna2Panel1.Controls.Add(this.guna2HtmlLabel3);
-            this.guna2Panel1.Controls.Add(this.txtNombreProveedor);
-            this.guna2Panel1.Controls.Add(this.guna2HtmlLabel1);
-            this.guna2Panel1.Controls.Add(this.guna2HtmlLabel2);
-            this.guna2Panel1.Controls.Add(this.txtCorreoProveedor);
+            this.guna2Panel1.Controls.Add(this.pnlSubMenu);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
@@ -300,7 +278,7 @@
             "Yibuti",
             "Zambia",
             "Zimbabue"});
-            this.cmbPais.Location = new System.Drawing.Point(96, 114);
+            this.cmbPais.Location = new System.Drawing.Point(99, 112);
             this.cmbPais.Name = "cmbPais";
             this.cmbPais.Size = new System.Drawing.Size(191, 36);
             this.cmbPais.TabIndex = 47;
@@ -319,7 +297,7 @@
             this.cmbEstado.Items.AddRange(new object[] {
             "Activo",
             "Inactivo"});
-            this.cmbEstado.Location = new System.Drawing.Point(755, 48);
+            this.cmbEstado.Location = new System.Drawing.Point(758, 46);
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(154, 36);
             this.cmbEstado.TabIndex = 46;
@@ -328,8 +306,8 @@
             // 
             this.guna2HtmlLabel12.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel12.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel12.Location = new System.Drawing.Point(755, 29);
+            this.guna2HtmlLabel12.ForeColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel12.Location = new System.Drawing.Point(758, 27);
             this.guna2HtmlLabel12.Name = "guna2HtmlLabel12";
             this.guna2HtmlLabel12.Size = new System.Drawing.Size(56, 18);
             this.guna2HtmlLabel12.TabIndex = 45;
@@ -348,7 +326,7 @@
             this.txtBuscar.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtBuscar.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtBuscar.IconLeft = global::ModuloDeCompra_BD.Properties.Resources.brows_browsing_find_search_seo_web_zoom_icon_123196;
-            this.txtBuscar.Location = new System.Drawing.Point(821, 209);
+            this.txtBuscar.Location = new System.Drawing.Point(824, 207);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.PlaceholderText = "";
             this.txtBuscar.SelectedText = "";
@@ -360,8 +338,8 @@
             // 
             this.guna2HtmlLabel10.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel10.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel10.Location = new System.Drawing.Point(512, 94);
+            this.guna2HtmlLabel10.ForeColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel10.Location = new System.Drawing.Point(515, 92);
             this.guna2HtmlLabel10.Name = "guna2HtmlLabel10";
             this.guna2HtmlLabel10.Size = new System.Drawing.Size(69, 18);
             this.guna2HtmlLabel10.TabIndex = 43;
@@ -379,7 +357,7 @@
             this.txtTelefono.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTelefono.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtTelefono.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTelefono.Location = new System.Drawing.Point(512, 119);
+            this.txtTelefono.Location = new System.Drawing.Point(515, 117);
             this.txtTelefono.MaxLength = 10;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.PlaceholderText = "";
@@ -391,8 +369,8 @@
             // 
             this.guna2HtmlLabel9.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel9.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel9.Location = new System.Drawing.Point(96, 150);
+            this.guna2HtmlLabel9.ForeColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel9.Location = new System.Drawing.Point(99, 148);
             this.guna2HtmlLabel9.Name = "guna2HtmlLabel9";
             this.guna2HtmlLabel9.Size = new System.Drawing.Size(73, 18);
             this.guna2HtmlLabel9.TabIndex = 41;
@@ -410,7 +388,7 @@
             this.txtDireccion.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDireccion.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtDireccion.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDireccion.Location = new System.Drawing.Point(96, 170);
+            this.txtDireccion.Location = new System.Drawing.Point(99, 168);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.PlaceholderText = "";
             this.txtDireccion.SelectedText = "";
@@ -421,8 +399,8 @@
             // 
             this.guna2HtmlLabel8.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel8.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel8.Location = new System.Drawing.Point(304, 94);
+            this.guna2HtmlLabel8.ForeColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel8.Location = new System.Drawing.Point(307, 92);
             this.guna2HtmlLabel8.Name = "guna2HtmlLabel8";
             this.guna2HtmlLabel8.Size = new System.Drawing.Size(56, 18);
             this.guna2HtmlLabel8.TabIndex = 39;
@@ -440,7 +418,7 @@
             this.txtCiudad.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCiudad.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtCiudad.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCiudad.Location = new System.Drawing.Point(304, 114);
+            this.txtCiudad.Location = new System.Drawing.Point(307, 112);
             this.txtCiudad.Name = "txtCiudad";
             this.txtCiudad.PlaceholderText = "";
             this.txtCiudad.SelectedText = "";
@@ -451,8 +429,8 @@
             // 
             this.guna2HtmlLabel7.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel7.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel7.Location = new System.Drawing.Point(96, 94);
+            this.guna2HtmlLabel7.ForeColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel7.Location = new System.Drawing.Point(99, 92);
             this.guna2HtmlLabel7.Name = "guna2HtmlLabel7";
             this.guna2HtmlLabel7.Size = new System.Drawing.Size(38, 18);
             this.guna2HtmlLabel7.TabIndex = 37;
@@ -470,7 +448,7 @@
             this.txtNombreContacto.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNombreContacto.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtNombreContacto.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNombreContacto.Location = new System.Drawing.Point(304, 53);
+            this.txtNombreContacto.Location = new System.Drawing.Point(307, 51);
             this.txtNombreContacto.Name = "txtNombreContacto";
             this.txtNombreContacto.PlaceholderText = "";
             this.txtNombreContacto.SelectedText = "";
@@ -481,8 +459,8 @@
             // 
             this.guna2HtmlLabel11.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel11.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel11.Location = new System.Drawing.Point(304, 29);
+            this.guna2HtmlLabel11.ForeColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel11.Location = new System.Drawing.Point(307, 27);
             this.guna2HtmlLabel11.Name = "guna2HtmlLabel11";
             this.guna2HtmlLabel11.Size = new System.Drawing.Size(147, 18);
             this.guna2HtmlLabel11.TabIndex = 35;
@@ -503,7 +481,7 @@
             "CEDULA",
             "RUC",
             "PASAPORTE"});
-            this.cmbDocumento.Location = new System.Drawing.Point(755, 114);
+            this.cmbDocumento.Location = new System.Drawing.Point(758, 112);
             this.cmbDocumento.Name = "cmbDocumento";
             this.cmbDocumento.Size = new System.Drawing.Size(154, 36);
             this.cmbDocumento.TabIndex = 33;
@@ -522,7 +500,7 @@
             this.btnModificar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.Color.White;
             this.btnModificar.IndicateFocus = true;
-            this.btnModificar.Location = new System.Drawing.Point(625, 170);
+            this.btnModificar.Location = new System.Drawing.Point(628, 168);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(100, 45);
             this.btnModificar.TabIndex = 32;
@@ -554,7 +532,7 @@
             // 
             this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel5.ForeColor = System.Drawing.Color.Black;
+            this.guna2HtmlLabel5.ForeColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel5.Location = new System.Drawing.Point(929, 29);
             this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
             this.guna2HtmlLabel5.Size = new System.Drawing.Size(195, 18);
@@ -573,7 +551,7 @@
             this.txtDescPredeterminadoProveedor.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDescPredeterminadoProveedor.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtDescPredeterminadoProveedor.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDescPredeterminadoProveedor.Location = new System.Drawing.Point(929, 53);
+            this.txtDescPredeterminadoProveedor.Location = new System.Drawing.Point(932, 51);
             this.txtDescPredeterminadoProveedor.Name = "txtDescPredeterminadoProveedor";
             this.txtDescPredeterminadoProveedor.PlaceholderText = "";
             this.txtDescPredeterminadoProveedor.SelectedText = "";
@@ -584,8 +562,8 @@
             // 
             this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel4.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel4.Location = new System.Drawing.Point(934, 94);
+            this.guna2HtmlLabel4.ForeColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel4.Location = new System.Drawing.Point(937, 92);
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
             this.guna2HtmlLabel4.Size = new System.Drawing.Size(62, 18);
             this.guna2HtmlLabel4.TabIndex = 8;
@@ -604,7 +582,7 @@
             this.txtNroDocProveedor.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNroDocProveedor.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtNroDocProveedor.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNroDocProveedor.Location = new System.Drawing.Point(929, 114);
+            this.txtNroDocProveedor.Location = new System.Drawing.Point(932, 112);
             this.txtNroDocProveedor.Name = "txtNroDocProveedor";
             this.txtNroDocProveedor.PlaceholderText = "";
             this.txtNroDocProveedor.SelectedText = "";
@@ -624,7 +602,7 @@
             this.btnAggProveedor.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAggProveedor.ForeColor = System.Drawing.Color.White;
             this.btnAggProveedor.IndicateFocus = true;
-            this.btnAggProveedor.Location = new System.Drawing.Point(433, 170);
+            this.btnAggProveedor.Location = new System.Drawing.Point(436, 168);
             this.btnAggProveedor.Name = "btnAggProveedor";
             this.btnAggProveedor.Size = new System.Drawing.Size(165, 45);
             this.btnAggProveedor.TabIndex = 0;
@@ -635,8 +613,8 @@
             // 
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel3.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(755, 94);
+            this.guna2HtmlLabel3.ForeColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(758, 92);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
             this.guna2HtmlLabel3.Size = new System.Drawing.Size(69, 18);
             this.guna2HtmlLabel3.TabIndex = 6;
@@ -654,7 +632,7 @@
             this.txtNombreProveedor.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNombreProveedor.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtNombreProveedor.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNombreProveedor.Location = new System.Drawing.Point(96, 53);
+            this.txtNombreProveedor.Location = new System.Drawing.Point(99, 51);
             this.txtNombreProveedor.Name = "txtNombreProveedor";
             this.txtNombreProveedor.PlaceholderText = "";
             this.txtNombreProveedor.SelectedText = "";
@@ -665,8 +643,8 @@
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(96, 29);
+            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(99, 27);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(62, 18);
             this.guna2HtmlLabel1.TabIndex = 2;
@@ -676,8 +654,8 @@
             // 
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(512, 29);
+            this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(515, 27);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             this.guna2HtmlLabel2.Size = new System.Drawing.Size(54, 18);
             this.guna2HtmlLabel2.TabIndex = 4;
@@ -695,12 +673,46 @@
             this.txtCorreoProveedor.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCorreoProveedor.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtCorreoProveedor.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCorreoProveedor.Location = new System.Drawing.Point(512, 53);
+            this.txtCorreoProveedor.Location = new System.Drawing.Point(515, 51);
             this.txtCorreoProveedor.Name = "txtCorreoProveedor";
             this.txtCorreoProveedor.PlaceholderText = "";
             this.txtCorreoProveedor.SelectedText = "";
             this.txtCorreoProveedor.Size = new System.Drawing.Size(213, 31);
             this.txtCorreoProveedor.TabIndex = 3;
+            // 
+            // pnlSubMenu
+            // 
+            this.pnlSubMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
+            this.pnlSubMenu.Controls.Add(this.cmbPais);
+            this.pnlSubMenu.Controls.Add(this.guna2HtmlLabel5);
+            this.pnlSubMenu.Controls.Add(this.cmbEstado);
+            this.pnlSubMenu.Controls.Add(this.txtNombreContacto);
+            this.pnlSubMenu.Controls.Add(this.guna2HtmlLabel12);
+            this.pnlSubMenu.Controls.Add(this.txtCorreoProveedor);
+            this.pnlSubMenu.Controls.Add(this.txtBuscar);
+            this.pnlSubMenu.Controls.Add(this.guna2HtmlLabel2);
+            this.pnlSubMenu.Controls.Add(this.guna2HtmlLabel10);
+            this.pnlSubMenu.Controls.Add(this.guna2HtmlLabel1);
+            this.pnlSubMenu.Controls.Add(this.txtTelefono);
+            this.pnlSubMenu.Controls.Add(this.txtNombreProveedor);
+            this.pnlSubMenu.Controls.Add(this.guna2HtmlLabel9);
+            this.pnlSubMenu.Controls.Add(this.guna2HtmlLabel3);
+            this.pnlSubMenu.Controls.Add(this.txtDireccion);
+            this.pnlSubMenu.Controls.Add(this.btnAggProveedor);
+            this.pnlSubMenu.Controls.Add(this.guna2HtmlLabel8);
+            this.pnlSubMenu.Controls.Add(this.txtNroDocProveedor);
+            this.pnlSubMenu.Controls.Add(this.txtCiudad);
+            this.pnlSubMenu.Controls.Add(this.guna2HtmlLabel4);
+            this.pnlSubMenu.Controls.Add(this.guna2HtmlLabel7);
+            this.pnlSubMenu.Controls.Add(this.txtDescPredeterminadoProveedor);
+            this.pnlSubMenu.Controls.Add(this.btnModificar);
+            this.pnlSubMenu.Controls.Add(this.guna2HtmlLabel11);
+            this.pnlSubMenu.Controls.Add(this.cmbDocumento);
+            this.pnlSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlSubMenu.Location = new System.Drawing.Point(0, 0);
+            this.pnlSubMenu.Name = "pnlSubMenu";
+            this.pnlSubMenu.Size = new System.Drawing.Size(1173, 250);
+            this.pnlSubMenu.TabIndex = 48;
             // 
             // FrmProveedores
             // 
@@ -714,8 +726,9 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmProveedores_Load);
             this.guna2Panel1.ResumeLayout(false);
-            this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProveedores)).EndInit();
+            this.pnlSubMenu.ResumeLayout(false);
+            this.pnlSubMenu.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -749,5 +762,6 @@
         private Guna.UI2.WinForms.Guna2ComboBox cmbEstado;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel12;
         private Guna.UI2.WinForms.Guna2ComboBox cmbPais;
+        private System.Windows.Forms.Panel pnlSubMenu;
     }
 }
