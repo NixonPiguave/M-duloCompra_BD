@@ -127,6 +127,7 @@
             this.label1.Size = new System.Drawing.Size(194, 19);
             this.label1.TabIndex = 11;
             this.label1.Text = "Movimientos de usuarios";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // lblHasta
             // 
@@ -138,6 +139,7 @@
             this.lblHasta.TabIndex = 9;
             this.lblHasta.Text = "Hasta";
             this.lblHasta.Visible = false;
+            this.lblHasta.Click += new System.EventHandler(this.lblHasta_Click);
             // 
             // lblDesde
             // 
@@ -149,6 +151,7 @@
             this.lblDesde.TabIndex = 8;
             this.lblDesde.Text = "Desde";
             this.lblDesde.Visible = false;
+            this.lblDesde.Click += new System.EventHandler(this.lblDesde_Click);
             // 
             // dtpHasta
             // 
@@ -165,6 +168,7 @@
             this.dtpHasta.TabIndex = 7;
             this.dtpHasta.Value = new System.DateTime(2025, 3, 24, 17, 47, 5, 996);
             this.dtpHasta.Visible = false;
+            this.dtpHasta.ValueChanged += new System.EventHandler(this.dtpHasta_ValueChanged);
             // 
             // dtpDesde
             // 
@@ -182,6 +186,7 @@
             this.dtpDesde.TabIndex = 0;
             this.dtpDesde.Value = new System.DateTime(2025, 3, 24, 17, 44, 11, 930);
             this.dtpDesde.Visible = false;
+            this.dtpDesde.ValueChanged += new System.EventHandler(this.dtpDesde_ValueChanged);
             // 
             // guna2Panel2
             // 
@@ -259,6 +264,7 @@
             this.label2.Size = new System.Drawing.Size(222, 25);
             this.label2.TabIndex = 2;
             this.label2.Text = "Reporte de auditoria ";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // lblUsuario
             // 

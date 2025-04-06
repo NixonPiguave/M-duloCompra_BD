@@ -158,5 +158,35 @@ namespace ModuloDeCompra_BD.Formulario
                 lblHasta.Visible = false;
             }
         }
+
+        private void lblDesde_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtpDesde_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtpHasta_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblHasta_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -119,9 +119,8 @@ namespace reporte
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            string sentencia = "SELECT \r\n    g.ID_GRN,\r\n    g.Fecha_Generada,\r\n    g.Estado,\r\n    g.TotalPagar,\r\n    g.TotalDevuelto,\r\n    g.TotalPagar - g.TotalDevuelto AS Neto,\r\n    c.Fecha_Registro,\r\n    c.Total_Valor,\r\n    c.Total_Bodega,\r\n    c.Diferencia,\r\n    c.Estado_Contable,\r\n    c.Usuario_Registro,\r\n    p.Nombre_Proveedor AS Proveedor\r\nFROM GRN_Header g\r\nLEFT JOIN GRN_Contable c ON g.ID_GRN = c.ID_GRN\r\nLEFT JOIN Proveedores p ON g.ID_Proveedor = p.ID_Proveedor\r\nORDER BY g.Fecha_Generada asc;";
-            frmreport ventas = new frmreport(sentencia, "dsGRN", "Reporte.rptgrn.rdlc");
-            ventas.ShowDialog();
+            fecha fech = new fecha();
+            fech.ShowDialog();
         }
     }
 }
