@@ -17,6 +17,9 @@ namespace ModuloDeCompra_BD.Formulario
     {
         private CsEmpresa empresa;
         private byte[] imagenActual;
+        private string cuentaContable;
+
+        public string CuentaContable { get => cuentaContable; set => cuentaContable = value; }
 
         public FrmEditarEmpresa()
         {
@@ -116,7 +119,8 @@ namespace ModuloDeCompra_BD.Formulario
                 txtTelefono.Text = row.Cells["Telefono"].Value.ToString();
                 txtDireccion.Text = row.Cells["Direccion"].Value.ToString();
                 txtCorreo.Text = row.Cells["Correo"].Value.ToString();
-
+                txtCuenta.Text = row.Cells["CuentaContable"].Value.ToString();
+                CuentaContable = txtCuenta.Text;
                 if (row.Cells["Logo_Empresa"].Value != DBNull.Value)
                 {
                     imagenActual = (byte[])row.Cells["Logo_Empresa"].Value;

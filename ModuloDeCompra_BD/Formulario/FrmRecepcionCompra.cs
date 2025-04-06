@@ -180,6 +180,7 @@ namespace ModuloDeCompra_BD.Formulario
 
                         if (dgvaux.Rows.Count > 0)
                         {
+                            FrmEditarEmpresa editar = new FrmEditarEmpresa();
                             int grnId = Convert.ToInt32(dgvaux.Rows[0].Cells[1].Value);
                             int diarioId = Convert.ToInt32(dgvaux.Rows[0].Cells[2].Value);
 
