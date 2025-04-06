@@ -143,7 +143,7 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void btnGenerarGrn_Click(object sender, EventArgs e)
         {
-          
+
             try
             {
                 string Detalle = "";
@@ -208,58 +208,37 @@ namespace ModuloDeCompra_BD.Formulario
                     if (!string.IsNullOrEmpty(txtDebito.Text) || !string.IsNullOrEmpty(txtCredito.Text))
                     {
                         string query = $@"
-                        DECLARE @GRNID INT, @DIARIOID INT;
-                        EXEC spAgregarGRNHeader 
-                            @XML_GRNHeader = '{xmlRequisicion}', 
-                            @Bodega = {1}, 
-                            @GRNHeaderID = @GRNID OUTPUT, 
-                            @DiarioInveID = @DIARIOID OUTPUT;
-                        SELECT @GRNID AS GRN_ID, @DIARIOID AS DIARIO_ID;";
-
+                        DECLARE @GRNID INT = 0;
+                        EXEC Prueba 
+                           '{xmlRequisicion}', 
+                            {1}, 
+                            '{txtDebito.Text}',  
+                            '{txtCredito.Text}',
+                            @GRNID;
+                            SELECT @GRNID AS GRN_ID";
                         dgvaux.DataSource = CsComandosSql.RetornaDatos(query);
-
                         if (dgvaux.Rows.Count > 0)
                         {
-                            int grnId = Convert.ToInt32(dgvaux.Rows[0].Cells[1].Value);
-                            int diarioId = Convert.ToInt32(dgvaux.Rows[0].Cells[2].Value);
-
-                            string queryContable = $@"
-                            EXEC SP_RegistrarDiarioContableGRN
-                                @ID_GRN = {grnId}, 
-                                @Diario = {diarioId}, 
-                                @CuentaDebito = '{txtDebito.Text}',  
-                                @CuentaCredito = '{txtCredito.Text}'";
-
-                            if (grnId > 0 && diarioId > 0)
-                            {
-                                int idorden = Convert.ToInt32(txtOrdenCompra.Text);
-                                OrdenyGrn(idorden, cbTipoGRN.SelectedIndex);
-                                ActualizarEstadoRecibido(idorden);
-
-                                if (CsComandosSql.InserDeletUpdate(queryContable))
-                                {
-                                    MessageBox.Show("GRN REGISTRADO");
-                                    string sentencia = $"select GH.ID_Orden, Pr.Nombre_Proveedor, Pr.Correo, Pr.Direccion ,case when S.Nom_Servicio is null then P.NomProducto " +
+                            int grnId = Convert.ToInt32(dgvaux.Rows[0].Cells[0].Value);
+                            int idorden = Convert.ToInt32(txtOrdenCompra.Text);
+                            OrdenyGrn(idorden, cbTipoGRN.SelectedIndex);
+                            ActualizarEstadoRecibido(idorden);
+                            string sentencia = $"select GH.ID_Orden, Pr.Nombre_Proveedor, Pr.Correo, Pr.Direccion ,case when S.Nom_Servicio is null then P.NomProducto " +
                                         $"when P.NomProducto is null then S.Nom_Servicio end as [ProductoServicio], GD.Cantidad, GD.Costo " +
                                         $"from Grn_Details GD inner join GRN_Header GH on GD.ID_GRN=GH.ID_GRN left join " +
                                         $"Producto P on GD.ID_Producto=P.ID_Producto left join Servicio S on " +
                                         $"S.ID_Servicio=GD.ID_Servicio inner join Proveedores Pr on Pr.ID_Proveedor=GH.ID_Proveedor where GD.ID_GRN={grnId} ";
-                                    frmreport ventas = new frmreport(sentencia, "dsGrn", "Reporte.DocumentoGRNrecibido.rdlc");
-                                    ventas.ShowDialog();
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Error al Registrar la Contabilidad");
-                                }
-                            }
-                            else
-                            {
-                                MessageBox.Show("Error al registrar el GRN - IDs no válidos");
-                            }
+                            frmreport ventas = new frmreport(sentencia, "dsGrn", "Reporte.DocumentoGRNrecibido.rdlc");
+                            ventas.ShowDialog();
+
+                        }
+                        if (CsComandosSql.InserDeletUpdate(query))
+                        {
+                            MessageBox.Show("Se ha registrado el GRN");
                         }
                         else
                         {
-                            MessageBox.Show("No se obtuvieron resultados del registro GRN");
+                            MessageBox.Show("Error");
                         }
                     }
                     else
