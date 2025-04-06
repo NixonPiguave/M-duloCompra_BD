@@ -101,8 +101,9 @@ namespace ModuloDeCompra_BD.Formulario
             idq = Convert.ToInt32(dgvRol[0, celda].Value.ToString());
         }
         private void btnModificar_Click(object sender, EventArgs e)
-        { 
-                
+        {
+            
+
         }
         private void btnAceptar_Click(object sender, EventArgs e)
         {
