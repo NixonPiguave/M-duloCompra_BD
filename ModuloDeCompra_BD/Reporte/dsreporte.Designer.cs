@@ -56,6 +56,8 @@ namespace ModuloDeCompra_BD.Reporte {
         
         private FacturaDataTable tableFactura;
         
+        private DocGRNDataTable tableDocGRN;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -131,6 +133,9 @@ namespace ModuloDeCompra_BD.Reporte {
                 }
                 if ((ds.Tables["Factura"] != null)) {
                     base.Tables.Add(new FacturaDataTable(ds.Tables["Factura"]));
+                }
+                if ((ds.Tables["DocGRN"] != null)) {
+                    base.Tables.Add(new DocGRNDataTable(ds.Tables["DocGRN"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -312,6 +317,16 @@ namespace ModuloDeCompra_BD.Reporte {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public DocGRNDataTable DocGRN {
+            get {
+                return this.tableDocGRN;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -424,6 +439,9 @@ namespace ModuloDeCompra_BD.Reporte {
                 }
                 if ((ds.Tables["Factura"] != null)) {
                     base.Tables.Add(new FacturaDataTable(ds.Tables["Factura"]));
+                }
+                if ((ds.Tables["DocGRN"] != null)) {
+                    base.Tables.Add(new DocGRNDataTable(ds.Tables["DocGRN"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -554,6 +572,12 @@ namespace ModuloDeCompra_BD.Reporte {
                     this.tableFactura.InitVars();
                 }
             }
+            this.tableDocGRN = ((DocGRNDataTable)(base.Tables["DocGRN"]));
+            if ((initTable == true)) {
+                if ((this.tableDocGRN != null)) {
+                    this.tableDocGRN.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -596,6 +620,8 @@ namespace ModuloDeCompra_BD.Reporte {
             base.Tables.Add(this.tableEmpresa);
             this.tableFactura = new FacturaDataTable();
             base.Tables.Add(this.tableFactura);
+            this.tableDocGRN = new DocGRNDataTable();
+            base.Tables.Add(this.tableDocGRN);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -691,6 +717,12 @@ namespace ModuloDeCompra_BD.Reporte {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private bool ShouldSerializeFactura() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private bool ShouldSerializeDocGRN() {
             return false;
         }
         
@@ -796,6 +828,9 @@ namespace ModuloDeCompra_BD.Reporte {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public delegate void FacturaRowChangeEventHandler(object sender, FacturaRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public delegate void DocGRNRowChangeEventHandler(object sender, DocGRNRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -5874,6 +5909,337 @@ namespace ModuloDeCompra_BD.Reporte {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class DocGRNDataTable : global::System.Data.TypedTableBase<DocGRNRow> {
+            
+            private global::System.Data.DataColumn columnProductoServicio;
+            
+            private global::System.Data.DataColumn columnCantidad;
+            
+            private global::System.Data.DataColumn columnCosto;
+            
+            private global::System.Data.DataColumn columnNombre_Proveedor;
+            
+            private global::System.Data.DataColumn columnCorreo;
+            
+            private global::System.Data.DataColumn columnDireccion;
+            
+            private global::System.Data.DataColumn columnID_Orden;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public DocGRNDataTable() {
+                this.TableName = "DocGRN";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal DocGRNDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected DocGRNDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ProductoServicioColumn {
+                get {
+                    return this.columnProductoServicio;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CantidadColumn {
+                get {
+                    return this.columnCantidad;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CostoColumn {
+                get {
+                    return this.columnCosto;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Nombre_ProveedorColumn {
+                get {
+                    return this.columnNombre_Proveedor;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CorreoColumn {
+                get {
+                    return this.columnCorreo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn DireccionColumn {
+                get {
+                    return this.columnDireccion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ID_OrdenColumn {
+                get {
+                    return this.columnID_Orden;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public DocGRNRow this[int index] {
+                get {
+                    return ((DocGRNRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event DocGRNRowChangeEventHandler DocGRNRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event DocGRNRowChangeEventHandler DocGRNRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event DocGRNRowChangeEventHandler DocGRNRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event DocGRNRowChangeEventHandler DocGRNRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void AddDocGRNRow(DocGRNRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public DocGRNRow AddDocGRNRow(string ProductoServicio, string Cantidad, string Costo, string Nombre_Proveedor, string Correo, string Direccion, string ID_Orden) {
+                DocGRNRow rowDocGRNRow = ((DocGRNRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        ProductoServicio,
+                        Cantidad,
+                        Costo,
+                        Nombre_Proveedor,
+                        Correo,
+                        Direccion,
+                        ID_Orden};
+                rowDocGRNRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowDocGRNRow);
+                return rowDocGRNRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                DocGRNDataTable cln = ((DocGRNDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new DocGRNDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal void InitVars() {
+                this.columnProductoServicio = base.Columns["ProductoServicio"];
+                this.columnCantidad = base.Columns["Cantidad"];
+                this.columnCosto = base.Columns["Costo"];
+                this.columnNombre_Proveedor = base.Columns["Nombre_Proveedor"];
+                this.columnCorreo = base.Columns["Correo"];
+                this.columnDireccion = base.Columns["Direccion"];
+                this.columnID_Orden = base.Columns["ID_Orden"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            private void InitClass() {
+                this.columnProductoServicio = new global::System.Data.DataColumn("ProductoServicio", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnProductoServicio);
+                this.columnCantidad = new global::System.Data.DataColumn("Cantidad", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCantidad);
+                this.columnCosto = new global::System.Data.DataColumn("Costo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCosto);
+                this.columnNombre_Proveedor = new global::System.Data.DataColumn("Nombre_Proveedor", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNombre_Proveedor);
+                this.columnCorreo = new global::System.Data.DataColumn("Correo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCorreo);
+                this.columnDireccion = new global::System.Data.DataColumn("Direccion", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDireccion);
+                this.columnID_Orden = new global::System.Data.DataColumn("ID_Orden", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_Orden);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public DocGRNRow NewDocGRNRow() {
+                return ((DocGRNRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new DocGRNRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(DocGRNRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.DocGRNRowChanged != null)) {
+                    this.DocGRNRowChanged(this, new DocGRNRowChangeEvent(((DocGRNRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.DocGRNRowChanging != null)) {
+                    this.DocGRNRowChanging(this, new DocGRNRowChangeEvent(((DocGRNRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.DocGRNRowDeleted != null)) {
+                    this.DocGRNRowDeleted(this, new DocGRNRowChangeEvent(((DocGRNRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.DocGRNRowDeleting != null)) {
+                    this.DocGRNRowDeleting(this, new DocGRNRowChangeEvent(((DocGRNRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void RemoveDocGRNRow(DocGRNRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                dsreporte ds = new dsreporte();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "DocGRNDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class VentasPorOrdenRow : global::System.Data.DataRow {
@@ -8598,6 +8964,217 @@ namespace ModuloDeCompra_BD.Reporte {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class DocGRNRow : global::System.Data.DataRow {
+            
+            private DocGRNDataTable tableDocGRN;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal DocGRNRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableDocGRN = ((DocGRNDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string ProductoServicio {
+                get {
+                    try {
+                        return ((string)(this[this.tableDocGRN.ProductoServicioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ProductoServicio\' de la tabla \'DocGRN\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDocGRN.ProductoServicioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Cantidad {
+                get {
+                    try {
+                        return ((string)(this[this.tableDocGRN.CantidadColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Cantidad\' de la tabla \'DocGRN\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDocGRN.CantidadColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Costo {
+                get {
+                    try {
+                        return ((string)(this[this.tableDocGRN.CostoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Costo\' de la tabla \'DocGRN\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDocGRN.CostoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Nombre_Proveedor {
+                get {
+                    try {
+                        return ((string)(this[this.tableDocGRN.Nombre_ProveedorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Nombre_Proveedor\' de la tabla \'DocGRN\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDocGRN.Nombre_ProveedorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Correo {
+                get {
+                    try {
+                        return ((string)(this[this.tableDocGRN.CorreoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Correo\' de la tabla \'DocGRN\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDocGRN.CorreoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Direccion {
+                get {
+                    try {
+                        return ((string)(this[this.tableDocGRN.DireccionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Direccion\' de la tabla \'DocGRN\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDocGRN.DireccionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string ID_Orden {
+                get {
+                    try {
+                        return ((string)(this[this.tableDocGRN.ID_OrdenColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ID_Orden\' de la tabla \'DocGRN\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDocGRN.ID_OrdenColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsProductoServicioNull() {
+                return this.IsNull(this.tableDocGRN.ProductoServicioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetProductoServicioNull() {
+                this[this.tableDocGRN.ProductoServicioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsCantidadNull() {
+                return this.IsNull(this.tableDocGRN.CantidadColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetCantidadNull() {
+                this[this.tableDocGRN.CantidadColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsCostoNull() {
+                return this.IsNull(this.tableDocGRN.CostoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetCostoNull() {
+                this[this.tableDocGRN.CostoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsNombre_ProveedorNull() {
+                return this.IsNull(this.tableDocGRN.Nombre_ProveedorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetNombre_ProveedorNull() {
+                this[this.tableDocGRN.Nombre_ProveedorColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsCorreoNull() {
+                return this.IsNull(this.tableDocGRN.CorreoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetCorreoNull() {
+                this[this.tableDocGRN.CorreoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsDireccionNull() {
+                return this.IsNull(this.tableDocGRN.DireccionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetDireccionNull() {
+                this[this.tableDocGRN.DireccionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsID_OrdenNull() {
+                return this.IsNull(this.tableDocGRN.ID_OrdenColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetID_OrdenNull() {
+                this[this.tableDocGRN.ID_OrdenColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -9127,6 +9704,40 @@ namespace ModuloDeCompra_BD.Reporte {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public FacturaRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public class DocGRNRowChangeEvent : global::System.EventArgs {
+            
+            private DocGRNRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public DocGRNRowChangeEvent(DocGRNRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public DocGRNRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -14041,111 +14652,12 @@ SELECT ID_Empresa, Nombre_Empresa, Logo_Empresa, RUC, Direccion, Telefono, Corre
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._rpt_CategoriasDetallesTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.rpt_CategoriasDetalles.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._empresaTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Empresa.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._rpt_CategoriasDetallesTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._rpt_OrdenesDetallesTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.rpt_OrdenesDetalles.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._rpt_OrdenesDetallesTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._rpt_Productos_Requi_DetallesTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.rpt_Productos_Requi_Detalles.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._rpt_Productos_Requi_DetallesTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._rpt_Reporte_ProveedoresTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.rpt_Reporte_Proveedores.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._rpt_Reporte_ProveedoresTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._rpt_ReporteComprasVentasTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.rpt_ReporteComprasVentas.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._rpt_ReporteComprasVentasTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._rpt_ReporteDevolucionesProductoTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.rpt_ReporteDevolucionesProducto.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._rpt_ReporteDevolucionesProductoTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._rpt_ReporteEstadoStockTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.rpt_ReporteEstadoStock.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._rpt_ReporteEstadoStockTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._rpt_ReporteIVAProductos_ServiciosTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.rpt_ReporteIVAProductos_Servicios.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._rpt_ReporteIVAProductos_ServiciosTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._rpt_ReporteMovimientosInventarioTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.rpt_ReporteMovimientosInventario.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._rpt_ReporteMovimientosInventarioTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._rpt_RequisicionesDetallesTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.rpt_RequisicionesDetalles.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._rpt_RequisicionesDetallesTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._rpt_UsuarioRolesTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.rpt_UsuarioRoles.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._rpt_UsuarioRolesTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._auditoriaTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Auditoria.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._auditoriaTableAdapter.Update(updatedRows));
+                    result = (result + this._empresaTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -14158,12 +14670,111 @@ SELECT ID_Empresa, Nombre_Empresa, Logo_Empresa, RUC, Direccion, Telefono, Corre
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._empresaTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Empresa.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._auditoriaTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Auditoria.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._empresaTableAdapter.Update(updatedRows));
+                    result = (result + this._auditoriaTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._rpt_UsuarioRolesTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.rpt_UsuarioRoles.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._rpt_UsuarioRolesTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._rpt_RequisicionesDetallesTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.rpt_RequisicionesDetalles.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._rpt_RequisicionesDetallesTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._rpt_ReporteMovimientosInventarioTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.rpt_ReporteMovimientosInventario.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._rpt_ReporteMovimientosInventarioTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._rpt_ReporteIVAProductos_ServiciosTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.rpt_ReporteIVAProductos_Servicios.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._rpt_ReporteIVAProductos_ServiciosTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._rpt_ReporteDevolucionesProductoTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.rpt_ReporteDevolucionesProducto.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._rpt_ReporteDevolucionesProductoTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._rpt_ReporteComprasVentasTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.rpt_ReporteComprasVentas.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._rpt_ReporteComprasVentasTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._rpt_Reporte_ProveedoresTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.rpt_Reporte_Proveedores.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._rpt_Reporte_ProveedoresTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._rpt_Productos_Requi_DetallesTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.rpt_Productos_Requi_Detalles.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._rpt_Productos_Requi_DetallesTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._rpt_OrdenesDetallesTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.rpt_OrdenesDetalles.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._rpt_OrdenesDetallesTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._rpt_CategoriasDetallesTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.rpt_CategoriasDetalles.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._rpt_CategoriasDetallesTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._rpt_ReporteEstadoStockTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.rpt_ReporteEstadoStock.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._rpt_ReporteEstadoStockTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -14185,99 +14796,11 @@ SELECT ID_Empresa, Nombre_Empresa, Logo_Empresa, RUC, Direccion, Telefono, Corre
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._rpt_CategoriasDetallesTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.rpt_CategoriasDetalles.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._empresaTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Empresa.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._rpt_CategoriasDetallesTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._rpt_OrdenesDetallesTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.rpt_OrdenesDetalles.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._rpt_OrdenesDetallesTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._rpt_Productos_Requi_DetallesTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.rpt_Productos_Requi_Detalles.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._rpt_Productos_Requi_DetallesTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._rpt_Reporte_ProveedoresTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.rpt_Reporte_Proveedores.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._rpt_Reporte_ProveedoresTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._rpt_ReporteComprasVentasTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.rpt_ReporteComprasVentas.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._rpt_ReporteComprasVentasTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._rpt_ReporteDevolucionesProductoTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.rpt_ReporteDevolucionesProducto.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._rpt_ReporteDevolucionesProductoTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._rpt_ReporteEstadoStockTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.rpt_ReporteEstadoStock.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._rpt_ReporteEstadoStockTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._rpt_ReporteIVAProductos_ServiciosTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.rpt_ReporteIVAProductos_Servicios.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._rpt_ReporteIVAProductos_ServiciosTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._rpt_ReporteMovimientosInventarioTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.rpt_ReporteMovimientosInventario.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._rpt_ReporteMovimientosInventarioTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._rpt_RequisicionesDetallesTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.rpt_RequisicionesDetalles.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._rpt_RequisicionesDetallesTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._rpt_UsuarioRolesTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.rpt_UsuarioRoles.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._rpt_UsuarioRolesTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._auditoriaTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Auditoria.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._auditoriaTableAdapter.Update(addedRows));
+                    result = (result + this._empresaTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -14289,11 +14812,99 @@ SELECT ID_Empresa, Nombre_Empresa, Logo_Empresa, RUC, Direccion, Telefono, Corre
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._empresaTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Empresa.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._auditoriaTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Auditoria.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._empresaTableAdapter.Update(addedRows));
+                    result = (result + this._auditoriaTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._rpt_UsuarioRolesTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.rpt_UsuarioRoles.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._rpt_UsuarioRolesTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._rpt_RequisicionesDetallesTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.rpt_RequisicionesDetalles.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._rpt_RequisicionesDetallesTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._rpt_ReporteMovimientosInventarioTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.rpt_ReporteMovimientosInventario.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._rpt_ReporteMovimientosInventarioTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._rpt_ReporteIVAProductos_ServiciosTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.rpt_ReporteIVAProductos_Servicios.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._rpt_ReporteIVAProductos_ServiciosTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._rpt_ReporteDevolucionesProductoTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.rpt_ReporteDevolucionesProducto.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._rpt_ReporteDevolucionesProductoTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._rpt_ReporteComprasVentasTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.rpt_ReporteComprasVentas.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._rpt_ReporteComprasVentasTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._rpt_Reporte_ProveedoresTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.rpt_Reporte_Proveedores.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._rpt_Reporte_ProveedoresTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._rpt_Productos_Requi_DetallesTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.rpt_Productos_Requi_Detalles.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._rpt_Productos_Requi_DetallesTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._rpt_OrdenesDetallesTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.rpt_OrdenesDetalles.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._rpt_OrdenesDetallesTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._rpt_CategoriasDetallesTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.rpt_CategoriasDetalles.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._rpt_CategoriasDetallesTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._rpt_ReporteEstadoStockTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.rpt_ReporteEstadoStock.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._rpt_ReporteEstadoStockTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -14307,62 +14918,6 @@ SELECT ID_Empresa, Nombre_Empresa, Logo_Empresa, RUC, Direccion, Telefono, Corre
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private int UpdateDeletedRows(dsreporte dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._empresaTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Empresa.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._empresaTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._auditoriaSesionTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.AuditoriaSesion.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._auditoriaSesionTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._auditoriaTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Auditoria.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._auditoriaTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._rpt_UsuarioRolesTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.rpt_UsuarioRoles.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._rpt_UsuarioRolesTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._rpt_RequisicionesDetallesTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.rpt_RequisicionesDetalles.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._rpt_RequisicionesDetallesTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._rpt_ReporteMovimientosInventarioTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.rpt_ReporteMovimientosInventario.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._rpt_ReporteMovimientosInventarioTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._rpt_ReporteIVAProductos_ServiciosTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.rpt_ReporteIVAProductos_Servicios.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._rpt_ReporteIVAProductos_ServiciosTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._rpt_ReporteEstadoStockTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.rpt_ReporteEstadoStock.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -14371,35 +14926,11 @@ SELECT ID_Empresa, Nombre_Empresa, Logo_Empresa, RUC, Direccion, Telefono, Corre
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._rpt_ReporteDevolucionesProductoTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.rpt_ReporteDevolucionesProducto.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._rpt_CategoriasDetallesTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.rpt_CategoriasDetalles.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._rpt_ReporteDevolucionesProductoTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._rpt_ReporteComprasVentasTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.rpt_ReporteComprasVentas.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._rpt_ReporteComprasVentasTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._rpt_Reporte_ProveedoresTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.rpt_Reporte_Proveedores.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._rpt_Reporte_ProveedoresTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._rpt_Productos_Requi_DetallesTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.rpt_Productos_Requi_Detalles.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._rpt_Productos_Requi_DetallesTableAdapter.Update(deletedRows));
+                    result = (result + this._rpt_CategoriasDetallesTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -14411,11 +14942,91 @@ SELECT ID_Empresa, Nombre_Empresa, Logo_Empresa, RUC, Direccion, Telefono, Corre
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._rpt_CategoriasDetallesTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.rpt_CategoriasDetalles.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._rpt_Productos_Requi_DetallesTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.rpt_Productos_Requi_Detalles.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._rpt_CategoriasDetallesTableAdapter.Update(deletedRows));
+                    result = (result + this._rpt_Productos_Requi_DetallesTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._rpt_Reporte_ProveedoresTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.rpt_Reporte_Proveedores.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._rpt_Reporte_ProveedoresTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._rpt_ReporteComprasVentasTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.rpt_ReporteComprasVentas.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._rpt_ReporteComprasVentasTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._rpt_ReporteDevolucionesProductoTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.rpt_ReporteDevolucionesProducto.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._rpt_ReporteDevolucionesProductoTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._rpt_ReporteIVAProductos_ServiciosTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.rpt_ReporteIVAProductos_Servicios.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._rpt_ReporteIVAProductos_ServiciosTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._rpt_ReporteMovimientosInventarioTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.rpt_ReporteMovimientosInventario.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._rpt_ReporteMovimientosInventarioTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._rpt_RequisicionesDetallesTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.rpt_RequisicionesDetalles.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._rpt_RequisicionesDetallesTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._rpt_UsuarioRolesTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.rpt_UsuarioRoles.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._rpt_UsuarioRolesTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._auditoriaTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Auditoria.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._auditoriaTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._auditoriaSesionTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.AuditoriaSesion.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._auditoriaSesionTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._empresaTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Empresa.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._empresaTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }

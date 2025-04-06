@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace ModuloDeCompra_BD.Formulario
 {
-    public partial class FrmRecepcionCompra: Form
+    public partial class FrmRecepcionCompra : Form
     {
         public FrmRecepcionCompra()
         {
@@ -27,41 +27,58 @@ namespace ModuloDeCompra_BD.Formulario
             txtOrdenCompra.Text = ordenCompra.IdCat1.ToString();
             txtProveedor.Text = ordenCompra.IdProv.ToString();
             int idorden = ordenCompra.IdCat1;
-            if (txtProveedor.Text!= 0.ToString())
+            if (txtProveedor.Text != 0.ToString())
             {
-                OrdenyGrn(idorden);
+                OrdenyGrn(idorden, cbTipoGRN.SelectedIndex);
                 ActualizarEstadoRecibido(idorden);
-                lbCantRecib.Visible = true;
             }
         }
-        
-        private void OrdenyGrn(int idorden)
+
+        private void OrdenyGrn(int idorden, int index)
         {
-            string query = $"SELECT d.ID_Detail AS Detalle_De_Compra, p.ID_Producto, s.ID_Servicio,p.NomProducto AS Producto,s.Nom_Servicio AS Servicio,d.Cantidad AS Cantidad_Ordenada," +
+            if (index == 0)
+            {
+                dgvDetalleOrden.DataSource = null;
+                string query = $"SELECT d.ID_Detail AS Detalle_De_Compra, p.ID_Producto, s.ID_Servicio,p.NomProducto AS Producto,s.Nom_Servicio AS Servicio,d.Cantidad AS Cantidad_Ordenada," +
                     $" 0 AS CantidadRecibida,d.Cantidad - ISNULL((SELECT SUM(gd.Cantidad) FROM Grn_Details gd" +
                     $" INNER JOIN Grn_Header gh ON gd.ID_GRN = gh.ID_GRN WHERE (gd.ID_Producto = d.ID_Producto or gd.ID_Servicio=d.ID_Servicio)" +
                     $" AND gh.ID_Orden = {idorden}), 0) AS Cantidad_Pendiente,d.Costo AS Costo_Unitario FROM Detalle_Orden d" +
                     $" JOIN Orden_Compra o ON d.ID_Orden = o.ID_Orden LEFT JOIN Producto p ON d.ID_Producto = p.ID_Producto " +
                     $"  LEFT JOIN Servicio s ON d.ID_Servicio = s.ID_Servicio WHERE o.ID_Orden = {idorden} and d.Estado='Pendiente';";
-            dgvDetalleOrden.DataSource = CsComandosSql.RetornaDatos(query);
-            dgvDetalleOrden.Columns["CantidadRecibida"].ReadOnly = false;
-            string queryDetalle = $"select * from GRN_Header where ID_Orden={idorden}";
-            dgvGrnDeOrden.DataSource = CsComandosSql.RetornaDatos(queryDetalle);
-            dgvDetalleOrden.RowTemplate.Height = 30;
-            foreach (DataGridViewColumn column in dgvDetalleOrden.Columns)
-            {
-                if (column.Name != "CantidadRecibida")
+                dgvDetalleOrden.DataSource = CsComandosSql.RetornaDatos(query);
+                dgvDetalleOrden.Columns["CantidadRecibida"].ReadOnly = false;
+                string queryDetalle = $"select * from GRN_Header where ID_Orden={idorden}";
+                dgvGrnDeOrden.DataSource = CsComandosSql.RetornaDatos(queryDetalle);
+                dgvDetalleOrden.RowTemplate.Height = 30;
+                foreach (DataGridViewColumn column in dgvDetalleOrden.Columns)
                 {
-                    column.ReadOnly = true;
+                    if (column.Name != "CantidadRecibida")
+                    {
+                        column.ReadOnly = true;
+                    }
+
                 }
-
+                foreach (DataGridViewRow row in dgvDetalleOrden.Rows)
+                {
+                    row.Cells["CantidadRecibida"].Style.BackColor = Color.LightGray;
+                    row.Cells["CantidadRecibida"].Style.ForeColor = Color.Black;
+                }
+                lbCantRecib.Visible = true;
             }
-            foreach (DataGridViewRow row in dgvDetalleOrden.Rows)
+            if (index == 1)
             {
-                row.Cells["CantidadRecibida"].Style.BackColor = Color.LightGray;
-                row.Cells["CantidadRecibida"].Style.ForeColor = Color.Black;
+                dgvDetalleOrden.DataSource = null;
+                string query = $"SELECT d.ID_Detail AS Detalle_De_Compra, p.ID_Producto, s.ID_Servicio,p.NomProducto AS Producto,s.Nom_Servicio AS Servicio,d.Cantidad AS Cantidad_Ordenada," +
+                    $"d.Cantidad - ISNULL((SELECT SUM(gd.Cantidad) FROM Grn_Details gd INNER JOIN Grn_Header gh ON gd.ID_GRN = gh.ID_GRN WHERE" +
+                    $" (gd.ID_Producto = d.ID_Producto or gd.ID_Servicio=d.ID_Servicio) AND gh.ID_Orden = {idorden}), 0) AS Cantidad_Pendiente,d.Costo AS Costo_Unitario FROM Detalle_Orden d" +
+                    $"   JOIN Orden_Compra o ON d.ID_Orden = o.ID_Orden LEFT JOIN Producto p ON d.ID_Producto = p.ID_Producto" +
+                    $" LEFT JOIN Servicio s ON d.ID_Servicio = s.ID_Servicio WHERE o.ID_Orden = {idorden} and d.Estado='Pendiente'";
+                dgvDetalleOrden.DataSource = CsComandosSql.RetornaDatos(query);
+                string queryDetalle = $"select * from GRN_Header where ID_Orden={idorden}";
+                dgvGrnDeOrden.DataSource = CsComandosSql.RetornaDatos(queryDetalle);
+                dgvDetalleOrden.RowTemplate.Height = 30;
+                lbCantRecib.Visible = false;
             }
-
 
         }
         private void ActualizarEstadoRecibido(int idorden)
@@ -79,14 +96,13 @@ namespace ModuloDeCompra_BD.Formulario
 
                     if (!string.IsNullOrEmpty(idOrdenDetalle))
                     {
-
                         string updateQuery = $"update Detalle_Orden set Estado='Recibido' where  ID_Detail= {idOrdenDetalle};";
                         CsComandosSql.InserDeletUpdate(updateQuery);
 
                     }
                 }
             }
-            OrdenyGrn(idorden);
+            OrdenyGrn(idorden, cbTipoGRN.SelectedIndex);
         }
         private void dgvDetalleOrden_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
@@ -127,28 +143,53 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void btnGenerarGrn_Click(object sender, EventArgs e)
         {
+          
             try
             {
                 string Detalle = "";
                 foreach (DataGridViewRow fila in dgvDetalleOrden.Rows)
                 {
-                    if (fila.IsNewRow)
-                        continue;
-
-                    string idProducto = fila.Cells["ID_Producto"].Value?.ToString();
-                    string idServicio = fila.Cells["ID_Servicio"].Value?.ToString();
-                    string cantidad = fila.Cells["CantidadRecibida"].Value?.ToString();
-                    string costoU = fila.Cells["Costo_Unitario"].Value?.ToString();
-                    int cant = Convert.ToInt32(cantidad);
-                    costoU = costoU.Replace(',', '.');
-                    if (cant > 0)
+                    if (cbTipoGRN.SelectedIndex == 0)
                     {
-                        Detalle += $@"<GRNDetail>
+                        if (fila.IsNewRow)
+                            continue;
+
+                        string idProducto = fila.Cells["ID_Producto"].Value?.ToString();
+                        string idServicio = fila.Cells["ID_Servicio"].Value?.ToString();
+                        string cantidad = fila.Cells["CantidadRecibida"].Value?.ToString();
+                        string costoU = fila.Cells["Costo_Unitario"].Value?.ToString();
+                        int cant = Convert.ToInt32(cantidad);
+                        costoU = costoU.Replace(',', '.');
+                        if (cant > 0)
+                        {
+                            Detalle += $@"<GRNDetail>
                                         <Cantidad>{cant}</Cantidad>
                                         <Costo>{costoU}</Costo>
                                         <ID_Servicio>{(string.IsNullOrEmpty(idServicio) ? "NULL" : idServicio)}</ID_Servicio>
                                         <ID_Producto>{(string.IsNullOrEmpty(idProducto) ? "NULL" : idProducto)}</ID_Producto>                                                           
                                     </GRNDetail>";
+                        }
+                    }
+                    else
+                    {
+                        if (fila.IsNewRow)
+                            continue;
+
+                        string idProducto = fila.Cells["ID_Producto"].Value?.ToString();
+                        string idServicio = fila.Cells["ID_Servicio"].Value?.ToString();
+                        string cantidad = fila.Cells["Cantidad_Pendiente"].Value?.ToString();
+                        string costoU = fila.Cells["Costo_Unitario"].Value?.ToString();
+                        int cant = Convert.ToInt32(cantidad);
+                        costoU = costoU.Replace(',', '.');
+                        if (cant > 0)
+                        {
+                            Detalle += $@"<GRNDetail>
+                                        <Cantidad>{cant}</Cantidad>
+                                        <Costo>{costoU}</Costo>
+                                        <ID_Servicio>{(string.IsNullOrEmpty(idServicio) ? "NULL" : idServicio)}</ID_Servicio>
+                                        <ID_Producto>{(string.IsNullOrEmpty(idProducto) ? "NULL" : idProducto)}</ID_Producto>                                                           
+                                    </GRNDetail>";
+                        }
                     }
                 }
                 string xmlRequisicion = $@"<GRNHeaders>
@@ -161,7 +202,6 @@ namespace ModuloDeCompra_BD.Formulario
                                             </GRNHeader>
                                             {Detalle}
                                          </GRNHeaders>";
-
                 try
                 {
 
@@ -180,7 +220,6 @@ namespace ModuloDeCompra_BD.Formulario
 
                         if (dgvaux.Rows.Count > 0)
                         {
-                            FrmEditarEmpresa editar = new FrmEditarEmpresa();
                             int grnId = Convert.ToInt32(dgvaux.Rows[0].Cells[1].Value);
                             int diarioId = Convert.ToInt32(dgvaux.Rows[0].Cells[2].Value);
 
@@ -194,12 +233,19 @@ namespace ModuloDeCompra_BD.Formulario
                             if (grnId > 0 && diarioId > 0)
                             {
                                 int idorden = Convert.ToInt32(txtOrdenCompra.Text);
-                                OrdenyGrn(idorden);
+                                OrdenyGrn(idorden, cbTipoGRN.SelectedIndex);
                                 ActualizarEstadoRecibido(idorden);
 
                                 if (CsComandosSql.InserDeletUpdate(queryContable))
                                 {
                                     MessageBox.Show("GRN REGISTRADO");
+                                    string sentencia = $"select GH.ID_Orden, Pr.Nombre_Proveedor, Pr.Correo, Pr.Direccion ,case when S.Nom_Servicio is null then P.NomProducto " +
+                                        $"when P.NomProducto is null then S.Nom_Servicio end as [ProductoServicio], GD.Cantidad, GD.Costo " +
+                                        $"from Grn_Details GD inner join GRN_Header GH on GD.ID_GRN=GH.ID_GRN left join " +
+                                        $"Producto P on GD.ID_Producto=P.ID_Producto left join Servicio S on " +
+                                        $"S.ID_Servicio=GD.ID_Servicio inner join Proveedores Pr on Pr.ID_Proveedor=GH.ID_Proveedor where GD.ID_GRN={grnId} ";
+                                    frmreport ventas = new frmreport(sentencia, "dsGrn", "Reporte.DocumentoGRNrecibido.rdlc");
+                                    ventas.ShowDialog();
                                 }
                                 else
                                 {
@@ -221,7 +267,7 @@ namespace ModuloDeCompra_BD.Formulario
                         MessageBox.Show("Rellene todos los campos");
                     }
                 }
-                catch(SqlException esc)
+                catch (SqlException esc)
                 {
                     MessageBox.Show("Error: " + esc);
                 }
@@ -264,19 +310,20 @@ namespace ModuloDeCompra_BD.Formulario
         private void FrmRecepcionCompra_Load(object sender, EventArgs e)
         {
             lbCantRecib.Visible = false;
+            cbTipoGRN.SelectedIndex = 0;
         }
 
         private void dgvDetalleOrden_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
-           
+
             if (dgvDetalleOrden.Columns[e.ColumnIndex].Name == "CantidadRecibida" && e.RowIndex >= 0)
             {
-            
+
                 if (dgvDetalleOrden.Rows[e.RowIndex].Selected)
                 {
-                    e.Handled = true; 
+                    e.Handled = true;
 
-                    using (SolidBrush brush = new SolidBrush(Color.LightGray)) 
+                    using (SolidBrush brush = new SolidBrush(Color.LightGray))
                     {
                         e.Graphics.FillRectangle(brush, e.CellBounds);
                     }
@@ -318,6 +365,16 @@ namespace ModuloDeCompra_BD.Formulario
         private void txtCredito_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void cbTipoGRN_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = cbTipoGRN.SelectedIndex;
+            if (!string.IsNullOrEmpty(txtOrdenCompra.Text) && Convert.ToInt32(txtOrdenCompra.Text) > 0)
+            {
+                OrdenyGrn(Convert.ToInt32(txtOrdenCompra.Text), index);
+                ActualizarEstadoRecibido(Convert.ToInt32(txtOrdenCompra.Text));
+            }
         }
     }
 }

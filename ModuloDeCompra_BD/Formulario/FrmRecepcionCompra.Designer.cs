@@ -59,6 +59,8 @@
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.dgvGrnDeOrden = new Guna.UI2.WinForms.Guna2DataGridView();
             this.label6 = new System.Windows.Forms.Label();
+            this.cbTipoGRN = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -267,6 +269,8 @@
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(85)))), ((int)(((byte)(84)))));
             this.guna2Panel1.BorderColor = System.Drawing.Color.Black;
             this.guna2Panel1.BorderThickness = 2;
+            this.guna2Panel1.Controls.Add(this.label4);
+            this.guna2Panel1.Controls.Add(this.cbTipoGRN);
             this.guna2Panel1.Controls.Add(this.lbCantRecib);
             this.guna2Panel1.Controls.Add(this.dgvDetalleOrden);
             this.guna2Panel1.Controls.Add(this.label3);
@@ -523,6 +527,30 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "GRN  Generados para esta Orden";
             // 
+            // cbTipoGRN
+            // 
+            this.cbTipoGRN.FormattingEnabled = true;
+            this.cbTipoGRN.Items.AddRange(new object[] {
+            " Parcial",
+            " Completa"});
+            this.cbTipoGRN.Location = new System.Drawing.Point(198, 242);
+            this.cbTipoGRN.Name = "cbTipoGRN";
+            this.cbTipoGRN.Size = new System.Drawing.Size(121, 21);
+            this.cbTipoGRN.TabIndex = 11;
+            this.cbTipoGRN.SelectedIndexChanged += new System.EventHandler(this.cbTipoGRN_SelectedIndexChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(23, 241);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(169, 22);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Tipo de Recepción";
+            // 
             // FrmRecepcionCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -575,5 +603,7 @@
         private Guna.UI2.WinForms.Guna2DataGridView dgvaux;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cbTipoGRN;
     }
 }
