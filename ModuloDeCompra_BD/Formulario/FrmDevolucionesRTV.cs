@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace ModuloDeCompra_BD.Formulario
 {
-    public partial class FrmRTV: Form
+    public partial class FrmRTV : Form
     {
 
         public FrmRTV()
@@ -35,6 +35,14 @@ namespace ModuloDeCompra_BD.Formulario
             {
                 CargarDGV(grn.ID);
                 lbCantRecib.Visible = true;
+
+                DataTable tb = CsComandosSql.RetornaDatos($"select Nombre_Proveedor from Proveedores where ID_Proveedor={grn.IDProv1}");
+
+                if (tb.Rows.Count > 0)
+                {
+                    string Provedorname =tb.Rows[0]["Nombre_Proveedor"].ToString();
+                    txtNombreProveedor.Text = Provedorname;
+                }
 
                 dgvDetalleGrn.Columns["Cantidad a Devolver"].ReadOnly = false;
                 dgvDetalleGrn.RowTemplate.Height = 80;
@@ -159,37 +167,40 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void btnRegistrarRTV_Click(object sender, EventArgs e)
         {
-            string Motivo = "PRODUCTO EN MAL ESTADO";
-            if (!String.IsNullOrEmpty(txtProveedor.Text))
+
+            if (!string.IsNullOrEmpty(txtDebito.Text) || !string.IsNullOrEmpty(txtCredito.Text))
             {
-                string detalle = "";
-
-                foreach (DataGridViewRow fila in dgvDetalleGrn.Rows)
+                string Motivo = "PRODUCTO EN MAL ESTADO";
+                if (!String.IsNullOrEmpty(txtProveedor.Text))
                 {
-                    if (fila.IsNewRow)
-                        continue;
+                    string detalle = "";
 
-                    string idServicio = fila.Cells["ID_Servicio"].Value?.ToString();
-                    string idProducto = fila.Cells["ID_Producto"].Value?.ToString();
-                    string cantidad = fila.Cells["Cantidad a Devolver"].Value?.ToString();
-                    int cant = Convert.ToInt32(cantidad);
-                    if (cant > 0)
+                    foreach (DataGridViewRow fila in dgvDetalleGrn.Rows)
                     {
-                        detalle += $@"
+                        if (fila.IsNewRow)
+                            continue;
+
+                        string idServicio = fila.Cells["ID_Servicio"].Value?.ToString();
+                        string idProducto = fila.Cells["ID_Producto"].Value?.ToString();
+                        string cantidad = fila.Cells["Cantidad a Devolver"].Value?.ToString();
+                        int cant = Convert.ToInt32(cantidad);
+                        if (cant > 0)
+                        {
+                            detalle += $@"
                                 <DETALLE>
                                      <IDSERVICIO>{(string.IsNullOrEmpty(idServicio) ? "NULL" : idServicio)}</IDSERVICIO>
                                 <IDPRODUCTO>{(string.IsNullOrEmpty(idProducto) ? "NULL" : idProducto)}</IDPRODUCTO>
                                     <Cantidad>{cantidad}</Cantidad>
                                 </DETALLE>";
+                        }
                     }
-                }
-                try
-                {
-                    if (!string.IsNullOrEmpty(txtMotivo.Text))
+                    try
                     {
-                        Motivo = txtMotivo.Text;
-                    }
-                    string xml = $@"'<RTV>
+                        if (!string.IsNullOrEmpty(txtMotivo.Text))
+                        {
+                            Motivo = txtMotivo.Text;
+                        }
+                        string xml = $@"'<RTV>
                                         <HEADER>
                                             <IDGRN>{txtSeleccionGRN.Text}</IDGRN>
                                             <Motivo>{Motivo}</Motivo>
@@ -198,30 +209,50 @@ namespace ModuloDeCompra_BD.Formulario
                                         {detalle}
                                  </RTV>'
                         ";
-                    string queryD = $"EXEC InsertarRTV {xml}";
-                    //MessageBox.Show(xml);
-                    if (CsComandosSql.InserDeletUpdate(queryD))
-                    {
-                        MessageBox.Show("RTV REGISTRADO");
-                        CargarDGV(Convert.ToInt32(txtSeleccionGRN.Text));
-                    }
+                        string queryD = $"EXEC InsertarRTV {xml},  '{txtDebito.Text}', '{txtCredito.Text}'";
+                        //MessageBox.Show(xml);
+                        if (CsComandosSql.InserDeletUpdate(queryD))
+                        {
+                            MessageBox.Show("RTV REGISTRADO");
+                            CargarDGV(Convert.ToInt32(txtSeleccionGRN.Text));
+                        }
 
+                    }
+                    catch (SqlException ex)
+                    {
+                        MessageBox.Show("" + ex);
+                    }
                 }
-                catch (SqlException ex)
-                {
-                    MessageBox.Show("" + ex);
-                }
+            }
+            else
+            {
+                MessageBox.Show("Rellene todos los campos");
             }
         }
 
         private void btnCancelar_Click_1(object sender, EventArgs e)
         {
-
             dgvDetalleGrn.DataSource = null;
             txtMotivo.Text = string.Empty;
             txtProveedor.Text = string.Empty;
             txtSeleccionGRN.Text = string.Empty;
+            txtNombreProveedor.Text = string.Empty;
+            txtDebito.Text = string.Empty;
+            txtCredito.Text = string.Empty;
+        }
 
+        private void btnDebito_Click(object sender, EventArgs e)
+        {
+            FrnListadoCatalogoCuentas ListadoCC = new FrnListadoCatalogoCuentas();
+            ListadoCC.ShowDialog();
+            txtDebito.Text = ListadoCC.Id1.ToString();
+        }
+
+        private void btnCredito_Click(object sender, EventArgs e)
+        {
+            FrnListadoCatalogoCuentas ListadoCC = new FrnListadoCatalogoCuentas();
+            ListadoCC.ShowDialog();
+            txtCredito.Text = ListadoCC.Id1.ToString();
         }
     }
 }
