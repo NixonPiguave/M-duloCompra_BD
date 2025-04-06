@@ -277,7 +277,7 @@
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.Size = new System.Drawing.Size(154, 70);
             this.guna2Button2.TabIndex = 15;
-            this.guna2Button2.Text = "Devoluciones";
+            this.guna2Button2.Text = "Grn Detalles";
             this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // FrmReportes

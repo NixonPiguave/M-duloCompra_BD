@@ -1071,7 +1071,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Informe de Inventario</Value>
+                      <Value>Informe de Grn</Value>
                       <Style>
                         <FontSize>18pt</FontSize>
                         <FontWeight>Bold</FontWeight>
@@ -1083,10 +1083,10 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox14</rd:DefaultName>
-              <Top>3.57277cm</Top>
-              <Left>15.45671cm</Left>
+              <Top>3.53749cm</Top>
+              <Left>16.00389cm</Left>
               <Height>0.85576cm</Height>
-              <Width>6.80526cm</Width>
+              <Width>4.9753cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
@@ -1105,7 +1105,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Movimientos de inventario</Value>
+                      <Value>Diario de GRN</Value>
                       <Style>
                         <FontSize>12pt</FontSize>
                         <Color>DarkViolet</Color>
@@ -1116,10 +1116,10 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox15</rd:DefaultName>
-              <Top>4.42853cm</Top>
-              <Left>16.14313cm</Left>
+              <Top>4.49909cm</Top>
+              <Left>17.19638cm</Left>
               <Height>0.6cm</Height>
-              <Width>5.21642cm</Width>
+              <Width>2.91455cm</Width>
               <ZIndex>2</ZIndex>
               <Style>
                 <Border>
