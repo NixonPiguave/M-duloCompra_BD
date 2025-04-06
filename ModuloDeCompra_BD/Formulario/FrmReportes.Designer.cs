@@ -40,6 +40,8 @@
             this.btnReporteSesion = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,7 +55,7 @@
             this.btnreport.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
             this.btnreport.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnreport.ForeColor = System.Drawing.Color.White;
-            this.btnreport.Location = new System.Drawing.Point(371, 21);
+            this.btnreport.Location = new System.Drawing.Point(366, 153);
             this.btnreport.Name = "btnreport";
             this.btnreport.Size = new System.Drawing.Size(163, 70);
             this.btnreport.TabIndex = 0;
@@ -70,7 +72,7 @@
             this.btnCategoria.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
             this.btnCategoria.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCategoria.ForeColor = System.Drawing.Color.White;
-            this.btnCategoria.Location = new System.Drawing.Point(594, 21);
+            this.btnCategoria.Location = new System.Drawing.Point(679, 43);
             this.btnCategoria.Name = "btnCategoria";
             this.btnCategoria.Size = new System.Drawing.Size(157, 70);
             this.btnCategoria.TabIndex = 1;
@@ -87,7 +89,7 @@
             this.btnProveedor.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
             this.btnProveedor.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProveedor.ForeColor = System.Drawing.Color.White;
-            this.btnProveedor.Location = new System.Drawing.Point(392, 146);
+            this.btnProveedor.Location = new System.Drawing.Point(591, 152);
             this.btnProveedor.Name = "btnProveedor";
             this.btnProveedor.Size = new System.Drawing.Size(136, 70);
             this.btnProveedor.TabIndex = 4;
@@ -104,7 +106,7 @@
             this.btnCompras.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
             this.btnCompras.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCompras.ForeColor = System.Drawing.Color.White;
-            this.btnCompras.Location = new System.Drawing.Point(169, 21);
+            this.btnCompras.Location = new System.Drawing.Point(792, 152);
             this.btnCompras.Name = "btnCompras";
             this.btnCompras.Size = new System.Drawing.Size(142, 76);
             this.btnCompras.TabIndex = 5;
@@ -121,7 +123,7 @@
             this.btnIva.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
             this.btnIva.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIva.ForeColor = System.Drawing.Color.White;
-            this.btnIva.Location = new System.Drawing.Point(169, 277);
+            this.btnIva.Location = new System.Drawing.Point(679, 262);
             this.btnIva.Name = "btnIva";
             this.btnIva.Size = new System.Drawing.Size(187, 78);
             this.btnIva.TabIndex = 8;
@@ -138,7 +140,7 @@
             this.btnmovimientos.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
             this.btnmovimientos.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnmovimientos.ForeColor = System.Drawing.Color.White;
-            this.btnmovimientos.Location = new System.Drawing.Point(169, 139);
+            this.btnmovimientos.Location = new System.Drawing.Point(157, 152);
             this.btnmovimientos.Name = "btnmovimientos";
             this.btnmovimientos.Size = new System.Drawing.Size(147, 77);
             this.btnmovimientos.TabIndex = 9;
@@ -155,7 +157,7 @@
             this.btnrequisicion.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
             this.btnrequisicion.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnrequisicion.ForeColor = System.Drawing.Color.White;
-            this.btnrequisicion.Location = new System.Drawing.Point(833, 146);
+            this.btnrequisicion.Location = new System.Drawing.Point(902, 46);
             this.btnrequisicion.Name = "btnrequisicion";
             this.btnrequisicion.Size = new System.Drawing.Size(163, 74);
             this.btnrequisicion.TabIndex = 10;
@@ -172,7 +174,7 @@
             this.btnusuario.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
             this.btnusuario.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnusuario.ForeColor = System.Drawing.Color.White;
-            this.btnusuario.Location = new System.Drawing.Point(585, 139);
+            this.btnusuario.Location = new System.Drawing.Point(479, 41);
             this.btnusuario.Name = "btnusuario";
             this.btnusuario.Size = new System.Drawing.Size(142, 72);
             this.btnusuario.TabIndex = 11;
@@ -189,7 +191,7 @@
             this.btnReportAuditoria.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
             this.btnReportAuditoria.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReportAuditoria.ForeColor = System.Drawing.Color.White;
-            this.btnReportAuditoria.Location = new System.Drawing.Point(398, 277);
+            this.btnReportAuditoria.Location = new System.Drawing.Point(71, 46);
             this.btnReportAuditoria.Name = "btnReportAuditoria";
             this.btnReportAuditoria.Size = new System.Drawing.Size(136, 74);
             this.btnReportAuditoria.TabIndex = 12;
@@ -206,7 +208,7 @@
             this.btnReporteSesion.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
             this.btnReporteSesion.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReporteSesion.ForeColor = System.Drawing.Color.White;
-            this.btnReporteSesion.Location = new System.Drawing.Point(594, 268);
+            this.btnReporteSesion.Location = new System.Drawing.Point(267, 37);
             this.btnReporteSesion.Name = "btnReporteSesion";
             this.btnReporteSesion.Size = new System.Drawing.Size(151, 83);
             this.btnReporteSesion.TabIndex = 13;
@@ -227,6 +229,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(85)))), ((int)(((byte)(84)))));
+            this.panel2.Controls.Add(this.guna2Button2);
+            this.panel2.Controls.Add(this.guna2Button1);
             this.panel2.Controls.Add(this.btnCompras);
             this.panel2.Controls.Add(this.btnreport);
             this.panel2.Controls.Add(this.btnReporteSesion);
@@ -241,6 +245,40 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1126, 397);
             this.panel2.TabIndex = 15;
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.BorderRadius = 10;
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
+            this.guna2Button1.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.Location = new System.Drawing.Point(479, 270);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(154, 70);
+            this.guna2Button1.TabIndex = 14;
+            this.guna2Button1.Text = "Devoluciones";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            // 
+            // guna2Button2
+            // 
+            this.guna2Button2.BorderRadius = 10;
+            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
+            this.guna2Button2.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button2.ForeColor = System.Drawing.Color.White;
+            this.guna2Button2.Location = new System.Drawing.Point(253, 270);
+            this.guna2Button2.Name = "guna2Button2";
+            this.guna2Button2.Size = new System.Drawing.Size(154, 70);
+            this.guna2Button2.TabIndex = 15;
+            this.guna2Button2.Text = "Devoluciones";
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // FrmReportes
             // 
@@ -273,6 +311,8 @@
         private Guna.UI2.WinForms.Guna2Button btnReporteSesion;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button2;
     }
 }
 

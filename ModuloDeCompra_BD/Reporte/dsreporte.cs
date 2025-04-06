@@ -4,5 +4,8 @@
 
     partial class dsreporte
     {
+        partial class GrnDataTable
+        {
+        }
     }
 }

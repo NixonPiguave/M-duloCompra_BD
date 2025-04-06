@@ -109,5 +109,19 @@ namespace reporte
             frmReporteAuditoriaSesion audit = new frmReporteAuditoriaSesion();
             audit.ShowDialog();
         }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            string sentencia = "SELECT \r\n    RD.ID_GRN,\r\n    RD.Cantidad,\r\n    P.NomProducto,\r\n    S.Nom_Servicio,\r\n    RH.Fecha_RTV,\r\n    RH.Motivo,\r\n    CASE \r\n        WHEN S.Nom_Servicio IS NOT NULL THEN 'Service'\r\n        WHEN P.NomProducto IS NOT NULL THEN 'Product'\r\n        ELSE 'Unknown' \r\n    END AS RecordType\r\nFROM RTV_Header RH \r\nINNER JOIN RTV_Details RD ON RH.ID_RTV = RD.ID_RTV \r\nLEFT JOIN Producto P ON RD.ID_Producto = P.ID_Producto\r\nLEFT JOIN Servicio S ON RD.ID_Servicio = S.ID_Servicio\r\nORDER BY \r\n    RH.Fecha_RTV asc, \r\n    RecordType,     \r\n    COALESCE(S.Nom_Servicio, P.NomProducto)  ";
+            frmreport ventas = new frmreport(sentencia, "dsDevolucion", "Reporte.rptDevolucion.rdlc");
+            ventas.ShowDialog();
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            string sentencia = "SELECT \r\n    g.ID_GRN,\r\n    g.Fecha_Generada,\r\n    g.Estado,\r\n    g.TotalPagar,\r\n    g.TotalDevuelto,\r\n    g.TotalPagar - g.TotalDevuelto AS Neto,\r\n    c.Fecha_Registro,\r\n    c.Total_Valor,\r\n    c.Total_Bodega,\r\n    c.Diferencia,\r\n    c.Estado_Contable,\r\n    c.Usuario_Registro,\r\n    p.Nombre_Proveedor AS Proveedor\r\nFROM GRN_Header g\r\nLEFT JOIN GRN_Contable c ON g.ID_GRN = c.ID_GRN\r\nLEFT JOIN Proveedores p ON g.ID_Proveedor = p.ID_Proveedor\r\nORDER BY g.Fecha_Generada asc;";
+            frmreport ventas = new frmreport(sentencia, "dsGRN", "Reporte.rptgrn.rdlc");
+            ventas.ShowDialog();
+        }
     }
 }

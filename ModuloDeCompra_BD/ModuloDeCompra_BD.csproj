@@ -526,9 +526,10 @@
     <EmbeddedResource Include="Reporte\rpt_AuditoriaSesion.rdlc" />
     <EmbeddedResource Include="Reporte\rpt_FacturaCompra.rdlc" />
     <EmbeddedResource Include="Reporte\rpt_ReporteComprasVentas.rdlc" />
-    <EmbeddedResource Include="Reporte\rpt_ReporteDevolucionesProducto.rdlc" />
     <EmbeddedResource Include="Reporte\rpt_ReporteEstadoStock.rdlc" />
     <EmbeddedResource Include="Reporte\rpt_ReporteIVAProductos_Servicios.rdlc" />
+    <EmbeddedResource Include="Reporte\rptDevolucion.rdlc" />
+    <EmbeddedResource Include="Reporte\rptgrn.rdlc" />
     <EmbeddedResource Include="Reporte\rpt_ReporteMovimientosInventario.rdlc" />
     <EmbeddedResource Include="Reporte\rpt_Reporte_Proveedores.rdlc" />
     <EmbeddedResource Include="Reporte\dArpt_RequisicionesDetalles.rdlc" />
