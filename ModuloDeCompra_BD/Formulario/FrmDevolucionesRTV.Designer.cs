@@ -28,17 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblEstadoOrden = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblRequisicionID = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblOrdenID = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btnDebito = new Guna.UI2.WinForms.Guna2Button();
+            this.txtDebito = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnCredito = new Guna.UI2.WinForms.Guna2Button();
+            this.txtCredito = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnRegistrarRTV = new Guna.UI2.WinForms.Guna2Button();
             this.btnCancelar = new Guna.UI2.WinForms.Guna2Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtNombreProveedor = new Guna.UI2.WinForms.Guna2TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnSeleccionarGRN = new Guna.UI2.WinForms.Guna2Button();
             this.txtSeleccionGRN = new Guna.UI2.WinForms.Guna2TextBox();
@@ -52,19 +58,14 @@
             this.dgvDetalleGrn = new Guna.UI2.WinForms.Guna2DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.btnDebito = new Guna.UI2.WinForms.Guna2Button();
-            this.txtDebito = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnCredito = new Guna.UI2.WinForms.Guna2Button();
-            this.txtCredito = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtNombreProveedor = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnGenerarDocumento = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleGrn)).BeginInit();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblEstadoOrden
@@ -115,14 +116,101 @@
             this.panel1.Size = new System.Drawing.Size(1362, 639);
             this.panel1.TabIndex = 2;
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(85)))), ((int)(((byte)(84)))));
+            this.panel4.Controls.Add(this.btnDebito);
+            this.panel4.Controls.Add(this.txtDebito);
+            this.panel4.Controls.Add(this.btnCredito);
+            this.panel4.Controls.Add(this.txtCredito);
+            this.panel4.Location = new System.Drawing.Point(37, 427);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(167, 196);
+            this.panel4.TabIndex = 18;
+            // 
+            // btnDebito
+            // 
+            this.btnDebito.BorderRadius = 10;
+            this.btnDebito.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDebito.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDebito.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDebito.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDebito.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
+            this.btnDebito.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDebito.ForeColor = System.Drawing.Color.White;
+            this.btnDebito.Location = new System.Drawing.Point(21, 13);
+            this.btnDebito.Name = "btnDebito";
+            this.btnDebito.Size = new System.Drawing.Size(122, 35);
+            this.btnDebito.TabIndex = 11;
+            this.btnDebito.Text = "Débito";
+            this.btnDebito.Click += new System.EventHandler(this.btnDebito_Click);
+            // 
+            // txtDebito
+            // 
+            this.txtDebito.BorderRadius = 5;
+            this.txtDebito.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDebito.DefaultText = "";
+            this.txtDebito.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtDebito.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtDebito.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDebito.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDebito.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDebito.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtDebito.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDebito.Location = new System.Drawing.Point(39, 53);
+            this.txtDebito.Name = "txtDebito";
+            this.txtDebito.PlaceholderText = "";
+            this.txtDebito.ReadOnly = true;
+            this.txtDebito.SelectedText = "";
+            this.txtDebito.Size = new System.Drawing.Size(86, 27);
+            this.txtDebito.TabIndex = 14;
+            // 
+            // btnCredito
+            // 
+            this.btnCredito.BorderRadius = 10;
+            this.btnCredito.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCredito.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCredito.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCredito.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCredito.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
+            this.btnCredito.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCredito.ForeColor = System.Drawing.Color.White;
+            this.btnCredito.Location = new System.Drawing.Point(21, 104);
+            this.btnCredito.Name = "btnCredito";
+            this.btnCredito.Size = new System.Drawing.Size(122, 35);
+            this.btnCredito.TabIndex = 12;
+            this.btnCredito.Text = "Crédito";
+            this.btnCredito.Click += new System.EventHandler(this.btnCredito_Click);
+            // 
+            // txtCredito
+            // 
+            this.txtCredito.BorderRadius = 5;
+            this.txtCredito.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCredito.DefaultText = "";
+            this.txtCredito.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtCredito.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtCredito.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCredito.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCredito.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCredito.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtCredito.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCredito.Location = new System.Drawing.Point(39, 142);
+            this.txtCredito.Name = "txtCredito";
+            this.txtCredito.PlaceholderText = "";
+            this.txtCredito.ReadOnly = true;
+            this.txtCredito.SelectedText = "";
+            this.txtCredito.Size = new System.Drawing.Size(86, 27);
+            this.txtCredito.TabIndex = 13;
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(85)))), ((int)(((byte)(84)))));
+            this.panel3.Controls.Add(this.btnGenerarDocumento);
             this.panel3.Controls.Add(this.btnRegistrarRTV);
             this.panel3.Controls.Add(this.btnCancelar);
             this.panel3.Location = new System.Drawing.Point(991, 479);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(344, 116);
+            this.panel3.Size = new System.Drawing.Size(344, 144);
             this.panel3.TabIndex = 11;
             // 
             // btnRegistrarRTV
@@ -137,7 +225,7 @@
             this.btnRegistrarRTV.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrarRTV.ForeColor = System.Drawing.Color.White;
             this.btnRegistrarRTV.IndicateFocus = true;
-            this.btnRegistrarRTV.Location = new System.Drawing.Point(19, 33);
+            this.btnRegistrarRTV.Location = new System.Drawing.Point(19, 14);
             this.btnRegistrarRTV.Name = "btnRegistrarRTV";
             this.btnRegistrarRTV.Size = new System.Drawing.Size(122, 55);
             this.btnRegistrarRTV.TabIndex = 6;
@@ -156,7 +244,7 @@
             this.btnCancelar.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
             this.btnCancelar.IndicateFocus = true;
-            this.btnCancelar.Location = new System.Drawing.Point(201, 33);
+            this.btnCancelar.Location = new System.Drawing.Point(206, 14);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(122, 55);
             this.btnCancelar.TabIndex = 7;
@@ -176,6 +264,26 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(203, 251);
             this.panel2.TabIndex = 10;
+            // 
+            // txtNombreProveedor
+            // 
+            this.txtNombreProveedor.BorderRadius = 5;
+            this.txtNombreProveedor.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtNombreProveedor.DefaultText = "";
+            this.txtNombreProveedor.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtNombreProveedor.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtNombreProveedor.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtNombreProveedor.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtNombreProveedor.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtNombreProveedor.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtNombreProveedor.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtNombreProveedor.Location = new System.Drawing.Point(55, 189);
+            this.txtNombreProveedor.Name = "txtNombreProveedor";
+            this.txtNombreProveedor.PlaceholderText = "";
+            this.txtNombreProveedor.ReadOnly = true;
+            this.txtNombreProveedor.SelectedText = "";
+            this.txtNombreProveedor.Size = new System.Drawing.Size(86, 27);
+            this.txtNombreProveedor.TabIndex = 7;
             // 
             // label5
             // 
@@ -319,24 +427,24 @@
             // 
             this.dgvDetalleGrn.AllowUserToAddRows = false;
             this.dgvDetalleGrn.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvDetalleGrn.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetalleGrn.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDetalleGrn.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgvDetalleGrn.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetalleGrn.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDetalleGrn.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvDetalleGrn.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvDetalleGrn.Location = new System.Drawing.Point(48, 59);
             this.dgvDetalleGrn.MultiSelect = false;
@@ -394,111 +502,24 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "DEVOLUCIONES DE PRODUCTOS  (RTV)";
             // 
-            // panel4
+            // btnGenerarDocumento
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(85)))), ((int)(((byte)(84)))));
-            this.panel4.Controls.Add(this.btnDebito);
-            this.panel4.Controls.Add(this.txtDebito);
-            this.panel4.Controls.Add(this.btnCredito);
-            this.panel4.Controls.Add(this.txtCredito);
-            this.panel4.Location = new System.Drawing.Point(37, 427);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(167, 196);
-            this.panel4.TabIndex = 18;
-            // 
-            // btnDebito
-            // 
-            this.btnDebito.BorderRadius = 10;
-            this.btnDebito.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnDebito.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnDebito.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnDebito.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDebito.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
-            this.btnDebito.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDebito.ForeColor = System.Drawing.Color.White;
-            this.btnDebito.Location = new System.Drawing.Point(21, 13);
-            this.btnDebito.Name = "btnDebito";
-            this.btnDebito.Size = new System.Drawing.Size(122, 35);
-            this.btnDebito.TabIndex = 11;
-            this.btnDebito.Text = "Débito";
-            this.btnDebito.Click += new System.EventHandler(this.btnDebito_Click);
-            // 
-            // txtDebito
-            // 
-            this.txtDebito.BorderRadius = 5;
-            this.txtDebito.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtDebito.DefaultText = "";
-            this.txtDebito.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtDebito.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtDebito.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtDebito.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtDebito.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDebito.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtDebito.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDebito.Location = new System.Drawing.Point(39, 53);
-            this.txtDebito.Name = "txtDebito";
-            this.txtDebito.PlaceholderText = "";
-            this.txtDebito.ReadOnly = true;
-            this.txtDebito.SelectedText = "";
-            this.txtDebito.Size = new System.Drawing.Size(86, 27);
-            this.txtDebito.TabIndex = 14;
-            // 
-            // btnCredito
-            // 
-            this.btnCredito.BorderRadius = 10;
-            this.btnCredito.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnCredito.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnCredito.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnCredito.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnCredito.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
-            this.btnCredito.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCredito.ForeColor = System.Drawing.Color.White;
-            this.btnCredito.Location = new System.Drawing.Point(21, 104);
-            this.btnCredito.Name = "btnCredito";
-            this.btnCredito.Size = new System.Drawing.Size(122, 35);
-            this.btnCredito.TabIndex = 12;
-            this.btnCredito.Text = "Crédito";
-            this.btnCredito.Click += new System.EventHandler(this.btnCredito_Click);
-            // 
-            // txtCredito
-            // 
-            this.txtCredito.BorderRadius = 5;
-            this.txtCredito.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCredito.DefaultText = "";
-            this.txtCredito.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtCredito.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtCredito.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCredito.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCredito.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCredito.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtCredito.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCredito.Location = new System.Drawing.Point(39, 142);
-            this.txtCredito.Name = "txtCredito";
-            this.txtCredito.PlaceholderText = "";
-            this.txtCredito.ReadOnly = true;
-            this.txtCredito.SelectedText = "";
-            this.txtCredito.Size = new System.Drawing.Size(86, 27);
-            this.txtCredito.TabIndex = 13;
-            // 
-            // txtNombreProveedor
-            // 
-            this.txtNombreProveedor.BorderRadius = 5;
-            this.txtNombreProveedor.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtNombreProveedor.DefaultText = "";
-            this.txtNombreProveedor.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtNombreProveedor.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtNombreProveedor.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtNombreProveedor.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtNombreProveedor.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNombreProveedor.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtNombreProveedor.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNombreProveedor.Location = new System.Drawing.Point(55, 189);
-            this.txtNombreProveedor.Name = "txtNombreProveedor";
-            this.txtNombreProveedor.PlaceholderText = "";
-            this.txtNombreProveedor.ReadOnly = true;
-            this.txtNombreProveedor.SelectedText = "";
-            this.txtNombreProveedor.Size = new System.Drawing.Size(86, 27);
-            this.txtNombreProveedor.TabIndex = 7;
+            this.btnGenerarDocumento.Animated = true;
+            this.btnGenerarDocumento.BorderRadius = 10;
+            this.btnGenerarDocumento.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnGenerarDocumento.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnGenerarDocumento.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnGenerarDocumento.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnGenerarDocumento.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
+            this.btnGenerarDocumento.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerarDocumento.ForeColor = System.Drawing.Color.White;
+            this.btnGenerarDocumento.IndicateFocus = true;
+            this.btnGenerarDocumento.Location = new System.Drawing.Point(111, 75);
+            this.btnGenerarDocumento.Name = "btnGenerarDocumento";
+            this.btnGenerarDocumento.Size = new System.Drawing.Size(122, 55);
+            this.btnGenerarDocumento.TabIndex = 9;
+            this.btnGenerarDocumento.Text = "Generar Documento";
+            this.btnGenerarDocumento.Click += new System.EventHandler(this.btnGenerarDocumento_Click);
             // 
             // FrmRTV
             // 
@@ -513,6 +534,7 @@
             this.Load += new System.EventHandler(this.FrmRTV_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -521,7 +543,6 @@
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleGrn)).EndInit();
-            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -554,5 +575,6 @@
         private Guna.UI2.WinForms.Guna2Button btnCredito;
         private Guna.UI2.WinForms.Guna2TextBox txtCredito;
         private Guna.UI2.WinForms.Guna2TextBox txtNombreProveedor;
+        private Guna.UI2.WinForms.Guna2Button btnGenerarDocumento;
     }
 }

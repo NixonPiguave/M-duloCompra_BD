@@ -254,5 +254,11 @@ namespace ModuloDeCompra_BD.Formulario
             ListadoCC.ShowDialog();
             txtCredito.Text = ListadoCC.Id1.ToString();
         }
+
+        private void btnGenerarDocumento_Click(object sender, EventArgs e)
+        {
+            frmreportDocDevo devo = new frmreportDocDevo();
+            devo.ShowDialog();
+        }
     }
 }
