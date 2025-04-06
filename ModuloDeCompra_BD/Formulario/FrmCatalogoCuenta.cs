@@ -23,19 +23,27 @@ namespace ModuloDeCompra_BD.Formulario
         {
             if (!string.IsNullOrEmpty(txtCuenta.Text))
             {
-                if (!CsComandosSql.verificar($"select * from CatalogoCuentas where ID_IVA= '{txtCuenta.Text}'"))
+                if (!CsComandosSql.verificar($"select * from CatalogoCuentas where Cuenta = '{txtCuenta.Text}'"))
                 {
                     string XML = "<CuentasContables>" +
-                        "               <Cuenta>" +
+                        "               <Cuentas>" +
                         $"                   <Cuenta>{txtCuenta.Text}</Cuenta>" +
                         $"                   <Nombre>{txtNombre.Text}</Nombre>" +
                         $"                   <Tipo>{txtTipo.Text}</Tipo>" +
                         $"                   <Descripcion>{txtDescripcion.Text}</Descripcion>" +
                         $"                   <Categoria>{txtCategoria.Text}</Categoria>" +
-                        "               </Cuenta>" +
+                        "               </Cuentas>" +
                         "         </CuentasContables>";
-                    string query = $"EXEC spAgregarCuentaContable @XML_Cuentas = {XML}";
-
+                    string query = $"EXEC spAgregarCuentaContable @XML_Cuentas = '{XML}'";
+                    if (CsComandosSql.InserDeletUpdate(query))
+                    {
+                        MessageBox.Show("Se ha insertado la cuenta contabale");
+                        dgvCuentaContables.DataSource = CsComandosSql.RetornaDatos("select * from CatalogoCuentas");
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se insertó la cuenta");
+                    }
                 }
                 else
                 {

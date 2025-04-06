@@ -488,7 +488,7 @@ namespace Menú
 
         private void btnCatalogoCuentas_Click(object sender, EventArgs e)
         {
-            FrnListadoCatalogoCuentas frmCatalogo = new FrnListadoCatalogoCuentas();
+            FrmCatalogoCuentas frmCatalogo = new FrmCatalogoCuentas();
             pnIventario.Visible = false;
             pnlRequisiciones.Visible = false;
             pnMantenimientos.Visible = false;
