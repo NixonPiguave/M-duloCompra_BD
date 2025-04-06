@@ -321,11 +321,11 @@
             this.dgvMovimientoInventario.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvMovimientoInventario.BackgroundColor = System.Drawing.Color.White;
             this.dgvMovimientoInventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMovimientoInventario.Location = new System.Drawing.Point(69, 53);
+            this.dgvMovimientoInventario.Location = new System.Drawing.Point(34, 28);
             this.dgvMovimientoInventario.Name = "dgvMovimientoInventario";
             this.dgvMovimientoInventario.RowHeadersVisible = false;
             this.dgvMovimientoInventario.RowTemplate.Height = 18;
-            this.dgvMovimientoInventario.Size = new System.Drawing.Size(941, 283);
+            this.dgvMovimientoInventario.Size = new System.Drawing.Size(983, 333);
             this.dgvMovimientoInventario.TabIndex = 28;
             // 
             // dgvAux
@@ -337,11 +337,11 @@
             this.dgvAux.BackgroundColor = System.Drawing.Color.White;
             this.dgvAux.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAux.ColumnHeadersVisible = false;
-            this.dgvAux.Location = new System.Drawing.Point(221, 93);
+            this.dgvAux.Location = new System.Drawing.Point(156, 113);
             this.dgvAux.Name = "dgvAux";
             this.dgvAux.RowHeadersVisible = false;
             this.dgvAux.RowTemplate.Height = 18;
-            this.dgvAux.Size = new System.Drawing.Size(179, 112);
+            this.dgvAux.Size = new System.Drawing.Size(184, 118);
             this.dgvAux.TabIndex = 29;
             this.dgvAux.Visible = false;
             this.dgvAux.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAux_CellDoubleClick);

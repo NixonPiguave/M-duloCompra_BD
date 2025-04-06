@@ -103,6 +103,7 @@ namespace ModuloDeCompra_BD.Formulario
             FrmListadoGRN frmGRN = new FrmListadoGRN();
             frmGRN.ShowDialog();
             txtIDGRN.Text = frmGRN.ID.ToString();
+            dgvAux.Visible = false;
         }
 
         private void dgvAux_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

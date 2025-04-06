@@ -39,7 +39,7 @@
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(7)))), ((int)(((byte)(109)))));
+            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(85)))), ((int)(((byte)(84)))));
             this.guna2Panel1.Controls.Add(this.lblListadoRequisicion);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
@@ -50,11 +50,11 @@
             // lblListadoRequisicion
             // 
             this.lblListadoRequisicion.BackColor = System.Drawing.Color.Transparent;
-            this.lblListadoRequisicion.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblListadoRequisicion.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblListadoRequisicion.ForeColor = System.Drawing.Color.White;
             this.lblListadoRequisicion.Location = new System.Drawing.Point(152, 23);
             this.lblListadoRequisicion.Name = "lblListadoRequisicion";
-            this.lblListadoRequisicion.Size = new System.Drawing.Size(174, 27);
+            this.lblListadoRequisicion.Size = new System.Drawing.Size(174, 24);
             this.lblListadoRequisicion.TabIndex = 0;
             this.lblListadoRequisicion.Text = "Listado Requisicion";
             // 
@@ -85,7 +85,7 @@
             this.txtRequisicionID.Name = "txtRequisicionID";
             this.txtRequisicionID.PlaceholderText = "";
             this.txtRequisicionID.SelectedText = "";
-            this.txtRequisicionID.Size = new System.Drawing.Size(249, 26);
+            this.txtRequisicionID.Size = new System.Drawing.Size(225, 26);
             this.txtRequisicionID.TabIndex = 2;
             this.txtRequisicionID.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBuscarCategoria_KeyUp);
             // 
@@ -96,12 +96,12 @@
             this.btnSeleccionarCatego.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnSeleccionarCatego.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnSeleccionarCatego.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSeleccionarCatego.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(170)))), ((int)(((byte)(239)))));
-            this.btnSeleccionarCatego.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSeleccionarCatego.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
+            this.btnSeleccionarCatego.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeleccionarCatego.ForeColor = System.Drawing.Color.White;
-            this.btnSeleccionarCatego.Location = new System.Drawing.Point(309, 102);
+            this.btnSeleccionarCatego.Location = new System.Drawing.Point(285, 102);
             this.btnSeleccionarCatego.Name = "btnSeleccionarCatego";
-            this.btnSeleccionarCatego.Size = new System.Drawing.Size(93, 26);
+            this.btnSeleccionarCatego.Size = new System.Drawing.Size(117, 26);
             this.btnSeleccionarCatego.TabIndex = 3;
             this.btnSeleccionarCatego.Text = "Seleccionar";
             this.btnSeleccionarCatego.Click += new System.EventHandler(this.btnSeleccionarCatego_Click);
@@ -110,6 +110,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.ClientSize = new System.Drawing.Size(438, 450);
             this.Controls.Add(this.btnSeleccionarCatego);
             this.Controls.Add(this.txtRequisicionID);

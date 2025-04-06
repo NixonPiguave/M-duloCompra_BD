@@ -39,7 +39,7 @@
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(7)))), ((int)(((byte)(109)))));
+            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(85)))), ((int)(((byte)(84)))));
             this.guna2Panel1.Controls.Add(this.guna2HtmlLabel1);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
@@ -50,27 +50,28 @@
             // guna2HtmlLabel1
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.White;
             this.guna2HtmlLabel1.Location = new System.Drawing.Point(317, 21);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(263, 27);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(255, 24);
             this.guna2HtmlLabel1.TabIndex = 0;
             this.guna2HtmlLabel1.Text = "Listado de Cuentas Contables";
             // 
             // btnSeleccionarBodega
             // 
+            this.btnSeleccionarBodega.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.btnSeleccionarBodega.BorderRadius = 10;
             this.btnSeleccionarBodega.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnSeleccionarBodega.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnSeleccionarBodega.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnSeleccionarBodega.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSeleccionarBodega.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(170)))), ((int)(((byte)(239)))));
-            this.btnSeleccionarBodega.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSeleccionarBodega.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
+            this.btnSeleccionarBodega.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeleccionarBodega.ForeColor = System.Drawing.Color.White;
             this.btnSeleccionarBodega.Location = new System.Drawing.Point(317, 111);
             this.btnSeleccionarBodega.Name = "btnSeleccionarBodega";
-            this.btnSeleccionarBodega.Size = new System.Drawing.Size(93, 26);
+            this.btnSeleccionarBodega.Size = new System.Drawing.Size(119, 26);
             this.btnSeleccionarBodega.TabIndex = 8;
             this.btnSeleccionarBodega.Text = "Seleccionar";
             this.btnSeleccionarBodega.Click += new System.EventHandler(this.btnSeleccionarBodega_Click);
@@ -111,6 +112,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.ClientSize = new System.Drawing.Size(943, 533);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.btnSeleccionarBodega);

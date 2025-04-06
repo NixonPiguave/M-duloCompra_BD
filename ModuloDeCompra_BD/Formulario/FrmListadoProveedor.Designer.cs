@@ -39,7 +39,7 @@
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(7)))), ((int)(((byte)(109)))));
+            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(85)))), ((int)(((byte)(84)))));
             this.guna2Panel1.Controls.Add(this.guna2HtmlLabel1);
             this.guna2Panel1.Location = new System.Drawing.Point(-3, 2);
             this.guna2Panel1.Name = "guna2Panel1";
@@ -50,11 +50,11 @@
             // guna2HtmlLabel1
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.White;
             this.guna2HtmlLabel1.Location = new System.Drawing.Point(74, 22);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(211, 27);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(208, 24);
             this.guna2HtmlLabel1.TabIndex = 0;
             this.guna2HtmlLabel1.Text = "Listado de Proveedores";
             // 
@@ -97,12 +97,12 @@
             this.btnSeleccionarProvee.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnSeleccionarProvee.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnSeleccionarProvee.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSeleccionarProvee.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(170)))), ((int)(((byte)(239)))));
-            this.btnSeleccionarProvee.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSeleccionarProvee.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
+            this.btnSeleccionarProvee.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeleccionarProvee.ForeColor = System.Drawing.Color.White;
-            this.btnSeleccionarProvee.Location = new System.Drawing.Point(213, 107);
+            this.btnSeleccionarProvee.Location = new System.Drawing.Point(190, 107);
             this.btnSeleccionarProvee.Name = "btnSeleccionarProvee";
-            this.btnSeleccionarProvee.Size = new System.Drawing.Size(93, 26);
+            this.btnSeleccionarProvee.Size = new System.Drawing.Size(116, 26);
             this.btnSeleccionarProvee.TabIndex = 4;
             this.btnSeleccionarProvee.Text = "Seleccionar";
             this.btnSeleccionarProvee.Click += new System.EventHandler(this.btnSeleccionarProvee_Click);
@@ -111,6 +111,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.ClientSize = new System.Drawing.Size(334, 450);
             this.Controls.Add(this.btnSeleccionarProvee);
             this.Controls.Add(this.txtBuscarProveedores);

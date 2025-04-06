@@ -53,7 +53,7 @@
             this.btnreport.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
             this.btnreport.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnreport.ForeColor = System.Drawing.Color.White;
-            this.btnreport.Location = new System.Drawing.Point(223, 17);
+            this.btnreport.Location = new System.Drawing.Point(371, 21);
             this.btnreport.Name = "btnreport";
             this.btnreport.Size = new System.Drawing.Size(163, 70);
             this.btnreport.TabIndex = 0;
@@ -70,7 +70,7 @@
             this.btnCategoria.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
             this.btnCategoria.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCategoria.ForeColor = System.Drawing.Color.White;
-            this.btnCategoria.Location = new System.Drawing.Point(446, 17);
+            this.btnCategoria.Location = new System.Drawing.Point(594, 21);
             this.btnCategoria.Name = "btnCategoria";
             this.btnCategoria.Size = new System.Drawing.Size(157, 70);
             this.btnCategoria.TabIndex = 1;
@@ -87,7 +87,7 @@
             this.btnProveedor.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
             this.btnProveedor.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProveedor.ForeColor = System.Drawing.Color.White;
-            this.btnProveedor.Location = new System.Drawing.Point(244, 142);
+            this.btnProveedor.Location = new System.Drawing.Point(392, 146);
             this.btnProveedor.Name = "btnProveedor";
             this.btnProveedor.Size = new System.Drawing.Size(136, 70);
             this.btnProveedor.TabIndex = 4;
@@ -104,7 +104,7 @@
             this.btnCompras.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
             this.btnCompras.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCompras.ForeColor = System.Drawing.Color.White;
-            this.btnCompras.Location = new System.Drawing.Point(21, 17);
+            this.btnCompras.Location = new System.Drawing.Point(169, 21);
             this.btnCompras.Name = "btnCompras";
             this.btnCompras.Size = new System.Drawing.Size(142, 76);
             this.btnCompras.TabIndex = 5;
@@ -121,7 +121,7 @@
             this.btnIva.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
             this.btnIva.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIva.ForeColor = System.Drawing.Color.White;
-            this.btnIva.Location = new System.Drawing.Point(652, 17);
+            this.btnIva.Location = new System.Drawing.Point(169, 277);
             this.btnIva.Name = "btnIva";
             this.btnIva.Size = new System.Drawing.Size(187, 78);
             this.btnIva.TabIndex = 8;
@@ -138,7 +138,7 @@
             this.btnmovimientos.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
             this.btnmovimientos.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnmovimientos.ForeColor = System.Drawing.Color.White;
-            this.btnmovimientos.Location = new System.Drawing.Point(21, 135);
+            this.btnmovimientos.Location = new System.Drawing.Point(169, 139);
             this.btnmovimientos.Name = "btnmovimientos";
             this.btnmovimientos.Size = new System.Drawing.Size(147, 77);
             this.btnmovimientos.TabIndex = 9;
@@ -155,7 +155,7 @@
             this.btnrequisicion.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
             this.btnrequisicion.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnrequisicion.ForeColor = System.Drawing.Color.White;
-            this.btnrequisicion.Location = new System.Drawing.Point(917, 21);
+            this.btnrequisicion.Location = new System.Drawing.Point(833, 146);
             this.btnrequisicion.Name = "btnrequisicion";
             this.btnrequisicion.Size = new System.Drawing.Size(163, 74);
             this.btnrequisicion.TabIndex = 10;
@@ -172,7 +172,7 @@
             this.btnusuario.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
             this.btnusuario.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnusuario.ForeColor = System.Drawing.Color.White;
-            this.btnusuario.Location = new System.Drawing.Point(244, 273);
+            this.btnusuario.Location = new System.Drawing.Point(585, 139);
             this.btnusuario.Name = "btnusuario";
             this.btnusuario.Size = new System.Drawing.Size(142, 72);
             this.btnusuario.TabIndex = 11;
@@ -189,7 +189,7 @@
             this.btnReportAuditoria.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
             this.btnReportAuditoria.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReportAuditoria.ForeColor = System.Drawing.Color.White;
-            this.btnReportAuditoria.Location = new System.Drawing.Point(437, 282);
+            this.btnReportAuditoria.Location = new System.Drawing.Point(398, 277);
             this.btnReportAuditoria.Name = "btnReportAuditoria";
             this.btnReportAuditoria.Size = new System.Drawing.Size(136, 74);
             this.btnReportAuditoria.TabIndex = 12;
@@ -206,7 +206,7 @@
             this.btnReporteSesion.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
             this.btnReporteSesion.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReporteSesion.ForeColor = System.Drawing.Color.White;
-            this.btnReporteSesion.Location = new System.Drawing.Point(652, 273);
+            this.btnReporteSesion.Location = new System.Drawing.Point(594, 268);
             this.btnReporteSesion.Name = "btnReporteSesion";
             this.btnReporteSesion.Size = new System.Drawing.Size(151, 83);
             this.btnReporteSesion.TabIndex = 13;

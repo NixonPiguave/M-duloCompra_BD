@@ -49,11 +49,11 @@
             // guna2HtmlLabel1
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(24, 22);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(37, 25);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(295, 27);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(284, 24);
             this.guna2HtmlLabel1.TabIndex = 0;
             this.guna2HtmlLabel1.Text = "Listado de Ubicación de Bodegas";
             // 
@@ -65,11 +65,11 @@
             this.btnSeleccionarBodega.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnSeleccionarBodega.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnSeleccionarBodega.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
-            this.btnSeleccionarBodega.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSeleccionarBodega.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeleccionarBodega.ForeColor = System.Drawing.Color.White;
-            this.btnSeleccionarBodega.Location = new System.Drawing.Point(204, 111);
+            this.btnSeleccionarBodega.Location = new System.Drawing.Point(181, 111);
             this.btnSeleccionarBodega.Name = "btnSeleccionarBodega";
-            this.btnSeleccionarBodega.Size = new System.Drawing.Size(93, 26);
+            this.btnSeleccionarBodega.Size = new System.Drawing.Size(116, 26);
             this.btnSeleccionarBodega.TabIndex = 8;
             this.btnSeleccionarBodega.Text = "Seleccionar";
             this.btnSeleccionarBodega.Click += new System.EventHandler(this.btnSeleccionarBodega_Click);

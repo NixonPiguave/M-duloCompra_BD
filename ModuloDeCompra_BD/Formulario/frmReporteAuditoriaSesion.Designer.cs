@@ -51,6 +51,7 @@
             // 
             // pnlCheck
             // 
+            this.pnlCheck.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.pnlCheck.Controls.Add(this.pnlFecha);
             this.pnlCheck.Controls.Add(this.label1);
             this.pnlCheck.Controls.Add(this.lblHasta);
@@ -63,6 +64,7 @@
             this.pnlCheck.Controls.Add(this.lblUsuario);
             this.pnlCheck.Controls.Add(this.cbUsuarios);
             this.pnlCheck.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlCheck.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlCheck.Location = new System.Drawing.Point(0, 0);
             this.pnlCheck.Name = "pnlCheck";
             this.pnlCheck.Size = new System.Drawing.Size(451, 335);
@@ -85,10 +87,10 @@
             this.chbGeneralFecha.CheckedState.BorderRadius = 0;
             this.chbGeneralFecha.CheckedState.BorderThickness = 0;
             this.chbGeneralFecha.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.chbGeneralFecha.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.chbGeneralFecha.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chbGeneralFecha.Location = new System.Drawing.Point(12, 12);
             this.chbGeneralFecha.Name = "chbGeneralFecha";
-            this.chbGeneralFecha.Size = new System.Drawing.Size(125, 19);
+            this.chbGeneralFecha.Size = new System.Drawing.Size(122, 18);
             this.chbGeneralFecha.TabIndex = 1;
             this.chbGeneralFecha.Text = "Sin rango de fecha";
             this.chbGeneralFecha.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
@@ -104,10 +106,10 @@
             this.chbFecha.CheckedState.BorderRadius = 0;
             this.chbFecha.CheckedState.BorderThickness = 0;
             this.chbFecha.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.chbFecha.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.chbFecha.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chbFecha.Location = new System.Drawing.Point(12, 37);
             this.chbFecha.Name = "chbFecha";
-            this.chbFecha.Size = new System.Drawing.Size(110, 19);
+            this.chbFecha.Size = new System.Drawing.Size(107, 18);
             this.chbFecha.TabIndex = 0;
             this.chbFecha.Text = "Rango de Fecha";
             this.chbFecha.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
@@ -119,20 +121,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(102, 39);
+            this.label1.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(116, 45);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(249, 25);
+            this.label1.Size = new System.Drawing.Size(220, 19);
             this.label1.TabIndex = 10;
             this.label1.Text = "Entrada y salida de usuarios";
             // 
             // lblHasta
             // 
             this.lblHasta.AutoSize = true;
-            this.lblHasta.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHasta.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHasta.Location = new System.Drawing.Point(237, 203);
             this.lblHasta.Name = "lblHasta";
-            this.lblHasta.Size = new System.Drawing.Size(37, 15);
+            this.lblHasta.Size = new System.Drawing.Size(52, 19);
             this.lblHasta.TabIndex = 9;
             this.lblHasta.Text = "Hasta";
             this.lblHasta.Visible = false;
@@ -140,10 +142,10 @@
             // lblDesde
             // 
             this.lblDesde.AutoSize = true;
-            this.lblDesde.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDesde.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDesde.Location = new System.Drawing.Point(12, 203);
             this.lblDesde.Name = "lblDesde";
-            this.lblDesde.Size = new System.Drawing.Size(40, 15);
+            this.lblDesde.Size = new System.Drawing.Size(53, 19);
             this.lblDesde.TabIndex = 8;
             this.lblDesde.Text = "Desde";
             this.lblDesde.Visible = false;
@@ -152,6 +154,7 @@
             // 
             this.dtpHasta.BorderRadius = 5;
             this.dtpHasta.Checked = true;
+            this.dtpHasta.FillColor = System.Drawing.Color.White;
             this.dtpHasta.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtpHasta.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.dtpHasta.Location = new System.Drawing.Point(240, 222);
@@ -168,7 +171,7 @@
             this.dtpDesde.Animated = true;
             this.dtpDesde.BorderRadius = 5;
             this.dtpDesde.Checked = true;
-            this.dtpDesde.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.dtpDesde.FillColor = System.Drawing.Color.White;
             this.dtpDesde.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtpDesde.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.dtpDesde.Location = new System.Drawing.Point(12, 222);
@@ -196,10 +199,10 @@
             this.chbGeneral.CheckedState.BorderRadius = 0;
             this.chbGeneral.CheckedState.BorderThickness = 0;
             this.chbGeneral.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.chbGeneral.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbGeneral.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chbGeneral.Location = new System.Drawing.Point(3, 12);
             this.chbGeneral.Name = "chbGeneral";
-            this.chbGeneral.Size = new System.Drawing.Size(109, 19);
+            this.chbGeneral.Size = new System.Drawing.Size(109, 18);
             this.chbGeneral.TabIndex = 4;
             this.chbGeneral.Text = "Reporte general";
             this.chbGeneral.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
@@ -215,10 +218,10 @@
             this.chbUsuario.CheckedState.BorderRadius = 0;
             this.chbUsuario.CheckedState.BorderThickness = 0;
             this.chbUsuario.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.chbUsuario.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbUsuario.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chbUsuario.Location = new System.Drawing.Point(3, 35);
             this.chbUsuario.Name = "chbUsuario";
-            this.chbUsuario.Size = new System.Drawing.Size(130, 19);
+            this.chbUsuario.Size = new System.Drawing.Size(130, 18);
             this.chbUsuario.TabIndex = 5;
             this.chbUsuario.Text = "Reporte por usuario";
             this.chbUsuario.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
@@ -235,7 +238,7 @@
             this.btnGenerarReporte.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnGenerarReporte.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnGenerarReporte.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnGenerarReporte.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
+            this.btnGenerarReporte.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
             this.btnGenerarReporte.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnGenerarReporte.ForeColor = System.Drawing.Color.White;
             this.btnGenerarReporte.Location = new System.Drawing.Point(120, 275);
@@ -249,20 +252,20 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(115, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(225, 30);
+            this.label2.Size = new System.Drawing.Size(217, 25);
             this.label2.TabIndex = 2;
             this.label2.Text = "Reporte de auditoria";
             // 
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsuario.Location = new System.Drawing.Point(32, 148);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(47, 15);
+            this.lblUsuario.Size = new System.Drawing.Size(67, 19);
             this.lblUsuario.TabIndex = 1;
             this.lblUsuario.Text = "Usuario";
             this.lblUsuario.Visible = false;

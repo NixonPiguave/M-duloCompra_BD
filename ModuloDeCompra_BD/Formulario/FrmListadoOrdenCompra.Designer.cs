@@ -39,7 +39,7 @@
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(7)))), ((int)(((byte)(109)))));
+            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(85)))), ((int)(((byte)(84)))));
             this.guna2Panel1.Controls.Add(this.lblListadoOrden);
             this.guna2Panel1.Location = new System.Drawing.Point(1, 0);
             this.guna2Panel1.Name = "guna2Panel1";
@@ -49,11 +49,11 @@
             // lblListadoOrden
             // 
             this.lblListadoOrden.BackColor = System.Drawing.Color.Transparent;
-            this.lblListadoOrden.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblListadoOrden.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblListadoOrden.ForeColor = System.Drawing.Color.White;
             this.lblListadoOrden.Location = new System.Drawing.Point(61, 24);
             this.lblListadoOrden.Name = "lblListadoOrden";
-            this.lblListadoOrden.Size = new System.Drawing.Size(231, 27);
+            this.lblListadoOrden.Size = new System.Drawing.Size(223, 24);
             this.lblListadoOrden.TabIndex = 0;
             this.lblListadoOrden.Text = "Listado Orden de Compra";
             // 
@@ -95,12 +95,12 @@
             this.btnSeleccionarOrdenCompra.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnSeleccionarOrdenCompra.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnSeleccionarOrdenCompra.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSeleccionarOrdenCompra.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(170)))), ((int)(((byte)(239)))));
-            this.btnSeleccionarOrdenCompra.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSeleccionarOrdenCompra.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
+            this.btnSeleccionarOrdenCompra.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeleccionarOrdenCompra.ForeColor = System.Drawing.Color.White;
             this.btnSeleccionarOrdenCompra.Location = new System.Drawing.Point(200, 102);
             this.btnSeleccionarOrdenCompra.Name = "btnSeleccionarOrdenCompra";
-            this.btnSeleccionarOrdenCompra.Size = new System.Drawing.Size(93, 26);
+            this.btnSeleccionarOrdenCompra.Size = new System.Drawing.Size(123, 26);
             this.btnSeleccionarOrdenCompra.TabIndex = 3;
             this.btnSeleccionarOrdenCompra.Text = "Seleccionar";
             this.btnSeleccionarOrdenCompra.Click += new System.EventHandler(this.btnSeleccionarCatego_Click);
@@ -109,6 +109,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.ClientSize = new System.Drawing.Size(335, 450);
             this.Controls.Add(this.btnSeleccionarOrdenCompra);
             this.Controls.Add(this.txtOrdenCompraID);
