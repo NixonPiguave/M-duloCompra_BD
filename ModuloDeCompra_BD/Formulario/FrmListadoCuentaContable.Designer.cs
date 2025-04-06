@@ -41,9 +41,10 @@
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(7)))), ((int)(((byte)(109)))));
             this.guna2Panel1.Controls.Add(this.guna2HtmlLabel1);
-            this.guna2Panel1.Location = new System.Drawing.Point(-12, 6);
+            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(335, 63);
+            this.guna2Panel1.Size = new System.Drawing.Size(943, 63);
             this.guna2Panel1.TabIndex = 5;
             // 
             // guna2HtmlLabel1
@@ -51,7 +52,7 @@
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(46, 22);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(317, 21);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(263, 27);
             this.guna2HtmlLabel1.TabIndex = 0;
@@ -67,7 +68,7 @@
             this.btnSeleccionarBodega.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(170)))), ((int)(((byte)(239)))));
             this.btnSeleccionarBodega.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnSeleccionarBodega.ForeColor = System.Drawing.Color.White;
-            this.btnSeleccionarBodega.Location = new System.Drawing.Point(204, 111);
+            this.btnSeleccionarBodega.Location = new System.Drawing.Point(317, 111);
             this.btnSeleccionarBodega.Name = "btnSeleccionarBodega";
             this.btnSeleccionarBodega.Size = new System.Drawing.Size(93, 26);
             this.btnSeleccionarBodega.TabIndex = 8;
@@ -89,11 +90,13 @@
             this.txtBuscarBodega.Name = "txtBuscarBodega";
             this.txtBuscarBodega.PlaceholderText = "";
             this.txtBuscarBodega.SelectedText = "";
-            this.txtBuscarBodega.Size = new System.Drawing.Size(136, 26);
+            this.txtBuscarBodega.Size = new System.Drawing.Size(272, 26);
             this.txtBuscarBodega.TabIndex = 7;
             // 
             // dgvListadoCuenta
             // 
+            this.dgvListadoCuenta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvListadoCuenta.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvListadoCuenta.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvListadoCuenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListadoCuenta.GridColor = System.Drawing.Color.Silver;
@@ -101,19 +104,20 @@
             this.dgvListadoCuenta.Name = "dgvListadoCuenta";
             this.dgvListadoCuenta.RowHeadersVisible = false;
             this.dgvListadoCuenta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListadoCuenta.Size = new System.Drawing.Size(258, 280);
+            this.dgvListadoCuenta.Size = new System.Drawing.Size(870, 364);
             this.dgvListadoCuenta.TabIndex = 6;
             // 
             // FrnListadoCatalogoCuentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(321, 429);
+            this.ClientSize = new System.Drawing.Size(943, 533);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.btnSeleccionarBodega);
             this.Controls.Add(this.txtBuscarBodega);
             this.Controls.Add(this.dgvListadoCuenta);
             this.Name = "FrnListadoCatalogoCuentas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrnListadoCatalogoCuentas";
             this.Load += new System.EventHandler(this.FrnListadoCatalogoCuentas_Load);
             this.guna2Panel1.ResumeLayout(false);

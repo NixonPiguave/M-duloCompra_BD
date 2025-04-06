@@ -44,37 +44,7 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            Point boton = new Point();
-            Point btnAgregarLocalizacion = new Point();
-            boton.Y = 317;
-            boton.X = 175;
-            btnAgregarLocalizacion.Y = boton.Y;
-            btnAgregarLocalizacion.X = 12;
-            btnModificar.Location = boton;
-            btnAgregar.Location = btnAgregarLocalizacion;
- 
-            if (txtModificarCategoria.Visible == false)
-            {
-                lblModificarCategoria.Visible = true;
-                txtModificarCategoria.Visible = true;
-                btnAceptar.Visible = true;
-                btnAgregar.Visible = false;
-            }
-            else
-            {
-                Point regresarPosicionBtnModificar = new Point();
-                Point regresarPosicionBtnAgregar = new Point();
-                regresarPosicionBtnModificar.X = 175;
-                regresarPosicionBtnModificar.Y = 217;
-                regresarPosicionBtnAgregar.X = 12;
-                regresarPosicionBtnAgregar.Y = 217;
-                btnAgregar.Location = regresarPosicionBtnAgregar;
-                btnModificar.Location = regresarPosicionBtnModificar;
-                lblModificarCategoria.Visible = false;
-                txtModificarCategoria.Visible = false;
-                btnAceptar.Visible = false;
-                btnAgregar.Visible = true;
-            }
+            
         }
 
         private void FrmCategorias_Load(object sender, EventArgs e)
