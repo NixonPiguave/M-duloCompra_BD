@@ -50,6 +50,8 @@
             this.txtOrdenCompra = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cbTipoGRN = new System.Windows.Forms.ComboBox();
             this.lbCantRecib = new System.Windows.Forms.Label();
             this.dgvDetalleOrden = new Guna.UI2.WinForms.Guna2DataGridView();
             this.label3 = new System.Windows.Forms.Label();
@@ -59,8 +61,7 @@
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.dgvGrnDeOrden = new Guna.UI2.WinForms.Guna2DataGridView();
             this.label6 = new System.Windows.Forms.Label();
-            this.cbTipoGRN = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.txtNombreProveedor = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -184,6 +185,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(85)))), ((int)(((byte)(84)))));
+            this.panel2.Controls.Add(this.txtNombreProveedor);
             this.panel2.Controls.Add(this.btnOrdenCompra);
             this.panel2.Controls.Add(this.txtProveedor);
             this.panel2.Controls.Add(this.txtOrdenCompra);
@@ -281,6 +283,30 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(898, 295);
             this.guna2Panel1.TabIndex = 3;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(23, 241);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(169, 22);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Tipo de Recepción";
+            // 
+            // cbTipoGRN
+            // 
+            this.cbTipoGRN.FormattingEnabled = true;
+            this.cbTipoGRN.Items.AddRange(new object[] {
+            " Parcial",
+            " Completa"});
+            this.cbTipoGRN.Location = new System.Drawing.Point(198, 242);
+            this.cbTipoGRN.Name = "cbTipoGRN";
+            this.cbTipoGRN.Size = new System.Drawing.Size(121, 21);
+            this.cbTipoGRN.TabIndex = 11;
+            this.cbTipoGRN.SelectedIndexChanged += new System.EventHandler(this.cbTipoGRN_SelectedIndexChanged);
             // 
             // lbCantRecib
             // 
@@ -527,29 +553,25 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "GRN  Generados para esta Orden";
             // 
-            // cbTipoGRN
+            // txtNombreProveedor
             // 
-            this.cbTipoGRN.FormattingEnabled = true;
-            this.cbTipoGRN.Items.AddRange(new object[] {
-            " Parcial",
-            " Completa"});
-            this.cbTipoGRN.Location = new System.Drawing.Point(198, 242);
-            this.cbTipoGRN.Name = "cbTipoGRN";
-            this.cbTipoGRN.Size = new System.Drawing.Size(121, 21);
-            this.cbTipoGRN.TabIndex = 11;
-            this.cbTipoGRN.SelectedIndexChanged += new System.EventHandler(this.cbTipoGRN_SelectedIndexChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(23, 241);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(169, 22);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Tipo de Recepción";
+            this.txtNombreProveedor.BorderRadius = 5;
+            this.txtNombreProveedor.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtNombreProveedor.DefaultText = "";
+            this.txtNombreProveedor.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtNombreProveedor.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtNombreProveedor.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtNombreProveedor.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtNombreProveedor.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtNombreProveedor.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtNombreProveedor.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtNombreProveedor.Location = new System.Drawing.Point(41, 161);
+            this.txtNombreProveedor.Name = "txtNombreProveedor";
+            this.txtNombreProveedor.PlaceholderText = "";
+            this.txtNombreProveedor.ReadOnly = true;
+            this.txtNombreProveedor.SelectedText = "";
+            this.txtNombreProveedor.Size = new System.Drawing.Size(86, 27);
+            this.txtNombreProveedor.TabIndex = 6;
             // 
             // FrmRecepcionCompra
             // 
@@ -605,5 +627,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cbTipoGRN;
+        private Guna.UI2.WinForms.Guna2TextBox txtNombreProveedor;
     }
 }

@@ -31,6 +31,12 @@ namespace ModuloDeCompra_BD.Formulario
             {
                 OrdenyGrn(idorden, cbTipoGRN.SelectedIndex);
                 ActualizarEstadoRecibido(idorden);
+                DataTable tb = CsComandosSql.RetornaDatos($"select Nombre_Proveedor from Proveedores where ID_Proveedor={ordenCompra.IdProv}");
+                if (tb.Rows.Count > 0)
+                {
+                    string Provedorname = tb.Rows[0]["Nombre_Proveedor"].ToString();
+                    txtNombreProveedor.Text = Provedorname;
+                }
             }
         }
 
