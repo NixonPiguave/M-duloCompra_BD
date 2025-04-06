@@ -31,6 +31,8 @@ namespace Menú.Formularios
             tabla.Columns.Add("Cantidad", typeof(string));
             dgvProductosAgregados.DataSource = tabla;
 
+            panel3.Visible = false;
+            panel4.Visible = false;
             btnAgregarP.Visible = false;
             lbID.Visible = false;
             lbProduc.Visible = false;
@@ -67,6 +69,7 @@ namespace Menú.Formularios
 
         private void btnProducto_Click(object sender, EventArgs e)
         {
+            panel4.Visible = true;
             btnAgregarP.Visible = true;
             lbID.Visible = true;
             lbProduc.Visible = true;
@@ -91,6 +94,7 @@ namespace Menú.Formularios
 
         private void btnServicio_Click(object sender, EventArgs e)
         {
+            panel3.Visible = true;
             btnAgregarP.Visible = false;
             lbID.Visible = false;
             lbProduc.Visible = false;

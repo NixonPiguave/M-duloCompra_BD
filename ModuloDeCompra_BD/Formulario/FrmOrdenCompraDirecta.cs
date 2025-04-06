@@ -47,6 +47,8 @@ namespace ModuloDeCompra_BD.Formulario
             txtServicio.Visible = false;
             txtIDServi.Visible = false;
             nudServicio.Visible = false;
+            panel2.Visible = false;
+            panel4.Visible = false;
 
             nudCantidad.Minimum = 1;
             nudCantidad.Value = 1;
@@ -157,7 +159,7 @@ namespace ModuloDeCompra_BD.Formulario
 
                         tabla.Clear();
                         dgvProductosAgregados.DataSource = null;
-                        txtMotivo.Text = string.Empty;
+                        //txtMotivo.Text = string.Empty;
 
                         MessageBox.Show("La orden ha sido guardada correctamente");
                         btnAgregarP.Visible = false;
@@ -241,6 +243,7 @@ namespace ModuloDeCompra_BD.Formulario
                 MessageBox.Show("Debe seleccionar un proveedor antes de elegir un producto");
                 return;
             }
+            panel2.Visible = true;
             btnAgregarP.Visible = true;
             lbID.Visible = true;
             lbProduc.Visible = true;
@@ -332,6 +335,7 @@ namespace ModuloDeCompra_BD.Formulario
                 MessageBox.Show("Debe seleccionar un proveedor antes de elegir un servicio");
                 return;
             }
+            panel4.Visible = true;
             btnAgregarP.Visible = false;
             lbID.Visible = false;
             lbProduc.Visible = false;
