@@ -289,6 +289,7 @@ namespace ModuloDeCompra_BD.Formulario
             dgvGrnDeOrden.DataSource = null;
             txtProveedor.Text = string.Empty;
             txtOrdenCompra.Text = string.Empty;
+            txtProveedor.Text = string.Empty;
             lbCantRecib.Visible = false;
         }
 
