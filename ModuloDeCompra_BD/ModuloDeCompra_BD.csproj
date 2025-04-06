@@ -154,6 +154,18 @@
     <Compile Include="Formulario\FrmRecepcionCompra.Designer.cs">
       <DependentUpon>FrmRecepcionCompra.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formulario\frmreportDoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\frmreportDoc.Designer.cs">
+      <DependentUpon>frmreportDoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\frmreportDocOCR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\frmreportDocOCR.Designer.cs">
+      <DependentUpon>frmreportDocOCR.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formulario\frmReporteAuditoriaSesion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -407,6 +419,12 @@
     <EmbeddedResource Include="Formulario\FrmRecepcionCompra.resx">
       <DependentUpon>FrmRecepcionCompra.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\frmreportDoc.resx">
+      <DependentUpon>frmreportDoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\frmreportDocOCR.resx">
+      <DependentUpon>frmreportDocOCR.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formulario\frmReporteAuditoriaSesion.resx">
       <DependentUpon>frmReporteAuditoriaSesion.cs</DependentUpon>
     </EmbeddedResource>
@@ -524,6 +542,8 @@
     <EmbeddedResource Include="Reporte\dArpt_ProductosRequiDetalles.rdlc" />
     <EmbeddedResource Include="Reporte\rpt_Auditoria.rdlc" />
     <EmbeddedResource Include="Reporte\rpt_AuditoriaSesion.rdlc" />
+    <EmbeddedResource Include="Reporte\rpt_DocumentoOCD.rdlc" />
+    <EmbeddedResource Include="Reporte\rpt_DocumentoOCR.rdlc" />
     <EmbeddedResource Include="Reporte\rpt_FacturaCompra.rdlc" />
     <EmbeddedResource Include="Reporte\rpt_ReporteComprasVentas.rdlc" />
     <EmbeddedResource Include="Reporte\rpt_ReporteEstadoStock.rdlc" />

@@ -33,6 +33,7 @@ namespace ModuloDeCompra_BD.Formulario
             tabla.Columns.Add("ID_Servicio", typeof(int));
             tabla.Columns.Add("ID_Producto", typeof(int));
             btnAgregarP.Visible = false;
+            btnGenerarDocumento.Visible = false;
             lbID.Visible = false;
             lbProduc.Visible = false;
             lbCantidad.Visible = false;
@@ -162,6 +163,7 @@ namespace ModuloDeCompra_BD.Formulario
                         //txtMotivo.Text = string.Empty;
 
                         MessageBox.Show("La orden ha sido guardada correctamente");
+                        btnGenerarDocumento.Visible = true;
                         btnAgregarP.Visible = false;
                         lbID.Visible = false;
                         lbProduc.Visible = false;
@@ -189,12 +191,14 @@ namespace ModuloDeCompra_BD.Formulario
                 MessageBox.Show("Escoja los productos");
             }
         }
+        public string DocNomProveedor;
         private void txtProveedor_Click(object sender, EventArgs e)
         {
             FrmListadoProveedor prov = new FrmListadoProveedor();
             prov.ShowDialog();
             idproveedor = prov.IdProvee1;
             txtProveedor.Text = prov.Nombre1;
+            DocNomProveedor = prov.Nombre1;
         }
         private void dtpFechaLimite_ValueChanged(object sender, EventArgs e)
         {
@@ -417,6 +421,13 @@ namespace ModuloDeCompra_BD.Formulario
             {
                 MessageBox.Show("Rellene todos los campos por favor");
             }
+        }
+
+        private void btnGenerarDocumento_Click(object sender, EventArgs e)
+        {
+            frmreportDoc DocumentoOC = new frmreportDoc();
+            DocumentoOC.DocProveedor = DocNomProveedor;
+            DocumentoOC.ShowDialog();
         }
     }
 }

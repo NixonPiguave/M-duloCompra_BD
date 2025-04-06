@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Mail;
@@ -12,20 +13,18 @@ namespace ModuloDeCompra_BD.Clases
 {
     public class CsEmail
     {
-        string De;
-        string De_Nombre;
-        string[] Para;
-        string Asunto;
-        string Cuerpo;
-
-        string Servidor;
-        int Puerto;
-        bool SSL;
-        string Usuario;
-        string Clave;
-        string[] Concopia;
-        string[] RutaAdjunto;
-        MailMessage mensaje;
+        private string De;
+        private string De_Nombre;
+        private string Para;
+        private string Asunto;
+        private string Cuerpo;
+        private string Servidor;
+        private int Puerto;
+        private bool SSL;
+        private string Usuario;
+        private string Clave;
+        private string RutaAdjunto;
+        private MailMessage mensaje;
 
         public CsEmail(string server, int port, bool security, string user, string pass, string NombreCta)
         {
@@ -40,78 +39,105 @@ namespace ModuloDeCompra_BD.Clases
             mensaje.From = new MailAddress(De, De_Nombre);
         }
 
-        public string DE
-        {
-            get { return De; }
-            set { De = value; }
-        }
-        public string DE_NOMBRE
-        {
-            get { return De_Nombre; }
-            set { De_Nombre = value; }
-        }
-        public string[] PARA
+        public string PARA
         {
             get { return Para; }
             set
             {
                 Para = value;
-                for (int i = 0; i <= Para.GetUpperBound(0); i++)
-                {
-                    mensaje.To.Add(new MailAddress(Para[i]));
-                }
+                mensaje.To.Clear();
+                mensaje.To.Add(new MailAddress(Para));
             }
         }
-        public string[] CONCOPIA
-        {
-            get { return Concopia; }
-            set
-            {
-                Concopia = value;
-                for (int i = 0; i <= Concopia.GetUpperBound(0); i++)
-                {
-                    mensaje.CC.Add(new MailAddress(Concopia[i]));
-                }
-            }
-        }
-        public string ASUNTO
-        {
-            get { return Asunto; }
-            set { Asunto = value; mensaje.Subject = Asunto; }
-        }
-        public string CUERPO
-        {
-            get { return Cuerpo; }
-            set { Cuerpo = value; mensaje.Body = Cuerpo; }
-        }
-        public string[] ADJUNTO
+
+        public string ADJUNTO
         {
             get { return RutaAdjunto; }
             set
             {
                 RutaAdjunto = value;
-                for (int i = 0; i <= RutaAdjunto.GetUpperBound(0); i++)
-                    mensaje.Attachments.Add(new Attachment(RutaAdjunto[i]));
+                mensaje.Attachments.Clear(); // Limpiamos adjuntos previos
+
+                if (File.Exists(RutaAdjunto))
+                {
+                    mensaje.Attachments.Add(new Attachment(RutaAdjunto));
+                }
+                else
+                {
+                    MessageBox.Show("El archivo adjunto no existe: " + RutaAdjunto,
+                                  "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
+        }
+
+        public string DE
+        {
+            get { return De; }
+            set { De = value; }
+        }
+
+        public string DE_NOMBRE
+        {
+            get { return De_Nombre; }
+            set { De_Nombre = value; }
+        }
+
+        public string ASUNTO
+        {
+            get { return Asunto; }
+            set { Asunto = value; mensaje.Subject = Asunto; }
+        }
+
+        public string CUERPO
+        {
+            get { return Cuerpo; }
+            set { Cuerpo = value; mensaje.Body = Cuerpo; }
         }
 
         public Boolean Enviar()
         {
-            SmtpClient clienteSMTP = new SmtpClient(Servidor);
-            clienteSMTP.Port = Puerto;
-            clienteSMTP.EnableSsl = SSL;
-            clienteSMTP.Credentials = new NetworkCredential(Usuario, Clave);
             try
             {
-                clienteSMTP.Send(mensaje);
+                using (var client = new SmtpClient(Servidor, Puerto))
+                {
+                    client.EnableSsl = true;
+                    client.UseDefaultCredentials = false;
+                    client.Credentials = new NetworkCredential(Usuario, Clave);
+
+                    // Configuración adicional crítica
+                    client.DeliveryMethod = SmtpDeliveryMethod.Network;
+                    client.Timeout = 30000;
+
+                    // Forzar TLS 1.2 (requerido por Gmail)
+                    System.Net.ServicePointManager.SecurityProtocol =
+                        System.Net.SecurityProtocolType.Tls12;
+
+                    var mailMessage = new MailMessage();
+                    mailMessage.From = new MailAddress(De, De_Nombre);
+                    mailMessage.To.Add(Para);
+                    mailMessage.Subject = Asunto;
+                    mailMessage.Body = Cuerpo;
+                    mailMessage.IsBodyHtml = false;
+
+                    if (!string.IsNullOrEmpty(RutaAdjunto))
+                    {
+                        mailMessage.Attachments.Add(new Attachment(RutaAdjunto));
+                    }
+
+                    client.Send(mailMessage);
+                    return true;
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
-                mensaje.Dispose();
+                MessageBox.Show($"Error SMTP: {ex.Message}\n\nAsegúrate de:\n" +
+                               "1. Tener verificación en dos pasos activada\n" +
+                               "2. Haber creado una contraseña de aplicación\n" +
+                               "3. Usar esa contraseña especial en tu app",
+                               "Error de autenticación",
+                               MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            return true;
         }
     }
 }

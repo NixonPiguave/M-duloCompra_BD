@@ -56,6 +56,29 @@ namespace ModuloDeCompra_BD.Clases
             }
             return dt;
         }
+        public static DataTable RetornaDatosConParametro(string query, SqlParameter parametro)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                Conectar(); // Usa tu método existente de conexión
+
+                comando = new SqlCommand(query, conex);
+                comando.Parameters.Add(parametro);
+
+                SqlDataAdapter sDA = new SqlDataAdapter(comando);
+                sDA.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al ejecutar consulta: " + ex.Message);
+            }
+            finally
+            {
+                Desconectar(); // Asegura que la conexión se cierre
+            }
+            return dt;
+        }
         public static bool InserDeletUpdate(string coman)
         {
             int result = 0;

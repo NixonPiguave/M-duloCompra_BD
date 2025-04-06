@@ -25,8 +25,8 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void FrmOrdenCompra_Load(object sender, EventArgs e)
         {
-            
-           
+            btnGenerarDocumento.Visible = false;
+
         }
         private void btnAceptar_Click(object sender, EventArgs e)
         {
@@ -88,6 +88,7 @@ namespace ModuloDeCompra_BD.Formulario
                         dgvRequisiciones.DataSource = null;
                         txtProve.Text = string.Empty;
                         txtRequisicionID.Text = string.Empty;
+                        btnGenerarDocumento.Visible = true;
                     }
                 }
                 catch (SqlException es)
@@ -141,12 +142,14 @@ namespace ModuloDeCompra_BD.Formulario
                 MessageBox.Show("Error : "+ ex);
             }
         }
+        public string DocNomProveedor;
         private void txtProveedor_Click(object sender, EventArgs e)
         {
             FrmListadoProveedor prov = new FrmListadoProveedor();
             prov.ShowDialog();
             idproveedor= prov.IdProvee1;
             txtProve.Text= prov.Nombre1;
+            DocNomProveedor = prov.Nombre1;
         }
 
         private void dgvRequisiciones_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
@@ -205,6 +208,13 @@ namespace ModuloDeCompra_BD.Formulario
         private void cmbEstadoOrden_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnGenerarDocumento_Click(object sender, EventArgs e)
+        {
+            frmreportDocOCR DocumentoOCR = new frmreportDocOCR();
+            DocumentoOCR.DocProveedor = DocNomProveedor;
+            DocumentoOCR.ShowDialog();
         }
     }
 }
