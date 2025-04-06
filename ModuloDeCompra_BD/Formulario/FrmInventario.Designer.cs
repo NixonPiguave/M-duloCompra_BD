@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.dgvInventario = new System.Windows.Forms.DataGridView();
-            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.txtID_Inventario = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).BeginInit();
-            this.guna2Panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvInventario
@@ -44,24 +45,13 @@
             this.dgvInventario.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvInventario.BackgroundColor = System.Drawing.Color.White;
             this.dgvInventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInventario.Location = new System.Drawing.Point(12, 166);
+            this.dgvInventario.Location = new System.Drawing.Point(46, 73);
             this.dgvInventario.Name = "dgvInventario";
             this.dgvInventario.RowHeadersVisible = false;
             this.dgvInventario.RowTemplate.Height = 18;
-            this.dgvInventario.Size = new System.Drawing.Size(1325, 471);
+            this.dgvInventario.Size = new System.Drawing.Size(1066, 389);
             this.dgvInventario.TabIndex = 20;
             this.dgvInventario.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInventario_CellDoubleClick);
-            // 
-            // guna2Panel2
-            // 
-            this.guna2Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
-            this.guna2Panel2.Controls.Add(this.txtID_Inventario);
-            this.guna2Panel2.Controls.Add(this.guna2HtmlLabel4);
-            this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel2.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(1349, 135);
-            this.guna2Panel2.TabIndex = 21;
             // 
             // txtID_Inventario
             // 
@@ -75,7 +65,7 @@
             this.txtID_Inventario.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtID_Inventario.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtID_Inventario.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtID_Inventario.Location = new System.Drawing.Point(519, 69);
+            this.txtID_Inventario.Location = new System.Drawing.Point(576, 32);
             this.txtID_Inventario.Name = "txtID_Inventario";
             this.txtID_Inventario.PlaceholderText = "";
             this.txtID_Inventario.SelectedText = "";
@@ -86,36 +76,61 @@
             // guna2HtmlLabel4
             // 
             this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel4.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel4.ForeColor = System.Drawing.SystemColors.Control;
-            this.guna2HtmlLabel4.Location = new System.Drawing.Point(571, 27);
+            this.guna2HtmlLabel4.Location = new System.Drawing.Point(435, 32);
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            this.guna2HtmlLabel4.Size = new System.Drawing.Size(106, 26);
+            this.guna2HtmlLabel4.Size = new System.Drawing.Size(119, 24);
             this.guna2HtmlLabel4.TabIndex = 2;
             this.guna2HtmlLabel4.Text = "ID Inventario";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(85)))), ((int)(((byte)(84)))));
+            this.panel1.Controls.Add(this.guna2HtmlLabel4);
+            this.panel1.Controls.Add(this.txtID_Inventario);
+            this.panel1.Controls.Add(this.dgvInventario);
+            this.panel1.Location = new System.Drawing.Point(94, 124);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1159, 526);
+            this.panel1.TabIndex = 22;
+            // 
+            // guna2HtmlLabel1
+            // 
+            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Cambria", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.Black;
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(561, 41);
+            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(162, 34);
+            this.guna2HtmlLabel1.TabIndex = 23;
+            this.guna2HtmlLabel1.Text = "INVENTARIO";
             // 
             // FrmInventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.ClientSize = new System.Drawing.Size(1349, 701);
-            this.Controls.Add(this.guna2Panel2);
-            this.Controls.Add(this.dgvInventario);
+            this.Controls.Add(this.guna2HtmlLabel1);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmInventario";
             this.Text = "FrmInventario";
             this.Load += new System.EventHandler(this.FrmInventario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).EndInit();
-            this.guna2Panel2.ResumeLayout(false);
-            this.guna2Panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
         private System.Windows.Forms.DataGridView dgvInventario;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2TextBox txtID_Inventario;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
+        private System.Windows.Forms.Panel panel1;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
     }
 }
