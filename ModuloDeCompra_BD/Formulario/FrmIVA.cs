@@ -54,36 +54,36 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            if (lblIVAEscogido.Visible == false)
-            {
-                lblIVAEscogido.Visible = true;
-                lblNuevoValorIVA.Visible = true;
-                txtNuevoValorIVA.Visible = true;
-                lblNuevoEstadoIVA.Visible = true;
-                txtNuevoEstadoIVA.Visible = true;
-                btnAceptar.Visible = true;
+            //if (lblIVAEscogido.Visible == false)
+            //{
+            //    lblIVAEscogido.Visible = true;
+            //    lblNuevoValorIVA.Visible = true;
+            //    txtNuevoValorIVA.Visible = true;
+            //    lblNuevoEstadoIVA.Visible = true;
+            //    txtNuevoEstadoIVA.Visible = true;
+            //    btnAceptar.Visible = true;
 
-                lblModificarCategoria.Visible = false;
-                txtValorIVA.Visible = false;
-                lblEstadoIVA.Visible = false;
-                txtEstadoIVA.Visible = false;
-                btnAgregar.Visible = false;
-            }
-            else
-            {
-                lblIVAEscogido.Visible = false;
-                lblNuevoValorIVA.Visible = false;
-                txtNuevoValorIVA.Visible = false;
-                lblNuevoEstadoIVA.Visible = false;
-                txtNuevoEstadoIVA.Visible = false;
-                btnAceptar.Visible = false;
+            //    lblModificarCategoria.Visible = false;
+            //    txtValorIVA.Visible = false;
+            //    lblEstadoIVA.Visible = false;
+            //    txtEstadoIVA.Visible = false;
+            //    btnAgregar.Visible = false;
+            //}
+            //else
+            //{
+            //    lblIVAEscogido.Visible = false;
+            //    lblNuevoValorIVA.Visible = false;
+            //    txtNuevoValorIVA.Visible = false;
+            //    lblNuevoEstadoIVA.Visible = false;
+            //    txtNuevoEstadoIVA.Visible = false;
+            //    btnAceptar.Visible = false;
 
-                lblModificarCategoria.Visible = true;
-                txtValorIVA.Visible = true;
-                lblEstadoIVA.Visible = true;
-                txtEstadoIVA.Visible = true;
-                btnAgregar.Visible = true;
-            }
+            //    lblModificarCategoria.Visible = true;
+            //    txtValorIVA.Visible = true;
+            //    lblEstadoIVA.Visible = true;
+            //    txtEstadoIVA.Visible = true;
+            //    btnAgregar.Visible = true;
+            //}
         }
 
         private void FrmIVA_Load(object sender, EventArgs e)

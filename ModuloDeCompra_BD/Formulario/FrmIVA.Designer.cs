@@ -28,11 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvIVA = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.pnlSubMenu = new System.Windows.Forms.Panel();
             this.txtNuevoEstadoIVA = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtEstadoIVA = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblNuevoEstadoIVA = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -48,8 +47,14 @@
             this.btnAgregar = new Guna.UI2.WinForms.Guna2Button();
             this.btnModificar = new Guna.UI2.WinForms.Guna2Button();
             this.txtIDIVA = new Guna.UI2.WinForms.Guna2TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIVA)).BeginInit();
-            this.pnlSubMenu.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvIVA
@@ -58,31 +63,31 @@
             this.dgvIVA.AllowUserToDeleteRows = false;
             this.dgvIVA.AllowUserToResizeColumns = false;
             this.dgvIVA.AllowUserToResizeRows = false;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
-            this.dgvIVA.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvIVA.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
+            this.dgvIVA.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvIVA.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.dgvIVA.ColumnHeadersHeight = 20;
             this.dgvIVA.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvIVA.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvIVA.DefaultCellStyle = dataGridViewCellStyle18;
             this.dgvIVA.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvIVA.Location = new System.Drawing.Point(450, 12);
+            this.dgvIVA.Location = new System.Drawing.Point(20, 24);
             this.dgvIVA.Name = "dgvIVA";
             this.dgvIVA.RowHeadersVisible = false;
-            this.dgvIVA.Size = new System.Drawing.Size(808, 632);
+            this.dgvIVA.Size = new System.Drawing.Size(838, 225);
             this.dgvIVA.TabIndex = 0;
             this.dgvIVA.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvIVA.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -107,30 +112,6 @@
             this.dgvIVA.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvIVA.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategoria_CellDoubleClick);
             // 
-            // pnlSubMenu
-            // 
-            this.pnlSubMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
-            this.pnlSubMenu.Controls.Add(this.txtNuevoEstadoIVA);
-            this.pnlSubMenu.Controls.Add(this.txtEstadoIVA);
-            this.pnlSubMenu.Controls.Add(this.lblNuevoEstadoIVA);
-            this.pnlSubMenu.Controls.Add(this.lblEstadoIVA);
-            this.pnlSubMenu.Controls.Add(this.txtNuevoValorIVA);
-            this.pnlSubMenu.Controls.Add(this.txtValorIVA);
-            this.pnlSubMenu.Controls.Add(this.lblNuevoValorIVA);
-            this.pnlSubMenu.Controls.Add(this.lblModificarCategoria);
-            this.pnlSubMenu.Controls.Add(this.lblIVAEscogido);
-            this.pnlSubMenu.Controls.Add(this.lblCategoria);
-            this.pnlSubMenu.Controls.Add(this.btnEliminar);
-            this.pnlSubMenu.Controls.Add(this.btnAceptar);
-            this.pnlSubMenu.Controls.Add(this.btnAgregar);
-            this.pnlSubMenu.Controls.Add(this.btnModificar);
-            this.pnlSubMenu.Controls.Add(this.txtIDIVA);
-            this.pnlSubMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlSubMenu.Location = new System.Drawing.Point(0, 0);
-            this.pnlSubMenu.Name = "pnlSubMenu";
-            this.pnlSubMenu.Size = new System.Drawing.Size(319, 663);
-            this.pnlSubMenu.TabIndex = 1;
-            // 
             // txtNuevoEstadoIVA
             // 
             this.txtNuevoEstadoIVA.BorderRadius = 5;
@@ -143,13 +124,12 @@
             this.txtNuevoEstadoIVA.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNuevoEstadoIVA.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtNuevoEstadoIVA.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNuevoEstadoIVA.Location = new System.Drawing.Point(55, 329);
+            this.txtNuevoEstadoIVA.Location = new System.Drawing.Point(22, 125);
             this.txtNuevoEstadoIVA.Name = "txtNuevoEstadoIVA";
             this.txtNuevoEstadoIVA.PlaceholderText = "";
             this.txtNuevoEstadoIVA.SelectedText = "";
             this.txtNuevoEstadoIVA.Size = new System.Drawing.Size(200, 36);
             this.txtNuevoEstadoIVA.TabIndex = 20;
-            this.txtNuevoEstadoIVA.Visible = false;
             // 
             // txtEstadoIVA
             // 
@@ -163,7 +143,7 @@
             this.txtEstadoIVA.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtEstadoIVA.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtEstadoIVA.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtEstadoIVA.Location = new System.Drawing.Point(55, 329);
+            this.txtEstadoIVA.Location = new System.Drawing.Point(22, 125);
             this.txtEstadoIVA.Name = "txtEstadoIVA";
             this.txtEstadoIVA.PlaceholderText = "";
             this.txtEstadoIVA.SelectedText = "";
@@ -173,23 +153,22 @@
             // lblNuevoEstadoIVA
             // 
             this.lblNuevoEstadoIVA.BackColor = System.Drawing.Color.Transparent;
-            this.lblNuevoEstadoIVA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNuevoEstadoIVA.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblNuevoEstadoIVA.Location = new System.Drawing.Point(87, 292);
+            this.lblNuevoEstadoIVA.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNuevoEstadoIVA.ForeColor = System.Drawing.Color.White;
+            this.lblNuevoEstadoIVA.Location = new System.Drawing.Point(45, 97);
             this.lblNuevoEstadoIVA.Name = "lblNuevoEstadoIVA";
-            this.lblNuevoEstadoIVA.Size = new System.Drawing.Size(134, 22);
+            this.lblNuevoEstadoIVA.Size = new System.Drawing.Size(156, 24);
             this.lblNuevoEstadoIVA.TabIndex = 18;
             this.lblNuevoEstadoIVA.Text = "Nuevo Estado IVA";
-            this.lblNuevoEstadoIVA.Visible = false;
             // 
             // lblEstadoIVA
             // 
             this.lblEstadoIVA.BackColor = System.Drawing.Color.Transparent;
-            this.lblEstadoIVA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEstadoIVA.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblEstadoIVA.Location = new System.Drawing.Point(87, 292);
+            this.lblEstadoIVA.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstadoIVA.ForeColor = System.Drawing.Color.White;
+            this.lblEstadoIVA.Location = new System.Drawing.Point(44, 97);
             this.lblEstadoIVA.Name = "lblEstadoIVA";
-            this.lblEstadoIVA.Size = new System.Drawing.Size(135, 22);
+            this.lblEstadoIVA.Size = new System.Drawing.Size(160, 24);
             this.lblEstadoIVA.TabIndex = 17;
             this.lblEstadoIVA.Text = "Añadir Estado IVA";
             // 
@@ -205,13 +184,12 @@
             this.txtNuevoValorIVA.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNuevoValorIVA.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtNuevoValorIVA.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNuevoValorIVA.Location = new System.Drawing.Point(55, 234);
+            this.txtNuevoValorIVA.Location = new System.Drawing.Point(22, 51);
             this.txtNuevoValorIVA.Name = "txtNuevoValorIVA";
             this.txtNuevoValorIVA.PlaceholderText = "";
             this.txtNuevoValorIVA.SelectedText = "";
             this.txtNuevoValorIVA.Size = new System.Drawing.Size(200, 36);
             this.txtNuevoValorIVA.TabIndex = 16;
-            this.txtNuevoValorIVA.Visible = false;
             // 
             // txtValorIVA
             // 
@@ -225,7 +203,7 @@
             this.txtValorIVA.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtValorIVA.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtValorIVA.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtValorIVA.Location = new System.Drawing.Point(55, 234);
+            this.txtValorIVA.Location = new System.Drawing.Point(22, 51);
             this.txtValorIVA.Name = "txtValorIVA";
             this.txtValorIVA.PlaceholderText = "";
             this.txtValorIVA.SelectedText = "";
@@ -235,46 +213,44 @@
             // lblNuevoValorIVA
             // 
             this.lblNuevoValorIVA.BackColor = System.Drawing.Color.Transparent;
-            this.lblNuevoValorIVA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNuevoValorIVA.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblNuevoValorIVA.Location = new System.Drawing.Point(80, 206);
+            this.lblNuevoValorIVA.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNuevoValorIVA.ForeColor = System.Drawing.Color.White;
+            this.lblNuevoValorIVA.Location = new System.Drawing.Point(44, 22);
             this.lblNuevoValorIVA.Name = "lblNuevoValorIVA";
-            this.lblNuevoValorIVA.Size = new System.Drawing.Size(141, 22);
+            this.lblNuevoValorIVA.Size = new System.Drawing.Size(174, 24);
             this.lblNuevoValorIVA.TabIndex = 14;
             this.lblNuevoValorIVA.Text = "Nuevo valor del IVA";
-            this.lblNuevoValorIVA.Visible = false;
             // 
             // lblModificarCategoria
             // 
             this.lblModificarCategoria.BackColor = System.Drawing.Color.Transparent;
-            this.lblModificarCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblModificarCategoria.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblModificarCategoria.Location = new System.Drawing.Point(100, 206);
+            this.lblModificarCategoria.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblModificarCategoria.ForeColor = System.Drawing.Color.White;
+            this.lblModificarCategoria.Location = new System.Drawing.Point(44, 23);
             this.lblModificarCategoria.Name = "lblModificarCategoria";
-            this.lblModificarCategoria.Size = new System.Drawing.Size(121, 22);
+            this.lblModificarCategoria.Size = new System.Drawing.Size(149, 24);
             this.lblModificarCategoria.TabIndex = 12;
             this.lblModificarCategoria.Text = "Añadir Valor IVA";
             // 
             // lblIVAEscogido
             // 
             this.lblIVAEscogido.AutoSize = true;
-            this.lblIVAEscogido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblIVAEscogido.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblIVAEscogido.Location = new System.Drawing.Point(105, 110);
+            this.lblIVAEscogido.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIVAEscogido.ForeColor = System.Drawing.Color.Black;
+            this.lblIVAEscogido.Location = new System.Drawing.Point(623, 159);
             this.lblIVAEscogido.Name = "lblIVAEscogido";
-            this.lblIVAEscogido.Size = new System.Drawing.Size(106, 20);
+            this.lblIVAEscogido.Size = new System.Drawing.Size(121, 22);
             this.lblIVAEscogido.TabIndex = 11;
             this.lblIVAEscogido.Text = "IVA Escogido";
-            this.lblIVAEscogido.Visible = false;
             // 
             // lblCategoria
             // 
             this.lblCategoria.AutoSize = true;
-            this.lblCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblCategoria.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblCategoria.Location = new System.Drawing.Point(115, 110);
+            this.lblCategoria.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategoria.ForeColor = System.Drawing.Color.Black;
+            this.lblCategoria.Location = new System.Drawing.Point(623, 119);
             this.lblCategoria.Name = "lblCategoria";
-            this.lblCategoria.Size = new System.Drawing.Size(86, 20);
+            this.lblCategoria.Size = new System.Drawing.Size(102, 22);
             this.lblCategoria.TabIndex = 8;
             this.lblCategoria.Text = "Añadir IVA";
             // 
@@ -285,10 +261,10 @@
             this.btnEliminar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnEliminar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnEliminar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnEliminar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
-            this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnEliminar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
+            this.btnEliminar.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(12, 591);
+            this.btnEliminar.Location = new System.Drawing.Point(725, 255);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(133, 53);
             this.btnEliminar.TabIndex = 7;
@@ -302,15 +278,14 @@
             this.btnAceptar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnAceptar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnAceptar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAceptar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
-            this.btnAceptar.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnAceptar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
+            this.btnAceptar.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptar.ForeColor = System.Drawing.Color.White;
-            this.btnAceptar.Location = new System.Drawing.Point(89, 515);
+            this.btnAceptar.Location = new System.Drawing.Point(225, 68);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(133, 53);
             this.btnAceptar.TabIndex = 6;
             this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.Visible = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnAgregar
@@ -320,10 +295,10 @@
             this.btnAgregar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnAgregar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnAgregar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAgregar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
-            this.btnAgregar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
+            this.btnAgregar.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.White;
-            this.btnAgregar.Location = new System.Drawing.Point(12, 443);
+            this.btnAgregar.Location = new System.Drawing.Point(228, 68);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(133, 53);
             this.btnAgregar.TabIndex = 3;
@@ -340,11 +315,12 @@
             this.btnModificar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(65)))), ((int)(((byte)(144)))));
             this.btnModificar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.Color.White;
-            this.btnModificar.Location = new System.Drawing.Point(164, 443);
+            this.btnModificar.Location = new System.Drawing.Point(12, 445);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(133, 53);
             this.btnModificar.TabIndex = 2;
             this.btnModificar.Text = "Modificar";
+            this.btnModificar.Visible = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // txtIDIVA
@@ -359,35 +335,92 @@
             this.txtIDIVA.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtIDIVA.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtIDIVA.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtIDIVA.Location = new System.Drawing.Point(55, 148);
+            this.txtIDIVA.Location = new System.Drawing.Point(572, 183);
             this.txtIDIVA.Name = "txtIDIVA";
             this.txtIDIVA.PlaceholderText = "";
             this.txtIDIVA.SelectedText = "";
             this.txtIDIVA.Size = new System.Drawing.Size(200, 36);
             this.txtIDIVA.TabIndex = 1;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(85)))), ((int)(((byte)(84)))));
+            this.panel1.Controls.Add(this.dgvIVA);
+            this.panel1.Controls.Add(this.btnEliminar);
+            this.panel1.Location = new System.Drawing.Point(238, 289);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(888, 319);
+            this.panel1.TabIndex = 8;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(85)))), ((int)(((byte)(84)))));
+            this.panel2.Controls.Add(this.txtEstadoIVA);
+            this.panel2.Controls.Add(this.lblEstadoIVA);
+            this.panel2.Controls.Add(this.txtValorIVA);
+            this.panel2.Controls.Add(this.lblModificarCategoria);
+            this.panel2.Controls.Add(this.btnAgregar);
+            this.panel2.Location = new System.Drawing.Point(150, 70);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(371, 188);
+            this.panel2.TabIndex = 21;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(85)))), ((int)(((byte)(84)))));
+            this.panel3.Controls.Add(this.txtNuevoEstadoIVA);
+            this.panel3.Controls.Add(this.txtNuevoValorIVA);
+            this.panel3.Controls.Add(this.lblNuevoEstadoIVA);
+            this.panel3.Controls.Add(this.lblNuevoValorIVA);
+            this.panel3.Controls.Add(this.btnAceptar);
+            this.panel3.Location = new System.Drawing.Point(843, 70);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(361, 188);
+            this.panel3.TabIndex = 22;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Cambria", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(676, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 32);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "IVA";
+            // 
             // FrmIVA
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.ClientSize = new System.Drawing.Size(1386, 663);
-            this.Controls.Add(this.pnlSubMenu);
-            this.Controls.Add(this.dgvIVA);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.btnModificar);
+            this.Controls.Add(this.txtIDIVA);
+            this.Controls.Add(this.lblCategoria);
+            this.Controls.Add(this.lblIVAEscogido);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmIVA";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmIVA";
             this.Load += new System.EventHandler(this.FrmIVA_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvIVA)).EndInit();
-            this.pnlSubMenu.ResumeLayout(false);
-            this.pnlSubMenu.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private Guna.UI2.WinForms.Guna2DataGridView dgvIVA;
-        private System.Windows.Forms.Panel pnlSubMenu;
         private Guna.UI2.WinForms.Guna2Button btnAgregar;
         private Guna.UI2.WinForms.Guna2Button btnModificar;
         private Guna.UI2.WinForms.Guna2TextBox txtIDIVA;
@@ -403,5 +436,9 @@
         private System.Windows.Forms.Label lblIVAEscogido;
         private System.Windows.Forms.Label lblCategoria;
         private Guna.UI2.WinForms.Guna2Button btnEliminar;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label1;
     }
 }

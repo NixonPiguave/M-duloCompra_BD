@@ -24,6 +24,7 @@ namespace ModuloDeCompra_BD.Formulario
         private void FrmBodega_Load(object sender, EventArgs e)
         {
             dgvBodega.DataSource = CsComandosSql.RetornaDatos($"select * from Bodega");
+            dgvBodega.DefaultCellStyle.ForeColor = Color.Black;
         }
 
         private void txtCantidad_TextChanged(object sender, EventArgs e)

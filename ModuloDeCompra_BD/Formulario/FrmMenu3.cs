@@ -366,7 +366,7 @@ namespace Menú
             pnIventario.Visible = false;
             pnlRequisiciones.Visible = false;
             pnlSubMenuOrdenCompra.Visible = false;
-            pnMantenimientos.Visible=false;
+            pnMantenimientos.Visible = false;
             FrmMovimientoInventario frmInventario = new FrmMovimientoInventario();
             openChildForm(frmInventario);
         }
