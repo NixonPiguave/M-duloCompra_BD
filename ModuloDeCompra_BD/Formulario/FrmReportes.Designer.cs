@@ -30,12 +30,8 @@
         {
             this.btnreport = new Guna.UI2.WinForms.Guna2Button();
             this.btnCategoria = new Guna.UI2.WinForms.Guna2Button();
-            this.btnDetalles = new Guna.UI2.WinForms.Guna2Button();
-            this.btnProducto = new Guna.UI2.WinForms.Guna2Button();
             this.btnProveedor = new Guna.UI2.WinForms.Guna2Button();
             this.btnCompras = new Guna.UI2.WinForms.Guna2Button();
-            this.btnDevoluciones = new Guna.UI2.WinForms.Guna2Button();
-            this.btnstock = new Guna.UI2.WinForms.Guna2Button();
             this.btnIva = new Guna.UI2.WinForms.Guna2Button();
             this.btnmovimientos = new Guna.UI2.WinForms.Guna2Button();
             this.btnrequisicion = new Guna.UI2.WinForms.Guna2Button();
@@ -81,40 +77,6 @@
             this.btnCategoria.Text = "Categoria y Detalles";
             this.btnCategoria.Click += new System.EventHandler(this.btnCategoria_Click);
             // 
-            // btnDetalles
-            // 
-            this.btnDetalles.BorderRadius = 10;
-            this.btnDetalles.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnDetalles.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnDetalles.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnDetalles.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDetalles.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
-            this.btnDetalles.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDetalles.ForeColor = System.Drawing.Color.White;
-            this.btnDetalles.Location = new System.Drawing.Point(667, 17);
-            this.btnDetalles.Name = "btnDetalles";
-            this.btnDetalles.Size = new System.Drawing.Size(154, 70);
-            this.btnDetalles.TabIndex = 2;
-            this.btnDetalles.Text = "Ordenes Detalles";
-            this.btnDetalles.Click += new System.EventHandler(this.btnDetalles_Click);
-            // 
-            // btnProducto
-            // 
-            this.btnProducto.BorderRadius = 10;
-            this.btnProducto.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnProducto.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnProducto.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnProducto.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnProducto.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
-            this.btnProducto.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProducto.ForeColor = System.Drawing.Color.White;
-            this.btnProducto.Location = new System.Drawing.Point(904, 17);
-            this.btnProducto.Name = "btnProducto";
-            this.btnProducto.Size = new System.Drawing.Size(146, 70);
-            this.btnProducto.TabIndex = 3;
-            this.btnProducto.Text = "Producto Detalles";
-            this.btnProducto.Click += new System.EventHandler(this.btnProducto_Click);
-            // 
             // btnProveedor
             // 
             this.btnProveedor.BorderRadius = 10;
@@ -148,40 +110,6 @@
             this.btnCompras.TabIndex = 5;
             this.btnCompras.Text = "Reporte Compras";
             this.btnCompras.Click += new System.EventHandler(this.btnCompras_Click);
-            // 
-            // btnDevoluciones
-            // 
-            this.btnDevoluciones.BorderRadius = 10;
-            this.btnDevoluciones.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnDevoluciones.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnDevoluciones.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnDevoluciones.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDevoluciones.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
-            this.btnDevoluciones.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDevoluciones.ForeColor = System.Drawing.Color.White;
-            this.btnDevoluciones.Location = new System.Drawing.Point(213, 272);
-            this.btnDevoluciones.Name = "btnDevoluciones";
-            this.btnDevoluciones.Size = new System.Drawing.Size(151, 73);
-            this.btnDevoluciones.TabIndex = 6;
-            this.btnDevoluciones.Text = "Reporte Devoluciones";
-            this.btnDevoluciones.Click += new System.EventHandler(this.btnDevoluciones_Click);
-            // 
-            // btnstock
-            // 
-            this.btnstock.BorderRadius = 10;
-            this.btnstock.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnstock.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnstock.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnstock.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnstock.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
-            this.btnstock.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnstock.ForeColor = System.Drawing.Color.White;
-            this.btnstock.Location = new System.Drawing.Point(21, 141);
-            this.btnstock.Name = "btnstock";
-            this.btnstock.Size = new System.Drawing.Size(143, 76);
-            this.btnstock.TabIndex = 7;
-            this.btnstock.Text = "Reporte stock";
-            this.btnstock.Click += new System.EventHandler(this.btnstock_Click);
             // 
             // btnIva
             // 
@@ -304,12 +232,8 @@
             this.panel2.Controls.Add(this.btnReporteSesion);
             this.panel2.Controls.Add(this.btnCategoria);
             this.panel2.Controls.Add(this.btnReportAuditoria);
-            this.panel2.Controls.Add(this.btnDetalles);
-            this.panel2.Controls.Add(this.btnDevoluciones);
             this.panel2.Controls.Add(this.btnusuario);
-            this.panel2.Controls.Add(this.btnProducto);
             this.panel2.Controls.Add(this.btnrequisicion);
-            this.panel2.Controls.Add(this.btnstock);
             this.panel2.Controls.Add(this.btnmovimientos);
             this.panel2.Controls.Add(this.btnProveedor);
             this.panel2.Controls.Add(this.btnIva);
@@ -339,12 +263,8 @@
 
         private Guna.UI2.WinForms.Guna2Button btnreport;
         private Guna.UI2.WinForms.Guna2Button btnCategoria;
-        private Guna.UI2.WinForms.Guna2Button btnDetalles;
-        private Guna.UI2.WinForms.Guna2Button btnProducto;
         private Guna.UI2.WinForms.Guna2Button btnProveedor;
         private Guna.UI2.WinForms.Guna2Button btnCompras;
-        private Guna.UI2.WinForms.Guna2Button btnDevoluciones;
-        private Guna.UI2.WinForms.Guna2Button btnstock;
         private Guna.UI2.WinForms.Guna2Button btnIva;
         private Guna.UI2.WinForms.Guna2Button btnmovimientos;
         private Guna.UI2.WinForms.Guna2Button btnrequisicion;
