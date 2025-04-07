@@ -29,5 +29,20 @@ namespace ModuloDeCompra_BD.Formulario
         {
            
         }
+
+        private void btnDiario_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtAnio.Text) || !string.IsNullOrEmpty(txtDiarioID.Text) || cmbPeriodos.SelectedIndex == -1)
+            {
+                string periodo = cmbPeriodos.SelectedItem.ToString();
+                FrmListadoDiario diario = new FrmListadoDiario();
+                diario.Anio1 = txtAnio.Text;
+                diario.Periodo1 = periodo;
+                diario.ShowDialog();
+                txtDiarioID.Text = diario.ID;
+            }
+            else
+                MessageBox.Show("Rellene los campos");
+        }
     }
 }
