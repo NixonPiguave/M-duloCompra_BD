@@ -22,11 +22,7 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void frmReporteDiarioContable_Load(object sender, EventArgs e)
         {
-            DataTable dt = CsComandosSql.RetornaDatos("select * from DiarioCont_Header");
-            for (int i = 0; i < dt.Rows.Count; i++)
-            {
-                cbUsuarios.Items.Add(dt.Rows[i]["Usuario"].ToString());
-            }
+            
         }
 
         private void btnGenerarReporte_Click(object sender, EventArgs e)

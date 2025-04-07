@@ -33,24 +33,24 @@
             this.lblAnio = new System.Windows.Forms.Label();
             this.btnGenerarReporte = new Guna.UI2.WinForms.Guna2Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.lblUsuario = new System.Windows.Forms.Label();
-            this.cbUsuarios = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.lblDiario = new System.Windows.Forms.Label();
             this.txtAnio = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtPeriodo = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtDiario = new Guna.UI2.WinForms.Guna2TextBox();
             this.pnlCheck.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlCheck
             // 
             this.pnlCheck.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.pnlCheck.Controls.Add(this.txtDiario);
             this.pnlCheck.Controls.Add(this.txtPeriodo);
             this.pnlCheck.Controls.Add(this.txtAnio);
             this.pnlCheck.Controls.Add(this.lblPeriodo);
             this.pnlCheck.Controls.Add(this.lblAnio);
             this.pnlCheck.Controls.Add(this.btnGenerarReporte);
             this.pnlCheck.Controls.Add(this.label2);
-            this.pnlCheck.Controls.Add(this.lblUsuario);
-            this.pnlCheck.Controls.Add(this.cbUsuarios);
+            this.pnlCheck.Controls.Add(this.lblDiario);
             this.pnlCheck.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlCheck.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlCheck.Location = new System.Drawing.Point(0, 0);
@@ -111,33 +111,16 @@
             this.label2.Text = "Reporte de Diario Contable";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // lblUsuario
+            // lblDiario
             // 
-            this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.Location = new System.Drawing.Point(37, 245);
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(67, 19);
-            this.lblUsuario.TabIndex = 1;
-            this.lblUsuario.Text = "Usuario";
-            this.lblUsuario.Visible = false;
-            // 
-            // cbUsuarios
-            // 
-            this.cbUsuarios.BackColor = System.Drawing.Color.Transparent;
-            this.cbUsuarios.BorderRadius = 5;
-            this.cbUsuarios.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbUsuarios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbUsuarios.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbUsuarios.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbUsuarios.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbUsuarios.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cbUsuarios.ItemHeight = 30;
-            this.cbUsuarios.Location = new System.Drawing.Point(37, 267);
-            this.cbUsuarios.Name = "cbUsuarios";
-            this.cbUsuarios.Size = new System.Drawing.Size(205, 36);
-            this.cbUsuarios.TabIndex = 0;
-            this.cbUsuarios.Visible = false;
+            this.lblDiario.AutoSize = true;
+            this.lblDiario.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDiario.Location = new System.Drawing.Point(34, 232);
+            this.lblDiario.Name = "lblDiario";
+            this.lblDiario.Size = new System.Drawing.Size(76, 19);
+            this.lblDiario.TabIndex = 1;
+            this.lblDiario.Text = "Diario ID";
+            this.lblDiario.Visible = false;
             // 
             // txtAnio
             // 
@@ -175,6 +158,24 @@
             this.txtPeriodo.Size = new System.Drawing.Size(200, 36);
             this.txtPeriodo.TabIndex = 11;
             // 
+            // txtDiario
+            // 
+            this.txtDiario.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDiario.DefaultText = "";
+            this.txtDiario.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtDiario.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtDiario.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDiario.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDiario.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDiario.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtDiario.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDiario.Location = new System.Drawing.Point(37, 267);
+            this.txtDiario.Name = "txtDiario";
+            this.txtDiario.PlaceholderText = "";
+            this.txtDiario.SelectedText = "";
+            this.txtDiario.Size = new System.Drawing.Size(200, 36);
+            this.txtDiario.TabIndex = 12;
+            // 
             // frmReporteDiarioContable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -195,12 +196,12 @@
 
         private Guna.UI2.WinForms.Guna2Panel pnlCheck;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lblUsuario;
-        private Guna.UI2.WinForms.Guna2ComboBox cbUsuarios;
+        private System.Windows.Forms.Label lblDiario;
         private Guna.UI2.WinForms.Guna2Button btnGenerarReporte;
         private System.Windows.Forms.Label lblPeriodo;
         private System.Windows.Forms.Label lblAnio;
         private Guna.UI2.WinForms.Guna2TextBox txtPeriodo;
         private Guna.UI2.WinForms.Guna2TextBox txtAnio;
+        private Guna.UI2.WinForms.Guna2TextBox txtDiario;
     }
 }
