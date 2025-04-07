@@ -70,7 +70,8 @@ namespace ModuloDeCompra_BD.Formulario
             nudServicio.Minimum = 1;
             nudServicio.Value = 1;
 
-            txtProveedor.Text = "OXFORD";
+
+            txtProveedor.Text = string.Empty;
             string queryProducto = $"select Pr.ID_Producto, Pr.NomProducto from Producto as Pr inner join Proveedores as P on Pr.ID_Proveedor = P.ID_Proveedor WHERE EstadoProducto='Activo' and P.Nombre_Proveedor = '{txtProveedor.Text}'";
             dgvListadoProductos.DataSource = CsComandosSql.RetornaDatos(queryProducto);
         }
@@ -452,6 +453,10 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void chkProductos_CheckedChanged(object sender, EventArgs e)
         {
+            if(chkProductos.Checked==true)
+            {
+                chkServicios.Checked = false;
+            }
             lblServicio.Visible = false;
             txtFiltroServicio.Visible = false;
             pnlServicio.Visible = false;
@@ -469,7 +474,7 @@ namespace ModuloDeCompra_BD.Formulario
             txtFiltroProduc.Visible = true;
             pnlProductos.Visible = true;
             pnlProductosSelect.Visible = true;
-            chkProductos.Checked = true;
+            //chkProductos.Checked = true;
             lblProductos.Visible = true;
             txtFiltroProduc.Visible = true;
             pnlProductos.Visible = true;
@@ -485,11 +490,15 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void chkServicios_CheckedChanged(object sender, EventArgs e)
         {
+            if(chkServicios.Checked==true)
+            {
+                chkProductos.Checked=false;
+            }
             lblProductos.Visible = false;
             txtFiltroProduc.Visible = false;
             pnlProductos.Visible = false;
             pnlProductosSelect.Visible = false;
-            chkProductos.Checked = false;
+            //chkProductos.Checked = false;
             lblProductos.Visible = false;
             txtFiltroProduc.Visible = false;
             pnlProductos.Visible = false;
