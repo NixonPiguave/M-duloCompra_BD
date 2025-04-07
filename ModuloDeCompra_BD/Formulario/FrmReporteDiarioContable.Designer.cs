@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pnlCheck = new Guna.UI2.WinForms.Guna2Panel();
+            this.cmbPeriodos = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btnDiario = new Guna.UI2.WinForms.Guna2Button();
             this.txtDiarioID = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtAnio = new Guna.UI2.WinForms.Guna2TextBox();
@@ -37,7 +38,6 @@
             this.btnGenerarReporte = new Guna.UI2.WinForms.Guna2Button();
             this.label2 = new System.Windows.Forms.Label();
             this.lblDiario = new System.Windows.Forms.Label();
-            this.cmbPeriodos = new Guna.UI2.WinForms.Guna2ComboBox();
             this.pnlCheck.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,6 +59,34 @@
             this.pnlCheck.Name = "pnlCheck";
             this.pnlCheck.Size = new System.Drawing.Size(451, 332);
             this.pnlCheck.TabIndex = 0;
+            // 
+            // cmbPeriodos
+            // 
+            this.cmbPeriodos.BackColor = System.Drawing.Color.Transparent;
+            this.cmbPeriodos.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbPeriodos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPeriodos.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbPeriodos.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbPeriodos.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmbPeriodos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmbPeriodos.ItemHeight = 30;
+            this.cmbPeriodos.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"});
+            this.cmbPeriodos.Location = new System.Drawing.Point(27, 164);
+            this.cmbPeriodos.Name = "cmbPeriodos";
+            this.cmbPeriodos.Size = new System.Drawing.Size(200, 36);
+            this.cmbPeriodos.TabIndex = 15;
             // 
             // btnDiario
             // 
@@ -93,6 +121,7 @@
             this.txtDiarioID.Location = new System.Drawing.Point(27, 267);
             this.txtDiarioID.Name = "txtDiarioID";
             this.txtDiarioID.PlaceholderText = "";
+            this.txtDiarioID.ReadOnly = true;
             this.txtDiarioID.SelectedText = "";
             this.txtDiarioID.Size = new System.Drawing.Size(200, 36);
             this.txtDiarioID.TabIndex = 13;
@@ -173,34 +202,6 @@
             this.lblDiario.Size = new System.Drawing.Size(76, 19);
             this.lblDiario.TabIndex = 1;
             this.lblDiario.Text = "Diario ID";
-            // 
-            // cmbPeriodos
-            // 
-            this.cmbPeriodos.BackColor = System.Drawing.Color.Transparent;
-            this.cmbPeriodos.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbPeriodos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbPeriodos.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbPeriodos.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbPeriodos.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cmbPeriodos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cmbPeriodos.ItemHeight = 30;
-            this.cmbPeriodos.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12"});
-            this.cmbPeriodos.Location = new System.Drawing.Point(27, 164);
-            this.cmbPeriodos.Name = "cmbPeriodos";
-            this.cmbPeriodos.Size = new System.Drawing.Size(200, 36);
-            this.cmbPeriodos.TabIndex = 15;
             // 
             // frmReporteDiarioContable
             // 
