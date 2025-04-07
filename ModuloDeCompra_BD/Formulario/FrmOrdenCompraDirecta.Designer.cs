@@ -37,11 +37,13 @@
             this.lblOrdenID = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btnProveedor = new Guna.UI2.WinForms.Guna2Button();
             this.lblProveedor = new System.Windows.Forms.Label();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnlSeleccion = new Guna.UI2.WinForms.Guna2Panel();
+            this.pnlSeleccionarProductoServicio = new System.Windows.Forms.Panel();
+            this.lblProductosSeleccionados = new System.Windows.Forms.Label();
+            this.dgvProductosAgregados = new System.Windows.Forms.DataGridView();
+            this.pnlSeleccionados = new System.Windows.Forms.Panel();
+            this.btnGenerarDocumento = new Guna.UI2.WinForms.Guna2Button();
+            this.pnlProductosSelect = new System.Windows.Forms.Panel();
             this.btnAgregarP = new Guna.UI2.WinForms.Guna2Button();
             this.txtProducto = new Guna.UI2.WinForms.Guna2TextBox();
             this.lbID = new System.Windows.Forms.Label();
@@ -49,13 +51,13 @@
             this.lbCantidad = new System.Windows.Forms.Label();
             this.lbProduc = new System.Windows.Forms.Label();
             this.nudCantidad = new System.Windows.Forms.NumericUpDown();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlProductos = new System.Windows.Forms.Panel();
             this.dgvListadoProductos = new System.Windows.Forms.DataGridView();
             this.txtFiltroProduc = new Guna.UI2.WinForms.Guna2TextBox();
-            this.lbListado = new System.Windows.Forms.Label();
+            this.lblProductos = new System.Windows.Forms.Label();
             this.btnProducto = new Guna.UI2.WinForms.Guna2Button();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.dgvListadoServicio = new System.Windows.Forms.DataGridView();
+            this.pnlServiciosSelect = new System.Windows.Forms.Panel();
             this.txtServicio = new Guna.UI2.WinForms.Guna2TextBox();
             this.lbIDserv = new System.Windows.Forms.Label();
             this.btnAgregarS = new Guna.UI2.WinForms.Guna2Button();
@@ -63,30 +65,24 @@
             this.lbServi = new System.Windows.Forms.Label();
             this.lbCanServ = new System.Windows.Forms.Label();
             this.nudServicio = new System.Windows.Forms.NumericUpDown();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.dgvListadoServicio = new System.Windows.Forms.DataGridView();
+            this.pnlServicio = new System.Windows.Forms.Panel();
             this.txtFiltroServicio = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblServicio = new System.Windows.Forms.Label();
             this.btnServicio = new Guna.UI2.WinForms.Guna2Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dgvProductosAgregados = new System.Windows.Forms.DataGridView();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.btnGenerarDocumento = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Panel1.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListadoProductos)).BeginInit();
-            this.tabPage2.SuspendLayout();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudServicio)).BeginInit();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListadoServicio)).BeginInit();
+            this.chkProductos = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.chkServicios = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.pnlSeleccion.SuspendLayout();
+            this.pnlSeleccionarProductoServicio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductosAgregados)).BeginInit();
-            this.panel5.SuspendLayout();
+            this.pnlSeleccionados.SuspendLayout();
+            this.pnlProductosSelect.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
+            this.pnlProductos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListadoProductos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListadoServicio)).BeginInit();
+            this.pnlServiciosSelect.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudServicio)).BeginInit();
+            this.pnlServicio.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblFechaLimite
@@ -216,66 +212,111 @@
             this.lblProveedor.TabIndex = 17;
             this.lblProveedor.Text = "Proveedor";
             // 
-            // guna2Panel1
+            // pnlSeleccion
             // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.guna2Panel1.Controls.Add(this.panel6);
-            this.guna2Panel1.Controls.Add(this.tabControl1);
-            this.guna2Panel1.Location = new System.Drawing.Point(2, 0);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1372, 388);
-            this.guna2Panel1.TabIndex = 24;
+            this.pnlSeleccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.pnlSeleccion.Controls.Add(this.chkServicios);
+            this.pnlSeleccion.Controls.Add(this.chkProductos);
+            this.pnlSeleccion.Controls.Add(this.pnlProductos);
+            this.pnlSeleccion.Controls.Add(this.txtFiltroProduc);
+            this.pnlSeleccion.Controls.Add(this.lblProductos);
+            this.pnlSeleccion.Controls.Add(this.btnProducto);
+            this.pnlSeleccion.Controls.Add(this.pnlSeleccionarProductoServicio);
+            this.pnlSeleccion.Controls.Add(this.pnlProductosSelect);
+            this.pnlSeleccion.Controls.Add(this.pnlServiciosSelect);
+            this.pnlSeleccion.Controls.Add(this.pnlServicio);
+            this.pnlSeleccion.Controls.Add(this.txtFiltroServicio);
+            this.pnlSeleccion.Controls.Add(this.lblServicio);
+            this.pnlSeleccion.Controls.Add(this.btnServicio);
+            this.pnlSeleccion.Location = new System.Drawing.Point(2, 0);
+            this.pnlSeleccion.Name = "pnlSeleccion";
+            this.pnlSeleccion.Size = new System.Drawing.Size(1372, 388);
+            this.pnlSeleccion.TabIndex = 24;
             // 
-            // panel6
+            // pnlSeleccionarProductoServicio
             // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(85)))), ((int)(((byte)(84)))));
-            this.panel6.Controls.Add(this.txtProveedor);
-            this.panel6.Controls.Add(this.lblProveedor);
-            this.panel6.Controls.Add(this.btnProveedor);
-            this.panel6.Location = new System.Drawing.Point(25, 98);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(256, 238);
-            this.panel6.TabIndex = 26;
+            this.pnlSeleccionarProductoServicio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(85)))), ((int)(((byte)(84)))));
+            this.pnlSeleccionarProductoServicio.Controls.Add(this.txtProveedor);
+            this.pnlSeleccionarProductoServicio.Controls.Add(this.lblProveedor);
+            this.pnlSeleccionarProductoServicio.Controls.Add(this.btnProveedor);
+            this.pnlSeleccionarProductoServicio.Location = new System.Drawing.Point(25, 98);
+            this.pnlSeleccionarProductoServicio.Name = "pnlSeleccionarProductoServicio";
+            this.pnlSeleccionarProductoServicio.Size = new System.Drawing.Size(256, 238);
+            this.pnlSeleccionarProductoServicio.TabIndex = 26;
             // 
-            // tabControl1
+            // lblProductosSeleccionados
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(287, 34);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1031, 333);
-            this.tabControl1.TabIndex = 25;
+            this.lblProductosSeleccionados.AutoSize = true;
+            this.lblProductosSeleccionados.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProductosSeleccionados.ForeColor = System.Drawing.Color.White;
+            this.lblProductosSeleccionados.Location = new System.Drawing.Point(31, 29);
+            this.lblProductosSeleccionados.Name = "lblProductosSeleccionados";
+            this.lblProductosSeleccionados.Size = new System.Drawing.Size(227, 22);
+            this.lblProductosSeleccionados.TabIndex = 7;
+            this.lblProductosSeleccionados.Text = "Productos Seleccionados";
             // 
-            // tabPage1
+            // dgvProductosAgregados
             // 
-            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.tabPage1.Controls.Add(this.panel2);
-            this.tabPage1.Controls.Add(this.panel1);
-            this.tabPage1.Controls.Add(this.txtFiltroProduc);
-            this.tabPage1.Controls.Add(this.lbListado);
-            this.tabPage1.Controls.Add(this.btnProducto);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1023, 307);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Producto";
+            this.dgvProductosAgregados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvProductosAgregados.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvProductosAgregados.BackgroundColor = System.Drawing.Color.White;
+            this.dgvProductosAgregados.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvProductosAgregados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProductosAgregados.Location = new System.Drawing.Point(28, 52);
+            this.dgvProductosAgregados.Name = "dgvProductosAgregados";
+            this.dgvProductosAgregados.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvProductosAgregados.RowHeadersVisible = false;
+            this.dgvProductosAgregados.Size = new System.Drawing.Size(534, 140);
+            this.dgvProductosAgregados.TabIndex = 7;
             // 
-            // panel2
+            // pnlSeleccionados
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(85)))), ((int)(((byte)(84)))));
-            this.panel2.Controls.Add(this.btnAgregarP);
-            this.panel2.Controls.Add(this.txtProducto);
-            this.panel2.Controls.Add(this.lbID);
-            this.panel2.Controls.Add(this.txtID);
-            this.panel2.Controls.Add(this.lbCantidad);
-            this.panel2.Controls.Add(this.lbProduc);
-            this.panel2.Controls.Add(this.nudCantidad);
-            this.panel2.Location = new System.Drawing.Point(642, 65);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(341, 215);
-            this.panel2.TabIndex = 8;
+            this.pnlSeleccionados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(85)))), ((int)(((byte)(84)))));
+            this.pnlSeleccionados.Controls.Add(this.btnGenerarDocumento);
+            this.pnlSeleccionados.Controls.Add(this.dgvProductosAgregados);
+            this.pnlSeleccionados.Controls.Add(this.dtpFechaLimite);
+            this.pnlSeleccionados.Controls.Add(this.lblFechaLimite);
+            this.pnlSeleccionados.Controls.Add(this.lblProductosSeleccionados);
+            this.pnlSeleccionados.Controls.Add(this.btnAceptar);
+            this.pnlSeleccionados.Location = new System.Drawing.Point(131, 412);
+            this.pnlSeleccionados.Name = "pnlSeleccionados";
+            this.pnlSeleccionados.Size = new System.Drawing.Size(1142, 224);
+            this.pnlSeleccionados.TabIndex = 25;
+            // 
+            // btnGenerarDocumento
+            // 
+            this.btnGenerarDocumento.Animated = true;
+            this.btnGenerarDocumento.BorderRadius = 10;
+            this.btnGenerarDocumento.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnGenerarDocumento.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnGenerarDocumento.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnGenerarDocumento.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnGenerarDocumento.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
+            this.btnGenerarDocumento.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold);
+            this.btnGenerarDocumento.ForeColor = System.Drawing.Color.White;
+            this.btnGenerarDocumento.IndicateFocus = true;
+            this.btnGenerarDocumento.Location = new System.Drawing.Point(901, 42);
+            this.btnGenerarDocumento.Name = "btnGenerarDocumento";
+            this.btnGenerarDocumento.Size = new System.Drawing.Size(180, 50);
+            this.btnGenerarDocumento.TabIndex = 27;
+            this.btnGenerarDocumento.Text = "Generar documento";
+            this.btnGenerarDocumento.Visible = false;
+            this.btnGenerarDocumento.Click += new System.EventHandler(this.btnGenerarDocumento_Click);
+            // 
+            // pnlProductosSelect
+            // 
+            this.pnlProductosSelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(85)))), ((int)(((byte)(84)))));
+            this.pnlProductosSelect.Controls.Add(this.btnAgregarP);
+            this.pnlProductosSelect.Controls.Add(this.txtProducto);
+            this.pnlProductosSelect.Controls.Add(this.lbID);
+            this.pnlProductosSelect.Controls.Add(this.txtID);
+            this.pnlProductosSelect.Controls.Add(this.lbCantidad);
+            this.pnlProductosSelect.Controls.Add(this.lbProduc);
+            this.pnlProductosSelect.Controls.Add(this.nudCantidad);
+            this.pnlProductosSelect.Location = new System.Drawing.Point(930, 121);
+            this.pnlProductosSelect.Name = "pnlProductosSelect";
+            this.pnlProductosSelect.Size = new System.Drawing.Size(341, 215);
+            this.pnlProductosSelect.TabIndex = 31;
             // 
             // btnAgregarP
             // 
@@ -292,7 +333,7 @@
             this.btnAgregarP.Size = new System.Drawing.Size(120, 45);
             this.btnAgregarP.TabIndex = 25;
             this.btnAgregarP.Text = "Agregar";
-            this.btnAgregarP.Click += new System.EventHandler(this.btnAgregarP_Click);
+            this.btnAgregarP.Click += new System.EventHandler(this.btnAgregarP_Click_1);
             // 
             // txtProducto
             // 
@@ -374,14 +415,14 @@
             this.nudCantidad.Size = new System.Drawing.Size(120, 20);
             this.nudCantidad.TabIndex = 10;
             // 
-            // panel1
+            // pnlProductos
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(85)))), ((int)(((byte)(84)))));
-            this.panel1.Controls.Add(this.dgvListadoProductos);
-            this.panel1.Location = new System.Drawing.Point(44, 87);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(421, 198);
-            this.panel1.TabIndex = 7;
+            this.pnlProductos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(85)))), ((int)(((byte)(84)))));
+            this.pnlProductos.Controls.Add(this.dgvListadoProductos);
+            this.pnlProductos.Location = new System.Drawing.Point(319, 138);
+            this.pnlProductos.Name = "pnlProductos";
+            this.pnlProductos.Size = new System.Drawing.Size(421, 198);
+            this.pnlProductos.TabIndex = 30;
             // 
             // dgvListadoProductos
             // 
@@ -411,22 +452,22 @@
             this.txtFiltroProduc.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtFiltroProduc.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtFiltroProduc.IconRight = global::ModuloDeCompra_BD.Properties.Resources.brows_browsing_find_search_seo_web_zoom_icon_123196;
-            this.txtFiltroProduc.Location = new System.Drawing.Point(44, 47);
+            this.txtFiltroProduc.Location = new System.Drawing.Point(318, 98);
             this.txtFiltroProduc.Name = "txtFiltroProduc";
             this.txtFiltroProduc.PlaceholderText = "";
             this.txtFiltroProduc.SelectedText = "";
             this.txtFiltroProduc.Size = new System.Drawing.Size(200, 36);
-            this.txtFiltroProduc.TabIndex = 6;
+            this.txtFiltroProduc.TabIndex = 29;
             // 
-            // lbListado
+            // lblProductos
             // 
-            this.lbListado.AutoSize = true;
-            this.lbListado.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbListado.Location = new System.Drawing.Point(40, 22);
-            this.lbListado.Name = "lbListado";
-            this.lbListado.Size = new System.Drawing.Size(168, 22);
-            this.lbListado.TabIndex = 5;
-            this.lbListado.Text = "Listado Productos";
+            this.lblProductos.AutoSize = true;
+            this.lblProductos.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProductos.Location = new System.Drawing.Point(314, 73);
+            this.lblProductos.Name = "lblProductos";
+            this.lblProductos.Size = new System.Drawing.Size(168, 22);
+            this.lblProductos.TabIndex = 28;
+            this.lblProductos.Text = "Listado Productos";
             // 
             // btnProducto
             // 
@@ -438,42 +479,42 @@
             this.btnProducto.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
             this.btnProducto.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProducto.ForeColor = System.Drawing.Color.White;
-            this.btnProducto.Location = new System.Drawing.Point(331, 36);
+            this.btnProducto.Location = new System.Drawing.Point(606, 87);
             this.btnProducto.Name = "btnProducto";
             this.btnProducto.Size = new System.Drawing.Size(134, 45);
-            this.btnProducto.TabIndex = 0;
+            this.btnProducto.TabIndex = 27;
             this.btnProducto.Text = "Seleccionar productos";
-            this.btnProducto.Click += new System.EventHandler(this.btnProducto_Click);
+            this.btnProducto.Click += new System.EventHandler(this.btnProducto_Click_1);
             // 
-            // tabPage2
+            // dgvListadoServicio
             // 
-            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.tabPage2.Controls.Add(this.panel4);
-            this.tabPage2.Controls.Add(this.panel3);
-            this.tabPage2.Controls.Add(this.txtFiltroServicio);
-            this.tabPage2.Controls.Add(this.label8);
-            this.tabPage2.Controls.Add(this.btnServicio);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1023, 307);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Servicio";
+            this.dgvListadoServicio.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvListadoServicio.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvListadoServicio.BackgroundColor = System.Drawing.Color.White;
+            this.dgvListadoServicio.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvListadoServicio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListadoServicio.Location = new System.Drawing.Point(23, 19);
+            this.dgvListadoServicio.Name = "dgvListadoServicio";
+            this.dgvListadoServicio.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvListadoServicio.RowHeadersVisible = false;
+            this.dgvListadoServicio.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvListadoServicio.Size = new System.Drawing.Size(369, 154);
+            this.dgvListadoServicio.TabIndex = 13;
             // 
-            // panel4
+            // pnlServiciosSelect
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(85)))), ((int)(((byte)(84)))));
-            this.panel4.Controls.Add(this.txtServicio);
-            this.panel4.Controls.Add(this.lbIDserv);
-            this.panel4.Controls.Add(this.btnAgregarS);
-            this.panel4.Controls.Add(this.txtIDServi);
-            this.panel4.Controls.Add(this.lbServi);
-            this.panel4.Controls.Add(this.lbCanServ);
-            this.panel4.Controls.Add(this.nudServicio);
-            this.panel4.Location = new System.Drawing.Point(630, 68);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(326, 215);
-            this.panel4.TabIndex = 17;
+            this.pnlServiciosSelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(85)))), ((int)(((byte)(84)))));
+            this.pnlServiciosSelect.Controls.Add(this.txtServicio);
+            this.pnlServiciosSelect.Controls.Add(this.lbIDserv);
+            this.pnlServiciosSelect.Controls.Add(this.btnAgregarS);
+            this.pnlServiciosSelect.Controls.Add(this.txtIDServi);
+            this.pnlServiciosSelect.Controls.Add(this.lbServi);
+            this.pnlServiciosSelect.Controls.Add(this.lbCanServ);
+            this.pnlServiciosSelect.Controls.Add(this.nudServicio);
+            this.pnlServiciosSelect.Location = new System.Drawing.Point(930, 121);
+            this.pnlServiciosSelect.Name = "pnlServiciosSelect";
+            this.pnlServiciosSelect.Size = new System.Drawing.Size(341, 215);
+            this.pnlServiciosSelect.TabIndex = 30;
             // 
             // txtServicio
             // 
@@ -516,12 +557,12 @@
             this.btnAgregarS.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
             this.btnAgregarS.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarS.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarS.Location = new System.Drawing.Point(199, 121);
+            this.btnAgregarS.Location = new System.Drawing.Point(205, 93);
             this.btnAgregarS.Name = "btnAgregarS";
             this.btnAgregarS.Size = new System.Drawing.Size(120, 45);
             this.btnAgregarS.TabIndex = 16;
             this.btnAgregarS.Text = "Agregar";
-            this.btnAgregarS.Click += new System.EventHandler(this.btnAgregarS_Click);
+            this.btnAgregarS.Click += new System.EventHandler(this.btnAgregarS_Click_1);
             // 
             // txtIDServi
             // 
@@ -559,7 +600,7 @@
             this.lbCanServ.AutoSize = true;
             this.lbCanServ.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCanServ.ForeColor = System.Drawing.Color.White;
-            this.lbCanServ.Location = new System.Drawing.Point(68, 144);
+            this.lbCanServ.Location = new System.Drawing.Point(57, 153);
             this.lbCanServ.Name = "lbCanServ";
             this.lbCanServ.Size = new System.Drawing.Size(87, 22);
             this.lbCanServ.TabIndex = 22;
@@ -567,34 +608,19 @@
             // 
             // nudServicio
             // 
-            this.nudServicio.Location = new System.Drawing.Point(46, 166);
+            this.nudServicio.Location = new System.Drawing.Point(35, 175);
             this.nudServicio.Name = "nudServicio";
             this.nudServicio.Size = new System.Drawing.Size(120, 20);
             this.nudServicio.TabIndex = 21;
             // 
-            // panel3
+            // pnlServicio
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(85)))), ((int)(((byte)(84)))));
-            this.panel3.Controls.Add(this.dgvListadoServicio);
-            this.panel3.Location = new System.Drawing.Point(34, 85);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(421, 198);
-            this.panel3.TabIndex = 16;
-            // 
-            // dgvListadoServicio
-            // 
-            this.dgvListadoServicio.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvListadoServicio.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvListadoServicio.BackgroundColor = System.Drawing.Color.White;
-            this.dgvListadoServicio.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvListadoServicio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListadoServicio.Location = new System.Drawing.Point(29, 22);
-            this.dgvListadoServicio.Name = "dgvListadoServicio";
-            this.dgvListadoServicio.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvListadoServicio.RowHeadersVisible = false;
-            this.dgvListadoServicio.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListadoServicio.Size = new System.Drawing.Size(363, 158);
-            this.dgvListadoServicio.TabIndex = 13;
+            this.pnlServicio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(85)))), ((int)(((byte)(84)))));
+            this.pnlServicio.Controls.Add(this.dgvListadoServicio);
+            this.pnlServicio.Location = new System.Drawing.Point(319, 138);
+            this.pnlServicio.Name = "pnlServicio";
+            this.pnlServicio.Size = new System.Drawing.Size(421, 198);
+            this.pnlServicio.TabIndex = 29;
             // 
             // txtFiltroServicio
             // 
@@ -609,23 +635,23 @@
             this.txtFiltroServicio.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtFiltroServicio.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtFiltroServicio.IconRight = global::ModuloDeCompra_BD.Properties.Resources.brows_browsing_find_search_seo_web_zoom_icon_123196;
-            this.txtFiltroServicio.Location = new System.Drawing.Point(34, 42);
+            this.txtFiltroServicio.Location = new System.Drawing.Point(318, 98);
             this.txtFiltroServicio.Name = "txtFiltroServicio";
             this.txtFiltroServicio.PlaceholderText = "";
             this.txtFiltroServicio.SelectedText = "";
             this.txtFiltroServicio.Size = new System.Drawing.Size(200, 36);
-            this.txtFiltroServicio.TabIndex = 15;
+            this.txtFiltroServicio.TabIndex = 28;
             // 
-            // label8
+            // lblServicio
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(30, 17);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(149, 22);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "Listado Servicio";
+            this.lblServicio.AutoSize = true;
+            this.lblServicio.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblServicio.ForeColor = System.Drawing.Color.Black;
+            this.lblServicio.Location = new System.Drawing.Point(315, 70);
+            this.lblServicio.Name = "lblServicio";
+            this.lblServicio.Size = new System.Drawing.Size(149, 22);
+            this.lblServicio.TabIndex = 27;
+            this.lblServicio.Text = "Listado Servicio";
             // 
             // btnServicio
             // 
@@ -637,105 +663,80 @@
             this.btnServicio.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
             this.btnServicio.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnServicio.ForeColor = System.Drawing.Color.White;
-            this.btnServicio.Location = new System.Drawing.Point(321, 34);
+            this.btnServicio.Location = new System.Drawing.Point(606, 87);
             this.btnServicio.Name = "btnServicio";
             this.btnServicio.Size = new System.Drawing.Size(134, 45);
-            this.btnServicio.TabIndex = 12;
+            this.btnServicio.TabIndex = 26;
             this.btnServicio.Text = "Seleccionar Servicios";
-            this.btnServicio.Click += new System.EventHandler(this.btnServicio_Click);
+            this.btnServicio.Click += new System.EventHandler(this.btnServicio_Click_1);
             // 
-            // label1
+            // chkProductos
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(31, 29);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(227, 22);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Productos Seleccionados";
+            this.chkProductos.AutoSize = true;
+            this.chkProductos.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.chkProductos.CheckedState.BorderRadius = 0;
+            this.chkProductos.CheckedState.BorderThickness = 0;
+            this.chkProductos.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.chkProductos.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold);
+            this.chkProductos.Location = new System.Drawing.Point(319, 342);
+            this.chkProductos.Name = "chkProductos";
+            this.chkProductos.Size = new System.Drawing.Size(119, 26);
+            this.chkProductos.TabIndex = 32;
+            this.chkProductos.Text = "Productos";
+            this.chkProductos.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkProductos.UncheckedState.BorderRadius = 0;
+            this.chkProductos.UncheckedState.BorderThickness = 0;
+            this.chkProductos.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkProductos.CheckedChanged += new System.EventHandler(this.chkProductos_CheckedChanged);
             // 
-            // dgvProductosAgregados
+            // chkServicios
             // 
-            this.dgvProductosAgregados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvProductosAgregados.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvProductosAgregados.BackgroundColor = System.Drawing.Color.White;
-            this.dgvProductosAgregados.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvProductosAgregados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProductosAgregados.Location = new System.Drawing.Point(28, 52);
-            this.dgvProductosAgregados.Name = "dgvProductosAgregados";
-            this.dgvProductosAgregados.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvProductosAgregados.RowHeadersVisible = false;
-            this.dgvProductosAgregados.Size = new System.Drawing.Size(534, 140);
-            this.dgvProductosAgregados.TabIndex = 7;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(85)))), ((int)(((byte)(84)))));
-            this.panel5.Controls.Add(this.btnGenerarDocumento);
-            this.panel5.Controls.Add(this.dgvProductosAgregados);
-            this.panel5.Controls.Add(this.dtpFechaLimite);
-            this.panel5.Controls.Add(this.lblFechaLimite);
-            this.panel5.Controls.Add(this.label1);
-            this.panel5.Controls.Add(this.btnAceptar);
-            this.panel5.Location = new System.Drawing.Point(131, 412);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1142, 224);
-            this.panel5.TabIndex = 25;
-            // 
-            // btnGenerarDocumento
-            // 
-            this.btnGenerarDocumento.Animated = true;
-            this.btnGenerarDocumento.BorderRadius = 10;
-            this.btnGenerarDocumento.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnGenerarDocumento.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnGenerarDocumento.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnGenerarDocumento.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnGenerarDocumento.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
-            this.btnGenerarDocumento.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold);
-            this.btnGenerarDocumento.ForeColor = System.Drawing.Color.White;
-            this.btnGenerarDocumento.IndicateFocus = true;
-            this.btnGenerarDocumento.Location = new System.Drawing.Point(901, 42);
-            this.btnGenerarDocumento.Name = "btnGenerarDocumento";
-            this.btnGenerarDocumento.Size = new System.Drawing.Size(180, 50);
-            this.btnGenerarDocumento.TabIndex = 27;
-            this.btnGenerarDocumento.Text = "Generar documento";
-            this.btnGenerarDocumento.Visible = false;
-            this.btnGenerarDocumento.Click += new System.EventHandler(this.btnGenerarDocumento_Click);
+            this.chkServicios.AutoSize = true;
+            this.chkServicios.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.chkServicios.CheckedState.BorderRadius = 0;
+            this.chkServicios.CheckedState.BorderThickness = 0;
+            this.chkServicios.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.chkServicios.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold);
+            this.chkServicios.Location = new System.Drawing.Point(462, 342);
+            this.chkServicios.Name = "chkServicios";
+            this.chkServicios.Size = new System.Drawing.Size(109, 26);
+            this.chkServicios.TabIndex = 33;
+            this.chkServicios.Text = "Servicios";
+            this.chkServicios.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkServicios.UncheckedState.BorderRadius = 0;
+            this.chkServicios.UncheckedState.BorderThickness = 0;
+            this.chkServicios.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkServicios.CheckedChanged += new System.EventHandler(this.chkServicios_CheckedChanged);
             // 
             // FrmOrdenCompraDirecta
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.ClientSize = new System.Drawing.Size(1386, 663);
-            this.Controls.Add(this.panel5);
-            this.Controls.Add(this.guna2Panel1);
+            this.Controls.Add(this.pnlSeleccionados);
+            this.Controls.Add(this.pnlSeleccion);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmOrdenCompraDirecta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmOrdenCompraDirectas";
             this.Load += new System.EventHandler(this.FrmOrdenCompraDirecta_Load);
-            this.guna2Panel1.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).EndInit();
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListadoProductos)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudServicio)).EndInit();
-            this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListadoServicio)).EndInit();
+            this.pnlSeleccion.ResumeLayout(false);
+            this.pnlSeleccion.PerformLayout();
+            this.pnlSeleccionarProductoServicio.ResumeLayout(false);
+            this.pnlSeleccionarProductoServicio.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductosAgregados)).EndInit();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
+            this.pnlSeleccionados.ResumeLayout(false);
+            this.pnlSeleccionados.PerformLayout();
+            this.pnlProductosSelect.ResumeLayout(false);
+            this.pnlProductosSelect.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).EndInit();
+            this.pnlProductos.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListadoProductos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListadoServicio)).EndInit();
+            this.pnlServiciosSelect.ResumeLayout(false);
+            this.pnlServiciosSelect.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudServicio)).EndInit();
+            this.pnlServicio.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -750,40 +751,39 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lblOrdenID;
         private Guna.UI2.WinForms.Guna2Button btnProveedor;
         private System.Windows.Forms.Label lblProveedor;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Guna.UI2.WinForms.Guna2Panel pnlSeleccion;
+        private System.Windows.Forms.Label lblProductosSeleccionados;
+        private System.Windows.Forms.DataGridView dgvProductosAgregados;
+        private System.Windows.Forms.Panel pnlSeleccionados;
+        private System.Windows.Forms.Panel pnlSeleccionarProductoServicio;
+        private Guna.UI2.WinForms.Guna2Button btnGenerarDocumento;
+        private System.Windows.Forms.Panel pnlProductosSelect;
         private Guna.UI2.WinForms.Guna2Button btnAgregarP;
-        private System.Windows.Forms.Label lbIDserv;
-        private Guna.UI2.WinForms.Guna2TextBox txtIDServi;
-        private System.Windows.Forms.Label lbCanServ;
-        private System.Windows.Forms.NumericUpDown nudServicio;
-        private System.Windows.Forms.Label lbServi;
-        private Guna.UI2.WinForms.Guna2TextBox txtServicio;
+        private Guna.UI2.WinForms.Guna2TextBox txtProducto;
         private System.Windows.Forms.Label lbID;
         private Guna.UI2.WinForms.Guna2TextBox txtID;
-        private Guna.UI2.WinForms.Guna2Button btnAgregarS;
-        private Guna.UI2.WinForms.Guna2Button btnServicio;
-        private Guna.UI2.WinForms.Guna2TextBox txtFiltroServicio;
-        private System.Windows.Forms.DataGridView dgvListadoServicio;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lbCantidad;
-        private System.Windows.Forms.NumericUpDown nudCantidad;
         private System.Windows.Forms.Label lbProduc;
-        private Guna.UI2.WinForms.Guna2TextBox txtProducto;
-        private Guna.UI2.WinForms.Guna2Button btnProducto;
-        private Guna.UI2.WinForms.Guna2TextBox txtFiltroProduc;
+        private System.Windows.Forms.NumericUpDown nudCantidad;
+        private System.Windows.Forms.Panel pnlProductos;
+        private System.Windows.Forms.Panel pnlServiciosSelect;
+        private Guna.UI2.WinForms.Guna2TextBox txtServicio;
+        private System.Windows.Forms.Label lbIDserv;
+        private Guna.UI2.WinForms.Guna2Button btnAgregarS;
+        private Guna.UI2.WinForms.Guna2TextBox txtIDServi;
+        private System.Windows.Forms.Label lbServi;
+        private System.Windows.Forms.Label lbCanServ;
+        private System.Windows.Forms.NumericUpDown nudServicio;
         private System.Windows.Forms.DataGridView dgvListadoProductos;
-        private System.Windows.Forms.Label lbListado;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dgvProductosAgregados;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Panel panel6;
-        private Guna.UI2.WinForms.Guna2Button btnGenerarDocumento;
+        private System.Windows.Forms.Panel pnlServicio;
+        private System.Windows.Forms.DataGridView dgvListadoServicio;
+        private Guna.UI2.WinForms.Guna2TextBox txtFiltroServicio;
+        private Guna.UI2.WinForms.Guna2Button btnServicio;
+        private System.Windows.Forms.Label lblServicio;
+        private Guna.UI2.WinForms.Guna2TextBox txtFiltroProduc;
+        private System.Windows.Forms.Label lblProductos;
+        private Guna.UI2.WinForms.Guna2Button btnProducto;
+        private Guna.UI2.WinForms.Guna2CheckBox chkServicios;
+        private Guna.UI2.WinForms.Guna2CheckBox chkProductos;
     }
 }
