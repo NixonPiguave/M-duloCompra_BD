@@ -38,7 +38,6 @@
             this.txtCuentaEnvio = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.guna2Panel1.SuspendLayout();
@@ -46,7 +45,7 @@
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.White;
+            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.guna2Panel1.Controls.Add(this.btnEnviarDoc);
             this.guna2Panel1.Controls.Add(this.label5);
             this.guna2Panel1.Controls.Add(this.txtCuerpo);
@@ -55,7 +54,6 @@
             this.guna2Panel1.Controls.Add(this.txtCuentaEnvio);
             this.guna2Panel1.Controls.Add(this.label1);
             this.guna2Panel1.Controls.Add(this.label4);
-            this.guna2Panel1.Controls.Add(this.label2);
             this.guna2Panel1.Controls.Add(this.label3);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
@@ -75,7 +73,7 @@
             this.btnEnviarDoc.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEnviarDoc.ForeColor = System.Drawing.Color.White;
             this.btnEnviarDoc.IndicateFocus = true;
-            this.btnEnviarDoc.Location = new System.Drawing.Point(222, 388);
+            this.btnEnviarDoc.Location = new System.Drawing.Point(216, 360);
             this.btnEnviarDoc.Name = "btnEnviarDoc";
             this.btnEnviarDoc.Size = new System.Drawing.Size(180, 45);
             this.btnEnviarDoc.TabIndex = 27;
@@ -86,7 +84,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(31, 206);
+            this.label5.Location = new System.Drawing.Point(25, 178);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(55, 17);
             this.label5.TabIndex = 9;
@@ -94,7 +92,7 @@
             // 
             // txtCuerpo
             // 
-            this.txtCuerpo.Location = new System.Drawing.Point(143, 206);
+            this.txtCuerpo.Location = new System.Drawing.Point(137, 178);
             this.txtCuerpo.Name = "txtCuerpo";
             this.txtCuerpo.Size = new System.Drawing.Size(259, 136);
             this.txtCuerpo.TabIndex = 8;
@@ -111,7 +109,7 @@
             this.txtAsunto.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtAsunto.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtAsunto.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtAsunto.Location = new System.Drawing.Point(143, 156);
+            this.txtAsunto.Location = new System.Drawing.Point(137, 128);
             this.txtAsunto.Name = "txtAsunto";
             this.txtAsunto.PlaceholderText = "";
             this.txtAsunto.SelectedText = "";
@@ -131,7 +129,7 @@
             this.txtDestinatario.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDestinatario.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtDestinatario.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDestinatario.Location = new System.Drawing.Point(143, 115);
+            this.txtDestinatario.Location = new System.Drawing.Point(137, 87);
             this.txtDestinatario.Name = "txtDestinatario";
             this.txtDestinatario.PlaceholderText = "";
             this.txtDestinatario.SelectedText = "";
@@ -151,11 +149,11 @@
             this.txtCuentaEnvio.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCuentaEnvio.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtCuentaEnvio.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCuentaEnvio.Location = new System.Drawing.Point(143, 74);
+            this.txtCuentaEnvio.Location = new System.Drawing.Point(3, 540);
             this.txtCuentaEnvio.Name = "txtCuentaEnvio";
             this.txtCuentaEnvio.PlaceholderText = "";
             this.txtCuentaEnvio.SelectedText = "";
-            this.txtCuentaEnvio.Size = new System.Drawing.Size(259, 26);
+            this.txtCuentaEnvio.Size = new System.Drawing.Size(56, 10);
             this.txtCuentaEnvio.TabIndex = 5;
             // 
             // label1
@@ -172,27 +170,17 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(31, 165);
+            this.label4.Location = new System.Drawing.Point(25, 137);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 17);
             this.label4.TabIndex = 4;
             this.label4.Text = "Asunto:";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(27, 83);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(110, 17);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Cuenta de envio:";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(27, 124);
+            this.label3.Location = new System.Drawing.Point(21, 96);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(84, 17);
             this.label3.TabIndex = 3;
@@ -236,7 +224,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtCuentaEnvio;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
     }

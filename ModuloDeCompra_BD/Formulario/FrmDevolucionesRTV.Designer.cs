@@ -41,6 +41,7 @@
             this.btnCredito = new Guna.UI2.WinForms.Guna2Button();
             this.txtCredito = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnGenerarDocumento = new Guna.UI2.WinForms.Guna2Button();
             this.btnRegistrarRTV = new Guna.UI2.WinForms.Guna2Button();
             this.btnCancelar = new Guna.UI2.WinForms.Guna2Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -58,7 +59,6 @@
             this.dgvDetalleGrn = new Guna.UI2.WinForms.Guna2DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnGenerarDocumento = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -212,6 +212,26 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(344, 144);
             this.panel3.TabIndex = 11;
+            // 
+            // btnGenerarDocumento
+            // 
+            this.btnGenerarDocumento.Animated = true;
+            this.btnGenerarDocumento.BorderRadius = 10;
+            this.btnGenerarDocumento.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnGenerarDocumento.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnGenerarDocumento.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnGenerarDocumento.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnGenerarDocumento.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
+            this.btnGenerarDocumento.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerarDocumento.ForeColor = System.Drawing.Color.White;
+            this.btnGenerarDocumento.IndicateFocus = true;
+            this.btnGenerarDocumento.Location = new System.Drawing.Point(110, 75);
+            this.btnGenerarDocumento.Name = "btnGenerarDocumento";
+            this.btnGenerarDocumento.Size = new System.Drawing.Size(122, 55);
+            this.btnGenerarDocumento.TabIndex = 9;
+            this.btnGenerarDocumento.Text = "Generar Documento";
+            this.btnGenerarDocumento.Visible = false;
+            this.btnGenerarDocumento.Click += new System.EventHandler(this.btnGenerarDocumento_Click);
             // 
             // btnRegistrarRTV
             // 
@@ -501,25 +521,6 @@
             this.label1.Size = new System.Drawing.Size(493, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "DEVOLUCIONES DE PRODUCTOS  (RTV)";
-            // 
-            // btnGenerarDocumento
-            // 
-            this.btnGenerarDocumento.Animated = true;
-            this.btnGenerarDocumento.BorderRadius = 10;
-            this.btnGenerarDocumento.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnGenerarDocumento.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnGenerarDocumento.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnGenerarDocumento.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnGenerarDocumento.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
-            this.btnGenerarDocumento.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenerarDocumento.ForeColor = System.Drawing.Color.White;
-            this.btnGenerarDocumento.IndicateFocus = true;
-            this.btnGenerarDocumento.Location = new System.Drawing.Point(111, 75);
-            this.btnGenerarDocumento.Name = "btnGenerarDocumento";
-            this.btnGenerarDocumento.Size = new System.Drawing.Size(122, 55);
-            this.btnGenerarDocumento.TabIndex = 9;
-            this.btnGenerarDocumento.Text = "Generar Documento";
-            this.btnGenerarDocumento.Click += new System.EventHandler(this.btnGenerarDocumento_Click);
             // 
             // FrmRTV
             // 

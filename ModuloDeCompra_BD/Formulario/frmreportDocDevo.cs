@@ -17,8 +17,8 @@ namespace ModuloDeCompra_BD.Formulario
 {
     public partial class frmreportDocDevo : Form
     {
-        public string ID_RTV; 
-
+        public string ID_RTV;
+        public string ID_Prov;
         public frmreportDocDevo()
         {
             InitializeComponent();
@@ -26,26 +26,29 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void frmreportDocDevo_Load(object sender, EventArgs e)
         {
+            txtAsunto.Text = "Devolución de Productos / Servicios";
             try
             {
 
-                if (!string.IsNullOrEmpty(ID_RTV))
+                if (!string.IsNullOrEmpty(ID_Prov))
                 {
-                    string queryProveedor = @"SELECT p.Nombre_Proveedor, p.Correo 
-                                       FROM RTV_Header rtv
-                                       INNER JOIN Proveedores p ON rtv.ID_Proveedor = p.ID_Proveedor
-                                       WHERE rtv.ID_RTV = @ID_RTV";
-
-                    SqlParameter param = new SqlParameter("@ID_RTV", SqlDbType.Int);
-                    param.Value = Convert.ToInt32(ID_RTV);
-
-                    DataTable datosProv = CsComandosSql.RetornaDatosConParametro(queryProveedor, param);
+                    string sentenciaProv = $"SELECT Correo FROM Proveedores WHERE ID_Proveedor = {ID_Prov}";
+                    DataTable datosProv = CsComandosSql.RetornaDatos(sentenciaProv);
                     if (datosProv.Rows.Count > 0)
                     {
                         txtDestinatario.Text = datosProv.Rows[0]["Correo"].ToString();
                     }
                 }
+                else
+                {
+                    string queryProveedor = @"SELECT top 1 p.Correo FROM RTV_Header rtv INNER JOIN Proveedores p ON rtv.ID_Proveedor = p.ID_Proveedor order by ID_RTV desc";
 
+                    DataTable datosProv = CsComandosSql.RetornaDatos(queryProveedor);
+                    if (datosProv.Rows.Count > 0)
+                    {
+                        txtDestinatario.Text = datosProv.Rows[0]["Correo"].ToString();
+                    }
+                }
 
                 string sentenciaEmp = "SELECT Correo FROM Empresa WHERE ID_Empresa = 1";
                 DataTable datosEmp = CsComandosSql.RetornaDatos(sentenciaEmp);
@@ -53,7 +56,6 @@ namespace ModuloDeCompra_BD.Formulario
                 {
                     txtCuentaEnvio.Text = datosEmp.Rows[0]["Correo"].ToString();
                 }
-
 
                 if (string.IsNullOrEmpty(ID_RTV))
                 {
@@ -179,39 +181,45 @@ namespace ModuloDeCompra_BD.Formulario
 
             return datosCombinados;
         }
+
         private DataTable ObtenerDatosDevolucion()
         {
             string query = @"SELECT 
-            e.Nombre_Empresa,
-            e.RUC AS RUC_Empresa,
-            e.Direccion AS Direccion_Empresa,
-            e.Telefono AS Telefono_Empresa,
-            e.Correo AS Correo_Empresa,
-            e.Logo_Empresa,
-            p.Nombre_Proveedor,
-            p.NroDocumento AS RUC_Proveedor,
-            p.Direccion AS Direccion_Proveedor,
-            p.NroTelefono AS Telefono_Proveedor,
-            p.Correo AS Correo_Proveedor,
-            rtv.ID_RTV,
-            rtv.Fecha_RTV,
-            rtv.Motivo,
-            rd.ID_RTVDetails,
-            rd.Cantidad,
-            COALESCE(pr.NomProducto, sv.Nom_Servicio) AS Descripcion,
-            CAST(COALESCE(pr.Costo, sv.Costo) AS DECIMAL(10,2)) AS Costo_Unitario,
-            CAST(rd.Cantidad * COALESCE(pr.Costo, sv.Costo) AS DECIMAL(10,2)) AS Total_Linea,
-            CASE 
-                WHEN rd.ID_Producto IS NOT NULL THEN 'Producto'
-                WHEN rd.ID_Servicio IS NOT NULL THEN 'Servicio'
-            END AS Tipo_Item
-        FROM RTV_Header rtv
-        INNER JOIN Proveedores p ON rtv.ID_Proveedor = p.ID_Proveedor
-        INNER JOIN RTV_Details rd ON rtv.ID_RTV = rd.ID_RTV
-        LEFT JOIN Producto pr ON rd.ID_Producto = pr.ID_Producto
-        LEFT JOIN Servicio sv ON rd.ID_Servicio = sv.ID_Servicio
-        CROSS JOIN Empresa e
-        WHERE rtv.ID_RTV = @ID_RTV";
+        e.Nombre_Empresa,
+        e.RUC AS RUC_Empresa,
+        e.Direccion AS Direccion_Empresa,
+        e.Telefono AS Telefono_Empresa,
+        e.Correo AS Correo_Empresa,
+        e.Logo_Empresa,
+        p.Nombre_Proveedor,
+        p.NroDocumento AS RUC_Proveedor,
+        p.Direccion AS Direccion_Proveedor,
+        p.NroTelefono AS Telefono_Proveedor,
+        p.Correo AS Correo_Proveedor,
+        rtv.ID_RTV,
+        rtv.Fecha_RTV,
+        rtv.Motivo,
+        rd.ID_RTVDetails,
+        rd.Cantidad,
+        COALESCE(pr.NomProducto, sv.Nom_Servicio) AS Descripcion,
+        CAST(COALESCE(pr.Costo, sv.Costo) AS DECIMAL(10,2)) AS Costo_Unitario,
+        CAST(rd.Cantidad * COALESCE(pr.Costo, sv.Costo) AS DECIMAL(10,2)) AS Total_Linea,
+        CASE 
+            WHEN rd.ID_Producto IS NOT NULL THEN 'Producto'
+            WHEN rd.ID_Servicio IS NOT NULL THEN 'Servicio'
+        END AS Tipo_Item,
+        (SELECT TOP 1 u.Nombre + ' ' + u.Apellido 
+         FROM DiarioCont_Header dch 
+         INNER JOIN Usuario u ON dch.Usuario = u.Usuario
+         WHERE dch.ID_GRN = COALESCE(rtv.ID_GRN, rd.ID_GRN)
+         ORDER BY dch.Diario DESC) AS Usuario_Realizador
+    FROM RTV_Header rtv
+    INNER JOIN Proveedores p ON rtv.ID_Proveedor = p.ID_Proveedor
+    INNER JOIN RTV_Details rd ON rtv.ID_RTV = rd.ID_RTV
+    LEFT JOIN Producto pr ON rd.ID_Producto = pr.ID_Producto
+    LEFT JOIN Servicio sv ON rd.ID_Servicio = sv.ID_Servicio
+    CROSS JOIN Empresa e
+    WHERE rtv.ID_RTV = @ID_RTV";
 
             SqlParameter param = new SqlParameter("@ID_RTV", SqlDbType.Int);
             param.Value = Convert.ToInt32(ID_RTV);

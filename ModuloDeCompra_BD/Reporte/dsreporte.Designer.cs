@@ -7510,6 +7510,8 @@ namespace ModuloDeCompra_BD.Reporte {
             
             private global::System.Data.DataColumn columnLogo_Empresa;
             
+            private global::System.Data.DataColumn columnUsuario_Realizador;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public DocDEVDataTable() {
@@ -7705,6 +7707,14 @@ namespace ModuloDeCompra_BD.Reporte {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Usuario_RealizadorColumn {
+                get {
+                    return this.columnUsuario_Realizador;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -7758,7 +7768,8 @@ namespace ModuloDeCompra_BD.Reporte {
                         decimal Costo_Unitario, 
                         decimal Total_Linea, 
                         string Tipo_Item, 
-                        byte[] Logo_Empresa) {
+                        byte[] Logo_Empresa, 
+                        string Usuario_Realizador) {
                 DocDEVRow rowDocDEVRow = ((DocDEVRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Nombre_Empresa,
@@ -7780,7 +7791,8 @@ namespace ModuloDeCompra_BD.Reporte {
                         Costo_Unitario,
                         Total_Linea,
                         Tipo_Item,
-                        Logo_Empresa};
+                        Logo_Empresa,
+                        Usuario_Realizador};
                 rowDocDEVRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDocDEVRow);
                 return rowDocDEVRow;
@@ -7823,6 +7835,7 @@ namespace ModuloDeCompra_BD.Reporte {
                 this.columnTotal_Linea = base.Columns["Total_Linea"];
                 this.columnTipo_Item = base.Columns["Tipo_Item"];
                 this.columnLogo_Empresa = base.Columns["Logo_Empresa"];
+                this.columnUsuario_Realizador = base.Columns["Usuario_Realizador"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7868,6 +7881,8 @@ namespace ModuloDeCompra_BD.Reporte {
                 base.Columns.Add(this.columnTipo_Item);
                 this.columnLogo_Empresa = new global::System.Data.DataColumn("Logo_Empresa", typeof(byte[]), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnLogo_Empresa);
+                this.columnUsuario_Realizador = new global::System.Data.DataColumn("Usuario_Realizador", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUsuario_Realizador);
                 this.columnNombre_Empresa.AllowDBNull = false;
                 this.columnNombre_Empresa.MaxLength = 50;
                 this.columnRUC_Empresa.MaxLength = 20;
@@ -7901,6 +7916,8 @@ namespace ModuloDeCompra_BD.Reporte {
                 this.columnTotal_Linea.ReadOnly = true;
                 this.columnTipo_Item.ReadOnly = true;
                 this.columnTipo_Item.MaxLength = 8;
+                this.columnUsuario_Realizador.ReadOnly = true;
+                this.columnUsuario_Realizador.MaxLength = 101;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13923,6 +13940,22 @@ namespace ModuloDeCompra_BD.Reporte {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Usuario_Realizador {
+                get {
+                    try {
+                        return ((string)(this[this.tableDocDEV.Usuario_RealizadorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Usuario_Realizador\' de la tabla \'DocDEV\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDocDEV.Usuario_RealizadorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsRUC_EmpresaNull() {
                 return this.IsNull(this.tableDocDEV.RUC_EmpresaColumn);
             }
@@ -14063,6 +14096,18 @@ namespace ModuloDeCompra_BD.Reporte {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetLogo_EmpresaNull() {
                 this[this.tableDocDEV.Logo_EmpresaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsUsuario_RealizadorNull() {
+                return this.IsNull(this.tableDocDEV.Usuario_RealizadorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetUsuario_RealizadorNull() {
+                this[this.tableDocDEV.Usuario_RealizadorColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -21411,6 +21456,7 @@ WHERE det.ID_Orden = @ID_Orden";
             tableMapping.ColumnMappings.Add("Total_Linea", "Total_Linea");
             tableMapping.ColumnMappings.Add("Tipo_Item", "Tipo_Item");
             tableMapping.ColumnMappings.Add("Logo_Empresa", "Logo_Empresa");
+            tableMapping.ColumnMappings.Add("Usuario_Realizador", "Usuario_Realizador");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -21427,51 +21473,27 @@ WHERE det.ID_Orden = @ID_Orden";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT 
-    -- Datos de la empresa
-    e.Nombre_Empresa,
-    e.RUC AS RUC_Empresa,
-    e.Direccion AS Direccion_Empresa,
-    e.Telefono AS Telefono_Empresa,
-    e.Correo AS Correo_Empresa,
-    e.Logo_Empresa AS Logo_Empresa,
-
-    -- Datos del proveedor
-    p.Nombre_Proveedor,
-    p.NroDocumento AS RUC_Proveedor,
-    p.Direccion AS Direccion_Proveedor,
-    p.NroTelefono AS Telefono_Proveedor,
-    p.Correo AS Correo_Proveedor,
-    
-    -- Datos básicos de la devolución
-    rtv.ID_RTV,
-    rtv.Fecha_RTV,
-    rtv.Motivo,
-    
-    -- Detalle de productos/servicios
-    rd.ID_RTVDetails,
-    rd.Cantidad,
-    COALESCE(pr.NomProducto, sv.Nom_Servicio) AS Descripcion,
-    CAST(COALESCE(pr.Costo, sv.Costo) AS DECIMAL(10,2)) AS Costo_Unitario,
-    CAST(rd.Cantidad * COALESCE(pr.Costo, sv.Costo) AS DECIMAL(10,2)) AS Total_Linea,
-    CASE 
-        WHEN rd.ID_Producto IS NOT NULL THEN 'Producto'
-        WHEN rd.ID_Servicio IS NOT NULL THEN 'Servicio'
-    END AS Tipo_Item
-FROM 
-    RTV_Header rtv
-INNER JOIN 
-    Proveedores p ON rtv.ID_Proveedor = p.ID_Proveedor
-INNER JOIN 
-    RTV_Details rd ON rtv.ID_RTV = rd.ID_RTV
-LEFT JOIN 
-    Producto pr ON rd.ID_Producto = pr.ID_Producto
-LEFT JOIN 
-    Servicio sv ON rd.ID_Servicio = sv.ID_Servicio
-CROSS JOIN 
-    Empresa e
-WHERE 
-    rtv.ID_RTV = @ID_RTV";
+            this._commandCollection[0].CommandText = "SELECT \r\n    -- Datos de la empresa\r\n    e.Nombre_Empresa,\r\n    e.RUC AS RUC_Empr" +
+                "esa,\r\n    e.Direccion AS Direccion_Empresa,\r\n    e.Telefono AS Telefono_Empresa," +
+                "\r\n    e.Correo AS Correo_Empresa,\r\n    e.Logo_Empresa AS Logo_Empresa,\r\n\r\n    --" +
+                " Datos del proveedor\r\n    p.Nombre_Proveedor,\r\n    p.NroDocumento AS RUC_Proveed" +
+                "or,\r\n    p.Direccion AS Direccion_Proveedor,\r\n    p.NroTelefono AS Telefono_Prov" +
+                "eedor,\r\n    p.Correo AS Correo_Proveedor,\r\n    \r\n    -- Datos básicos de la devo" +
+                "lución\r\n    rtv.ID_RTV,\r\n    rtv.Fecha_RTV,\r\n    rtv.Motivo,\r\n    \r\n    -- Detal" +
+                "le de productos/servicios\r\n    rd.ID_RTVDetails,\r\n    rd.Cantidad,\r\n    COALESCE" +
+                "(pr.NomProducto, sv.Nom_Servicio) AS Descripcion,\r\n    CAST(COALESCE(pr.Costo, s" +
+                "v.Costo) AS DECIMAL(10,2)) AS Costo_Unitario,\r\n    CAST(rd.Cantidad * COALESCE(p" +
+                "r.Costo, sv.Costo) AS DECIMAL(10,2)) AS Total_Linea,\r\n    CASE \r\n        WHEN rd" +
+                ".ID_Producto IS NOT NULL THEN \'Producto\'\r\n        WHEN rd.ID_Servicio IS NOT NUL" +
+                "L THEN \'Servicio\'\r\n    END AS Tipo_Item,\r\n    \r\n    -- Nombre completo del usuar" +
+                "io que realizó el RTV\r\n    (SELECT TOP 1 u.Nombre + \' \' + u.Apellido \r\n     FROM" +
+                " DiarioCont_Header dch \r\n     INNER JOIN Usuario u ON dch.Usuario = u.Usuario\r\n " +
+                "    WHERE dch.ID_GRN = COALESCE(rtv.ID_GRN, rd.ID_GRN)\r\n     ORDER BY dch.Diario" +
+                " DESC) AS Usuario_Realizador\r\nFROM \r\n    RTV_Header rtv\r\nINNER JOIN \r\n    Provee" +
+                "dores p ON rtv.ID_Proveedor = p.ID_Proveedor\r\nINNER JOIN \r\n    RTV_Details rd ON" +
+                " rtv.ID_RTV = rd.ID_RTV\r\nLEFT JOIN \r\n    Producto pr ON rd.ID_Producto = pr.ID_P" +
+                "roducto\r\nLEFT JOIN \r\n    Servicio sv ON rd.ID_Servicio = sv.ID_Servicio\r\nCROSS J" +
+                "OIN \r\n    Empresa e\r\nWHERE \r\n    rtv.ID_RTV = @ID_RTV";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_RTV", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_RTV", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }

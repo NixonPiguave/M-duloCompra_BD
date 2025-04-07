@@ -23,14 +23,17 @@ namespace ModuloDeCompra_BD.Formulario
         private void FrmRTV_Load(object sender, EventArgs e)
         {
             lbCantRecib.Visible = false;
+            btnGenerarDocumento.Visible = false;
         }
 
+        string idProv;
         private void btnSeleccionarGRN_Click(object sender, EventArgs e)
         {
             FrmListadoGRN grn = new FrmListadoGRN();
             grn.ShowDialog();
             txtSeleccionGRN.Text = grn.ID.ToString();
             txtProveedor.Text = grn.IDProv1.ToString();
+            idProv = grn.IDProv1.ToString();
             if (txtProveedor.Text != 0.ToString())
             {
                 CargarDGV(grn.ID);
@@ -217,6 +220,7 @@ namespace ModuloDeCompra_BD.Formulario
                         {
                             MessageBox.Show("RTV REGISTRADO");
                             CargarDGV(Convert.ToInt32(txtSeleccionGRN.Text));
+                            btnGenerarDocumento.Visible = true;
                         }
 
                     }
@@ -260,6 +264,7 @@ namespace ModuloDeCompra_BD.Formulario
         private void btnGenerarDocumento_Click(object sender, EventArgs e)
         {
             frmreportDocDevo devo = new frmreportDocDevo();
+            devo.ID_Prov = idProv;
             devo.ShowDialog();
         }
     }

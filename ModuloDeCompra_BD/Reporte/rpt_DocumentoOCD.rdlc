@@ -550,7 +550,7 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>=Fields!Fecha_Orden.Value</Value>
+                                      <Value>=Format(First(Fields!Fecha_Orden.Value), "dd/MM/yyyy")</Value>
                                       <Style />
                                     </TextRun>
                                   </TextRuns>
@@ -3234,20 +3234,22 @@
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value>Firma de Empresa</Value>
+                        <Value>=First(Fields!nomperSolOrdCom.Value, "dsDocOCD")</Value>
                         <Style>
                           <FontWeight>Bold</FontWeight>
                         </Style>
                       </TextRun>
                     </TextRuns>
-                    <Style />
+                    <Style>
+                      <TextAlign>Center</TextAlign>
+                    </Style>
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox269</rd:DefaultName>
                 <Top>19.70291cm</Top>
-                <Left>1.94437cm</Left>
+                <Left>1.29645cm</Left>
                 <Height>0.6cm</Height>
-                <Width>3.58542cm</Width>
+                <Width>4.90771cm</Width>
                 <ZIndex>17</ZIndex>
                 <Style>
                   <Border>

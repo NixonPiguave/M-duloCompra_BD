@@ -63,7 +63,7 @@ namespace ModuloDeCompra_BD.Formulario
                         return;
                     }
                 }
-
+                txtAsunto.Text = $"Documento de Orden de Compra: {IDOrden}";
                 ConfigurarReporte();
             }
             catch (Exception ex)

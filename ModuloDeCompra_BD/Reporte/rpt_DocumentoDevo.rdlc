@@ -97,10 +97,14 @@
           <DataField>Logo_Empresa</DataField>
           <rd:TypeName>System.Byte[]</rd:TypeName>
         </Field>
+        <Field Name="Usuario_Realizador">
+          <DataField>Usuario_Realizador</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>dsreporte</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\nixon\Desktop\BDAVANCE\M-duloCompra_BD\ModuloDeCompra_BD\Reporte\dsreporte.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\nixon\Source\Repos\M-duloCompra_BD\ModuloDeCompra_BD\Reporte\dsreporte.xsd</rd:SchemaPath>
         <rd:TableName>DocDEV</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
@@ -430,7 +434,7 @@
                       <Width>2.09666cm</Width>
                     </TablixColumn>
                     <TablixColumn>
-                      <Width>2.01965cm</Width>
+                      <Width>3.07798cm</Width>
                     </TablixColumn>
                     <TablixColumn>
                       <Width>2.14785cm</Width>
@@ -439,7 +443,7 @@
                       <Width>2.36771cm</Width>
                     </TablixColumn>
                     <TablixColumn>
-                      <Width>4.49667cm</Width>
+                      <Width>3.43834cm</Width>
                     </TablixColumn>
                   </TablixColumns>
                   <TablixRows>
@@ -1037,7 +1041,9 @@
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
-                                  <Style />
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox163</rd:DefaultName>
@@ -1067,7 +1073,9 @@
                                       <Style />
                                     </TextRun>
                                   </TextRuns>
-                                  <Style />
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>nomperSolOrdCom</rd:DefaultName>
@@ -1109,7 +1117,9 @@
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
-                                  <Style />
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox175</rd:DefaultName>
@@ -1141,7 +1151,9 @@
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
-                                  <Style />
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox106</rd:DefaultName>
@@ -1180,7 +1192,7 @@
                                     </TextRun>
                                   </TextRuns>
                                   <Style>
-                                    <TextAlign>Right</TextAlign>
+                                    <TextAlign>Left</TextAlign>
                                   </Style>
                                 </Paragraph>
                               </Paragraphs>
@@ -1207,11 +1219,13 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>=Fields!Fecha_RTV.Value</Value>
+                                      <Value>=Format(First(Fields!Fecha_RTV.Value), "dd/MM/yyyy")</Value>
                                       <Style />
                                     </TextRun>
                                   </TextRuns>
-                                  <Style />
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox179</rd:DefaultName>
@@ -1489,7 +1503,9 @@
                                       <Style />
                                     </TextRun>
                                   </TextRuns>
-                                  <Style />
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Cantidad</rd:DefaultName>
@@ -1691,7 +1707,7 @@
                             </GroupExpressions>
                           </Group>
                           <TablixHeader>
-                            <Size>3.09766cm</Size>
+                            <Size>3.89676cm</Size>
                             <CellContents>
                               <Textbox Name="Textbox121">
                                 <CanGrow>true</CanGrow>
@@ -1730,7 +1746,7 @@
                     <Top>0.60854cm</Top>
                     <Left>0.55581cm</Left>
                     <Height>0.6cm</Height>
-                    <Width>6.39676cm</Width>
+                    <Width>7.19585cm</Width>
                     <Style>
                       <Border>
                         <Style>None</Style>
@@ -1744,20 +1760,22 @@
                       <Paragraph>
                         <TextRuns>
                           <TextRun>
-                            <Value>Firma de Empresa</Value>
+                            <Value>=First(Fields!Usuario_Realizador.Value, "dsDocDEV")</Value>
                             <Style>
                               <FontWeight>Bold</FontWeight>
                             </Style>
                           </TextRun>
                         </TextRuns>
-                        <Style />
+                        <Style>
+                          <TextAlign>Center</TextAlign>
+                        </Style>
                       </Paragraph>
                     </Paragraphs>
                     <rd:DefaultName>Textbox269</rd:DefaultName>
                     <Top>4.37993cm</Top>
-                    <Left>1.57304cm</Left>
+                    <Left>1.05771cm</Left>
                     <Height>0.6cm</Height>
-                    <Width>3.58542cm</Width>
+                    <Width>4.52408cm</Width>
                     <ZIndex>1</ZIndex>
                     <Style>
                       <Border>
@@ -1844,7 +1862,7 @@
                 <KeepTogether>true</KeepTogether>
                 <Top>12.7cm</Top>
                 <Left>0.68239cm</Left>
-                <Height>5.30458cm</Height>
+                <Height>5.56916cm</Height>
                 <Width>15.06584cm</Width>
                 <ZIndex>12</ZIndex>
                 <Style>
