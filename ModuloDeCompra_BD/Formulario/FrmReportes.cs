@@ -122,5 +122,11 @@ namespace reporte
             fecha fech = new fecha();
             fech.ShowDialog();
         }
+
+        private void btnDiarioContable_Click(object sender, EventArgs e)
+        {
+            frmReporteDiarioContable diario = new frmReporteDiarioContable();
+            diario.ShowDialog();
+        }
     }
 }

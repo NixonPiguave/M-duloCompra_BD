@@ -178,6 +178,12 @@
     <Compile Include="Formulario\frmreportDocOCR.Designer.cs">
       <DependentUpon>frmreportDocOCR.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formulario\FrmReporteDiarioContable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\FrmReporteDiarioContable.Designer.cs">
+      <DependentUpon>FrmReporteDiarioContable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formulario\frmReporteAuditoriaSesion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -442,6 +448,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\frmreportDocOCR.resx">
       <DependentUpon>frmreportDocOCR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\FrmReporteDiarioContable.resx">
+      <DependentUpon>FrmReporteDiarioContable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\frmReporteAuditoriaSesion.resx">
       <DependentUpon>frmReporteAuditoriaSesion.cs</DependentUpon>
