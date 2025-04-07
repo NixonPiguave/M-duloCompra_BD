@@ -40,7 +40,7 @@ namespace ModuloDeCompra_BD.Formulario
 
                 if (tb.Rows.Count > 0)
                 {
-                    string Provedorname =tb.Rows[0]["Nombre_Proveedor"].ToString();
+                    string Provedorname = tb.Rows[0]["Nombre_Proveedor"].ToString();
                     txtNombreProveedor.Text = Provedorname;
                 }
 
@@ -68,14 +68,13 @@ namespace ModuloDeCompra_BD.Formulario
         }
         private void CargarDGV(int ID)
         {
-            string query = $"SELECT X.[Cod Detalle], X.ID_Producto, X.ID_Servicio,p.NomProducto,s.Nom_Servicio, X.[Cantidad Recibida], X.[Cantidad a Devolver], X.CantidadDevuelta " +
+            string query = $"SELECT X.[Cod Detalle], X.ID_Producto, X.ID_Servicio,p.NomProducto,s.Nom_Servicio, X.[Cantidad Recibida], X.[Cantidad a Devolver], X.CantidadDevuelta, X.Costo " +
                 $" FROM (SELECT  GR.ID_GRNDetails AS [Cod Detalle], GR.ID_Producto, GR.ID_Servicio, GR.Cantidad AS [Cantidad Recibida]," +
-                $"  0 AS [Cantidad a Devolver],CASE WHEN ISNULL((SELECT sum(D.Cantidad) FROM RTV_Details D " +
+                $" 0 AS [Cantidad a Devolver],CASE WHEN ISNULL((SELECT sum(D.Cantidad) FROM RTV_Details D " +
                 $" WHERE D.ID_GRN = {ID} AND (D.ID_Producto = GR.ID_Producto or D.ID_Servicio=GR.ID_Servicio)), 0) = 0 " +
-                $" THEN 0 ELSE ISNULL((SELECT sum(D.Cantidad) FROM RTV_Details D" +
-                $"  WHERE D.ID_GRN = {ID} AND (D.ID_Producto = GR.ID_Producto or D.ID_Servicio=GR.ID_Servicio)), 0) END AS [CantidadDevuelta] " +
-                $" FROM Grn_Details GR WHERE GR.ID_GRN = {ID} ) AS X Left join Producto p on X.ID_Producto=p.ID_Producto  " +
-                $"left join Servicio s on s.ID_Servicio=X.ID_Servicio WHERE [Cantidad Recibida] <> CantidadDevuelta";
+                $" THEN 0 ELSE ISNULL((SELECT sum(D.Cantidad) FROM RTV_Details D  WHERE D.ID_GRN = {ID} AND (D.ID_Producto = GR.ID_Producto or D.ID_Servicio=GR.ID_Servicio)), 0) END AS [CantidadDevuelta], GR.Costo " +
+                $" FROM Grn_Details GR WHERE GR.ID_GRN = {ID} ) AS X Left join Producto p on X.ID_Producto=p.ID_Producto " +
+                $" left join Servicio s on s.ID_Servicio=X.ID_Servicio WHERE [Cantidad Recibida] <> CantidadDevuelta";
 
             dgvDetalleGrn.DataSource = CsComandosSql.RetornaDatos(query);
         }
@@ -182,7 +181,9 @@ namespace ModuloDeCompra_BD.Formulario
 
                         string idServicio = fila.Cells["ID_Servicio"].Value?.ToString();
                         string idProducto = fila.Cells["ID_Producto"].Value?.ToString();
+                        string Costo = fila.Cells["Costo"].Value?.ToString();
                         string cantidad = fila.Cells["Cantidad a Devolver"].Value?.ToString();
+                        Costo = Costo.Replace(',', '.');
                         int cant = Convert.ToInt32(cantidad);
                         if (cant > 0)
                         {
@@ -191,6 +192,7 @@ namespace ModuloDeCompra_BD.Formulario
                                      <IDSERVICIO>{(string.IsNullOrEmpty(idServicio) ? "NULL" : idServicio)}</IDSERVICIO>
                                 <IDPRODUCTO>{(string.IsNullOrEmpty(idProducto) ? "NULL" : idProducto)}</IDPRODUCTO>
                                     <Cantidad>{cantidad}</Cantidad>
+                                    <Costo>{Costo}</Costo> 
                                 </DETALLE>";
                         }
                     }
