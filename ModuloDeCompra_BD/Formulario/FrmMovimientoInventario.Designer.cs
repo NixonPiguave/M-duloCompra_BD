@@ -40,8 +40,6 @@
             this.lblCantidad = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txtValor = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblValor = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.btnEscogerGRN = new Guna.UI2.WinForms.Guna2Button();
-            this.btnAgregar = new Guna.UI2.WinForms.Guna2Button();
             this.txtIDGRN = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblIDGRN = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.dgvMovimientoInventario = new System.Windows.Forms.DataGridView();
@@ -247,40 +245,6 @@
             this.lblValor.Text = "Valor";
             this.lblValor.Visible = false;
             // 
-            // btnEscogerGRN
-            // 
-            this.btnEscogerGRN.BorderRadius = 10;
-            this.btnEscogerGRN.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnEscogerGRN.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnEscogerGRN.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnEscogerGRN.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnEscogerGRN.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
-            this.btnEscogerGRN.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEscogerGRN.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnEscogerGRN.Location = new System.Drawing.Point(502, 49);
-            this.btnEscogerGRN.Name = "btnEscogerGRN";
-            this.btnEscogerGRN.Size = new System.Drawing.Size(151, 42);
-            this.btnEscogerGRN.TabIndex = 28;
-            this.btnEscogerGRN.Text = "Escoger GRN";
-            this.btnEscogerGRN.Click += new System.EventHandler(this.btnEscogerGRN_Click);
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.BorderRadius = 10;
-            this.btnAgregar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnAgregar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnAgregar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnAgregar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAgregar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
-            this.btnAgregar.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.ForeColor = System.Drawing.Color.White;
-            this.btnAgregar.Location = new System.Drawing.Point(845, 49);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(192, 42);
-            this.btnAgregar.TabIndex = 27;
-            this.btnAgregar.Text = "Registrar Movimiento";
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
             // txtIDGRN
             // 
             this.txtIDGRN.BorderRadius = 5;
@@ -360,8 +324,6 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(85)))), ((int)(((byte)(84)))));
             this.panel2.Controls.Add(this.txtIDGRN);
-            this.panel2.Controls.Add(this.btnEscogerGRN);
-            this.panel2.Controls.Add(this.btnAgregar);
             this.panel2.Controls.Add(this.lblIDGRN);
             this.panel2.Location = new System.Drawing.Point(159, 68);
             this.panel2.Name = "panel2";
@@ -417,9 +379,7 @@
         #endregion
         private Guna.UI2.WinForms.Guna2TextBox txtIDGRN;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblIDGRN;
-        private Guna.UI2.WinForms.Guna2Button btnAgregar;
         private System.Windows.Forms.DataGridView dgvMovimientoInventario;
-        private Guna.UI2.WinForms.Guna2Button btnEscogerGRN;
         private System.Windows.Forms.DataGridView dgvAux;
         private Guna.UI2.WinForms.Guna2TextBox txtValor;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblValor;

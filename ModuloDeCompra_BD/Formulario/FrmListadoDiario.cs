@@ -29,7 +29,7 @@ namespace ModuloDeCompra_BD.Formulario
         private void FrmListadoCategoria_Load(object sender, EventArgs e)
         {
             frmReporteDiarioContable diario = new frmReporteDiarioContable();
-            MessageBox.Show($"{Anio1}, {Periodo1}");
+            
             string query = $"select * from DiarioCont_Header where YEAR(Fecha) = {Anio} and MONTH(Fecha) = {Periodo1}";
             dgvListadoDiario.DataSource = CsComandosSql.RetornaDatos(query);
         }
