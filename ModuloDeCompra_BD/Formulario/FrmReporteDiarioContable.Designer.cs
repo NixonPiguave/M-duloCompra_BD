@@ -35,16 +35,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblDiario = new System.Windows.Forms.Label();
             this.txtAnio = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtPeriodo = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtDiario = new Guna.UI2.WinForms.Guna2TextBox();
+            this.cmbPeriodo = new Guna.UI2.WinForms.Guna2ComboBox();
             this.pnlCheck.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlCheck
             // 
             this.pnlCheck.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.pnlCheck.Controls.Add(this.cmbPeriodo);
             this.pnlCheck.Controls.Add(this.txtDiario);
-            this.pnlCheck.Controls.Add(this.txtPeriodo);
             this.pnlCheck.Controls.Add(this.txtAnio);
             this.pnlCheck.Controls.Add(this.lblPeriodo);
             this.pnlCheck.Controls.Add(this.lblAnio);
@@ -67,7 +67,6 @@
             this.lblPeriodo.Size = new System.Drawing.Size(67, 19);
             this.lblPeriodo.TabIndex = 9;
             this.lblPeriodo.Text = "Periodo";
-            this.lblPeriodo.Click += new System.EventHandler(this.lblHasta_Click);
             // 
             // lblAnio
             // 
@@ -78,7 +77,6 @@
             this.lblAnio.Size = new System.Drawing.Size(38, 19);
             this.lblAnio.TabIndex = 8;
             this.lblAnio.Text = "Año";
-            this.lblAnio.Click += new System.EventHandler(this.lblDesde_Click);
             // 
             // btnGenerarReporte
             // 
@@ -109,7 +107,6 @@
             this.label2.Size = new System.Drawing.Size(277, 25);
             this.label2.TabIndex = 2;
             this.label2.Text = "Reporte de Diario Contable";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // lblDiario
             // 
@@ -140,24 +137,6 @@
             this.txtAnio.Size = new System.Drawing.Size(200, 36);
             this.txtAnio.TabIndex = 10;
             // 
-            // txtPeriodo
-            // 
-            this.txtPeriodo.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPeriodo.DefaultText = "";
-            this.txtPeriodo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtPeriodo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtPeriodo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPeriodo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPeriodo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPeriodo.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtPeriodo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPeriodo.Location = new System.Drawing.Point(37, 175);
-            this.txtPeriodo.Name = "txtPeriodo";
-            this.txtPeriodo.PlaceholderText = "";
-            this.txtPeriodo.SelectedText = "";
-            this.txtPeriodo.Size = new System.Drawing.Size(200, 36);
-            this.txtPeriodo.TabIndex = 11;
-            // 
             // txtDiario
             // 
             this.txtDiario.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -175,6 +154,34 @@
             this.txtDiario.SelectedText = "";
             this.txtDiario.Size = new System.Drawing.Size(200, 36);
             this.txtDiario.TabIndex = 12;
+            // 
+            // cmbPeriodo
+            // 
+            this.cmbPeriodo.BackColor = System.Drawing.Color.Transparent;
+            this.cmbPeriodo.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbPeriodo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPeriodo.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbPeriodo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbPeriodo.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmbPeriodo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmbPeriodo.ItemHeight = 30;
+            this.cmbPeriodo.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"});
+            this.cmbPeriodo.Location = new System.Drawing.Point(38, 168);
+            this.cmbPeriodo.Name = "cmbPeriodo";
+            this.cmbPeriodo.Size = new System.Drawing.Size(199, 36);
+            this.cmbPeriodo.TabIndex = 13;
             // 
             // frmReporteDiarioContable
             // 
@@ -200,8 +207,8 @@
         private Guna.UI2.WinForms.Guna2Button btnGenerarReporte;
         private System.Windows.Forms.Label lblPeriodo;
         private System.Windows.Forms.Label lblAnio;
-        private Guna.UI2.WinForms.Guna2TextBox txtPeriodo;
         private Guna.UI2.WinForms.Guna2TextBox txtAnio;
         private Guna.UI2.WinForms.Guna2TextBox txtDiario;
+        private Guna.UI2.WinForms.Guna2ComboBox cmbPeriodo;
     }
 }

@@ -29,20 +29,5 @@ namespace ModuloDeCompra_BD.Formulario
         {
            
         }
-
-        private void lblDesde_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblHasta_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
