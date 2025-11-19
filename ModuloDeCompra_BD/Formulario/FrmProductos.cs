@@ -99,8 +99,14 @@ namespace ModuloDeCompra_BD.Formulario
                     producto.Estado1 = cmbEstadoProducto.SelectedItem.ToString();
                     producto.Categoria1 = Id;
                     producto.Proveedor1 = Id2;
+                    if (CHBInventariable.Checked == true) 
+                    {
+                        producto.Inventariable1 = "Si";
+                    }else
+                    {
+                        producto.Inventariable1 = "No";
+                    }
 
-                   
                     string ubicacionBodega = txtListadoUbiBodega.Text.Trim();
                     DataTable ubicacionBodegaData = CsComandosSql.RetornaDatos($"SELECT ID_Bodega FROM Bodega WHERE Ubicacion = '{ubicacionBodega}'");
 
@@ -183,6 +189,7 @@ namespace ModuloDeCompra_BD.Formulario
                     }
                     producto.Estado1 = cmbEstadoProducto.SelectedItem.ToString();
                     producto.Proveedor1 = Id2;
+
                     if (producto.AñadirServicio())
                     {
                         dgvService.DataSource = CsComandosSql.RetornaDatos("SELECT ID_Servicio, Nom_Servicio, Costo FROM Servicio");
@@ -362,6 +369,15 @@ namespace ModuloDeCompra_BD.Formulario
                         producto.Proveedor1 = Id2;
                         string ubicacionBodega = txtListadoUbiBodega.Text.Trim();
                         DataTable ubicacionBodegaData = CsComandosSql.RetornaDatos($"SELECT ID_Bodega FROM Bodega WHERE Ubicacion = '{ubicacionBodega}'");
+
+                        if (CHBInventariable.Checked == true)
+                        {
+                            producto.Inventariable1 = "Si";
+                        }
+                        else
+                        {
+                            producto.Inventariable1 = "No";
+                        }
 
                         if (ubicacionBodegaData.Rows.Count > 0)
                         {

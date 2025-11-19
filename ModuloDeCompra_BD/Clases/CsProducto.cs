@@ -17,7 +17,7 @@ namespace ModuloDeCompra_BD.Clases
         string Estado;
         int Categoria;
         int Proveedor;
-        
+        string Inventariable;
 
         public string Nom_Producto1 { get => Nom_Producto; set => Nom_Producto = value; }
         public decimal Precio_Unit1 { get => Precio_Unit; set => Precio_Unit = value; }
@@ -25,6 +25,7 @@ namespace ModuloDeCompra_BD.Clases
         public string Estado1 { get => Estado; set => Estado = value; }
         public int Categoria1 { get => Categoria; set => Categoria = value; }
         public int Proveedor1 { get => Proveedor; set => Proveedor = value; }
+        public string Inventariable1 { get => Inventariable; set => Inventariable = value; }
 
         public bool AñadirProducto(int idBodega)
         {
@@ -38,6 +39,7 @@ namespace ModuloDeCompra_BD.Clases
                     <ID_CAT>{Categoria}</ID_CAT>
                     <ID_IVA>{Iva}</ID_IVA>
                     <ID_Proveedor>{Proveedor}</ID_Proveedor>
+                    <Inventariable>{Inventariable}</Inventariable>
                 </Producto>
             </Productos>";
 
@@ -73,6 +75,7 @@ namespace ModuloDeCompra_BD.Clases
                         <ID_CAT>{Categoria}</ID_CAT>
                         <ID_IVA>{Iva}</ID_IVA>
                         <ID_Proveedor>{Proveedor}</ID_Proveedor>
+                        <Inventariable>{Inventariable}</Inventariable>
                     </Producto>
                 </Productos>";
             string query = $@"exec spModificarProducto '{cadenaXML}', {idBodega}";

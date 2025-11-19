@@ -60,6 +60,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.guna2HtmlLabel10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.CHBInventariable = new Guna.UI2.WinForms.Guna2CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvService)).BeginInit();
             this.panel1.SuspendLayout();
@@ -527,6 +528,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(85)))), ((int)(((byte)(84)))));
+            this.panel3.Controls.Add(this.CHBInventariable);
             this.panel3.Controls.Add(this.cbTipoP);
             this.panel3.Controls.Add(this.btnCancelar);
             this.panel3.Controls.Add(this.btnEditarGeneral);
@@ -563,6 +565,25 @@
             this.guna2HtmlLabel10.Size = new System.Drawing.Size(318, 34);
             this.guna2HtmlLabel10.TabIndex = 28;
             this.guna2HtmlLabel10.Text = "PRODUCTOS Y SERVICIOS";
+            // 
+            // CHBInventariable
+            // 
+            this.CHBInventariable.AutoSize = true;
+            this.CHBInventariable.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.CHBInventariable.CheckedState.BorderRadius = 0;
+            this.CHBInventariable.CheckedState.BorderThickness = 0;
+            this.CHBInventariable.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.CHBInventariable.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold);
+            this.CHBInventariable.ForeColor = System.Drawing.Color.White;
+            this.CHBInventariable.Location = new System.Drawing.Point(991, 73);
+            this.CHBInventariable.Name = "CHBInventariable";
+            this.CHBInventariable.Size = new System.Drawing.Size(145, 26);
+            this.CHBInventariable.TabIndex = 27;
+            this.CHBInventariable.Text = "Inventariable";
+            this.CHBInventariable.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.CHBInventariable.UncheckedState.BorderRadius = 0;
+            this.CHBInventariable.UncheckedState.BorderThickness = 0;
+            this.CHBInventariable.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             // 
             // FrmProductos
             // 
@@ -625,5 +646,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel10;
+        private Guna.UI2.WinForms.Guna2CheckBox CHBInventariable;
     }
 }
