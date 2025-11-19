@@ -48,11 +48,13 @@ namespace ModuloDeCompra_BD.Formulario
                 {
                     CsEncriptarMDS encrypt = new CsEncriptarMDS();
                     string contraEncrypt = encrypt.Encriptar(txtContra.Text, txtUsuario.Text);
+                    string contraEncrypt2 = encrypt.Encriptar(txtContra2.Text, txtUsuario.Text);
                     CsUsuario user = new CsUsuario();
                     user.Nombre = txtNombre.Text;
                     user.Apellido = txtApellido.Text;
                     user.Cedula = txtcedula.Text;
                     user.Contraseña = contraEncrypt;
+                    user.Contraseña2 = contraEncrypt2;
                     user.Usuario = txtUsuario.Text;
                     DataTable dt = CsComandosSql.RetornaDatos($"select * from Roles where Rol='{cbRol.SelectedItem.ToString()}'");
                     user.Rol = Convert.ToInt32(dt.Rows[0]["ID_Rol"].ToString());
@@ -65,13 +67,15 @@ namespace ModuloDeCompra_BD.Formulario
                         comand.Contraseña = txtContra.Text;
                         if (comand.LoginBD())
                         {
-                            MessageBox.Show("Usuario Base de Datos Agregado");
                             MessageBox.Show("Usuario Agregado");
                             txtNombre.Text = string.Empty;
                             txtListDepa.Text = string.Empty;
                             txtContra.Text = string.Empty;
                             txtcedula.Text = string.Empty;
                             txtApellido.Text = string.Empty;
+                            txtContra2.Text = string.Empty;
+                            txtUsuario.Text = string.Empty;
+                            cbRol.SelectedItem = string.Empty;
                             dgvUser.DataSource = user.ListadoUser();
                         }
                     }

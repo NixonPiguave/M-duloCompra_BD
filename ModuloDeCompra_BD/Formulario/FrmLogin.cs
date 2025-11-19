@@ -44,6 +44,7 @@ namespace ModuloDeCompra_BD
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            string claveDB = null;
             try
             {
                 CsUsuario user = new CsUsuario();
@@ -55,29 +56,35 @@ namespace ModuloDeCompra_BD
                 int[] funcion = CsComandosSql.Funcion_Rol(user.Cedula, user.Contraseña);
                 int IDusuario = CsComandosSql.ObtenerIdUsuario(user.Cedula, user.Contraseña);
                 FrmMenu3 menu = new FrmMenu3();
-                menu.Botones=funcion;
+                menu.Botones = funcion;
                 string idsTexto = string.Join(", ", funcion);
                 //MessageBox.Show("IDs de funciones: " + idsTexto);
 
 
                 if (!string.IsNullOrEmpty(rol))
                 {
+                    DataTable tb = CsComandosSql.RetornaDatos($"select ClaveDB from Usuario where ID_Usuario = {IDusuario}");
+                    if (tb.Rows.Count > 0)
+                    {
+                        claveDB = tb.Rows[0]["ClaveDB"].ToString();
+
+                    }
 
                     CsConeccionServer.Usuario = txtUser.Text;
-                    CsConeccionServer.Password = user.Contraseña;
-                    CsConeccionServer.ActualizarCadenaConexion(txtUser.Text, user.Contraseña);
+                    CsConeccionServer.Password = claveDB;
+                    CsConeccionServer.ActualizarCadenaConexion(txtUser.Text, claveDB);
                     CsConeccionServer.ObtenerConexion();
-                    
-                        MessageBox.Show("Inicio de sesión Exitoso");
-                        FrmMenu3 ini = new FrmMenu3();
-                        ini.IDusuario1 = IDusuario;
-                        ini.rol = rol;
-                        ini.Botones = funcion;                    
-                        txtUser.Text = string.Empty;
-                        txtContraseña.Text = string.Empty;
-                        this.Hide();
-                        ini.ShowDialog();
-                        this.Show();
+
+                    MessageBox.Show("Inicio de sesión Exitoso");
+                    FrmMenu3 ini = new FrmMenu3();
+                    ini.IDusuario1 = IDusuario;
+                    ini.rol = rol;
+                    ini.Botones = funcion;
+                    txtUser.Text = string.Empty;
+                    txtContraseña.Text = string.Empty;
+                    this.Hide();
+                    ini.ShowDialog();
+                    this.Show();
                 }
                 else
                 {

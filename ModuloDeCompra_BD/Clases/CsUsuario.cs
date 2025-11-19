@@ -19,6 +19,7 @@ namespace ModuloDeCompra_BD.Clases
         string usuario;
         string cedula;
         string contraseña;
+        string contraseña2;
         int departamento;
         int rol;
         string rolname;
@@ -27,6 +28,7 @@ namespace ModuloDeCompra_BD.Clases
         public string Usuario { get => usuario; set => usuario = value; }
         public string Cedula { get => cedula; set => cedula = value; }
         public string Contraseña { get => contraseña; set => contraseña = value; }
+        public string Contraseña2 { get => contraseña2; set => contraseña2 = value; }
         public int Departamento { get => departamento; set => departamento = value; }
         public int Rol { get => rol; set => rol = value; }
         public int ID { get => Id; set => Id = value; }
@@ -36,27 +38,13 @@ namespace ModuloDeCompra_BD.Clases
         {
             string query = $"insert into Usuario (Nombre, Apellido, Cedula, Contraseña, ID_Depa, ID_Rol, Usuario) values ('{nombre}', '{apellido}', '{cedula}', '{contraseña}',{departamento} ,{rol} , '{usuario}')";
             CsComandosSql.InserDeletUpdate(query);
-            switch (rolname)
-            {
-                case "Administrador":
-                    {
-                        string query2 = $"CREATE LOGIN [{usuario}] WITH PASSWORD = '{contraseña}';" +
-                            $"USE ModuloCompras; " +
-                            $"CREATE USER [{usuario}] FOR LOGIN [{usuario}]" +
-                            $"EXEC sp_addrolemember 'db_owner', '{usuario}'";
-                        CsComandosSql.InserDeletUpdate(query2);
-                    }
-                    break;
-                default:
-                    {
-                        string query2 = $"CREATE LOGIN [{usuario}] WITH PASSWORD = '{contraseña}';" +
-                            $"USE ModuloCompras; " +
-                            $"CREATE USER [{usuario}] FOR LOGIN [{usuario}]" +
-                             $"EXEC sp_addrolemember 'db_owner', '{usuario}'";
-                        CsComandosSql.InserDeletUpdate(query2);
-                    }
-                    break;
-            }
+
+            string query2 = $"CREATE LOGIN [{usuario}] WITH PASSWORD = '{contraseña2}';" +
+                $"USE ModuloCompras; " +
+                $"CREATE USER [{usuario}] FOR LOGIN [{usuario}]" +
+                $"EXEC sp_addrolemember 'db_owner', '{usuario}'";
+            CsComandosSql.InserDeletUpdate(query2);
+
             return true;
         }
         public bool ModificarUser()
@@ -69,14 +57,7 @@ namespace ModuloDeCompra_BD.Clases
             string query = $"delete Usuario where ID_Usuario='{Id}'";
             return CsComandosSql.InserDeletUpdate(query);
         }
-        public bool AñadirUserBD()
-        {
-            string query = $"IF NOT EXIST (SELECT * FROM sys.server_principals WHERE name = '{usuario}') BEGIN " +
-                $"CREATE LOGIN {usuario} WITH PASSWORD = '{contraseña}'; END" +
-                $"  USE ModuloCompras; IF NOT EXISTS (SELECT * FROM sys.database_principals WHERE name = '{usuario}')" +
-                $"   BEGIN CREATE USER {usuario} FOR LOGIN {usuario}; ALTER ROLE db_owner ADD MEMBER {usuario}; END";
-            return CsComandosSql.InserDeletUpdate(query);
-        }
+  
         public DataTable ListadoUser()
         {
             string query = "select U.ID_Usuario, U.Nombre, U.Apellido, U.Cedula, U.Usuario, U.Contraseña,R.ID_Rol, R.Rol, D.ID_Depa," +
