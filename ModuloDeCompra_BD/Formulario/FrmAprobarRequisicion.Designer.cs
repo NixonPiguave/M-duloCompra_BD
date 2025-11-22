@@ -48,22 +48,23 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.DgvRequisicionPendiente = new Guna.UI2.WinForms.Guna2DataGridView();
             this.btnAprobarRequi = new Guna.UI2.WinForms.Guna2Button();
             this.btnRechazarRequi = new Guna.UI2.WinForms.Guna2Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.btnDerivar = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleRequiPendiente)).BeginInit();
             this.panel2.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvRequisicionPendiente)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnListRequiPendientes
@@ -272,11 +273,56 @@
             this.panel2.Size = new System.Drawing.Size(1362, 631);
             this.panel2.TabIndex = 19;
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(85)))), ((int)(((byte)(84)))));
+            this.panel4.Controls.Add(this.btnModificarCantidadRequi);
+            this.panel4.Controls.Add(this.label1);
+            this.panel4.Controls.Add(this.txtCantidad);
+            this.panel4.Location = new System.Drawing.Point(47, 337);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(199, 148);
+            this.panel4.TabIndex = 19;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(85)))), ((int)(((byte)(84)))));
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.btnListRequiPendientes);
+            this.panel3.Controls.Add(this.txtIDRequisicionPendiente);
+            this.panel3.Location = new System.Drawing.Point(47, 79);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(199, 148);
+            this.panel3.TabIndex = 18;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(43, 21);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(108, 22);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Ver Listado";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(85)))), ((int)(((byte)(84)))));
+            this.panel1.Controls.Add(this.dgvDetalleRequiPendiente);
+            this.panel1.Controls.Add(this.btnRechazarProducto);
+            this.panel1.Location = new System.Drawing.Point(324, 337);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(970, 241);
+            this.panel1.TabIndex = 17;
+            // 
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(85)))), ((int)(((byte)(84)))));
             this.guna2Panel1.BorderColor = System.Drawing.Color.Transparent;
             this.guna2Panel1.BorderThickness = 2;
+            this.guna2Panel1.Controls.Add(this.btnDerivar);
             this.guna2Panel1.Controls.Add(this.DgvRequisicionPendiente);
             this.guna2Panel1.Controls.Add(this.btnAprobarRequi);
             this.guna2Panel1.Controls.Add(this.btnRechazarRequi);
@@ -358,7 +404,7 @@
             this.btnAprobarRequi.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAprobarRequi.ForeColor = System.Drawing.Color.White;
             this.btnAprobarRequi.IndicateFocus = true;
-            this.btnAprobarRequi.Location = new System.Drawing.Point(636, 154);
+            this.btnAprobarRequi.Location = new System.Drawing.Point(498, 154);
             this.btnAprobarRequi.Name = "btnAprobarRequi";
             this.btnAprobarRequi.Size = new System.Drawing.Size(118, 44);
             this.btnAprobarRequi.TabIndex = 7;
@@ -377,7 +423,7 @@
             this.btnRechazarRequi.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRechazarRequi.ForeColor = System.Drawing.Color.White;
             this.btnRechazarRequi.IndicateFocus = true;
-            this.btnRechazarRequi.Location = new System.Drawing.Point(804, 154);
+            this.btnRechazarRequi.Location = new System.Drawing.Point(667, 154);
             this.btnRechazarRequi.Name = "btnRechazarRequi";
             this.btnRechazarRequi.Size = new System.Drawing.Size(118, 44);
             this.btnRechazarRequi.TabIndex = 8;
@@ -395,49 +441,24 @@
             this.label9.TabIndex = 0;
             this.label9.Text = "APROBAR REQUISICIONES PENDIENTES";
             // 
-            // panel1
+            // btnDerivar
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(85)))), ((int)(((byte)(84)))));
-            this.panel1.Controls.Add(this.dgvDetalleRequiPendiente);
-            this.panel1.Controls.Add(this.btnRechazarProducto);
-            this.panel1.Location = new System.Drawing.Point(324, 337);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(970, 241);
-            this.panel1.TabIndex = 17;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(85)))), ((int)(((byte)(84)))));
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Controls.Add(this.btnListRequiPendientes);
-            this.panel3.Controls.Add(this.txtIDRequisicionPendiente);
-            this.panel3.Location = new System.Drawing.Point(47, 79);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(199, 148);
-            this.panel3.TabIndex = 18;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(85)))), ((int)(((byte)(84)))));
-            this.panel4.Controls.Add(this.btnModificarCantidadRequi);
-            this.panel4.Controls.Add(this.label1);
-            this.panel4.Controls.Add(this.txtCantidad);
-            this.panel4.Location = new System.Drawing.Point(47, 337);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(199, 148);
-            this.panel4.TabIndex = 19;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(43, 21);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(108, 22);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Ver Listado";
+            this.btnDerivar.Animated = true;
+            this.btnDerivar.BorderRadius = 10;
+            this.btnDerivar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDerivar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDerivar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDerivar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDerivar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
+            this.btnDerivar.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDerivar.ForeColor = System.Drawing.Color.White;
+            this.btnDerivar.IndicateFocus = true;
+            this.btnDerivar.Location = new System.Drawing.Point(825, 154);
+            this.btnDerivar.Name = "btnDerivar";
+            this.btnDerivar.Size = new System.Drawing.Size(118, 44);
+            this.btnDerivar.TabIndex = 18;
+            this.btnDerivar.Text = "Derivar";
+            this.btnDerivar.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // FrmAprobarRequisicion
             // 
@@ -453,13 +474,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleRequiPendiente)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.guna2Panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DgvRequisicionPendiente)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.guna2Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DgvRequisicionPendiente)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -488,5 +509,6 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label3;
+        private Guna.UI2.WinForms.Guna2Button btnDerivar;
     }
 }
