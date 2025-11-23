@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnSelecRequi = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSelecEmpleado = new Guna.UI2.WinForms.Guna2Button();
             this.txtBuscarEmpleadoPendiente = new Guna.UI2.WinForms.Guna2TextBox();
             this.dgvListaEmpleados = new System.Windows.Forms.DataGridView();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
@@ -37,22 +37,22 @@
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnSelecRequi
+            // btnSelecEmpleado
             // 
-            this.btnSelecRequi.BorderRadius = 10;
-            this.btnSelecRequi.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSelecRequi.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnSelecRequi.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSelecRequi.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSelecRequi.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
-            this.btnSelecRequi.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSelecRequi.ForeColor = System.Drawing.Color.White;
-            this.btnSelecRequi.Location = new System.Drawing.Point(238, 120);
-            this.btnSelecRequi.Name = "btnSelecRequi";
-            this.btnSelecRequi.Size = new System.Drawing.Size(120, 26);
-            this.btnSelecRequi.TabIndex = 7;
-            this.btnSelecRequi.Text = "Seleccionar";
-            this.btnSelecRequi.Click += new System.EventHandler(this.btnSelecRequi_Click);
+            this.btnSelecEmpleado.BorderRadius = 10;
+            this.btnSelecEmpleado.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSelecEmpleado.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSelecEmpleado.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSelecEmpleado.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSelecEmpleado.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
+            this.btnSelecEmpleado.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelecEmpleado.ForeColor = System.Drawing.Color.White;
+            this.btnSelecEmpleado.Location = new System.Drawing.Point(238, 120);
+            this.btnSelecEmpleado.Name = "btnSelecEmpleado";
+            this.btnSelecEmpleado.Size = new System.Drawing.Size(120, 26);
+            this.btnSelecEmpleado.TabIndex = 7;
+            this.btnSelecEmpleado.Text = "Seleccionar";
+            this.btnSelecEmpleado.Click += new System.EventHandler(this.btnSelecRequi_Click);
             // 
             // txtBuscarEmpleadoPendiente
             // 
@@ -117,7 +117,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.ClientSize = new System.Drawing.Size(611, 450);
-            this.Controls.Add(this.btnSelecRequi);
+            this.Controls.Add(this.btnSelecEmpleado);
             this.Controls.Add(this.txtBuscarEmpleadoPendiente);
             this.Controls.Add(this.dgvListaEmpleados);
             this.Controls.Add(this.guna2Panel1);
@@ -133,7 +133,7 @@
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2Button btnSelecRequi;
+        private Guna.UI2.WinForms.Guna2Button btnSelecEmpleado;
         private Guna.UI2.WinForms.Guna2TextBox txtBuscarEmpleadoPendiente;
         private System.Windows.Forms.DataGridView dgvListaEmpleados;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;

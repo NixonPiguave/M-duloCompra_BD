@@ -43,7 +43,7 @@ namespace Menú
 
 
             btnCrearRequisicion.Visible = false;
-            btnRequisicionesPendientes.Visible = false;
+            //btnRequisicionesPendientes.Visible = false;
             btnOrdenCompraRequisicion.Visible = false;
             btnOrdenCompra.Visible = false;
             btnRecepcion.Visible = false;
@@ -261,6 +261,25 @@ namespace Menú
 
         private void btnRequisiciones_Click(object sender, EventArgs e)
         {
+            string sentenciaExtraerRol = $"select ID_Rol from Usuario where ID_Usuario = {IDusuario1}";
+            string Rol = "0";
+            DataTable dtRol = CsComandosSql.RetornaDatos(sentenciaExtraerRol);
+            if (dtRol.Rows.Count > 0)
+            {
+                Rol = dtRol.Rows[0]["ID_Rol"].ToString();
+            }
+            string sentenciaExtraerRequisicionDerivada = $"select * from Requisicion where RequisicionDerivadaUsuario = {IDusuario1} and Estado_Requisicion = 'Pendiente'";
+            DataTable dtRequisicon = CsComandosSql.RetornaDatos(sentenciaExtraerRequisicionDerivada);
+            if (dtRequisicon.Rows.Count > 0 || Rol == "1" || Rol == "4" || Rol == "8")
+            {
+                btnRequisicionesPendientes.Visible = true;
+                pnlRequisiciones.Size = new System.Drawing.Size(183, 116);
+            }
+            else
+            { 
+                btnRequisicionesPendientes.Visible = false;
+                pnlRequisiciones.Size = new System.Drawing.Size(183, 58);
+            }
             if (botones.Contains(1) || botones.Contains(2))
             {
                 if (botones.Contains(1))
@@ -272,19 +291,19 @@ namespace Menú
                 {
                     btnRequisicionesPendientes.Location = new Point(3, 6);
                 }
-                if (botones.Contains(2))
-                {
-                    //Ver Requisiciones Pendientes
-                    btnRequisicionesPendientes.Visible = true;
-                    if (!botones.Contains(1))
-                    {
-                        pnlRequisiciones.Size = new System.Drawing.Size(183, 58);
-                    }
-                }
-                else
-                {
-                    pnlRequisiciones.Size = new System.Drawing.Size(183, 58);
-                }
+                //if (botones.Contains(2))
+                //{
+                //    //Ver Requisiciones Pendientes
+                //    btnRequisicionesPendientes.Visible = true;
+                //    if (!botones.Contains(1))
+                //    {
+                //        pnlRequisiciones.Size = new System.Drawing.Size(183, 58);
+                //    }
+                //}
+                //else
+                //{
+                //    pnlRequisiciones.Size = new System.Drawing.Size(183, 58);
+                //}
             }
             if (pnlRequisiciones.Visible == false)
             {

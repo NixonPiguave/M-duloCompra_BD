@@ -136,6 +136,12 @@
     <Compile Include="Formulario\frmListadoEmpleadoDepartamento.Designer.cs">
       <DependentUpon>frmListadoEmpleadoDepartamento.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formulario\frmListadoRequiPendienteDerivados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\frmListadoRequiPendienteDerivados.Designer.cs">
+      <DependentUpon>frmListadoRequiPendienteDerivados.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formulario\frmListadoRequiPendiente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -439,6 +445,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\frmListadoEmpleadoDepartamento.resx">
       <DependentUpon>frmListadoEmpleadoDepartamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\frmListadoRequiPendienteDerivados.resx">
+      <DependentUpon>frmListadoRequiPendienteDerivados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\frmListadoRequiPendiente.resx">
       <DependentUpon>frmListadoRequiPendiente.cs</DependentUpon>

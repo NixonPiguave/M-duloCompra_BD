@@ -14,8 +14,9 @@ namespace ModuloDeCompra_BD.Formulario
     public partial class frmListaEmpleadosDepartamentos: Form
     {
         string DepaID;
-
+        string RequisicionID;
         public string DepaID1 { get => DepaID; set => DepaID = value; }
+        public string RequisicionID1 { get => RequisicionID; set => RequisicionID = value; }
 
         public frmListaEmpleadosDepartamentos()
         {
@@ -33,10 +34,8 @@ namespace ModuloDeCompra_BD.Formulario
             {
                 if (!string.IsNullOrEmpty(txtBuscarEmpleadoPendiente.Text))
                 {
-                    string RequisicionID = "0";
                     FrmAprobarRequisicion frmAprobar = new FrmAprobarRequisicion();
-
-                    string derivarRequisicion = $"update Requisicion set RequisicionDerivadaUsuario = {txtBuscarEmpleadoPendiente.Text}";
+                    string derivarRequisicion = $"update Requisicion set RequisicionDerivadaUsuario = {txtBuscarEmpleadoPendiente.Text} where ID_Requisicion = {RequisicionID1}";
                     CsComandosSql.InserDeletUpdate(derivarRequisicion);
                     MessageBox.Show("Se ha enviado la requisicion");
                     this.Close();

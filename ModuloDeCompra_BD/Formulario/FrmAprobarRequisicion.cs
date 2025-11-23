@@ -14,7 +14,6 @@ namespace ModuloDeCompra_BD.Formulario
 {
     public partial class FrmAprobarRequisicion: Form
     {
-        int id;
         int idUsuario;
         string RequisicionID;
         public int IdUsuario { get => idUsuario; set => idUsuario = value; }
@@ -26,15 +25,34 @@ namespace ModuloDeCompra_BD.Formulario
         }
         private void btnListRequiPendientes_Click(object sender, EventArgs e)
         {
-            frmListadoRequiPendiente listaRequiPendiente = new frmListadoRequiPendiente();
-            listaRequiPendiente.IdUsuario1 = idUsuario;
-            listaRequiPendiente.ShowDialog();
-            txtIDRequisicionPendiente.Text = listaRequiPendiente.Nombre1;
-            id = listaRequiPendiente.Id1;
-            if (!String.IsNullOrEmpty(txtIDRequisicionPendiente.Text))
+            string sentenciaExtraerRequisicionDerivada = $"select * from Requisicion where RequisicionDerivadaUsuario = {IdUsuario} and Estado_Requisicion = 'Pendiente'";
+            DataTable dtRequisicon = CsComandosSql.RetornaDatos(sentenciaExtraerRequisicionDerivada);
+            if (dtRequisicon.Rows.Count > 0)
             {
-                int idRequi = int.Parse(txtIDRequisicionPendiente.Text);
-                LlenarDgv(idRequi);
+                frmListadoRequiPendienteDerivados frmRequiPendiente = new frmListadoRequiPendienteDerivados();
+                frmRequiPendiente.ShowDialog();
+                txtIDRequisicionPendiente.Text = frmRequiPendiente.IdRequisicion1;
+                MessageBox.Show(frmRequiPendiente.IdRequisicion1);
+
+                if (!string.IsNullOrEmpty(txtIDRequisicionPendiente.Text))
+                {
+                    int id = Convert.ToInt32(RequisicionID1);
+                    DgvRequisicionPendiente.DataSource = CsComandosSql.RetornaDatos($"Select * from Requisicion where ID_Requisicion = {id}");
+                    dgvDetalleRequiPendiente.DataSource = CsComandosSql.RetornaDatos($"Select * from Requi_Details where ID_Requisicion= {id}");
+                }
+            }
+            else
+            {
+                frmListadoRequiPendiente listaRequiPendiente = new frmListadoRequiPendiente();
+                listaRequiPendiente.IdUsuario1 = idUsuario;
+                listaRequiPendiente.ShowDialog();
+                txtIDRequisicionPendiente.Text = listaRequiPendiente.Nombre1;
+                int id = listaRequiPendiente.Id1;
+                if (!String.IsNullOrEmpty(txtIDRequisicionPendiente.Text))
+                {
+                    int idRequi = int.Parse(txtIDRequisicionPendiente.Text);
+                    LlenarDgv(idRequi);
+                }
             }
         }
         private void LlenarDgv(int idRequi)
@@ -195,7 +213,7 @@ namespace ModuloDeCompra_BD.Formulario
             }
             frmListaEmpleadosDepartamentos frmEmpleados = new frmListaEmpleadosDepartamentos();
             frmEmpleados.DepaID1 = DepaID;
-            RequisicionID1 = txtIDRequisicionPendiente.Text;
+            frmEmpleados.RequisicionID1 = txtIDRequisicionPendiente.Text;
             frmEmpleados.ShowDialog();
         }
     }
