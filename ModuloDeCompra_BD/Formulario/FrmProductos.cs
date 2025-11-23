@@ -29,8 +29,7 @@ namespace ModuloDeCompra_BD.Formulario
         private void FrmProductos_Load(object sender, EventArgs e)
         {
             cmbEstadoProducto.SelectedItem = 1;
-            cmbIVA.SelectedIndex = 0;
-            dgvService.DataSource = CsComandosSql.RetornaDatos("select ID_Servicio, Nom_Servicio, Costo from Servicio");
+            cmbIVA.SelectedIndex = 0;           
             dgvProducto.DataSource = CsComandosSql.RetornaDatos("select ID_Producto, NomProducto, Costo from Producto");
             cbTipoP.SelectedIndex = 0;
            DataTable tb= CsComandosSql.RetornaDatos("select * from IVA where EstadoIVA= 1");
@@ -189,16 +188,7 @@ namespace ModuloDeCompra_BD.Formulario
                     }
                     producto.Estado1 = cmbEstadoProducto.SelectedItem.ToString();
                     producto.Proveedor1 = Id2;
-
-                    if (producto.AñadirServicio())
-                    {
-                        dgvService.DataSource = CsComandosSql.RetornaDatos("SELECT ID_Servicio, Nom_Servicio, Costo FROM Servicio");
-                        MessageBox.Show("Servicio agregado correctamente");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Error al agregar Servicio, verifique que los datos sean correctos");
-                    }
+                  
                 }
                 catch (Exception ex)
                 {
@@ -277,29 +267,7 @@ namespace ModuloDeCompra_BD.Formulario
                 MessageBox.Show("Por favor, seleccione un producto de la lista.");
             }
         }
-        private void btnEliminarServicio_Click(object sender, EventArgs e)
-        {
-            if(dgvService.SelectedRows.Count > 0)
-            {
-                int fila = dgvService.SelectedRows[0].Index;
-                int prod = Convert.ToInt32(dgvService.Rows[fila].Cells[0].Value);
-                CsProducto pro = new CsProducto();
-                if(pro.EliminarServicio(prod))
-                {
-                    dgvService.DataSource = CsComandosSql.RetornaDatos("Select ID_Servicio, Nom_Servicio, Costo from Servicio ");
-                    MessageBox.Show("Servicio eliminado correctamente");
-                }
-                else
-                {
-                    MessageBox.Show("Error al eliminar el servicio");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Por favor, seleccione un servicio de la lista");
-            }
-            
-        }
+
         private void dgvProducto_DoubleClick(object sender, EventArgs e)
         {
             int fila = dgvProducto.CurrentCell.RowIndex;
@@ -308,14 +276,6 @@ namespace ModuloDeCompra_BD.Formulario
             txtPrecioUnitario.Text = dgvProducto[2, fila].Value.ToString();
             DataTable dt = CsComandosSql.RetornaDatos($"select Ubicacion from Inventario I inner join Bodega B on I.ID_Bodega=B.ID_Bodega where ID_Producto={Id3}");
             txtListadoUbiBodega.Text = dt.Rows[0]["Ubicacion"].ToString();
-        }
-
-        private void dgvService_DoubleClick(object sender, EventArgs e)
-        {
-            int fila = dgvService.CurrentCell.RowIndex;
-            Id4 = Convert.ToInt32(dgvService[0, fila].Value);
-            txtNombreProducto.Text = dgvService[1, fila].Value.ToString();
-            txtPrecioUnitario.Text = dgvService[2, fila].Value.ToString();
         }
 
         private void btnEditarGeneral_Click(object sender, EventArgs e)
@@ -404,7 +364,6 @@ namespace ModuloDeCompra_BD.Formulario
                             MessageBox.Show("Ubicación de bodega no válida.");
                         }
 
-
                     }
                     catch (Exception ex)
                     {
@@ -438,23 +397,6 @@ namespace ModuloDeCompra_BD.Formulario
 
 
                         producto.Proveedor1 = Id2;
-
-                        if (producto.ModificarServicio(Id4))
-                        {
-                            dgvService.DataSource = CsComandosSql.RetornaDatos("select ID_Servicio, Nom_Servicio, Costo from Servicio");
-                            MessageBox.Show("Servicio editado correctamente");
-                            txtNombreProducto.Text = string.Empty;
-                            txtPrecioUnitario.Text = string.Empty;
-                            cmbIVA.SelectedIndex = -1;
-                            cmbEstadoProducto.SelectedIndex = -1;
-                            txtListadoCategory.Text = string.Empty;
-                            txtListadoProvee.Text = string.Empty;
-                            txtListadoUbiBodega.Text = string.Empty;
-                        }
-                        else
-                        {
-                            MessageBox.Show("Error al editado Servicio, verifique que los datos sean correctos");
-                        }
 
                     }
                     catch (Exception ex)

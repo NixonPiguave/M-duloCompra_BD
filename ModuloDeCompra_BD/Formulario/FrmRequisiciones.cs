@@ -63,10 +63,6 @@ namespace Menú.Formularios
             dgvListadoProductos.DataSource = CsComandosSql.RetornaDatos($"select ID_Producto, NomProducto  from Producto WHERE EstadoProducto='Activo' and NomProducto like '%{txtFiltroProduc.Text}%'");
         }
 
-        private void txtFiltroServicio_KeyUp(object sender, KeyEventArgs e)
-        {
-            dgvListadoServicio.DataSource = CsComandosSql.RetornaDatos($"select ID_Servicio, Nom_Servicio  from Servicio WHERE EstadoServicio='Activo'and Nom_Servicio like '%{txtFiltroServicio.Text}%'");
-        }
 
         private void btnProducto_Click(object sender, EventArgs e)
         {

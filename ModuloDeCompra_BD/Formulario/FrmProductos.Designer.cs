@@ -52,19 +52,13 @@
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.dgvProducto = new System.Windows.Forms.DataGridView();
-            this.dgvService = new System.Windows.Forms.DataGridView();
-            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btnEliminar = new Guna.UI2.WinForms.Guna2Button();
-            this.btnEliminarServicio = new Guna.UI2.WinForms.Guna2Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.guna2HtmlLabel10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.CHBInventariable = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.guna2HtmlLabel10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvService)).BeginInit();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -423,7 +417,7 @@
             // 
             this.guna2HtmlLabel8.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel8.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel8.Location = new System.Drawing.Point(42, 366);
+            this.guna2HtmlLabel8.Location = new System.Drawing.Point(270, 359);
             this.guna2HtmlLabel8.Name = "guna2HtmlLabel8";
             this.guna2HtmlLabel8.Size = new System.Drawing.Size(93, 24);
             this.guna2HtmlLabel8.TabIndex = 18;
@@ -442,34 +436,9 @@
             this.dgvProducto.RowHeadersVisible = false;
             this.dgvProducto.RowTemplate.Height = 18;
             this.dgvProducto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProducto.Size = new System.Drawing.Size(502, 159);
+            this.dgvProducto.Size = new System.Drawing.Size(692, 159);
             this.dgvProducto.TabIndex = 19;
             this.dgvProducto.DoubleClick += new System.EventHandler(this.dgvProducto_DoubleClick);
-            // 
-            // dgvService
-            // 
-            this.dgvService.AllowUserToOrderColumns = true;
-            this.dgvService.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvService.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvService.BackgroundColor = System.Drawing.Color.White;
-            this.dgvService.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvService.Location = new System.Drawing.Point(29, 20);
-            this.dgvService.Name = "dgvService";
-            this.dgvService.RowHeadersVisible = false;
-            this.dgvService.RowTemplate.Height = 18;
-            this.dgvService.Size = new System.Drawing.Size(498, 159);
-            this.dgvService.TabIndex = 21;
-            this.dgvService.DoubleClick += new System.EventHandler(this.dgvService_DoubleClick);
-            // 
-            // guna2HtmlLabel1
-            // 
-            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(655, 366);
-            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(83, 24);
-            this.guna2HtmlLabel1.TabIndex = 20;
-            this.guna2HtmlLabel1.Text = "Servicios";
             // 
             // btnEliminar
             // 
@@ -481,49 +450,22 @@
             this.btnEliminar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
             this.btnEliminar.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(417, 185);
+            this.btnEliminar.Location = new System.Drawing.Point(607, 185);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(100, 36);
             this.btnEliminar.TabIndex = 22;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
-            // btnEliminarServicio
-            // 
-            this.btnEliminarServicio.BorderRadius = 10;
-            this.btnEliminarServicio.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnEliminarServicio.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnEliminarServicio.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnEliminarServicio.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnEliminarServicio.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
-            this.btnEliminarServicio.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarServicio.ForeColor = System.Drawing.Color.White;
-            this.btnEliminarServicio.Location = new System.Drawing.Point(423, 185);
-            this.btnEliminarServicio.Name = "btnEliminarServicio";
-            this.btnEliminarServicio.Size = new System.Drawing.Size(101, 36);
-            this.btnEliminarServicio.TabIndex = 24;
-            this.btnEliminarServicio.Text = "Eliminar";
-            this.btnEliminarServicio.Click += new System.EventHandler(this.btnEliminarServicio_Click);
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(85)))), ((int)(((byte)(84)))));
             this.panel1.Controls.Add(this.dgvProducto);
             this.panel1.Controls.Add(this.btnEliminar);
-            this.panel1.Location = new System.Drawing.Point(42, 399);
+            this.panel1.Location = new System.Drawing.Point(267, 389);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(543, 237);
+            this.panel1.Size = new System.Drawing.Size(720, 237);
             this.panel1.TabIndex = 25;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(85)))), ((int)(((byte)(84)))));
-            this.panel2.Controls.Add(this.dgvService);
-            this.panel2.Controls.Add(this.btnEliminarServicio);
-            this.panel2.Location = new System.Drawing.Point(655, 399);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(545, 237);
-            this.panel2.TabIndex = 26;
             // 
             // panel3
             // 
@@ -556,16 +498,6 @@
             this.panel3.Size = new System.Drawing.Size(1158, 276);
             this.panel3.TabIndex = 27;
             // 
-            // guna2HtmlLabel10
-            // 
-            this.guna2HtmlLabel10.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel10.Font = new System.Drawing.Font("Cambria", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel10.Location = new System.Drawing.Point(598, 12);
-            this.guna2HtmlLabel10.Name = "guna2HtmlLabel10";
-            this.guna2HtmlLabel10.Size = new System.Drawing.Size(318, 34);
-            this.guna2HtmlLabel10.TabIndex = 28;
-            this.guna2HtmlLabel10.Text = "PRODUCTOS Y SERVICIOS";
-            // 
             // CHBInventariable
             // 
             this.CHBInventariable.AutoSize = true;
@@ -585,6 +517,16 @@
             this.CHBInventariable.UncheckedState.BorderThickness = 0;
             this.CHBInventariable.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             // 
+            // guna2HtmlLabel10
+            // 
+            this.guna2HtmlLabel10.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel10.Font = new System.Drawing.Font("Cambria", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel10.Location = new System.Drawing.Point(598, 12);
+            this.guna2HtmlLabel10.Name = "guna2HtmlLabel10";
+            this.guna2HtmlLabel10.Size = new System.Drawing.Size(318, 34);
+            this.guna2HtmlLabel10.TabIndex = 28;
+            this.guna2HtmlLabel10.Text = "PRODUCTOS Y SERVICIOS";
+            // 
             // FrmProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -593,18 +535,14 @@
             this.ClientSize = new System.Drawing.Size(1238, 708);
             this.Controls.Add(this.guna2HtmlLabel10);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.guna2HtmlLabel1);
             this.Controls.Add(this.guna2HtmlLabel8);
             this.Name = "FrmProductos";
             this.Text = "FrmProductos";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmProductos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvService)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);
@@ -630,11 +568,8 @@
         private Guna.UI2.WinForms.Guna2ComboBox cbTipoP;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel8;
         private System.Windows.Forms.DataGridView dgvProducto;
-        private System.Windows.Forms.DataGridView dgvService;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button btnEliminar;
-        private Guna.UI2.WinForms.Guna2Button btnEliminarServicio;
         private Guna.UI2.WinForms.Guna2ComboBox cmbEstadoProducto;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2ComboBox cmbIVA;
@@ -643,7 +578,6 @@
         private Guna.UI2.WinForms.Guna2Button btnListadoUbiBodega;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel10;
         private Guna.UI2.WinForms.Guna2CheckBox CHBInventariable;
