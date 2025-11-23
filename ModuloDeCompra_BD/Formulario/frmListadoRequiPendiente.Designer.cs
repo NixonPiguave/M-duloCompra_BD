@@ -47,7 +47,7 @@
             this.btnSelecRequi.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
             this.btnSelecRequi.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSelecRequi.ForeColor = System.Drawing.Color.White;
-            this.btnSelecRequi.Location = new System.Drawing.Point(282, 120);
+            this.btnSelecRequi.Location = new System.Drawing.Point(274, 120);
             this.btnSelecRequi.Name = "btnSelecRequi";
             this.btnSelecRequi.Size = new System.Drawing.Size(120, 26);
             this.btnSelecRequi.TabIndex = 7;
@@ -69,7 +69,7 @@
             this.txtBuscarRequiPendiente.Name = "txtBuscarRequiPendiente";
             this.txtBuscarRequiPendiente.PlaceholderText = "";
             this.txtBuscarRequiPendiente.SelectedText = "";
-            this.txtBuscarRequiPendiente.Size = new System.Drawing.Size(178, 26);
+            this.txtBuscarRequiPendiente.Size = new System.Drawing.Size(215, 26);
             this.txtBuscarRequiPendiente.TabIndex = 6;
             // 
             // dgvListRequiPendientes
@@ -81,16 +81,17 @@
             this.dgvListRequiPendientes.Name = "dgvListRequiPendientes";
             this.dgvListRequiPendientes.RowHeadersVisible = false;
             this.dgvListRequiPendientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListRequiPendientes.Size = new System.Drawing.Size(373, 280);
+            this.dgvListRequiPendientes.Size = new System.Drawing.Size(1116, 280);
             this.dgvListRequiPendientes.TabIndex = 5;
             // 
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(85)))), ((int)(((byte)(84)))));
             this.guna2Panel1.Controls.Add(this.guna2HtmlLabel1);
-            this.guna2Panel1.Location = new System.Drawing.Point(-9, -2);
+            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(441, 89);
+            this.guna2Panel1.Size = new System.Drawing.Size(1184, 89);
             this.guna2Panel1.TabIndex = 4;
             // 
             // guna2HtmlLabel1
@@ -98,7 +99,7 @@
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(81, 35);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(424, 32);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(294, 24);
             this.guna2HtmlLabel1.TabIndex = 0;
@@ -109,7 +110,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.ClientSize = new System.Drawing.Size(430, 450);
+            this.ClientSize = new System.Drawing.Size(1184, 450);
             this.Controls.Add(this.btnSelecRequi);
             this.Controls.Add(this.txtBuscarRequiPendiente);
             this.Controls.Add(this.dgvListRequiPendientes);

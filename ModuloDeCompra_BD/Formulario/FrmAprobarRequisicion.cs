@@ -16,7 +16,10 @@ namespace ModuloDeCompra_BD.Formulario
     {
         int id;
         int idUsuario;
+        string RequisicionID;
         public int IdUsuario { get => idUsuario; set => idUsuario = value; }
+        public string RequisicionID1 { get => RequisicionID; set => RequisicionID = value; }
+
         public FrmAprobarRequisicion()
         {
             InitializeComponent();
@@ -181,24 +184,19 @@ namespace ModuloDeCompra_BD.Formulario
             txtIdProducto.Text = " ";
         }
 
-        private void txtIDRequisicionPendiente_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Esta en proceso :b");
+            string sentenciaExtraerDepartamento = $"select ID_Depa from Usuario where ID_Usuario = {IdUsuario}";
+            string DepaID = "0";
+            DataTable dt = CsComandosSql.RetornaDatos(sentenciaExtraerDepartamento);
+            if (dt.Rows.Count > 0)
+            {
+                DepaID = dt.Rows[0]["ID_Depa"].ToString();
+            }
+            frmListaEmpleadosDepartamentos frmEmpleados = new frmListaEmpleadosDepartamentos();
+            frmEmpleados.DepaID1 = DepaID;
+            RequisicionID1 = txtIDRequisicionPendiente.Text;
+            frmEmpleados.ShowDialog();
         }
     }
 }
