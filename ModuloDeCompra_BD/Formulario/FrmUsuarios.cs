@@ -60,14 +60,9 @@ namespace ModuloDeCompra_BD.Formulario
                     user.Rol = Convert.ToInt32(dt.Rows[0]["ID_Rol"].ToString());
                     user.Departamento = Id;
                     user.Rolname = cbRol.SelectedItem.ToString();
-                    CsComandosSql comand = new CsComandosSql();
                     if (user.AñadirUser())
-                    {
-                        comand.Usuario = txtUsuario.Text;
-                        comand.Contraseña = txtContra.Text;
-                        if (comand.LoginBD())
-                        {
-                            MessageBox.Show("Usuario Agregado");
+                    {    
+                         MessageBox.Show("Usuario Agregado");
                             txtNombre.Text = string.Empty;
                             txtListDepa.Text = string.Empty;
                             txtContra.Text = string.Empty;
@@ -77,7 +72,7 @@ namespace ModuloDeCompra_BD.Formulario
                             txtUsuario.Text = string.Empty;
                             cbRol.SelectedItem = string.Empty;
                             dgvUser.DataSource = user.ListadoUser();
-                        }
+                        
                     }
                     else
                         MessageBox.Show("Error, Verifique que los datos sean correctos");

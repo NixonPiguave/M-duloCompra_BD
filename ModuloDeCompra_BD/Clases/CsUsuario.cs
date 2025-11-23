@@ -36,13 +36,14 @@ namespace ModuloDeCompra_BD.Clases
 
         public bool AñadirUser()
         {
-            string query = $"insert into Usuario (Nombre, Apellido, Cedula, Contraseña, ID_Depa, ID_Rol, Usuario) values ('{nombre}', '{apellido}', '{cedula}', '{contraseña}',{departamento} ,{rol} , '{usuario}')";
+            string query = $"insert into Usuario (Nombre, Apellido, Cedula, Contraseña, ID_Depa, ID_Rol, Usuario, ClaveDB) values ('{nombre}', '{apellido}', '{cedula}', '{contraseña}',{departamento} ,{rol} , '{usuario}', '{contraseña2}')";
             CsComandosSql.InserDeletUpdate(query);
 
             string query2 = $"CREATE LOGIN [{usuario}] WITH PASSWORD = '{contraseña2}';" +
                 $"USE ModuloCompras; " +
                 $"CREATE USER [{usuario}] FOR LOGIN [{usuario}]" +
-                $"EXEC sp_addrolemember 'db_owner', '{usuario}'";
+                $"EXEC sp_addrolemember 'db_owner', '{usuario}'" +
+                $"ALTER SERVER ROLE securityadmin ADD MEMBER [{usuario}];"; ;
             CsComandosSql.InserDeletUpdate(query2);
 
             return true;

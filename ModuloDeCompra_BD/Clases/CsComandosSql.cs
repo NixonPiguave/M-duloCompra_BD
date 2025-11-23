@@ -154,29 +154,7 @@ namespace ModuloDeCompra_BD.Clases
             Desconectar();
             return id;
         }
-        public bool LoginBD()
-        {
-            SqlConnection conex = CsConeccionServer.ObtenerConexion();
-            string query = $"IF NOT EXISTS (SELECT * FROM sys.server_principals WHERE name = '{usuario}') BEGIN " +
-                $"CREATE LOGIN {usuario} WITH PASSWORD = '{Contraseña}'; END " +
-                $"USE ModuloCompras; IF NOT EXISTS (SELECT * FROM sys.database_principals WHERE name = '{usuario}') " +
-                $"BEGIN CREATE USER {usuario} FOR LOGIN {usuario}; ALTER ROLE db_owner ADD MEMBER {usuario}; END";
-            SqlCommand oCom = new SqlCommand(query, conex);
-            try
-            {
-                oCom.ExecuteNonQuery();
-                return true;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                return false;
-            }
-            finally
-            {
-                CsConeccionServer.desconectarse();
-            }
-        }
+        
         public static string GenerarSecuencial(string secuencia)
         {
             string secu = secuencia;

@@ -39,7 +39,7 @@ namespace Menú
             pnIventario.Visible = false;
             pnMantenimientos.Visible = false;
             pnlRequisiciones.Visible = false;
-            dgvOrdenesRequisicion.DataSource = CsComandosSql.RetornaDatos($"select Fecha_Requisicion, Estado_Requisicion,Observacion, MotivoRequisicion\r\nfrom Requisicion where ID_Usuario={IDusuario} and Estado_Requisicion='Pendiente'");
+            dgvOrdenesRequisicion.DataSource = CsComandosSql.RetornaDatos($"select Fecha_Requisicion, Estado_Requisicion,Observacion, MotivoRequisicion\r\nfrom Requisicion where UsuarioSolicitanteID={IDusuario} and Estado_Requisicion='Pendiente'");
 
 
             btnCrearRequisicion.Visible = false;
