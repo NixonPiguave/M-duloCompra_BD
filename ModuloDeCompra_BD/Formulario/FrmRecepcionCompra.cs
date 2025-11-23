@@ -362,5 +362,10 @@ namespace ModuloDeCompra_BD.Formulario
                 ActualizarEstadoRecibido(Convert.ToInt32(txtOrdenCompra.Text));
             }
         }
+
+        private void BtnCancelarOrden_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

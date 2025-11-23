@@ -45,6 +45,7 @@
             this.btnCredito = new Guna.UI2.WinForms.Guna2Button();
             this.txtCredito = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtNombreProveedor = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnOrdenCompra = new Guna.UI2.WinForms.Guna2Button();
             this.txtProveedor = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtOrdenCompra = new Guna.UI2.WinForms.Guna2TextBox();
@@ -61,7 +62,7 @@
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.dgvGrnDeOrden = new Guna.UI2.WinForms.Guna2DataGridView();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtNombreProveedor = new Guna.UI2.WinForms.Guna2TextBox();
+            this.BtnCancelarOrden = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -195,6 +196,26 @@
             this.panel2.Size = new System.Drawing.Size(183, 291);
             this.panel2.TabIndex = 15;
             // 
+            // txtNombreProveedor
+            // 
+            this.txtNombreProveedor.BorderRadius = 5;
+            this.txtNombreProveedor.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtNombreProveedor.DefaultText = "";
+            this.txtNombreProveedor.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtNombreProveedor.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtNombreProveedor.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtNombreProveedor.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtNombreProveedor.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtNombreProveedor.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtNombreProveedor.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtNombreProveedor.Location = new System.Drawing.Point(41, 161);
+            this.txtNombreProveedor.Name = "txtNombreProveedor";
+            this.txtNombreProveedor.PlaceholderText = "";
+            this.txtNombreProveedor.ReadOnly = true;
+            this.txtNombreProveedor.SelectedText = "";
+            this.txtNombreProveedor.Size = new System.Drawing.Size(86, 27);
+            this.txtNombreProveedor.TabIndex = 6;
+            // 
             // btnOrdenCompra
             // 
             this.btnOrdenCompra.BorderRadius = 10;
@@ -271,6 +292,7 @@
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(85)))), ((int)(((byte)(84)))));
             this.guna2Panel1.BorderColor = System.Drawing.Color.Black;
             this.guna2Panel1.BorderThickness = 2;
+            this.guna2Panel1.Controls.Add(this.BtnCancelarOrden);
             this.guna2Panel1.Controls.Add(this.label4);
             this.guna2Panel1.Controls.Add(this.cbTipoGRN);
             this.guna2Panel1.Controls.Add(this.lbCantRecib);
@@ -453,7 +475,7 @@
             this.btnGenerarGrn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
             this.btnGenerarGrn.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenerarGrn.ForeColor = System.Drawing.Color.White;
-            this.btnGenerarGrn.Location = new System.Drawing.Point(506, 240);
+            this.btnGenerarGrn.Location = new System.Drawing.Point(417, 240);
             this.btnGenerarGrn.Name = "btnGenerarGrn";
             this.btnGenerarGrn.Size = new System.Drawing.Size(128, 44);
             this.btnGenerarGrn.TabIndex = 6;
@@ -553,25 +575,22 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "GRN  Generados para esta Orden";
             // 
-            // txtNombreProveedor
+            // BtnCancelarOrden
             // 
-            this.txtNombreProveedor.BorderRadius = 5;
-            this.txtNombreProveedor.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtNombreProveedor.DefaultText = "";
-            this.txtNombreProveedor.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtNombreProveedor.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtNombreProveedor.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtNombreProveedor.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtNombreProveedor.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNombreProveedor.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtNombreProveedor.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNombreProveedor.Location = new System.Drawing.Point(41, 161);
-            this.txtNombreProveedor.Name = "txtNombreProveedor";
-            this.txtNombreProveedor.PlaceholderText = "";
-            this.txtNombreProveedor.ReadOnly = true;
-            this.txtNombreProveedor.SelectedText = "";
-            this.txtNombreProveedor.Size = new System.Drawing.Size(86, 27);
-            this.txtNombreProveedor.TabIndex = 6;
+            this.BtnCancelarOrden.BorderRadius = 10;
+            this.BtnCancelarOrden.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.BtnCancelarOrden.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.BtnCancelarOrden.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BtnCancelarOrden.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.BtnCancelarOrden.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
+            this.BtnCancelarOrden.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCancelarOrden.ForeColor = System.Drawing.Color.White;
+            this.BtnCancelarOrden.Location = new System.Drawing.Point(558, 242);
+            this.BtnCancelarOrden.Name = "BtnCancelarOrden";
+            this.BtnCancelarOrden.Size = new System.Drawing.Size(146, 44);
+            this.BtnCancelarOrden.TabIndex = 12;
+            this.BtnCancelarOrden.Text = "Cancelar Orden Compra";
+            this.BtnCancelarOrden.Click += new System.EventHandler(this.BtnCancelarOrden_Click);
             // 
             // FrmRecepcionCompra
             // 
@@ -628,5 +647,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cbTipoGRN;
         private Guna.UI2.WinForms.Guna2TextBox txtNombreProveedor;
+        private Guna.UI2.WinForms.Guna2Button BtnCancelarOrden;
     }
 }
