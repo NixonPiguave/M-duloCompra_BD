@@ -160,7 +160,6 @@
             this.txtProducto.SelectedText = "";
             this.txtProducto.Size = new System.Drawing.Size(162, 36);
             this.txtProducto.TabIndex = 7;
-            this.txtProducto.TextChanged += new System.EventHandler(this.txtProducto_TextChanged);
             // 
             // lbCantidad
             // 
@@ -172,7 +171,6 @@
             this.lbCantidad.Size = new System.Drawing.Size(87, 22);
             this.lbCantidad.TabIndex = 11;
             this.lbCantidad.Text = "Cantidad";
-            this.lbCantidad.Click += new System.EventHandler(this.lbCantidad_Click);
             // 
             // btnAgregarP
             // 
@@ -197,7 +195,6 @@
             this.nudCantidad.Name = "nudCantidad";
             this.nudCantidad.Size = new System.Drawing.Size(120, 20);
             this.nudCantidad.TabIndex = 10;
-            this.nudCantidad.ValueChanged += new System.EventHandler(this.nudCantidad_ValueChanged);
             // 
             // lbProduc
             // 
@@ -299,7 +296,6 @@
             this.txtFiltroProduc.SelectedText = "";
             this.txtFiltroProduc.Size = new System.Drawing.Size(200, 36);
             this.txtFiltroProduc.TabIndex = 30;
-            this.txtFiltroProduc.TextChanged += new System.EventHandler(this.txtFiltroProduc_TextChanged);
             this.txtFiltroProduc.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtFiltroProduc_KeyUp_1);
             // 
             // label5

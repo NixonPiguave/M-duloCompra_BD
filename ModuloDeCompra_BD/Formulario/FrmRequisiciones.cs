@@ -176,25 +176,6 @@ namespace Menú.Formularios
             }
 
         }
-
-        private void txtProducto_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbCantidad_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void nudCantidad_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void txtFiltroProduc_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
 
