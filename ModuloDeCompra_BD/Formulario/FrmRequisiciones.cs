@@ -26,165 +26,19 @@ namespace Menú.Formularios
         private void FrmRequisiciones_Load(object sender, EventArgs e)
         {
             tabla.Columns.Add("ID_Producto", typeof(string));
-            tabla.Columns.Add("ID_Servicio", typeof(string));
-            tabla.Columns.Add("Producto/Servicio", typeof(string));
+            tabla.Columns.Add("Producto", typeof(string));
             tabla.Columns.Add("Cantidad", typeof(string));
             dgvProductosAgregados.DataSource = tabla;
-            chkProducto.Checked = true;
-
-            panelCantidadServicio.Visible = false;
-            panel4.Visible = false;
             btnAgregarP.Visible = false;
-            lbID.Visible = false;
             lbProduc.Visible = false;
             lbCantidad.Visible = false;
             txtProducto.Visible = false;
-            txtID.Visible = false;
             nudCantidad.Visible = false;
-
-            btnAgregarS.Visible = false;
-            lbIDserv.Visible = false;
-            lbCanServ.Visible = false;
-            lbServi.Visible = false;
-            txtServicio.Visible = false;
-            txtIDServi.Visible = false;
-            nudServicio.Visible = false;
-
+            txtID.Visible = false;
+            lbID.Visible = false;
             nudCantidad.Minimum = 1;
             nudCantidad.Value = 1;
-            nudServicio.Minimum = 1;
-            nudServicio.Value = 1;
             dgvListadoProductos.DataSource = CsComandosSql.RetornaDatos("select ID_Producto, NomProducto from Producto WHERE EstadoProducto='Activo'");
-            dgvListadoServicio.DataSource = CsComandosSql.RetornaDatos("select ID_Servicio, Nom_Servicio from Servicio WHERE EstadoServicio='Activo'");
-        }
-
-        private void txtFiltroProduc_KeyUp(object sender, KeyEventArgs e)
-        {
-            dgvListadoProductos.DataSource = CsComandosSql.RetornaDatos($"select ID_Producto, NomProducto  from Producto WHERE EstadoProducto='Activo' and NomProducto like '%{txtFiltroProduc.Text}%'");
-        }
-
-
-        private void btnProducto_Click(object sender, EventArgs e)
-        {
-            panel4.Visible = true;
-            btnAgregarP.Visible = true;
-            lbID.Visible = true;
-            lbProduc.Visible = true;
-            lbCantidad.Visible = true;
-            txtProducto.Visible = true;
-            txtID.Visible = true;
-            nudCantidad.Visible = true;
-
-            btnAgregarS.Visible = false;
-            lbIDserv.Visible = false;
-            lbCanServ.Visible = false;
-            lbServi.Visible = false;
-            txtServicio.Visible = false;
-            txtIDServi.Visible = false;
-            nudServicio.Visible = false;
-
-            int fila = dgvListadoProductos.CurrentCell.RowIndex;
-            txtID.Text = dgvListadoProductos[0, fila].Value.ToString();
-            txtProducto.Text = dgvListadoProductos[1, fila].Value.ToString();
-
-        }
-
-        private void btnServicio_Click(object sender, EventArgs e)
-        {
-            panelCantidadServicio.Visible = true;
-            btnAgregarP.Visible = false;
-            lbID.Visible = false;
-            lbProduc.Visible = false;
-            lbCantidad.Visible = false;
-            txtProducto.Visible = false;
-            txtID.Visible = false;
-            nudCantidad.Visible = false;
-
-            btnAgregarS.Visible = true;
-            lbIDserv.Visible = true;
-            lbCanServ.Visible = true;
-            lbServi.Visible = true;
-            txtServicio.Visible = true;
-            txtIDServi.Visible = true;
-            nudServicio.Visible = true;
-            int fila = dgvListadoServicio.CurrentCell.RowIndex;
-            txtIDServi.Text = dgvListadoServicio[0, fila].Value.ToString();
-            txtServicio.Text = dgvListadoServicio[1, fila].Value.ToString();
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtID_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnAgregarS_Click(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(txtIDServi.Text) && !string.IsNullOrEmpty(txtServicio.Text))
-            {
-                bool Verificar = false;
-                foreach (DataGridViewRow fila in dgvProductosAgregados.Rows)
-                {
-                    string servicio = fila.Cells["Producto/Servicio"].Value?.ToString();
-                    if (txtServicio.Text == servicio)
-                    {
-                        Verificar = true;
-                    }
-                }
-                if (!Verificar)
-                {
-                    tabla.Rows.Add(null, txtIDServi.Text, txtServicio.Text, nudServicio.Value);
-                    dgvProductosAgregados.DataSource = tabla;
-                    txtServicio.Text = string.Empty;
-                    nudServicio.Value = 1;
-                    txtIDServi.Text = string.Empty;
-                }
-                else
-                {
-                    MessageBox.Show("El servicio ya existe en la requisición");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Rellene todos los campos por favor");
-            }
-        }
-
-        private void btnAgregarP_Click(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(txtID.Text) && !string.IsNullOrEmpty(txtProducto.Text))
-            {
-                bool Verificar = false;
-                foreach (DataGridViewRow fila in dgvProductosAgregados.Rows)
-                {
-                    string producto = fila.Cells["Producto/Servicio"].Value?.ToString();
-                    if (txtProducto.Text == producto)
-                    {
-                        Verificar = true;
-                        break;
-                    }
-                }
-                if (!Verificar)
-                {
-                    tabla.Rows.Add(txtID.Text, null, txtProducto.Text, nudCantidad.Value);
-                    dgvProductosAgregados.DataSource = tabla;
-                    txtProducto.Text = string.Empty;
-                    txtID.Text = string.Empty;
-                    nudCantidad.Value = 1;
-                }
-                else
-                {
-                    MessageBox.Show("El producto ya existe en la requisición");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Rellene los campos por favor");
-            }
         }
 
         private void btnCrearRequi_Click(object sender, EventArgs e)
@@ -217,39 +71,28 @@ namespace Menú.Formularios
                     {
                         if (fila.IsNewRow)
                             continue;
-
                         string idProducto = fila.Cells["ID_Producto"].Value?.ToString();
-                        string idServicio = fila.Cells["ID_Servicio"].Value?.ToString();
-                        string producto = fila.Cells["Producto/Servicio"].Value?.ToString();
+                        string producto = fila.Cells["Producto"].Value?.ToString();
                         string cantidad = fila.Cells["Cantidad"].Value?.ToString();
 
-                        if (string.IsNullOrEmpty(idProducto) && string.IsNullOrEmpty(idServicio))
+                        if (string.IsNullOrEmpty(idProducto))
                         {
-                            MessageBox.Show("Debe seleccionar un producto o un servicio.");
+                            MessageBox.Show("Debe seleccionar un producto");
                             continue;
-                        }
-
-                        if (!string.IsNullOrEmpty(idProducto) && !string.IsNullOrEmpty(idServicio))
-                        {
-                            MessageBox.Show("Solo debe seleccionar un producto o un servicio, no ambos.");
-                            continue;
-                        }
-            
+                        }        
                         int cantidadValida;
                         if (!int.TryParse(cantidad, out cantidadValida))
                         {
                             MessageBox.Show("La cantidad debe ser un número válido.");
                             continue;
                         }
-
                         string xmlDetalleRequi = $@"
                         <DRequiciciones>
                             <DRequisicion>
                                 <Producto>{producto}</Producto>
                                 <Cantidad>{cantidadValida}</Cantidad>
                                 <Estado>Pendiente</Estado>
-                                <ID_Servicio>{(string.IsNullOrEmpty(idServicio) ? "NULL" : idServicio)}</ID_Servicio>
-                                <ID_Producto>{(string.IsNullOrEmpty(idProducto) ? "NULL" : idProducto)}</ID_Producto>
+                                <ID_Producto>{idProducto}</ID_Producto>
                                 <ID_Requisicion>{idGenerado}</ID_Requisicion>
                             </DRequisicion>
                         </DRequiciciones>";
@@ -279,167 +122,27 @@ namespace Menú.Formularios
             }
         }
 
-        private void chkProducto_CheckedChanged(object sender, EventArgs e)
-        {
-            if(chkProducto.Checked==true)
-            {
-                chkServicio.Checked = false;
-            }
-            panelSelecServicio.Visible = false;
-            labelListaServicio.Visible = false;
-            txtFiltroServicio.Visible = false;
-            dgvListadoServicio.Visible = false;
-            btnServicio.Visible = false;
-            txtIDServi.Visible = false;
-            lbServi.Visible = false;
-            txtServicio.Visible = false;
-            lbCanServ.Visible = false;
-            nudServicio.Visible = false;
-            btnAgregarS.Visible = false;
-            panelCantidadServicio.Visible = false;
-            panelSelecServicio.Visible = false;
-
-            labelListaProduct.Visible = true;
-            txtFiltroProduc.Visible = true;
-            panelSelectProducto.Visible = true;
-            dgvListadoProductos.Visible = true;
-            btnProducto.Visible = true;
-            lbID.Visible = true;
-            txtID.Visible = true;
-            lbProduc.Visible = true;
-            txtProducto.Visible = true;
-            lbCantidad.Visible = true;
-            nudCantidad.Visible = true;
-            btnAgregarP.Visible = true;
-            panel4.Visible = true;
-        }
-
-        private void chkServicio_CheckedChanged(object sender, EventArgs e)
-        {
-            if(chkServicio.Checked==true)
-            {
-                chkProducto.Checked = false;
-            }
-
-            labelListaProduct.Visible = false;
-            txtFiltroProduc.Visible = false;
-            panelSelectProducto.Visible = false;
-            dgvListadoProductos.Visible = false;
-            btnProducto.Visible = false;
-            lbID.Visible = false;
-            txtID.Visible = false;
-            lbProduc.Visible = false;
-            txtProducto.Visible = false;
-            lbCantidad.Visible = false;
-            nudCantidad.Visible = false;
-            btnAgregarP.Visible = false;
-            panel4.Visible = false;
-
-            panelSelecServicio.Visible = true;
-            labelListaServicio.Visible = true;
-            txtFiltroServicio.Visible = true;
-            dgvListadoServicio.Visible = true;
-            btnServicio.Visible = true;
-            txtIDServi.Visible = true;
-            lbServi.Visible = true;
-            txtServicio.Visible = true;
-            lbCanServ.Visible = true;
-            lbIDserv.Visible = true;
-            nudServicio.Visible = true;
-            btnAgregarS.Visible = true;
-            panelCantidadServicio.Visible = true;
-            panelSelecServicio.Visible = true;
-        }
-
+       
         private void txtFiltroProduc_KeyUp_1(object sender, KeyEventArgs e)
         {
-            dgvListadoServicio.DataSource = CsComandosSql.RetornaDatos($"select ID_Servicio, Nom_Servicio  from Servicio WHERE EstadoServicio='Activo'and Nom_Servicio like '%{txtFiltroServicio.Text}%'");
-        }
-
-        private void txtFiltroServicio_KeyUp_1(object sender, KeyEventArgs e)
-        {
-            dgvListadoServicio.DataSource = CsComandosSql.RetornaDatos($"select ID_Servicio, Nom_Servicio  from Servicio WHERE EstadoServicio='Activo'and Nom_Servicio like '%{txtFiltroServicio.Text}%'");
+            dgvListadoProductos.DataSource = CsComandosSql.RetornaDatos($"select ID_Producto, NomProducto  from Producto WHERE EstadoProducto='Activo' and NomProducto like '%{txtFiltroProduc.Text}%'");
         }
 
         private void btnProducto_Click_1(object sender, EventArgs e)
         {
-            panel4.Visible = true;
+
             btnAgregarP.Visible = true;
-            lbID.Visible = true;
             lbProduc.Visible = true;
             lbCantidad.Visible = true;
             txtProducto.Visible = true;
             txtID.Visible = true;
             nudCantidad.Visible = true;
-
-            btnAgregarS.Visible = false;
-            lbIDserv.Visible = false;
-            lbCanServ.Visible = false;
-            lbServi.Visible = false;
-            txtServicio.Visible = false;
-            txtIDServi.Visible = false;
-            nudServicio.Visible = false;
-
+            txtID.Visible = true;
+            lbID.Visible = true;
             int fila = dgvListadoProductos.CurrentCell.RowIndex;
             txtID.Text = dgvListadoProductos[0, fila].Value.ToString();
             txtProducto.Text = dgvListadoProductos[1, fila].Value.ToString();
-        }
-
-        private void btnServicio_Click_1(object sender, EventArgs e)
-        {
-            panelCantidadServicio.Visible = true;
-            btnAgregarP.Visible = false;
-            lbID.Visible = false;
-            lbProduc.Visible = false;
-            lbCantidad.Visible = false;
-            txtProducto.Visible = false;
-            txtID.Visible = false;
-            nudCantidad.Visible = false;
-
-            btnAgregarS.Visible = true;
-            lbIDserv.Visible = true;
-            lbCanServ.Visible = true;
-            lbServi.Visible = true;
-            txtServicio.Visible = true;
-            txtIDServi.Visible = true;
-            nudServicio.Visible = true;
-            int fila = dgvListadoServicio.CurrentCell.RowIndex;
-            txtIDServi.Text = dgvListadoServicio[0, fila].Value.ToString();
-            txtServicio.Text = dgvListadoServicio[1, fila].Value.ToString();
-        }
-
-        private void btnAgregarS_Click_1(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(txtIDServi.Text) && !string.IsNullOrEmpty(txtServicio.Text))
-            {
-                bool Verificar = false;
-                foreach (DataGridViewRow fila in dgvProductosAgregados.Rows)
-                {
-                    string servicio = fila.Cells["Producto/Servicio"].Value?.ToString();
-                    if (txtServicio.Text == servicio)
-                    {
-                        Verificar = true;
-                    }
-                }
-                if (!Verificar)
-                {
-                    tabla.Rows.Add(null, txtIDServi.Text, txtServicio.Text, nudServicio.Value);
-                    dgvProductosAgregados.DataSource = tabla;
-                    txtServicio.Text = string.Empty;
-                    nudServicio.Value = 1;
-                    txtIDServi.Text = string.Empty;
-                }
-                else
-                {
-                    MessageBox.Show("El servicio ya existe en la requisición");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Rellene todos los campos por favor");
-            }
-        }
-
+        }  
         private void btnAgregarP_Click_1(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(txtID.Text) && !string.IsNullOrEmpty(txtProducto.Text))
@@ -447,7 +150,7 @@ namespace Menú.Formularios
                 bool Verificar = false;
                 foreach (DataGridViewRow fila in dgvProductosAgregados.Rows)
                 {
-                    string producto = fila.Cells["Producto/Servicio"].Value?.ToString();
+                    string producto = fila.Cells["Producto"].Value?.ToString();
                     if (txtProducto.Text == producto)
                     {
                         Verificar = true;
@@ -456,7 +159,7 @@ namespace Menú.Formularios
                 }
                 if (!Verificar)
                 {
-                    tabla.Rows.Add(txtID.Text, null, txtProducto.Text, nudCantidad.Value);
+                    tabla.Rows.Add(txtID.Text, txtProducto.Text, nudCantidad.Value);
                     dgvProductosAgregados.DataSource = tabla;
                     txtProducto.Text = string.Empty;
                     txtID.Text = string.Empty;
@@ -471,6 +174,25 @@ namespace Menú.Formularios
             {
                 MessageBox.Show("Rellene los campos por favor");
             }
+
+        }
+
+        private void txtProducto_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbCantidad_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nudCantidad_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void txtFiltroProduc_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }
