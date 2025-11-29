@@ -71,13 +71,13 @@ namespace ModuloDeCompra_BD.Formulario
         }
         private void CargarDGV(int ID)
         {
-            string query = $"SELECT X.[Cod Detalle], X.ID_Producto, X.ID_Servicio,p.NomProducto,s.Nom_Servicio, X.[Cantidad Recibida], X.[Cantidad a Devolver], X.CantidadDevuelta, X.Costo " +
-                $" FROM (SELECT  GR.ID_GRNDetails AS [Cod Detalle], GR.ID_Producto, GR.ID_Servicio, GR.Cantidad AS [Cantidad Recibida]," +
+            string query = $"SELECT X.[Cod Detalle], X.ID_Producto,p.NomProducto, X.[Cantidad Recibida], X.[Cantidad a Devolver], X.CantidadDevuelta, X.Costo " +
+                $"FROM (SELECT  GR.ID_GRNDetails AS [Cod Detalle], GR.ID_Producto, GR.Cantidad AS [Cantidad Recibida]," +
                 $" 0 AS [Cantidad a Devolver],CASE WHEN ISNULL((SELECT sum(D.Cantidad) FROM RTV_Details D " +
-                $" WHERE D.ID_GRN = {ID} AND (D.ID_Producto = GR.ID_Producto or D.ID_Servicio=GR.ID_Servicio)), 0) = 0 " +
-                $" THEN 0 ELSE ISNULL((SELECT sum(D.Cantidad) FROM RTV_Details D  WHERE D.ID_GRN = {ID} AND (D.ID_Producto = GR.ID_Producto or D.ID_Servicio=GR.ID_Servicio)), 0) END AS [CantidadDevuelta], GR.Costo " +
-                $" FROM Grn_Details GR WHERE GR.ID_GRN = {ID} ) AS X Left join Producto p on X.ID_Producto=p.ID_Producto " +
-                $" left join Servicio s on s.ID_Servicio=X.ID_Servicio WHERE [Cantidad Recibida] <> CantidadDevuelta";
+                $" WHERE D.ID_GRN = 300 AND (D.ID_Producto = GR.ID_Producto)), 0) = 0 " +
+                $"   THEN 0 ELSE ISNULL((SELECT sum(D.Cantidad) FROM RTV_Details D  WHERE D.ID_GRN = 300 AND (D.ID_Producto = GR.ID_Producto)), 0)" +
+                $"           END AS [CantidadDevuelta], GR.Costo FROM Grn_Details GR WHERE GR.ID_GRN = 300 ) AS X Left join Producto p on X.ID_Producto=p.ID_Producto " +
+                $"WHERE [Cantidad Recibida] <> CantidadDevuelta";
 
             dgvDetalleGrn.DataSource = CsComandosSql.RetornaDatos(query);
         }
@@ -181,8 +181,6 @@ namespace ModuloDeCompra_BD.Formulario
                     {
                         if (fila.IsNewRow)
                             continue;
-
-                        string idServicio = fila.Cells["ID_Servicio"].Value?.ToString();
                         string idProducto = fila.Cells["ID_Producto"].Value?.ToString();
                         string Costo = fila.Cells["Costo"].Value?.ToString();
                         string cantidad = fila.Cells["Cantidad a Devolver"].Value?.ToString();
@@ -192,8 +190,7 @@ namespace ModuloDeCompra_BD.Formulario
                         {
                             detalle += $@"
                                 <DETALLE>
-                                     <IDSERVICIO>{(string.IsNullOrEmpty(idServicio) ? "NULL" : idServicio)}</IDSERVICIO>
-                                <IDPRODUCTO>{(string.IsNullOrEmpty(idProducto) ? "NULL" : idProducto)}</IDPRODUCTO>
+                                <IDPRODUCTO>{idProducto}</IDPRODUCTO>
                                     <Cantidad>{cantidad}</Cantidad>
                                     <Costo>{Costo}</Costo> 
                                 </DETALLE>";
@@ -215,7 +212,7 @@ namespace ModuloDeCompra_BD.Formulario
                                  </RTV>'
                         ";
                         string queryD = $"EXEC InsertarRTV {xml},  '{txtDebito.Text}', '{txtCredito.Text}'";
-                        //MessageBox.Show(xml);
+                        MessageBox.Show(xml);
                         if (CsComandosSql.InserDeletUpdate(queryD))
                         {
                             MessageBox.Show("RTV REGISTRADO");

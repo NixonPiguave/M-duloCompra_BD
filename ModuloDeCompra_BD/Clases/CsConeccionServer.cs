@@ -14,7 +14,7 @@ namespace ModuloDeCompra_BD.Clases
         static SqlConnection con = new SqlConnection();
         //static string servidor = "26.137.134.250,1433";
         //static string bd = "ModuloCompras";
-        static string servidor = "DESKTOP-DN46UDN\\SQLEXPRESS";
+        static string servidor = "DESKTOP-OSRH9SM\\SQLEXPRESS";
         static string bd = "RespaldoMC";
         static string usuario = "sa";
         static string password = "1234";
