@@ -232,35 +232,17 @@
     <Compile Include="Formulario\FrmListadoRequisicion.Designer.cs">
       <DependentUpon>FrmListadoRequisicion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formulario\FrmModificarRequisicion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formulario\FrmModificarRequisicion.Designer.cs">
-      <DependentUpon>FrmModificarRequisicion.cs</DependentUpon>
-    </Compile>
     <Compile Include="Formulario\FrmIVA.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formulario\FrmIVA.Designer.cs">
       <DependentUpon>FrmIVA.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formulario\FrmEstadoRequisicion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formulario\FrmEstadoRequisicion.Designer.cs">
-      <DependentUpon>FrmEstadoRequisicion.cs</DependentUpon>
-    </Compile>
     <Compile Include="Formulario\FrmDevolucionesRTV.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formulario\FrmDevolucionesRTV.Designer.cs">
       <DependentUpon>FrmDevolucionesRTV.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formulario\FrmHeaderGRN.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formulario\FrmHeaderGRN.Designer.cs">
-      <DependentUpon>FrmHeaderGRN.cs</DependentUpon>
     </Compile>
     <Compile Include="Formulario\FrmOrdenCompra.cs">
       <SubType>Form</SubType>
@@ -273,12 +255,6 @@
     </Compile>
     <Compile Include="Formulario\frmreport.Designer.cs">
       <DependentUpon>frmreport.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formulario\FrmProductosOrdenCompraDirecta.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formulario\FrmProductosOrdenCompraDirecta.Designer.cs">
-      <DependentUpon>FrmProductosOrdenCompraDirecta.cs</DependentUpon>
     </Compile>
     <Compile Include="Formulario\FrmRol.cs">
       <SubType>Form</SubType>
@@ -303,12 +279,6 @@
     </Compile>
     <Compile Include="Formulario\FrmBodega.Designer.cs">
       <DependentUpon>FrmBodega.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formulario\FrmGeneralizado.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formulario\FrmGeneralizado.Designer.cs">
-      <DependentUpon>FrmGeneralizado.cs</DependentUpon>
     </Compile>
     <Compile Include="Formulario\FrmCategorias.cs">
       <SubType>Form</SubType>
@@ -358,12 +328,6 @@
     <Compile Include="Formulario\FrmMenu3.Designer.cs">
       <DependentUpon>FrmMenu3.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formulario\FrmModificarUser.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formulario\FrmModificarUser.Designer.cs">
-      <DependentUpon>FrmModificarUser.cs</DependentUpon>
-    </Compile>
     <Compile Include="Formulario\FrmProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -381,12 +345,6 @@
     </Compile>
     <Compile Include="Formulario\FrmUsuarios.Designer.cs">
       <DependentUpon>FrmUsuarios.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formulario\FrmServicios.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formulario\FrmServicios.Designer.cs">
-      <DependentUpon>FrmServicios.cs</DependentUpon>
     </Compile>
     <Compile Include="Menú Rol\FrmMenuBodeguero.cs">
       <SubType>Form</SubType>
@@ -494,29 +452,17 @@
     <EmbeddedResource Include="Formulario\FrmListadoRequisicion.resx">
       <DependentUpon>FrmListadoRequisicion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formulario\FrmModificarRequisicion.resx">
-      <DependentUpon>FrmModificarRequisicion.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Formulario\FrmIVA.resx">
       <DependentUpon>FrmIVA.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formulario\FrmEstadoRequisicion.resx">
-      <DependentUpon>FrmEstadoRequisicion.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Formulario\FrmDevolucionesRTV.resx">
       <DependentUpon>FrmDevolucionesRTV.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formulario\FrmHeaderGRN.resx">
-      <DependentUpon>FrmHeaderGRN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\FrmOrdenCompra.resx">
       <DependentUpon>FrmOrdenCompra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\frmreport.resx">
       <DependentUpon>frmreport.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formulario\FrmProductosOrdenCompraDirecta.resx">
-      <DependentUpon>FrmProductosOrdenCompraDirecta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\FrmRol.resx">
       <DependentUpon>FrmRol.cs</DependentUpon>
@@ -529,9 +475,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\FrmBodega.resx">
       <DependentUpon>FrmBodega.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formulario\FrmGeneralizado.resx">
-      <DependentUpon>FrmGeneralizado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\FrmCategorias.resx">
       <DependentUpon>FrmCategorias.cs</DependentUpon>
@@ -557,9 +500,6 @@
     <EmbeddedResource Include="Formulario\FrmMenu3.resx">
       <DependentUpon>FrmMenu3.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formulario\FrmModificarUser.resx">
-      <DependentUpon>FrmModificarUser.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Formulario\FrmProductos.resx">
       <DependentUpon>FrmProductos.cs</DependentUpon>
     </EmbeddedResource>
@@ -568,9 +508,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario\FrmUsuarios.resx">
       <DependentUpon>FrmUsuarios.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formulario\FrmServicios.resx">
-      <DependentUpon>FrmServicios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menú Rol\FrmMenuBodeguero.resx">
       <DependentUpon>FrmMenuBodeguero.cs</DependentUpon>
