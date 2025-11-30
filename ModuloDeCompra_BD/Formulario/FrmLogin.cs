@@ -78,6 +78,7 @@ namespace ModuloDeCompra_BD
                     MessageBox.Show("Inicio de sesión Exitoso");
                     FrmMenu3 ini = new FrmMenu3();
                     ini.IDusuario1 = IDusuario;
+                    MessageBox.Show(IDusuario.ToString());
                     ini.rol = rol;
                     ini.Botones = funcion;
                     txtUser.Text = string.Empty;

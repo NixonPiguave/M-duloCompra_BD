@@ -81,7 +81,7 @@
             this.dgvListRequiPendientes.Name = "dgvListRequiPendientes";
             this.dgvListRequiPendientes.RowHeadersVisible = false;
             this.dgvListRequiPendientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListRequiPendientes.Size = new System.Drawing.Size(1116, 280);
+            this.dgvListRequiPendientes.Size = new System.Drawing.Size(674, 280);
             this.dgvListRequiPendientes.TabIndex = 5;
             // 
             // guna2Panel1
@@ -91,7 +91,7 @@
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1184, 89);
+            this.guna2Panel1.Size = new System.Drawing.Size(735, 89);
             this.guna2Panel1.TabIndex = 4;
             // 
             // guna2HtmlLabel1
@@ -99,7 +99,7 @@
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(424, 32);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(199, 36);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(294, 24);
             this.guna2HtmlLabel1.TabIndex = 0;
@@ -110,7 +110,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.ClientSize = new System.Drawing.Size(1184, 450);
+            this.ClientSize = new System.Drawing.Size(735, 450);
             this.Controls.Add(this.btnSelecRequi);
             this.Controls.Add(this.txtBuscarRequiPendiente);
             this.Controls.Add(this.dgvListRequiPendientes);

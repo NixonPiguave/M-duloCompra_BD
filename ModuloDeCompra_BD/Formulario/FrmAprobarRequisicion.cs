@@ -142,7 +142,6 @@ namespace ModuloDeCompra_BD.Formulario
                 string CadenaXML = $@"<RequiDetalle> 
 	                <Detalle>
 		                <Cantidad>{txtCantidad.Text}</Cantidad>
-		                <ID_Servicio>{txtIdServicio.Text}</ID_Servicio>
 		                <ID_Producto>{txtIdProducto.Text}</ID_Producto>
 		                <ID_Requisicion>{txtIDRequisicionPendiente.Text}</ID_Requisicion>
 	                </Detalle>
@@ -177,7 +176,6 @@ namespace ModuloDeCompra_BD.Formulario
 	                    <Detalle> 
 		                    <ID_Requisicion>{txtIDRequisicionPendiente.Text}</ID_Requisicion>
 		                    <ID_Producto>{txtIdProducto.Text}</ID_Producto>
-		                    <ID_Servicio>{txtIdServicio.Text}</ID_Servicio>
 		                    <Estado>Rechazado</Estado>
 	                    </Detalle>
                     </RequiDetalle>";

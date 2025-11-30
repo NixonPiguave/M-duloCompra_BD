@@ -47,7 +47,6 @@ namespace ModuloDeCompra_BD.Formulario
                         continue;
 
                     string idProducto = fila.Cells["ID_Producto"].Value?.ToString();
-                    string idServicio = fila.Cells["ID_Servicio"].Value?.ToString();
                     string cantidad = fila.Cells["Cantidad"].Value?.ToString();
                     string costo = fila.Cells["Costo"].Value?.ToString();
                     string descuento = fila.Cells["Descuento"].Value?.ToString();
@@ -60,8 +59,7 @@ namespace ModuloDeCompra_BD.Formulario
                                 <CANTIDAD>{cantidad}</CANTIDAD>
                                 <COSTO>{costo}</COSTO>
                                 <DESCUENTO>{descuento}</DESCUENTO>
-                                <IDSERVICIO>{(string.IsNullOrEmpty(idServicio) ? "NULL" : idServicio)}</IDSERVICIO>
-                                <IDPRODUCTO>{(string.IsNullOrEmpty(idProducto) ? "NULL" : idProducto)}</IDPRODUCTO>
+                                <IDPRODUCTO>{idProducto}</IDPRODUCTO>
                                 <ESTADO>Pendiente</ESTADO>
                             </DETALLEORDEN>";
 
@@ -110,7 +108,8 @@ namespace ModuloDeCompra_BD.Formulario
                 frmListado.ShowDialog();
                 txtRequisicionID.Text = frmListado.RequisicionID.ToString();
                 DataTable Tb = new DataTable();
-                Tb = CsComandosSql.RetornaDatos($"SELECT R.Cantidad, R.ID_Servicio, R.ID_Producto,\r\n       COALESCE(S.Nom_Servicio, P.NomProducto) AS 'Producto/Servicio'\r\nFROM Requi_Details R\r\nLEFT JOIN Servicio S ON R.ID_Servicio = S.ID_Servicio\r\nLEFT JOIN Producto P ON R.ID_Producto = P.ID_Producto\r\nWHERE R.Estado = 'Aprobada'\r\nAND R.ID_Requisicion='{txtRequisicionID.Text}'");
+                Tb = CsComandosSql.RetornaDatos($"SELECT R.Cantidad, R.ID_Producto, P.NomProducto AS 'Producto' \r\n" +
+                    $"FROM Requi_Details R JOIN Producto P ON R.ID_Producto = P.ID_Producto \r\nWHERE R.Estado = 'Aprobada' AND R.ID_Requisicion= '{txtRequisicionID.Text}'");
                 Tb.Columns.Add("Costo", typeof(decimal));
                 Tb.Columns.Add("Descuento", typeof(decimal));
                
