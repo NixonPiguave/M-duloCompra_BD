@@ -43,6 +43,7 @@ namespace ModuloDeCompra_BD.Formulario
             }
             else
             {
+                string sentenciaExtraerRequisicion = $"select * from Requisicion where Estado_Requisicion = 'Pendiente'";
                 frmListadoRequiPendiente listaRequiPendiente = new frmListadoRequiPendiente();
                 listaRequiPendiente.IdUsuario1 = idUsuario;
                 listaRequiPendiente.ShowDialog();
