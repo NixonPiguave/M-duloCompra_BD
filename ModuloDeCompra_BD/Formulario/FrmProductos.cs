@@ -30,9 +30,8 @@ namespace ModuloDeCompra_BD.Formulario
         {
             cmbEstadoProducto.SelectedItem = 1;
             cmbIVA.SelectedIndex = 0;           
-            dgvProducto.DataSource = CsComandosSql.RetornaDatos("select ID_Producto, NomProducto, Costo from Producto");
-            cbTipoP.SelectedIndex = 0;
-           DataTable tb= CsComandosSql.RetornaDatos("select * from IVA where EstadoIVA= 1");
+            dgvProducto.DataSource = CsComandosSql.RetornaDatos("select ID_Producto, NomProducto, Costo from [IN-Producto]");
+           DataTable tb= CsComandosSql.RetornaDatos("select * from [CG-IVA] where EstadoIVA= 1");
             for (int i = 0; i < tb.Rows.Count; i++)
             {
                 cmbIVA.Items.Add(tb.Rows[i]["Valor_IVA"].ToString());
@@ -53,8 +52,7 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (cbTipoP.SelectedItem.ToString() == "Producto")
-            {
+            
                 decimal precioU = 0;
                 string precioTexto = txtPrecioUnitario.Text.Trim();
                 precioTexto = precioTexto.Replace(',', '.');
@@ -81,7 +79,7 @@ namespace ModuloDeCompra_BD.Formulario
                        
                         string precioUFormatoSQL = iva.ToString(CultureInfo.InvariantCulture);
                         precioUFormatoSQL = precioUFormatoSQL.Replace(',', '.');
-                        DataTable tb = CsComandosSql.RetornaDatos($"SELECT * FROM IVA WHERE Valor_IVA = '{precioUFormatoSQL}'");
+                        DataTable tb = CsComandosSql.RetornaDatos($"SELECT * FROM [CG-IVA] WHERE Valor_IVA = '{precioUFormatoSQL}'");
 
                         if (tb.Rows.Count > 0)
                         {
@@ -115,7 +113,7 @@ namespace ModuloDeCompra_BD.Formulario
 
                         if (producto.AñadirProducto(idBodega))
                         {
-                            dgvProducto.DataSource = CsComandosSql.RetornaDatos("select ID_Producto, NomProducto, Costo from Producto");
+                            dgvProducto.DataSource = CsComandosSql.RetornaDatos("select ID_Producto, NomProducto, Costo from [IN-Producto]");
                             MessageBox.Show("Producto agregado correctamente");
                             txtNombreProducto.Text = string.Empty;
                             txtPrecioUnitario.Text = string.Empty;
@@ -123,7 +121,7 @@ namespace ModuloDeCompra_BD.Formulario
                             cmbEstadoProducto.SelectedIndex = -1;
                             txtListadoCategory.Text = string.Empty;
                             txtListadoProvee.Text = string.Empty;
-                            txtListadoUbiBodega.Text = string.Empty;  
+                            txtListadoUbiBodega.Text = string.Empty; 
                         }
                         else
                         {
@@ -139,63 +137,7 @@ namespace ModuloDeCompra_BD.Formulario
                 {
                     MessageBox.Show("Error" + ex);
                 }
-            }
-            else
-            {
-                decimal precioU = 0;
-                string precioTexto = txtPrecioUnitario.Text.Trim();
-                precioTexto = precioTexto.Replace(',', '.');
-                if (!decimal.TryParse(precioTexto, NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out precioU))
-                {
-                    MessageBox.Show("Precio no válido. Asegúrate de ingresar un número con punto decimal.");
-                    return;
-                }
-
-                try
-                {
-                    CsProducto producto = new CsProducto();
-                    producto.Nom_Producto1 = txtNombreProducto.Text;
-                    producto.Precio_Unit1 = precioU;
-                    if (cmbIVA.SelectedItem != null)
-                    {
-                        string iva = cmbIVA.SelectedItem.ToString();
-
-                        if (iva == "Exento")
-                        {
-                            producto.Iva1 = 'C';
-                        }
-                        else
-                        {
-                            string precioUFormatoSQL = iva.ToString(CultureInfo.InvariantCulture);
-                            precioUFormatoSQL = precioUFormatoSQL.Replace(',', '.');
-                            DataTable tb = CsComandosSql.RetornaDatos($"SELECT * FROM IVA WHERE Valor_IVA = '{precioUFormatoSQL}'");
-                            if (tb.Rows.Count > 0)
-                            {
-                                producto.Iva1 = Convert.ToChar(tb.Rows[0]["ID_IVA"]);
-                            }
-                            else
-                            {
-                                MessageBox.Show("Error: No se encontró un valor de IVA válido en la base de datos.");
-                                return;
-                            }
-                        }
-                    }
-                    else
-                    {
-
-                        MessageBox.Show("Seleccione un valor de IVA.");
-                        return;
-                    }
-                    producto.Estado1 = cmbEstadoProducto.SelectedItem.ToString();
-                    producto.Proveedor1 = Id2;
-                  
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error: " + ex.Message);
-                }
-
-            }
+           
         }
 
         private void btnListadoCategoria_Click(object sender, EventArgs e)
@@ -231,19 +173,7 @@ namespace ModuloDeCompra_BD.Formulario
             
         }
 
-        private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cbTipoP.SelectedItem.ToString() == "Servicio")
-            {
-                btnListadoCategoria.Enabled = false;
-                btnListadoUbiBodega.Enabled = false;
-            }
-            else
-            {
-                btnListadoCategoria.Enabled = true;
-                btnListadoUbiBodega.Enabled = true;
-            }
-        }
+      
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             if (dgvProducto.SelectedRows.Count > 0)
@@ -253,7 +183,7 @@ namespace ModuloDeCompra_BD.Formulario
                 CsProducto pro = new CsProducto();
                 if (pro.EliminarProducto(prod))  
                 {
-                    dgvProducto.DataSource = CsComandosSql.RetornaDatos("SELECT ID_Producto, NomProducto, Costo FROM Producto");
+                    dgvProducto.DataSource = CsComandosSql.RetornaDatos("SELECT ID_Producto, NomProducto, Costo FROM [IN-Producto]");
                     MessageBox.Show("Producto eliminado correctamente");
 
                 }
@@ -274,7 +204,7 @@ namespace ModuloDeCompra_BD.Formulario
             Id3 = Convert.ToInt32(dgvProducto[0, fila].Value);
             txtNombreProducto.Text = dgvProducto[1, fila].Value.ToString();
             txtPrecioUnitario.Text = dgvProducto[2, fila].Value.ToString();
-            DataTable dt = CsComandosSql.RetornaDatos($"select Ubicacion from Inventario I inner join Bodega B on I.ID_Bodega=B.ID_Bodega where ID_Producto={Id3}");
+            DataTable dt = CsComandosSql.RetornaDatos($"select Ubicacion from [IN-Inventario] I inner join [IN-Bodega] B on I.ID_Bodega=B.ID_Bodega where ID_Producto={Id3}");
             txtListadoUbiBodega.Text = dt.Rows[0]["Ubicacion"].ToString();
         }
 
@@ -282,127 +212,91 @@ namespace ModuloDeCompra_BD.Formulario
         {
             if (txtNombreProducto.Text != string.Empty || txtPrecioUnitario.Text != string.Empty || cmbIVA.SelectedIndex != -1 || cmbEstadoProducto.SelectedIndex != -1 || txtListadoCategory.Text != string.Empty || txtListadoProvee.Text != string.Empty || txtListadoUbiBodega.Text != string.Empty)
             {
-                if (cbTipoP.SelectedItem.ToString() == "Producto")
+
+                decimal precioU = 0;
+                string precioTexto = txtPrecioUnitario.Text.Trim();
+
+                precioTexto = precioTexto.Replace(',', '.');
+
+
+                if (!decimal.TryParse(precioTexto, NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out precioU))
                 {
-                    decimal precioU = 0;
-                    string precioTexto = txtPrecioUnitario.Text.Trim();
-
-                    precioTexto = precioTexto.Replace(',', '.');
-
-
-                    if (!decimal.TryParse(precioTexto, NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out precioU))
-                    {
-                        MessageBox.Show("Precio no válido. Asegúrate de ingresar un número con punto decimal.");
-                        return;
-                    }
-                    try
-                    {
-                        CsProducto producto = new CsProducto();
-                        producto.Nom_Producto1 = txtNombreProducto.Text;
-                        producto.Precio_Unit1 = precioU;
-                        if (cmbIVA.SelectedItem.ToString() == "Exento")
-                        {
-                            producto.Iva1 = 'C';
-                        }
-                        else
-                        {
-                            string iva = cmbIVA.SelectedItem.ToString();
-
-                            string precioUFormatoSQL = iva.ToString(CultureInfo.InvariantCulture);
-                            precioUFormatoSQL = precioUFormatoSQL.Replace(',', '.');
-                            DataTable tb = CsComandosSql.RetornaDatos($"SELECT * FROM IVA WHERE Valor_IVA = '{precioUFormatoSQL}'");
-
-                            if (tb.Rows.Count > 0)
-                            {
-                                var v = Convert.ToChar(tb.Rows[0]["ID_IVA"]);
-                                producto.Iva1 = v;
-                            }
-                            else
-                            {
-                                MessageBox.Show("El IVA seleccionado no existe en la base de datos.");
-                                return;
-                            }
-                        }
-
-                        producto.Estado1 = cmbEstadoProducto.SelectedItem.ToString();
-                        producto.Categoria1 = Id;
-                        producto.Proveedor1 = Id2;
-                        string ubicacionBodega = txtListadoUbiBodega.Text.Trim();
-                        DataTable ubicacionBodegaData = CsComandosSql.RetornaDatos($"SELECT ID_Bodega FROM Bodega WHERE Ubicacion = '{ubicacionBodega}'");
-
-                        if (CHBInventariable.Checked == true)
-                        {
-                            producto.Inventariable1 = "Si";
-                        }
-                        else
-                        {
-                            producto.Inventariable1 = "No";
-                        }
-
-                        if (ubicacionBodegaData.Rows.Count > 0)
-                        {
-                            int idBodega = Convert.ToInt32(ubicacionBodegaData.Rows[0]["ID_Bodega"]);
-
-                            if (producto.ModificarProducto(Id3, idBodega))
-                            {
-                                dgvProducto.DataSource = CsComandosSql.RetornaDatos("select ID_Producto, NomProducto, Costo from Producto");
-                                MessageBox.Show("Producto editado correctamente");
-                                txtNombreProducto.Text = string.Empty;
-                                txtPrecioUnitario.Text = string.Empty;
-                                cmbIVA.SelectedIndex = -1;
-                                cmbEstadoProducto.SelectedIndex = -1;
-                                txtListadoCategory.Text = string.Empty;
-                                txtListadoProvee.Text = string.Empty;
-                            }
-                            else
-                            {
-                                MessageBox.Show("Error al editar producto, verifique que los datos sean correctos");
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("Ubicación de bodega no válida.");
-                        }
-
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error" + ex);
-                    }
+                    MessageBox.Show("Precio no válido. Asegúrate de ingresar un número con punto decimal.");
+                    return;
                 }
-                else
+                try
                 {
-                    decimal precioU = 0;
-                    string precioTexto = txtPrecioUnitario.Text.Trim();
-
-                    precioTexto = precioTexto.Replace(',', '.');
-
-
-                    if (!decimal.TryParse(precioTexto, NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out precioU))
+                    CsProducto producto = new CsProducto();
+                    producto.Nom_Producto1 = txtNombreProducto.Text;
+                    producto.Precio_Unit1 = precioU;
+                    if (cmbIVA.SelectedItem.ToString() == "Exento")
                     {
-                        MessageBox.Show("Precio no válido. Asegúrate de ingresar un número con punto decimal.");
-                        return;
+                        producto.Iva1 = 'C';
                     }
-                    try
+                    else
                     {
+                        string iva = cmbIVA.SelectedItem.ToString();
 
-                        CsProducto producto = new CsProducto();
-                        producto.Nom_Producto1 = txtNombreProducto.Text;
-                        producto.Precio_Unit1 = precioU;
-                        string iva = Convert.ToString(cmbIVA.SelectedItem);
                         string precioUFormatoSQL = iva.ToString(CultureInfo.InvariantCulture);
                         precioUFormatoSQL = precioUFormatoSQL.Replace(',', '.');
-                        DataTable tb = CsComandosSql.RetornaDatos($"select * from IVA where Valor_IVA={precioUFormatoSQL}");
-                        producto.Iva1 = Convert.ToChar(tb.Rows[0]["ID_IVA"].ToString());
+                        DataTable tb = CsComandosSql.RetornaDatos($"SELECT * FROM [CG-IVA] WHERE Valor_IVA = '{precioUFormatoSQL}'");
 
-
-                        producto.Proveedor1 = Id2;
-
+                        if (tb.Rows.Count > 0)
+                        {
+                            var v = Convert.ToChar(tb.Rows[0]["ID_IVA"]);
+                            producto.Iva1 = v;
+                        }
+                        else
+                        {
+                            MessageBox.Show("El IVA seleccionado no existe en la base de datos.");
+                            return;
+                        }
                     }
-                    catch (Exception ex)
+
+                    producto.Estado1 = cmbEstadoProducto.SelectedItem.ToString();
+                    producto.Categoria1 = Id;
+                    producto.Proveedor1 = Id2;
+                    string ubicacionBodega = txtListadoUbiBodega.Text.Trim();
+                    DataTable ubicacionBodegaData = CsComandosSql.RetornaDatos($"SELECT ID_Bodega FROM [IN-Bodega] WHERE Ubicacion = '{ubicacionBodega}'");
+
+                    if (CHBInventariable.Checked == true)
                     {
-                        MessageBox.Show("Error" + ex);
+                        producto.Inventariable1 = "Si";
                     }
+                    else
+                    {
+                        producto.Inventariable1 = "No";
+                    }
+
+                    if (ubicacionBodegaData.Rows.Count > 0)
+                    {
+                        int idBodega = Convert.ToInt32(ubicacionBodegaData.Rows[0]["ID_Bodega"]);
+
+                        if (producto.ModificarProducto(Id3, idBodega))
+                        {
+                            dgvProducto.DataSource = CsComandosSql.RetornaDatos("select ID_Producto, NomProducto, Costo from [IN-Producto]");
+                            MessageBox.Show("Producto editado correctamente");
+                            txtNombreProducto.Text = string.Empty;
+                            txtPrecioUnitario.Text = string.Empty;
+                            cmbIVA.SelectedIndex = -1;
+                            cmbEstadoProducto.SelectedIndex = -1;
+                            txtListadoCategory.Text = string.Empty;
+                            txtListadoProvee.Text = string.Empty;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error al editar producto, verifique que los datos sean correctos");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ubicación de bodega no válida.");
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error" + ex);
                 }
             }
             else
