@@ -55,22 +55,22 @@ namespace ModuloDeCompra_BD.Formulario
 
                 if (chbFecha.Checked)
                 {
-                    sentencia = $"Select * from AuditoriaSesion where Usuario = '{cbUsuarios.SelectedItem}' and Fecha between '{fechaDesde:yyyy-MM-dd HH:mm:ss}' and '{fechaHasta:yyyy-MM-dd HH:mm:ss}'";
+                    sentencia = $"Select * from [MC-AuditoriaSesion] where Usuario = '{cbUsuarios.SelectedItem}' and Fecha between '{fechaDesde:yyyy-MM-dd HH:mm:ss}' and '{fechaHasta:yyyy-MM-dd HH:mm:ss}'";
                 }
                 else
                 {
-                    sentencia = $"Select * from AuditoriaSesion where Usuario = '{cbUsuarios.SelectedItem}'";
+                    sentencia = $"Select * from [MC-AuditoriaSesion] where Usuario = '{cbUsuarios.SelectedItem}'";
                 }
             }
             else if (chbGeneral.Checked)
             {
                 if (chbFecha.Checked)
                 {
-                    sentencia = $"Select * from AuditoriaSesion where Fecha between '{fechaDesde:yyyy-MM-dd HH:mm:ss}' and '{fechaHasta:yyyy-MM-dd HH:mm:ss}'";
+                    sentencia = $"Select * from [MC-AuditoriaSesion] where Fecha between '{fechaDesde:yyyy-MM-dd HH:mm:ss}' and '{fechaHasta:yyyy-MM-dd HH:mm:ss}'";
                 }
                 else
                 {
-                    sentencia = "Select * from AuditoriaSesion";
+                    sentencia = "Select * from [MC-AuditoriaSesion]";
                 }
             }
             else

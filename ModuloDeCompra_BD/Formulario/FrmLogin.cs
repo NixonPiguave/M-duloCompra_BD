@@ -63,7 +63,7 @@ namespace ModuloDeCompra_BD
 
                 if (!string.IsNullOrEmpty(rol))
                 {
-                    DataTable tb = CsComandosSql.RetornaDatos($"select ClaveDB from Usuario where ID_Usuario = {IDusuario}");
+                    DataTable tb = CsComandosSql.RetornaDatos($"select ClaveDB from [MC-Usuario] where ID_Usuario = {IDusuario}");
                     if (tb.Rows.Count > 0)
                     {
                         claveDB = tb.Rows[0]["ClaveDB"].ToString();
@@ -78,7 +78,7 @@ namespace ModuloDeCompra_BD
                     MessageBox.Show("Inicio de sesión Exitoso");
                     FrmMenu3 ini = new FrmMenu3();
                     ini.IDusuario1 = IDusuario;
-                    MessageBox.Show(IDusuario.ToString());
+                    //MessageBox.Show(IDusuario.ToString());
                     ini.rol = rol;
                     ini.Botones = funcion;
                     txtUser.Text = string.Empty;

@@ -35,11 +35,11 @@ namespace Menú
         public int[] Botones { get => botones; set => botones = value; }
         private void Form1_Load(object sender, EventArgs e)
         {
-            CsComandosSql.InserDeletUpdate("insert into AuditoriaSesion (Usuario, Accion, Fecha, Detalles) values (SUSER_NAME(), 'INICIO SESIÓN', GETDATE(), 'El usuario '+ SUSER_NAME() + ' ha iniciado sesión')");
+            CsComandosSql.InserDeletUpdate("insert into [MC-AuditoriaSesion] (Usuario, Accion, Fecha, Detalles) values (SUSER_NAME(), 'INICIO SESIÓN', GETDATE(), 'El usuario '+ SUSER_NAME() + ' ha iniciado sesión')");
             pnIventario.Visible = false;
             pnMantenimientos.Visible = false;
             pnlRequisiciones.Visible = false;
-            dgvOrdenesRequisicion.DataSource = CsComandosSql.RetornaDatos($"select Fecha_Requisicion, Estado_Requisicion,Observacion, MotivoRequisicion\r\nfrom Requisicion where UsuarioSolicitanteID={IDusuario} and Estado_Requisicion='Pendiente'");
+            dgvOrdenesRequisicion.DataSource = CsComandosSql.RetornaDatos($"select Fecha_Requisicion, Estado_Requisicion,Observacion, MotivoRequisicion from [OC-Requisicion] where UsuarioSolicitanteID={IDusuario} and Estado_Requisicion='Pendiente'");
 
 
             btnCrearRequisicion.Visible = false;
@@ -261,14 +261,14 @@ namespace Menú
 
         private void btnRequisiciones_Click(object sender, EventArgs e)
         {
-            string sentenciaExtraerRol = $"select ID_Rol from Usuario where ID_Usuario = {IDusuario1}";
+            string sentenciaExtraerRol = $"select ID_Rol from [MC-Usuario] where ID_Usuario = {IDusuario1}";
             string Rol = "0";
             DataTable dtRol = CsComandosSql.RetornaDatos(sentenciaExtraerRol);
             if (dtRol.Rows.Count > 0)
             {
                 Rol = dtRol.Rows[0]["ID_Rol"].ToString();
             }
-            string sentenciaExtraerRequisicionDerivada = $"select * from Requisicion where RequisicionDerivadaUsuario = {IDusuario1} and Estado_Requisicion = 'Pendiente'";
+            string sentenciaExtraerRequisicionDerivada = $"select * from [OC-Requisicion] where RequisicionDerivadaUsuario = {IDusuario1} and Estado_Requisicion = 'Pendiente'";
             DataTable dtRequisicon = CsComandosSql.RetornaDatos(sentenciaExtraerRequisicionDerivada);
             if (dtRequisicon.Rows.Count > 0 || Rol == "1" || Rol == "4" || Rol == "8")
             {
@@ -462,7 +462,7 @@ namespace Menú
 
         private void FrmMenu3_FormClosing(object sender, FormClosingEventArgs e)
         {
-            string query = "insert into AuditoriaSesion (Usuario, Accion, Fecha, Detalles) values (SUSER_NAME(), 'CERRAR SESIÓN', GETDATE(), 'El usuario '+ SUSER_NAME() + ' ha cerrado sesión')";
+            string query = "insert into [MC-AuditoriaSesion] (Usuario, Accion, Fecha, Detalles) values (SUSER_NAME(), 'CERRAR SESIÓN', GETDATE(), 'El usuario '+ SUSER_NAME() + ' ha cerrado sesión')";
             CsComandosSql.InserDeletUpdate(query);
         }
 
@@ -474,7 +474,7 @@ namespace Menú
         }
         private void CargarLogoEmpresa()
         {
-            string sentencia = "Select Logo_Empresa from Empresa where ID_Empresa = 1";
+            string sentencia = "Select Logo_Empresa from [MC-Empresa] where ID_Empresa = 1";
             DataTable dt = CsComandosSql.RetornaDatos(sentencia);
 
             if (dt.Rows.Count > 0)

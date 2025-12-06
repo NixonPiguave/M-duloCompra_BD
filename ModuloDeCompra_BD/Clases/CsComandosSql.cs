@@ -88,9 +88,9 @@ namespace ModuloDeCompra_BD.Clases
                 ConfigurarComando(coman);
                 result = comando.ExecuteNonQuery();
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
-                MessageBox.Show("Error" + ex.Message);
+                MessageBox.Show("Error " + ex.Message);
             }
             return result > 0;
         }
@@ -115,7 +115,7 @@ namespace ModuloDeCompra_BD.Clases
             string rol = string.Empty;
             Conectar();
 
-            string query = $"select R.Rol from Usuario U inner join Roles R on U.ID_Rol=R.ID_Rol where   U.Usuario= '{user}' and U.Contraseña ='{Contraseña}'";
+            string query = $"select R.Rol from [MC-Usuario] U inner join [MC-Roles] R on U.ID_Rol=R.ID_Rol where   U.Usuario= '{user}' and U.Contraseña ='{Contraseña}'";
             ConfigurarComando(query);
             SqlDataReader reader = comando.ExecuteReader();
             if (reader.Read())
@@ -129,7 +129,7 @@ namespace ModuloDeCompra_BD.Clases
         {
             bool permiso = false;
             Conectar();
-            string query = $"select U.Usuario, R.Rol from Usuario as U inner join Roles as R on U.ID_Rol = R.ID_Rol where U.Usuario = '{usuario}' and (R.Rol = 'Administrador' or R.Rol = 'Jefe Departamentario')";
+            string query = $"select U.Usuario, R.Rol from [MC-Usuario] as U inner join [MC-Roles] as R on U.ID_Rol = R.ID_Rol where U.Usuario = '{usuario}' and (R.Rol = 'Administrador' or R.Rol = 'Jefe Departamentario')";
             SqlDataReader reader = comando.ExecuteReader();
             if (reader.Read())
             {
@@ -144,7 +144,7 @@ namespace ModuloDeCompra_BD.Clases
             int id=-1;
             Conectar();
 
-            string query = $"select U.ID_Usuario from Usuario U inner join Roles R on U.ID_Rol=R.ID_Rol where   U.Usuario= '{user}' and U.Contraseña ='{Contraseña}'";
+            string query = $"select U.ID_Usuario from [MC-Usuario] U inner join [MC-Roles] R on U.ID_Rol=R.ID_Rol where   U.Usuario= '{user}' and U.Contraseña ='{Contraseña}'";
             ConfigurarComando(query);
             SqlDataReader reader = comando.ExecuteReader();
             if (reader.Read())
@@ -171,7 +171,7 @@ namespace ModuloDeCompra_BD.Clases
         {
             Conectar();
 
-            string countQuery = $"SELECT COUNT(RF.ID_Funcion) FROM Usuario U INNER JOIN Roles R ON U.ID_Rol = R.ID_Rol INNER JOIN Roles_Funciones RF ON R.ID_Rol = RF.ID_Rol WHERE U.Usuario = '{user}' AND U.Contraseña = '{contraseña}'";
+            string countQuery = $"SELECT COUNT(RF.ID_Funcion) FROM [MC-Usuario] U INNER JOIN [MC-Roles] R ON U.ID_Rol = R.ID_Rol INNER JOIN [MC-Roles_Funciones] RF ON R.ID_Rol = RF.ID_Rol WHERE U.Usuario = '{user}' AND U.Contraseña = '{contraseña}'";
 
             ConfigurarComando(countQuery);
 
@@ -181,7 +181,7 @@ namespace ModuloDeCompra_BD.Clases
 
             if (count > 0)
             {
-                string Query = $"SELECT RF.ID_Funcion FROM Usuario U INNER JOIN Roles R ON U.ID_Rol = R.ID_Rol INNER JOIN Roles_Funciones RF ON R.ID_Rol = RF.ID_Rol WHERE U.Usuario = '{user}' AND U.Contraseña = '{contraseña}'";
+                string Query = $"SELECT RF.ID_Funcion FROM [MC-Usuario] U INNER JOIN [MC-Roles] R ON U.ID_Rol = R.ID_Rol INNER JOIN [MC-Roles_Funciones] RF ON R.ID_Rol = RF.ID_Rol WHERE U.Usuario = '{user}' AND U.Contraseña = '{contraseña}'";
 
                 ConfigurarComando(Query);
 
@@ -232,7 +232,7 @@ namespace ModuloDeCompra_BD.Clases
         {
             Conectar();
 
-            string countQuery = $"select count(*) from Roles_Funciones where ID_Rol='{idrol}'";
+            string countQuery = $"select count(*) from [MC-Roles_Funciones] where ID_Rol='{idrol}'";
 
             ConfigurarComando(countQuery);
 
@@ -242,7 +242,7 @@ namespace ModuloDeCompra_BD.Clases
 
             if (count > 0)
             {
-                string Query = $"SELECT ID_Funcion FROM Roles_Funciones  WHERE ID_Rol='{idrol}'";
+                string Query = $"SELECT ID_Funcion FROM [MC-Roles_Funciones]  WHERE ID_Rol='{idrol}'";
 
                 ConfigurarComando(Query);
 

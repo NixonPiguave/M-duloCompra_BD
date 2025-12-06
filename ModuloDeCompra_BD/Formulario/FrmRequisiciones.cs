@@ -38,7 +38,7 @@ namespace Menú.Formularios
             lbID.Visible = false;
             nudCantidad.Minimum = 1;
             nudCantidad.Value = 1;
-            dgvListadoProductos.DataSource = CsComandosSql.RetornaDatos("select ID_Producto, NomProducto from Producto WHERE EstadoProducto='Activo'");
+            dgvListadoProductos.DataSource = CsComandosSql.RetornaDatos("select ID_Producto, NomProducto from [IN-Producto] WHERE EstadoProducto='Activo'");
         }
 
         private void btnCrearRequi_Click(object sender, EventArgs e)
@@ -96,12 +96,12 @@ namespace Menú.Formularios
                                 <ID_Requisicion>{idGenerado}</ID_Requisicion>
                             </DRequisicion>
                         </DRequiciciones>";
-
-                        string queryD = $"exec SpDetalleRequi @XMLdetalleRequi = '{xmlDetalleRequi}'";
+                        string queryD = $"exec SpDetalleRequii @XMLdetalleRequi = '{xmlDetalleRequi}'";
                         try
                         {
                             if (CsComandosSql.InserDeletUpdate(queryD))
                             {
+                                MessageBox.Show("Requisición Creada");
                             }
                             else
                                 MessageBox.Show("Error al insertar detalle");
@@ -111,7 +111,6 @@ namespace Menú.Formularios
                             MessageBox.Show("Error: " + ex.Message);
                         }
                     }
-                    MessageBox.Show("Requisición Creada");
                     tabla.Clear();
                     txtMotivo.Text = string.Empty;
                 }
@@ -121,11 +120,10 @@ namespace Menú.Formularios
                 MessageBox.Show("Error al insertar requisición: " + ex.Message);
             }
         }
-
        
         private void txtFiltroProduc_KeyUp_1(object sender, KeyEventArgs e)
         {
-            dgvListadoProductos.DataSource = CsComandosSql.RetornaDatos($"select ID_Producto, NomProducto  from Producto WHERE EstadoProducto='Activo' and NomProducto like '%{txtFiltroProduc.Text}%'");
+            dgvListadoProductos.DataSource = CsComandosSql.RetornaDatos($"select ID_Producto, NomProducto  from [IN-Producto] WHERE EstadoProducto='Activo' and NomProducto like '%{txtFiltroProduc.Text}%'");
         }
 
         private void btnProducto_Click_1(object sender, EventArgs e)
