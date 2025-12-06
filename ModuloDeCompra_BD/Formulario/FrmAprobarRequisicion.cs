@@ -25,25 +25,24 @@ namespace ModuloDeCompra_BD.Formulario
         }
         private void btnListRequiPendientes_Click(object sender, EventArgs e)
         {
-            string sentenciaExtraerRequisicionDerivada = $"select * from Requisicion where RequisicionDerivadaUsuario = {IdUsuario} and Estado_Requisicion = 'Pendiente'";
+            string sentenciaExtraerRequisicionDerivada = $"select * from [OC-Requisicion] where RequisicionDerivadaUsuario = {IdUsuario} and Estado_Requisicion = 'Pendiente'";
             DataTable dtRequisicon = CsComandosSql.RetornaDatos(sentenciaExtraerRequisicionDerivada);
             if (dtRequisicon.Rows.Count > 0)
             {
                 frmListadoRequiPendienteDerivados frmRequiPendiente = new frmListadoRequiPendienteDerivados();
                 frmRequiPendiente.ShowDialog();
                 txtIDRequisicionPendiente.Text = frmRequiPendiente.IdRequisicion1;
-                MessageBox.Show(frmRequiPendiente.IdRequisicion1);
-
+   
                 if (!string.IsNullOrEmpty(txtIDRequisicionPendiente.Text))
                 {
                     int id = Convert.ToInt32(RequisicionID1);
-                    DgvRequisicionPendiente.DataSource = CsComandosSql.RetornaDatos($"Select * from Requisicion where ID_Requisicion = {id}");
-                    dgvDetalleRequiPendiente.DataSource = CsComandosSql.RetornaDatos($"Select * from Requi_Details where ID_Requisicion= {id}");
+                    DgvRequisicionPendiente.DataSource = CsComandosSql.RetornaDatos($"Select * from [OC-Requisicion] where ID_Requisicion = {id}");
+                    dgvDetalleRequiPendiente.DataSource = CsComandosSql.RetornaDatos($"Select * from [OC-Requi_Details] where ID_Requisicion= {id}");
                 }
             }
             else
             {
-                string sentenciaExtraerRequisicion = $"select * from Requisicion where Estado_Requisicion = 'Pendiente'";
+                string sentenciaExtraerRequisicion = $"select * from [OC-Requisicion] where Estado_Requisicion = 'Pendiente'";
                 frmListadoRequiPendiente listaRequiPendiente = new frmListadoRequiPendiente();
                 listaRequiPendiente.IdUsuario1 = idUsuario;
                 listaRequiPendiente.ShowDialog();
@@ -60,8 +59,8 @@ namespace ModuloDeCompra_BD.Formulario
         {
             try
             {
-                DgvRequisicionPendiente.DataSource = CsComandosSql.RetornaDatos($"Select * from Requisicion where ID_Requisicion = {idRequi}");
-                dgvDetalleRequiPendiente.DataSource = CsComandosSql.RetornaDatos($"Select * from Requi_Details where ID_Requisicion= {idRequi}");
+                DgvRequisicionPendiente.DataSource = CsComandosSql.RetornaDatos($"Select * from [OC-Requisicion] where ID_Requisicion = {idRequi}");
+                dgvDetalleRequiPendiente.DataSource = CsComandosSql.RetornaDatos($"Select * from [OC-Requi_Details] where ID_Requisicion= {idRequi}");
             }
             catch (Exception ex)
             {
@@ -87,8 +86,8 @@ namespace ModuloDeCompra_BD.Formulario
                 CsComandosSql.InserDeletUpdate(query);
                 MessageBox.Show("Se ha aprovado la requisición");
                 int idRequi = int.Parse(txtIDRequisicionPendiente.Text);
-                DgvRequisicionPendiente.DataSource = CsComandosSql.RetornaDatos($"Select * from Requisicion where ID_Requisicion = {idRequi}");
-                dgvDetalleRequiPendiente.DataSource = CsComandosSql.RetornaDatos($"Select * from Requi_Details where ID_Requisicion= {idRequi} AND Estado= 'Pendiente'");
+                DgvRequisicionPendiente.DataSource = CsComandosSql.RetornaDatos($"Select * from [OC-Requisicion] where ID_Requisicion = {idRequi}");
+                dgvDetalleRequiPendiente.DataSource = CsComandosSql.RetornaDatos($"Select * from [OC-Requi_Details] where ID_Requisicion= {idRequi} AND Estado= 'Pendiente'");
                 Limpiar();
 
             }
@@ -116,8 +115,8 @@ namespace ModuloDeCompra_BD.Formulario
                 CsComandosSql.InserDeletUpdate(query);
                 MessageBox.Show("Se ha rechazado la requisición");
                 int idRequi = int.Parse(txtIDRequisicionPendiente.Text);
-                DgvRequisicionPendiente.DataSource = CsComandosSql.RetornaDatos($"Select * from Requisicion where ID_Requisicion = {idRequi}");
-                dgvDetalleRequiPendiente.DataSource = CsComandosSql.RetornaDatos($"Select * from Requi_Details where ID_Requisicion= {idRequi} AND Estado= 'Pendiente'");
+                DgvRequisicionPendiente.DataSource = CsComandosSql.RetornaDatos($"Select * from [OC-Requisicion] where ID_Requisicion = {idRequi}");
+                dgvDetalleRequiPendiente.DataSource = CsComandosSql.RetornaDatos($"Select * from [OC-Requi_Details] where ID_Requisicion= {idRequi} AND Estado= 'Pendiente'");
                 Limpiar();
             }
             catch(Exception ex)
@@ -151,7 +150,7 @@ namespace ModuloDeCompra_BD.Formulario
                 CsComandosSql.InserDeletUpdate(query);
                 MessageBox.Show("Se ha modificado la cantidad");
                 int idRequi = int.Parse(txtIDRequisicionPendiente.Text);
-                dgvDetalleRequiPendiente.DataSource = CsComandosSql.RetornaDatos($"Select * from Requi_Details where ID_Requisicion= {idRequi} AND Estado= 'Pendiente'");
+                dgvDetalleRequiPendiente.DataSource = CsComandosSql.RetornaDatos($"Select * from [OC-Requi_Details] where ID_Requisicion= {idRequi} AND Estado= 'Pendiente'");
                 Limpiar();
 
             }
@@ -183,8 +182,8 @@ namespace ModuloDeCompra_BD.Formulario
                 string query = $@"exec spRechazarProductoRequisicion '{cadenaXML}'";
                 CsComandosSql.InserDeletUpdate(query);
                 int idRequi = int.Parse(txtIDRequisicionPendiente.Text);
-                dgvDetalleRequiPendiente.DataSource = CsComandosSql.RetornaDatos($"Select * from Requi_Details where ID_Requisicion= {idRequi} AND Estado= 'Pendiente'");
-                DgvRequisicionPendiente.DataSource = CsComandosSql.RetornaDatos($"Select * from Requisicion where ID_Requisicion = {idRequi}");
+                dgvDetalleRequiPendiente.DataSource = CsComandosSql.RetornaDatos($"Select * from [OC-Requi_Details] where ID_Requisicion= {idRequi} AND Estado= 'Pendiente'");
+                DgvRequisicionPendiente.DataSource = CsComandosSql.RetornaDatos($"Select * from [OC-Requisicion] where ID_Requisicion = {idRequi}");
                 Limpiar();
 
             }
@@ -203,7 +202,7 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            string sentenciaExtraerDepartamento = $"select ID_Depa from Usuario where ID_Usuario = {IdUsuario}";
+            string sentenciaExtraerDepartamento = $"select ID_Depa from [MC-Usuario] where ID_Usuario = {IdUsuario}";
             string DepaID = "0";
             DataTable dt = CsComandosSql.RetornaDatos(sentenciaExtraerDepartamento);
             if (dt.Rows.Count > 0)

@@ -27,7 +27,7 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void frmListadoRequiPendiente_Load(object sender, EventArgs e)
         {
-            dgvListRequiPendientes.DataSource = CsComandosSql.RetornaDatos($"Select ID_Requisicion, Estado_Requisicion, MotivoRequisicion, Nombre_Departamento from (Select * from (Select R.UsuarioSolicitanteID, U.ID_Depa, R.ID_Requisicion, R.Estado_Requisicion,R.MotivoRequisicion, D.Nombre_Departamento\r\nfrom Requisicion R inner join Usuario U on R.UsuarioSolicitanteID = U.ID_Usuario inner join Departamento D on U.ID_Depa= D.ID_Depa) as X where ID_Depa in\r\n(Select D.ID_Depa from Departamento D inner join Usuario U on D.ID_Depa= U.ID_Depa where ID_Usuario= {IdUsuario1})) as Y where Estado_Requisicion= 'Pendiente'\r\n");
+            dgvListRequiPendientes.DataSource = CsComandosSql.RetornaDatos($"Select ID_Requisicion, Estado_Requisicion, MotivoRequisicion, Nombre_Departamento from (Select * from (Select R.UsuarioSolicitanteID, U.ID_Depa, R.ID_Requisicion, R.Estado_Requisicion,R.MotivoRequisicion, D.Nombre_Departamento\r\nfrom [OC-Requisicion] R inner join [MC-Usuario] U on R.UsuarioSolicitanteID = U.ID_Usuario inner join [MC-Departamento] D on U.ID_Depa= D.ID_Depa) as X where ID_Depa in\r\n(Select D.ID_Depa from [MC-Departamento] D inner join [MC-Usuario] U on D.ID_Depa= U.ID_Depa where ID_Usuario= {IdUsuario1})) as Y where Estado_Requisicion= 'Pendiente'\r\n");
         }
 
         private void btnSelecRequi_Click(object sender, EventArgs e)
