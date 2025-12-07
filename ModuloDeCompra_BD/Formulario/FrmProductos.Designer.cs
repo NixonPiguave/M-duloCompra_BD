@@ -35,7 +35,7 @@
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txtListadoUbiBodega = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnListadoUbiBodega = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lbl_Bode = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btnEditarGeneral = new Guna.UI2.WinForms.Guna2Button();
             this.cmbEstadoProducto = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -61,6 +61,7 @@
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -115,7 +116,7 @@
             this.btnListadoProveedor.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
             this.btnListadoProveedor.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnListadoProveedor.ForeColor = System.Drawing.Color.White;
-            this.btnListadoProveedor.Location = new System.Drawing.Point(505, 109);
+            this.btnListadoProveedor.Location = new System.Drawing.Point(507, 64);
             this.btnListadoProveedor.Name = "btnListadoProveedor";
             this.btnListadoProveedor.Size = new System.Drawing.Size(88, 36);
             this.btnListadoProveedor.TabIndex = 15;
@@ -164,13 +165,14 @@
             this.txtListadoUbiBodega.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtListadoUbiBodega.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtListadoUbiBodega.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtListadoUbiBodega.Location = new System.Drawing.Point(599, 15);
+            this.txtListadoUbiBodega.Location = new System.Drawing.Point(599, 126);
             this.txtListadoUbiBodega.Name = "txtListadoUbiBodega";
             this.txtListadoUbiBodega.PlaceholderText = "";
             this.txtListadoUbiBodega.ReadOnly = true;
             this.txtListadoUbiBodega.SelectedText = "";
             this.txtListadoUbiBodega.Size = new System.Drawing.Size(97, 26);
             this.txtListadoUbiBodega.TabIndex = 26;
+            this.txtListadoUbiBodega.Visible = false;
             // 
             // btnListadoUbiBodega
             // 
@@ -182,23 +184,25 @@
             this.btnListadoUbiBodega.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
             this.btnListadoUbiBodega.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnListadoUbiBodega.ForeColor = System.Drawing.Color.White;
-            this.btnListadoUbiBodega.Location = new System.Drawing.Point(505, 6);
+            this.btnListadoUbiBodega.Location = new System.Drawing.Point(505, 117);
             this.btnListadoUbiBodega.Name = "btnListadoUbiBodega";
             this.btnListadoUbiBodega.Size = new System.Drawing.Size(88, 36);
             this.btnListadoUbiBodega.TabIndex = 25;
             this.btnListadoUbiBodega.Text = "Listado";
+            this.btnListadoUbiBodega.Visible = false;
             this.btnListadoUbiBodega.Click += new System.EventHandler(this.btnListadoUbiBodega_Click);
             // 
-            // guna2HtmlLabel5
+            // lbl_Bode
             // 
-            this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel5.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel5.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel5.Location = new System.Drawing.Point(337, 15);
-            this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            this.guna2HtmlLabel5.Size = new System.Drawing.Size(161, 24);
-            this.guna2HtmlLabel5.TabIndex = 24;
-            this.guna2HtmlLabel5.Text = "Ubicación bodega:";
+            this.lbl_Bode.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_Bode.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Bode.ForeColor = System.Drawing.Color.White;
+            this.lbl_Bode.Location = new System.Drawing.Point(337, 126);
+            this.lbl_Bode.Name = "lbl_Bode";
+            this.lbl_Bode.Size = new System.Drawing.Size(161, 24);
+            this.lbl_Bode.TabIndex = 24;
+            this.lbl_Bode.Text = "Ubicación bodega:";
+            this.lbl_Bode.Visible = false;
             // 
             // btnEditarGeneral
             // 
@@ -254,11 +258,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(19, 15);
+            this.label1.Location = new System.Drawing.Point(15, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 22);
+            this.label1.Size = new System.Drawing.Size(101, 22);
             this.label1.TabIndex = 20;
-            this.label1.Text = "Producto:\r\n";
+            this.label1.Text = "Producto/";
             // 
             // txtListadoProvee
             // 
@@ -272,7 +276,7 @@
             this.txtListadoProvee.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtListadoProvee.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtListadoProvee.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtListadoProvee.Location = new System.Drawing.Point(599, 117);
+            this.txtListadoProvee.Location = new System.Drawing.Point(601, 72);
             this.txtListadoProvee.Name = "txtListadoProvee";
             this.txtListadoProvee.PlaceholderText = "";
             this.txtListadoProvee.ReadOnly = true;
@@ -292,7 +296,7 @@
             this.txtListadoCategory.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtListadoCategory.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtListadoCategory.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtListadoCategory.Location = new System.Drawing.Point(599, 67);
+            this.txtListadoCategory.Location = new System.Drawing.Point(601, 22);
             this.txtListadoCategory.Name = "txtListadoCategory";
             this.txtListadoCategory.PlaceholderText = "";
             this.txtListadoCategory.ReadOnly = true;
@@ -310,7 +314,7 @@
             this.btnListadoCategoria.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
             this.btnListadoCategoria.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnListadoCategoria.ForeColor = System.Drawing.Color.White;
-            this.btnListadoCategoria.Location = new System.Drawing.Point(503, 58);
+            this.btnListadoCategoria.Location = new System.Drawing.Point(505, 13);
             this.btnListadoCategoria.Name = "btnListadoCategoria";
             this.btnListadoCategoria.Size = new System.Drawing.Size(88, 36);
             this.btnListadoCategoria.TabIndex = 14;
@@ -347,7 +351,7 @@
             this.txtNombreProducto.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNombreProducto.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtNombreProducto.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNombreProducto.Location = new System.Drawing.Point(123, 14);
+            this.txtNombreProducto.Location = new System.Drawing.Point(121, 15);
             this.txtNombreProducto.Name = "txtNombreProducto";
             this.txtNombreProducto.PlaceholderText = "";
             this.txtNombreProducto.SelectedText = "";
@@ -359,7 +363,7 @@
             this.guna2HtmlLabel7.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel7.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel7.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel7.Location = new System.Drawing.Point(389, 117);
+            this.guna2HtmlLabel7.Location = new System.Drawing.Point(391, 72);
             this.guna2HtmlLabel7.Name = "guna2HtmlLabel7";
             this.guna2HtmlLabel7.Size = new System.Drawing.Size(101, 24);
             this.guna2HtmlLabel7.TabIndex = 5;
@@ -370,7 +374,7 @@
             this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel6.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel6.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel6.Location = new System.Drawing.Point(403, 67);
+            this.guna2HtmlLabel6.Location = new System.Drawing.Point(405, 22);
             this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
             this.guna2HtmlLabel6.Size = new System.Drawing.Size(92, 24);
             this.guna2HtmlLabel6.TabIndex = 4;
@@ -444,6 +448,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(85)))), ((int)(((byte)(84)))));
+            this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.pnlUnidades);
             this.panel3.Controls.Add(this.CHBInventariable);
             this.panel3.Controls.Add(this.btnCancelar);
@@ -456,7 +461,7 @@
             this.panel3.Controls.Add(this.guna2HtmlLabel3);
             this.panel3.Controls.Add(this.txtListadoProvee);
             this.panel3.Controls.Add(this.btnListadoUbiBodega);
-            this.panel3.Controls.Add(this.guna2HtmlLabel5);
+            this.panel3.Controls.Add(this.lbl_Bode);
             this.panel3.Controls.Add(this.btnListadoProveedor);
             this.panel3.Controls.Add(this.guna2HtmlLabel7);
             this.panel3.Controls.Add(this.cmbIVA);
@@ -583,6 +588,17 @@
             this.guna2HtmlLabel11.TabIndex = 40;
             this.guna2HtmlLabel11.Text = "Unidad alternativa:";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(27, 35);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(85, 22);
+            this.label2.TabIndex = 29;
+            this.label2.Text = "servicio:";
+            // 
             // FrmProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -632,7 +648,7 @@
         private Guna.UI2.WinForms.Guna2Button btnEditarGeneral;
         private Guna.UI2.WinForms.Guna2TextBox txtListadoUbiBodega;
         private Guna.UI2.WinForms.Guna2Button btnListadoUbiBodega;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lbl_Bode;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel10;
@@ -643,5 +659,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel9;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel11;
+        private System.Windows.Forms.Label label2;
     }
 }

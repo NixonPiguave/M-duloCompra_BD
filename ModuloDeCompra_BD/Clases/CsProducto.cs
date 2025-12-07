@@ -53,7 +53,27 @@ namespace ModuloDeCompra_BD.Clases
             string query = $@"exec spAgregarProducto '{cadenaXML}', {idBodega}";
             return CsComandosSql.InserDeletUpdate(query);
         }
+        public bool AñadirProducto()
+        {
+            string precioUFormatoSQL = Precio_Unit.ToString(CultureInfo.InvariantCulture);
 
+            string cadenaXML = $@"<Productos>
+                <Producto>
+                    <NomProducto>{Nom_Producto}</NomProducto>
+                    <Costo>{precioUFormatoSQL}</Costo>
+                    <EstadoProducto>{Estado}</EstadoProducto>
+                    <ID_CAT>{Categoria}</ID_CAT>
+                    <ID_IVA>{Iva}</ID_IVA>
+                    <ID_Proveedor>{Proveedor}</ID_Proveedor>
+                    <Inventariable>{Inventariable}</Inventariable>
+                    <IdUnidad>20</IdUnidad>
+                    <IdUnidadAlternativa>11</IdUnidadAlternativa>
+                </Producto>
+            </Productos>";
+
+            string query = $@"exec spAgregarProductoNoInv '{cadenaXML}'";
+            return CsComandosSql.InserDeletUpdate(query);
+        }
         public bool ModificarProducto(int id, int idBodega)
         {
             string precioUFormatoSQL = Precio_Unit.ToString(CultureInfo.InvariantCulture);
@@ -74,7 +94,28 @@ namespace ModuloDeCompra_BD.Clases
             string query = $@"exec spModificarProducto '{cadenaXML}', {idBodega}";
             return CsComandosSql.InserDeletUpdate(query);
         }
-  
+        //FALTA MODIFICAR PRODUCTO SIN BODEGA
+        public bool ModificarProducto(int id)
+        {
+            string precioUFormatoSQL = Precio_Unit.ToString(CultureInfo.InvariantCulture);
+            string cadenaXML = $@"<Productos>
+                    <Producto>
+                        <ID_Producto>{id}</ID_Producto>
+                        <NomProducto>{Nom_Producto}</NomProducto>
+                        <Costo>{precioUFormatoSQL}</Costo>
+                        <EstadoProducto>{Estado}</EstadoProducto>
+                        <ID_CAT>{Categoria}</ID_CAT>
+                        <ID_IVA>{Iva}</ID_IVA>
+                        <ID_Proveedor>{Proveedor}</ID_Proveedor>
+                        <Inventariable>{Inventariable}</Inventariable>
+                        <IdUnidad>{IdUnidad}</IdUnidad>
+                        <IdUnidadAlternativa>{IdUnidadAlternativa}</IdUnidadAlternativa>
+                    </Producto>
+                </Productos>";
+            string query = $@"exec spModificarProducto '{cadenaXML}'";
+            return CsComandosSql.InserDeletUpdate(query);
+        }
+
         public bool EliminarProducto(int ID)
         {
             string cadenaXML = $@"<Productos>

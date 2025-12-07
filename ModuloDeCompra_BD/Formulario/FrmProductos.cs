@@ -37,13 +37,13 @@ namespace ModuloDeCompra_BD.Formulario
                 cmbIVA.Items.Add(tb.Rows[i]["Valor_IVA"].ToString());
             }
             //Unidad Base
-            DataTable tbUB = CsComandosSql.RetornaDatos("select * from [IN-UnidadesMedida]");
+            DataTable tbUB = CsComandosSql.RetornaDatos("select * from [IN-UnidadesMedida] where IdUnidad!=20");
             for (int i = 0; i < tbUB.Rows.Count; i++)
             {
                 cmbUnidadBase.Items.Add(tbUB.Rows[i]["Nombre"].ToString());
             }
             //Unidad Alterna
-            DataTable tbUA = CsComandosSql.RetornaDatos("select * from [IN-UnidadesAlternativas]");
+            DataTable tbUA = CsComandosSql.RetornaDatos("select * from [IN-UnidadesAlternativas] where IdUnidadAlt!=11");
             for (int i = 0; i < tbUA.Rows.Count; i++)
             {
                 cmbUnidadAlterna.Items.Add(tbUA.Rows[i]["Nombre"].ToString());
@@ -110,7 +110,7 @@ namespace ModuloDeCompra_BD.Formulario
                     producto.Proveedor1 = Id2;
                     if (CHBInventariable.Checked == true) 
                     {
-                        producto.Inventariable1 = "Si";
+                        producto.Inventariable1 = "SI";
 
                             string nombreUnidadBase = cmbUnidadBase.SelectedItem?.ToString();
                             if (!string.IsNullOrEmpty(nombreUnidadBase))
@@ -146,11 +146,7 @@ namespace ModuloDeCompra_BD.Formulario
                         MessageBox.Show("Por favor, seleccione una unidad alternativa.");
                         }
 
-                }
-                else
-                    {
-                        producto.Inventariable1 = "No";
-                    }
+             
 
                     string ubicacionBodega = txtListadoUbiBodega.Text.Trim();
                     DataTable ubicacionBodegaData = CsComandosSql.RetornaDatos($"SELECT ID_Bodega FROM [IN-Bodega] WHERE Ubicacion = '{ubicacionBodega}'");
@@ -184,6 +180,31 @@ namespace ModuloDeCompra_BD.Formulario
                         MessageBox.Show("Ubicación de bodega no válida.");
                     }
                 }
+                else
+                {
+                    producto.Inventariable1 = "NO";
+                    if (producto.AñadirProducto())
+                    {
+                        dgvProducto.DataSource = CsComandosSql.RetornaDatos("select ID_Producto, NomProducto, Costo from [IN-Producto]");
+                        MessageBox.Show("Servicio agregado correctamente");
+                        txtNombreProducto.Text = string.Empty;
+                        txtPrecioUnitario.Text = string.Empty;
+                        cmbIVA.SelectedIndex = -1;
+                        cmbEstadoProducto.SelectedIndex = -1;
+                        txtListadoCategory.Text = string.Empty;
+                        txtListadoProvee.Text = string.Empty;
+                        txtListadoUbiBodega.Text = string.Empty;
+                        cmbUnidadBase.SelectedIndex = -1;
+                        cmbUnidadAlterna.SelectedIndex = -1;
+                        CHBInventariable.Checked = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al agregar Servicio, verifique que los datos sean correctos");
+                    }
+
+                }
+            }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error" + ex);
@@ -375,13 +396,13 @@ namespace ModuloDeCompra_BD.Formulario
                     DataTable ubicacionBodegaData = CsComandosSql.RetornaDatos($"SELECT ID_Bodega FROM [IN-Bodega] WHERE Ubicacion = '{ubicacionBodega}'");
                     if (CHBInventariable.Checked == true)
                     {
-                        producto.Inventariable1 = "Si";
+                        producto.Inventariable1 = "SI";
 
                         string nombreUnidadBase = cmbUnidadBase.SelectedItem?.ToString();
                         if (!string.IsNullOrEmpty(nombreUnidadBase))
                         {
                             DataTable dtUnidad = CsComandosSql.RetornaDatos(
-                                $"SELECT IdUnidad FROM [IN-UnidadesMedida] WHERE Nombre = '{nombreUnidadBase}'");
+                                $"SELECT IdUnidad FROM [IN-UnidadesMedida] WHERE  Nombre = '{nombreUnidadBase}'");
 
                             if (dtUnidad.Rows.Count > 0)
                             {
@@ -412,7 +433,9 @@ namespace ModuloDeCompra_BD.Formulario
                     }
                     else
                     {
-                        producto.Inventariable1 = "No";
+                        producto.Inventariable1 = "NO";
+                        producto.IdUnidad1 = 20;
+                        producto.IdUnidadAlternativa1 = 11;
                     }
 
                     if (ubicacionBodegaData.Rows.Count > 0)
@@ -460,10 +483,16 @@ namespace ModuloDeCompra_BD.Formulario
             if(CHBInventariable.Checked==true)
             {
                 pnlUnidades.Visible = true;
+                lbl_Bode.Visible = true;
+                btnListadoUbiBodega.Visible = true;
+                txtListadoUbiBodega.Visible = true;
             }
             else
             {
                 pnlUnidades.Visible = false;
+                lbl_Bode.Visible = false;
+                btnListadoUbiBodega.Visible = false;
+                txtListadoUbiBodega.Visible = false;
             }
         }
     }
