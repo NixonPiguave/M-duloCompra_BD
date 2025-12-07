@@ -25,7 +25,7 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void frmListaEmpleadosDepartamentos_Load(object sender, EventArgs e)
         {
-            dgvListaEmpleados.DataSource = CsComandosSql.RetornaDatos($"select U.ID_Usuario, U.Nombre, U.Apellido, U.Cedula, D.Nombre_Departamento, R.Rol from Usuario as U inner join Departamento as D on U.ID_Depa = D.ID_Depa inner join Roles as R on U.ID_Rol = R.ID_Rol where U.ID_Depa = {DepaID1}");
+            dgvListaEmpleados.DataSource = CsComandosSql.RetornaDatos($"select U.ID_Usuario, U.Nombre, U.Apellido, U.Cedula, D.Nombre_Departamento, R.Rol from [MC-Usuario] as U inner join [MC-Departamento] as D on U.ID_Depa = D.ID_Depa inner join [MC-Roles] as R on U.ID_Rol = R.ID_Rol where U.ID_Depa = {DepaID1}");
         }
 
         private void btnSelecRequi_Click(object sender, EventArgs e)
@@ -35,10 +35,16 @@ namespace ModuloDeCompra_BD.Formulario
                 if (!string.IsNullOrEmpty(txtBuscarEmpleadoPendiente.Text))
                 {
                     FrmAprobarRequisicion frmAprobar = new FrmAprobarRequisicion();
-                    string derivarRequisicion = $"update Requisicion set RequisicionDerivadaUsuario = {txtBuscarEmpleadoPendiente.Text} where ID_Requisicion = {RequisicionID1}";
-                    CsComandosSql.InserDeletUpdate(derivarRequisicion);
-                    MessageBox.Show("Se ha enviado la requisicion");
-                    this.Close();
+                    string derivarRequisicion = $"update [OC-Requisicion] set RequisicionDerivadaUsuario = {txtBuscarEmpleadoPendiente.Text} where ID_Requisicion = {RequisicionID1}";
+                    if(CsComandosSql.InserDeletUpdate(derivarRequisicion))
+                    {
+                        MessageBox.Show("Se ha enviado la requisicion");
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al derivar la requisicion");
+                    }
                 }
                 else
                 { 

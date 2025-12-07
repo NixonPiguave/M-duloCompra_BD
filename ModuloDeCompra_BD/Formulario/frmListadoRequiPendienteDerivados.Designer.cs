@@ -47,7 +47,7 @@
             this.btnSelecRequi.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
             this.btnSelecRequi.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSelecRequi.ForeColor = System.Drawing.Color.White;
-            this.btnSelecRequi.Location = new System.Drawing.Point(274, 120);
+            this.btnSelecRequi.Location = new System.Drawing.Point(250, 120);
             this.btnSelecRequi.Name = "btnSelecRequi";
             this.btnSelecRequi.Size = new System.Drawing.Size(120, 26);
             this.btnSelecRequi.TabIndex = 7;

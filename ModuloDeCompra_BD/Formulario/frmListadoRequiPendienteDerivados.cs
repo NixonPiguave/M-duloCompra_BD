@@ -27,7 +27,6 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void frmListadoRequiPendienteDerivados_Load(object sender, EventArgs e)
         {
-            MessageBox.Show(IdUsuario1.ToString());
             string sentenciaExtraerRequisiciones = $"select * from [OC-Requisicion] where (RequisicionDerivadaUsuario = {IdUsuario1} and Estado_Requisicion = 'Pendiente') ";
             dgvListRequiPendientes.DataSource = CsComandosSql.RetornaDatos(sentenciaExtraerRequisiciones);
         }
@@ -37,12 +36,12 @@ namespace ModuloDeCompra_BD.Formulario
             {
                 int fila = dgvListRequiPendientes.CurrentCell.RowIndex;
                 txtBuscarRequiPendiente.Text = dgvListRequiPendientes[0, fila].Value.ToString();
+                Id1 = txtBuscarRequiPendiente.Text;
                 FrmAprobarRequisicion frmAprobar = new FrmAprobarRequisicion();
-                Id1 = dgvListRequiPendientes[0, fila].Value.ToString();
                 frmAprobar.RequisicionID1 = Id1;
-                MessageBox.Show(frmAprobar.RequisicionID1);
                 MessageBox.Show("Requisición seleccionada");
                 this.Close();
+
             }
             catch(Exception ex)
             {

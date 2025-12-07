@@ -30,15 +30,12 @@ namespace ModuloDeCompra_BD.Formulario
             if (dtRequisicon.Rows.Count > 0)
             {
                 frmListadoRequiPendienteDerivados frmRequiPendiente = new frmListadoRequiPendienteDerivados();
+                frmRequiPendiente.IdUsuario1 = IdUsuario;
                 frmRequiPendiente.ShowDialog();
-                txtIDRequisicionPendiente.Text = frmRequiPendiente.IdRequisicion1;
-   
-                if (!string.IsNullOrEmpty(txtIDRequisicionPendiente.Text))
-                {
-                    int id = Convert.ToInt32(RequisicionID1);
-                    DgvRequisicionPendiente.DataSource = CsComandosSql.RetornaDatos($"Select * from [OC-Requisicion] where ID_Requisicion = {id}");
-                    dgvDetalleRequiPendiente.DataSource = CsComandosSql.RetornaDatos($"Select * from [OC-Requi_Details] where ID_Requisicion= {id}");
-                }
+                txtIDRequisicionPendiente.Text = frmRequiPendiente.Id1;
+                string id = RequisicionID1;
+                LlenarDgv(txtIDRequisicionPendiente.Text);
+
             }
             else
             {
@@ -50,12 +47,12 @@ namespace ModuloDeCompra_BD.Formulario
                 int id = listaRequiPendiente.Id1;
                 if (!String.IsNullOrEmpty(txtIDRequisicionPendiente.Text))
                 {
-                    int idRequi = int.Parse(txtIDRequisicionPendiente.Text);
+                    string idRequi = txtIDRequisicionPendiente.Text;
                     LlenarDgv(idRequi);
                 }
             }
         }
-        private void LlenarDgv(int idRequi)
+        private void LlenarDgv(string idRequi)
         {
             try
             {
