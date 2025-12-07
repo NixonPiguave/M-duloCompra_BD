@@ -111,22 +111,49 @@ namespace ModuloDeCompra_BD.Formulario
                     if (CHBInventariable.Checked == true) 
                     {
                         producto.Inventariable1 = "Si";
-                        if(chbUnidadBase.Checked==true)
+
+                            string nombreUnidadBase = cmbUnidadBase.SelectedItem?.ToString();
+                            if (!string.IsNullOrEmpty(nombreUnidadBase))
+                            {
+                            DataTable dtUnidad = CsComandosSql.RetornaDatos(
+                                $"SELECT IdUnidad FROM [IN-UnidadesMedida] WHERE Nombre = '{nombreUnidadBase}'");
+
+                                if (dtUnidad.Rows.Count > 0)
+                                {
+                                    producto.IdUnidad1 = Convert.ToInt32(dtUnidad.Rows[0]["IdUnidad"]);
+                                }
+
+                            }
+                        else
+                            {
+                            MessageBox.Show("Por favor, seleccione una unidad base.");
+                            }
+
+                        string nombreUnidadAlt = cmbUnidadAlterna.SelectedItem?.ToString();
+                        if (!string.IsNullOrEmpty(nombreUnidadAlt))
                         {
-                            producto.IdUnidad1 = cmbUnidadBase.SelectedIndex + 1;
+                            DataTable dtUnidadAlt = CsComandosSql.RetornaDatos(
+                                $"SELECT IdUnidadAlt FROM [IN-UnidadesAlternativas] WHERE Nombre = '{nombreUnidadAlt}'");
+
+                            if (dtUnidadAlt.Rows.Count > 0)
+                            {
+                                producto.IdUnidadAlternativa1 = Convert.ToInt32(dtUnidadAlt.Rows[0]["IdUnidadAlt"]);
+                            }
+
                         }
-                        else if(chbUnidadAlterna.Checked==true)
+                        else
                         {
-                            producto.IdUnidadAlternativa1 = cmbUnidadAlterna.SelectedIndex + 1;
+                        MessageBox.Show("Por favor, seleccione una unidad alternativa.");
                         }
 
-                    }else
+                }
+                else
                     {
                         producto.Inventariable1 = "No";
                     }
 
                     string ubicacionBodega = txtListadoUbiBodega.Text.Trim();
-                    DataTable ubicacionBodegaData = CsComandosSql.RetornaDatos($"SELECT ID_Bodega FROM Bodega WHERE Ubicacion = '{ubicacionBodega}'");
+                    DataTable ubicacionBodegaData = CsComandosSql.RetornaDatos($"SELECT ID_Bodega FROM [IN-Bodega] WHERE Ubicacion = '{ubicacionBodega}'");
 
                     if (ubicacionBodegaData.Rows.Count > 0)
                     {
@@ -142,9 +169,9 @@ namespace ModuloDeCompra_BD.Formulario
                             cmbEstadoProducto.SelectedIndex = -1;
                             txtListadoCategory.Text = string.Empty;
                             txtListadoProvee.Text = string.Empty;
-                            txtListadoUbiBodega.Text = string.Empty; 
-                            chbUnidadAlterna.Checked = false;
-                            chbUnidadBase.Checked = false;
+                            txtListadoUbiBodega.Text = string.Empty;
+                            cmbUnidadBase.SelectedIndex = -1;
+                            cmbUnidadAlterna.SelectedIndex = -1;
                             CHBInventariable.Checked = false;
                     }
                         else
@@ -230,7 +257,71 @@ namespace ModuloDeCompra_BD.Formulario
             txtPrecioUnitario.Text = dgvProducto[2, fila].Value.ToString();
             DataTable dt = CsComandosSql.RetornaDatos($"select Ubicacion from [IN-Inventario] I inner join [IN-Bodega] B on I.ID_Bodega=B.ID_Bodega where ID_Producto={Id3}");
             txtListadoUbiBodega.Text = dt.Rows[0]["Ubicacion"].ToString();
+            
+            DataTable dtProducto = CsComandosSql.RetornaDatos(
+          $"SELECT * FROM [IN-Producto] WHERE ID_Producto = {Id3}");
+
+            if (dtProducto.Rows.Count > 0)
+            {
+                DataRow producto = dtProducto.Rows[0];
+                string inventariable = producto["Inventariable"].ToString();
+                CHBInventariable.Checked = (inventariable == "Si" || inventariable == "SI");
+                if(inventariable=="Si")
+                {
+                    if (!Convert.IsDBNull(producto["IdUnidad"]) && producto["IdUnidad"] != DBNull.Value)
+                    {
+                        int idUnidad = Convert.ToInt32(producto["IdUnidad"]);
+
+                        // Buscar la unidad en el ComboBox
+                        DataTable dtUnidad = CsComandosSql.RetornaDatos(
+                            $"SELECT Nombre FROM [IN-UnidadesMedida] WHERE IdUnidad = {idUnidad}");
+
+                        if (dtUnidad.Rows.Count > 0)
+                        {
+                            string nombreUnidad = dtUnidad.Rows[0]["Nombre"].ToString();
+
+                            // Buscar y seleccionar en el ComboBox
+                            for (int i = 0; i < cmbUnidadBase.Items.Count; i++)
+                            {
+                                if (cmbUnidadBase.Items[i].ToString() == nombreUnidad)
+                                {
+                                    cmbUnidadBase.SelectedIndex = i;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+
+                    // Cargar Unidad Alternativa
+                    if (!Convert.IsDBNull(producto["IdUnidadAlternativa"]) &&
+                        producto["IdUnidadAlternativa"] != DBNull.Value)
+                    {
+                        int idUnidadAlt = Convert.ToInt32(producto["IdUnidadAlternativa"]);
+
+                        // Buscar la unidad en el ComboBox
+                        DataTable dtUnidadAlt = CsComandosSql.RetornaDatos(
+                            $"SELECT Nombre FROM [IN-UnidadesAlternativas] WHERE IdUnidadAlt = {idUnidadAlt}");
+
+                        if (dtUnidadAlt.Rows.Count > 0)
+                        {
+                            string nombreUnidadAlt = dtUnidadAlt.Rows[0]["Nombre"].ToString();
+
+                            // Buscar y seleccionar en el ComboBox
+                            for (int i = 0; i < cmbUnidadAlterna.Items.Count; i++)
+                            {
+                                if (cmbUnidadAlterna.Items[i].ToString() == nombreUnidadAlt)
+                                {
+                                    cmbUnidadAlterna.SelectedIndex = i;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
+
+        
 
         private void btnEditarGeneral_Click(object sender, EventArgs e)
         {
@@ -285,13 +376,37 @@ namespace ModuloDeCompra_BD.Formulario
                     if (CHBInventariable.Checked == true)
                     {
                         producto.Inventariable1 = "Si";
-                        if (chbUnidadBase.Checked == true)
+
+                        string nombreUnidadBase = cmbUnidadBase.SelectedItem?.ToString();
+                        if (!string.IsNullOrEmpty(nombreUnidadBase))
                         {
-                            producto.IdUnidad1 = cmbUnidadBase.SelectedIndex + 1;
+                            DataTable dtUnidad = CsComandosSql.RetornaDatos(
+                                $"SELECT IdUnidad FROM [IN-UnidadesMedida] WHERE Nombre = '{nombreUnidadBase}'");
+
+                            if (dtUnidad.Rows.Count > 0)
+                            {
+                                producto.IdUnidad1 = Convert.ToInt32(dtUnidad.Rows[0]["IdUnidad"]);
+                            }
                         }
-                        else if (chbUnidadAlterna.Checked == true)
+                        else
                         {
-                            producto.IdUnidadAlternativa1 = cmbUnidadAlterna.SelectedIndex + 1;
+                            MessageBox.Show("Por favor, seleccione una unidad base.");
+                        }
+
+                        string nombreUnidadAlt = cmbUnidadAlterna.SelectedItem?.ToString();
+                        if (!string.IsNullOrEmpty(nombreUnidadAlt))
+                        {
+                            DataTable dtUnidadAlt = CsComandosSql.RetornaDatos(
+                                $"SELECT IdUnidadAlt FROM [IN-UnidadesAlternativas] WHERE Nombre = '{nombreUnidadAlt}'");
+
+                            if (dtUnidadAlt.Rows.Count > 0)
+                            {
+                                producto.IdUnidadAlternativa1 = Convert.ToInt32(dtUnidadAlt.Rows[0]["IdUnidadAlt"]);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Por favor, seleccione una unidad alternativa.");
                         }
 
                     }
@@ -314,9 +429,9 @@ namespace ModuloDeCompra_BD.Formulario
                             cmbEstadoProducto.SelectedIndex = -1;
                             txtListadoCategory.Text = string.Empty;
                             txtListadoProvee.Text = string.Empty;
-                            chbUnidadAlterna.Checked = false;
-                            chbUnidadBase.Checked = false;
                             CHBInventariable.Checked = false;
+                            cmbUnidadBase.SelectedIndex = -1;
+                            cmbUnidadAlterna.SelectedIndex = -1;
                         }
                         else
                         {
@@ -349,34 +464,6 @@ namespace ModuloDeCompra_BD.Formulario
             else
             {
                 pnlUnidades.Visible = false;
-            }
-        }
-
-        private void chbUnidadBase_CheckedChanged(object sender, EventArgs e)
-        {
-            if(chbUnidadBase.Checked==true)
-            {
-                cmbUnidadBase.Enabled = true;
-                chbUnidadAlterna.Checked = false;
-                cmbUnidadAlterna.SelectedIndex = -1;
-            }
-            else
-            {
-                cmbUnidadBase.Enabled = false;
-            }
-        }
-
-        private void chbUnidadAlterna_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chbUnidadAlterna.Checked == true)
-            {
-                cmbUnidadAlterna.Enabled = true;
-                chbUnidadBase.Checked = false;
-                cmbUnidadBase.SelectedIndex = -1;
-            }
-            else
-            {
-                cmbUnidadAlterna.Enabled = false;
             }
         }
     }

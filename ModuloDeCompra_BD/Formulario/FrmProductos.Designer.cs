@@ -59,8 +59,8 @@
             this.cmbUnidadAlterna = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cmbUnidadBase = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.chbUnidadBase = new Guna.UI2.WinForms.Guna2CheckBox();
-            this.chbUnidadAlterna = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -503,8 +503,8 @@
             // 
             // pnlUnidades
             // 
-            this.pnlUnidades.Controls.Add(this.chbUnidadAlterna);
-            this.pnlUnidades.Controls.Add(this.chbUnidadBase);
+            this.pnlUnidades.Controls.Add(this.guna2HtmlLabel11);
+            this.pnlUnidades.Controls.Add(this.guna2HtmlLabel9);
             this.pnlUnidades.Controls.Add(this.cmbUnidadAlterna);
             this.pnlUnidades.Controls.Add(this.cmbUnidadBase);
             this.pnlUnidades.Controls.Add(this.guna2HtmlLabel1);
@@ -521,7 +521,6 @@
             this.cmbUnidadAlterna.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cmbUnidadAlterna.DropDownHeight = 120;
             this.cmbUnidadAlterna.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbUnidadAlterna.Enabled = false;
             this.cmbUnidadAlterna.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmbUnidadAlterna.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmbUnidadAlterna.Font = new System.Drawing.Font("Segoe UI", 10F);
@@ -540,7 +539,6 @@
             this.cmbUnidadBase.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cmbUnidadBase.DropDownHeight = 120;
             this.cmbUnidadBase.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbUnidadBase.Enabled = false;
             this.cmbUnidadBase.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmbUnidadBase.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmbUnidadBase.Font = new System.Drawing.Font("Segoe UI", 10F);
@@ -563,45 +561,27 @@
             this.guna2HtmlLabel1.TabIndex = 33;
             this.guna2HtmlLabel1.Text = "Unidades de medida";
             // 
-            // chbUnidadBase
+            // guna2HtmlLabel9
             // 
-            this.chbUnidadBase.AutoSize = true;
-            this.chbUnidadBase.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.chbUnidadBase.CheckedState.BorderRadius = 0;
-            this.chbUnidadBase.CheckedState.BorderThickness = 0;
-            this.chbUnidadBase.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.chbUnidadBase.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold);
-            this.chbUnidadBase.ForeColor = System.Drawing.Color.White;
-            this.chbUnidadBase.Location = new System.Drawing.Point(20, 64);
-            this.chbUnidadBase.Name = "chbUnidadBase";
-            this.chbUnidadBase.Size = new System.Drawing.Size(140, 26);
-            this.chbUnidadBase.TabIndex = 38;
-            this.chbUnidadBase.Text = "Unidad base:";
-            this.chbUnidadBase.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.chbUnidadBase.UncheckedState.BorderRadius = 0;
-            this.chbUnidadBase.UncheckedState.BorderThickness = 0;
-            this.chbUnidadBase.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.chbUnidadBase.CheckedChanged += new System.EventHandler(this.chbUnidadBase_CheckedChanged);
+            this.guna2HtmlLabel9.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel9.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel9.ForeColor = System.Drawing.Color.White;
+            this.guna2HtmlLabel9.Location = new System.Drawing.Point(69, 66);
+            this.guna2HtmlLabel9.Name = "guna2HtmlLabel9";
+            this.guna2HtmlLabel9.Size = new System.Drawing.Size(114, 24);
+            this.guna2HtmlLabel9.TabIndex = 39;
+            this.guna2HtmlLabel9.Text = "Unidad base:";
             // 
-            // chbUnidadAlterna
+            // guna2HtmlLabel11
             // 
-            this.chbUnidadAlterna.AutoSize = true;
-            this.chbUnidadAlterna.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.chbUnidadAlterna.CheckedState.BorderRadius = 0;
-            this.chbUnidadAlterna.CheckedState.BorderThickness = 0;
-            this.chbUnidadAlterna.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.chbUnidadAlterna.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold);
-            this.chbUnidadAlterna.ForeColor = System.Drawing.Color.White;
-            this.chbUnidadAlterna.Location = new System.Drawing.Point(20, 114);
-            this.chbUnidadAlterna.Name = "chbUnidadAlterna";
-            this.chbUnidadAlterna.Size = new System.Drawing.Size(163, 26);
-            this.chbUnidadAlterna.TabIndex = 36;
-            this.chbUnidadAlterna.Text = "Unidad alterna:";
-            this.chbUnidadAlterna.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.chbUnidadAlterna.UncheckedState.BorderRadius = 0;
-            this.chbUnidadAlterna.UncheckedState.BorderThickness = 0;
-            this.chbUnidadAlterna.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.chbUnidadAlterna.CheckedChanged += new System.EventHandler(this.chbUnidadAlterna_CheckedChanged);
+            this.guna2HtmlLabel11.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel11.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel11.ForeColor = System.Drawing.Color.White;
+            this.guna2HtmlLabel11.Location = new System.Drawing.Point(13, 114);
+            this.guna2HtmlLabel11.Name = "guna2HtmlLabel11";
+            this.guna2HtmlLabel11.Size = new System.Drawing.Size(170, 24);
+            this.guna2HtmlLabel11.TabIndex = 40;
+            this.guna2HtmlLabel11.Text = "Unidad alternativa:";
             // 
             // FrmProductos
             // 
@@ -661,7 +641,7 @@
         private Guna.UI2.WinForms.Guna2ComboBox cmbUnidadAlterna;
         private Guna.UI2.WinForms.Guna2ComboBox cmbUnidadBase;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
-        private Guna.UI2.WinForms.Guna2CheckBox chbUnidadAlterna;
-        private Guna.UI2.WinForms.Guna2CheckBox chbUnidadBase;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel9;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel11;
     }
 }

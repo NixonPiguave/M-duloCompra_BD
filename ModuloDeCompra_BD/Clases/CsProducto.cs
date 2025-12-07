@@ -44,7 +44,7 @@ namespace ModuloDeCompra_BD.Clases
                     <ID_IVA>{Iva}</ID_IVA>
                     <ID_Proveedor>{Proveedor}</ID_Proveedor>
                     <Inventariable>{Inventariable}</Inventariable>
-                    <IdUnidad>{IdUnidad}</IdUnidad
+                    <IdUnidad>{IdUnidad}</IdUnidad>
                     <IdUnidadAlternativa>{IdUnidadAlternativa}</IdUnidadAlternativa>
                 </Producto>
             </Productos>";
@@ -67,7 +67,7 @@ namespace ModuloDeCompra_BD.Clases
                         <ID_IVA>{Iva}</ID_IVA>
                         <ID_Proveedor>{Proveedor}</ID_Proveedor>
                         <Inventariable>{Inventariable}</Inventariable>
-                        <IdUnidad>{IdUnidad}</IdUnidad
+                        <IdUnidad>{IdUnidad}</IdUnidad>
                         <IdUnidadAlternativa>{IdUnidadAlternativa}</IdUnidadAlternativa>
                     </Producto>
                 </Productos>";
