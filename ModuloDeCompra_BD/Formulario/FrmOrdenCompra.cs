@@ -26,7 +26,7 @@ namespace ModuloDeCompra_BD.Formulario
         private void FrmOrdenCompra_Load(object sender, EventArgs e)
         {
             btnGenerarDocumento.Visible = false;
-
+            dtpFechaLimite.Value= DateTime.Now;
         }
         private void btnAceptar_Click(object sender, EventArgs e)
         {
@@ -109,7 +109,7 @@ namespace ModuloDeCompra_BD.Formulario
                 txtRequisicionID.Text = frmListado.RequisicionID.ToString();
                 DataTable Tb = new DataTable();
                 Tb = CsComandosSql.RetornaDatos($"SELECT R.Cantidad, R.ID_Producto, P.NomProducto AS 'Producto' \r\n" +
-                    $"FROM [OC-Requi_Details] R JOIN Producto P ON R.ID_Producto = P.ID_Producto \r\nWHERE R.Estado = 'Aprobada' AND R.ID_Requisicion= '{txtRequisicionID.Text}'");
+                    $"FROM [OC-Requi_Details] R JOIN [IN-Producto] P ON R.ID_Producto = P.ID_Producto \r\nWHERE R.Estado = 'Aprobada' AND R.ID_Requisicion= '{txtRequisicionID.Text}'");
                 Tb.Columns.Add("Costo", typeof(decimal));
                 Tb.Columns.Add("Descuento", typeof(decimal));
                

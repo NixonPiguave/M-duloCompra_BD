@@ -52,8 +52,7 @@ namespace ModuloDeCompra_BD.Formulario
 
             nudCantidad.Minimum = 1;
             nudCantidad.Value = 1;
-            nudServicio.Minimum = 1;
-            nudServicio.Value = 1;
+
 
 
             txtProveedor.Text = string.Empty;
@@ -307,16 +306,6 @@ namespace ModuloDeCompra_BD.Formulario
                     txtProducto.Text = string.Empty;
                     txtID.Text = string.Empty;
                     nudCantidad.Value = 1;
-
-                    lbID.Visible = false;
-                    txtID.Visible = false;
-                    lbProduc.Visible = false;
-                    txtProducto.Visible = false;
-                    lbCantidad.Visible = false;
-                    nudCantidad.Visible = false;
-                    btnAgregarP.Visible = false;
-                    pnlProductosSelect.Visible = false; 
-
                 }
                 else
                 {
@@ -328,60 +317,9 @@ namespace ModuloDeCompra_BD.Formulario
                 MessageBox.Show("Rellene los campos por favor");
             }
         }
-
-        private void btnAgregarS_Click_1(object sender, EventArgs e)
+        private void lbProduc_Click(object sender, EventArgs e)
         {
-            if (nudCantidad.Value <= 0)
-            {
-                MessageBox.Show("La cantidad debe ser mayor que cero");
-                return;
-            }
-            if (!string.IsNullOrEmpty(txtIDServi.Text) && !string.IsNullOrEmpty(txtServicio.Text))
-            {
-                bool Verificar = false;
-                foreach (DataGridViewRow fila in dgvProductosAgregados.Rows)
-                {
-                    string servicio = fila.Cells["Producto"].Value?.ToString();
-                    if (txtServicio.Text == servicio)
-                    {
-                        Verificar = true;
-                        break;
-                    }
-                }
 
-                if (!Verificar)
-                {
-                    int cantidad = (int)nudServicio.Value;
-                    decimal costo = 0;
-                    decimal descuento = 0;
-                    string nombreServicio = txtServicio.Text;
-                    int idServicio = Convert.ToInt32(txtIDServi.Text);
-
-                    tabla.Rows.Add(cantidad, costo, descuento, nombreServicio, idServicio, null);
-
-                    dgvProductosAgregados.DataSource = tabla;
-
-                    txtServicio.Text = string.Empty;
-                    nudServicio.Value = 1;
-                    txtIDServi.Text = string.Empty;
-
-                    btnAgregarS.Visible = false;
-                    lbIDserv.Visible = false;
-                    lbCanServ.Visible = false;
-                    lbServi.Visible = false;
-                    txtServicio.Visible = false;
-                    txtIDServi.Visible = false;
-                    nudServicio.Visible = false;
-                }
-                else
-                {
-                    MessageBox.Show("El servicio ya existe en la Orden de Compra");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Rellene todos los campos por favor");
-            }
         }
     }
 }
