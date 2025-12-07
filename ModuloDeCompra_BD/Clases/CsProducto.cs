@@ -108,11 +108,11 @@ namespace ModuloDeCompra_BD.Clases
                         <ID_IVA>{Iva}</ID_IVA>
                         <ID_Proveedor>{Proveedor}</ID_Proveedor>
                         <Inventariable>{Inventariable}</Inventariable>
-                        <IdUnidad>{IdUnidad}</IdUnidad>
-                        <IdUnidadAlternativa>{IdUnidadAlternativa}</IdUnidadAlternativa>
+                        <IdUnidad>20</IdUnidad>
+                        <IdUnidadAlternativa>11</IdUnidadAlternativa>
                     </Producto>
                 </Productos>";
-            string query = $@"exec spModificarProducto '{cadenaXML}'";
+            string query = $@"exec spModificarProductoNoInv '{cadenaXML}'";
             return CsComandosSql.InserDeletUpdate(query);
         }
 
