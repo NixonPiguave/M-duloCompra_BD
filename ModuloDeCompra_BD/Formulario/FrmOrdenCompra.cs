@@ -109,7 +109,7 @@ namespace ModuloDeCompra_BD.Formulario
                 txtRequisicionID.Text = frmListado.RequisicionID.ToString();
                 DataTable Tb = new DataTable();
                 Tb = CsComandosSql.RetornaDatos($"SELECT R.Cantidad, R.ID_Producto, P.NomProducto AS 'Producto' \r\n" +
-                    $"FROM Requi_Details R JOIN Producto P ON R.ID_Producto = P.ID_Producto \r\nWHERE R.Estado = 'Aprobada' AND R.ID_Requisicion= '{txtRequisicionID.Text}'");
+                    $"FROM [OC-Requi_Details] R JOIN Producto P ON R.ID_Producto = P.ID_Producto \r\nWHERE R.Estado = 'Aprobada' AND R.ID_Requisicion= '{txtRequisicionID.Text}'");
                 Tb.Columns.Add("Costo", typeof(decimal));
                 Tb.Columns.Add("Descuento", typeof(decimal));
                
@@ -118,8 +118,8 @@ namespace ModuloDeCompra_BD.Formulario
                     row["Costo"] = 0;
                     row["Descuento"] = 0;
                 }
-                Tb.Columns["Costo"].SetOrdinal(1);
-                Tb.Columns["Descuento"].SetOrdinal(2);
+                Tb.Columns["Costo"].SetOrdinal(3);
+                Tb.Columns["Descuento"].SetOrdinal(4);
 
                 dgvRequisiciones.DataSource = Tb;
                 dgvRequisiciones.Columns["Costo"].DefaultCellStyle.Format = "C2";

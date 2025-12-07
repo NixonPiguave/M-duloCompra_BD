@@ -25,7 +25,7 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void FrmListadoRequisicion_Load(object sender, EventArgs e)
         {
-            dgvListadoRequisicion.DataSource = CsComandosSql.RetornaDatos("select ID_Requisicion, Estado_Requisicion, UsuarioSolicitanteID from Requisicion where Estado_Requisicion = 'Aprobada'");
+            dgvListadoRequisicion.DataSource = CsComandosSql.RetornaDatos("select ID_Requisicion, Estado_Requisicion, UsuarioSolicitanteID from [OC-Requisicion] where Estado_Requisicion = 'Aprobada'");
         }
 
         private void btnSeleccionarCatego_Click(object sender, EventArgs e)

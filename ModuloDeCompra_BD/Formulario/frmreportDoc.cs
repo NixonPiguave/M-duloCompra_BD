@@ -28,14 +28,14 @@ namespace ModuloDeCompra_BD.Formulario
         {
 
             string nombreProveedor = DocProveedor;
-            string sentencia = $"select Correo from Proveedores where Nombre_Proveedor = '{nombreProveedor}'";
+            string sentencia = $"select Correo from [OC-Proveedores] where Nombre_Proveedor = '{nombreProveedor}'";
             DataTable datos = CsComandosSql.RetornaDatos(sentencia);
             if (datos.Rows.Count > 0)
             {
                 txtDestinatario.Text = datos.Rows[0]["Correo"].ToString();
             }
 
-            string sentenciaEmp = $"select Correo from Empresa where ID_Empresa = 1";
+            string sentenciaEmp = $"select Correo from [MC-Empresa] where ID_Empresa = 1";
             DataTable datosEmp = CsComandosSql.RetornaDatos(sentenciaEmp);
             if (datosEmp.Rows.Count > 0)
             {
@@ -44,7 +44,7 @@ namespace ModuloDeCompra_BD.Formulario
 
             if (string.IsNullOrEmpty(IDOrden))
             {
-                var dt = CsComandosSql.RetornaDatos("SELECT TOP 1 ID_Orden FROM Orden_Compra ORDER BY ID_Orden DESC");
+                var dt = CsComandosSql.RetornaDatos("SELECT TOP 1 ID_Orden FROM [OC-Orden_Compra] ORDER BY ID_Orden DESC");
                 IDOrden = dt?.Rows[0]?["ID_Orden"]?.ToString();
 
                 if (string.IsNullOrEmpty(IDOrden))
@@ -110,25 +110,49 @@ namespace ModuloDeCompra_BD.Formulario
 
         private DataTable ObtenerDatosOrden()
         {
-            string query = @"SELECT oc.ID_Orden, oc.Fecha_Orden, oc.Fecha_Limite, DATEDIFF(day, oc.Fecha_Orden, oc.Fecha_Limite) AS DiasPlazo,
-        p.NroDocumento AS rucProvComp, p.Nombre_Proveedor AS nombProvOrdCom, p.Direccion AS dircProvComp, p.Correo AS emailProvComp,
-        p.NroTelefono AS telProvComp, u.Nombre + ' ' + u.Apellido AS nomperSolOrdCom, d.Nombre_Departamento AS AreaSolicitante, 
-        e.Nombre_Empresa, e.RUC, e.Direccion, e.Telefono, e.Correo, e.Logo_Empresa, det.ID_Detail, det.Cantidad AS cantOrdComDet,
-        COALESCE(pr.NomProducto, sv.Nom_Servicio) AS descOrdComDet, CAST(COALESCE(det.Costo, pr.Costo, sv.Costo) AS DECIMAL(10,2)) AS UnitOrdComDet,
-        CAST(det.Cantidad * COALESCE(det.Costo, pr.Costo, sv.Costo) AS DECIMAL(10,2)) AS varOrdComDet, CAST(det.Descuento AS DECIMAL(10,2)) AS Descuento,
-        CASE 
-            WHEN det.ID_Producto IS NOT NULL THEN 'Producto'
-            WHEN det.ID_Servicio IS NOT NULL THEN 'Servicio'
-        END AS TipoItem
-        FROM Orden_Compra oc
-        INNER JOIN Proveedores p ON oc.ID_Proveedor = p.ID_Proveedor
-        INNER JOIN Usuario u ON oc.ID_Usuario = u.ID_Usuario
-        INNER JOIN Departamento d ON u.ID_Depa = d.ID_Depa
-        INNER JOIN Detalle_Orden det ON oc.ID_Orden = det.ID_Orden
-        LEFT JOIN Producto pr ON det.ID_Producto = pr.ID_Producto
-        LEFT JOIN Servicio sv ON det.ID_Servicio = sv.ID_Servicio
-        CROSS JOIN Empresa e
-        WHERE oc.ID_Orden = @IDOrden";
+            string query = @"
+                SELECT 
+                    oc.ID_Orden,
+                    oc.Fecha_Orden,
+                    oc.Fecha_Limite,
+                    DATEDIFF(day, oc.Fecha_Orden, oc.Fecha_Limite) AS DiasPlazo,
+
+                    p.NroDocumento AS rucProvComp,
+                    p.Nombre_Proveedor AS nombProvOrdCom,
+                    p.Direccion AS dircProvComp,
+                    p.Correo AS emailProvComp,
+                    p.NroTelefono AS telProvComp,
+
+                    u.Nombre + ' ' + u.Apellido AS nomperSolOrdCom,
+                    d.Nombre_Departamento AS AreaSolicitante,
+
+                    e.Nombre_Empresa,
+                    e.RUC,
+                    e.Direccion,
+                    e.Telefono,
+                    e.Correo,
+                    e.Logo_Empresa,
+
+                    det.ID_Detail,
+                    det.Cantidad AS cantOrdComDet,
+
+                    pr.NomProducto AS descOrdComDet,
+
+                    CAST(COALESCE(det.Costo, pr.Costo) AS DECIMAL(10,2)) AS UnitOrdComDet,
+                    CAST(det.Cantidad * COALESCE(det.Costo, pr.Costo) AS DECIMAL(10,2)) AS varOrdComDet,
+
+                    CAST(det.Descuento AS DECIMAL(10,2)) AS Descuento,
+
+                    'Producto' AS TipoItem
+
+                FROM [OC-Orden_Compra] oc
+                INNER JOIN [OC-Proveedores] p ON oc.ID_Proveedor = p.ID_Proveedor
+                INNER JOIN [MC-Usuario] u ON oc.ID_Usuario = u.ID_Usuario
+                INNER JOIN [MC-Departamento] d ON u.ID_Depa = d.ID_Depa
+                INNER JOIN [OC-Detalle_Orden] det ON oc.ID_Orden = det.ID_Orden
+                LEFT JOIN [IN-Producto] pr ON det.ID_Producto = pr.ID_Producto
+                CROSS JOIN [MC-Empresa] e
+                WHERE oc.ID_Orden = @IDOrden";
 
             SqlParameter param = new SqlParameter("@IDOrden", SqlDbType.Int);
             param.Value = Convert.ToInt32(IDOrden);
@@ -137,17 +161,33 @@ namespace ModuloDeCompra_BD.Formulario
         }
         private DataTable ObtenerDatosTotales()
         {
-            string query = @"SELECT 
-    CAST(SUM(CASE WHEN det.ID_Servicio IS NOT NULL THEN det.Cantidad * COALESCE(det.Costo, sv.Costo) ELSE 0 END) AS DECIMAL(10,2)) AS subtotalServicios,
-    CAST(SUM(CASE WHEN det.ID_Producto IS NOT NULL THEN det.Cantidad * COALESCE(det.Costo, pr.Costo) ELSE 0 END) AS DECIMAL(10,2)) AS subtotalProductos,
-    CAST(SUM(det.Cantidad * COALESCE(det.Costo, pr.Costo, sv.Costo)) AS DECIMAL(10,2)) AS subtOrdCom,
+            string query = @"
+SELECT 
+    -- Subtotal solo productos
+    CAST(SUM(det.Cantidad * COALESCE(det.Costo, pr.Costo)) AS DECIMAL(10,2)) AS subtotalProductos,
+
+    -- Como ya no existen servicios, subtotalServicios será siempre 0
+    CAST(0 AS DECIMAL(10,2)) AS subtotalServicios,
+
+    -- Subtotal general antes de descuentos
+    CAST(SUM(det.Cantidad * COALESCE(det.Costo, pr.Costo)) AS DECIMAL(10,2)) AS subtOrdCom,
+
+    -- Total de descuentos
     CAST(ISNULL(SUM(det.Descuento), 0) AS DECIMAL(10,2)) AS valdescOrdCom,
-    CAST(SUM(CASE WHEN det.ID_Producto IS NOT NULL THEN det.Cantidad * COALESCE(det.Costo, pr.Costo) * 0.15 ELSE 0 END) AS DECIMAL(10,2)) AS valIVAOrdCom,
-    CAST(SUM(CASE WHEN det.ID_Producto IS NOT NULL THEN det.Cantidad * COALESCE(det.Costo, pr.Costo) * 1.15 ELSE det.Cantidad * COALESCE(det.Costo, sv.Costo) END) - ISNULL(SUM(det.Descuento), 0) AS DECIMAL(10,2)) AS totalOrdCom
-FROM Detalle_Orden det
-LEFT JOIN Producto pr ON det.ID_Producto = pr.ID_Producto
-LEFT JOIN Servicio sv ON det.ID_Servicio = sv.ID_Servicio
+
+    -- IVA del 15% sobre productos
+    CAST(SUM(det.Cantidad * COALESCE(det.Costo, pr.Costo) * 0.15) AS DECIMAL(10,2)) AS valIVAOrdCom,
+
+    -- Total final: subtotal + IVA - descuentos
+    CAST(
+        SUM(det.Cantidad * COALESCE(det.Costo, pr.Costo) * 1.15) 
+        - ISNULL(SUM(det.Descuento), 0)
+    AS DECIMAL(10,2)) AS totalOrdCom
+
+FROM [OC-Detalle_Orden] det
+LEFT JOIN [IN-Producto] pr ON det.ID_Producto = pr.ID_Producto
 WHERE det.ID_Orden = @IDOrden";
+
 
             SqlParameter param = new SqlParameter("@IDOrden", SqlDbType.Int);
             param.Value = Convert.ToInt32(IDOrden);

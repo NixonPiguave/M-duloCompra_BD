@@ -165,7 +165,6 @@ namespace ModuloDeCompra_BD.Formulario
             int celda = dgvDetalleRequiPendiente.CurrentCell.RowIndex;
             txtCantidad.Text = dgvDetalleRequiPendiente[2, celda].Value.ToString();
             txtIdProducto.Text = dgvDetalleRequiPendiente[5, celda].Value.ToString();
-            txtIdServicio.Text = dgvDetalleRequiPendiente[4, celda].Value.ToString();
         }
 
         private void btnRechazarProducto_Click(object sender, EventArgs e)
@@ -195,7 +194,6 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void Limpiar()
         {
-            txtIdServicio.Text = " ";
             txtCantidad.Text = " ";
             txtIdProducto.Text = " ";
         }
