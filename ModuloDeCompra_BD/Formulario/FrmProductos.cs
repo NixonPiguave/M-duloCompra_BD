@@ -36,6 +36,18 @@ namespace ModuloDeCompra_BD.Formulario
             {
                 cmbIVA.Items.Add(tb.Rows[i]["Valor_IVA"].ToString());
             }
+            //Unidad Base
+            DataTable tbUB = CsComandosSql.RetornaDatos("select * from [IN-UnidadesMedida]");
+            for (int i = 0; i < tbUB.Rows.Count; i++)
+            {
+                cmbUnidadBase.Items.Add(tbUB.Rows[i]["Nombre"].ToString());
+            }
+            //Unidad Alterna
+            DataTable tbUA = CsComandosSql.RetornaDatos("select * from [IN-UnidadesAlternativas]");
+            for (int i = 0; i < tbUA.Rows.Count; i++)
+            {
+                cmbUnidadAlterna.Items.Add(tbUA.Rows[i]["Nombre"].ToString());
+            }
         }
         private void guna2Button1_Click(object sender, EventArgs e)
         {
@@ -99,6 +111,15 @@ namespace ModuloDeCompra_BD.Formulario
                     if (CHBInventariable.Checked == true) 
                     {
                         producto.Inventariable1 = "Si";
+                        if(chbUnidadBase.Checked==true)
+                        {
+                            producto.IdUnidad1 = cmbUnidadBase.SelectedIndex + 1;
+                        }
+                        else if(chbUnidadAlterna.Checked==true)
+                        {
+                            producto.IdUnidadAlternativa1 = cmbUnidadAlterna.SelectedIndex + 1;
+                        }
+
                     }else
                     {
                         producto.Inventariable1 = "No";
@@ -122,7 +143,10 @@ namespace ModuloDeCompra_BD.Formulario
                             txtListadoCategory.Text = string.Empty;
                             txtListadoProvee.Text = string.Empty;
                             txtListadoUbiBodega.Text = string.Empty; 
-                        }
+                            chbUnidadAlterna.Checked = false;
+                            chbUnidadBase.Checked = false;
+                            CHBInventariable.Checked = false;
+                    }
                         else
                         {
                             MessageBox.Show("Error al agregar producto, verifique que los datos sean correctos");
@@ -258,10 +282,18 @@ namespace ModuloDeCompra_BD.Formulario
                     producto.Proveedor1 = Id2;
                     string ubicacionBodega = txtListadoUbiBodega.Text.Trim();
                     DataTable ubicacionBodegaData = CsComandosSql.RetornaDatos($"SELECT ID_Bodega FROM [IN-Bodega] WHERE Ubicacion = '{ubicacionBodega}'");
-
                     if (CHBInventariable.Checked == true)
                     {
                         producto.Inventariable1 = "Si";
+                        if (chbUnidadBase.Checked == true)
+                        {
+                            producto.IdUnidad1 = cmbUnidadBase.SelectedIndex + 1;
+                        }
+                        else if (chbUnidadAlterna.Checked == true)
+                        {
+                            producto.IdUnidadAlternativa1 = cmbUnidadAlterna.SelectedIndex + 1;
+                        }
+
                     }
                     else
                     {
@@ -282,6 +314,9 @@ namespace ModuloDeCompra_BD.Formulario
                             cmbEstadoProducto.SelectedIndex = -1;
                             txtListadoCategory.Text = string.Empty;
                             txtListadoProvee.Text = string.Empty;
+                            chbUnidadAlterna.Checked = false;
+                            chbUnidadBase.Checked = false;
+                            CHBInventariable.Checked = false;
                         }
                         else
                         {
@@ -302,6 +337,46 @@ namespace ModuloDeCompra_BD.Formulario
             else
             {
                 MessageBox.Show("Rellene todos los campos");
+            }
+        }
+
+        private void CHBInventariable_CheckedChanged(object sender, EventArgs e)
+        {
+            if(CHBInventariable.Checked==true)
+            {
+                pnlUnidades.Visible = true;
+            }
+            else
+            {
+                pnlUnidades.Visible = false;
+            }
+        }
+
+        private void chbUnidadBase_CheckedChanged(object sender, EventArgs e)
+        {
+            if(chbUnidadBase.Checked==true)
+            {
+                cmbUnidadBase.Enabled = true;
+                chbUnidadAlterna.Checked = false;
+                cmbUnidadAlterna.SelectedIndex = -1;
+            }
+            else
+            {
+                cmbUnidadBase.Enabled = false;
+            }
+        }
+
+        private void chbUnidadAlterna_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chbUnidadAlterna.Checked == true)
+            {
+                cmbUnidadAlterna.Enabled = true;
+                chbUnidadBase.Checked = false;
+                cmbUnidadBase.SelectedIndex = -1;
+            }
+            else
+            {
+                cmbUnidadAlterna.Enabled = false;
             }
         }
     }

@@ -18,6 +18,9 @@ namespace ModuloDeCompra_BD.Clases
         int Categoria;
         int Proveedor;
         string Inventariable;
+        int IdUnidad;
+        int IdUnidadAlternativa;
+
 
         public string Nom_Producto1 { get => Nom_Producto; set => Nom_Producto = value; }
         public decimal Precio_Unit1 { get => Precio_Unit; set => Precio_Unit = value; }
@@ -26,7 +29,8 @@ namespace ModuloDeCompra_BD.Clases
         public int Categoria1 { get => Categoria; set => Categoria = value; }
         public int Proveedor1 { get => Proveedor; set => Proveedor = value; }
         public string Inventariable1 { get => Inventariable; set => Inventariable = value; }
-
+        public int IdUnidad1 { get => IdUnidad; set => IdUnidad = value; }
+        public int IdUnidadAlternativa1 { get => IdUnidadAlternativa; set => IdUnidadAlternativa = value; }
         public bool AñadirProducto(int idBodega)
         {
             string precioUFormatoSQL = Precio_Unit.ToString(CultureInfo.InvariantCulture);
@@ -40,6 +44,8 @@ namespace ModuloDeCompra_BD.Clases
                     <ID_IVA>{Iva}</ID_IVA>
                     <ID_Proveedor>{Proveedor}</ID_Proveedor>
                     <Inventariable>{Inventariable}</Inventariable>
+                    <IdUnidad>{IdUnidad}</IdUnidad
+                    <IdUnidadAlternativa>{IdUnidadAlternativa}</IdUnidadAlternativa>
                 </Producto>
             </Productos>";
 
@@ -61,6 +67,8 @@ namespace ModuloDeCompra_BD.Clases
                         <ID_IVA>{Iva}</ID_IVA>
                         <ID_Proveedor>{Proveedor}</ID_Proveedor>
                         <Inventariable>{Inventariable}</Inventariable>
+                        <IdUnidad>{IdUnidad}</IdUnidad
+                        <IdUnidadAlternativa>{IdUnidadAlternativa}</IdUnidadAlternativa>
                     </Producto>
                 </Productos>";
             string query = $@"exec spModificarProducto '{cadenaXML}', {idBodega}";

@@ -36,7 +36,7 @@ namespace ModuloDeCompra_BD.Clases
         }
         public DataTable ListaBodega(string m)
         {
-            string query = $"Select ID_Bodega, Ubicacion from Bodega where Ubicacion like '%{m}%'";
+            string query = $"Select ID_Bodega, Ubicacion from [IN-Bodega] where Ubicacion like '%{m}%'";
             return CsComandosSql.RetornaDatos(query);
         }
 

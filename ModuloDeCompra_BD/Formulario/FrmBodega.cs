@@ -23,7 +23,7 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void FrmBodega_Load(object sender, EventArgs e)
         {
-            dgvBodega.DataSource = CsComandosSql.RetornaDatos($"select * from Bodega");
+            dgvBodega.DataSource = CsComandosSql.RetornaDatos($"select * from [IN-Bodega]");
             dgvBodega.DefaultCellStyle.ForeColor = Color.Black;
         }
 
@@ -46,7 +46,7 @@ namespace ModuloDeCompra_BD.Formulario
             if (resultado)
             {
                 MessageBox.Show("Bodega creada exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                dgvBodega.DataSource = CsComandosSql.RetornaDatos("SELECT * FROM Bodega");
+                dgvBodega.DataSource = CsComandosSql.RetornaDatos("SELECT * FROM [IN-Bodega]");
                 txtDireccion.Text = string.Empty;
             }
             else
@@ -59,7 +59,7 @@ namespace ModuloDeCompra_BD.Formulario
         private void txtID_Bodega_KeyUp(object sender, KeyEventArgs e)
         {
 
-            dgvBodega.DataSource = CsComandosSql.RetornaDatos($"select * from Bodega where  ID_BODEGA like '%{txtID_Bodega.Text}%'");
+            dgvBodega.DataSource = CsComandosSql.RetornaDatos($"select * from [IN-Bodega] where  ID_Bodega like '%{txtID_Bodega.Text}%'");
 
         }
 
@@ -93,7 +93,7 @@ namespace ModuloDeCompra_BD.Formulario
             if (resultado)
             {
                 MessageBox.Show("Bodega modificada exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                dgvBodega.DataSource = CsComandosSql.RetornaDatos("SELECT * FROM Bodega");
+                dgvBodega.DataSource = CsComandosSql.RetornaDatos("SELECT * FROM [IN-Bodega]");
 
                 txtStockMin.Text = string.Empty;
                 txtStockMax.Text = string.Empty;

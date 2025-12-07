@@ -82,13 +82,13 @@ namespace ModuloDeCompra_BD.Clases
         }
         public DataTable ListaProveedor(string m)
         {
-            string query = $"select * from Proveedores where Nombre_Proveedor like '%{m}%' or  ID_Proveedor like '%{m}%'";
+            string query = $"select * from [OC-Proveedores] where Nombre_Proveedor like '%{m}%' or  ID_Proveedor like '%{m}%'";
             return CsComandosSql.RetornaDatos(query);
         }
 
         public DataTable ListaProvee(string d)
         {
-            string query = $"Select ID_Proveedor, Nombre_Proveedor from Proveedores where Nombre_Proveedor like '%{d}%' ";
+            string query = $"Select ID_Proveedor, Nombre_Proveedor from [OC-Proveedores] where Nombre_Proveedor like '%{d}%' ";
             return CsComandosSql.RetornaDatos(query);
         }
     }
