@@ -74,6 +74,7 @@
             // 
             // dgvListRequiPendientes
             // 
+            this.dgvListRequiPendientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.dgvListRequiPendientes.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvListRequiPendientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListRequiPendientes.GridColor = System.Drawing.Color.Silver;

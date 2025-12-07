@@ -164,7 +164,7 @@ namespace ModuloDeCompra_BD.Formulario
         {
             int celda = dgvDetalleRequiPendiente.CurrentCell.RowIndex;
             txtCantidad.Text = dgvDetalleRequiPendiente[2, celda].Value.ToString();
-            txtIdProducto.Text = dgvDetalleRequiPendiente[5, celda].Value.ToString();
+            txtIdProducto.Text = dgvDetalleRequiPendiente[4, celda].Value.ToString();
         }
 
         private void btnRechazarProducto_Click(object sender, EventArgs e)
@@ -181,8 +181,8 @@ namespace ModuloDeCompra_BD.Formulario
                 string query = $@"exec spRechazarProductoRequisicion '{cadenaXML}'";
                 CsComandosSql.InserDeletUpdate(query);
                 int idRequi = int.Parse(txtIDRequisicionPendiente.Text);
-                dgvDetalleRequiPendiente.DataSource = CsComandosSql.RetornaDatos($"Select * from [OC-Requi_Details] where ID_Requisicion= {idRequi} AND Estado= 'Pendiente'");
                 DgvRequisicionPendiente.DataSource = CsComandosSql.RetornaDatos($"Select * from [OC-Requisicion] where ID_Requisicion = {idRequi}");
+                dgvDetalleRequiPendiente.DataSource = CsComandosSql.RetornaDatos($"Select * from [OC-Requi_Details] where ID_Requisicion= {idRequi} AND Estado= 'Pendiente'");
                 Limpiar();
 
             }
