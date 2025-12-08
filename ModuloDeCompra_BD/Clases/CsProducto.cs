@@ -31,6 +31,7 @@ namespace ModuloDeCompra_BD.Clases
         public string Inventariable1 { get => Inventariable; set => Inventariable = value; }
         public int IdUnidad1 { get => IdUnidad; set => IdUnidad = value; }
         public int IdUnidadAlternativa1 { get => IdUnidadAlternativa; set => IdUnidadAlternativa = value; }
+        //este metodo es para añadir un producto inventariable
         public bool AñadirProducto(int idBodega)
         {
             string precioUFormatoSQL = Precio_Unit.ToString(CultureInfo.InvariantCulture);
@@ -53,6 +54,8 @@ namespace ModuloDeCompra_BD.Clases
             string query = $@"exec spAgregarProducto '{cadenaXML}', {idBodega}";
             return CsComandosSql.InserDeletUpdate(query);
         }
+
+        //este metodo es para añadir un producto no inventariable
         public bool AñadirProducto()
         {
             string precioUFormatoSQL = Precio_Unit.ToString(CultureInfo.InvariantCulture);
@@ -74,6 +77,8 @@ namespace ModuloDeCompra_BD.Clases
             string query = $@"exec spAgregarProductoNoInv '{cadenaXML}'";
             return CsComandosSql.InserDeletUpdate(query);
         }
+
+        //lo mismo en modificar
         public bool ModificarProducto(int id, int idBodega)
         {
             string precioUFormatoSQL = Precio_Unit.ToString(CultureInfo.InvariantCulture);

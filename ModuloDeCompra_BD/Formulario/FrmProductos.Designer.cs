@@ -53,15 +53,15 @@
             this.btnEliminar = new Guna.UI2.WinForms.Guna2Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.CHBInventariable = new Guna.UI2.WinForms.Guna2CheckBox();
-            this.guna2HtmlLabel10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.label2 = new System.Windows.Forms.Label();
             this.pnlUnidades = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.cmbUnidadAlterna = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cmbUnidadBase = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.CHBInventariable = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.guna2HtmlLabel10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -247,11 +247,11 @@
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel2.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(52, 211);
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(38, 211);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(62, 24);
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(67, 24);
             this.guna2HtmlLabel2.TabIndex = 21;
-            this.guna2HtmlLabel2.Text = "Estado";
+            this.guna2HtmlLabel2.Text = "Estado:";
             // 
             // label1
             // 
@@ -385,11 +385,11 @@
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel3.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel3.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(55, 75);
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(40, 75);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(57, 24);
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(65, 24);
             this.guna2HtmlLabel3.TabIndex = 1;
-            this.guna2HtmlLabel3.Text = "Costo:";
+            this.guna2HtmlLabel3.Text = "Precio:";
             // 
             // guna2HtmlLabel8
             // 
@@ -476,35 +476,16 @@
             this.panel3.Size = new System.Drawing.Size(1158, 276);
             this.panel3.TabIndex = 27;
             // 
-            // CHBInventariable
+            // label2
             // 
-            this.CHBInventariable.AutoSize = true;
-            this.CHBInventariable.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.CHBInventariable.CheckedState.BorderRadius = 0;
-            this.CHBInventariable.CheckedState.BorderThickness = 0;
-            this.CHBInventariable.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.CHBInventariable.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold);
-            this.CHBInventariable.ForeColor = System.Drawing.Color.White;
-            this.CHBInventariable.Location = new System.Drawing.Point(389, 166);
-            this.CHBInventariable.Name = "CHBInventariable";
-            this.CHBInventariable.Size = new System.Drawing.Size(145, 26);
-            this.CHBInventariable.TabIndex = 27;
-            this.CHBInventariable.Text = "Inventariable";
-            this.CHBInventariable.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.CHBInventariable.UncheckedState.BorderRadius = 0;
-            this.CHBInventariable.UncheckedState.BorderThickness = 0;
-            this.CHBInventariable.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.CHBInventariable.CheckedChanged += new System.EventHandler(this.CHBInventariable_CheckedChanged);
-            // 
-            // guna2HtmlLabel10
-            // 
-            this.guna2HtmlLabel10.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel10.Font = new System.Drawing.Font("Cambria", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel10.Location = new System.Drawing.Point(598, 12);
-            this.guna2HtmlLabel10.Name = "guna2HtmlLabel10";
-            this.guna2HtmlLabel10.Size = new System.Drawing.Size(318, 34);
-            this.guna2HtmlLabel10.TabIndex = 28;
-            this.guna2HtmlLabel10.Text = "PRODUCTOS Y SERVICIOS";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(27, 35);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(85, 22);
+            this.label2.TabIndex = 29;
+            this.label2.Text = "servicio:";
             // 
             // pnlUnidades
             // 
@@ -518,6 +499,28 @@
             this.pnlUnidades.Size = new System.Drawing.Size(410, 162);
             this.pnlUnidades.TabIndex = 28;
             this.pnlUnidades.Visible = false;
+            // 
+            // guna2HtmlLabel11
+            // 
+            this.guna2HtmlLabel11.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel11.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel11.ForeColor = System.Drawing.Color.White;
+            this.guna2HtmlLabel11.Location = new System.Drawing.Point(13, 114);
+            this.guna2HtmlLabel11.Name = "guna2HtmlLabel11";
+            this.guna2HtmlLabel11.Size = new System.Drawing.Size(170, 24);
+            this.guna2HtmlLabel11.TabIndex = 40;
+            this.guna2HtmlLabel11.Text = "Unidad alternativa:";
+            // 
+            // guna2HtmlLabel9
+            // 
+            this.guna2HtmlLabel9.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel9.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel9.ForeColor = System.Drawing.Color.White;
+            this.guna2HtmlLabel9.Location = new System.Drawing.Point(69, 66);
+            this.guna2HtmlLabel9.Name = "guna2HtmlLabel9";
+            this.guna2HtmlLabel9.Size = new System.Drawing.Size(114, 24);
+            this.guna2HtmlLabel9.TabIndex = 39;
+            this.guna2HtmlLabel9.Text = "Unidad base:";
             // 
             // cmbUnidadAlterna
             // 
@@ -566,38 +569,35 @@
             this.guna2HtmlLabel1.TabIndex = 33;
             this.guna2HtmlLabel1.Text = "Unidades de medida";
             // 
-            // guna2HtmlLabel9
+            // CHBInventariable
             // 
-            this.guna2HtmlLabel9.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel9.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel9.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel9.Location = new System.Drawing.Point(69, 66);
-            this.guna2HtmlLabel9.Name = "guna2HtmlLabel9";
-            this.guna2HtmlLabel9.Size = new System.Drawing.Size(114, 24);
-            this.guna2HtmlLabel9.TabIndex = 39;
-            this.guna2HtmlLabel9.Text = "Unidad base:";
+            this.CHBInventariable.AutoSize = true;
+            this.CHBInventariable.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.CHBInventariable.CheckedState.BorderRadius = 0;
+            this.CHBInventariable.CheckedState.BorderThickness = 0;
+            this.CHBInventariable.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.CHBInventariable.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold);
+            this.CHBInventariable.ForeColor = System.Drawing.Color.White;
+            this.CHBInventariable.Location = new System.Drawing.Point(389, 166);
+            this.CHBInventariable.Name = "CHBInventariable";
+            this.CHBInventariable.Size = new System.Drawing.Size(145, 26);
+            this.CHBInventariable.TabIndex = 27;
+            this.CHBInventariable.Text = "Inventariable";
+            this.CHBInventariable.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.CHBInventariable.UncheckedState.BorderRadius = 0;
+            this.CHBInventariable.UncheckedState.BorderThickness = 0;
+            this.CHBInventariable.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.CHBInventariable.CheckedChanged += new System.EventHandler(this.CHBInventariable_CheckedChanged);
             // 
-            // guna2HtmlLabel11
+            // guna2HtmlLabel10
             // 
-            this.guna2HtmlLabel11.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel11.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel11.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel11.Location = new System.Drawing.Point(13, 114);
-            this.guna2HtmlLabel11.Name = "guna2HtmlLabel11";
-            this.guna2HtmlLabel11.Size = new System.Drawing.Size(170, 24);
-            this.guna2HtmlLabel11.TabIndex = 40;
-            this.guna2HtmlLabel11.Text = "Unidad alternativa:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(27, 35);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 22);
-            this.label2.TabIndex = 29;
-            this.label2.Text = "servicio:";
+            this.guna2HtmlLabel10.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel10.Font = new System.Drawing.Font("Cambria", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel10.Location = new System.Drawing.Point(598, 12);
+            this.guna2HtmlLabel10.Name = "guna2HtmlLabel10";
+            this.guna2HtmlLabel10.Size = new System.Drawing.Size(318, 34);
+            this.guna2HtmlLabel10.TabIndex = 28;
+            this.guna2HtmlLabel10.Text = "PRODUCTOS Y SERVICIOS";
             // 
             // FrmProductos
             // 
