@@ -47,7 +47,7 @@ namespace ModuloDeCompra_BD.Clases
         }
         public DataTable ListaCategoria(string m)
         {
-            string query = $"Select * from Categoria where Categoria like '%{m}%'";
+            string query = $"Select * from [IN-Categoria] where Categoria like '%{m}%'";
             return CsComandosSql.RetornaDatos(query);
         }
     }

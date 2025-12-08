@@ -78,7 +78,7 @@ namespace ModuloDeCompra_BD.Formulario
             }
 
             bool resultado;
-            string queryVerificar = $"SELECT ID_Empresa FROM Empresa WHERE ID_Empresa = {empresa.ID_Empresa1}";
+            string queryVerificar = $"SELECT ID_Empresa FROM [MC-Empresa] WHERE ID_Empresa = {empresa.ID_Empresa1}";
             bool existe = CsComandosSql.verificar(queryVerificar);
 
             if (existe)
@@ -103,7 +103,7 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void FrmEditarEmpresa_Load(object sender, EventArgs e)
         {
-            string sentencia = "SELECT * FROM Empresa WHERE ID_Empresa = 1";
+            string sentencia = "SELECT * FROM [MC-Empresa] WHERE ID_Empresa = 1";
             dgvEmpresa.DataSource = CsComandosSql.RetornaDatos(sentencia);
 
             empresa = new CsEmpresa();

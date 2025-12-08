@@ -33,7 +33,7 @@ namespace ModuloDeCompra_BD.Formulario
         {
             CsUsuario user = new CsUsuario();
             dgvUser.DataSource = user.ListadoUser();
-            DataTable dt = CsComandosSql.RetornaDatos("select * from Roles");
+            DataTable dt = CsComandosSql.RetornaDatos("select * from [MC-Roles]");
             for(int i=0; i< dt.Rows.Count; i++)
             {
                 cbRol.Items.Add(dt.Rows[i]["Rol"].ToString());
@@ -44,7 +44,7 @@ namespace ModuloDeCompra_BD.Formulario
         {
             try
             {
-                if (!(CsComandosSql.verificar($"Select * from Usuario where Cedula = {txtcedula.Text} or Usuario='{txtUsuario.Text}'")))
+                if (!(CsComandosSql.verificar($"Select * from [MC-Usuario] where Cedula = {txtcedula.Text} or Usuario='{txtUsuario.Text}'")))
                 {
                     CsEncriptarMDS encrypt = new CsEncriptarMDS();
                     string contraEncrypt = encrypt.Encriptar(txtContra.Text, txtUsuario.Text);
@@ -56,7 +56,7 @@ namespace ModuloDeCompra_BD.Formulario
                     user.Contraseña = contraEncrypt;
                     user.Contraseña2 = contraEncrypt2;
                     user.Usuario = txtUsuario.Text;
-                    DataTable dt = CsComandosSql.RetornaDatos($"select * from Roles where Rol='{cbRol.SelectedItem.ToString()}'");
+                    DataTable dt = CsComandosSql.RetornaDatos($"select * from [MC-Roles] where Rol='{cbRol.SelectedItem.ToString()}'");
                     user.Rol = Convert.ToInt32(dt.Rows[0]["ID_Rol"].ToString());
                     user.Departamento = Id;
                     user.Rolname = cbRol.SelectedItem.ToString();
@@ -88,7 +88,7 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void txtBuscarCed_KeyUp(object sender, KeyEventArgs e)
         {
-            dgvUser.DataSource = CsComandosSql.RetornaDatos($"select U.ID_Usuario, U.Nombre, U.Apellido, U.Cedula, U.Usuario, U.Contraseña,R.ID_Rol, R.Rol, D.ID_Depa, D.Nombre_Departamento from Departamento D inner join Usuario U on D.ID_Depa= U.ID_Depa inner join Roles R on U.ID_Rol= R.ID_Rol WHERE U.Cedula like '{txtBuscarCed.Text}%'");
+            dgvUser.DataSource = CsComandosSql.RetornaDatos($"select U.ID_Usuario, U.Nombre, U.Apellido, U.Cedula, U.Usuario, U.Contraseña,R.ID_Rol, R.Rol, D.ID_Depa, D.Nombre_Departamento from [MC-Departamento] D inner join [MC-Usuario] U on D.ID_Depa= U.ID_Depa inner join [MC-Roles] R on U.ID_Rol= R.ID_Rol WHERE U.Cedula like '{txtBuscarCed.Text}%'");
         }
 
         private void label8_Click(object sender, EventArgs e)

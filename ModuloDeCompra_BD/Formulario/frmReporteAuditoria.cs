@@ -25,7 +25,7 @@ namespace ModuloDeCompra_BD.Formulario
             dtpDesde.Value = DateTime.Today;
             dtpHasta.Value = DateTime.Today;
 
-            DataTable dt = CsComandosSql.RetornaDatos("select * from Usuario");
+            DataTable dt = CsComandosSql.RetornaDatos("select * from [MC-Usuario]");
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 cbUsuarios.Items.Add(dt.Rows[i]["Usuario"].ToString());
@@ -55,22 +55,22 @@ namespace ModuloDeCompra_BD.Formulario
 
                 if (chbFecha.Checked)
                 {
-                    sentencia = $"Select * from Auditoria where Usuario = '{cbUsuarios.SelectedItem}' and Fecha between '{fechaDesde:yyyy-MM-dd HH:mm:ss}' and '{fechaHasta:yyyy-MM-dd HH:mm:ss}'";
+                    sentencia = $"Select * from [MC-Auditoria] where Usuario = '{cbUsuarios.SelectedItem}' and Fecha between '{fechaDesde:yyyy-MM-dd HH:mm:ss}' and '{fechaHasta:yyyy-MM-dd HH:mm:ss}'";
                 }
                 else
                 {
-                    sentencia = $"Select * from Auditoria where Usuario = '{cbUsuarios.SelectedItem}'";
+                    sentencia = $"Select * from [MC-Auditoria] where Usuario = '{cbUsuarios.SelectedItem}'";
                 }
             }
             else if (chbGeneral.Checked)
             {
                 if (chbFecha.Checked)
                 {
-                    sentencia = $"Select * from Auditoria where Fecha between '{fechaDesde:yyyy-MM-dd HH:mm:ss}' and '{fechaHasta:yyyy-MM-dd HH:mm:ss}'";
+                    sentencia = $"Select * from [MC-Auditoria] where Fecha between '{fechaDesde:yyyy-MM-dd HH:mm:ss}' and '{fechaHasta:yyyy-MM-dd HH:mm:ss}'";
                 }
                 else
                 {
-                    sentencia = "Select * from Auditoria";
+                    sentencia = "Select * from [MC-Auditoria]";
                 }
             }
             else

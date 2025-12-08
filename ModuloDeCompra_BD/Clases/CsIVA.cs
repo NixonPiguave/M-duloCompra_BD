@@ -55,7 +55,7 @@ namespace ModuloDeCompra_BD.Clases
         }
         public DataTable ListaIVA(string m)
         {
-            string query = $"Select * from IVA where Valor_IVA like '%{m}%'";
+            string query = $"Select * from [CG-IVA] where Valor_IVA like '%{m}%'";
             return CsComandosSql.RetornaDatos(query);
         }
     }

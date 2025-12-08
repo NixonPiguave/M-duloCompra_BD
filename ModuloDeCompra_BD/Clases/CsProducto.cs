@@ -94,7 +94,7 @@ namespace ModuloDeCompra_BD.Clases
             string query = $@"exec spModificarProducto '{cadenaXML}', {idBodega}";
             return CsComandosSql.InserDeletUpdate(query);
         }
-        //FALTA MODIFICAR PRODUCTO SIN BODEGA
+
         public bool ModificarProducto(int id)
         {
             string precioUFormatoSQL = Precio_Unit.ToString(CultureInfo.InvariantCulture);

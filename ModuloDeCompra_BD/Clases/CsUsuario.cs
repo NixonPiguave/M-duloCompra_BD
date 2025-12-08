@@ -36,7 +36,7 @@ namespace ModuloDeCompra_BD.Clases
 
         public bool AñadirUser()
         {
-            string query = $"insert into Usuario (Nombre, Apellido, Cedula, Contraseña, ID_Depa, ID_Rol, Usuario, ClaveDB) values ('{nombre}', '{apellido}', '{cedula}', '{contraseña}',{departamento} ,{rol} , '{usuario}', '{contraseña2}')";
+            string query = $"insert into [MC-Usuario] (Nombre, Apellido, Cedula, Contraseña, ID_Depa, ID_Rol, Usuario, ClaveDB) values ('{nombre}', '{apellido}', '{cedula}', '{contraseña}',{departamento} ,{rol} , '{usuario}', '{contraseña2}')";
             CsComandosSql.InserDeletUpdate(query);
 
             string query2 = $"CREATE LOGIN [{usuario}] WITH PASSWORD = '{contraseña2}';" +
@@ -50,19 +50,19 @@ namespace ModuloDeCompra_BD.Clases
         }
         public bool ModificarUser()
         {
-            string query = $"update Usuario set Nombre='{nombre}', Apellido='{apellido}', Cedula='{cedula}', Usuario='{usuario}', Contraseña='{contraseña}' where ID_Usuario={Id}";
+            string query = $"update [MC-Usuario] set Nombre='{nombre}', Apellido='{apellido}', Cedula='{cedula}', Usuario='{usuario}', Contraseña='{contraseña}' where ID_Usuario={Id}";
             return CsComandosSql.InserDeletUpdate(query);
         }
         public bool EliminarUser()
         {
-            string query = $"delete Usuario where ID_Usuario='{Id}'";
+            string query = $"delete [MC-Usuario] where ID_Usuario='{Id}'";
             return CsComandosSql.InserDeletUpdate(query);
         }
   
         public DataTable ListadoUser()
         {
             string query = "select U.ID_Usuario, U.Nombre, U.Apellido, U.Cedula, U.Usuario, U.Contraseña,R.ID_Rol, R.Rol, D.ID_Depa," +
-                " D.Nombre_Departamento from Departamento D inner join Usuario U on D.ID_Depa= U.ID_Depa \r\ninner join Roles R on U.ID_Rol= R.ID_Rol";
+                " D.Nombre_Departamento from [MC-Departamento] D inner join [MC-Usuario] U on D.ID_Depa= U.ID_Depa \r\ninner join [MC-Roles] R on U.ID_Rol= R.ID_Rol";
             return CsComandosSql.RetornaDatos(query);
         }
     }

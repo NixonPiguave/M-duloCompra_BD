@@ -46,13 +46,13 @@ namespace ModuloDeCompra_BD.Formulario
                     abri.Id = idq;
                     abri.Agregar = ag;
                     abri.ShowDialog();
-                    if (!CsComandosSql.verificar($"Select * from Roles where Rol = '{txtRol.Text}'"))
+                    if (!CsComandosSql.verificar($"Select * from [MC-Roles] where Rol = '{txtRol.Text}'"))
                     {
                        int tam = Funcion.Length;
                         
                         csRol.Rol = txtRol.Text;
                         csRol.AñadirRol();
-                        dgvRol.DataSource = CsComandosSql.RetornaDatos($"select * from Roles");
+                        dgvRol.DataSource = CsComandosSql.RetornaDatos($"select * from [MC-Roles]");
                         MessageBox.Show("Se ha agregado el Roles");
                         int rol = Convert.ToInt32(ObtenerIDDelRol(txtRol.Text));
                         for (int i = 0; i < tam; i++)
@@ -81,7 +81,7 @@ namespace ModuloDeCompra_BD.Formulario
         }
         public int ObtenerIDDelRol(string nombreRol)
         {
-            string query = $"SELECT TOP 1 ID_Rol FROM Roles WHERE Rol = '{nombreRol}' ORDER BY ID_Rol DESC";
+            string query = $"SELECT TOP 1 ID_Rol FROM [MC-Roles] WHERE Rol = '{nombreRol}' ORDER BY ID_Rol DESC";
             return Convert.ToInt32(CsComandosSql.obtenerID(query));
         }
         private void btnfuncionalidad_Click(object sender, EventArgs e)
@@ -92,7 +92,7 @@ namespace ModuloDeCompra_BD.Formulario
         }
         private void FrmRol_Load(object sender, EventArgs e)
         {
-            dgvRol.DataSource = CsComandosSql.RetornaDatos("Select * from Roles");
+            dgvRol.DataSource = CsComandosSql.RetornaDatos("Select * from [MC-Roles]");
         }
         private void dgvCategoria_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -117,7 +117,7 @@ namespace ModuloDeCompra_BD.Formulario
                 int posicion = dgvRol.CurrentCell.RowIndex;
                 int ID = Convert.ToInt32(dgvRol[0, posicion].Value);
                 FrmFunciones abri = new FrmFunciones(this);
-                abri.Tam = CsComandosSql.Tam($"select count(*) from Roles_Funciones where ID_Rol = {ID}");
+                abri.Tam = CsComandosSql.Tam($"select count(*) from [MC-Roles_Funciones] where ID_Rol = {ID}");
                 abri.Id = ID;
                 abri.VectorID = CsComandosSql.IDmod(ID);
                 abri.ShowDialog();
@@ -131,7 +131,7 @@ namespace ModuloDeCompra_BD.Formulario
                     return;
                 }
 
-                if (CsComandosSql.verificar($"Select * from Roles where Rol = '{txtModificarRol.Text}' AND ID_Rol = {ID}"))
+                if (CsComandosSql.verificar($"Select * from [MC-Roles] where Rol = '{txtModificarRol.Text}' AND ID_Rol = {ID}"))
                 {
                     MessageBox.Show("Ya existe un rol con ese nombre.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
@@ -144,7 +144,7 @@ namespace ModuloDeCompra_BD.Formulario
                 };
 
                 csRoles.ModificarRol();
-                dgvRol.DataSource = CsComandosSql.RetornaDatos("select * from Roles");
+                dgvRol.DataSource = CsComandosSql.RetornaDatos("select * from [MC-Roles]");
                 MessageBox.Show("Rol modificado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)

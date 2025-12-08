@@ -25,7 +25,7 @@ namespace ModuloDeCompra_BD.Formulario
             dtpDesde.Value = DateTime.Today;
             dtpHasta.Value = DateTime.Today;
 
-            DataTable dt = CsComandosSql.RetornaDatos("select * from Usuario");
+            DataTable dt = CsComandosSql.RetornaDatos("select * from [MC-Usuario]");
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 cbUsuarios.Items.Add(dt.Rows[i]["Usuario"].ToString());

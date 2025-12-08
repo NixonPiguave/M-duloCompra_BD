@@ -62,7 +62,7 @@ namespace ModuloDeCompra_BD.Clases
 
         public DataTable ListaEmpresa(string m)
         {
-            string query = $"select * from Empresa where Nombre_Empresa like '%{m}%'";
+            string query = $"select * from [MC-Empresa] where Nombre_Empresa like '%{m}%'";
             return CsComandosSql.RetornaDatos(query);
         }
     }

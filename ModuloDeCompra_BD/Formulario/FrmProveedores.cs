@@ -21,7 +21,7 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void FrmProveedores_Load(object sender, EventArgs e)
         {
-            string sentencia = "Select * from Proveedores";
+            string sentencia = "Select * from [OC-Proveedores]";
             dgvProveedores.DataSource = CsComandosSql.RetornaDatos(sentencia);
         }
 
@@ -57,7 +57,7 @@ namespace ModuloDeCompra_BD.Formulario
                 if (txtNombreProveedor.Text != string.Empty && txtNombreContacto.Text != string.Empty && txtDescPredeterminadoProveedor.Text != string.Empty &&
                     cmbPais.SelectedIndex != -1 && txtCiudad.Text != string.Empty && txtDireccion.Text != string.Empty && txtTelefono.Text != string.Empty &&
                     cmbDocumento.SelectedIndex != -1 && txtNroDocProveedor.Text != string.Empty && cmbEstado.SelectedIndex != -1)
-                    if (!CsComandosSql.verificar($"Select * from Proveedores where NroDocumento = '{txtNroDocProveedor.Text}'"))
+                    if (!CsComandosSql.verificar($"Select * from [OC-Proveedores] where NroDocumento = '{txtNroDocProveedor.Text}'"))
                     {
                         CsProveedores CsProveedor = new CsProveedores();
                         CsProveedor.NombreProvee1 = txtNombreProveedor.Text;
@@ -86,7 +86,7 @@ namespace ModuloDeCompra_BD.Formulario
                             cmbEstado.SelectedIndex = -1;
                             txtNroDocProveedor.Text = string.Empty;
                         }
-                        string sentencia = "select * from Proveedores"; dgvProveedores.DataSource = CsComandosSql.RetornaDatos(sentencia);
+                        string sentencia = "select * from [OC-Proveedores]"; dgvProveedores.DataSource = CsComandosSql.RetornaDatos(sentencia);
                     }
                     else
                     {
@@ -140,7 +140,7 @@ namespace ModuloDeCompra_BD.Formulario
                         txtNroDocProveedor.Text = string.Empty;
                         txtNroDocProveedor.Enabled = false;
                     }
-                    string sentencia = "select * from Proveedores";
+                    string sentencia = "select * from [OC-Proveedores]";
                     dgvProveedores.DataSource = CsComandosSql.RetornaDatos(sentencia);
                 }
                 else

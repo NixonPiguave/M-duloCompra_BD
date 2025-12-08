@@ -112,7 +112,7 @@ namespace reporte
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            string sentencia = "SELECT \r\n    RD.ID_GRN,\r\n    RD.Cantidad,\r\n    P.NomProducto,\r\n    S.Nom_Servicio,\r\n    RH.Fecha_RTV,\r\n    RH.Motivo,\r\n    CASE \r\n        WHEN S.Nom_Servicio IS NOT NULL THEN 'Service'\r\n        WHEN P.NomProducto IS NOT NULL THEN 'Product'\r\n        ELSE 'Unknown' \r\n    END AS RecordType\r\nFROM RTV_Header RH \r\nINNER JOIN RTV_Details RD ON RH.ID_RTV = RD.ID_RTV \r\nLEFT JOIN Producto P ON RD.ID_Producto = P.ID_Producto\r\nLEFT JOIN Servicio S ON RD.ID_Servicio = S.ID_Servicio\r\nORDER BY \r\n    RH.Fecha_RTV asc, \r\n    RecordType,     \r\n    COALESCE(S.Nom_Servicio, P.NomProducto)  ";
+            string sentencia = "SELECT \r\n    RD.ID_GRN,\r\n    RD.Cantidad,\r\n    P.NomProducto,\r\n    S.Nom_Servicio,\r\n    RH.Fecha_RTV,\r\n    RH.Motivo,\r\n    CASE \r\n        WHEN S.Nom_Servicio IS NOT NULL THEN 'Service'\r\n        WHEN P.NomProducto IS NOT NULL THEN 'Product'\r\n        ELSE 'Unknown' \r\n    END AS RecordType\r\nFROM [OC-RTV_Header] RH \r\nINNER JOIN [OC-RTV_Details] RD ON RH.ID_RTV = RD.ID_RTV \r\nLEFT JOIN [IN-Producto] P ON RD.ID_Producto = P.ID_Producto\r\nLEFT JOIN Servicio S ON RD.ID_Servicio = S.ID_Servicio\r\nORDER BY \r\n    RH.Fecha_RTV asc, \r\n    RecordType,     \r\n    COALESCE(S.Nom_Servicio, P.NomProducto)  ";
             frmreport ventas = new frmreport(sentencia, "dsDevolucion", "Reporte.rptDevolucion.rdlc");
             ventas.ShowDialog();
         }
