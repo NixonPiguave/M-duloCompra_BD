@@ -32,11 +32,11 @@ namespace ModuloDeCompra_BD.Formulario
                 }
                 try
                 {
-                    if (!CsComandosSql.verificar($"Select * from Departamento where Nombre_Departamento = '{txtNombreDepartamento.Text}'"))
+                    if (!CsComandosSql.verificar($"Select * from [MC-Departamento] where Nombre_Departamento = '{txtNombreDepartamento.Text}'"))
                     {
                         csDepa.Depa = txtNombreDepartamento.Text;
                         csDepa.AñadirDepartamento();
-                        dgvDepartamento.DataSource = CsComandosSql.RetornaDatos($"select * from Departamento");
+                        dgvDepartamento.DataSource = CsComandosSql.RetornaDatos($"select * from [MC-Departamento]");
                         MessageBox.Show("Se ha agregado el departamento");
                     }
                     else
@@ -63,7 +63,7 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void FrmDepartamento_Load(object sender, EventArgs e)
         {
-            dgvDepartamento.DataSource = CsComandosSql.RetornaDatos("Select * from Departamento");
+            dgvDepartamento.DataSource = CsComandosSql.RetornaDatos("Select * from [MC-Departamento]");
         }
 
         private void dgvCategoria_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -86,14 +86,14 @@ namespace ModuloDeCompra_BD.Formulario
                 }
                 try
                 {
-                    if (!CsComandosSql.verificar($"Select * from Departamento where Nombre_Departamento = '{txtModificarDepartamento.Text}'"))
+                    if (!CsComandosSql.verificar($"Select * from [MC-Departamento] where Nombre_Departamento = '{txtModificarDepartamento.Text}'"))
                     {
                         int posicion = dgvDepartamento.CurrentCell.RowIndex;
                         int ID = Convert.ToInt32(dgvDepartamento[0, posicion].Value);
                         csDepa.DepaID = ID;
                         csDepa.Depa = txtModificarDepartamento.Text;
                         csDepa.ModificarDepartamento();
-                        dgvDepartamento.DataSource = CsComandosSql.RetornaDatos($"select * from Departamento");
+                        dgvDepartamento.DataSource = CsComandosSql.RetornaDatos($"select * from [MC-Departamento]");
                         MessageBox.Show("Se ha modificado el departamento.");
                     }
                     else
@@ -131,7 +131,7 @@ namespace ModuloDeCompra_BD.Formulario
                     int ID = Convert.ToInt32(dgvDepartamento[0, posicion].Value);
                     csDepa.DepaID = ID;
                     csDepa.EliminarDepartamento();
-                    dgvDepartamento.DataSource = CsComandosSql.RetornaDatos($"select * from Departamento");
+                    dgvDepartamento.DataSource = CsComandosSql.RetornaDatos($"select * from [MC-Departamento]");
                     MessageBox.Show("Se ha eliminado el departamento");
                 }
                 catch (Exception ex)

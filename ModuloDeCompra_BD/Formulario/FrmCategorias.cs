@@ -23,11 +23,11 @@ namespace ModuloDeCompra_BD.Formulario
             CsCategoria csCategoria = new CsCategoria();
             if (!string.IsNullOrEmpty(txtCategoria.Text))
             {
-                if (!CsComandosSql.verificar($"select * from Categoria where Categoria = '{txtCategoria.Text}'"))
+                if (!CsComandosSql.verificar($"select * from [IN-Categoria] where Categoria = '{txtCategoria.Text}'"))
                 {
                     csCategoria.Categoria = txtCategoria.Text;
                     csCategoria.AñadirCategoria();
-                    dgvCategoria.DataSource = CsComandosSql.RetornaDatos("Select * from Categoria");
+                    dgvCategoria.DataSource = CsComandosSql.RetornaDatos("Select * from [IN-Categoria]");
                     txtCategoria.Text = string.Empty;
                     MessageBox.Show("Se ha agregado la categoria");
                 }
@@ -49,7 +49,7 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void FrmCategorias_Load(object sender, EventArgs e)
         {
-            dgvCategoria.DataSource = CsComandosSql.RetornaDatos("Select * from Categoria");
+            dgvCategoria.DataSource = CsComandosSql.RetornaDatos("Select * from [IN-Categoria]");
         }
 
         private void dgvCategoria_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -63,14 +63,14 @@ namespace ModuloDeCompra_BD.Formulario
             CsCategoria csCategoria = new CsCategoria();
             if (!string.IsNullOrEmpty(txtCategoria.Text) || string.IsNullOrEmpty(txtModificarCategoria.Text))
             {
-                if (CsComandosSql.verificar($"select * from Categoria where Categoria = '{txtCategoria.Text}'"))
+                if (CsComandosSql.verificar($"select * from [IN-Categoria] where Categoria = '{txtCategoria.Text}'"))
                 {
                     csCategoria.Categoria = txtModificarCategoria.Text;
                     int posicion = dgvCategoria.CurrentCell.RowIndex;
                     int ID = Convert.ToInt32(dgvCategoria[0, posicion].Value);
                     csCategoria.IdCat = ID;
                     csCategoria.ModificarCategoria();
-                    dgvCategoria.DataSource = CsComandosSql.RetornaDatos("Select * from Categoria");
+                    dgvCategoria.DataSource = CsComandosSql.RetornaDatos("Select * from [IN-Categoria]");
                     txtCategoria.Text = string.Empty;
                     txtModificarCategoria.Text = string.Empty;
                     MessageBox.Show("Se ha modificado la categoria");
@@ -90,7 +90,7 @@ namespace ModuloDeCompra_BD.Formulario
         {
             if (!string.IsNullOrEmpty(txtCategoria.Text))
             {
-                if (CsComandosSql.verificar($"select * from Categoria where Categoria = '{txtCategoria.Text}'"))
+                if (CsComandosSql.verificar($"select * from [IN-Categoria] where Categoria = '{txtCategoria.Text}'"))
                 {
                     int posicion = dgvCategoria.CurrentCell.RowIndex;
                     int ID = Convert.ToInt32(dgvCategoria[0, posicion].Value);
@@ -98,7 +98,7 @@ namespace ModuloDeCompra_BD.Formulario
                     csCategoria.IdCat = ID;
                     csCategoria.EliminarCategoria();
                     txtCategoria.Text = string.Empty;
-                    dgvCategoria.DataSource = CsComandosSql.RetornaDatos("select * from Categoria");
+                    dgvCategoria.DataSource = CsComandosSql.RetornaDatos("select * from [IN-Categoria]");
                     MessageBox.Show("Se ha eliminado la categoria");
                 }
                 else

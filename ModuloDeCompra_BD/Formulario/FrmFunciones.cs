@@ -79,7 +79,7 @@ namespace ModuloDeCompra_BD.Formulario
                 if (agregar == 0)
                 {
                     
-                    CsComandosSql.InserDeletUpdate($"DELETE FROM Roles_Funciones WHERE ID_Rol = {id}");
+                    CsComandosSql.InserDeletUpdate($"DELETE FROM [MC-Roles_Funciones] WHERE ID_Rol = {id}");
                 }
 
                 cont = 0;
@@ -111,10 +111,10 @@ namespace ModuloDeCompra_BD.Formulario
                     for (int i = 0; i < cont; i++)
                     {
                         string nombreFuncion = vectorNombre[i];
-                        int funcionId = CsComandosSql.obtenerID($"SELECT ID_Funcion FROM Funciones WHERE Funcion = '{nombreFuncion}'");
+                        int funcionId = CsComandosSql.obtenerID($"SELECT ID_Funcion FROM [MC-Funciones] WHERE Funcion = '{nombreFuncion}'");
                         vectorID[i] = funcionId;
                         CsComandosSql.InserDeletUpdate(
-                            $"INSERT INTO Roles_Funciones (ID_Rol, ID_Funcion) VALUES ({id}, {funcionId})");
+                            $"INSERT INTO [MC-Roles_Funciones] (ID_Rol, ID_Funcion) VALUES ({id}, {funcionId})");
                     }
                 }
 

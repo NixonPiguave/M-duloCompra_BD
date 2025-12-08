@@ -36,14 +36,14 @@ namespace ModuloDeCompra_BD.Clases
             DateTime fechaHasta = dtpHasta.Value.Date.AddDays(1).AddSeconds(-1);
             if (chbFecha.Checked == true)
             {
-                string sentencia = $"SELECT \r\n    g.ID_GRN,\r\n    g.Fecha_Generada,\r\n    g.Estado,\r\n    g.TotalPagar,\r\n    g.TotalDevuelto,\r\n    g.TotalPagar - g.TotalDevuelto AS Neto,\r\n    c.Fecha_Registro,\r\n    c.Total_Valor,\r\n    c.Total_Bodega,\r\n    c.Diferencia,\r\n    c.Estado_Contable,\r\n    c.Usuario_Registro,\r\n    p.Nombre_Proveedor AS Proveedor\r\nFROM GRN_Header g\r\nLEFT JOIN GRN_Contable c ON g.ID_GRN = c.ID_GRN\r\nLEFT JOIN Proveedores p ON g.ID_Proveedor = p.ID_Proveedor\r\nWHERE \r\n    (CONVERT(date, g.Fecha_Generada) = CONVERT(date, '{fechaDesde:yyyy-MM-dd HH:mm:ss}')\r\n    OR CONVERT(date, g.Fecha_Generada) = CONVERT(date, '{fechaHasta:yyyy-MM-dd HH:mm:ss}'))\r\nORDER BY g.Fecha_Generada ASC";
+                string sentencia = $"SELECT \r\n    g.ID_GRN,\r\n    g.Fecha_Generada,\r\n    g.Estado,\r\n    g.TotalPagar,\r\n    g.TotalDevuelto,\r\n    g.TotalPagar - g.TotalDevuelto AS Neto,\r\n    c.Fecha_Registro,\r\n    c.Total_Valor,\r\n    c.Total_Bodega,\r\n    c.Diferencia,\r\n    c.Estado_Contable,\r\n    c.Usuario_Registro,\r\n    p.Nombre_Proveedor AS Proveedor\r\nFROM GRN_Header g\r\nLEFT JOIN [CG-GRN_Contable] c ON g.ID_GRN = c.ID_GRN\r\nLEFT JOIN [OC-Proveedores] p ON g.ID_Proveedor = p.ID_Proveedor\r\nWHERE \r\n    (CONVERT(date, g.Fecha_Generada) = CONVERT(date, '{fechaDesde:yyyy-MM-dd HH:mm:ss}')\r\n    OR CONVERT(date, g.Fecha_Generada) = CONVERT(date, '{fechaHasta:yyyy-MM-dd HH:mm:ss}'))\r\nORDER BY g.Fecha_Generada ASC";
 
                 frmreport ventas = new frmreport(sentencia, "dsGRN", "Reporte.rptgrn.rdlc");
                 ventas.ShowDialog();
             }
             else
             {
-                string sentencia = $"SELECT \r\n    g.ID_GRN,\r\n    g.Fecha_Generada,\r\n    g.Estado,\r\n    g.TotalPagar,\r\n    g.TotalDevuelto,\r\n    g.TotalPagar - g.TotalDevuelto AS Neto,\r\n    c.Fecha_Registro,\r\n    c.Total_Valor,\r\n    c.Total_Bodega,\r\n    c.Diferencia,\r\n    c.Estado_Contable,\r\n    c.Usuario_Registro,\r\n    p.Nombre_Proveedor AS Proveedor\r\nFROM GRN_Header g\r\nLEFT JOIN GRN_Contable c ON g.ID_GRN = c.ID_GRN\r\nLEFT JOIN Proveedores p ON g.ID_Proveedor = p.ID_Proveedor\r\nORDER BY g.Fecha_Generada asc";
+                string sentencia = $"SELECT \r\n    g.ID_GRN,\r\n    g.Fecha_Generada,\r\n    g.Estado,\r\n    g.TotalPagar,\r\n    g.TotalDevuelto,\r\n    g.TotalPagar - g.TotalDevuelto AS Neto,\r\n    c.Fecha_Registro,\r\n    c.Total_Valor,\r\n    c.Total_Bodega,\r\n    c.Diferencia,\r\n    c.Estado_Contable,\r\n    c.Usuario_Registro,\r\n    p.Nombre_Proveedor AS Proveedor\r\nFROM GRN_Header g\r\nLEFT JOIN [CG-GRN_Contable] c ON g.ID_GRN = c.ID_GRN\r\nLEFT JOIN [OC-Proveedores] p ON g.ID_Proveedor = p.ID_Proveedor\r\nORDER BY g.Fecha_Generada asc";
 
                 frmreport ventas = new frmreport(sentencia, "dsGRN", "Reporte.rptgrn.rdlc");
                 ventas.ShowDialog();

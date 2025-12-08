@@ -23,7 +23,7 @@ namespace ModuloDeCompra_BD.Formulario
         {
             if (!string.IsNullOrEmpty(txtCuenta.Text))
             {
-                if (!CsComandosSql.verificar($"select * from CatalogoCuentas where Cuenta = '{txtCuenta.Text}'"))
+                if (!CsComandosSql.verificar($"select * from [CG-CatalogoCuentasContables] where Cuenta = '{txtCuenta.Text}'"))
                 {
                     string XML = "<CuentasContables>" +
                         "               <Cuentas>" +
@@ -38,7 +38,7 @@ namespace ModuloDeCompra_BD.Formulario
                     if (CsComandosSql.InserDeletUpdate(query))
                     {
                         MessageBox.Show("Se ha insertado la cuenta contabale");
-                        dgvCuentaContables.DataSource = CsComandosSql.RetornaDatos("select * from CatalogoCuentas");
+                        dgvCuentaContables.DataSource = CsComandosSql.RetornaDatos("select * from [CG-CatalogoCuentasContables]");
                     }
                     else
                     {
@@ -58,7 +58,7 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void FrmCatalogoCuentas_Load(object sender, EventArgs e)
         {
-            dgvCuentaContables.DataSource = CsComandosSql.RetornaDatos("select * from CatalogoCuentas");
+            dgvCuentaContables.DataSource = CsComandosSql.RetornaDatos("select * from [CG-CatalogoCuentasContables]");
         }
 
         private void dgvCategoria_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -73,7 +73,7 @@ namespace ModuloDeCompra_BD.Formulario
             {
                 int posicion = dgvCuentaContables.CurrentCell.RowIndex;
                 string ID = Convert.ToString(dgvCuentaContables[0, posicion].Value.ToString());
-                string query = $"delete from CatalogoCuentas where Cuenta = '{txtCuenta.Text}'";
+                string query = $"delete from [CG-CatalogoCuentasContables] where Cuenta = '{txtCuenta.Text}'";
             }
             else
             {

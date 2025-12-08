@@ -39,7 +39,7 @@ namespace ModuloDeCompra_BD.Formulario
                 CargarDGV(grn.ID);
                 lbCantRecib.Visible = true;
 
-                DataTable tb = CsComandosSql.RetornaDatos($"select Nombre_Proveedor from Proveedores where ID_Proveedor={grn.IDProv1}");
+                DataTable tb = CsComandosSql.RetornaDatos($"select Nombre_Proveedor from [OC-Proveedores] where ID_Proveedor={grn.IDProv1}");
 
                 if (tb.Rows.Count > 0)
                 {
@@ -73,10 +73,10 @@ namespace ModuloDeCompra_BD.Formulario
         {
             string query = $"SELECT X.[Cod Detalle], X.ID_Producto,p.NomProducto, X.[Cantidad Recibida], X.[Cantidad a Devolver], X.CantidadDevuelta, X.Costo " +
                 $"FROM (SELECT  GR.ID_GRNDetails AS [Cod Detalle], GR.ID_Producto, GR.Cantidad AS [Cantidad Recibida]," +
-                $" 0 AS [Cantidad a Devolver],CASE WHEN ISNULL((SELECT sum(D.Cantidad) FROM RTV_Details D " +
+                $" 0 AS [Cantidad a Devolver],CASE WHEN ISNULL((SELECT sum(D.Cantidad) FROM [OC-RTV_Details] D " +
                 $" WHERE D.ID_GRN = 300 AND (D.ID_Producto = GR.ID_Producto)), 0) = 0 " +
-                $"   THEN 0 ELSE ISNULL((SELECT sum(D.Cantidad) FROM RTV_Details D  WHERE D.ID_GRN = 300 AND (D.ID_Producto = GR.ID_Producto)), 0)" +
-                $"           END AS [CantidadDevuelta], GR.Costo FROM Grn_Details GR WHERE GR.ID_GRN = 300 ) AS X Left join Producto p on X.ID_Producto=p.ID_Producto " +
+                $"   THEN 0 ELSE ISNULL((SELECT sum(D.Cantidad) FROM [OC-RTV_Details] D  WHERE D.ID_GRN = 300 AND (D.ID_Producto = GR.ID_Producto)), 0)" +
+                $"           END AS [CantidadDevuelta], GR.Costo FROM [IN-Grn_Details] GR WHERE GR.ID_GRN = 300 ) AS X Left join [IN-Producto] p on X.ID_Producto=p.ID_Producto " +
                 $"WHERE [Cantidad Recibida] <> CantidadDevuelta";
 
             dgvDetalleGrn.DataSource = CsComandosSql.RetornaDatos(query);

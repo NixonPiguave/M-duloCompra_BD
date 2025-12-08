@@ -23,14 +23,14 @@ namespace ModuloDeCompra_BD.Formulario
             CsIVA csIVA = new CsIVA();
             if (!string.IsNullOrEmpty(txtIDIVA.Text))
             {
-                if (!CsComandosSql.verificar($"select * from IVA where ID_IVA= '{txtIDIVA.Text}'"))
+                if (!CsComandosSql.verificar($"select * from [CG-IVA] where ID_IVA= '{txtIDIVA.Text}'"))
                 {
                     csIVA.IDIVA = Convert.ToChar(txtIDIVA.Text);
                     csIVA.Estado = Convert.ToChar(txtEstadoIVA.Text);
                     csIVA.ValorIva = Convert.ToDecimal(txtValorIVA.Text);
                     if (csIVA.AñadirIVA())
                     {
-                        dgvIVA.DataSource = CsComandosSql.RetornaDatos("Select * from IVA");
+                        dgvIVA.DataSource = CsComandosSql.RetornaDatos("Select * from [CG-IVA]");
                         txtIDIVA.Text = string.Empty;
                         txtValorIVA.Text = string.Empty;
                         txtEstadoIVA.Text = string.Empty;
@@ -88,7 +88,7 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void FrmIVA_Load(object sender, EventArgs e)
         {
-            dgvIVA.DataSource = CsComandosSql.RetornaDatos("Select * from IVA");
+            dgvIVA.DataSource = CsComandosSql.RetornaDatos("Select * from [CG-IVA]");
         }
 
         private void dgvCategoria_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -104,7 +104,7 @@ namespace ModuloDeCompra_BD.Formulario
 
             if (!string.IsNullOrEmpty(txtIDIVA.Text) || !string.IsNullOrEmpty(txtValorIVA.Text))
             {
-                if (CsComandosSql.verificar($"select * from IVA where ID_IVA= '{txtIDIVA.Text}'"))
+                if (CsComandosSql.verificar($"select * from [CG-IVA] where ID_IVA= '{txtIDIVA.Text}'"))
                 {
                     int posicion = dgvIVA.CurrentCell.RowIndex;
                     char ID = Convert.ToChar(dgvIVA[0, posicion].Value.ToString());
@@ -115,7 +115,7 @@ namespace ModuloDeCompra_BD.Formulario
                     csIVA.ModificarIVA();
                     txtNuevoValorIVA.Text = string.Empty;
                     txtNuevoEstadoIVA.Text = string.Empty;
-                    dgvIVA.DataSource = CsComandosSql.RetornaDatos("Select * from IVA");
+                    dgvIVA.DataSource = CsComandosSql.RetornaDatos("Select * from [CG-IVA]");
                     MessageBox.Show("Se ha modificado el IVA");
                 }
                 else
@@ -142,7 +142,7 @@ namespace ModuloDeCompra_BD.Formulario
                     txtIDIVA.Text = string.Empty;
                     txtValorIVA.Text = string.Empty;
                     txtEstadoIVA.Text = string.Empty;
-                    dgvIVA.DataSource = CsComandosSql.RetornaDatos("select * from IVA");
+                    dgvIVA.DataSource = CsComandosSql.RetornaDatos("select * from [CG-IVA]");
                     MessageBox.Show("Se ha eliminado el IVA");
                 }
                 else

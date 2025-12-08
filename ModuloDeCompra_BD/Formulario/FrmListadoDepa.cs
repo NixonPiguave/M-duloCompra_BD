@@ -28,7 +28,7 @@ namespace ModuloDeCompra_BD.Formulario
         private void FrmListadoCategoria_Load(object sender, EventArgs e)
         {
 
-            dgvListadoCategoria.DataSource = CsComandosSql.RetornaDatos("select * from Departamento");
+            dgvListadoCategoria.DataSource = CsComandosSql.RetornaDatos("select * from [MC-Departamento]");
         }
 
         private void btnSeleccionarCatego_Click(object sender, EventArgs e)
@@ -42,7 +42,7 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void txtBuscarCategoria_KeyUp(object sender, KeyEventArgs e)
         {
-            dgvListadoCategoria.DataSource = CsComandosSql.RetornaDatos($"select * from Departamento where Nombre_Departamento like '%{txtBuscarCategoria.Text}%'");
+            dgvListadoCategoria.DataSource = CsComandosSql.RetornaDatos($"select * from [MC-Departamento] where Nombre_Departamento like '%{txtBuscarCategoria.Text}%'");
         }
     }
 }

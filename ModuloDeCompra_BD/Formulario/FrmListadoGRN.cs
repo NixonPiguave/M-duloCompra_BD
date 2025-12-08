@@ -26,7 +26,7 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void FrmListadoCategoria_Load(object sender, EventArgs e)
         {
-            dgvListadoCategoria.DataSource = CsComandosSql.RetornaDatos("select * from GRN_Header where Estado='R'");
+            dgvListadoCategoria.DataSource = CsComandosSql.RetornaDatos("select * from [IN-GRN_Header] where Estado='R'");
         }
 
         private void btnSeleccionarCatego_Click(object sender, EventArgs e)
