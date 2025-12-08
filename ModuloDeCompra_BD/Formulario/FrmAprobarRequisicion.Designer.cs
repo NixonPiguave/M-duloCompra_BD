@@ -435,6 +435,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmAprobarRequisicion";
             this.Text = "FrmAprobarRequisicion";
+            this.Load += new System.EventHandler(this.FrmAprobarRequisicion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleRequiPendiente)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

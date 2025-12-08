@@ -9,6 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace ModuloDeCompra_BD.Formulario
 {
@@ -81,7 +82,7 @@ namespace ModuloDeCompra_BD.Formulario
                     </Requisiciones>";
                 string query = $@"exec spModificarRequisicion '{cadenaXML}'";
                 CsComandosSql.InserDeletUpdate(query);
-                MessageBox.Show("Se ha aprovado la requisición");
+                MessageBox.Show("Se ha aprobado la requisición");
                 int idRequi = int.Parse(txtIDRequisicionPendiente.Text);
                 DgvRequisicionPendiente.DataSource = CsComandosSql.RetornaDatos($"Select * from [OC-Requisicion] where ID_Requisicion = {idRequi}");
                 dgvDetalleRequiPendiente.DataSource = CsComandosSql.RetornaDatos($"Select * from [OC-Requi_Details] where ID_Requisicion= {idRequi} AND Estado= 'Pendiente'");
@@ -191,8 +192,9 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void Limpiar()
         {
-            txtCantidad.Text = " ";
-            txtIdProducto.Text = " ";
+            txtIDRequisicionPendiente.Text = string.Empty;
+            DgvRequisicionPendiente.DataSource = null;
+            dgvDetalleRequiPendiente.DataSource = null;
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -208,6 +210,23 @@ namespace ModuloDeCompra_BD.Formulario
             frmEmpleados.DepaID1 = DepaID;
             frmEmpleados.RequisicionID1 = txtIDRequisicionPendiente.Text;
             frmEmpleados.ShowDialog();
+            Limpiar();
+        }
+
+        private void FrmAprobarRequisicion_Load(object sender, EventArgs e)
+        {
+            string sentenciaExtraerRolEmpleado = $"select R.ID_Rol from [MC-Usuario] as U inner join [MC-Roles] as R on U.ID_Rol = R.ID_Rol where ID_Usuario = {idUsuario}";
+            string RolEmpleado = "0";
+            DataTable dt = CsComandosSql.RetornaDatos(sentenciaExtraerRolEmpleado);
+            if (dt.Rows.Count > 0)
+            {
+                RolEmpleado = dt.Rows[0]["ID_Rol"].ToString();
+            }
+
+            if (RolEmpleado == "2")
+            {
+                btnDerivar.Visible = false;
+            }
         }
     }
 }
