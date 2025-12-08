@@ -489,6 +489,58 @@ namespace ModuloDeCompra_BD.Formulario
 
         private void BtnCancelarOrden_Click(object sender, EventArgs e)
         {
+            try
+            {
+                string Detalle = "";
+                foreach (DataGridViewRow fila in dgvDetalleOrden.Rows)
+                {
+                    if (fila.IsNewRow) continue;
+
+                    string idProducto = fila.Cells["ID_Producto"].Value?.ToString();
+                    if (string.IsNullOrEmpty(idProducto)) continue;
+
+                    string cantidad = fila.Cells["CantidadRecibida"].Value?.ToString();
+                    cantidad = string.IsNullOrEmpty(cantidad) ? "0" : cantidad;
+
+                    string costoU = fila.Cells["Costo_Unitario"].Value?.ToString();
+                    costoU = costoU.Replace(',', '.');
+
+                    Detalle += $@"<GRNDetail>
+                        <Cantidad>{cantidad}</Cantidad>
+                        <Costo>{costoU}</Costo>
+                        <ID_Producto>{idProducto}</ID_Producto>
+                      </GRNDetail>";
+                }
+
+                string xmlOrden = $@"<GRNHeaders>
+                            <GRNHeader>
+                                <Estado>C</Estado>
+                                <TotalPagar>0</TotalPagar>
+                                <Origen>O</Origen>
+                                <ID_Orden>{txtOrdenCompra.Text}</ID_Orden>
+                                <ID_Proveedor>{txtProveedor.Text}</ID_Proveedor>
+                            </GRNHeader>
+                            {Detalle}
+                         </GRNHeaders>";
+                string query = $@"
+        EXEC spCancelarOrden 
+            {txtOrdenCompra.Text}, 
+            '{xmlOrden}', 
+            '{SUSER}'";
+
+                if (CsComandosSql.InserDeletUpdate(query))
+                {
+                    MessageBox.Show("Orden cancelada correctamente");
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo cancelar la orden");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cancelar: " + ex.Message);
+            }
 
         }
 
