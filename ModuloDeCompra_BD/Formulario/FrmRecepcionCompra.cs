@@ -31,7 +31,7 @@ namespace ModuloDeCompra_BD.Formulario
             {
                 OrdenyGrn(idorden, cbTipoGRN.SelectedIndex);
                 ActualizarEstadoRecibido(idorden);
-                DataTable tb = CsComandosSql.RetornaDatos($"select Nombre_Proveedor from Proveedores where ID_Proveedor={ordenCompra.IdProv}");
+                DataTable tb = CsComandosSql.RetornaDatos($"select Nombre_Proveedor from [OC-Proveedores] where ID_Proveedor={ordenCompra.IdProv}");
                 if (tb.Rows.Count > 0)
                 {
                     string Provedorname = tb.Rows[0]["Nombre_Proveedor"].ToString();
@@ -45,15 +45,43 @@ namespace ModuloDeCompra_BD.Formulario
             if (index == 0)
             {
                 dgvDetalleOrden.DataSource = null;
-                string query = $"SELECT d.ID_Detail AS Detalle_De_Compra, p.ID_Producto, s.ID_Servicio,p.NomProducto AS Producto,s.Nom_Servicio AS Servicio,d.Cantidad AS Cantidad_Ordenada," +
-                    $" 0 AS CantidadRecibida,d.Cantidad - ISNULL((SELECT SUM(gd.Cantidad) FROM Grn_Details gd" +
-                    $" INNER JOIN Grn_Header gh ON gd.ID_GRN = gh.ID_GRN WHERE (gd.ID_Producto = d.ID_Producto or gd.ID_Servicio=d.ID_Servicio)" +
-                    $" AND gh.ID_Orden = {idorden}), 0) AS Cantidad_Pendiente,d.Costo AS Costo_Unitario FROM Detalle_Orden d" +
-                    $" JOIN Orden_Compra o ON d.ID_Orden = o.ID_Orden LEFT JOIN Producto p ON d.ID_Producto = p.ID_Producto " +
-                    $"  LEFT JOIN Servicio s ON d.ID_Servicio = s.ID_Servicio WHERE o.ID_Orden = {idorden} and d.Estado='Pendiente';";
+                string query = $@"
+                                SELECT 
+                                    d.ID_Detail AS Detalle_De_Compra,
+                                    p.ID_Producto, 
+                                    p.NomProducto AS Producto,
+                                    d.Cantidad AS Cantidad_Ordenada,
+
+                                    0 AS CantidadRecibida,
+
+                                    d.Cantidad - ISNULL(
+                                        (
+                                            SELECT SUM(gd.Cantidad) 
+                                            FROM [IN-Grn_Details] gd
+                                            INNER JOIN [IN-GRN_Header] gh 
+                                                ON gd.ID_GRN = gh.ID_GRN
+                                            WHERE 
+                                                gd.ID_Producto = d.ID_Producto
+                                                AND gh.ID_Orden = {idorden}
+                                        ), 0
+                                    ) AS Cantidad_Pendiente,
+
+                                    d.Costo AS Costo_Unitario
+
+                                FROM [OC-Detalle_Orden] d
+                                INNER JOIN [OC-Orden_Compra] o 
+                                    ON d.ID_Orden = o.ID_Orden
+                                LEFT JOIN [IN-Producto] p 
+                                    ON d.ID_Producto = p.ID_Producto
+                                WHERE 
+                                    o.ID_Orden = {idorden}
+                                    AND d.Estado = 'Pendiente';
+                                ";
+
+
                 dgvDetalleOrden.DataSource = CsComandosSql.RetornaDatos(query);
                 dgvDetalleOrden.Columns["CantidadRecibida"].ReadOnly = false;
-                string queryDetalle = $"select * from GRN_Header where ID_Orden={idorden}";
+                string queryDetalle = $"select * from [IN-GRN_Header] where ID_Orden={idorden}";
                 dgvGrnDeOrden.DataSource = CsComandosSql.RetornaDatos(queryDetalle);
                 dgvDetalleOrden.RowTemplate.Height = 30;
                 foreach (DataGridViewColumn column in dgvDetalleOrden.Columns)
@@ -74,13 +102,39 @@ namespace ModuloDeCompra_BD.Formulario
             if (index == 1)
             {
                 dgvDetalleOrden.DataSource = null;
-                string query = $"SELECT d.ID_Detail AS Detalle_De_Compra, p.ID_Producto, s.ID_Servicio,p.NomProducto AS Producto,s.Nom_Servicio AS Servicio,d.Cantidad AS Cantidad_Ordenada," +
-                    $"d.Cantidad - ISNULL((SELECT SUM(gd.Cantidad) FROM Grn_Details gd INNER JOIN Grn_Header gh ON gd.ID_GRN = gh.ID_GRN WHERE" +
-                    $" (gd.ID_Producto = d.ID_Producto or gd.ID_Servicio=d.ID_Servicio) AND gh.ID_Orden = {idorden}), 0) AS Cantidad_Pendiente,d.Costo AS Costo_Unitario FROM Detalle_Orden d" +
-                    $"   JOIN Orden_Compra o ON d.ID_Orden = o.ID_Orden LEFT JOIN Producto p ON d.ID_Producto = p.ID_Producto" +
-                    $" LEFT JOIN Servicio s ON d.ID_Servicio = s.ID_Servicio WHERE o.ID_Orden = {idorden} and d.Estado='Pendiente'";
+                    string query = $@"
+                    SELECT 
+                        d.ID_Detail AS Detalle_De_Compra,
+                        p.ID_Producto,
+                        p.NomProducto AS Producto,
+                        d.Cantidad AS Cantidad_Ordenada,
+
+                        d.Cantidad - ISNULL(
+                            (
+                                SELECT SUM(gd.Cantidad)
+                                FROM [IN-Grn_Details] gd
+                                INNER JOIN [IN-GRN_Header] gh 
+                                    ON gd.ID_GRN = gh.ID_GRN
+                                WHERE 
+                                    gd.ID_Producto = d.ID_Producto
+                                    AND gh.ID_Orden = {idorden}
+                            ), 0
+                        ) AS Cantidad_Pendiente,
+
+                        d.Costo AS Costo_Unitario
+
+                    FROM [OC-Detalle_Orden] d
+                    INNER JOIN [OC-Orden_Compra] o 
+                        ON d.ID_Orden = o.ID_Orden
+                    LEFT JOIN [IN-Producto] p 
+                        ON d.ID_Producto = p.ID_Producto
+                    WHERE 
+                        o.ID_Orden = {idorden}
+                        AND d.Estado = 'Pendiente';
+                    ";
+
                 dgvDetalleOrden.DataSource = CsComandosSql.RetornaDatos(query);
-                string queryDetalle = $"select * from GRN_Header where ID_Orden={idorden}";
+                string queryDetalle = $"select * from [IN-GRN_Header] where ID_Orden={idorden}";
                 dgvGrnDeOrden.DataSource = CsComandosSql.RetornaDatos(queryDetalle);
                 dgvDetalleOrden.RowTemplate.Height = 30;
                 lbCantRecib.Visible = false;
@@ -102,7 +156,7 @@ namespace ModuloDeCompra_BD.Formulario
 
                     if (!string.IsNullOrEmpty(idOrdenDetalle))
                     {
-                        string updateQuery = $"update Detalle_Orden set Estado='Recibido' where  ID_Detail= {idOrdenDetalle};";
+                        string updateQuery = $"update [OC-Detalle_Orden] set Estado='Recibido' where  ID_Detail= {idOrdenDetalle};";
                         CsComandosSql.InserDeletUpdate(updateQuery);
 
                     }
@@ -161,7 +215,6 @@ namespace ModuloDeCompra_BD.Formulario
                             continue;
 
                         string idProducto = fila.Cells["ID_Producto"].Value?.ToString();
-                        string idServicio = fila.Cells["ID_Servicio"].Value?.ToString();
                         string cantidad = fila.Cells["CantidadRecibida"].Value?.ToString();
                         string costoU = fila.Cells["Costo_Unitario"].Value?.ToString();
                         int cant = Convert.ToInt32(cantidad);
@@ -171,8 +224,7 @@ namespace ModuloDeCompra_BD.Formulario
                             Detalle += $@"<GRNDetail>
                                         <Cantidad>{cant}</Cantidad>
                                         <Costo>{costoU}</Costo>
-                                        <ID_Servicio>{(string.IsNullOrEmpty(idServicio) ? "NULL" : idServicio)}</ID_Servicio>
-                                        <ID_Producto>{(string.IsNullOrEmpty(idProducto) ? "NULL" : idProducto)}</ID_Producto>                                                           
+                                        <ID_Producto>{idProducto}</ID_Producto>                                                           
                                     </GRNDetail>";
                         }
                     }
@@ -182,7 +234,6 @@ namespace ModuloDeCompra_BD.Formulario
                             continue;
 
                         string idProducto = fila.Cells["ID_Producto"].Value?.ToString();
-                        string idServicio = fila.Cells["ID_Servicio"].Value?.ToString();
                         string cantidad = fila.Cells["Cantidad_Pendiente"].Value?.ToString();
                         string costoU = fila.Cells["Costo_Unitario"].Value?.ToString();
                         int cant = Convert.ToInt32(cantidad);
@@ -192,8 +243,7 @@ namespace ModuloDeCompra_BD.Formulario
                             Detalle += $@"<GRNDetail>
                                         <Cantidad>{cant}</Cantidad>
                                         <Costo>{costoU}</Costo>
-                                        <ID_Servicio>{(string.IsNullOrEmpty(idServicio) ? "NULL" : idServicio)}</ID_Servicio>
-                                        <ID_Producto>{(string.IsNullOrEmpty(idProducto) ? "NULL" : idProducto)}</ID_Producto>                                                           
+                                        <ID_Producto>{idProducto}</ID_Producto>                                                           
                                     </GRNDetail>";
                         }
                     }
@@ -229,11 +279,26 @@ namespace ModuloDeCompra_BD.Formulario
                             int idorden = Convert.ToInt32(txtOrdenCompra.Text);
                             OrdenyGrn(idorden, cbTipoGRN.SelectedIndex);
                             ActualizarEstadoRecibido(idorden);
-                            string sentencia = $"select GH.ID_Orden, Pr.Nombre_Proveedor, Pr.Correo, Pr.Direccion ,case when S.Nom_Servicio is null then P.NomProducto " +
-                                        $"when P.NomProducto is null then S.Nom_Servicio end as [ProductoServicio], GD.Cantidad, GD.Costo " +
-                                        $"from Grn_Details GD inner join GRN_Header GH on GD.ID_GRN=GH.ID_GRN left join " +
-                                        $"Producto P on GD.ID_Producto=P.ID_Producto left join Servicio S on " +
-                                        $"S.ID_Servicio=GD.ID_Servicio inner join Proveedores Pr on Pr.ID_Proveedor=GH.ID_Proveedor where GD.ID_GRN={grnId} ";
+                            string sentencia = $@"
+                                                    SELECT 
+                                                        GH.ID_Orden,
+                                                        Pr.Nombre_Proveedor,
+                                                        Pr.Correo,
+                                                        Pr.Direccion,
+                                                        P.NomProducto AS ProductoServicio,
+                                                        GD.Cantidad,
+                                                        GD.Costo
+                                                    FROM [IN-Grn_Details] GD
+                                                    INNER JOIN [IN-GRN_Header] GH 
+                                                        ON GD.ID_GRN = GH.ID_GRN
+                                                    LEFT JOIN [IN-Producto] P 
+                                                        ON GD.ID_Producto = P.ID_Producto
+                                                    INNER JOIN [OC-Proveedores] Pr 
+                                                        ON Pr.ID_Proveedor = GH.ID_Proveedor
+                                                    WHERE 
+                                                        GD.ID_GRN = {grnId};
+                                                    ";
+
                             frmreport ventas = new frmreport(sentencia, "dsGrn", "Reporte.DocumentoGRNrecibido.rdlc");
                             ventas.ShowDialog();
 
@@ -241,6 +306,7 @@ namespace ModuloDeCompra_BD.Formulario
                         if (CsComandosSql.InserDeletUpdate(query))
                         {
                             MessageBox.Show("Se ha registrado el GRN");
+
                         }
                         else
                         {
@@ -273,7 +339,7 @@ namespace ModuloDeCompra_BD.Formulario
                     dgvDetalleOrden[e.ColumnIndex, e.RowIndex].Value = 0;
                     return;
                 }
-                int cantidadPendiente = Convert.ToInt32(dgvDetalleOrden[7, e.RowIndex].Value);
+                int cantidadPendiente = Convert.ToInt32(dgvDetalleOrden[5, e.RowIndex].Value);
                 int cantidadRecibida = Convert.ToInt32(dgvDetalleOrden[e.ColumnIndex, e.RowIndex].Value?.ToString());
                 if (cantidadRecibida > cantidadPendiente)
                 {
@@ -364,6 +430,11 @@ namespace ModuloDeCompra_BD.Formulario
         }
 
         private void BtnCancelarOrden_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

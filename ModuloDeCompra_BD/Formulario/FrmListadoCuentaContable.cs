@@ -25,7 +25,7 @@ namespace ModuloDeCompra_BD.Formulario
         }
         private void FrnListadoCatalogoCuentas_Load(object sender, EventArgs e)
         {
-            dgvListadoCuenta.DataSource = CsComandosSql.RetornaDatos("select * from CatalogoCuentas");
+            dgvListadoCuenta.DataSource = CsComandosSql.RetornaDatos("select * from [CG-CatalogoCuentasContables]");
         }
 
         private void btnSeleccionarBodega_Click(object sender, EventArgs e)

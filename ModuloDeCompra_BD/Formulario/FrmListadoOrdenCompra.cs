@@ -31,7 +31,7 @@ namespace ModuloDeCompra_BD.Formulario
         private void FrmListadoOrdenCompra_Load(object sender, EventArgs e)
         {
 
-            dgvListadoOrdenCompra.DataSource = CsComandosSql.RetornaDatos("select * from Orden_Compra where Estado_Orden='Pendiente'");
+            dgvListadoOrdenCompra.DataSource = CsComandosSql.RetornaDatos("select * from [OC-Orden_Compra] where Estado_Orden='Pendiente'");
         }
 
         private void btnSeleccionarCatego_Click(object sender, EventArgs e)

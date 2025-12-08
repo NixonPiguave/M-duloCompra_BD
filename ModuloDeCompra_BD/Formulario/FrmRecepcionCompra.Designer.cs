@@ -51,6 +51,7 @@
             this.txtOrdenCompra = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.BtnCancelarOrden = new Guna.UI2.WinForms.Guna2Button();
             this.label4 = new System.Windows.Forms.Label();
             this.cbTipoGRN = new System.Windows.Forms.ComboBox();
             this.lbCantRecib = new System.Windows.Forms.Label();
@@ -62,7 +63,6 @@
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.dgvGrnDeOrden = new Guna.UI2.WinForms.Guna2DataGridView();
             this.label6 = new System.Windows.Forms.Label();
-            this.BtnCancelarOrden = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -94,6 +94,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1362, 366);
             this.panel1.TabIndex = 1;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // panel3
             // 
@@ -305,6 +306,23 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(898, 295);
             this.guna2Panel1.TabIndex = 3;
+            // 
+            // BtnCancelarOrden
+            // 
+            this.BtnCancelarOrden.BorderRadius = 10;
+            this.BtnCancelarOrden.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.BtnCancelarOrden.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.BtnCancelarOrden.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BtnCancelarOrden.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.BtnCancelarOrden.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
+            this.BtnCancelarOrden.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCancelarOrden.ForeColor = System.Drawing.Color.White;
+            this.BtnCancelarOrden.Location = new System.Drawing.Point(558, 242);
+            this.BtnCancelarOrden.Name = "BtnCancelarOrden";
+            this.BtnCancelarOrden.Size = new System.Drawing.Size(146, 44);
+            this.BtnCancelarOrden.TabIndex = 12;
+            this.BtnCancelarOrden.Text = "Cancelar Orden Compra";
+            this.BtnCancelarOrden.Click += new System.EventHandler(this.BtnCancelarOrden_Click);
             // 
             // label4
             // 
@@ -574,23 +592,6 @@
             this.label6.Size = new System.Drawing.Size(291, 22);
             this.label6.TabIndex = 0;
             this.label6.Text = "GRN  Generados para esta Orden";
-            // 
-            // BtnCancelarOrden
-            // 
-            this.BtnCancelarOrden.BorderRadius = 10;
-            this.BtnCancelarOrden.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.BtnCancelarOrden.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.BtnCancelarOrden.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.BtnCancelarOrden.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.BtnCancelarOrden.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(163)))), ((int)(((byte)(17)))));
-            this.BtnCancelarOrden.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCancelarOrden.ForeColor = System.Drawing.Color.White;
-            this.BtnCancelarOrden.Location = new System.Drawing.Point(558, 242);
-            this.BtnCancelarOrden.Name = "BtnCancelarOrden";
-            this.BtnCancelarOrden.Size = new System.Drawing.Size(146, 44);
-            this.BtnCancelarOrden.TabIndex = 12;
-            this.BtnCancelarOrden.Text = "Cancelar Orden Compra";
-            this.BtnCancelarOrden.Click += new System.EventHandler(this.BtnCancelarOrden_Click);
             // 
             // FrmRecepcionCompra
             // 
