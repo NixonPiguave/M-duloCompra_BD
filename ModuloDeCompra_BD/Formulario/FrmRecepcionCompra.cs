@@ -436,7 +436,7 @@ namespace ModuloDeCompra_BD.Formulario
                 string query = $@"
         EXEC sp_CancelarOrdenCompra 
             @ID_Orden = {txtOrdenCompra.Text}";
-
+                 
                 try
                 {
                     if (CsComandosSql.InserDeletUpdate(query))
