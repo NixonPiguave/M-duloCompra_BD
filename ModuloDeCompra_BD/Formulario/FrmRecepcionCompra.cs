@@ -18,6 +18,8 @@ namespace ModuloDeCompra_BD.Formulario
         public FrmRecepcionCompra()
         {
             InitializeComponent();
+            dgvDetalleOrden.EditMode = DataGridViewEditMode.EditOnEnter;
+
         }
 
         private void btnOrdenCompra_Click(object sender, EventArgs e)
@@ -39,108 +41,145 @@ namespace ModuloDeCompra_BD.Formulario
                 }
             }
         }
-
         private void OrdenyGrn(int idorden, int index)
         {
+
+            dgvDetalleOrden.AutoGenerateColumns = true;
+            dgvDetalleOrden.DataSource = null;
+
+            string query = (index == 0) ? $@"
+        SELECT 
+            d.ID_Detail AS Detalle_De_Compra,
+            p.ID_Producto, 
+            p.NomProducto AS Producto,
+            d.Cantidad AS Cantidad_Ordenada,
+            0 AS CantidadRecibida,
+            d.Cantidad - ISNULL(
+                (
+                    SELECT SUM(gd.Cantidad) 
+                    FROM [IN-Grn_Details] gd
+                    INNER JOIN [IN-GRN_Header] gh ON gd.ID_GRN = gh.ID_GRN
+                    WHERE gd.ID_Producto = d.ID_Producto
+                    AND gh.ID_Orden = {idorden}
+                ), 0
+            ) AS Cantidad_Pendiente,
+            d.Costo AS Costo_Unitario
+        FROM [OC-Detalle_Orden] d
+        INNER JOIN [OC-Orden_Compra] o ON d.ID_Orden = o.ID_Orden
+        LEFT JOIN [IN-Producto] p ON d.ID_Producto = p.ID_Producto
+        WHERE o.ID_Orden = {idorden}
+        AND d.Estado = 'Pendiente';
+    "
+            :
+            $@"
+        SELECT 
+            d.ID_Detail AS Detalle_De_Compra,
+            p.ID_Producto, 
+            p.NomProducto AS Producto,
+            d.Cantidad AS Cantidad_Ordenada,
+            d.Cantidad - ISNULL(
+                (
+                    SELECT SUM(gd.Cantidad)
+                    FROM [IN-Grn_Details] gd
+                    INNER JOIN [IN-GRN_Header] gh ON gd.ID_GRN = gh.ID_GRN
+                    WHERE gd.ID_Producto = d.ID_Producto
+                    AND gh.ID_Orden = {idorden}
+                ), 0
+            ) AS Cantidad_Pendiente,
+            d.Costo AS Costo_Unitario
+        FROM [OC-Detalle_Orden] d
+        INNER JOIN [OC-Orden_Compra] o ON d.ID_Orden = o.ID_Orden
+        LEFT JOIN [IN-Producto] p ON d.ID_Producto = p.ID_Producto
+        WHERE o.ID_Orden = {idorden}
+        AND d.Estado = 'Pendiente';
+    ";
+
+
+            DataTable dt = CsComandosSql.RetornaDatos(query);
+            dgvDetalleOrden.DataSource = dt;
+
+
+            dgvDetalleOrden.RowTemplate.Height = 30;
+            lbCantRecib.Visible = (index == 0);
+
+
+            if (!dgvDetalleOrden.Columns.Contains("Bodega"))
+            {
+                DataGridViewComboBoxColumn colBodega = new DataGridViewComboBoxColumn();
+                colBodega.Name = "Bodega";
+                colBodega.HeaderText = "Bodega Destino";
+                colBodega.DisplayStyle = DataGridViewComboBoxDisplayStyle.DropDownButton;
+                colBodega.Width = 150;
+                dgvDetalleOrden.Columns.Add(colBodega);
+            }
+
+
             if (index == 0)
             {
-                dgvDetalleOrden.DataSource = null;
-                string query = $@"
-                                SELECT 
-                                    d.ID_Detail AS Detalle_De_Compra,
-                                    p.ID_Producto, 
-                                    p.NomProducto AS Producto,
-                                    d.Cantidad AS Cantidad_Ordenada,
-
-                                    0 AS CantidadRecibida,
-
-                                    d.Cantidad - ISNULL(
-                                        (
-                                            SELECT SUM(gd.Cantidad) 
-                                            FROM [IN-Grn_Details] gd
-                                            INNER JOIN [IN-GRN_Header] gh 
-                                                ON gd.ID_GRN = gh.ID_GRN
-                                            WHERE 
-                                                gd.ID_Producto = d.ID_Producto
-                                                AND gh.ID_Orden = {idorden}
-                                        ), 0
-                                    ) AS Cantidad_Pendiente,
-
-                                    d.Costo AS Costo_Unitario
-
-                                FROM [OC-Detalle_Orden] d
-                                INNER JOIN [OC-Orden_Compra] o 
-                                    ON d.ID_Orden = o.ID_Orden
-                                LEFT JOIN [IN-Producto] p 
-                                    ON d.ID_Producto = p.ID_Producto
-                                WHERE 
-                                    o.ID_Orden = {idorden}
-                                    AND d.Estado = 'Pendiente';
-                                ";
-
-
-                dgvDetalleOrden.DataSource = CsComandosSql.RetornaDatos(query);
-                dgvDetalleOrden.Columns["CantidadRecibida"].ReadOnly = false;
-                string queryDetalle = $"select * from [IN-GRN_Header] where ID_Orden={idorden}";
-                dgvGrnDeOrden.DataSource = CsComandosSql.RetornaDatos(queryDetalle);
-                dgvDetalleOrden.RowTemplate.Height = 30;
-                foreach (DataGridViewColumn column in dgvDetalleOrden.Columns)
+                foreach (DataGridViewColumn col in dgvDetalleOrden.Columns)
                 {
-                    if (column.Name != "CantidadRecibida")
+
+                    if (col.Name == "CantidadRecibida" || col.Name == "Bodega")
                     {
-                        column.ReadOnly = true;
+                        col.ReadOnly = false;
                     }
+                    else
+                    {
 
+                        col.ReadOnly = true;
+                    }
                 }
-                foreach (DataGridViewRow row in dgvDetalleOrden.Rows)
-                {
-                    row.Cells["CantidadRecibida"].Style.BackColor = Color.LightGray;
-                    row.Cells["CantidadRecibida"].Style.ForeColor = Color.Black;
-                }
-                lbCantRecib.Visible = true;
             }
-            if (index == 1)
+
+            foreach (DataGridViewRow row in dgvDetalleOrden.Rows)
             {
-                dgvDetalleOrden.DataSource = null;
-                    string query = $@"
-                    SELECT 
-                        d.ID_Detail AS Detalle_De_Compra,
-                        p.ID_Producto,
-                        p.NomProducto AS Producto,
-                        d.Cantidad AS Cantidad_Ordenada,
+                if (row.IsNewRow) continue;
 
-                        d.Cantidad - ISNULL(
-                            (
-                                SELECT SUM(gd.Cantidad)
-                                FROM [IN-Grn_Details] gd
-                                INNER JOIN [IN-GRN_Header] gh 
-                                    ON gd.ID_GRN = gh.ID_GRN
-                                WHERE 
-                                    gd.ID_Producto = d.ID_Producto
-                                    AND gh.ID_Orden = {idorden}
-                            ), 0
-                        ) AS Cantidad_Pendiente,
+                int idProducto = 0;
+                if (row.Cells["ID_Producto"].Value != null &&
+                    int.TryParse(row.Cells["ID_Producto"].Value.ToString(), out idProducto))
+                {
+                    DataTable bodegas = CsComandosSql.RetornaDatos($@"
+                SELECT i.ID_Bodega AS ID, b.Ubicacion AS Bodega
+                FROM [IN-Inventario] i
+                INNER JOIN [IN-Bodega] b ON b.ID_Bodega = i.ID_Bodega
+                WHERE i.ID_Producto = {idProducto};
+            ");
 
-                        d.Costo AS Costo_Unitario
+                    var comboCell = row.Cells["Bodega"] as DataGridViewComboBoxCell;
+                    comboCell.DisplayMember = "Bodega";
+                    comboCell.ValueMember = "ID";
 
-                    FROM [OC-Detalle_Orden] d
-                    INNER JOIN [OC-Orden_Compra] o 
-                        ON d.ID_Orden = o.ID_Orden
-                    LEFT JOIN [IN-Producto] p 
-                        ON d.ID_Producto = p.ID_Producto
-                    WHERE 
-                        o.ID_Orden = {idorden}
-                        AND d.Estado = 'Pendiente';
-                    ";
-
-                dgvDetalleOrden.DataSource = CsComandosSql.RetornaDatos(query);
-                string queryDetalle = $"select * from [IN-GRN_Header] where ID_Orden={idorden}";
-                dgvGrnDeOrden.DataSource = CsComandosSql.RetornaDatos(queryDetalle);
-                dgvDetalleOrden.RowTemplate.Height = 30;
-                lbCantRecib.Visible = false;
+                    if (bodegas != null && bodegas.Rows.Count > 0)
+                    {
+                        comboCell.DataSource = bodegas;
+                        comboCell.Value = bodegas.Rows[0]["ID"];
+                    }
+                    else
+                    {
+                        comboCell.DataSource = null;
+                        comboCell.Items.Clear();
+                        comboCell.Items.Add("NO INVENTARIABLE");
+                        comboCell.Value = "NO INVENTARIABLE";
+                        comboCell.ReadOnly = true;
+                    }
+                }
+                else
+                {
+                    var comboCell = row.Cells["Bodega"] as DataGridViewComboBoxCell;
+                    comboCell.DataSource = null;
+                    comboCell.Items.Clear();
+                    comboCell.Items.Add("NO DATA");
+                    comboCell.Value = "NO DATA";
+                    comboCell.ReadOnly = true;
+                }
             }
 
+            dgvGrnDeOrden.DataSource = CsComandosSql.RetornaDatos(
+                $"select * from [IN-GRN_Header] where ID_Orden={idorden}");
         }
+
+
         private void ActualizarEstadoRecibido(int idorden)
         {
             foreach (DataGridViewRow fila in dgvDetalleOrden.Rows)
@@ -158,7 +197,6 @@ namespace ModuloDeCompra_BD.Formulario
                     {
                         string updateQuery = $"update [OC-Detalle_Orden] set Estado='Recibido' where  ID_Detail= {idOrdenDetalle};";
                         CsComandosSql.InserDeletUpdate(updateQuery);
-
                     }
                 }
             }
@@ -206,9 +244,26 @@ namespace ModuloDeCompra_BD.Formulario
 
             try
             {
+
+                foreach (DataGridViewRow row in dgvDetalleOrden.Rows)
+                {
+                    if (row.IsNewRow) continue;
+
+                    string bodega = row.Cells["Bodega"].Value?.ToString();
+
+                    if (string.IsNullOrEmpty(bodega))
+                    {
+                        MessageBox.Show("Seleccione la Bodega para cada producto inventariable.",
+                            "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                }
+
                 string Detalle = "";
                 foreach (DataGridViewRow fila in dgvDetalleOrden.Rows)
                 {
+                    string idBodega = fila.Cells["Bodega"].Value?.ToString();
+
                     if (cbTipoGRN.SelectedIndex == 0)
                     {
                         if (fila.IsNewRow)
@@ -224,7 +279,8 @@ namespace ModuloDeCompra_BD.Formulario
                             Detalle += $@"<GRNDetail>
                                         <Cantidad>{cant}</Cantidad>
                                         <Costo>{costoU}</Costo>
-                                        <ID_Producto>{idProducto}</ID_Producto>                                                           
+                                        <ID_Producto>{idProducto}</ID_Producto> 
+                                        <ID_Bodega>{idBodega}</ID_Bodega>  
                                     </GRNDetail>";
                         }
                     }
@@ -243,7 +299,8 @@ namespace ModuloDeCompra_BD.Formulario
                             Detalle += $@"<GRNDetail>
                                         <Cantidad>{cant}</Cantidad>
                                         <Costo>{costoU}</Costo>
-                                        <ID_Producto>{idProducto}</ID_Producto>                                                           
+                                        <ID_Producto>{idProducto}</ID_Producto>  
+                                        <ID_Bodega>{idBodega}</ID_Bodega>                      
                                     </GRNDetail>";
                         }
                     }
@@ -339,7 +396,7 @@ namespace ModuloDeCompra_BD.Formulario
                     dgvDetalleOrden[e.ColumnIndex, e.RowIndex].Value = 0;
                     return;
                 }
-                int cantidadPendiente = Convert.ToInt32(dgvDetalleOrden[5, e.RowIndex].Value);
+                int cantidadPendiente = Convert.ToInt32(dgvDetalleOrden[6, e.RowIndex].Value);
                 int cantidadRecibida = Convert.ToInt32(dgvDetalleOrden[e.ColumnIndex, e.RowIndex].Value?.ToString());
                 if (cantidadRecibida > cantidadPendiente)
                 {
@@ -363,6 +420,7 @@ namespace ModuloDeCompra_BD.Formulario
         {
             lbCantRecib.Visible = false;
             cbTipoGRN.SelectedIndex = 0;
+
         }
 
         private void dgvDetalleOrden_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
