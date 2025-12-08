@@ -20156,7 +20156,7 @@ SELECT AuditoriaID, Usuario, Accion, Fecha, Detalles, TablaAfectada FROM Auditor
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Empresa] WHERE (([ID_Empresa] = @Original_ID_Empresa) AND ([Nombre_Empresa] = @Original_Nombre_Empresa) AND ((@IsNull_RUC = 1 AND [RUC] IS NULL) OR ([RUC] = @Original_RUC)) AND ((@IsNull_Direccion = 1 AND [Direccion] IS NULL) OR ([Direccion] = @Original_Direccion)) AND ((@IsNull_Telefono = 1 AND [Telefono] IS NULL) OR ([Telefono] = @Original_Telefono)) AND ((@IsNull_Correo = 1 AND [Correo] IS NULL) OR ([Correo] = @Original_Correo)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [MC-Empresa] WHERE (([ID_Empresa] = @Original_ID_Empresa) AND ([Nombre_Empresa] = @Original_Nombre_Empresa) AND ((@IsNull_RUC = 1 AND [RUC] IS NULL) OR ([RUC] = @Original_RUC)) AND ((@IsNull_Direccion = 1 AND [Direccion] IS NULL) OR ([Direccion] = @Original_Direccion)) AND ((@IsNull_Telefono = 1 AND [Telefono] IS NULL) OR ([Telefono] = @Original_Telefono)) AND ((@IsNull_Correo = 1 AND [Correo] IS NULL) OR ([Correo] = @Original_Correo)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Empresa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Empresa", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nombre_Empresa", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nombre_Empresa", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -20170,8 +20170,8 @@ SELECT AuditoriaID, Usuario, Accion, Fecha, Detalles, TablaAfectada FROM Auditor
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Correo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Correo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Empresa] ([Nombre_Empresa], [Logo_Empresa], [RUC], [Direccion], [Telefono], [Correo]) VALUES (@Nombre_Empresa, @Logo_Empresa, @RUC, @Direccion, @Telefono, @Correo);
-SELECT ID_Empresa, Nombre_Empresa, Logo_Empresa, RUC, Direccion, Telefono, Correo FROM Empresa WHERE (ID_Empresa = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [MC-Empresa] ([Nombre_Empresa], [Logo_Empresa], [RUC], [Direccion], [Telefono], [Correo]) VALUES (@Nombre_Empresa, @Logo_Empresa, @RUC, @Direccion, @Telefono, @Correo);
+SELECT ID_Empresa, Nombre_Empresa, Logo_Empresa, RUC, Direccion, Telefono, Correo FROM [MC-Empresa] WHERE (ID_Empresa = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nombre_Empresa", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nombre_Empresa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Logo_Empresa", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Logo_Empresa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -20181,8 +20181,8 @@ SELECT ID_Empresa, Nombre_Empresa, Logo_Empresa, RUC, Direccion, Telefono, Corre
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Correo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Correo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Empresa] SET [Nombre_Empresa] = @Nombre_Empresa, [Logo_Empresa] = @Logo_Empresa, [RUC] = @RUC, [Direccion] = @Direccion, [Telefono] = @Telefono, [Correo] = @Correo WHERE (([ID_Empresa] = @Original_ID_Empresa) AND ([Nombre_Empresa] = @Original_Nombre_Empresa) AND ((@IsNull_RUC = 1 AND [RUC] IS NULL) OR ([RUC] = @Original_RUC)) AND ((@IsNull_Direccion = 1 AND [Direccion] IS NULL) OR ([Direccion] = @Original_Direccion)) AND ((@IsNull_Telefono = 1 AND [Telefono] IS NULL) OR ([Telefono] = @Original_Telefono)) AND ((@IsNull_Correo = 1 AND [Correo] IS NULL) OR ([Correo] = @Original_Correo)));
-SELECT ID_Empresa, Nombre_Empresa, Logo_Empresa, RUC, Direccion, Telefono, Correo FROM Empresa WHERE (ID_Empresa = @ID_Empresa)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [MC-Empresa] SET [Nombre_Empresa] = @Nombre_Empresa, [Logo_Empresa] = @Logo_Empresa, [RUC] = @RUC, [Direccion] = @Direccion, [Telefono] = @Telefono, [Correo] = @Correo WHERE (([ID_Empresa] = @Original_ID_Empresa) AND ([Nombre_Empresa] = @Original_Nombre_Empresa) AND ((@IsNull_RUC = 1 AND [RUC] IS NULL) OR ([RUC] = @Original_RUC)) AND ((@IsNull_Direccion = 1 AND [Direccion] IS NULL) OR ([Direccion] = @Original_Direccion)) AND ((@IsNull_Telefono = 1 AND [Telefono] IS NULL) OR ([Telefono] = @Original_Telefono)) AND ((@IsNull_Correo = 1 AND [Correo] IS NULL) OR ([Correo] = @Original_Correo)));
+SELECT ID_Empresa, Nombre_Empresa, Logo_Empresa, RUC, Direccion, Telefono, Correo FROM [MC-Empresa] WHERE (ID_Empresa = @ID_Empresa)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nombre_Empresa", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nombre_Empresa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Logo_Empresa", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Logo_Empresa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -20216,8 +20216,8 @@ SELECT ID_Empresa, Nombre_Empresa, Logo_Empresa, RUC, Direccion, Telefono, Corre
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID_Empresa, Nombre_Empresa, Logo_Empresa, RUC, Direccion, Telefono, Correo" +
-                " FROM dbo.Empresa";
+            this._commandCollection[0].CommandText = "SELECT        ID_Empresa, Nombre_Empresa, Logo_Empresa, RUC, Direccion, Telefono," +
+                " Correo\r\nFROM            [MC-Empresa]";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -20272,228 +20272,6 @@ SELECT ID_Empresa, Nombre_Empresa, Logo_Empresa, RUC, Direccion, Telefono, Corre
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(global::System.Data.DataRow[] dataRows) {
             return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID_Empresa, string Original_Nombre_Empresa, string Original_RUC, string Original_Direccion, string Original_Telefono, string Original_Correo) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID_Empresa));
-            if ((Original_Nombre_Empresa == null)) {
-                throw new global::System.ArgumentNullException("Original_Nombre_Empresa");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Nombre_Empresa));
-            }
-            if ((Original_RUC == null)) {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_RUC));
-            }
-            if ((Original_Direccion == null)) {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_Direccion));
-            }
-            if ((Original_Telefono == null)) {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((string)(Original_Telefono));
-            }
-            if ((Original_Correo == null)) {
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((string)(Original_Correo));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Nombre_Empresa, byte[] Logo_Empresa, string RUC, string Direccion, string Telefono, string Correo) {
-            if ((Nombre_Empresa == null)) {
-                throw new global::System.ArgumentNullException("Nombre_Empresa");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Nombre_Empresa));
-            }
-            if ((Logo_Empresa == null)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((byte[])(Logo_Empresa));
-            }
-            if ((RUC == null)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(RUC));
-            }
-            if ((Direccion == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Direccion));
-            }
-            if ((Telefono == null)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Telefono));
-            }
-            if ((Correo == null)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Correo));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Nombre_Empresa, byte[] Logo_Empresa, string RUC, string Direccion, string Telefono, string Correo, int Original_ID_Empresa, string Original_Nombre_Empresa, string Original_RUC, string Original_Direccion, string Original_Telefono, string Original_Correo, int ID_Empresa) {
-            if ((Nombre_Empresa == null)) {
-                throw new global::System.ArgumentNullException("Nombre_Empresa");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Nombre_Empresa));
-            }
-            if ((Logo_Empresa == null)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((byte[])(Logo_Empresa));
-            }
-            if ((RUC == null)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(RUC));
-            }
-            if ((Direccion == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Direccion));
-            }
-            if ((Telefono == null)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Telefono));
-            }
-            if ((Correo == null)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Correo));
-            }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_ID_Empresa));
-            if ((Original_Nombre_Empresa == null)) {
-                throw new global::System.ArgumentNullException("Original_Nombre_Empresa");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_Nombre_Empresa));
-            }
-            if ((Original_RUC == null)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_RUC));
-            }
-            if ((Original_Direccion == null)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_Direccion));
-            }
-            if ((Original_Telefono == null)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_Telefono));
-            }
-            if ((Original_Correo == null)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_Correo));
-            }
-            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(ID_Empresa));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Nombre_Empresa, byte[] Logo_Empresa, string RUC, string Direccion, string Telefono, string Correo, int Original_ID_Empresa, string Original_Nombre_Empresa, string Original_RUC, string Original_Direccion, string Original_Telefono, string Original_Correo) {
-            return this.Update(Nombre_Empresa, Logo_Empresa, RUC, Direccion, Telefono, Correo, Original_ID_Empresa, Original_Nombre_Empresa, Original_RUC, Original_Direccion, Original_Telefono, Original_Correo, Original_ID_Empresa);
         }
     }
     

@@ -32,7 +32,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>dsreporte</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Equipo\source\repos\M-duloCompra_BD\ModuloDeCompra_BD\Reporte\dsreporte.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\user\Source\Repos\M-duloCompra_BD\ModuloDeCompra_BD\Reporte\dsreporte.xsd</rd:SchemaPath>
         <rd:TableName>rpt_CategoriasDetalles</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
@@ -76,7 +76,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>dsreporte</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\nixon\Desktop\BD AVANCE\M-duloCompra_BD\ModuloDeCompra_BD\Reporte\dsreporte.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\user\Source\Repos\M-duloCompra_BD\ModuloDeCompra_BD\Reporte\dsreporte.xsd</rd:SchemaPath>
         <rd:TableName>Empresa</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
