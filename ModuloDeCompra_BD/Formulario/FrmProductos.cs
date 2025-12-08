@@ -286,6 +286,34 @@ namespace ModuloDeCompra_BD.Formulario
                 DataRow producto = dtProducto.Rows[0];
                 string inventariable = producto["Inventariable"].ToString();
 
+                if (!Convert.IsDBNull(producto["ID_CAT"]) && producto["ID_CAT"] != DBNull.Value)
+                {
+                    Id = Convert.ToInt32(producto["ID_CAT"]);
+
+                    // Obtener el nombre de la categoría
+                    DataTable dtCategoria = CsComandosSql.RetornaDatos(
+                        $"SELECT Categoria FROM [IN-Categoria] WHERE ID_CAT = {Id}");
+
+                    if (dtCategoria.Rows.Count > 0)
+                    {
+                        txtListadoCategory.Text = dtCategoria.Rows[0]["Categoria"].ToString();
+                    }
+                }
+
+                // ============ NUEVO: Cargar Proveedor ============
+                if (!Convert.IsDBNull(producto["ID_Proveedor"]) && producto["ID_Proveedor"] != DBNull.Value)
+                {
+                    Id2 = Convert.ToInt32(producto["ID_Proveedor"]);
+
+                    // Obtener el nombre del proveedor
+                    DataTable dtProveedor = CsComandosSql.RetornaDatos(
+                        $"SELECT Nombre_Proveedor FROM [OC-Proveedores] WHERE ID_Proveedor = {Id2}");
+
+                    if (dtProveedor.Rows.Count > 0)
+                    {
+                        txtListadoProvee.Text = dtProveedor.Rows[0]["Nombre_Proveedor"].ToString();
+                    }
+                }
                 if (inventariable == "SI")
                 {
                     CHBInventariable.Checked = true;
