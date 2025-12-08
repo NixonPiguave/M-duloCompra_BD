@@ -433,21 +433,17 @@ namespace ModuloDeCompra_BD.Formulario
         {
             try
             {
-                // Usamos el mismo patrón de tu código original
                 string query = $@"
         EXEC sp_CancelarOrdenCompra 
             @ID_Orden = {txtOrdenCompra.Text}";
 
                 try
                 {
-                    // Ejecutar directamente como en tu ejemplo
                     if (CsComandosSql.InserDeletUpdate(query))
                     {
                         MessageBox.Show("Orden cancelada correctamente");
 
-                        // Opcional: Si necesitas hacer algo después como en tu código
-                        // Por ejemplo, actualizar el estado o limpiar campos
-                        // ActualizarEstadoCancelado(Convert.ToInt32(txtOrdenCompra.Text));
+
                     }
                     else
                     {
@@ -456,7 +452,6 @@ namespace ModuloDeCompra_BD.Formulario
                 }
                 catch (SqlException esc)
                 {
-                    // Manejar errores específicos de SQL como en tu código
                     if (esc.Message.Contains("La orden no existe"))
                     {
                         MessageBox.Show("Error: La orden no existe en el sistema");
