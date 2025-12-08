@@ -101,7 +101,7 @@ namespace Menú.Formularios
                         {
                             if (CsComandosSql.InserDeletUpdate(queryD))
                             {
-                                MessageBox.Show("Requisición Creada");
+                                //MessageBox.Show("Requisición Creada");
                             }
                             else
                                 MessageBox.Show("Error al insertar detalle");
@@ -111,8 +111,10 @@ namespace Menú.Formularios
                             MessageBox.Show("Error: " + ex.Message);
                         }
                     }
+
                     tabla.Clear();
                     txtMotivo.Text = string.Empty;
+                    MessageBox.Show("Requisición Creada");
                 }
             }
             catch (Exception ex)

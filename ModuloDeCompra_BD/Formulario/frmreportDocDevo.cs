@@ -32,7 +32,7 @@ namespace ModuloDeCompra_BD.Formulario
 
                 if (!string.IsNullOrEmpty(ID_Prov))
                 {
-                    string sentenciaProv = $"SELECT Correo FROM Proveedores WHERE ID_Proveedor = {ID_Prov}";
+                    string sentenciaProv = $"SELECT Correo FROM [OC-Proveedores] WHERE ID_Proveedor = {ID_Prov}";
                     DataTable datosProv = CsComandosSql.RetornaDatos(sentenciaProv);
                     if (datosProv.Rows.Count > 0)
                     {
@@ -41,7 +41,7 @@ namespace ModuloDeCompra_BD.Formulario
                 }
                 else
                 {
-                    string queryProveedor = @"SELECT top 1 p.Correo FROM RTV_Header rtv INNER JOIN Proveedores p ON rtv.ID_Proveedor = p.ID_Proveedor order by ID_RTV desc";
+                    string queryProveedor = @"SELECT top 1 p.Correo FROM [OC-RTV_Header] rtv INNER JOIN [OC-Proveedores] p ON rtv.ID_Proveedor = p.ID_Proveedor order by ID_RTV desc";
 
                     DataTable datosProv = CsComandosSql.RetornaDatos(queryProveedor);
                     if (datosProv.Rows.Count > 0)
@@ -50,7 +50,7 @@ namespace ModuloDeCompra_BD.Formulario
                     }
                 }
 
-                string sentenciaEmp = "SELECT Correo FROM Empresa WHERE ID_Empresa = 1";
+                string sentenciaEmp = "SELECT Correo FROM [MC-Empresa] WHERE ID_Empresa = 1";
                 DataTable datosEmp = CsComandosSql.RetornaDatos(sentenciaEmp);
                 if (datosEmp.Rows.Count > 0)
                 {
@@ -59,7 +59,7 @@ namespace ModuloDeCompra_BD.Formulario
 
                 if (string.IsNullOrEmpty(ID_RTV))
                 {
-                    var dt = CsComandosSql.RetornaDatos("SELECT TOP 1 ID_RTV FROM RTV_Header ORDER BY ID_RTV DESC");
+                    var dt = CsComandosSql.RetornaDatos("SELECT TOP 1 ID_RTV FROM [OC-RTV_Header] ORDER BY ID_RTV DESC");
                     if (dt?.Rows.Count > 0)
                     {
                         ID_RTV = dt.Rows[0]["ID_RTV"]?.ToString();
@@ -144,7 +144,7 @@ namespace ModuloDeCompra_BD.Formulario
 
             // Agregar columnas para los totales
             datosCombinados.Columns.Add("TotalProductos", typeof(decimal));
-            datosCombinados.Columns.Add("TotalServicios", typeof(decimal));
+
             datosCombinados.Columns.Add("TotalGeneral", typeof(decimal));
 
             // Copiar datos principales
@@ -162,7 +162,7 @@ namespace ModuloDeCompra_BD.Formulario
                 if (datosCombinados.Rows.Count == 0 && datosTotales.Rows.Count > 0)
                 {
                     newRow["TotalProductos"] = datosTotales.Rows[0]["TotalProductos"];
-                    newRow["TotalServicios"] = datosTotales.Rows[0]["TotalServicios"];
+        
                     newRow["TotalGeneral"] = datosTotales.Rows[0]["TotalGeneral"];
                 }
 
@@ -174,7 +174,7 @@ namespace ModuloDeCompra_BD.Formulario
             {
                 DataRow newRow = datosCombinados.NewRow();
                 newRow["TotalProductos"] = datosTotales.Rows[0]["TotalProductos"];
-                newRow["TotalServicios"] = datosTotales.Rows[0]["TotalServicios"];
+        
                 newRow["TotalGeneral"] = datosTotales.Rows[0]["TotalGeneral"];
                 datosCombinados.Rows.Add(newRow);
             }
@@ -184,42 +184,46 @@ namespace ModuloDeCompra_BD.Formulario
 
         private DataTable ObtenerDatosDevolucion()
         {
-            string query = @"SELECT 
-        e.Nombre_Empresa,
-        e.RUC AS RUC_Empresa,
-        e.Direccion AS Direccion_Empresa,
-        e.Telefono AS Telefono_Empresa,
-        e.Correo AS Correo_Empresa,
-        e.Logo_Empresa,
-        p.Nombre_Proveedor,
-        p.NroDocumento AS RUC_Proveedor,
-        p.Direccion AS Direccion_Proveedor,
-        p.NroTelefono AS Telefono_Proveedor,
-        p.Correo AS Correo_Proveedor,
-        rtv.ID_RTV,
-        rtv.Fecha_RTV,
-        rtv.Motivo,
-        rd.ID_RTVDetails,
-        rd.Cantidad,
-        COALESCE(pr.NomProducto, sv.Nom_Servicio) AS Descripcion,
-        CAST(COALESCE(pr.Costo, sv.Costo) AS DECIMAL(10,2)) AS Costo_Unitario,
-        CAST(rd.Cantidad * COALESCE(pr.Costo, sv.Costo) AS DECIMAL(10,2)) AS Total_Linea,
-        CASE 
-            WHEN rd.ID_Producto IS NOT NULL THEN 'Producto'
-            WHEN rd.ID_Servicio IS NOT NULL THEN 'Servicio'
-        END AS Tipo_Item,
-        (SELECT TOP 1 u.Nombre + ' ' + u.Apellido 
-         FROM DiarioCont_Header dch 
-         INNER JOIN Usuario u ON dch.Usuario = u.Usuario
-         WHERE dch.ID_GRN = COALESCE(rtv.ID_GRN, rd.ID_GRN)
-         ORDER BY dch.Diario DESC) AS Usuario_Realizador
-    FROM RTV_Header rtv
-    INNER JOIN Proveedores p ON rtv.ID_Proveedor = p.ID_Proveedor
-    INNER JOIN RTV_Details rd ON rtv.ID_RTV = rd.ID_RTV
-    LEFT JOIN Producto pr ON rd.ID_Producto = pr.ID_Producto
-    LEFT JOIN Servicio sv ON rd.ID_Servicio = sv.ID_Servicio
-    CROSS JOIN Empresa e
-    WHERE rtv.ID_RTV = @ID_RTV";
+                                    string query = @"
+                        SELECT 
+                            e.Nombre_Empresa,
+                            e.RUC AS RUC_Empresa,
+                            e.Direccion AS Direccion_Empresa,
+                            e.Telefono AS Telefono_Empresa,
+                            e.Correo AS Correo_Empresa,
+                            e.Logo_Empresa,
+
+                            p.Nombre_Proveedor,
+                            p.NroDocumento AS RUC_Proveedor,
+                            p.Direccion AS Direccion_Proveedor,
+                            p.NroTelefono AS Telefono_Proveedor,
+                            p.Correo AS Correo_Proveedor,
+
+                            rtv.ID_RTV,
+                            rtv.Fecha_RTV,
+                            rtv.Motivo,
+
+                            rd.ID_RTVDetails,
+                            rd.Cantidad,
+                            pr.NomProducto AS Descripcion,
+                            CAST(pr.Costo AS DECIMAL(10,2)) AS Costo_Unitario,
+                            CAST(rd.Cantidad * pr.Costo AS DECIMAL(10,2)) AS Total_Linea,
+
+                            'Producto' AS Tipo_Item,
+
+                            (SELECT TOP 1 u.Nombre + ' ' + u.Apellido 
+                             FROM [CG-DiarioCont_Header] dch 
+                             INNER JOIN [MC-Usuario] u ON dch.Usuario = u.Usuario
+                             WHERE dch.ID_GRN = rtv.ID_GRN
+                             ORDER BY dch.Diario DESC) AS Usuario_Realizador
+
+                        FROM [OC-RTV_Header] rtv
+                        INNER JOIN [OC-Proveedores] p ON rtv.ID_Proveedor = p.ID_Proveedor
+                        INNER JOIN [OC-RTV_Details] rd ON rtv.ID_RTV = rd.ID_RTV
+                        LEFT JOIN [IN-Producto] pr ON rd.ID_Producto = pr.ID_Producto
+                        CROSS JOIN [MC-Empresa] e
+                        WHERE rtv.ID_RTV = @ID_RTV";
+
 
             SqlParameter param = new SqlParameter("@ID_RTV", SqlDbType.Int);
             param.Value = Convert.ToInt32(ID_RTV);
@@ -229,14 +233,13 @@ namespace ModuloDeCompra_BD.Formulario
 
         private DataTable ObtenerTotalesDevolucion()
         {
-            string query = @"SELECT 
-            CAST(SUM(CASE WHEN rd.ID_Producto IS NOT NULL THEN rd.Cantidad * COALESCE(pr.Costo, 0) ELSE 0 END) AS DECIMAL(10,2)) AS TotalProductos,
-            CAST(SUM(CASE WHEN rd.ID_Servicio IS NOT NULL THEN rd.Cantidad * COALESCE(sv.Costo, 0) ELSE 0 END) AS DECIMAL(10,2)) AS TotalServicios,
-            CAST(SUM(rd.Cantidad * COALESCE(pr.Costo, sv.Costo, 0)) AS DECIMAL(10,2)) AS TotalGeneral
-        FROM RTV_Details rd
-        LEFT JOIN Producto pr ON rd.ID_Producto = pr.ID_Producto
-        LEFT JOIN Servicio sv ON rd.ID_Servicio = sv.ID_Servicio
-        WHERE rd.ID_RTV = @ID_RTV";
+            string query = @"
+                    SELECT 
+                        CAST(SUM(rd.Cantidad * COALESCE(pr.Costo, 0)) AS DECIMAL(10,2)) AS TotalProductos,
+                        CAST(SUM(rd.Cantidad * COALESCE(pr.Costo, 0)) AS DECIMAL(10,2)) AS TotalGeneral
+                    FROM [OC-RTV_Details] rd
+                    LEFT JOIN [IN-Producto] pr ON rd.ID_Producto = pr.ID_Producto
+                    WHERE rd.ID_RTV = @ID_RTV";
 
             SqlParameter param = new SqlParameter("@ID_RTV", SqlDbType.Int);
             param.Value = Convert.ToInt32(ID_RTV);

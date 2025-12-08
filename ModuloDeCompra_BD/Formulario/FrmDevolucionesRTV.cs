@@ -74,9 +74,9 @@ namespace ModuloDeCompra_BD.Formulario
             string query = $"SELECT X.[Cod Detalle], X.ID_Producto,p.NomProducto, X.[Cantidad Recibida], X.[Cantidad a Devolver], X.CantidadDevuelta, X.Costo " +
                 $"FROM (SELECT  GR.ID_GRNDetails AS [Cod Detalle], GR.ID_Producto, GR.Cantidad AS [Cantidad Recibida]," +
                 $" 0 AS [Cantidad a Devolver],CASE WHEN ISNULL((SELECT sum(D.Cantidad) FROM [OC-RTV_Details] D " +
-                $" WHERE D.ID_GRN = 300 AND (D.ID_Producto = GR.ID_Producto)), 0) = 0 " +
-                $"   THEN 0 ELSE ISNULL((SELECT sum(D.Cantidad) FROM [OC-RTV_Details] D  WHERE D.ID_GRN = 300 AND (D.ID_Producto = GR.ID_Producto)), 0)" +
-                $"           END AS [CantidadDevuelta], GR.Costo FROM [IN-Grn_Details] GR WHERE GR.ID_GRN = 300 ) AS X Left join [IN-Producto] p on X.ID_Producto=p.ID_Producto " +
+                $" WHERE D.ID_GRN = {ID} AND (D.ID_Producto = GR.ID_Producto)), 0) = 0 " +
+                $"   THEN 0 ELSE ISNULL((SELECT sum(D.Cantidad) FROM [OC-RTV_Details] D  WHERE D.ID_GRN = {ID} AND (D.ID_Producto = GR.ID_Producto)), 0)" +
+                $"           END AS [CantidadDevuelta], GR.Costo FROM [IN-Grn_Details] GR WHERE GR.ID_GRN = {ID} ) AS X Left join [IN-Producto] p on X.ID_Producto=p.ID_Producto " +
                 $"WHERE [Cantidad Recibida] <> CantidadDevuelta";
 
             dgvDetalleGrn.DataSource = CsComandosSql.RetornaDatos(query);
@@ -151,9 +151,9 @@ namespace ModuloDeCompra_BD.Formulario
                         return;
                     }
 
-                    int cantidadRecibida = Convert.ToInt32(dgvDetalleGrn[5, e.RowIndex].Value);
+                    int cantidadRecibida = Convert.ToInt32(dgvDetalleGrn[3, e.RowIndex].Value);
                     int cantidadDevolver = Convert.ToInt32(dgvDetalleGrn[e.ColumnIndex, e.RowIndex].Value?.ToString());
-                    int cantidadDevuelta = Convert.ToInt32(dgvDetalleGrn[7, e.RowIndex].Value);
+                    int cantidadDevuelta = Convert.ToInt32(dgvDetalleGrn[5, e.RowIndex].Value);
                     if (cantidadDevolver > cantidadRecibida - cantidadDevuelta)
                     {
                         MessageBox.Show("La cantidad Devuelta no puede ser mayor que la cantidad que se recibió.");
