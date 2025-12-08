@@ -32,26 +32,25 @@ namespace ModuloDeCompra_BD.Clases
         public int IdUnidad1 { get => IdUnidad; set => IdUnidad = value; }
         public int IdUnidadAlternativa1 { get => IdUnidadAlternativa; set => IdUnidadAlternativa = value; }
         //este metodo es para añadir un producto inventariable
-        public bool AñadirProducto(int idBodega)
+        public bool AñadirProducto(string idsBodegas)
         {
             string precioUFormatoSQL = Precio_Unit.ToString(CultureInfo.InvariantCulture);
 
             string cadenaXML = $@"<Productos>
-                <Producto>
-                    <NomProducto>{Nom_Producto}</NomProducto>
-                    <Costo>{precioUFormatoSQL}</Costo>
-                    <EstadoProducto>{Estado}</EstadoProducto>
-                    <ID_CAT>{Categoria}</ID_CAT>
-                    <ID_IVA>{Iva}</ID_IVA>
-                    <ID_Proveedor>{Proveedor}</ID_Proveedor>
-                    <Inventariable>{Inventariable}</Inventariable>
-                    <IdUnidad>{IdUnidad}</IdUnidad>
-                    <IdUnidadAlternativa>{IdUnidadAlternativa}</IdUnidadAlternativa>
-                </Producto>
-            </Productos>";
+        <Producto>
+            <NomProducto>{Nom_Producto}</NomProducto>
+            <Costo>{precioUFormatoSQL}</Costo>
+            <EstadoProducto>{Estado}</EstadoProducto>
+            <ID_CAT>{Categoria}</ID_CAT>
+            <ID_IVA>{Iva}</ID_IVA>
+            <ID_Proveedor>{Proveedor}</ID_Proveedor>
+            <Inventariable>{Inventariable}</Inventariable>
+            <IdUnidad>{IdUnidad}</IdUnidad>
+            <IdUnidadAlternativa>{IdUnidadAlternativa}</IdUnidadAlternativa>
+        </Producto>
+    </Productos>";
 
-            
-            string query = $@"exec spAgregarProducto '{cadenaXML}', {idBodega}";
+            string query = $@"exec spAgregarProducto '{cadenaXML}', '{idsBodegas}'";
             return CsComandosSql.InserDeletUpdate(query);
         }
 
@@ -79,24 +78,24 @@ namespace ModuloDeCompra_BD.Clases
         }
 
         //lo mismo en modificar
-        public bool ModificarProducto(int id, int idBodega)
+        public bool ModificarProducto(int id, string idsBodegas)
         {
             string precioUFormatoSQL = Precio_Unit.ToString(CultureInfo.InvariantCulture);
             string cadenaXML = $@"<Productos>
-                    <Producto>
-                        <ID_Producto>{id}</ID_Producto>
-                        <NomProducto>{Nom_Producto}</NomProducto>
-                        <Costo>{precioUFormatoSQL}</Costo>
-                        <EstadoProducto>{Estado}</EstadoProducto>
-                        <ID_CAT>{Categoria}</ID_CAT>
-                        <ID_IVA>{Iva}</ID_IVA>
-                        <ID_Proveedor>{Proveedor}</ID_Proveedor>
-                        <Inventariable>{Inventariable}</Inventariable>
-                        <IdUnidad>{IdUnidad}</IdUnidad>
-                        <IdUnidadAlternativa>{IdUnidadAlternativa}</IdUnidadAlternativa>
-                    </Producto>
-                </Productos>";
-            string query = $@"exec spModificarProducto '{cadenaXML}', {idBodega}";
+            <Producto>
+                <ID_Producto>{id}</ID_Producto>
+                <NomProducto>{Nom_Producto}</NomProducto>
+                <Costo>{precioUFormatoSQL}</Costo>
+                <EstadoProducto>{Estado}</EstadoProducto>
+                <ID_CAT>{Categoria}</ID_CAT>
+                <ID_IVA>{Iva}</ID_IVA>
+                <ID_Proveedor>{Proveedor}</ID_Proveedor>
+                <Inventariable>{Inventariable}</Inventariable>
+                <IdUnidad>{IdUnidad}</IdUnidad>
+                <IdUnidadAlternativa>{IdUnidadAlternativa}</IdUnidadAlternativa>
+            </Producto>
+        </Productos>";
+            string query = $@"exec spModificarProducto '{cadenaXML}', '{idsBodegas}'";
             return CsComandosSql.InserDeletUpdate(query);
         }
 
