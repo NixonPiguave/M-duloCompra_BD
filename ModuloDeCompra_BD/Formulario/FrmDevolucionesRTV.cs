@@ -77,7 +77,7 @@ namespace ModuloDeCompra_BD.Formulario
                 $" WHERE D.ID_GRN = {ID} AND (D.ID_Producto = GR.ID_Producto)), 0) = 0 " +
                 $"   THEN 0 ELSE ISNULL((SELECT sum(D.Cantidad) FROM [OC-RTV_Details] D  WHERE D.ID_GRN = {ID} AND (D.ID_Producto = GR.ID_Producto)), 0)" +
                 $"           END AS [CantidadDevuelta], GR.Costo FROM [IN-Grn_Details] GR WHERE GR.ID_GRN = {ID} ) AS X Left join [IN-Producto] p on X.ID_Producto=p.ID_Producto " +
-                $"WHERE [Cantidad Recibida] <> CantidadDevuelta";
+                $"WHERE [Cantidad Recibida] <> (0)\r\n";
 
             dgvDetalleGrn.DataSource = CsComandosSql.RetornaDatos(query);
         }
@@ -150,11 +150,10 @@ namespace ModuloDeCompra_BD.Formulario
                         dgvDetalleGrn[e.ColumnIndex, e.RowIndex].Value = 0;
                         return;
                     }
-
                     int cantidadRecibida = Convert.ToInt32(dgvDetalleGrn[3, e.RowIndex].Value);
                     int cantidadDevolver = Convert.ToInt32(dgvDetalleGrn[e.ColumnIndex, e.RowIndex].Value?.ToString());
                     int cantidadDevuelta = Convert.ToInt32(dgvDetalleGrn[5, e.RowIndex].Value);
-                    if (cantidadDevolver > cantidadRecibida - cantidadDevuelta)
+                    if (cantidadDevolver > cantidadRecibida)
                     {
                         MessageBox.Show("La cantidad Devuelta no puede ser mayor que la cantidad que se recibió.");
                         dgvDetalleGrn[e.ColumnIndex, e.RowIndex].Value = 0;
@@ -212,7 +211,7 @@ namespace ModuloDeCompra_BD.Formulario
                                  </RTV>'
                         ";
                         string queryD = $"EXEC InsertarRTV {xml},  '{txtDebito.Text}', '{txtCredito.Text}'";
-                        MessageBox.Show(xml);
+                        
                         if (CsComandosSql.InserDeletUpdate(queryD))
                         {
                             MessageBox.Show("RTV REGISTRADO");
